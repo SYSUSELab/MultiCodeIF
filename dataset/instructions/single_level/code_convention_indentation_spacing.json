@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a Rust module named `greeter` with a function `greet_user(name: &str) -> String`. This function should return a custom greeting message formatted as \"Hello, {name}!\". Ensure that the Rust code adheres to a style guideline where it uses 4-space indentation and spaces around operators and after commas for enhanced readability and consistency.",
+        "answer": "rust;spaces:4;spacing"
+    },
+    {
+        "id": 2,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a C++ class named `Account` that encapsulates basic banking operations. The class should have private data members for the account holder's `name` (string), `balance` (double), and an `account_number` (integer). Include a constructor to initialize these values, and provide public member functions for operations: `deposit(double amount)`, `withdraw(double amount)`, and `getBalance()` which returns the current balance. Each function should implement proper checks for valid transactions (e.g., no negative balance). Follow C++ conventions: use tab indentation, do not put spaces around operators or after commas, and ensure method definitions are separated by clear line breaks for readability.",
+        "answer": "C++;tabs;no spacing"
+    },
+    {
+        "id": 3,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a C++ class named `OrderManager` to handle manufacturing orders. It should store order details in private member variables (orderID, quantity, and productCode) and include a constructor to initialize these properties. Provide public getter methods for each of these properties and a method named `displayOrderDetails` that prints order information in the format \"Order ID: [orderID], Quantity: [quantity], Product Code: [productCode]\". Follow the Rustfmt Default style guide which includes using 4-space indentation and spaces after commas and around operators to ensure code readability.",
+        "answer": "C++;spaces:4;spacing"
+    },
+    {
+        "id": 4,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a C++ program that simulates a basic file management system where you can create files with specific sizes. Each file should have a unique identifier and the program should allow operations such as creating, deleting, and listing all files with their sizes. Define appropriate data structures and methods like createFile, deleteFile, and listFiles. Ensure consistent use of tab indentation throughout the code, and maintain spacing after commas and around operators in accordance with C++ best practices.",
+        "answer": "C++;tabs;spacing"
+    },
+    {
+        "id": 5,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Design a C++ class called BookTracker, which includes two private members: bookName of string type and totalPages of integer type. The class should have a constructor to initialize these fields, a destructor, and appropriate getter methods for both members. Include a method printBookDetails that beautifully formats and prints out the book details. Ensure that all class member functions and the main function follow a specific indentation style with 4-space indentation and do not have spaces around operators or after commas for consistency throughout the code.",
+        "answer": "C++;spaces:4;no spacing"
+    },
+    {
+        "id": 6,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Rust struct called `BookTracker` with private fields including `title` (String), `author` (String), and `copies_sold` (u64). Write methods to get and set each of these fields. Ensure the use of idiomatic Rust conventions such as using `snake_case` for variable and method names, and adhere to the Google Rust Style by employing 2-space indentation and avoiding spaces around operators and after commas.",
+        "answer": "rust;spaces:2;no spacing"
+    },
+    {
+        "id": 7,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Java class named `TransactionProcessor` that includes three primary methods: `validateTransaction`, `processTransaction`, and `logTransactionResult`. Each method should accept details relevant to financial transactions. The `validateTransaction` method should verify the transaction details (e.g., amount, sender, recipient) and return true or false based on criteria such as non-negative amount and valid accounts. The `processTransaction` method should execute the transaction if validated and return a success flag. The `logTransactionResult` method should log the outcome. Use a structured approach to handle exceptions and ensure all methods follow Java conventions with proper use of `this`, four spaces for indentation, and clear code commenting for maintainability.",
+        "answer": "java;spaces:4;spacing"
+    },
+    {
+        "id": 8,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a C function named 'multiply_matrices' that takes two two-dimensional arrays (matrix1 and matrix2) and their corresponding dimensions as inputs, performs matrix multiplication, and returns the result in a new matrix. The function should handle cases where the number of columns in the first matrix does not match the number of rows in the second matrix by returning NULL. Use a consistent coding style with a 2-space indentation and no spaces around commas and operators for increased readability and maintainability.",
+        "answer": "C;spaces:2;no spacing"
+    },
+    {
+        "id": 9,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Python class called `InventoryManager` that includes methods for adding, removing, and listing products. Each product in the inventory should be represented as a dictionary with keys for `product_id`, `name`, and `quantity`. Use proper exception handling to ensure that adding and removing operations do not allow negative quantity values. The methods should include clear docstrings explaining their functionality. Follow the Python PEP 8 style guide closely, using four spaces for indentation, and ensure that there is adequate spacing around operators and between methods for readability.",
+        "answer": "python;spaces:4;spacing"
+    },
+    {
+        "id": 10,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a JavaScript class named Library that should include a constructor, four private attributes (name, location, books, and members), and methods for adding books, registering members, and a method to display all books. The methods should transparently use the private fields by encapsulating business logic within the methods itself. Additionally, implement proper usage of ES6 syntax, particularly template literals in methods displaying information. Maintain a clean coding style with 4 spaces for indentation and no spaces around operators or immediately after commas, ensuring high clarity and readability.",
+        "answer": "JavaScript;spaces:4;no spacing"
+    },
+    {
+        "id": 11,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a function in Go named `CalculateDiscount` that receives a product's original price and the discount rate as floating point numbers. This function should compute the discounted price and return it. Ensure the calculations are performed with proper precision and return type handling. The Go code should strictly adhere to a tab indentation throughout and maintain clear whitespace practices, such as spaces after commas and around operators. Implement proper error handling to address possible negative values in input parameters.",
+        "answer": "go;tabs;spacing"
+    },
+    {
+        "id": 12,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Python function named 'merge_dicts' that takes any number of dictionary arguments and merges them into a single dictionary. The merging should prioritize the latest argument in case of key collisions. Your function should be robust against receiving no arguments, returning an empty dictionary in such cases. Ensure adherence to the PEP8 style guide, with clear indentation using four spaces and appropriate spaces around operators and after commas to maintain consistent, readable code.",
+        "answer": "python;spaces:4;spacing"
+    },
+    {
+        "id": 13,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Go function named CalculateInterest that computes the simple interest given principal, rate, and time. It should return a float64 representing the interest amount. Also, define a struct named InterestParams with three float64 fields: principal, rate, and time. Maintain a clear and consistent code style that uses two spaces for indentation and no spacing around operators or commas. Properly comment your code to enhance readability and explain your logic.",
+        "answer": "go;spaces:2;no spacing"
+    },
+    {
+        "id": 14,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Design a logging configuration function in Go, named `ConfigureLogger`, which initializes a logger based on given threshold levels such as \"DEBUG\", \"INFO\", \"WARN\", \"ERROR\". The function should accept a threshold level and configure the logger to only log messages that meet or exceed this level. Use consistent coding style adhering to Google Java Style with 2-space indentation and no space around operators and after commas. Make sure to handle string case insensitivity for the input levels and return an appropriate error message if the input is invalid.",
+        "answer": "go;spaces:2;no spacing"
+    },
+    {
+        "id": 15,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Design a Go package that implements a custom logging system. Include a function 'LogMessage' that takes a message string and a severity level (e.g., \"INFO\", \"WARN\", \"ERROR\") as parameters. The function should print messages to the console following a structured format: \"[SEVERITY] message\". Ensure the code follows Go's convention of using a tab for indentation and avoids spaces around operators or after commas. This custom logging function should also ensure any conditional message formatting is handled neatly within the logical branching blocks of the code. Remember to keep the code very concise and readable.",
+        "answer": "go;tabs;no spacing"
+    },
+    {
+        "id": 16,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a Go function named `CalculateDiscount` which takes two parameters: `originalPrice` of type float64 and `discountPercentage` of type float64. The function should calculate the final price after applying the given discount percentage and return this value rounded to two decimal places. Ensure the function follows Go standard conventions including a comment describing its purpose, proper use of camelCase in naming, and adherence to GoFmt formatting guidelines which specify a tab indentation.",
+        "answer": "go;tabs;spacing"
+    },
+    {
+        "id": 17,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a Go package named 'calculator' that contains a function 'Add' which takes two integer arguments (x and y) and returns their sum. The function should also include a detailed comment that explains its purpose and parameters. Ensure that the code adheres to Go conventions: use 2-space indentation and no spaces around operators or after commas for better readability. The code should be organized and clear, with proper naming standards for variables and functions.",
+        "answer": "Go;spaces:2;no spacing"
+    },
+    {
+        "id": 18,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a C function named `calculate_checksum` where it takes an array of unsigned integers and its size as parameters. The function should compute the checksum by summing all the elements of the array and then taking modulo 256 of the result. Make sure the function definition includes proper type declarations and follows C programming conventions. Indent the code by using four spaces per level and exclude spaces around operators and after commas in function arguments to maintain readability and consistency as per the specified style.",
+        "answer": "C;spaces:4;no spacing"
+    },
+    {
+        "id": 19,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Rust function named \"string_compression\" that takes a single string argument and returns a new string where sequences of the same character are replaced by that character followed by the count of repeated characters. For instance, the string \"aabcccccaaa\" would be compressed to \"a2b1c5a3\". If the compressed string would not be shorter than the original string, return the original string. Ensure that the function logic is clearly structured, and adhere to the Google Rust Style guide which specifies 2-space indentation and no space around operators.",
+        "answer": "rust;spaces:2;no spacing"
+    },
+    {
+        "id": 20,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a URL shortening service in Go, featuring a struct named `URLShortener` with methods for storing and retrieving URLs. It should include fields `originalURL` and `shortURL` in the struct, and a map to link short URLs to their original counterparts. Implement two methods: `StoreURL`, which generates a short URL and stores the mapping, and `RetrieveURL`, which takes a short URL and returns the original URL. The methods must demonstrate error handling for cases such as invalid URL inputs or accessing non-existent keys. Maintain consistent coding style with 2-space indentation and proper spacing around operators using the Prettier Default conventions.",
+        "answer": "go;spaces:2;spacing"
+    },
+    {
+        "id": 21,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Rust function named `calculate_discount` that takes a price (float) and a percentage discount (integer) as parameters. The function should compute the discounted price, ensuring that the discount does not lead to negative pricing. The function should print the result using Rust's println! macro. Maintain Rust's coding style with tab indentation and no spacing around operators or commas, focusing on proper syntax, clarity, and formatting.",
+        "answer": "rust;tabs;no spacing"
+    },
+    {
+        "id": 22,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Python class named `DatasetUploader` that manages uploading datasets to cloud storage. The class should have methods for authentication, data processing before upload (e.g., filtering sensitive information), uploading files, and logging the upload process to a file. Incorporate exception handling to manage errors related to network issues, access permissions, and file not found. Use a consistent coding style by adhering to PEP 8 guidelines, including four spaces for indentation and proper spacing around operators and after commas to enhance readability and maintainability.",
+        "answer": "python;spaces:4;spacing"
+    },
+    {
+        "id": 23,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a C++ class named `FileProcessor` with a constructor, two private attributes (`filename` and `fileSize`), and respective getter and setter methods. Incorporate methods `openFile` and `closeFile` to manage file operations. Ensure that the code uses tab character for indentation and includes spaces after commas and around operators to follow the C++ coding conventions. Make sure the methods are clearly separated by blank lines to ensure code readability and maintainability.",
+        "answer": "C++;tabs;spacing"
+    },
+    {
+        "id": 24,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Implement a Go function named `ProcessTransaction` that takes three parameters: `amount` (float64), `currency` (string), and `isCredit` (bool). This function should return a formatted string indicating the transaction type (Credit or Debit) and the transaction amount with the currency. Follow Go's convention of using tabs for indentation and ensure there is spacing around operators and after commas. Your function should display clarity, simplicity, and compliance with Go's idiomatic practices such as proper variable naming and concise function declaration.",
+        "answer": "go;tabs;spacing"
+    },
+    {
+        "id": 25,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Design a Java class called `InventoryManager` that includes methods to add, remove, and fetch item details from a private HashMap. The class should provide three main functionalities: add an item with a unique identifier and details, remove an item by its unique identifier, and retrieve item details using the item's identifier. The code should use proper exception handling to deal with cases where an item does not exist, handle synchronous access to modify inventory items, and use generics for typesafety with items. Format the code to have a clean structure with four spaces per indent, ensuring readability.",
+        "answer": "java;spaces:4;spacing"
+    },
+    {
+        "id": 26,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Python function named `calculate_discount` that accepts a dictionary representing the items purchased in a shop where each key is the item name and each value is another dictionary containing the price of the item and the quantity purchased. The function should calculate and return the total amount after applying a 10% discount on the total purchase value. Use clear error handling to manage scenarios when data is not correctly passed. Write the function following the PEP8 styling conventions including proper use of indentations and spaces.",
+        "answer": "python;spaces:4;spacing"
+    },
+    {
+        "id": 27,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Rust function named `calculate_discount` that accepts two parameters: `original_price` of type f64 and a `discount_percentage` of type f64. The function should calculate the final price after applying the discount. Ensure the function adheres to proper Rust formatting conventions including Rustfmt default settings. The function should include informative comments explaining the purpose and the logic of the function, consistent naming conventions, and proper use of spaces as required by the Rustfmt default rules.",
+        "answer": "Rust;spaces:4;spacing"
+    },
+    {
+        "id": 28,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a JavaScript function named calculateDiscount that takes two parameters: originalPrice and discountPercentage. The function should calculate the final price after applying the specified percentage discount to the original price. Include error handling to verify if the inputs are numeric and throw a TypeError if they are not. The code should adhere to the Prettier Default standards with 2-space indentation and consistent spaces around operators. Ensure that the function is documented with comments explaining the functionality.",
+        "answer": "JavaScript;spaces:2;spacing"
+    },
+    {
+        "id": 29,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Design a Java class named ShoppingCart that manages items in a customer's online shopping cart. The class should include an ArrayList to store the names of the items. Implement methods to add an item, remove an item by name, and calculate the total number of items in the cart. Additionally, include a method to display all items in the cart. Embrace the Google Java Style for your code with 2-space indentation and no space around operators and after commas. Ensure that your code is clear and maintainable with appropriate method spacing.",
+        "answer": "java;spaces:2;no spacing"
+    },
+    {
+        "id": 30,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Python function named `process_transaction` that accepts two parameters (`transactions` as a list of dictionaries, and `currency` as a string). This function should filter out transactions that occur in the specified currency and compute the total amount. Use exception handling to manage transactions with missing 'amount' or 'currency' keys. Implement clear and consistent error messages. Follow Python coding conventions with 4-space indentation and no spaces around operators or commas in the list.",
+        "answer": "python;spaces:4;no spacing"
+    },
+    {
+        "id": 31,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Python class named WeatherStation that simulates the behavior of a weather measuring station. It should include the following private attributes: location, temperature, and humidity. Incorporate methods to set and retrieve these attributes, and ensure parameter validation in setter methods (e.g., temperature and humidity should be numerical). Additionally, include a method 'display_status' that prints a formatted string summarizing the weather conditions at the location. The Python code should strictly implement tab indentation and avoid spaces around operators and after commas in parameter lists or collection literals.",
+        "answer": "python;tabs;no spacing"
+    },
+    {
+        "id": 32,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Java class named 'InventoryManager' which encapsulates operations to add, remove, and update items in an inventory system. The class should have a private HashMap to store item names and their quantities. Include public methods for each operation named addItem(String itemName, int quantity), removeItem(String itemName), and updateItem(String itemName, int quantity) that modify the internal HashMap accordingly. Error handling should be implemented to manage scenarios such as trying to remove a non-existent item or updating with invalid quantities. Consistent coding practices should be maintained with two spaces for indentation, no spaces around operators or after commas in method signatures.",
+        "answer": "java;spaces:2;no spacing"
+    },
+    {
+        "id": 33,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a C function named `calculate_discount` that takes two arguments: the original price (a float) and the discount rate (an integer percentage). Ensure that the function returns the final price after applying the discount. The calculations should be verbose and clear, with temporary variables to hold intermediate results. The code should follow C programming conventions including 4-space indentation, spaces around operators and after commas, and proper use of parentheses to ensure clarity in mathematical expressions. Include comments to explain each step and decision in the code execution.",
+        "answer": "C;spaces:4;spacing"
+    },
+    {
+        "id": 34,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Python module with a class named 'FinancialReport' that consists of a constructor, three private attributes (`total_sales`, `expenses`, and `net_income`) and a method `calculate_net_income` to compute net income from total sales minus expenses. Include detail in documentation strings for each method and the constructor. Follow PEP 8 style: specifically, use four spaces for indentation and ensure adherence to spacing norms such as one space on either side of assignment or comparison operators. Include informative comments within your code.",
+        "answer": "python;spaces:4;spacing"
+    },
+    {
+        "id": 35,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a C++ class named TransactionProcessor that handles financial transactions. The class should have a constructor, private attributes for user ID, transaction ID, and transaction amount. Include public member functions to validate and process transactions, ensuring proper error handling and transaction validation. Utilize C++ STL (Standard Template Library) appropriately within the class methods. Ensure consistent coding style based on the Rustfmt standard, including 4-space indentation and appropriate spacing around operators and after commas for clarity and maintainability.",
+        "answer": "C++;spaces:4;spacing"
+    },
+    {
+        "id": 36,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a C++ class called `Vehicle` that includes a constructor, three private attributes (`model`, `year`, and `maxSpeed`), and corresponding public getter and setter methods for these attributes. Implement an instance method `vehicleInfo` that returns a string containing a detailed description (including all attributes) of the Vehicle object formatted in a structured manner. Ensure correct usage of pointer `this` to access instance variables. The coding style must strictly adhere to the Prettier Default convention: 2-space indentation and consistent spaces around operators and after commas.",
+        "answer": "C++;spaces:2;spacing"
+    },
+    {
+        "id": 37,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a Rust module named `calculator` that includes a struct `Calculator` with two fields: `value1` and `value2`. The struct should have methods `add`, `subtract`, `multiply`, and `divide` returning results of type f64. Implement error handling to manage division by zero and panic in such cases. Ensure the code is formatted with tab indentation and lacks spaces around operators or after commas to maintain a clear, concise syntax as per the Rust convention.",
+        "answer": "Rust;tabs;no spacing"
+    },
+    {
+        "id": 38,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a JavaScript function named `calculateDiscount` that takes two parameters - `originalPrice` and `discountPercentage`. The function should return the new price after applying the discount. Ensure the function strictly follows the 2-space indentation rule without any spaces around operators or after commas. Include clear spacing and line breaks to separate logic blocks within the function for readability.",
+        "answer": "JavaScript;spaces:2;no spacing"
+    },
+    {
+        "id": 39,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Design a C function called calculate_discount that takes two arguments: original_price of type double, and discount_percentage of type int. This function should calculate the final price after applying the discount and return it as a double. Ensure proper use of C language conventions, including 4-space indentation, no spaces around operators or after commas, and appropriate spacing for readability within blocks and statements.",
+        "answer": "C;spaces:4;no spacing"
+    },
+    {
+        "id": 40,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Go function named `RecordTemperature` that takes in a float64 temperature value and writes this value to a file named 'temperature_log.txt'. The file should append new entries, each on a new line, without overwriting the previous content. Ensure the function uses proper error handling to manage file access issues. Follow code readability and maintainability practices specific to Go, such as using tab indentation, spaces after commas and around operators, and providing comments for sections of code that handle file operations.",
+        "answer": "go;tabs;spacing"
+    },
+    {
+        "id": 41,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Rust module named `config_loader` with a function `load_configuration` which takes a file path as a string and returns a Result of a hash map containing key-value pairs of the configuration settings. Utilize proper error handling in case the file cannot be read or parsed. Adhere to the Google Rust Style, using 2-space indentation and no space around operators or after commas, while also closely following the conventions for readability such as clear naming, code comments, and segmenting code appropriately.",
+        "answer": "rust;spaces:2;no spacing"
+    },
+    {
+        "id": 42,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Implement a C++ class named `WeatherStation` containing private attributes: `stationId` (string), `temperature` (double), and `humidity` (double). Include a constructor that initializes these attributes, getter and setter methods for each attribute, and a `reportConditions` method which returns a formatted string showing the current weather conditions. Adhere to the following coding conventions: use tab indentation for structuring code blocks and ensure proper spacing around operators and after commas for readability. The class should demonstrate clear separation of methods for easier maintenance.",
+        "answer": "C++;tabs;spacing"
+    },
+    {
+        "id": 43,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a Go package named \"calculator\" that includes a function `Add(mul1, mul2 int) int` which calculates and returns the sum of two integers. Ensure the function's implementation uses four-space indentation with spaces around operators and after commas to follow code styling guidelines. Include comments within the code to explain each functionality step and ensure the code readability and maintainability.",
+        "answer": "go;spaces:4;spacing"
+    },
+    {
+        "id": 44,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a JavaScript function named `calculateDiscount` that calculates the total price after applying a discount percentage. The function should accept two parameters: `originalPrice` and `discountPercentage`. It should return the calculated price, formatted to two decimal places. Ensure proper syntax with concise variable names and correct use of comparison operators. The JavaScript function should follow a consistent coding style: use tab indentation, no spacing around operators and keywords, and appropriate line breaks between logical sections within the function.",
+        "answer": "JavaScript;tabs;no spacing"
+    },
+    {
+        "id": 45,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a Java class named `ProductCatalog` with a constructor, two private attributes (`productName` and `productPrice`), and methods to get and set each attribute. Include override methods for equals and hashCode to ensure product objects can be used effectively within collections like HashMap and HashSet. The code should adhere to Java conventions including using two spaces for indentation and omitting spaces around operators and after commas. Clear method segregation should be followed to ensure readability.",
+        "answer": "java;spaces:2;no spacing"
+    },
+    {
+        "id": 46,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a C++ class called 'DataLogger' with a constructor, private attributes for log ID (int), log description (string), and total records (int). Include appropriate getter and setter methods for accessing and updating these private attributes. Additionally, define a method 'displayLogInfo()' that prints a formatted message showing the attributes. Follow a C++ specific coding style: consistently use a 4-space indentation, and no spaces around operators or after commas in the parameter list to ensure clarity and maintainability.",
+        "answer": "C++;spaces:4;no spacing"
+    },
+    {
+        "id": 47,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Design a Java class called DatabaseManager to handle database operations such as connecting to the database, executing a query, and closing the database connection. The class should have methods like `connect()`, `executeQuery(String query)`, and `close()`. Each method should have proper error handling to manage SQLExceptions and ensure resource deallocation using `finally` blocks for closing the connection. Maintain code clarity and ensure four spaces are used for indentation, with proper spacing around the keywords.",
+        "answer": "java;spaces:4;spacing"
+    },
+    {
+        "id": 48,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Go function named \"ProcessTransaction\" that takes two parameters: a float64 amount and a string currency type (e.g., \"USD\", \"EUR\"). The function should calculate the conversion of the provided amount to a target currency (\"JPY\") based on predefined rates (e.g., USD to JPY = 114.39, EUR to JPY = 128.66). Implement error handling to manage cases where the currency type provided is not supported. Ensure the code follows the Prettier Default style guide with 2-space indentation and consistent spaces around operators and commas for readability and maintainability.",
+        "answer": "Go;spaces:2;spacing"
+    },
+    {
+        "id": 49,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Develop a Go function named `CalculateDiscount` which takes the original price (float64) and a discount percentage (float64) as parameters. The function should return the new price after applying the discount, using proper floating-point arithmetic to ensure accuracy. Incorporate error checking to ensure the discount percentage is between 0 and 100 (inclusive), raising an error if not. Utilize the Go standard practice of using tabs for indentation, and ensure there is no spacing around operators or after commas.",
+        "answer": "go;tabs;no spacing"
+    },
+    {
+        "id": 50,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a C++ class named 'Transaction' that encapsulates financial transactions. The class should include a constructor, and private attributes for transactionId (type int), amount (type double), and description (type std::string). Include public member functions to get and set these attributes. Overload the output stream operator (<<) to provide a clean formatted output of the transaction details. Adhere to the \"Prettier Default\" code style, which includes using a 2-space indentation and consistent spacing around operators and after commas for better readability.",
+        "answer": "C++;spaces:2;spacing"
+    },
+    {
+        "id": 51,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a Kotlin class named ShoppingCart that includes a list to hold item objects. Implement methods within the ShoppingCart class: one called addItem to insert an item to the cart, and another named calculateTotalPrice to sum up and return the total price of the items. Additionally, meticulously format your code using 2-space indentation for organizing blocks and proper spacing around operators and keywords.",
+        "answer": "kotlin;spaces:2;spacing"
+    },
+    {
+        "id": 52,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Design a C++ class called MatrixMultiplier that includes a method named MultiplyMatrices, which takes two 2D arrays as parameters to compute their product and returns the resulting matrix. Ensure the method uses clear, consistent indentations (4 spaces per indentation level) to enhance code readability and maintainability.",
+        "answer": "cpp;spaces:4;no spacing"
+    },
+    {
+        "id": 53,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a basic Java class named Employee, which includes a constructor, three private attributes (name, age, and salary), and corresponding getter and setter functions. Additionally, maintain consistent indentation and spacing throughout your code: use a consistent four spaces for indentation and proper spacing around operators and keywords to enhance readability.",
+        "answer": "java;spaces:4;spacing"
+    },
+    {
+        "id": 54,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a Rust function named `matrix_product` that accepts two parameters: `matrix1` and `matrix2`, which are two-dimensional vectors representing matrices. The function should calculate and return their matrix product. Additionally, adhere to Rust's indentation and spacing guidelines such as using 4 spaces for indentation and appropriate spacing around operators.",
+        "answer": "rust;spaces:4;spacing"
+    },
+    {
+        "id": 55,
+        "category": "code_convention",
+        "constraint": "indentation_spacing",
+        "prompt": "Create a Python function named `mergeSortedLists` that takes two sorted lists, `list1` and `list2`, as parameters and returns a combined sorted list. This function should efficiently handle scenarios where either or both input lists may be empty, and it should effectively manage duplicates within each list. Moreover, maintain proper indentation using four spaces for each level of nesting to organize the code logically and improve its readability.",
+        "answer": "python;spaces:4;spacing"
+    }
+]

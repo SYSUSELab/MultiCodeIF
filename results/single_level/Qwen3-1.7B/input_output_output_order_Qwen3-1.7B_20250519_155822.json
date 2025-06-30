@@ -1,0 +1,497 @@
+[
+  {
+    "id": 1,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `process_users` that takes a vector of tuples (consisting of a string for user ID and an integer status) as input. The function should iterate through the vector, add the user ID to a new vector if the status is exactly 1, and return two values: 1. A list of processed user IDs if the status is 1 (`Vec<String>`), 2. A boolean flag that is `true` if all users in the input had a status of 1, otherwise `false` (`bool`). Ensure the values are returned in this specific order without changing the order.",
+        "fn process_users(users: Vec<(String, i32)>) -> (Vec<String>, bool) {\n    let mut processed_ids: Vec<String> = Vec::new();\n    let mut all_status_1: bool = true;\n\n    for (user_id, status) in users {\n        if status != 1 {\n            all_status_1 = false;\n        }\n        if status == 1 {\n            processed_ids.push(user_id);\n        }\n    }\n\n    (processed_ids, all_status_1)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `track_download` which accepts the total bytes and downloaded bytes of a file as inputs. The function should then compute the download progress as a percentage and determine whether the download is complete. Return the results in the following order: 1. The download progress percentage as a float (`float`), rounded to two decimal places. 2. A boolean flag indicating whether the download is complete (`bool`), which should be `true` if 100% of the bytes have been downloaded.",
+        "fn track_download(total: u64, downloaded: u64) -> (f64, bool) {\n    let progress = (downloaded as f64 / total as f64) * 100.0;\n    let is_complete = downloaded == total;\n    (progress, is_complete)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named `process_error_logs` that accepts a list of error codes (strings) as input and performs a systematic analysis to return the following: 1. A set of unique error codes (`set`), 2. Count of total error occurrences (`int`), 3. A boolean flag (`bool`) indicating if any of the error codes belong to a predefined critical error list. The list of critical errors must be defined within the function. Ensure the function returns the results in this specific order without any discrepancies in the data types or order.",
+        "```python\ndef process_error_logs(error_codes):\n    critical_errors = {\"CRITICAL1\", \"CRITICAL2\", \"CRITICAL3\"}\n    unique_errors = set(error_codes)\n    total_occurrences = len(unique_errors)\n    has_critical_error = any(error in critical_errors for error in unique_errors)\n    return unique_errors, total_occurrences, has_critical_error\n```"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `analyze_user_logins` that takes a Vec of tuples with username and login timestamp as input (`Vec<(&str, u64)>`) and returns **exactly two values** in the following order: 1. A `HashMap` where keys are usernames (`&str`) and values are the most recent login timestamps (`u64`), 2. The total number of unique active users (`usize`). The function must return the values in this specific order. Do not change the return order or omit any of the values.",
+        "```rust\nuse std::collections::HashMap;\n\nfn analyze_user_logins(logins: Vec<(&str, u64)>) -> (HashMap<&str, u64>, usize) {\n    let mut user_logins = HashMap::new();\n    let mut active_users = 0;\n\n    for (username, timestamp) in logins {\n        if user_logins.insert(username, *timestamp) == Some(*timestamp) {\n            active_users += 1;\n        }\n    }\n\n    (user_logins, active_users)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named `tag_frequency_counter` that takes a list of strings, each representing a tag, and analyzes the tag usage. The function should return exactly two values in this order: 1. A dictionary where keys are tags and values are their frequency of occurrence in the list (`dict[str, int]`), 2. The total count of tags processed (`int`). Ensure that the return order and the data types are accurately maintained as specified.",
+        "def tag_frequency_counter(tags):\n    from collections import Counter\n    freq = Counter(tags)\n    total = len(tags)\n    return freq, total"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function called `fetch_weather_data` that accepts a string argument `api_url`, makes an HTTP GET request to the provided URL, and returns **exactly two values**: 1. The raw API response dict as a JSON object (`JSONObject`), 2. A boolean indicating whether the API call was successful (`bool`). The function must return these values in this specific order. Ensure that all network operations handle potential errors gracefully and that the success status accurately reflects the outcome of the network request.",
+        "```rust\nuse reqwest::Error;\nuse serde_json::Result;\n\npub fn fetch_weather_data(api_url: &str) -> Result<(serde_json::Value, bool), Error> {\n    let response = reqwest::get(api_url).map_err(|e| e)?;\n    let json: serde_json::Value = response.json().map_err(|e| e)?;\n    Ok((json, response.status().is_success()))\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `process_files` that takes a list of file paths (strings) and processes each file to perform a certain operation (e.g., reading file contents). The function should return **exactly three values** in this specific order: 1. A list of processed filenames (`list[str]`), 2. The total number of files processed (`int`), 3. The total time taken to process all files in seconds, rounded to two decimal places (`float`). Ensure that the function handles various exceptions such as file not found or access denied gracefully and logs these errors.",
+        "```python\nimport time\nimport logging\nfrom typing import List, Tuple, Optional\n\ndef process_files(file_paths: List[str]) -> Tuple[List[str], int, float]:\n    processed_files = []\n    total_files = 0\n    total_time = 0.0\n\n    logging.basicConfig(level=logging.INFO)\n\n    for file_path in file_paths:\n        try:\n            with open(file_path, 'r') as file:\n                content = file.read()\n                processed_files.append(file_path)\n                total_files += 1\n                # Simulate processing time\n                time.sleep(0.1)\n                total_time += 0.1\n        except FileNotFoundError:\n            logging.error(f\"File not found: {file_path}\")\n        except PermissionError:\n            logging.error(f\"Access denied: {file_path}\")\n        except Exception as e:\n            logging.error(f\"An error occurred: {e}\")\n\n    return processed_files, total_files, round(total_time, 2)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `calculate_velocity_statistics` that receives a list of float values representing speeds in kilometers per hour. The function should return exactly three values in this order: 1. The average speed as a float, rounded to two decimal places (`float`), 2. The maximum speed from the list as a float (`float`), 3. The minimum speed from the list as a float (`float`). The data must be returned in this precise order.",
+        "```python\ndef calculate_velocity_statistics(speeds):\n    average = sum(speeds) / len(speeds)\n    max_speed = max(speeds)\n    min_speed = min(speeds)\n    return average, max_speed, min_speed\n```"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Rust function named `generate_auth_token` that generates an authentication token for a user. The function should accept a string representing the username and return exactly two values in the following order: 1. The generated authentication token (`String`), 2. The expiration time of the token in seconds (`i32`). The function must ensure the return values are in this specific sequence without any exceptions.",
+        "fn generate_auth_token(username: &str) -> (String, i32) {\n    // Example implementation: generate a random token and set an expiration time\n    let token = \"random_token_123456\";\n    let expiration = 3600; // 1 hour in seconds\n    (token.to_string(), expiration)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function `extract_name_details` that takes a single string argument representing a full name in the format \"FirstName LastName\". The function should return two values: the first being the extracted first name (`str`), and the second being the extracted last name (`str`). Ensure the function only accepts and returns names where each respective name part contains only alphabetical characters. If either name part contains non-alphabetical characters, the function should raise a ValueError.",
+        "def extract_name_details(name):\n    first_name, last_name = name.split()\n    if not (first_name.isalpha() and last_name.isalpha()):\n        raise ValueError(\"Both name parts must contain only alphabetical characters\")\n    return first_name, last_name"
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `find_substring_indices` that takes two input parameters: a main string (`str`) and a substring (`str`). The function should return a tuple containing **exactly two integers**, where the first integer is the start index of the first occurrence of the substring in the main string, and the second integer is the end index of this occurrence. If the substring is not found, the function should return `(-1, -1)`. Ensure the function accurately identifies the position of the substring, handling cases where the substring is not present.",
+        "def find_substring_indices(str, substr):\n    return (str.find(substr), str.find(substr, 1)) if substr in str else (-1, -1)"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Write a Python function named `check_palindrome` that takes a single string as input and returns **exactly two values** in the following order: 1. A boolean indicating if the string is a palindrome (True if palindrome, False otherwise), and 2. The length of the string as an integer. The function must adhere to this specific output order. Both return values are required.",
+        "def check_palindrome(s):\n    is_palindrome = s == s[::-1]\n    length = len(s)\n    return is_palindrome, length"
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `log_generator` which accepts a string message, a unique log ID (u64), a boolean indicating whether it's an error, and a severity level (ranging from 0 to 5). The function should generate a timestamp using the current system time as an i64 and return a tuple containing the following five pieces of information: 1. The log message as a `String`, 2. The unique log ID as a `u64`, 3. A boolean indicating if it's an error log (`bool`), 4. The severity level as a `u8`, 5. The generated timestamp as an `i64`. Ensure that the data is returned in this specific order.",
+        "```rust\nfn log_generator(message: &str, log_id: u64, is_error: bool, severity: u8) -> (String, u64, bool, u8, i64) {\n    let timestamp = std::time::SystemTime::now()\n        .duration_since(std::time::UNIX_EPOCH)\n        .unwrap()\n        .as_nanos() as i64;\n    (message.to_string(), log_id, is_error, severity, timestamp)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `schedule_next_event` that takes a list of tuples representing scheduled events. Each tuple contains a unique event description (string) and its scheduled execution time in epoch milliseconds (integer). The function should maintain a min-heap structure to efficiently manage these events and determine which event is up next. The function should return two values in this specific order: 1. The current state of the event heap as a heapq (`heapq`), 2. A string describing the next upcoming event (`str`). Ensure that the event earlier in time remains at the top of the heap.",
+        "```python\nimport heapq\n\ndef schedule_next_event(events):\n    # Create a min-heap from the list of events\n    heapq.heapify(events)\n    \n    # Get the next event\n    next_event = heapq.heappop(events)\n    \n    # Return the heap and the next event description\n    return events, next_event[0]\n```"
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `manage_print_queue` that takes two inputs: a `VecDeque` of tuples (printer ID as `String` and job ID as `i32`), representing the pending print jobs, and a `HashMap` with printer ID as `String` and a boolean indicating if the printer is currently active (`true` for active, `false` for inactive). The function should process these inputs and return four values in this specific order: 1. A `VecDeque` containing the updated queue after removing jobs for inactive printers, 2. A `HashMap` updated with the status of each printer after processing the jobs, 3. A `BTreeSet` listing all printers that are scheduled for maintenance, derived from processing overloads or errors, and 4. An `ArrayVec` of a fixed size (5 elements) storing the last five completed jobs for audit purposes.",
+        "```rust\nuse std::collections::{VecDeque, HashMap, BTreeSet};\nuse std::array::ArrayVec;\n\nfn manage_print_queue(printer_jobs: VecDeque<(String, i32)>, printer_status: HashMap<String, bool>) -> (VecDeque<(String, i32)>, HashMap<String, bool>, BTreeSet<String>, ArrayVec<i32, 5>) {\n    // Step 1: Filter out jobs for inactive printers\n    let mut updated_queue = VecDeque::new();\n    for (printer_id, job_id) in printer_jobs {\n        if printer_status.get(&printer_id).unwrap_or(&false) == &true {\n            updated_queue.push_back((printer_id, job_id));\n        }\n    }\n\n    // Step 2: Update printer status\n    let mut updated_status = HashMap::new();\n    for (printer_id, status) in printer_status {\n        updated_status.insert(printer_id, *status);\n    }\n\n    // Step 3: Derive printers scheduled for maintenance (assuming a simple condition)\n    let mut maintenance_printers = BTreeSet::new();\n    for (printer_id, status) in printer_status {\n        if status == false {\n            maintenance_printers.insert(printer_id);\n        }\n    }\n\n    // Step 4: Collect last five completed jobs (assuming job_id is used as index)\n    let mut completed_jobs = ArrayVec::new();\n    let mut job_index = 0;\n    for (printer_id, job_id) in updated_queue {\n        completed_jobs.push(*job_id);\n        if completed_jobs.len() > 5 {\n            completed_jobs.pop();\n        }\n    }\n\n    (updated_queue, updated_status, maintenance_printers, completed_jobs)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `generate_prime_numbers` that takes an integer value `n` as input, representing an upper limit. The function should generate all prime numbers less than or equal to `n` and return two values: 1. A slice of integers representing the list of prime numbers (`[]int`), 2. An error value (`error`) which should be `nil` if no errors occurred during processing, or an error detailing what went wrong (for example, if input is a negative number).",
+        "package main\n\nimport (\n\t\"errors\"\n\t\"fmt\"\n\t\"math\"\n\t\"sort\"\n)\n\nfunc generate_prime_numbers(n int) (primes []int, err error) {\n\tif n < 2 {\n\t\treturn nil, errors.New(\"n must be at least 2\")\n\t}\n\n\tprimes = make([]int, 0)\n\tsieve := make([]bool, n+1)\n\n\tfor i := range sieve {\n\t\tsieve[i] = true\n\t}\n\n\tsieve[0] = false\n\tsieve[1] = false\n\n\tfor i := 2; i*i <= n; i++ {\n\t\tif sieve[i] {\n\t\t\tfor j := i * i; j <= n; j += i {\n\t\t\t\tsieve[j] = false\n\t\t\t}\n\t\t}\n\t}\n\n\tfor i := 2; i <= n; i++ {\n\t\tif sieve[i] {\n\t\t\tprimes = append(primes, i)\n\t\t}\n\t}\n\n\treturn primes, nil\n}\n\n// Example usage:\n// primes, err := generate_prime_numbers(10)\n// if err != nil {\n//     fmt.Println(err)\n// } else {\n//     fmt.Println(primes)\n// }"
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `parse_config_file` that takes a string representing the path to a configuration file and processes this file to extract configuration parameters. The function should handle errors such as file not found or syntax errors in the configuration gracefully. It should return the following four values in this specific order: 1. A dictionary containing the parsed configuration parameters (`dict`), 2. A list of warnings generated during the parsing process (`list`), 3. A boolean indicating whether the parsing process was error-free (`bool`), 4. The name of the source configuration file as a string (`str`). Ensure all return values are in this precise order.",
+        "```python\ndef parse_config_file(config_path):\n    try:\n        with open(config_path, 'r') as file:\n            config_content = file.read()\n            # Simple parsing logic (this is a placeholder; actual parsing logic would depend on the config format)\n            config_params = {}\n            # Example parsing logic (replace with actual parsing logic)\n            for line in config_content.splitlines():\n                if line.strip():\n                    key, value = line.strip().split('=', 1)\n                    config_params[key] = value\n            warnings = []\n            success = True\n            return config_params, warnings, success, config_path\n    except FileNotFoundError:\n        warnings.append(\"File not found.\")\n        success = False\n    except SyntaxError:\n        warnings.append(\"Syntax error in configuration file.\")\n        success = False\n    except Exception as e:\n        warnings.append(f\"An error occurred: {str(e)}\")\n        success = False\n    return config_params, warnings, success, config_path\n```"
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `parse_http_request` that takes a raw HTTP request string as input. The function should parse the HTTP headers and cookie data, returning four values in this specific order: 1. A `SmallVec` containing inline storage of commonly used HTTP headers, 2. A `HashMap` mapping header names to their respective values, 3. A `Vec` containing raw header lines from the HTTP request, 4. A `BTreeMap` where cookies are sorted by name. Ensure the function is optimized to handle different types of HTTP request headers and cookies efficiently.",
+        "```rust\nuse std::collections::{HashMap, BTreeMap};\nuse std::vec::Vec;\nuse std::smallvec::SmallVec;\n\nfn parse_http_request(request: &str) -> (SmallVec<[&str]>, HashMap<String, String>, Vec<&str>, BTreeMap<String, String>) {\n    let lines: Vec<&str> = request.lines().collect();\n    let mut headers: HashMap<String, String> = HashMap::new();\n    let mut cookie_map: BTreeMap<String, String> = BTreeMap::new();\n    let mut header_lines: Vec<&str> = Vec::new();\n    let mut inline_headers: SmallVec<[&str; 8]> = SmallVec::new();\n\n    for line in lines {\n        if line.trim_start_eq(\"\") == \"\" {\n            continue;\n        }\n        let parts: Vec<&str> = line.split_whitespace().collect();\n        if parts.len() == 0 {\n            continue;\n        }\n        let method = parts[0];\n        let url = parts[1];\n        let version = parts[2];\n\n        if let Some((_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _,"
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `calculate_response_stats` that takes a slice of float64 values representing response times in milliseconds of various API requests. The function should calculate and return detailed statistics about the response times in the following specific order: 1. The mean response time (`float64`), 2. The median response time (`float64`), 3. The 95th percentile response time (`float64`), 4. The total number of samples as an integer (`int`), and 5. An error type (`error`), which should be nil unless there is a computation error or the input slice is empty. Ensure handling and returning the error accordingly if any issues arise during the calculations.",
+        "package main\n\nimport (\n\t\"errors\"\n\t\"fmt\"\n\t\"sort\"\n)\n\nfunc calculateResponseStats(responses []float64) (float64, float64, float64, int, error) {\n\tif len(responses) == 0 {\n\t\treturn 0, 0, 0, 0, errors.New(\"empty input slice\")\n\t}\n\n\tsort.Float64s(responses)\n\n\tn := float64(len(responses))\n\tmedian := 0.0\n\tpercentile := 0.0\n\n\tif n%2 == 0 {\n\t\tmedian = (responses[n/2-1] + responses[n/2]) / 2\n\t} else {\n\t\tmedian = responses[n/2]\n\t}\n\n\t// 95th percentile calculation\n\tif n == 0 {\n\t\tpercentile = 0.0\n\t} else {\n\t\t// Using linear interpolation for 95th percentile\n\t\tpercentile = responses[int(0.95*n)]\n\t}\n\n\ttotalSamples := int(n)\n\n\treturn median, percentile, percentile, totalSamples, nil\n}"
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `evaluate_model_accuracy` that takes a list of predicted values and a list of actual values as inputs. The function computes the accuracy of the model by comparing the two lists. The function should return exactly three values in this specific order: 1. The calculated accuracy as a percentage rounded to two decimal places (`float`), 2. A descriptive string name of the test run (`str`), 3. A boolean flag indicating if the calculated accuracy is greater than or equal to 90% (`bool`). Ensure the function carefully handles different lengths of input lists and other potential exceptions.",
+        "def evaluate_model_accuracy(predicted, actual):\n    if not predicted or not actual:\n        raise ValueError(\"Both predicted and actual lists must be non-empty.\")\n    if len(predicted) != len(actual):\n        raise ValueError(\"Predicted and actual lists must be of the same length.\")\n    \n    correct = sum(1 for p, a in zip(predicted, actual) if p == a)\n    accuracy = (correct / len(predicted)) * 100\n    \n    test_name = \"Model Accuracy Test\"\n    is_high_accuracy = accuracy >= 90\n    \n    return accuracy, test_name, is_high_accuracy"
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `initialize_task_queue` that takes a list of tasks (each represented as a string) and enqueues them into a Python Queue. The function should return exactly two values in this specific order: 1. A `queue.Queue` object containing all the tasks, 2. The total number of tasks that were enqueued (`int`). Ensure the queue is initialized and tasks are enqueued properly.",
+        "```python\nfrom queue import Queue\n\ndef initialize_task_queue(tasks):\n    queue = Queue()\n    task_count = 0\n    for task in tasks:\n        queue.put(task)\n        task_count += 1\n    return queue, task_count\n```"
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `generate_api_key` that takes no parameters and generates a random API key in hexadecimal format. The function should return exactly two values in this order: 1. The generated API key as a string (`str`), 2. A boolean flag that is `true` if the key generation was successful, otherwise `false` (`bool`). Handle any potential errors gracefully and ensure the values are returned in the specified order.",
+        "import random\nimport string\n\ndef generate_api_key():\n    # Generate a 16-character hexadecimal string\n    hex_key = ''.join(random.choices(string.hexdigits.upper(), k=16))\n    success = True\n    return hex_key, success"
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `readFileWithMime` that takes a string representing the file path. The function should read the file content and detect its MIME type using appropriate libraries. It should return exactly three values in this specific order: 1. The file content as a byte slice (`[]byte`), 2. The MIME type as a string (`string`), 3. An error, if any occurred during the read process (`error`). Design the function to handle common file-reading errors including file not found and permission issues.",
+        "package main\n\nimport (\n\t\"io\"\n\t\"os\"\n\t\"fmt\"\n)\n\nfunc readFileWithMime(filePath string) ([]byte, string, error) {\n\tfile, err := os.Open(filePath)\n\tif err != nil {\n\t\treturn nil, \"\", fmt.Errorf(\"failed to open file: %w\", err)\n\t}\n\tdefer file.Close()\n\n\t// Read the file content\n\tcontent, err := io.ReadAll(file)\n\tif err != nil {\n\t\treturn nil, \"\", fmt.Errorf(\"failed to read file: %w\", err)\n\t}\n\n\t// Determine MIME type\n\tmime := detectMime(content)\n\treturn content, mime, nil\n}\n\nfunc detectMime(data []byte) string {\n\t// This is a simple MIME type detection using the first few bytes\n\t// For a production environment, use a more sophisticated library\n\tif len(data) < 5 {\n\t\treturn \"application/octet-stream\"\n\t}\n\n\t// Check for common MIME types\n\tif strings.HasPrefix(string(data[:5]), \"image/\") {\n\t\treturn \"image/*\"\n\t} else if strings.HasPrefix(string(data[:5]), \"text/\") {\n\t\treturn \"text/*\"\n\t} else if strings.HasPrefix(string(data[:5]), \"application/\") {\n\t\treturn \"application/*\"\n\t}\n\n\treturn \"application/octet-stream\"\n}"
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function called `initTaskChannel` that initializes and returns a Go channel for receiving task IDs as integers. This function should create a channel for handling incoming task IDs, attempt to buffer it with a specified size, and return two values: 1. The channel of type `chan int` for incoming task IDs, 2. A boolean flag that is `true` if the channel was successfully initialized and buffered without any errors, otherwise `false`. The buffering size and error handling should be configured based on the provided buffer size parameter.",
+        "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc initTaskChannel(bufferSize int) (chan int, bool) {\n\tch := make(chan int, bufferSize)\n\treturn ch, true\n}\n\nfunc main() {\n\t// Example usage\n\tch, ok := initTaskChannel(5)\n\tif ok {\n\t\tfmt.Println(\"Channel initialized successfully\")\n\t} else {\n\t\tfmt.Println(\"Failed to initialize channel\")\n\t}\n}"
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `fetchUserProfileAndStatus` that takes a slice of integers representing user IDs. The function should fetch user profile information for each ID and determine if the profile is active. It should return exactly two values in this order: 1. A slice of structs containing user profile data, where each struct includes fields like username and email (`[]struct`), 2. A boolean flag that is `true` if all profiles in the input are active, otherwise `false` (`bool`). Ensure the data is returned in this specific order.",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"sort\"\n)\n\ntype userProfile struct {\n\tUsername string\n\tEmail    string\n}\n\nfunc fetchUserProfileAndStatus(userIDSlice []int) ([]struct{}, bool) {\n\tprofileData := []struct{}{\n\t\t{Username: \"user1\", Email: \"user1@example.com\"},\n\t\t{Username: \"user2\", Email: \"user2@example.com\"},\n\t\t{Username: \"user3\", Email: \"user3@example.com\"},\n\t}\n\n\t// Filter active profiles\n\tactiveProfiles := make([]struct{}, 0)\n\tfor _, user := range profileData {\n\t\t// Assume active profiles are those with email containing \"active\"\n\t\tif user.Email != \"\" && \"active\" != \"\" && \"active\" == user.Email {\n\t\t\tactiveProfiles = append(activeProfiles, user)\n\t\t}\n\t}\n\n\t// Check if all profiles are active\n\tallActive := len(activeProfiles) == len(profileData)\n\n\treturn activeProfiles, allActive\n}\n\nfunc main() {\n\tuserIDs := []int{1, 2, 3}\n\tprofiles, allActive := fetchUserProfileAndStatus(userIDs)\n\tfmt.Printf(\"Profiles: %v\\n\", profiles)\n\tfmt.Printf(\"All active: %v\\n\", allActive)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `analyze_temperature_data` that receives a slice of float64 values representing daily temperatures in degrees Celsius. The function should compute and return exactly two values in this order: 1. The average temperature as a float64, 2. The standard deviation of the temperatures as a float64, each rounded to two decimal places. This computation should be efficient even with a large set of data inputs.",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc analyzeTemperatureData(temperatures []float64) (float64, float64) {\n\tif len(temperatures) == 0 {\n\t\treturn 0, 0\n\t}\n\n\tn := float64(len(temperatures))\n\taverage := math.Sum(temperatures) / n\n\n\tvar sumOfSquares float64\n\tfor _, temp := range temperatures {\n\t\tsumOfSquares += math.Pow(temp, 2)\n\t}\n\n\tvar variance float64\n\tvariance = (sumOfSquares / n) - average * average\n\n\tstdDev := math.Sqrt(variance)\n\n\treturn roundToTwoDecimals(average), roundToTwoDecimals(stdDev)\n}\n\nfunc roundToTwoDecimals(value float64) float64 {\n\treturn math.Round(value*100) / 100\n}\n\nfunc main() {\n\ttemperatures := []float64{22.5, 23.0, 22.8, 24.2, 23.5}\n\tavg, std := analyzeTemperatureData(temperatures)\n\tfmt.Printf(\"Average: %.2f, Standard Deviation: %.2f\\n\", avg, std)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `extract_tags_from_documents` that takes a list of document strings and processes each to extract and analyze tag data denoted by `#` symbols within the documents. The function should return exactly five values in this specific order: 1. A set of unique tags used across all documents (`set`), 2. A dictionary where each key is a tag and its value is the frequency of that tag across all documents (`dict`), 3. The total number of tags processed across all documents (`int`), 4. A string description of the source of these tags (`str`), 5. A boolean flag that is `true` if at least one tag was processed, otherwise `false` (`bool`). The function should handle various string formats gracefully, accounting for potential empty or malformed tags.",
+        "```python\ndef extract_tags_from_documents(documents):\n    tags = set()\n    tag_counts = {}\n    total_tags = 0\n    source = \"documents\"\n    processed = False\n\n    for doc in documents:\n        # Split the document into tags\n        for tag in doc.split():\n            if tag.startswith('#'):\n                tag = tag[1:]  # Remove the '#' symbol\n                if tag:\n                    if tag in tag_counts:\n                        tag_counts[tag] += 1\n                    else:\n                        tag_counts[tag] = 1\n                    tags.add(tag)\n                    total_tags += 1\n                    processed = True\n\n    return (\n        tags,\n        tag_counts,\n        total_tags,\n        source,\n        processed\n    )\n```"
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `analyze_network_log` that takes a list of strings representing individual log entries of a network. Each log entry contains an IP address followed by the number of requests from that IP. The function should extract unique IP addresses and calculate the average requests per IP. The function should return two values in this specific order: 1. A set of unique IP addresses (`set`), 2. The average requests per IP as a float, rounded to two decimal places (`float`).",
+        "def analyze_network_log(log_entries):\n    unique_ips = set()\n    requests = 0\n    for entry in log_entries:\n        ip, count = entry.split()\n        unique_ips.add(ip)\n        requests += int(count)\n    average = requests / len(unique_ips) if unique_ips else 0.0\n    return unique_ips, round(average, 2)"
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `generateToken` that accepts an integer representing user ID and a duration for token validity in minutes. The function should generate a unique authentication token tied to the given user ID and the specified duration. It should return exactly three values in this order: 1. The generated token as a string (`string`), 2. The token expiration time in seconds as an integer (`int`), 3. An error value if there was an issue during token generation (`error`). Ensure proper error handling for edge cases like negative duration inputs.",
+        "package main\n\nimport (\n\t\"errors\"\n\t\"fmt\"\n\t\"time\"\n)\n\nfunc generateToken(userID int, duration int) (string, int, error) {\n\tif duration < 0 {\n\t\treturn \"\", 0, errors.New(\"duration cannot be negative\")\n\t}\n\n\ttoken := fmt.Sprintf(\"user%d_token%d\", userID, time.Now().Unix())\n\texpirationTime := time.Now().Add(time.Minute * time.Duration(duration)).Unix()\n\n\treturn token, expirationTime, nil\n}"
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `createRecord` that receives an input data structure, such as a map or a struct, representing the details necessary to create a new database record. The function should perform the database insertion and return three values in this specific order: 1. An integer representing the ID of the newly created record (`int`), 2. The creation timestamp using Go's `time.Time`, 3. An `error` value representing any database error encountered during the insertion process. This should allow for error checking in the function that calls `createRecord`.",
+        "package main\n\nimport (\n\t\"errors\"\n\t\"fmt\"\n\t\"time\"\n)\n\nfunc createRecord(data interface{}) (int, time.Time, error) {\n\t// Simulate database insertion\n\tid := 12345\n\ttimestamp := time.Now()\n\treturn id, timestamp, nil\n}\n\nfunc main() {\n\tid, timestamp, err := createRecord(map[string]string{\"name\": \"John\", \"age\": \"30\"})\n\tif err != nil {\n\t\tfmt.Println(\"Error:\", err)\n\t} else {\n\t\tfmt.Printf(\"Record ID: %d, Timestamp: %v\\n\", id, timestamp)\n\t}\n}"
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `analyze_word_frequencies` that takes a string representing a document and analyzes word frequencies. The function should return exactly two values in this specific order: 1. A `collections.Counter` representing the frequency of each word in the document (`collections.Counter`), 2. The total number of words processed (`int`). The function should handle punctuation and case normalization, treating words as case-insensitive and ignoring punctuation.",
+        "```python\nfrom collections import Counter\nimport re\n\ndef analyze_word_frequencies(document):\n    # Normalize case and remove punctuation\n    cleaned = re.sub(r'[^\\w\\s]', '', document.lower())\n    words = cleaned.split()\n    \n    # Count frequencies\n    word_counts = Counter(words)\n    \n    # Return the required values\n    return word_counts, len(words)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `monitor_active_users` that receives a list of tuples. Each tuple contains a user ID represented as a string and a boolean indicating if the user is currently active. The function should filter and return two distinct values: 1. A list of active user IDs (`list[str]`), and 2. The total number of users who are currently active (`int`). The data must be returned in this specified order, and ensure that the function handles different user status correctly.",
+        "def monitor_active_users(user_data):\n    active_users = [user_id for user_id, is_active in user_data if is_active]\n    total_active = sum(is_active for user_id, is_active in user_data)\n    return active_users, total_active"
+      ]
+    ]
+  },
+  {
+    "id": 33,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `evaluate_confidence_scores` that takes a slice of float64 representing detected item confidences. The function should process these scores to check if each score exceeds a set threshold of 0.75. The function should return exactly three values in this order: 1. A slice of all the confidence scores (`[]float64`), 2. The total number of scores evaluated (`int`), 3. A boolean flag that is `true` if any of the scores exceed the threshold, otherwise `false` (`bool`). Ensure the values are returned in this specific order.",
+        "package main\n\nimport \"fmt\"\n\nfunc evaluate_confidence_scores(scores []float64) ([]float64, int, bool) {\n    // Check if the input slice is empty\n    if len(scores) == 0 {\n        return scores, 0, false\n    }\n\n    // Return the original slice, count, and whether any score exceeds 0.75\n    return scores, len(scores), any(score > 0.75 for score in scores)\n}\n\nfunc any(predicate func(float64) bool) bool {\n    for _, v := range []float64{} {\n        if predicate(v) {\n            return true\n        }\n    }\n    return false\n}\n\nfunc main() {\n    // Example usage\n    scores := []float64{0.8, 0.7, 0.9, 0.75, 0.6}\n    result := evaluate_confidence_scores(scores)\n    fmt.Printf(\"Scores: %v\\n\", result[0])\n    fmt.Printf(\"Count: %d\\n\", result[1])\n    fmt.Printf(\"Any score above 0.75: %v\\n\", result[2])\n}"
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `validate_username` that takes a single string argument representing a username. The function should validate the username based on specific criteria: length between 5 and 15 characters and contains only alphanumeric characters. The function returns two values in this specific order: 1. The original username (`String`), 2. A boolean flag that is `true` if the username meets the criteria, otherwise `false` (`bool`).",
+        "fn validate_username(username: String) -> (String, bool) {\n    if username.len() < 5 || username.len() > 15 {\n        (username, false)\n    } else if !username.chars().all(|c| c.is_alphanumeric()) {\n        (username, false)\n    } else {\n        (username, true)\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `fetch_user_profile` that takes a string user ID and fetches user profile data from a database. The function should return exactly two values in this order: 1. A dictionary containing the user's profile information such as name, age, and email (`dict`), 2. A boolean flag indicating whether the profile data was successfully fetched or not (`bool`). The function should handle exceptions like connection errors or invalid user IDs gracefully, returning suitable default values and the appropriate boolean status.",
+        "```python\ndef fetch_user_profile(user_id):\n    try:\n        # Simulate database fetch\n        # In a real scenario, this would be a database query\n        # For demonstration, we'll return dummy data\n        name = \"John Doe\"\n        age = 30\n        email = \"john.doe@example.com\"\n        return {\"name\": name, \"age\": age, \"email\": email}, True\n    except Exception as e:\n        # Handle exceptions like connection errors or invalid user IDs\n        return {}, False\n```"
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `generate_keyboard_shortcuts` that takes two parameters: 1. A `Vec` containing tuples of characters representing keyboard keys and strings denoting the action (e.g., 'a', \"select all\"). The function should process these inputs to populate keyboard shortcuts, ensuring effective key-event tracking. It should return three values in this strict order: 1. A `SmallVec` containing keys that have shortcuts associated with them. 2. A `HashMap` where each key (character) is mapped to its corresponding action (string). 3. A `Vec` storing the history of keys processed for event tracking.",
+        "```rust\nuse std::collections::{HashMap, SmallVec};\n\nfn generate_keyboard_shortcuts(keys: Vec<(char, String)>) -> (SmallVec<[char]>, HashMap<char, String>, Vec<char>) {\n    let mut key_map = HashMap::new();\n    let mut key_history = Vec::new();\n\n    for (key, action) in keys {\n        key_map.insert(key, action);\n        key_history.push(key);\n    }\n\n    let unique_keys: SmallVec<[char; 2]> = key_history.into_iter().collect();\n    (unique_keys, key_map, key_history)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `validate_config` that takes a configuration string representing system settings. The function should parse the configuration, and based on specific validation rules, return a tuple consisting of two items: 1. An error message as a static string reference if the configuration is invalid (`&str`), or \"No errors\" if it is valid, 2. An associated error code, where `0` represents no errors, and any other positive integer symbolizes a specific error type (`i32`).",
+        "```rust\nfn validate_config(config: &str) -> (String, i32) {\n    // Check if the configuration is empty\n    if config.is_empty() {\n        return (\"Configuration is empty\", 1);\n    }\n\n    // Check for invalid characters (example: not allowed characters)\n    if !config.chars().all(|c| c.is_alphanumeric() || c == ' ') {\n        return (\"Invalid characters in configuration\", 2);\n    }\n\n    // Check for missing required fields (example: \"port\" is required)\n    if !config.contains(\"port\") {\n        return (\"Missing required field 'port'\", 3);\n    }\n\n    // If all checks pass\n    (\"No errors\", 0)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `parseHttpResponse` that takes an HTTP response object as input. The function should extract essential details and perform sanity checks on the response headers to determine cache policies. The function must return three values in this specific order: 1. The HTTP status code (`int`), 2. The response message as a string (`string`), and 3. A flag indicating whether the response can be cached based on the `Cache-Control` header (`bool`). Ensure that the function handles various HTTP status scenarios and header configurations properly.",
+        "package main\n\nimport (\n\t\"errors\"\n\t\"fmt\"\n\t\"net/http\"\n\t\"strings\"\n)\n\nfunc parseHttpResponse(res *http.Response) (int, string, bool) {\n\t// Check if the response is nil\n\tif res == nil {\n\t\treturn 0, \"\", false\n\t}\n\n\t// Check status code\n\tstatusCode := res.StatusCode\n\tstatusMessage := res.Status\n\n\t// Check if status code is valid\n\tif statusCode < 100 || statusCode > 999 {\n\t\treturn 0, \"\", false\n\t}\n\n\t// Check Cache-Control header\n\tcacheControl := res.Header.Get(\"Cache-Control\")\n\tif cacheControl == \"\" {\n\t\tcacheControl = \"no-cache\"\n\t}\n\n\t// Determine cache policy\n\tcachePolicy := false\n\tif strings.Contains(cacheControl, \"public\") || strings.Contains(cacheControl, \"private\") || strings.Contains(cacheControl, \"no-cache\") {\n\t\tcachePolicy = true\n\t}\n\n\treturn statusCode, statusMessage, cachePolicy\n}"
+      ]
+    ]
+  },
+  {
+    "id": 39,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `find_matching_filenames` that takes a directory path as a string input and a search pattern string for filenames. The function should search for all filenames in the specified directory that match the given pattern using regular expressions. It should return precisely three values in this order: 1. A slice of matched filenames (`[]string`), 2. The total number of matched files (`int`), 3. Any error encountered during the search. Handle errors such as directory not found or permissions issues appropriately.",
+        "package main\n\nimport (\n\t\"errors\"\n\t\"fmt\"\n\t\"os\"\n\t\"path/filepath\"\n\t\"regexp\"\n)\n\nfunc findMatchingFiles(directory string, pattern string) ([]string, int, error) {\n\t// Compile the regular expression\n\tre, err := regexp.Compile(pattern)\n\tif err != nil {\n\t\treturn nil, 0, err\n\t}\n\n\tvar matchedFiles []string\n\tcount := 0\n\n\t// Walk through the directory\n\terr = filepath.Walk(directory, func(path string, info os.FileInfo) error {\n\t\tif !info.IsDir() {\n\t\t\tif re.MatchString(path) {\n\t\t\t\tmatchedFiles = append(matchedFiles, path)\n\t\t\t\tcount++\n\t\t\t}\n\t\t}\n\t\treturn nil\n\t})\n\n\tif err != nil {\n\t\treturn nil, 0, err\n\t}\n\n\treturn matchedFiles, count, nil\n}\n\nfunc findMatchingFilename(directory string, pattern string) ([]string, int, error) {\n\t// Call the function with the directory and pattern\n\tmatchedFiles, count, err := findMatchingFiles(directory, pattern)\n\tif err != nil {\n\t\treturn nil, 0, err\n\t}\n\treturn matchedFiles, count, nil\n}"
+      ]
+    ]
+  },
+  {
+    "id": 40,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `fetchAccessControlStatus` that receives an array of user IDs (strings). The function should fetch access control status for each user from a simulated internal access control system and return two values: 1. A map where each key is a user ID and its value is a boolean indicating if access is granted (`map[string]bool`), 2. A string that represents the source system from which the access data was retrieved, e.g., \"InternalACSystem\". This data must be returned in this precise order. Ensure the function handles scenarios where a user ID may not be present in the system gracefully by logging errors.",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"log\"\n)\n\nfunc fetchAccessControlStatus(userIDs []string) (map[string]bool, string) {\n\t// Simulated access control system\n\tsimulatedSystem := \"InternalACSystem\"\n\n\taccessMap := make(map[string]bool)\n\tfor _, userID := range userIDs {\n\t\t// Simulated check for access\n\t\taccessGranted := false\n\t\t// In a real scenario, this would be a call to an API or database\n\t\t// For this example, we'll assume access is granted unless the user is \"admin\"\n\t\tif userID == \"admin\" {\n\t\t\taccessGranted = true\n\t\t} else {\n\t\t\taccessGranted = false\n\t\t}\n\t\taccessMap[userID] = accessGranted\n\t}\n\n\treturn accessMap, simulatedSystem\n}\n\nfunc main() {\n\tuserIDs := []string{\"user1\", \"user2\", \"admin\", \"user3\"}\n\taccessMap, source := fetchAccessControlStatus(userIDs)\n\tfmt.Printf(\"Access Map: %v\\n\", accessMap)\n\tfmt.Printf(\"Source System: %s\\n\", source)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 41,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `validateUserProfile` that takes a struct representing a user profile, which includes fields such as `username`, `email`, and `age`. The function should check the following: the `username` must be between 3 and 12 characters, the `email` must contain an \"@\" symbol and a \".\", and the `age` must be at least 18. The function should return exactly two values in this specific order: 1. A boolean indicating whether all validations passed (`bool`), 2. A slice of strings listing any validation error messages (`[]string`). Ensure these validations are done in sequence and report every encountered validation issue.",
+        "package main\n\nimport (\n\t\"errors\"\n\t\"fmt\"\n)\n\ntype userProfile struct {\n\tUsername string\n\tEmail    string\n\tAge      int\n}\n\nfunc validateUserProfile(profile userProfile) (bool, []string) {\n\tvar errors []string\n\n\tif len(profile.Username) < 3 || len(profile.Username) > 12 {\n\t\terrors = append(errors, \"Username must be between 3 and 12 characters\")\n\t}\n\n\tif !strings.Contains(profile.Email, \"@\") {\n\t\terrors = append(errors, \"Email must contain an '@' symbol\")\n\t}\n\n\tif !strings.Contains(profile.Email, \".\") {\n\t\terrors = append(errors, \"Email must contain a '.' symbol\")\n\t}\n\n\tif profile.Age < 18 {\n\t\terrors = append(errors, \"Age must be at least 18\")\n\t}\n\n\treturn len(errors) == 0, errors\n}"
+      ]
+    ]
+  },
+  {
+    "id": 42,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `scanHostPorts` that takes a string representing the hostname as input and performs a port scan. The function should return exactly three values in this specific order: 1. The hostname as a string (`string`), 2. The number of the first open port found as an integer (`int`), 3. A boolean indicating whether the connection to the open port was successful (`bool`). This method should efficiently manage timeouts and handle exceptions like network errors gracefully.",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"net\"\n\t\"time\"\n)\n\nfunc scanHostPorts(hostname string) (string, int, bool) {\n\t// Check if the hostname is valid\n\tif len(hostname) == 0 {\n\t\treturn \"\", 0, false\n\t}\n\n\t// Define the range of ports to scan\n\tstartPort := 1\n\tendPort := 1024\n\n\t// Initialize variables\n\topenPort := 0\n\tsuccess := false\n\n\t// Set a timeout for each connection\n\ttimeout := 5 * time.Second\n\n\t// Scan each port\n\tfor port := startPort; port <= endPort; port++ {\n\t\tconn, err := net.Dial(\"tcp\", hostname+\":\"+fmt.Sprintf(\"%d\", port))\n\t\tif err != nil {\n\t\t\t// Handle network errors\n\t\t\tcontinue\n\t\t}\n\t\tdefer conn.Close()\n\n\t\t// Check if the connection was successful\n\t\tif conn.ConnState().Connected {\n\t\t\topenPort = port\n\t\t\tsuccess = true\n\t\t\tbreak\n\t\t}\n\n\t\t// If timeout occurs, break the loop\n\t\tif time.Since(timeout) > time.Second {\n\t\t\tbreak\n\t\t}\n\t}\n\n\treturn hostname, openPort, success\n}"
+      ]
+    ]
+  },
+  {
+    "id": 43,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `fetch_product_details` that takes a string representing a product ID. The function should query an imaginary database or dataset to retrieve three pieces of information for the specified product: its price, the available stock quantity, and whether a discount is currently being applied. The function must return exactly three values in this specific order: 1. The product's price as a float (`f64`), 2. The available stock quantity as an unsigned integer (`u32`), 3. A boolean flag indicating if the product has a discount (`bool`). Ensure the values are returned in this precise order without changing the order.",
+        "fn fetch_product_details(product_id: &str) -> (f64, u32, bool) {\n    // Simulate database query\n    let price = 19.99;\n    let stock = 100;\n    let has_discount = false;\n\n    (price, stock, has_discount)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 44,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `track_task_completion` that takes a vector of tuples with each tuple consisting of a task ID (`usize`) and a completion flag (`bool`). The function should analyze the list to generate a detailed report of the task's progress. It should return exactly four values in this specific order: 1. Total number of tasks (`usize`), 2. Number of tasks completed (`usize`), 3. Completion percentage as a float with one decimal place (`f32`), 4. A boolean flag that indicates if all tasks are completed (`bool`). The data must be returned in this precise order.",
+        "fn track_task_completion(tasks: Vec<(usize, bool)>) -> (usize, usize, f32, bool) {\n    let total_tasks = tasks.len();\n    let completed_tasks = tasks.iter().filter(|&&(id, &flag)| flag).count();\n    let completion_percentage = (completed_tasks as f32 / total_tasks as f32) * 100.0;\n    let all_completed = completed_tasks == total_tasks;\n\n    (total_tasks, completed_tasks, completion_percentage, all_completed)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 45,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `detect_object_in_image` that takes an image file path as input and performs object detection on the image. The function should return exactly three values in this specific order: 1. A tuple (x, y, width, height) representing coordinates and size of the detected object (`tuple`), 2. A boolean flag indicating whether the detection was successful (`bool`), 3. A string providing the label of the detected object (`str`). The function should handle exceptions such as file not found and return appropriate defaults if the object is not detected.",
+        "```python\nimport cv2\nfrom PIL import Image\n\ndef detect_object_in_image(image_path):\n    try:\n        # Load the image\n        image = cv2.imread(image_path)\n        if image is None:\n            return (None, False, \"Error: Image not found\")\n        \n        # Perform object detection (example using OpenCV)\n        # Replace with actual object detection model if needed\n        # For demonstration, we'll return a dummy result\n        detected_object = (100, 100, 200, 200)\n        is_success = True\n        label = \"Unknown\"\n        \n        return (detected_object, is_success, label)\n    \n    except Exception as e:\n        return (None, False, \"Error: Unknown error occurred\")\n```"
+      ]
+    ]
+  },
+  {
+    "id": 46,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `manage_workflow` that takes a vector of tuples where each tuple contains a task ID (string), owner (string), and deadline (string in YYYY-MM-DD format). The function should process these inputs to organize tasks in the project management workflow. The function must return three specific outputs in this order: 1. A vector containing the task IDs sorted based on the deadline (`Vec<String>`), 2. A HashMap that maps each task ID to a tuple consisting of the owner and the deadline (`HashMap<String, (String, String)>`), 3. A LinkedList that outlines the sequence of task dependencies based on a simplified logic like task IDs being dependent on their preceding task in the list (`LinkedList<String>`).",
+        "```rust\nuse std::collections::HashMap;\nuse std::collections::LinkedList;\n\nfn manage_workflow(tasks: Vec<(String, String, String)>) -> (Vec<String>, HashMap<String, (String, String外, LinkedList<String>) {\n    // 1. Sort tasks by deadline\n    let sorted_tasks: Vec<String> = tasks\n        .iter()\n        .map(|&(task_id, _, deadline)| task_id)\n        .collect::<Vec<_>>();\n    sorted_tasks.sort_by(|&a, &b| {\n        let deadline_a = &tasks.iter().find(|&&(task_id, _, deadline)| task_id == a).unwrap().1;\n        let deadline_b = &tasks.iter().find(|&&(task_id, _, deadline)| task_id == b).unwrap().1;\n        deadline_a.cmp(deadline_b)\n    });\n\n    // 2. Create HashMap with task ID as key and (owner, deadline) as value\n    let mut task_map: HashMap<String, (String, String)> = HashMap::new();\n    for (task_id, owner, deadline) in tasks {\n        task_map.insert(task_id, (owner, deadline));\n    }\n\n    // 3. Create LinkedList of task IDs based on their order in the input\n    let mut task_list: LinkedList<String> = LinkedList::new();\n    for task_id in sorted_tasks {\n        task_list.push_back(task_id);\n    }\n\n    (sorted_tasks, task_map, task_list)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 47,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `build_indexing_pipeline` that takes a vector of strings (document contents) and a set of keywords. It should process each document to analyze and record keyword positions, managing an indexing pipeline. The function returns **exactly five values** in this specific order: 1. A `BTreeMap<String, Vec<usize>>`, where each key is a keyword and the value is a sorted list of positions this keyword appears in the document, 2. A `VecDeque<String>`, which contains the queue of document contents awaiting further processing, 3. A `HashSet<String>`, storing already indexed document IDs, 4. A `SmallVec<usize>`, used as a small buffer which temporarily holds positions during the scanning, 5. A `LinkedList<String>`, which logs each step taken during parsing of the document. Ensure the function handles scenarios where keywords are not found in the documents gracefully.",
+        "```rust\nuse std::collections::{BTreeMap, HashSet, VecDeque, LinkedList};\nuse std::vec::Vec;\n\nfn build_indexing_pipeline(documents: Vec<String>, keywords: HashSet<String>) -> (BTreeMap<String, Vec<usize>>, VecDeque<String>, HashSet<String>, SmallVec<usize>, LinkedList<String>) {\n    let mut index_map = BTreeMap::new();\n    let mut doc_queue = VecDeque::new();\n    let mut indexed_docs = HashSet::new();\n    let mut positions_buffer = SmallVec::new();\n\n    for doc in documents {\n        doc_queue.push_back(doc.clone());\n        indexed_docs.insert(doc.clone());\n    }\n\n    for doc in doc_queue {\n        let mut positions = Vec::new();\n        let mut log = LinkedList::new();\n\n        for (i, word) in doc.split_whitespace().enumerate() {\n            if keywords.contains(word) {\n                positions.push(i);\n                log.push_back(word.to_string());\n            }\n        }\n\n        if !positions.is_empty() {\n            index_map.insert(\"example_keyword\", positions);\n        }\n    }\n\n    (index_map, doc_queue, indexed_docs, positions_buffer, log)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 48,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `survey_time_intervals` that takes a list of tuples, each containing two datetime objects (start and end time). The function should calculate the time intervals between each pair of start and end times, and return exactly two values: 1. A tuple containing the earliest start time and the latest end time found in the list (`tuple`), 2. The average time duration in seconds between all provided intervals, rounded to two decimal places (`float`). Ensure the integrity of datetime comparisons and calculations.",
+        "```python\nfrom datetime import datetime\nfrom typing import List, Tuple\n\ndef survey_time_intervals(intervals: List[Tuple[datetime, datetime]]) -> Tuple[datetime, datetime, float]:\n    if not intervals:\n        return (datetime(1, 1, 1), datetime(1, 1, 1), 0.0)\n    \n    earliest_start = min(interval[0] for interval in intervals)\n    latest_end = max(interval[1] for interval in intervals)\n    \n    total_duration = 0.0\n    for start, end in intervals:\n        total_duration += (end - start).total_seconds()\n    \n    average_duration = total_duration / len(intervals)\n    return (earliest_start, latest_end, round(average_duration, 2))\n```"
+      ]
+    ]
+  },
+  {
+    "id": 49,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `search_files_by_extension` that takes a directory path (string) and a file extension (string) as inputs. It should recursively search for all files in the specified directory that match the given extension. The function should return three values in this specific order: 1. A list of filenames that matched the extension (`list`), 2. The total number of files that matched (`int`), 3. The directory path that was searched (`str`). Ensure proper handling of exceptions like inaccessible directories or files.",
+        "```python\nimport os\n\ndef search_files_by_extension(directory_path, file_extension):\n    files = []\n    total = 0\n    try:\n        for root, dirs, filenames in os.walk(directory_path):\n            for filename in filenames:\n                if filename.endswith(file_extension):\n                    files.append(os.path.join(root, filename))\n                    total += 1\n    except Exception as e:\n        print(f\"Error: {e}\")\n    return files, total, directory_path\n```"
+      ]
+    ]
+  },
+  {
+    "id": 50,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `group_employees_by_department` that takes a list of tuples (each consisting of an employee's name as a string and their department as a string). The function should group employees by their department and return exactly two values in this order: 1. A collections.defaultdict object where each key is a department and the value is a list of employee names in that department (`collections.defaultdict`), 2. A boolean flag that is `true` if all employee data were successfully grouped by department, otherwise `false` (`bool`). The function should handle any possible exceptions elegantly.",
+        "```python\nfrom collections import defaultdict\n\ndef group_employees_by_department(employee_data):\n    try:\n        department_dict = defaultdict(list)\n        for name, dept in employee_data:\n            department_dict[dept].append(name)\n        success = True\n    except Exception as e:\n        success = False\n    return department_dict, success\n```"
+      ]
+    ]
+  },
+  {
+    "id": 51,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `get_sensor_data` that receives a vector of tuples where each tuple contains a unique sensor ID as a string and its raw data as bytes. The function should process this data to extract the sensor's temperature reading (format: i16) and an error code (format: i8). The function should return, in this specific order, a vector containing a tuple for each sensor with 1. The temperature reading as i16, and 2. The error code as i8.",
+        "```rust\nfn get_sensor_data(sensor_data: Vec<(String, [u8; 2])>) -> Vec<(i16, i8)> {\n    sensor_data\n        .into_iter()\n        .map(|(id, data)| {\n            let temperature = data[0] as i16;\n            let error_code = data[1] as i8;\n            (temperature, error_code)\n        })\n        .collect()\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `manage_account_transactions` that takes a vector of structs called `Transaction` (fields include: `account_id` as String and `amount` as f64) and processes each transaction based on their type (deposit or withdrawal). The function should return exactly four values in this specific order: 1. A VecDeque of pending transactions with failed execution due to insufficient balance, 2. A BTreeMap tracking the balance of each account after processing successful transactions, 3. A BTreeSet of account IDs flagged for review due to suspicious activity, such as unusually high withdrawals, 4. An ArrayVec containing the last five processed transactions with their status (successful or failed). Ensure that the function handles calculations accurately and efficiently.",
+        "```rust\nuse std::collections::{BTreeMap, BTreeSet, VecDeque, ArrayVec};\n\n#[derive(Debug, Clone, PartialEq)]\nstruct Transaction {\n    account_id: String,\n    amount: f64,\n    type_: String, // \"deposit\" or \"withdrawal\"\n}\n\nfn manage_account_transactions(transactions: Vec<Transaction>) -> (VecDeque<Transaction>, BTreeMap<String, f64>, BTreeSet<String>, ArrayVec<(String, String)>> {\n    let mut pending_transactions = VecDeque::new();\n    let mut balances = BTreeMap::new();\n    let mut suspicious_accounts = BTreeSet::new();\n    let mut last_five_transactions = ArrayVec::new();\n\n    for transaction in transactions {\n        let account_id = transaction.account_id;\n        let amount = transaction.amount;\n        let type_ = transaction.type_.to_lowercase();\n\n        // Check if transaction is valid\n        if type_ != \"deposit\" && type_ != \"withdrawal\" {\n            pending_transactions.push_back(transaction);\n            continue;\n        }\n\n        // Validate balance for withdrawal\n        if type_ == \"withdrawal\" {\n            if let Some(balance) = balances.get_mut(&account_id) {\n                if *balance < amount {\n                    pending_transactions.push_back(transaction);\n                } else {\n                    *balance -= amount;\n                }\n            } else {\n                pending_transactions.push_back(transaction);\n            }\n        } else { // deposit\n            if let Some(balance) = balances.get_mut(&account_id) {\n                *balance += amount;\n            } else {\n                balances.insert(account_id, amount);\n            }\n        }\n\n        // Add to last five transactions\n        if last_five_transactions.len() >= 5 {\n            last_five_transactions.pop_front();\n        }\n        last_five_transactions.push_back((account_id, type_));\n    }\n\n    // Flag suspicious accounts\n    for (account_id, _type) in last_five_transactions {\n        if let Some(balance) = balances.get(&account_id) {\n            if *balance > 1000.0 {\n                suspicious_accounts.insert(account_id.clone());\n            }\n        }\n    }\n\n    (pending_transactions, balances, suspicious_accounts, last_five_transactions)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `aggregate_sensor_data` that takes a vector of tuples, each containing a string representing the sensor ID and a float representing the sensor reading. The function should process this data to return three values: 1. A vector containing all sensor readings in the order they were received (`Vec<float>`), 2. A hash set containing unique sensor IDs (`HashSet<String>`), 3. A small vector (SmallVec) used as a temporary buffer to smooth the last five sensor readings (`SmallVec<float>`). Ensure the values are returned in this specific order.",
+        "```rust\nuse std::collections::HashSet;\nuse smallvec::SmallVec;\n\nfn aggregate_sensor_data(sensor_data: Vec<(String, f64)>) -> (Vec<f64>, HashSet<String>, SmallVec<f64, 5>) {\n    let mut readings: Vec<f64> = Vec::new();\n    let mut unique_ids: HashSet<String> = HashSet::new();\n    let mut buffer: SmallVec<f64, 5> = SmallVec::new();\n\n    for (id, value) in sensor_data {\n        readings.push(value);\n        unique_ids.insert(id);\n        buffer.push(value);\n        if buffer.len() > 5 {\n            buffer.pop();\n        }\n    }\n\n    (readings, unique_ids, buffer)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 54,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `update_inventory` that manages inventory levels for a store. This function should take a vector of tuples as input, each tuple containing a string for product ID and an integer representing the quantity change (positive for incoming stock, negative for sold stock). The function should process this data and return three values: 1. A `HashMap` where keys are product IDs and values represent updated quantity levels in inventory, 2. A `BTreeSet` containing sorted product IDs that are out of stock (i.e., quantity is zero or below), and 3. An `ArrayVec` to store a batch of incoming products in the form of tuples from the input with positive changes. The values must be returned in this specific order.",
+        "fn update_inventory(mut inventory: Vec<(String, i32)>) -> (HashMap<String, i32>, BTreeSet<String>, ArrayVec<(String, i32)>> {\n    let mut inventory_map = HashMap::new();\n    let mut out_of_stock = BTreeSet::new();\n    let mut incoming = ArrayVec::new();\n\n    for (product_id, quantity) in inventory {\n        inventory_map.insert(product_id, inventory_map.get(&product_id).unwrap_or(&0) + quantity);\n        if quantity < 0 {\n            out_of_stock.insert(product_id.clone());\n        }\n        if quantity > 0 {\n            incoming.push((product_id, quantity));\n        }\n    }\n\n    (inventory_map, out_of_stock, incoming)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 55,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function named `track_onboarding` that receives a vector of tuples, each representing a user with their unique string ID and an integer status. The function should process this data to keep track of users' onboarding steps. The function should return three values in this specific order: 1. A `HashSet<String>` containing the IDs of users who have fully completed the onboarding (status of 3), 2. A `Vec<String>` listing the user IDs in the order they initiated the onboarding process, and 3. A `LinkedList<String>` forming an audit trail of registration and onboarding events logged. Ensure that these values are returned in the specified order and handle cases where the input vector might be empty.",
+        "fn track_onboarding(users: Vec<(String, i32)>) -> (HashSet<String>, Vec<String>, LinkedList<String>) {\n    let mut onboarding_complete = HashSet::new();\n    let mut onboarding_order = Vec::new();\n    let mut audit_trail = LinkedList::new();\n\n    for (id, status) in users {\n        onboarding_order.push(id.clone());\n        audit_trail.push_back(id.clone());\n        if status == 3 {\n            onboarding_complete.insert(id.clone());\n        }\n    }\n\n    (onboarding_complete, onboarding_order, audit_trail)\n}"
+      ]
+    ]
+  }
+]

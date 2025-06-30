@@ -1,0 +1,380 @@
+[
+    {
+        "id": 1,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Python class named `DatabaseConnector` that represents a database connection handler. The class should include methods `connect()`, `disconnect()`, and `execute_query()`. Ensure that the class name follows PascalCase, method names follow snake_case, and variable names also follow snake_case.",
+        "answer": "python;class:PascalCase,function:snake_case,variable:snake_case"
+    },
+    {
+        "id": 2,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Implement a Go struct named `HttpServer` that provides basic HTTP server functionalities. The struct should include methods `startServer()`, `handleRequest()`, and `shutdownServer()`. Ensure that the struct name follows PascalCase, method names follow camelCase, and variable names follow snake_case.",
+        "answer": "go;class:PascalCase,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 3,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Create a Python class called HTTPRequestHandler that implements methods for parsing query parameters (get_params) and setting response headers (set_headers). Ensure the class uses PascalCase naming, methods follow camelCase, and any helper variables inside methods use snake_case format.",
+        "answer": "python;class:PascalCase,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 4,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Kotlin class named `data-parser` with a method `convert-to-json` that processes CSV input. Adhere to naming conventions where class and method names use kebab-case enclosed in backticks for Java interoperability.",
+        "answer": "kotlin;class:kebab-case,function:kebab-case"
+    },
+    {
+        "id": 5,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Implement a C++ class called ThreadPool that manages worker threads. The class should have methods addTask() and shutdownNow(), while internal thread management variables like task_queue use snake_case naming. Follow C++ naming conventions with PascalCase for classes, camelCase for methods, and snake_case for member variables.",
+        "answer": "cpp;class:PascalCase,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 6,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Python class named `TaskScheduler` that manages task execution. This class should include methods named `add_task()`, `remove_task()`, and `execute_tasks()`. Follow the naming conventions where method names are in `snake_case` and class names are in `PascalCase`.",
+        "answer": "python;class:PascalCase,function:snake_case"
+    },
+    {
+        "id": 7,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a C# class named `OrderProcessor` designed for an e-commerce system. This class should include methods named `processOrder()`, `cancelOrder()`, and `updateOrderStatus()`. Ensure that the naming conventions are strictly followed: class names must be in PascalCase and method names in camelCase.",
+        "answer": "csharp;class:PascalCase,function:camelCase"
+    },
+    {
+        "id": 8,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Python class named `DataProcessor` that processes numerical data. This class should include methods named `load_data()`, `filter_data()`, and `compute_average()`. Ensure that the naming conventions are strictly followed: class names must be in snake_case and method names in camelCase.",
+        "answer": "python;class:snake_case,function:camelCase"
+    },
+    {
+        "id": 9,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Java class named `EmailSender` for an enterprise messaging system. This class should provide functionalities to send emails immediately, schedule emails for later delivery, and cancel scheduled emails. It must include methods named `sendEmail()`, `scheduleEmail()`, and `cancelEmail()`. Ensure the naming conventions are strictly followed: class names must be in PascalCase and method names in camelCase.",
+        "answer": "java;class:PascalCase,function:camelCase"
+    },
+    {
+        "id": 10,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Create a Kotlin class UserAuthenticator responsible for secure credential validation in a mobile app. The class must handle username/password login, OAuth token verification, and JWT token refresh flows. Include loginUser() with parameters for credentials/2FA codes, logoutUser() to revoke sessions across devices, and validateToken() with expiration checks. Ensure thread safety and encrypted storage for sensitive data. Be sure to follow the naming conventions where class names are in PascalCase and method names are in camelCase.",
+        "answer": "kotlin;class:PascalCase,function:camelCase"
+    },
+    {
+        "id": 11,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Design a Go package fileutil with a struct FileReader optimized for large file processing. Implement ReadAllLines() to stream content with buffer management and encoding detection, and CloseHandle() to release OS resources and prevent leaks. Add error handling for file locks and corrupted data. Adhere to Go conventions where struct names are PascalCase, methods are PascalCase, and local variables use camelCase without underscores.",
+        "answer": "go;class:PascalCase,function:PascalCase,variable:camelCase"
+    },
+    {
+        "id": 12,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Build a Rust module `geometry` containing a struct `Circle` representing 2D circles in computational geometry. Implement `calculate_area()` with π precision control, `set_radius()` with bounds validation, and collision detection with other shapes. Use algebraic error propagation for floating-point operations. Follow Rust naming standards: structs in PascalCase, functions in snake_case, and struct fields in snake_case.",
+        "answer": "rust;class:PascalCase,function:snake_case,variable:snake_case"
+    },
+    {
+        "id": 13,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Implement a Zig INI parser supporting nested sections and escape sequences. The struct `IniSection` must provide `getValue()` with type coercion (string→int/bool) and `addKeyValuePair()` with duplicate key resolution. Handle line continuation characters and validate against INI specification v2.0. Adhere to Zig's naming conventions where structs use PascalCase, function name use camelCase, and error enums use snake_case with `error` suffix.",
+        "answer": "zig;class:PascalCase,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 14,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Haskell module `MatrixOperations` for sparse matrix computations. Export `multiplyMatrices()` optimized for Strassen's algorithm and `transposeMatrix()` with in-place rotation for diagonal matrices. Include type constraints for numeric algebras and memory-efficient representation using compressed row storage. Follow Haskell conventions where modules use PascalCase, functions use camelCase, and local bindings use snake_case with descriptive names.",
+        "answer": "haskell;class:PascalCase,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 15,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Create a C++ template class `ThreadSafeQueue` implementing a bounded producer-consumer queue. Develop `pushBack()` with timeout-based waiting, `popFront()` supporting move semantics, and enforce `MAX_SIZE` through configurable allocation policies. Integrate lock granularity optimization and exception safety guarantees. Enforce C++ Core Guidelines: classes in PascalCase, member functions in camelCase, and private data members in snake_case.",
+        "answer": "cpp;class:PascalCase,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 16,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a C# class `ProcessMonitor` for cross-platform process lifecycle tracking. Implement `OnProcessStarted()` capturing PID/startup arguments and `OnProcessExited()` logging exit codes/memory usage. Use event sourcing patterns and integrate with .NET's DiagnosticSource API. Ensure method parameters follow camelCase convention while maintaining PascalCase for class and method names according to C# coding standards.",
+        "answer": "csharp;class:PascalCase,function:PascalCase,variable:camelCase"
+    },
+    {
+        "id": 17,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Build a Zig network protocol handler supporting TCP/UDP packet fragmentation. The struct `PacketDecoder` must provide `readHeader()` with endianness conversion and `validateChecksum()` using CRC-32. Implement IP version negotiation and handle malformed packet quarantine logic. Parameters must use snake_case, error types should be snake_case with `error` suffix, and struct names adhere to PascalCase conventions.",
+        "answer": "zig;class:PascalCase,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 18,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Create a Haskell persistent `BinaryTree` supporting AVL balancing. Include `insert-node` with comparator-based positioning, `find-depth` with memoization, and traversal iterators. Provide serialization/deserialization via binary formats with versioning support. Follow Haskell stylistic norms where type names use PascalCase, module-level functions use kebab-case, and local helper bindings use snake_case.",
+        "answer": "haskell;class:PascalCase,function:kebab-case,variable:snake_case"
+    },
+    {
+        "id": 19,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Create a Haskell library `DataFormatter` exposing functions `json-to-xml` and `xml-to-csv` with internal validation helpers `check_metadata`. Enforce naming rules: module/type names in PascalCase, public API functions in kebab-case, and implementation details in snake_case.",
+        "answer": "haskell;class:PascalCase,function:kebab-case,variable:snake_case"
+    },
+    {
+        "id": 20,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Implement a Zig image processor for medical DICOM files. The struct `PixelMatrix` must handle `convertToGrayscale()` with Hounsfield unit scaling and `applyKernel()` for edge detection (Sobel/Prewitt). Support 12/16-bit depth conversion and anisotropic diffusion filtering. Maintain Zig idioms: structs in PascalCase, method name in camelCase, and error unions in snake_case with `error` postfix.",
+        "answer": "zig;class:PascalCase,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 21,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Python analytics SDK for time-series forecasting. The class must implement ARIMA modeling in `fitSeasonalModel()`, anomaly detection in `identifyOutliers()`, and visualization in `generateTrendReport()`. Integrate GPU acceleration via CuPy and enforce strict type annotations. Apply a corporate style guide requiring PascalCase class names, camelCase method names, and snake_case instance variables.",
+        "answer": "python;class:PascalCase,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 22,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Python class DataTransformer that handles real-time data conversion between JSON, XML, and CSV formats in a data pipeline system. The class must implement convert_to_format() with schema validation, cache_processed_data() with TTL management, and validate_input() with charset detection. Include asynchronous processing capabilities and ensure encrypted handling of sensitive fields. Follow naming conventions where class names use PascalCase, function names use snake_case, and instance variables use camelCase.",
+        "answer": "python;class:PascalCase,function:snake_case,variable:camelCase"
+    },
+    {
+        "id": 23,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Implement a Java class NetworkRequestHandler for managing HTTP/HTTPS communication in a microservices architecture. The class must provide methods for async request batching, circuit breaker pattern implementation, and retry logic with exponential backoff. Include header manipulation with strict type safety, payload compression handling, and metrics collection for latency tracking. Adhere to naming conventions where class names use PascalCase, method names use camelCase, and local variables use snake_case.",
+        "answer": "java;class:PascalCase,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 24,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Create a Rust struct NetworkPacketAnalyzer for high-performance network traffic inspection in cybersecurity applications. Implement methods for protocol decoding, anomaly detection with machine learning hooks, and zero-copy payload parsing. Include traffic statistics aggregation with lock-free concurrency, IPv4/IPv6 dual-stack support, and serialization to Apache Arrow format. Enforce naming conventions where structs/enums use PascalCase, function names use snake_case, and configuration parameters use kebab-case.",
+        "answer": "rust;class:PascalCase,function:snake_case,variable:kebab-case"
+    },
+    {
+        "id": 25,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Build a JavaScript class WebSocketManager for real-time bidirectional communication in a stock trading platform. Implement connection failover strategies, message compression using Protocol Buffers, and subscription management for market data feeds. Include heartbeat monitoring, payload validation with JSON Schema, and automatic reconnection with jittered backoff. Follow naming conventions where class names use PascalCase, event emitter methods use camelCase, and configuration objects use kebab-case properties.",
+        "answer": "javascript;class:PascalCase,function:camelCase,variable:kebab-case"
+    },
+    {
+        "id": 26,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Go struct LogAggregator for centralized logging in distributed systems. Implement methods for log ingestion with gzip compression, real-time filtering using regular expressions, and batch exporting to S3-compatible storage. Include log rotation based on size/time criteria and TLS-secured transport. Enforce naming conventions where structs use PascalCase, interface methods use camelCase, and configuration fields use snake_case.",
+        "answer": "go;class:PascalCase,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 27,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Design a C++ class ImageProcessor for real-time video stream analysis in surveillance systems. Implement GPU-accelerated frame decoding, motion detection algorithms with OpenCV integration, and multi-threaded processing pipelines. Include methods for dynamic filter application, hardware encoding to H.265 format, and network streaming using RTP protocol. Adhere to naming conventions where class names use PascalCase, member functions use camelCase, and local variables use snake_case.",
+        "answer": "cpp;class:PascalCase,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 28,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Rust library `SecureStorage` for managing encrypted user data in a cloud application. The library must provide APIs for storing, retrieving, and deleting encrypted key-value pairs, supporting AES encryption. Implement methods `store_data()` for storing encrypted values, `retrieve_data()` for securely fetching and decrypting data, and `delete_data()` for removing stored entries. Ensure the library is thread-safe and follows the naming conventions where struct names are in PascalCase and function names are in snake_case.",
+        "answer": "rust;struct:PascalCase,function:snake_case"
+    },
+    {
+        "id": 29,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Implement a Go package `FileManager` to manage file operations in a cloud storage service. The package should provide functionalities for uploading, downloading, and deleting files. Implement `UploadFile()` to handle file uploads, `DownloadFile()` to retrieve stored files, and `DeleteFile()` to remove files from the storage. Ensure proper error handling and concurrency control for efficient performance. Follow the naming conventions where struct names are in PascalCase and function names are in camelCase.",
+        "answer": "go;struct:PascalCase,function:camelCase"
+    },
+    {
+        "id": 30,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Python module `SensorMonitor` for an IoT application that processes real-time sensor data. The module should support reading data from multiple sensors concurrently, applying a smoothing filter to reduce noise, and storing the processed results in a database. Implement functions `read_sensor()` to capture sensor input, `filter_data()` to apply a moving average filter, and `store_result()` to record data persistently. Ensure robust error handling and asynchronous data processing. Adhere to naming conventions where class names are in PascalCase and function names are in snake_case.",
+        "answer": "python;class:PascalCase,function:snake_case"
+    },
+    {
+        "id": 31,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a C++ class LogAnalyzer for processing and analyzing log files generated by a distributed system. The class should parse log files, filter entries based on severity levels (e.g., INFO, WARNING, ERROR), and generate summary reports. Implement member functions parseLog(), filterEntries(), and generateReport() to handle these operations. Ensure efficient memory management and robust exception handling. Follow the naming conventions where class names are in PascalCase and function names are in camelCase.",
+        "answer": "cpp;class:PascalCase,function:camelCase"
+    },
+    {
+        "id": 32,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Create a Haskell module BlockchainValidator for cryptocurrency transaction verification in distributed ledger systems. Implement Merkle tree validation, proof-of-work consensus algorithms, and smart contract execution environments. Include functions for digital signature verification, transaction fee calculation, and network synchronization. Adhere to naming conventions where module names use PascalCase, exported functions use camelCase, and internal helper variables use kebab-case.",
+        "answer": "haskell;class:PascalCase,function:camelCase,variable:kebab-case"
+    },
+    {
+        "id": 33,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Implement a Rust struct FileCompressor for compressing and decompressing files in a command-line application. The struct should support multiple compression algorithms such as Gzip, Bzip2, and LZ4. Include methods compress_file() and decompress_file() to handle file operations efficiently. Ensure safe concurrency and memory management. Follow the naming conventions where struct names are in PascalCase and function names are in snake_case.",
+        "answer": "rust;class:PascalCase,function:snake_case"
+    },
+    {
+        "id": 34,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Implement a Zig struct SensorDataParser for embedded systems handling IoT device communications. Include methods for binary protocol decoding, error-correcting code validation, and low-power memory management. Provide real-time data normalization, multi-sensor fusion algorithms, and UART/SPI interface management. Enforce naming conventions where structs use PascalCase, interface functions use camelCase, and configuration constants use kebab-case.",
+        "answer": "zig;class:PascalCase,function:camelCase,variable:kebab-case"
+    },
+    {
+        "id": 35,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Python class DataPipeline to handle data extraction, transformation, and loading (ETL) for a real-time analytics system. The class should support multiple data sources such as CSV, JSON, and databases. Implement methods extract_data(), transform_data(), and load_data() to manage each ETL stage. Ensure efficient memory usage and concurrency handling. Follow the naming conventions where class names are in PascalCase and function names are in snake_case.",
+        "answer": "python;class:PascalCase,function:snake_case"
+    },
+    {
+        "id": 36,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Python API client class `api_client` for interacting with blockchain analytics platforms. Implement methods `get-transaction-graph` for fetching blockchain patterns, `post-smart-contract` with ABI validation, and `handle-rate-limiting` using exponential backoff. Ensure response data is stored in `ParsedResponse` objects and configuration parameters use `kebab-case`. Adhere to naming conventions where class names use snake_case, method names use kebab-case, and data containers use PascalCase.",
+        "answer": "python;class:snake_case,function:kebab-case,variable:PascalCase"
+    },
+    {
+        "id": 37,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Design a Rust module file_manager to manage file operations such as reading, writing, and metadata retrieval. The module should include functions read_file(), write_file(), and get_metadata() that handle UTF-8 encoded text files. Ensure proper error handling and efficient file I/O operations. Follow the naming conventions where struct names are in snake_case, function names are in snake_case, and variable names are in PascalCase.",
+        "answer": "rust;struct:snake_case,function:snake_case,variable:PascalCase"
+    },
+    {
+        "id": 38,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Create a Java interface `data-parser` for ETL pipelines that declares methods `transform-stream` (handling Avro/Parquet formats) and `validate-schema` (using JSON Schema). Implement factory classes `xml_adapter` and `json_adapter` with dependency injection. Store validation rules in `ValidationConfig` objects using SCREAMING_SNAKE_CASE constants. Enforce conventions where interfaces use kebab-case, implementation classes use snake_case, and factory methods use camelCase.",
+        "answer": "java;class:kebab-case,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 39,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Build a C# microservice `message-broker` implementing Kafka consumer/producer patterns. Include methods `handle-dead-letter` with custom retry policies and `serialize-payload` using MessagePack. Configure topic mappings in `TopicRegistry` classes and error codes in PASCAL_CASE. Follow naming rules where services use kebab-case, serialization handlers use snake_case, and configuration objects use camelCase.",
+        "answer": "csharp;class:kebab-case,function:snake_case,variable:camelCase"
+    },
+    {
+        "id": 40,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a Zig package `network-monitor` for real-time packet analysis. Implement `detect-anomalies` using statistical thresholds, `generate-reports` in Markdown format, and `export-metrics` to Prometheus. Store baseline profiles in `baseline_config` structs and alert counters in PascalCase. Adhere to conventions where modules use kebab-case, monitoring functions use snake_case, and metric types use camelCase.",
+        "answer": "zig;class:kebab-case,function:snake_case,variable:camelCase"
+    },
+    {
+        "id": 41,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Implement a Kotlin SDK `payment-gateway` supporting 30+ currency conversions. Expose functions `create-checkout-session` with 3DS verification and `capture-funds` using idempotency keys. Store exchange rates in `RateContainer` objects and API secrets in snake_case. Follow conventions where SDK entrypoints use kebab-case, business logic classes use PascalCase, and utility methods use camelCase.",
+        "answer": "kotlin;class:kebab-case,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 42,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Implement a Go module network_monitor to track system network activity. The module should provide functions to measure bandwidth usage, detect active connections, and log network anomalies. Include functions monitor_traffic(), detect_intrusion(), and log_activity(). Ensure efficient memory usage and concurrent processing. Follow the naming conventions where class names (structs) are in snake_case, function names are in PascalCase, and variable names are in snake_case.",
+        "answer": "go;class:snake_case,function:PascalCase,variable:snake_case"
+    },
+    {
+        "id": 43,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Build a Go package api_gateway to handle API requests efficiently in a microservices architecture. The package should include functions for request validation, rate limiting, and authentication. Implement validate_request(), limit_rate(), and authenticate_user(). Ensure high availability and fault tolerance. Follow the naming conventions where class names are in snake_case, function names are in snake_case, and variable names are in camelCase.",
+        "answer": "go;class:snake_case,function:snake_case,variable:camelCase"
+    },
+    {
+        "id": 44,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Create a Kotlin class UserProfileManager for managing user profile information in an Android application. The class should include functions to retrieve, update, and delete user profile details. Implement retrieveProfile(), updateProfile(), and deleteProfile(). Ensure secure data handling and compliance with user privacy policies. Follow the naming conventions where class names are in PascalCase, function names are in camelCase, and variable names are in kebab-case.",
+        "answer": "kotlin;class:PascalCase,function:camelCase,variable:kebab-case"
+    },
+    {
+        "id": 45,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Design a JavaScript module CryptoWallet for managing cryptocurrency transactions in a decentralized application. The module should support functionalities such as sending transactions, retrieving balances, and managing private keys. Implement sendTransaction(), getBalance(), and manageKeys(). Ensure security best practices and compliance with blockchain standards. Follow the naming conventions where class names are in PascalCase, function names are in camelCase, and variable names are in snake_case.",
+        "answer": "javascript;class:PascalCase,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 46,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Build a Java library `geo-fence` for geospatial computations with R-tree indexing. Include methods `check-within-boundary` (using Haversine formula) and `optimize-clusters` via k-means. Represent coordinates in `Point3D` objects and accuracy thresholds in camelCase. Follow standards where core classes use kebab-case, algorithms use snake_case, and utility methods use PascalCase.",
+        "answer": "java;class:kebab-case,function:snake_case,variable:camelCase"
+    },
+    {
+        "id": 47,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Design a Rust crate `wasm-compiler` for edge computing workloads. Expose functions `compile-module` with SIMD optimizations and `generate-bindings` for JS interop. Configure build profiles in `WasmConfig` structs and feature flags in snake_case. Adhere to naming rules where crate modules use kebab-case, optimization passes use camelCase, and AST nodes use PascalCase.",
+        "answer": "rust;class:kebab-case,function:camelCase,variable:snake_case"
+    },
+    {
+        "id": 48,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Implement a Python framework `request_interceptor` for MITM proxy automation. Create decorators `validate-certificate` (for SSL pinning) and `modify-headers` using regex patterns. Store interception rules in `RuleSet` classes and TLS configurations in kebab-case. Enforce conventions where framework components use snake_case, security handlers use kebab-case, and audit logs use PascalCase.",
+        "answer": "python;class:snake_case,function:kebab-case,variable:PascalCase"
+    },
+    {
+        "id": 49,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Create a Python class named `UserAuthenticator` with methods `validate_credentials()` and `generate_access_token()`. Ensure all class variables like `max_login_attempts` follow snake_case, class names use PascalCase, and method names adhere to snake_case format for consistency with Pythonic conventions.",
+        "answer": "python;class:PascalCase,function:snake_case,variable:snake_case"
+    },
+    {
+        "id": 50,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Design a Python class named `BasicCalculator` that implements functionalities for adding, subtracting, multiplying, and dividing numbers. Ensure you adhere to proper naming conventions using snake_case for functions (like `add_numbers`) and PascalCase for the class name (like `BasicCalculator`).",
+        "answer": "python;class:PascalCase,function:snake_case"
+    },
+    {
+        "id": 51,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Develop a C++ application containing a `Circle` class that computes both the area and perimeter of a circle using its radius. Ensure that variable and function names within the class adhere to camelCase naming conventions, such as `circleRadius`, `calculateArea`, and `calculatePerimeter`.",
+        "answer": "cpp;function:camelCase,variable:camelCase"
+    },
+    {
+        "id": 52,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Create a Go function named `calculateSum` that accepts a slice of integers (`inputSlice`) and returns the sum of those integers. If the input slice is empty, the function should return zero. Adhere to the following code convention: employ camelCase for naming variables and ensure that the function name uses PascalCase to align with Go's naming conventions.",
+        "answer": "go;function:PascalCase,variable:camelCase"
+    },
+    {
+        "id": 53,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Create a Kotlin class named ShoppingCart that includes a list to hold item objects. The ShoppingCart class should have a method defined as addItem to add an item to the cart, and another method named calculateTotalPrice to calculate and return the total cost of the items. For naming conventions, ensure that class names use PascalCase and method names use camelCase.",
+        "answer": "kotlin;class:PascalCase,function:camelCase"
+    },
+    {
+        "id": 54,
+        "category": "code_convention",
+        "constraint": "naming_convention",
+        "prompt": "Create a JavaScript class named `Stack` that simulates the behavior of a stack data structure. This class should include methods named `push()`, `pop()`, and `peek()`. Be sure to follow the naming conventions where method names are in camelCase and class names are in PascalCase.",
+        "answer": "javascript;class:PascalCase,function:camelCase"
+    }
+]

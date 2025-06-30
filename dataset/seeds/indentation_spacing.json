@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "PEP8 (Python)",
+        "feature": "4-space indentation; spaces around operators and after commas",
+        "example": "def add(a, b):\n    return a + b"
+    },
+    {
+        "id": 2,
+        "name": "Google Java Style",
+        "feature": "2-space indentation; no space around operators and after commas",
+        "example": "if (x > 0) {\n  System.out.println(\"Positive\");\n}"
+    },
+    {
+        "id": 3,
+        "name": "Rustfmt Default (Rust)",
+        "feature": "4-space indentation; spaces after commas and around operators",
+        "example": "fn add(a: i32, b: i32) -> i32 {\n    a + b\n}"
+    },
+    {
+        "id": 4,
+        "name": "Prettier Default (JavaScript/TypeScript)",
+        "feature": "2-space indentation; consistent spaces around operators and after commas",
+        "example": "function add(a, b) {\n  return a + b;\n}"
+    },
+    {
+        "id": 5,
+        "name": "Tab Indentation (Golang)",
+        "feature": "Tab character for indentation; spaces after commas and around operators",
+        "example": "if x > 0 {\n\tfmt.Println(\"Positive\")\n}"
+    },
+    {
+        "id": 6,
+        "name": "2-space with no spacing",
+        "feature": "2-space indentation; no spaces around operators or after commas",
+        "example": "function add(a,b){\n  return a+b;\n}"
+    },
+    {
+        "id": 7,
+        "name": "4-space with no spacing",
+        "feature": "4-space indentation; no spaces around operators or after commas",
+        "example": "def add(a,b):\n    return a+b"
+    },
+    {
+        "id": 8,
+        "name": "tab indentation with no spacing",
+        "feature": "Tab indentation; no spaces around operators or after commas",
+        "example": "if x>0 {\n\tprintln(x+1)\n}"
+    }
+]

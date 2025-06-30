@@ -1,0 +1,344 @@
+[
+  {
+    "id": 1,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Python function named `fetch_stock_data` that accepts a single input parameter, a tuple, where the first element represents a stock symbol (string type) and the second element is the date (string in 'YYYY-MM-DD' format). This function should return the closing stock price of the given symbol on the specified date. Ensure the function can handle non-existent stock symbols by raising a custom `ValueError` with a meaningful error message. The function should also validate dates using regular expressions to ensure the input complies with the 'YYYY-MM-DD' format before processing. Handle edge cases such as empty string inputs and malformed data gracefully.",
+        "```python\nimport re\n\ndef fetch_stock_data(stock_symbol, date):\n    # Validate date format using regular expression\n    if not re.match(r'^\\d{4}-\\d{2}-\\d{2}$', date):\n        raise ValueError(\"Date must be in 'YYYY-MM-DD' format\")\n    \n    # Check if stock symbol is non-empty\n    if not stock_symbol:\n        raise ValueError(\"Stock symbol cannot be empty\")\n    \n    # Check if stock symbol is a string\n    if not isinstance(stock_symbol, str):\n        raise ValueError(\"Stock symbol must be a string\")\n    \n    # Simulate fetching stock data (placeholder logic)\n    # In a real scenario, this would fetch data from an API or database\n    # For this example, return a mock closing price\n    closing_price = 150.50  # Example closing price\n    \n    return closing_price\n```"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function named `validateJSONFields` that accepts a `JSONObject` with a defined structure. The JSON object should contain exactly 3 keys: 'id' which must be an integer, 'status' which should be a boolean, and 'data' that is an array of strings. The function should check whether the JSON object adheres to this structure and validate the field types accordingly. Additionally, ensure that each string in the 'data' array does not exceed 50 characters in length. The function should return a boolean indicating whether the JSON object is valid or not.",
+        "#include <iostream>\n#include <string>\n#include <vector>\n#include <stdexcept>\n\nclass JSONObject {\npublic:\n    std::string id;\n    bool status;\n    std::vector<std::string> data;\n};\n\nbool validateJSONFields(const JSONObject& json) {\n    // Check if the JSON object has exactly 3 keys\n    if (json.id.empty() || json.status || json.data.empty()) {\n        return false;\n    }\n\n    // Check if 'id' is an integer\n    if (json.id.find('.') != std::string::npos) {\n        return false;\n    }\n\n    // Check if 'status' is a boolean\n    if (json.status != true && json.status != false) {\n        return false;\n    }\n\n    // Check if 'data' is an array of strings\n    if (json.data.empty()) {\n        return false;\n    }\n\n    // Check if each string in 'data' is <= 50 characters\n    for (const auto& str : json.data) {\n        if (str.length() > 50) {\n            return false;\n        }\n    }\n\n    return true;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `check_collision_status` which accepts a single Boolean input `object_moving`. The function should return `true` if `object_moving` is `true`, signifying a moving object is potentially at risk of collision. Otherwise, it should return `false`. This function should directly reflect the simple state of whether an object is considered for collision status checking based on its movement, applying a real-world scenario where motion predicates environmental interactions in automated systems, such as robotics or vehicle autopilot systems.",
+        "```rust\nfn check_collision_status(object_moving: bool) -> bool {\n    object_moving\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Java method named `validateNumberList` that takes a single parameter: a List of integers. The method should verify that the size of the list is between 1 and 50, inclusive, and that each integer within the list ranges between 10 and 100, inclusive. If the list fails these specifications, the method should return false; otherwise, true. Note that empty lists should automatically lead to a false result.",
+        "```java\nimport java.util.List;\n\npublic class NumberValidator {\n    public static boolean validateNumberList(List<Integer> numbers) {\n        if (numbers == null || numbers.isEmpty()) {\n            return false;\n        }\n        int size = numbers.size();\n        if (size < 1 || size > 50) {\n            return false;\n        }\n        for (int num : numbers) {\n            if (num < 10 || num > 100) {\n                return false;\n            }\n        }\n        return true;\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method called 'validateIPv4Tuple' that accepts a single tuple input. The tuple should contain exactly four elements representing an IPv4 address (e.g. (192, 168, 1, 1)). Each element in the tuple should be an integer between 0 and 255 inclusive. The method should return true if the tuple correctly represents a valid IPv4 address, and false otherwise. Ensure that the method handles any non-integer values or tuples that do not meet the size and range criteria gracefully by returning false, without throwing exceptions.",
+        "```java\npublic class IPv4Validator {\n    public static boolean validateIPv4Tuple(int[] tuple) {\n        if (tuple.length != 4) {\n            return false;\n        }\n        for (int i : tuple) {\n            if (i < 0 || i > 255) {\n                return false;\n            }\n        }\n        return true;\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named `process_map_entries` that accepts a single Map (dictionary in Python) as input. This function should filter out any entries where the key does not match the regex pattern `^[a-zA-Z]+$` and the number of entries in the map should be between 5 and 20, inclusive. The function should process remaining valid entries by capitalizing all values (assuming they are strings). If any key has a non-string value, skip the capitalization for that entry. Ensure the function does not mutate the original map but instead returns a new processed map.",
+        "```python\nimport re\n\ndef process_map_entries(map_dict):\n    # Define the regex pattern\n    pattern = r'^[a-zA-Z]+$'\n    \n    # Filter entries that match the pattern and have count between 5 and 20\n    filtered_entries = []\n    for key, value in map_dict.items():\n        if re.match(pattern, key) and 5 <= len(map_dict) <= 20:\n            filtered_entries.append((key, value))\n    \n    # Create a new processed map\n    processed_map = {}\n    for key, value in filtered_entries:\n        if isinstance(value, str):\n            processed_map[key] = value.upper()\n        else:\n            processed_map[key] = value  # Skip capitalization for non-string values\n    \n    return processed_map\n```"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function called 'mergeSortedListOfStrings' that accepts a single List parameter containing string elements. The function should return a new List with all elements sorted in ascending lexicographical order. The input list can have a minimum of 0 elements and a maximum of 100 elements. The function should gracefully handle empty lists and lists containing string elements of various cases without throwing exceptions.",
+        "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nusing namespace std;\n\nvector<string> mergeSortedListOfStrings(vector<string> list) {\n    if (list.empty()) {\n        return list;\n    }\n    if (list.size() == 1) {\n        return list;\n    }\n    vector<string> left = list.substr(0, list.size() / 2);\n    vector<string> right = list.substr(list.size() / 2);\n    vector<string> sorted = mergeSortedListOfStrings(left);\n    vector<string> sorted2 = mergeSortedListOfStrings(right);\n    return merge(sorted, sorted2);\n}\n\nvector<string> merge(vector<string> left, vector<string> right) {\n    vector<string> result;\n    int i = 0, j = 0;\n    while (i < left.size() && j < right.size()) {\n        if (left[i] < right[j]) {\n            result.push_back(left[i]);\n            i++;\n        } else {\n            result.push_back(right[j]);\n            j++;\n        }\n    }\n    while (i < left.size()) {\n        result.push_back(left[i]);\n        i++;\n    }\n    while (j < right.size()) {\n        result.push_back(right[j]);\n        j++;\n    }\n    return result;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function named `analyze_histogram` that accepts a Map where each key is a character (char) and the value is the frequency (usize) of that character in a document. Ensure the function only processes maps with 1 to 50 key-value pairs. The function should return a new Map where each key is a \"low\", \"medium\", or \"high\" based on frequency values: \"low\" for frequencies 1-10, \"medium\" for 11-100, and \"high\" for 101 and above. This returned Map will aggregate count of original keys falling into each category. Ensure the process handles edge sizes of map lengths correctly without throwing errors.",
+        "```rust\nuse std::collections::HashMap;\n\nfn analyze_histogram(hist: HashMap<char, usize>) -> HashMap<String, usize> {\n    let mut result = HashMap::new();\n    let mut counts = [0; 3]; // low, medium, high\n\n    for &freq in &hist.values() {\n        if freq < 11 {\n            counts[0] += 1;\n        } else if freq < 101 {\n            counts[1] += 1;\n        } else {\n            counts[2] += 1;\n        }\n    }\n\n    let mut result_map = HashMap::new();\n    result_map.insert(\"low\".to_string(), counts[0]);\n    result_map.insert(\"medium\".to_string(), counts[1]);\n    result_map.insert(\"high\".to_string(), counts[2]);\n\n    result_map\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named count_even_odd_in_range that takes two integers, start and end as input parameters. The function should count and return the number of even and odd numbers between start and end, inclusive. The input integers should be in a valid range between 0 and 1000. Implement the function to properly handle scenarios where start is greater than end by returning (0, 0) indicating zero even and odd numbers in the invalid range.",
+        "def count_even_odd_in_range(start, end):\n    if start > end:\n        return (0, 0)\n    even = 0\n    odd = 0\n    for num in range(start, end + 1):\n        if num % 2 == 0:\n            even += 1\n        else:\n            odd += 1\n    return (even, odd)"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: In Rust, implement a function named `calculate_secondary_budget` that accepts a single non-null parameter of type `BudgetDetails`. The `BudgetDetails` struct should include three fields: `primary_budget` as u32 representing the primary budget in dollars, `percentage_retained` as f32 representing the percentage (between 0 and 100 inclusive) of the primary budget to calculate the secondary budget, and `round_nearest_dollar` as a boolean specifying whether to round the final secondary budget to the nearest dollar. The function should calculate the secondary budget based on the specified percentage of the primary budget. If `round_nearest_dollar` is true, the output should round to the nearest whole number; otherwise, output the non-rounded floating number as f32. Ensure your implementation handles boundary conditions correctly and efficiently.",
+        "```rust\nstruct BudgetDetails {\n    primary_budget: u32,\n    percentage_retained: f32,\n    round_nearest_dollar: bool,\n}\n\nfn calculate_secondary_budget(budget_details: BudgetDetails) -> f32 {\n    let secondary_budget = (budget_details.primary_budget as f32) * (budget_details.percentage_retained / 100.0);\n    if budget_details.round_nearest_dollar {\n        secondary_budget.round() as f32\n    } else {\n        secondary_budget\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function named `treeMirrorSwap` that accepts a root node of a binary tree (composed of nodes, each having integer values). The function should mirror the binary tree such that for every node, the left child becomes the right child and vice versa throughout the tree. The binary tree must have no more than 100 nodes and no less than 10 nodes. Additionally, ensure the implementation handles null tree inputs gracefully and efficiently, without modifying the empty tree.",
+        "#include <iostream>\nusing namespace std;\n\nstruct TreeNode {\n    int val;\n    TreeNode *left;\n    TreeNode *right;\n    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}\n};\n\nTreeNode* treeMirrorSwap(TreeNode* root) {\n    if (root == nullptr) return root;\n    \n    // Swap left and right children\n    TreeNode* temp = root->left;\n    root->left = root->right;\n    root->right = temp;\n    \n    // Recursively swap the subtrees\n    treeMirrorSwap(root->left);\n    treeMirrorSwap(root->right);\n    \n    return root;\n}\n\n// Test code\nint main() {\n    // Create a sample tree\n    TreeNode* root = new TreeNode(1);\n    root->left = new TreeNode(2);\n    root->right = new TreeNode(3);\n    root->left->left = new TreeNode(4);\n    root->left->right = new TreeNode(5);\n    root->right->left = new TreeNode(6);\n    root->right->right = new TreeNode(7);\n    \n    // Swap the tree\n    treeMirrorSwap(root);\n    \n    // Print the tree to verify\n    cout << \"Mirrored tree:\\n\";\n    // Traverse the tree in-order\n    TreeNode* current = root;\n    while (current != nullptr) {\n        cout << current->val << \" \";\n        current = current->right;\n    }\n    cout << endl;\n    \n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method named 'calculateArrayStats' that accepts a single tuple containing four integer elements. The method should compute the minimum, maximum, sum, and average of the elements in the tuple and return these statistics in a new tuple in the specified order. The method must ensure that it does not throw any exceptions even if the integers are at their boundary values. The numbers in the tuple can range from Integer.MIN_VALUE to Integer.MAX_VALUE.",
+        "public class ArrayStats {\n    public static void main(String[] args) {\n        // Example usage\n        int[] array = {10, 20, 30, 40};\n        Tuple stats = calculateArrayStats(array);\n        System.out.println(\"Minimum: \" + stats.get(0) + \", Maximum: \" + stats.get(1) + \", Sum: \" + stats.get(2) + \", Average: \" + stats.get(3));\n    }\n\n    public static Tuple calculateArrayStats(int[] array) {\n        if (array == null || array.length < 4) {\n            throw new IllegalArgumentException(\"Array must have at least 4 elements\");\n        }\n\n        int min = array[0];\n        int max = array[0];\n        int sum = 0;\n\n        for (int num : array) {\n            sum += num;\n            if (num < min) min = num;\n            if (num > max) max = num;\n        }\n\n        double average = (double) sum / array.length;\n\n        return new Tuple(min, max, sum, average);\n    }\n}\n\nclass Tuple {\n    private final int min;\n    private final int max;\n    private final int sum;\n    private final double average;\n\n    public Tuple(int min, int max, int sum, double average) {\n        this.min = min;\n        this.max = max;\n        this.sum = sum;\n        this.average = average;\n    }\n\n    public int get(int index) {\n        switch (index) {\n            case 0: return min;\n            case 1: return max;\n            case 2: return sum;\n            case 3: return (int) average;\n            default: throw new IllegalArgumentException(\"Invalid index\");\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `validate_json_structure` that accepts a single `JSONObject` as input. The function must ensure that the JSON object contains at least 3 and no more than 8 keys. If the JSON object meets this requirement, the function should return `true`; otherwise, it should return `false`. The function must handle other data types gracefully and must not panic or crash if the input is not a `JSONObject`.",
+        "```rust\nfn validate_json_structure(json: &serde_json::Value) -> bool {\n    if let serde_json::Value::Object(obj) = json {\n        if obj.len() >= 3 && obj.len() <= 8 {\n            true\n        } else {\n            false\n        }\n    } else {\n        false\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named `calculate_rounded_area` that accepts one float parameter, `radius`, representing the radius of a circle. The function should calculate the area of the circle rounded to two decimal places. The radius must be a float number between 0.0 and 100.0. The function should handle edge cases such as the minimum and maximum values gracefully and ensure that the computation is not performed for invalid inputs like negative values, returning None in such cases.",
+        "```python\ndef calculate_rounded_area(radius):\n    if not (0.0 <= radius <= 100.0):\n        return None\n    area = 3.14159 * radius ** 2\n    return round(area, 2)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a C++ function named `countTreeDepth` that accepts a non-null binary tree as input and returns its maximum depth. The binary tree is defined by its root node which contains integer data, a pointer to the left child, and a pointer to the right child. Ensure that the function operates correctly for trees with depth ranging from 1 to 10. Handle edge cases where the tree is a single node gracefully.",
+        "#include <iostream>\n\nint countTreeDepth(TreeNode* root) {\n    if (root == nullptr) {\n        return 0;\n    }\n    int leftDepth = countTreeDepth(root->left);\n    int rightDepth = countTreeDepth(root->right);\n    return 1 + std::max(leftDepth, rightDepth);\n}"
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java method named `calculateTreeDepth` in a new class named `TreeProcessor`. The method takes a single parameter of a custom class `TreeNode` representing the root of a binary tree. Define the `TreeNode` class which should include an integer value and pointers to left and right children nodes. The method should return an integer representing the maximum depth of the tree. The class `TreeNode` and method `calculateTreeDepth` should be well-documented, handle null inputs gracefully by returning a depth of zero, and ensure no exceptions are thrown during execution.",
+        "```java\n// TreeNode.java\npublic class TreeNode {\n    public int value;\n    public TreeNode left;\n    public TreeNode right;\n\n    public TreeNode(int value) {\n        this.value = value;\n        this.left = null;\n        this.right = null;\n    }\n}\n\n// TreeProcessor.java\npublic class TreeProcessor {\n    /**\n     * Calculates the maximum depth of a binary tree.\n     * \n     * @param root The root node of the binary tree.\n     * @return The maximum depth of the tree, or 0 if the tree is null.\n     */\n    public int calculateTreeDepth(TreeNode root) {\n        if (root == null) {\n            return 0;\n        }\n        \n        int leftDepth = calculateTreeDepth(root.left);\n        int rightDepth = calculateTreeDepth(root.right);\n        \n        return 1 + Math.max(leftDepth, rightDepth);\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method named `calculateTotalPages` that calculates total pages needed for given number of topics. This method accepts a non-null integer input, `topicsPerPage`, specifying how many topics can be covered on each page, and a non-null integer, `totalTopics`, representing total topics to be covered. If `topicsPerPage` is zero, the method should return zero without throwing an exception. Ensure the numbers for `topicsPerPage` and `totalTopics` are between 1 and 1000.",
+        "public int calculateTotalPages(int topicsPerPage, int totalTopics) {\n    if (topicsPerPage == 0) {\n        return 0;\n    }\n    if (topicsPerPage > 1000 || totalTopics > 1000) {\n        throw new IllegalArgumentException(\"topicsPerPage and totalTopics must be between 1 and 1000\");\n    }\n    return (totalTopics + topicsPerPage - 1) / topicsPerPage;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `frequency_sort` that accepts a single non-empty string with a maximum length of 100 characters. The function should output a new string where the characters are sorted based on their frequency in descending order. In case of a tie in frequency, characters should be ordered by their natural ascending order. The function should handle strings containing alphanumeric and special characters efficiently, without throwing exceptions.",
+        "fn frequency_sort(s: &str) -> String {\n    let mut freq: std::collections::HashMap<char, usize> = std::collections::HashMap::new();\n    for c in s.chars() {\n        *freq.entry(c).or_insert(0) += 1;\n    }\n\n    let mut sorted: Vec<(char, usize)> = freq.into_iter().collect();\n    sorted.sort_by(|a, b| {\n        // Sort by frequency descending, then by character ascending\n        let freq_cmp = b.1.cmp(&a.1);\n        if freq_cmp == std::cmp::Ordering::Equal {\n            a.0.cmp(&b.0)\n        } else {\n            freq_cmp\n        }\n    });\n\n    let mut result = String::new();\n    for (c, _) in sorted {\n        result.push(c);\n    }\n\n    result\n}"
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function named `normalizeURL` that takes a single `std::string` parameter representing a URL. The function should ensure that the protocol part of the URL (if provided) is converted to lowercase. If the URL has parameters, it should sort them alphabetically based on the parameter name. For URLs without a protocol, prepend 'http://'. The input string should be a valid URL containing alphanumeric characters and typical URL symbols like ':', '/', '?', '&', '=', and '-'. The function should handle up to 300 characters and not throw exceptions with incorrect formats but return the input as is.",
+        "#include <string>\n#include <algorithm>\n#include <cctype>\n#include <vector>\n#include <map>\n\nstd::string normalizeURL(const std::string& url) {\n    std::string result = url;\n    \n    // Check if URL has protocol\n    size_t protocolPos = url.find(\"://\");\n    if (protocolPos != std::string::npos) {\n        // Convert protocol to lowercase\n        std::string protocol = url.substr(0, protocolPos);\n        std::transform(protocol.begin(), protocol.end(), protocol.begin(), ::tolower);\n        result = url.substr(protocolPos);\n    } else {\n        // Prepend 'http://' if no protocol\n        result = \"http://\" + result;\n    }\n    \n    // Split URL into parts\n    size_t queryPos = result.find('?');\n    size_t paramPos = result.find('&');\n    \n    std::vector<std::string> params;\n    \n    // Extract parameters\n    if (queryPos != std::string::npos) {\n        std::string query = result.substr(queryPos + 1);\n        std::vector<std::string> paramList;\n        std::string currentParam;\n        \n        while (queryPos != std::string::npos) {\n            size_t paramEnd = queryPos;\n            while (paramEnd < query.size() && query[paramEnd] != '&') {\n                paramEnd++;\n            }\n            if (paramEnd > queryPos) {\n                currentParam = query.substr(queryPos, paramEnd - queryPos);\n                paramList.push_back(currentParam);\n                queryPos = paramEnd + 1;\n            } else {\n                queryPos = query.size();\n            }\n        }\n        \n        // Sort parameters alphabetically by name\n        std::sort(paramList.begin(), paramList.end());\n        \n        // Reconstruct URL with sorted parameters\n        result = result.substr(0, queryPos) + \"&\" + std::accumulate(paramList.begin(), paramList.end(), std::string(\"\"));\n    }\n    \n    return result;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named `rotateMatrix` that takes a single parameter: a square matrix (nested list format where outer list is rows and inner lists are columns) with element values as integers. The matrix can be of any size from 2x2 up to 10x10. This function should rotate the matrix 90 degrees clockwise and return the rotated matrix. The function must handle matrices that include negative integers but ensure that the rotation preserves the data type and number of elements in each row and column. Furthermore, the feature should handle matrix rotation even if matrix elements are not strictly integers but any numeric type.",
+        "```python\ndef rotateMatrix(matrix):\n    n = len(matrix)\n    rotated = [[0] * n for _ in range(n)]\n    for i in range(n):\n        for j in range(n):\n            rotated[j][n - 1 - i] = matrix[i][j]\n    return rotated\n```"
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `clamp_temperature` that accepts a floating-point number representing a temperature in Celsius. The function should ensure the temperature remains within the global climate agreement bounds of -10.0 to 50.0 degrees Celsius. If the input temperature is below -10.0, it should return -10.0; if it's above 50.0, it should return 50.0; otherwise, it should return the original temperature value. Ensure precision is maintained, and handle edge cases gracefully without panic.",
+        "```rust\nfn clamp_temperature(temperature: f64) -> f64 {\n    if temperature < -10.0 {\n        -10.0\n   } else if temperature > 50.0 {\n        50.0\n   } else {\n        temperature\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Java method named `countConnectedComponents` that accepts a Graph object representing an undirected graph as input. The method should accurately determine and return the number of connected components within the graph. Ensure input graphs can have a number of vertices ranging from 1 to 100, and handle cases where the graph may contain no edges or self-loops. The implementation should correctly handle empty graphs gracefully without throwing exceptions.",
+        "```java\npublic class Graph {\n    // Assume Graph is implemented with adjacency list\n    private Map<Integer, List<Integer>> adjacencyList;\n\n    public Graph() {\n        adjacencyList = new HashMap<>();\n    }\n\n    public void addEdge(int u, int v) {\n        adjacencyList.computeIfAbsent(u, k -> new ArrayList<>()).add(v);\n        adjacencyList.computeIfAbsent(v, k -> new ArrayList<>()).add(u);\n    }\n\n    public int countConnectedComponents() {\n        if (adjacencyList.isEmpty()) {\n            return 0;\n        }\n\n        int count = 0;\n        boolean[] visited = new boolean[adjacencyList.size()];\n\n        for (int node : adjacencyList.keySet()) {\n            if (!visited[node]) {\n                count++;\n                dfs(node, visited);\n            }\n        }\n\n        return count;\n    }\n\n    private void dfs(int node, boolean[] visited) {\n        visited[node] = true;\n        for (int neighbor : adjacencyList.get(node)) {\n            if (!visited[neighbor]) {\n                dfs(neighbor, visited);\n            }\n        }\n    }\n}\n\npublic class CountConnectedComponents {\n    public static void main(String[] args) {\n        Graph graph = new Graph();\n        graph.addEdge(1, 2);\n        graph.addEdge(2, 3);\n        graph.addEdge(4, 5);\n        graph.addEdge(5, 6);\n        graph.addEdge(6, 4);\n\n        int components = new CountConnectedComponents().countConnectedComponents(graph);\n        System.out.println(\"Number of connected components: \" + components);\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named `is_graph_cyclic` that determines whether a given directed graph contains any cycles. The graph should be represented as an adjacency list passed to the function. The function should return `True` if there is at least one cycle in the graph, otherwise `False`. Ensure your solution handles graphs of varying sizes convincingly, with vertex count exactly between 5 and 20, and edge count ranging from minimum 5 to a maximum of 40. The method should manage edge cases like empty graphs, single vertex with no edges, and fully connected graphs without causing runtime errors.",
+        "```python\ndef is_graph_cyclic(adj):\n    n = len(adj)\n    visited = [0] * n\n    rec_stack = [False] * n\n    has_cycle = False\n\n    def dfs(u):\n        if visited[u]:\n            return\n        if rec_stack[u]:\n            nonlocal has_cycle\n            has_cycle = True\n            return\n        rec_stack[u] = True\n        visited[u] = 1\n        for v in adj[u]:\n            dfs(v)\n        rec_stack[u] = False\n\n    for u in range(n):\n        if not visited[u]:\n            dfs(u)\n\n    return has_cycle\n```"
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function named `formatPath` which accepts a single string parameter representing a file or directory path. The function should normalize the path by converting backslashes to forward slashes and removing any consecutive slashes, except the leading ones if the path is a network path (e.g., `\\\\server\\share`). The function is expected to handle paths up to 300 characters in length and can include non-alphabetical characters. Ensure proper handling of both empty and excessively long strings without throwing exceptions.",
+        "#include <string>\n#include <algorithm>\n#include <cctype>\n\nstd::string formatPath(const std::string& path) {\n    // Normalize backslashes to forward slashes\n    std::string normalizedPath = path;\n    std::transform(normalizedPath.begin(), normalizedPath.end(), normalizedPath.begin(), \n                   [](unsigned char c) { return c == '\\\\' ? '/' : c; });\n\n    // Remove consecutive slashes\n    size_t pos = 0;\n    while (pos < normalizedPath.size()) {\n        if (normalizedPath[pos] == '/') {\n            pos++;\n            while (pos < normalizedPath.size() && normalizedPath[pos] == '/') {\n                pos++;\n            }\n        } else {\n            pos++;\n        }\n    }\n\n    // Handle network paths (e.g., \\\\server\\share)\n    if (normalizedPath[0] == '\\\\' && normalizedPath[1] == '\\\\') {\n        normalizedPath = normalizedPath.substr(2);\n    }\n\n    return normalizedPath;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `scaleMatrixValues` that takes a matrix of integers as its only argument. This matrix should have dimensions between 2x2 and 10x10, inclusive, and each cell value must be between -100 and 100 inclusive. The function should scale any positive cell value in the matrix by doubling it, and scale any negative cell value by halving it. Ensure correct input validation and provide reasonable outputs for the given constraints without throwing exceptions for incorrect input sizes or values.",
+        "```python\ndef scaleMatrixValues(matrix):\n    for i in range(len(matrix)):\n        for j in range(len(matrix[i])):\n            if matrix[i][j] > 0:\n                matrix[i][j] *= 2\n            elif matrix[i][j] < 0:\n                matrix[i][j] /= 2\n    return matrix\n```"
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `graph_edge_prune` that takes a mutable reference to a Graph data structure as its only parameter. This Graph should have vertices labeled with integers and the edges labeled with weights. The function should remove all edges that have weights lower than a predefined threshold, `threshold_weight`, set at 10. The Graph should support a maximum of 100 vertices and 200 edges. After pruning the edges, the function should return the modified Graph. Ensure the Graph does not become disconnected as a result of the edge removal unless a vertex becomes isolated.",
+        "```rust\nuse std::collections::HashMap;\n\nstruct Graph {\n    vertices: HashMap<u32, Vec<Edge>>,\n    num_vertices: u32,\n    num_edges: u32,\n}\n\nstruct Edge {\n    source: u32,\n    target: u32,\n    weight: u32,\n}\n\nimpl Graph {\n    fn new() -> Self {\n        Graph {\n            vertices: HashMap::new(),\n            num_vertices: 0,\n            num_edges: 0,\n        }\n    }\n\n    fn add_edge(&mut self, source: u32, target: u32, weight: u32) {\n        if !self.vertices.contains_key(&source) {\n            self.vertices.insert(source, Vec::new());\n        }\n        if !self.vertices.contains_key(&target) {\n            self.vertices.insert(target, Vec::new());\n        }\n        self.vertices.get_mut(&source).unwrap().push(Edge { source, target, weight });\n        self.num_edges += 1;\n    }\n\n    fn graph_edge_prune(&mut self, threshold_weight: u32) {\n        let mut new_edges = HashMap::new();\n        let mut visited = HashMap::new();\n\n        for (source, edges) in self.vertices.iter() {\n            for edge in edges {\n                if edge.weight >= threshold_weight {\n                    if !visited.contains_key(&source) {\n                        visited.insert(source, true);\n                    }\n                    if !visited.contains_key(&edge.target) {\n                        visited.insert(edge.target, true);\n                    }\n                    new_edges.insert(source, Vec::new());\n                    new_edges.get_mut(&source).unwrap().push(edge);\n                }\n            }\n        }\n\n        self.vertices = new_edges;\n        self.num_edges = new_edges.len() * 2; // Each edge is stored twice\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a C++ function named `validateKeys` that takes a `std::map<std::string, std::string>` object as input. The map's keys must strictly adhere to the following regular expression pattern: \"[A-Z]{3}\\d{2}\". This pattern expects keys to start with exactly three uppercase letters followed by exactly two digits. The function should return a boolean result indicating if all keys in the map comply with this pattern. Ensure the function handles an empty map gracefully, returning true in such cases.",
+        "#include <map>\n#include <string>\n#include <cctype>\n\nbool validateKeys(const std::map<std::string, std::string>& map) {\n    for (const auto& pair : map) {\n        const std::string& key = pair.first;\n        if (key.length() != 5) {\n            return false;\n        }\n        if (!std::all_of(key.begin(), key.end(), [](char c) {\n            return std::isupper(c);\n        })) {\n            return false;\n        }\n        if (key[0] != 'A' || key[1] != 'B' || key[2] != 'C') {\n            return false;\n        }\n        if (key[3] < '0' || key[4] > '9') {\n            return false;\n        }\n    }\n    return true;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method named `validateMatrix` that accepts a single non-null 2D integer matrix as input. Each element in the matrix should strictly be between 1 and 100, inclusive. The method should return a boolean indicating whether all values in the matrix conform to this range. The method should handle different dimensions of matrices gracefully without throwing exceptions and must efficiently anticipate varied matrix sizes potentially up to 100x100 elements.",
+        "public boolean validateMatrix(int[][] matrix) {\n    if (matrix == null) {\n        return false;\n    }\n    int rows = matrix.length;\n    if (rows <= 0) {\n        return false;\n    }\n    int cols = matrix[0].length;\n    if (cols <= 0) {\n        return false;\n    }\n    for (int i = 0; i < rows; i++) {\n        for (int j = 0; j < cols; j++) {\n            if (matrix[i][j] < 1 || matrix[i][j] > 100) {\n                return false;\n            }\n        }\n    }\n    return true;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function named `countLeafNodes` that takes a binary tree (via a pointer to its root node) as input and returns the count of its leaf nodes. A leaf node is defined as a node without any child nodes. The tree can contain between 1 and 50 nodes. Ensure your function handles trees with varying structures (e.g., balanced, left-heavy, and right-heavy) and that it efficiently counts leaf nodes using depth-first search principles without using additional data structures.",
+        "#include <iostream>\n\nusing namespace std;\n\nstruct TreeNode {\n    int val;\n    TreeNode* left;\n    TreeNode* right;\n    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}\n};\n\nint countLeafNodes(TreeNode* root) {\n    if (root == nullptr) return 0;\n    if (root->left == nullptr && root->right == nullptr) return 1;\n    return countLeafNodes(root->left) + countLeafNodes(root->right);\n}\n\nint main() {\n    // Example usage\n    TreeNode* root = new TreeNode(1);\n    root->left = new TreeNode(2);\n    root->right = new TreeNode(3);\n    root->left->left = new TreeNode(4);\n    root->left->right = new TreeNode(5);\n    root->right->left = new TreeNode(6);\n    root->right->right = new TreeNode(7);\n\n    int leafCount = countLeafNodes(root);\n    cout << \"Number of leaf nodes: \" << leafCount << endl;\n\n    delete root;\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java method named calculateDiscount that accepts a single price value of type Float. The price value should be a non-negative float ranging between 0.0 and 10000.0 inclusive. The method should calculate a discount price based on the given price. If the price is between 0.0 and 100.0, apply a 5% discount; between 100.1 and 500.0, apply a 10% discount; and for prices over 500.1 up to 10000.0, apply a 15% discount. Return the discounted price rounded to two decimal places. Additionally, handle edge cases such as the maximum boundary by ensuring calculations do not produce errors or incorrect results.",
+        "public class DiscountCalculator {\n    public static float calculateDiscount(float price) {\n        if (price < 0.0) {\n            throw new IllegalArgumentException(\"Price cannot be negative.\");\n        }\n        if (price >= 0.0 && price <= 100.0) {\n            return (float) ((price * 0.95) + 0.005); // 5% discount\n        } else if (price > 100.0 && price <= 500.0) {\n            return (float) ((price * 0.90) + 0.005); // 10% discount\n        } else if (price > 500.0 && price <= 10000.0) {\n            return (float) ((price * 0.85) + 0.005); // 15% discount\n        } else {\n            throw new IllegalArgumentException(\"Price must be between 0.0 and 10000.0 inclusive.\");\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `countNonZeroMatrixElements` that accepts a single non-null matrix of integers as its input. The matrix should have dimensions that do not exceed 10x10. The function should count and return the number of non-zero elements in the given matrix. The function should handle matrices with dimensions from 1x1 up to 10x10, including various shapes (not strictly square matrices). Each element in the matrix should be processed efficiently to optimize performance.",
+        "```python\ndef countNonZeroMatrixElements(matrix):\n    count = 0\n    for row in matrix:\n        for element in row:\n            if element != 0:\n                count += 1\n    return count\n```"
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Rust function called `count_unique_keys` that accepts a single Map with String keys and integer values. The function should return the count of unique keys that have an associated value of zero. The Map must contain between 1 and 50 key-value pairs. The function should handle any Map within this range efficiently, without panicking or throwing errors.",
+        "```rust\nfn count_unique_keys(map: &std::collections::HashMap<String, i32>) -> i32 {\n    let mut count = 0;\n    for value in map.values() {\n        if *value == 0 {\n            count += 1;\n        }\n    }\n    count\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 33,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function named `mergeTuplePairs` that accepts a single tuple of pairs of integers of a fixed size '4'. The function should merge these pairs into a single resultant tuple by adding the first elements of each pair together and the second elements of each pair together. For example, given the input tuple ((a1, b1), (a2, b2), (a3, b3), (a4, b4)), the output should be a tuple (a1+a2+a3+a4, b1+b2+b3+b4). Ensure the function can handle all forms of integer input gracefully, including negative numbers, without throwing any exceptions.",
+        "#include <tuple>\n#include <cstddef>\n#include <iostream>\n\nstd::tuple<int, int> mergeTuplePairs(const std::tuple<std::tuple<int, int>>& input) {\n    int sum1 = 0, sum2 = 0;\n    auto pairs = std::get<0>(input), pairs2 = std::get<1>(input);\n    for (size_t i = 0; i < 4; ++i) {\n        sum1 += std::get<0>(pairs).get<0>();\n        sum2 += std::get<0>(pairs2).get<0>();\n    }\n    return std::tuple<int, int>(sum1, sum2);\n}"
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named `checkGraphConnectivity` that takes a graph represented as an adjacency matrix. The function should determine if the graph is fully connected (i.e., there is a path between any two vertices). Assume the graph has vertices numbered from 0 to N-1 and contains between 3 and 20 vertices. The function should handle inputs gracefully, gracefully returning `False` if the input graph does not meet the specified conditions or is not properly formatted.",
+        "```python\ndef checkGraphConnectivity(adj_matrix):\n    N = len(adj_matrix)\n    if N < 3 or N > 20:\n        return False\n    visited = [False] * N\n    queue = [0]\n    visited[0] = True\n\n    while queue:\n        current = queue.pop(0)\n        for neighbor in range(N):\n            if adj_matrix[current][neighbor] == 1 and not visited[neighbor]:\n                visited[neighbor] = True\n                queue.append(neighbor)\n\n    for i in range(N):\n        if not visited[i]:\n            return False\n    return True\n```"
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function that takes a vector of integers as input and returns a string representing these integers concatenated together with commas. An example is converting the input vector [1, 2, 3] into the output string \"1,2,3\". Make certain that the input vector should only contain non-negative integers.",
+        "#include <vector>\n#include <string>\n#include <sstream>\n\nstd::string concatenateIntegers(const std::vector<int>& numbers) {\n    std::ostringstream oss;\n    for (size_t i = 0; i < numbers.size(); ++i) {\n        oss << numbers[i];\n        if (i < numbers.size() - 1) {\n            oss << \",\";\n        }\n    }\n    return oss.str();\n}"
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method named 'swapCharPairs' that accepts a single string input, which has a length less than or equal to 100. The method should swap every two adjacent characters in the string. If the string's length is odd, the last character should remain unchanged.",
+        "public class SwapCharPairs {\n    public static void swapCharPairs(String input) {\n        if (input == null || input.length() <= 1) return;\n        \n        for (int i = 0; i < input.length() - 1; i += 2) {\n            char temp = input.charAt(i);\n            input = input.substring(0, i) + input.charAt(i + 1) + input.charAt(i) + input.substring(i + 2);\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method named `isPrime` that accepts a single integer as input. This method should return a boolean value: `true` if the given integer is a prime number, and `false` otherwise. Ensure this integer input is non-negative and strictly less than `1000`.",
+        "public boolean isPrime(int number) {\n    if (number < 0 || number >= 1000) {\n        return false;\n    }\n    if (number == 1) {\n        return false;\n    }\n    for (int i = 2; i * i <= number; i++) {\n        if (number % i == 0) {\n            return false;\n        }\n    }\n    return true;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Can you devise a Python function that takes a list of unique integers as input, ensures all numbers are within the inclusive range of 1 to 100, sorts them in ascending order, and returns a list containing only the even numbers in the sorted order? Please ensure the input list does not contain any duplicate integers.",
+        "def process_list(nums):\n    return [num for num in nums if num % 2 == 0 if num in range(1, 101)]\n\n# Example usage:\n# input_list = [3, 5, 7, 9, 10, 12, 15]\n# result = process_list(input_list)\n# print(result)"
+      ]
+    ]
+  }
+]

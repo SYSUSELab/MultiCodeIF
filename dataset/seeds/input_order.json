@@ -1,0 +1,541 @@
+[
+    {
+        "id": 13,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "List",
+                "description": "A list of numbers to operate on."
+            },
+            {
+                "position": 2,
+                "data_structure": "Integer",
+                "description": "An integer threshold value."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: List then Integer."
+    },
+    {
+        "id": 14,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Map",
+                "description": "A mapping of words to frequencies."
+            },
+            {
+                "position": 2,
+                "data_structure": "String",
+                "description": "A string indicating a search keyword."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Map then String."
+    },
+    {
+        "id": 15,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Matrix",
+                "description": "A 2D matrix of integers."
+            },
+            {
+                "position": 2,
+                "data_structure": "Tuple",
+                "description": "A tuple representing a cell position."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Matrix then Tuple."
+    },
+    {
+        "id": 17,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Graph",
+                "description": "Graph data."
+            },
+            {
+                "position": 2,
+                "data_structure": "Integer",
+                "description": "Starting node ID."
+            },
+            {
+                "position": 3,
+                "data_structure": "Integer",
+                "description": "Ending node ID."
+            }
+        ],
+        "feature": "The function must accept three parameters in order: Graph, Integer, Integer."
+    },
+    {
+        "id": 18,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "JSONObject",
+                "description": "Configuration data."
+            },
+            {
+                "position": 2,
+                "data_structure": "String",
+                "description": "Operation mode."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: JSONObject then String."
+    },
+    {
+        "id": 21,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "List",
+                "description": "A list of strings representing filenames."
+            },
+            {
+                "position": 2,
+                "data_structure": "String",
+                "description": "A directory path to save files."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: List then String."
+    },
+    {
+        "id": 22,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Map",
+                "description": "User ID to user data map."
+            }
+        ],
+        "feature": "The function must accept exactly one parameter: a Map."
+    },
+    {
+        "id": 23,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Graph",
+                "description": "An undirected graph."
+            },
+            {
+                "position": 2,
+                "data_structure": "Boolean",
+                "description": "A flag indicating whether to use BFS."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Graph then Boolean."
+    },
+    {
+        "id": 25,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Set",
+                "description": "Set of enabled features."
+            },
+            {
+                "position": 2,
+                "data_structure": "JSONObject",
+                "description": "Feature configuration options."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Set then JSONObject."
+    },
+    {
+        "id": 28,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "List",
+                "description": "List of students."
+            },
+            {
+                "position": 2,
+                "data_structure": "Map",
+                "description": "Mapping of student IDs to grades."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: List then Map."
+    },
+    {
+        "id": 30,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Matrix",
+                "description": "A 2D cost matrix."
+            },
+            {
+                "position": 2,
+                "data_structure": "Integer",
+                "description": "Number of agents."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Matrix then Integer."
+    },
+    {
+        "id": 32,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "String",
+                "description": "A base directory."
+            },
+            {
+                "position": 2,
+                "data_structure": "List",
+                "description": "List of subdirectories."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: String then List."
+    },
+    {
+        "id": 34,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Set",
+                "description": "Set of available features."
+            },
+            {
+                "position": 2,
+                "data_structure": "Boolean",
+                "description": "Enable advanced features flag."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Set then Boolean."
+    },
+    {
+        "id": 39,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "String",
+                "description": "Username."
+            },
+            {
+                "position": 2,
+                "data_structure": "String",
+                "description": "Password."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: String then String."
+    },
+    {
+        "id": 41,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Matrix",
+                "description": "Adjacency matrix of a graph."
+            },
+            {
+                "position": 2,
+                "data_structure": "Integer",
+                "description": "Starting node index."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Matrix then Integer."
+    },
+    {
+        "id": 42,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Set",
+                "description": "Set of blocked IP addresses."
+            },
+            {
+                "position": 2,
+                "data_structure": "String",
+                "description": "IP address to check."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Set then String."
+    },
+    {
+        "id": 43,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Tuple",
+                "description": "Coordinates (x, y)."
+            },
+            {
+                "position": 2,
+                "data_structure": "Float",
+                "description": "Rotation angle in degrees."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Tuple then Float."
+    },
+    {
+        "id": 44,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "JSONObject",
+                "description": "API request body."
+            },
+            {
+                "position": 2,
+                "data_structure": "String",
+                "description": "API endpoint URL."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: JSONObject then String."
+    },
+    {
+        "id": 46,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Float",
+                "description": "Principal loan amount."
+            },
+            {
+                "position": 2,
+                "data_structure": "Float",
+                "description": "Annual interest rate."
+            },
+            {
+                "position": 3,
+                "data_structure": "Integer",
+                "description": "Number of years."
+            }
+        ],
+        "feature": "The function must accept three parameters in order: Float, Float, Integer."
+    },
+    {
+        "id": 47,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Map",
+                "description": "Settings map."
+            }
+        ],
+        "feature": "The function must accept exactly one parameter: a Map."
+    },
+    {
+        "id": 48,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "String",
+                "description": "Search query string."
+            },
+            {
+                "position": 2,
+                "data_structure": "List",
+                "description": "List of document contents."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: String then List."
+    },
+    {
+        "id": 49,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Integer",
+                "description": "Page number."
+            },
+            {
+                "position": 2,
+                "data_structure": "Integer",
+                "description": "Page size."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Integer then Integer."
+    },
+    {
+        "id": 50,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "String",
+                "description": "File path to read."
+            },
+            {
+                "position": 2,
+                "data_structure": "Boolean",
+                "description": "Flag for binary mode."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: String then Boolean."
+    },
+    {
+        "id": 51,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Matrix",
+                "description": "Grid of elevation values."
+            }
+        ],
+        "feature": "The function must accept exactly one parameter: a Matrix."
+    },
+    {
+        "id": 52,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "List",
+                "description": "List of product SKUs."
+            },
+            {
+                "position": 2,
+                "data_structure": "Map",
+                "description": "Map of SKU to inventory count."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: List then Map."
+    },
+    {
+        "id": 53,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "List",
+                "description": "List of student names."
+            },
+            {
+                "position": 2,
+                "data_structure": "Integer",
+                "description": "Grade threshold value."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: List then Integer."
+    },
+    {
+        "id": 54,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "String",
+                "description": "Email address of the user."
+            },
+            {
+                "position": 2,
+                "data_structure": "Boolean",
+                "description": "Flag indicating subscription status."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: String then Boolean."
+    },
+    {
+        "id": 55,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Matrix",
+                "description": "Temperature readings from sensors."
+            },
+            {
+                "position": 2,
+                "data_structure": "Float",
+                "description": "Calibration offset value."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Matrix then Float."
+    },
+    {
+        "id": 57,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "String",
+                "description": "Filepath to the dataset."
+            },
+            {
+                "position": 2,
+                "data_structure": "Integer",
+                "description": "Number of rows to read."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: String then Integer."
+    },
+    {
+        "id": 58,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Float",
+                "description": "Interest rate."
+            },
+            {
+                "position": 2,
+                "data_structure": "Integer",
+                "description": "Investment duration in years."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Float then Integer."
+    },
+    {
+        "id": 59,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Set",
+                "description": "Set of active session tokens."
+            },
+            {
+                "position": 2,
+                "data_structure": "Integer",
+                "description": "Token expiration time in seconds."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Set then Integer."
+    },
+    {
+        "id": 60,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "String",
+                "description": "Name of the database table."
+            },
+            {
+                "position": 2,
+                "data_structure": "JSONObject",
+                "description": "Schema definition as JSON object."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: String then JSONObject."
+    },
+    {
+        "id": 61,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "Integer",
+                "description": "Page number for pagination."
+            },
+            {
+                "position": 2,
+                "data_structure": "Integer",
+                "description": "Page size for pagination."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: Integer then Integer."
+    },
+    {
+        "id": 62,
+        "parameter_list": [
+            {
+                "position": 1,
+                "data_structure": "List",
+                "description": "List of blog post IDs."
+            },
+            {
+                "position": 2,
+                "data_structure": "Boolean",
+                "description": "Include drafts flag."
+            }
+        ],
+        "feature": "The function must accept two parameters in order: List then Boolean."
+    }
+]

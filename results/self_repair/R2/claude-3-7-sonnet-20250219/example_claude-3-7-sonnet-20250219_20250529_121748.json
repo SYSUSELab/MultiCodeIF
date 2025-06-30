@@ -1,0 +1,587 @@
+[
+  {
+    "id": 1,
+    "response": [
+      [
+        "Implement a `divide_numbers()` function mimicking the structure and exception handling used in the `add_numbers(number1, number2)` function shown below. The new function should handle division by zero and ensure the inputs can be converted to floats.\n\n**Example Code:**\n\n```python\ndef add_numbers(number1, number2):\n    try:\n        num1 = float(number1)\n        num2 = float(number2)\n        result = num1 + num2\n        return result\n    except ValueError:\n        return \"Please input valid numbers.\"\n```",
+        "def divide_numbers(number1, number2):\n    try:\n        num1 = float(number1)\n        num2 = float(number2)\n        if num2 == 0:\n            return \"Cannot divide by zero.\"\n        result = num1 / num2\n        return result\n    except ValueError:\n        return \"Please input valid numbers.\""
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: example: ```python\nimport sqlite3\n\ndef create_user_table(path):\n    try:\n        conn = sqlite3.connect(path)\n        print(\"Connection successful\")\n        cursor = conn.cursor()\n        cursor.execute('''CREATE TABLE users (\n                           id INTEGER PRIMARY KEY,\n                           username TEXT NOT NULL,\n                           email TEXT NOT NULL)''')\n        conn.commit()\n        print(\"Table created successfully\")\n    except sqlite3.Error as e:\n        print(f\"Error creating table: {e}\")\n    finally:\n        if conn:\n            conn.close()\n```.\n## previous code\nimport sqlite3\n\ndef create_user_table(path):\n    try:\n        conn = sqlite3.connect(path)\n        print(\"Connection successful\")\n        cursor = conn.cursor()\n        cursor.execute('''CREATE TABLE users (\n                           id INTEGER PRIMARY KEY,\n                           username TEXT NOT NULL,\n                           email TEXT NOT NULL)''')\n        conn.commit()\n        print(\"Table created successfully\")\n        return conn\n    except sqlite3.Error as e:\n        print(f\"Error creating table: {e}\")\n        return None\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nBased on the syntax and functional patterns in the `connect_to_database()` code below, craft another function `create_user_table()` that uses a similar approach to connect to a database and create a `users` table with columns `id`, `username`, and `email`.\n\n**Example Code:**\n\n```python\nimport sqlite3\n\ndef connect_to_database(path):\n    try:\n        conn = sqlite3.connect(path)\n        print(\"Connection successful\")\n        return conn\n    except sqlite3.Error as e:\n        print(f\"Error connecting to database: {e}\")\n        return None\n```",
+        " ```python\nimport sqlite3\n\ndef create_user_table(path):\n    try:\n        conn = sqlite3.connect(path)\n        print(\"Connection successful\")\n        cursor = conn.cursor()\n        cursor.execute('''CREATE TABLE users (\n                           id INTEGER PRIMARY KEY,\n                           username TEXT NOT NULL,\n                           email TEXT NOT NULL)''')\n        conn.commit()\n        print(\"Table created successfully\")\n    except sqlite3.Error as e:\n        print(f\"Error creating table: {e}\")\n    finally:\n        if conn:\n            conn.close()\n```"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "response": [
+      [
+        "Mimic the function chaining and exception handling style from the `fetch_webpage()` function to implement a new function `download_json(url)` that downloads and parses JSON content from a URL, handling both network and JSON parsing errors.\n\n**Example Code:**\n\n```python\ndef fetch_webpage(url):\n    try:\n        import requests\n        response = requests.get(url, timeout=5)\n        response.raise_for_status()\n        return response.text\n    except requests.RequestException as e:\n        print(f\"Network error: {e}\")\n        return None\n```",
+        "def download_json(url):\n    try:\n        import requests\n        response = requests.get(url, timeout=5)\n        response.raise_for_status()\n        return response.json()\n    except requests.RequestException as e:\n        print(f\"Network error: {e}\")\n        return None\n    except ValueError as e:\n        print(f\"JSON parsing error: {e}\")\n        return None"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "response": [
+      [
+        "Implement a `tokenize_text(text)` function mirroring the structure, docstring style, and processing pattern of the provided `clean_text()` function's example. This new function should split the cleaned text into words by spaces and return the resulting list.\n\n**Example Code:**\n\n```python\ndef clean_text(text):\n    \"\"\"\n    Cleans input text by removing HTML tags and extra spaces, and converting to lowercase.\n    \n    Args:\n        text (str): Raw input string\n\n    Returns:\n        str: Cleaned text\n    \"\"\"\n    import re\n    text = re.sub(r\"<[^>]*>\", \"\", text)\n    text = re.sub(r\"\\s+\", \" \", text)\n    return text.strip().lower()\n```",
+        "def tokenize_text(text):\n    \"\"\"\n    Splits cleaned text into individual words.\n    \n    Args:\n        text (str): Cleaned input string\n        \n    Returns:\n        list: List of words from the text\n    \"\"\"\n    return text.split()"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: example: ```python\ndef process_spreadsheet(file_path):\n    import os\n    if not os.path.exists(file_path):\n        raise FileNotFoundError(f\"The file {file_path} does not exist.\")\n    \n    import pandas as pd\n    df = pd.read_excel(file_path)\n    \n    # Clean data: hypothetical cleaning operations for columns \"Name\" and \"Address\"\n    df['Name'] = df['Name'].str.strip().str.lower()\n    df['Address'] = df['Address'].str.replace('\\n', ' ', regex=True).str.replace('\\t', ' ', regex=True)\n    \n    cleaned_data = df[['Name', 'Address']].values.tolist()\n    return cleaned_data\n```.\n## previous code\ndef process_spreadsheet(file_path):\n    import os\n    if not os.path.exists(file_path):\n        raise FileNotFoundError(f\"The file {file_path} does not exist.\")\n    \n    import pandas as pd\n    df = pd.read_excel(file_path)\n    data = []\n    for _, row in df.iterrows():\n        cleaned_row = []\n        for value in row:\n            if isinstance(value, str):\n                value = value.strip().lower().replace('\\n', ' ').replace('\\t', ' ')\n            cleaned_row.append(value)\n        data.append(cleaned_row)\n    return data\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nAdopting the style and structure from the provided `parse_document()` function, create a new function `process_spreadsheet(file_path)` that reads a spreadsheet file, cleans data in specific columns, and outputs a list of cleaned rows.\n\n**Example Code:**\n\n```python\ndef parse_document(file_path):\n    import os\n    if not os.path.exists(file_path):\n        raise FileNotFoundError(f\"The file {file_path} does not exist.\")\n    \n    import docx\n    doc = docx.Document(file_path)\n    data = []\n    for para in doc.paragraphs:\n        text = para.text.strip().lower().replace('\\n', ' ').replace('\\t', ' ')\n        data.append(text)\n    return data\n```",
+        " ```python\ndef process_spreadsheet(file_path):\n    import os\n    if not os.path.exists(file_path):\n        raise FileNotFoundError(f\"The file {file_path} does not exist.\")\n    \n    import pandas as pd\n    df = pd.read_excel(file_path)\n    \n    # Clean data: remove whitespace, convert to lowercase, replace newlines and tabs\n    df['Name'] = df['Name'].str.strip().str.lower()\n    df['Address'] = df['Address'].str.replace('\\n', ' ', regex=True).str.replace('\\t', ' ', regex=True)\n    \n    cleaned_data = df[['Name', 'Address']].values.tolist()\n    return cleaned_data\n```"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "response": [
+      [
+        "Utilize the functional structure, documentation style, and parameter passing approach observed in the `calculate_area(radius)` function below to create a `calculate_volume(height, radius)` function for a cylinder. The new function should employ the formula \\(V = \\pi \\times r^2 \\times h\\), where \\(V\\) is the volume of the cylinder, \\(r\\) is the radius, and \\(h\\) is the height.\n\n**Example Code:**\n\n```python\ndef calculate_area(radius):\n    \"\"\"\n    Calculates the area of a circle based on its radius.\n    \n    Args:\n        radius (float): The radius of the circle\n\n    Returns:\n        float: The area of the circle\n    \"\"\"\n    import math\n    return math.pi * radius ** 2\n```",
+        "def calculate_volume(height, radius):\n    \"\"\"\n    Calculates the volume of a cylinder based on its height and radius.\n    \n    Args:\n        height (float): The height of the cylinder\n        radius (float): The radius of the cylinder\n\n    Returns:\n        float: The volume of the cylinder\n    \"\"\"\n    import math\n    return math.pi * radius ** 2 * height"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "response": [
+      [
+        "Implement a `PUT /user/:id` endpoint using the same structure and error handling conventions shown in the `POST /user` implementation below.\n\n**Example Code:**\n\n```javascript\n// Express.js API with Joi validation\nconst express = require('express');\nconst router = express.Router();\nconst Joi = require('joi');\nconst { User } = require('../models/user');\n\nconst userSchema = Joi.object({\n  username: Joi.string().alphanum().min(3).max(30).required(),\n  email: Joi.string().email().required()\n});\n\nrouter.post('/user', async (req, res) => {\n  const { error } = userSchema.validate(req.body);\n  if (error) return res.status(400).send({ message: error.details[0].message });\n\n  try {\n    const user = new User(req.body);\n    await user.save();\n    res.status(201).send({ user });\n  } catch (err) {\n    res.status(500).send({ message: 'Internal server error' });\n  }\n});\n\nmodule.exports = router;\n```",
+        "router.put('/user/:id', async (req, res) => {\n  const { error } = userSchema.validate(req.body);\n  if (error) return res.status(400).send({ message: error.details[0].message });\n\n  try {\n    const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });\n    if (!user) return res.status(404).send({ message: 'User not found' });\n    res.send({ user });\n  } catch (err) {\n    res.status(500).send({ message: 'Internal server error' });\n  }\n});"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "response": [
+      [
+        "Adopting the style and exception handling shown in the `convert_temperature(degrees, unit_from, unit_to)` function, create a new function `convert_speed(speed, unit_from, unit_to)` that converts speed between 'km/h', 'm/s', and 'mph', handling invalid unit conversions gracefully.\n\n**Example Code:**\n\n```python\ndef convert_temperature(degrees, unit_from, unit_to):\n    \"\"\"\n    Converts temperature from one unit to another.\n\n    Args:\n        degrees (float): The temperature degree to convert.\n        unit_from (str): The unit of the input temperature.\n        unit_to (str): The unit to which the temperature should be converted.\n\n    Returns:\n        float: The converted temperature.\n\n    Raises:\n        ValueError: If either unit_from or unit_to is unsupported.\n    \"\"\"\n    units = {'celsius': {'kelvin': lambda x: x + 273.15, 'fahrenheit': lambda x: (x * 9/5) + 32},\n             'fahrenheit': {'celsius': lambda x: (x - 32) * 5/9, 'kelvin': lambda x: ((x - 32) * 5/9) + 273.15},\n             'kelvin': {'celsius': lambda x: x - 273.15, 'fahrenheit': lambda x: ((x - 273.15) * 9/5) + 32}}\n\n    try:\n        conversion_function = units[unit_from.lower()][unit_to.lower()]\n        return conversion_function(degrees)\n    except KeyError:\n        raise ValueError(\"Unsupported unit conversion\")\n```",
+        "def convert_speed(speed, unit_from, unit_to):\n    \"\"\"\n    Converts speed from one unit to another.\n\n    Args:\n        speed (float): The speed value to convert.\n        unit_from (str): The unit of the input speed.\n        unit_to (str): The unit to which the speed should be converted.\n\n    Returns:\n        float: The converted speed.\n\n    Raises:\n        ValueError: If either unit_from or unit_to is unsupported.\n    \"\"\"\n    units = {'km/h': {'m/s': lambda x: x / 3.6, 'mph': lambda x: x / 1.60934},\n             'm/s': {'km/h': lambda x: x * 3.6, 'mph': lambda x: x * 2.23694},\n             'mph': {'km/h': lambda x: x * 1.60934, 'm/s': lambda x: x / 2.23694}}\n\n    try:\n        conversion_function = units[unit_from.lower()][unit_to.lower()]\n        return conversion_function(speed)\n    except KeyError:\n        raise ValueError(\"Unsupported unit conversion\")"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "response": [
+      [
+        "Following the function and parameter naming conventions, as well as the result handling method in `get_temperature()` function, create a new function `get_humidity(sensor_id)`. The new function should collect humidity data from the specified sensor and handle any exceptions, returning either the humidity value in percentage or `None` in case of errors.\n\n**Example Code:**\n\n```python\ndef get_temperature(sensor_id):\n    \"\"\"\n    Retrieves the temperature data from a specified sensor.\n    \n    Args:\n        sensor_id (int): The identifier for the temperature sensor.\n\n    Returns:\n        float: The temperature in Celsius or None if an error occurred.\n    \"\"\"\n    try:\n        import sensor_module\n        return sensor_module.read_temperature(sensor_id)\n    except Exception as e:\n        print(f\"Error reading temperature from sensor {sensor_id}: {e}\")\n        return None\n```",
+        "def get_humidity(sensor_id):\n    \"\"\"\n    Retrieves the humidity data from a specified sensor.\n    \n    Args:\n        sensor_id (int): The identifier for the humidity sensor.\n\n    Returns:\n        float: The humidity percentage or None if an error occurred.\n    \"\"\"\n    try:\n        import sensor_module\n        return sensor_module.read_humidity(sensor_id)\n    except Exception as e:\n        print(f\"Error reading humidity from sensor {sensor_id}: {e}\")\n        return None"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: example: ```python\ndef fetch_stock_data(symbol):\n    try:\n        import requests\n        response = requests.get(f'https://stockapi.com/{symbol}', timeout=10)\n        response.raise_for_status()  # Raises HTTPError, for response codes 4xx or 5xx\n        data = response.json()\n        return {\n            'current_price': data['price']['current'],\n            'opening_price': data['price']['opening']\n        }\n    except requests.Timeout:\n        print(\"The request timed out\")\n        return None\n    except requests.HTTPError as e:\n        print(f\"HTTP error occurred: {e}\")  # Not specific to stock data, generic for all HTTP issues\n        return None\n    except requests.RequestException as e:\n        print(f\"Error during requests to {response.url}: {e}\")\n        return None\n    except ValueError:  # This will handle JSON decoding error\n        print(\"Error decoding the JSON data\")\n        return None\n```.\n## previous code\ndef fetch_stock_data(symbol):\n    try:\n        import requests\n        response = requests.get(f'https://stockapi.com/{symbol}', timeout=10)\n        response.raise_for_status()  # Raises HTTPError, for response codes 4xx or 5xx\n        data = response.json()\n        return {\n            'temperature': data['main']['temp'],\n            'description': data['weather'][0]['description']\n        }\n    except requests.Timeout:\n        print(\"The request timed out\")\n        return None\n    except requests.HTTPError as e:\n        print(f\"HTTP error occurred: {e}\")  # Not specific to stock data, generic for all HTTP issues\n        return None\n    except requests.RequestException as e:\n        print(f\"Error during requests to {response.url}: {e}\")\n        return None\n    except ValueError:  # This will handle JSON decoding error\n        print(\"Error decoding the JSON data\")\n        return None\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nImplement a `fetch_stock_data()` function that mirrors the structure and style of the `fetch_weather_data()` example below, including error handling for HTTP and data extraction errors. This new function should fetch the stock data using an API and parse necessary details.\n\n**Example Code:**\n\n```python\ndef fetch_weather_data(city):\n    try:\n        import requests\n        response = requests.get(f'https://weatherapi.com/{city}', timeout=10)\n        response.raise_for_status()  # Raises HTTPError, for response codes 4xx or 5xx\n        data = response.json()\n        return {\n            'temperature': data['main']['temp'],\n            'description': data['weather'][0]['description']\n        }\n    except requests.Timeout:\n        print(\"The request timed out\")\n        return None\n    except requests.HTTPError as e:\n        print(f\"HTTP error occurred: {e}\")  # Not specific to weather data, generic for all HTTP issues\n        return None\n    except requests.RequestException as e:\n        print(f\"Error during requests to {response.url}: {e}\")\n        return None\n    except ValueError:  # This will handle JSON decoding error\n        print(\"Error decoding the JSON data\")\n        return None\n```",
+        " ```python\ndef fetch_stock_data(symbol):\n    try:\n        import requests\n        response = requests.get(f'https://stockapi.com/{symbol}', timeout=10)\n        response.raise_for_status()  # Raises HTTPError, for response codes 4xx or 5xx\n        data = response.json()\n        return {\n            'current_price': data['price']['current'],\n            'opening_price': data['price']['opening']\n        }\n    except requests.Timeout:\n        print(\"The request timed out\")\n        return None\n    except requests.HTTPError as e:\n        print(f\"HTTP error occurred: {e}\")  # Not specific to stock data, generic for all HTTP issues\n        return None\n    except requests.RequestException as e:\n        print(f\"Error during requests to {response.url}: {e}\")\n        return None\n    except ValueError:  # This will handle JSON decoding error\n        print(\"Error decoding the JSON data\")\n        return None\n```"
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "response": [
+      [
+        "Design a function `calculate_statistics(nums)` following the same structural, naming, and commenting conventions as shown in the example function `sum_of_list(nums)`. The function should compute the sum, mean, and variance of a list of numbers.\n\n**Example Code:**\n\n```python\ndef sum_of_list(nums):\n    \"\"\"\n    Computes the sum of a list of integers.\n\n    Args:\n        nums (list of int): List containing numbers\n    \n    Returns:\n        int: Sum of the numbers in the list\n    \"\"\"\n    total = 0\n    for num in nums:\n        total += num\n    return total\n```",
+        "def calculate_statistics(nums):\n    \"\"\"\n    Computes the sum, mean, and variance of a list of numbers.\n\n    Args:\n        nums (list of int): List containing numbers\n    \n    Returns:\n        tuple: A tuple containing (sum, mean, variance) of the numbers in the list\n    \"\"\"\n    # Calculate sum\n    total = 0\n    for num in nums:\n        total += num\n    \n    # Calculate mean\n    n = len(nums)\n    mean = total / n if n > 0 else 0\n    \n    # Calculate variance\n    variance = 0\n    if n > 0:\n        for num in nums:\n            variance += (num - mean) ** 2\n        variance /= n\n    \n    return (total, mean, variance)"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "response": [
+      [
+        "Extend and modify the `process_data()` function based on `filter_data()` function pattern provided below. The new function should sort the list of data based on a provided key and should handle missing or invalid keys gracefully.\n\n**Example Code:**\n\n```python\ndef filter_data(data, key):\n    try:\n        filtered_data = [item for item in data if key in item]\n        return filtered_data\n    except Exception as e:\n        print(f\"An error occurred: {e}\")\n        return []\n```",
+        "def process_data(data, key):\n    try:\n        sorted_data = sorted(\n            [item for item in data if key in item], \n            key=lambda x: x.get(key)\n        )\n        return sorted_data\n    except Exception as e:\n        print(f\"An error occurred: {e}\")\n        return []"
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "response": [
+      [
+        "Develop a Python function `filter_even_numbers(numbers)` that mimics the style and parameter management observed in the function signature and implementation of `sum_of_list(nums)`. The new function should return a list of even numbers from the provided list.\n\n**Example Code:**\n\n```python\ndef sum_of_list(nums):\n    \"\"\"\n    Sums the values in a list of integers.\n    \n    Args:\n        nums (list of int): List of integers to sum\n\n    Returns:\n        int: Sum of the list\n    \"\"\"\n    return sum(nums)\n```",
+        "def filter_even_numbers(numbers):\n    \"\"\"\n    Filters out odd numbers from a list of integers.\n    \n    Args:\n        numbers (list of int): List of integers to filter\n\n    Returns:\n        list of int: List containing only even numbers\n    \"\"\"\n    return [num for num in numbers if num % 2 == 0]"
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "response": [
+      [
+        "Use the following `filter_even_numbers()` function style and technique (including the use of list comprehensions) to create a new function `filter_prime_numbers(numbers)` that takes a list of integers and returns only the prime numbers from the list.\n\n**Example Code:**\n\n```python\ndef filter_even_numbers(numbers):\n    \"\"\"\n    Filters out even numbers from a list and returns only odd numbers.\n\n    Args:\n        numbers (list): A list of integers.\n\n    Returns:\n        list: A list containing only odd numbers from the original list.\n    \"\"\"\n    return [num for num in numbers if num % 2 != 0]\n```",
+        "def filter_prime_numbers(numbers):\n    \"\"\"\n    Filters out non-prime numbers from a list and returns only prime numbers.\n\n    Args:\n        numbers (list): A list of integers.\n\n    Returns:\n        list: A list containing only prime numbers from the original list.\n    \"\"\"\n    def is_prime(n):\n        if n <= 1:\n            return False\n        if n <= 3:\n            return True\n        if n % 2 == 0 or n % 3 == 0:\n            return False\n        i = 5\n        while i * i <= n:\n            if n % i == 0 or n % (i + 2) == 0:\n                return False\n            i += 6\n        return True\n    \n    return [num for num in numbers if is_prime(num)]"
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "response": [
+      [
+        "Based on the structure and error handling provided in the `clean_text()` function, create a new function `normalize_numbers(text)` that formats all the numbers found in the given text string into a standard numerical format. The numbers should be rounded to two decimal places.\n\n**Example Code:**\n\n```python\ndef clean_text(text):\n    \"\"\"\n    Cleans input text by removing HTML tags and extra spaces, and converting to lowercase.\n    \n    Args:\n        text (str): Raw input string\n\n    Returns:\n        str: Cleaned text\n    \"\"\"\n    import re\n    text = re.sub(r\"<[^>]*>\", \"\", text)\n    text = re.sub(r\"\\s+\", \" \", text)\n    return text.strip().lower()\n```",
+        "def normalize_numbers(text):\n    \"\"\"\n    Formats all numbers in the given text string to a standard numerical format\n    with two decimal places.\n    \n    Args:\n        text (str): Input string containing numbers\n        \n    Returns:\n        str: Text with normalized numbers\n    \"\"\"\n    import re\n    \n    def round_match(match):\n        try:\n            num = float(match.group(0))\n            return f\"{num:.2f}\"\n        except ValueError:\n            return match.group(0)\n    \n    # Find numbers (integers or decimals) and format them\n    text = re.sub(r'\\b\\d+\\.\\d+\\b|\\b\\d+\\b', round_match, text)\n    \n    return text"
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "response": [
+      [
+        "Implement a function `dense_matrix_multiplication(matrix1, matrix2)` that performs matrix multiplication on non-sparse matrices using the structure, variable naming, and input checking pattern from the provided `sparse_matrix_multiplication(matrix1, matrix2)` function.\n\n**Example Code:**\n\n```python\ndef sparse_matrix_multiplication(matrix1, matrix2):\n    \"\"\"\n    Multiplies two sparse matrices represented as lists of lists, handling dimension misalignment errors.\n\n    Args:\n        matrix1 (list of list of int): First matrix in multiplication\n        matrix2 (list of list of int): Second matrix in multiplication\n\n    Returns:\n        list of list of int: Resultant matrix after multiplication\n\n    Raises:\n        ValueError: If the number of columns in the first matrix does not match the number of rows in the second matrix\n    \"\"\"\n    if len(matrix1[0]) != len(matrix2):\n        raise ValueError(\"Mismatched dimensions for matrix multiplication.\")\n\n    result = [[0] * len(matrix2[0]) for _ in range(len(matrix1))]\n\n    for i in range(len(matrix1)):\n        for j in range(len(matrix2[0])):\n            for k in range(len(matrix2)):\n                result[i][j] += matrix1[i][k] * matrix2[k][j]\n\n    return result\n```",
+        "def dense_matrix_multiplication(matrix1, matrix2):\n    \"\"\"\n    Multiplies two dense matrices represented as lists of lists, handling dimension misalignment errors.\n\n    Args:\n        matrix1 (list of list of int): First matrix in multiplication\n        matrix2 (list of list of int): Second matrix in multiplication\n\n    Returns:\n        list of list of int: Resultant matrix after multiplication\n\n    Raises:\n        ValueError: If the number of columns in the first matrix does not match the number of rows in the second matrix\n    \"\"\"\n    if len(matrix1[0]) != len(matrix2):\n        raise ValueError(\"Mismatched dimensions for matrix multiplication.\")\n\n    result = [[0] * len(matrix2[0]) for _ in range(len(matrix1))]\n\n    for i in range(len(matrix1)):\n        for j in range(len(matrix2[0])):\n            for k in range(len(matrix2)):\n                result[i][j] += matrix1[i][k] * matrix2[k][j]\n\n    return result"
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: example: ```python\ndef calculate_discount(items, coupon):\n    \"\"\"\n    Computes the discount for given items and a coupon code.\n\n    Args:\n        items (list of tuple): List where each tuple represents (item_price, quantity)\n        coupon (str): Coupon code.\n\n    Returns:\n        float: The discount amount.\n    \"\"\"\n    coupon_discounts = {\n        'SAVE10': 0.1, 'OFF20': 0.2, 'DEAL30': 0.3\n    }\n    if coupon not in coupon_discounts:\n        raise ValueError(f\"Discount for {coupon} not available.\")\n    \n    total = sum(item_price * quantity for item_price, quantity in items)\n    discount = total * coupon_discounts[coupon]\n    return round(discount, 2)\n```.\n## previous code\ndef calculate_discount(items, coupon):\n    \"\"\"\n    Computes the discount for given items and a coupon code.\n\n    Args:\n        items (list of tuple): List where each tuple represents (item_price, quantity)\n        coupon (str): Coupon code.\n\n    Returns:\n        float: The discount amount.\n    \"\"\"\n    coupon_rates = {\n        'SAVE10': 0.075, 'HALF': 0.5, 'SPECIAL': 0.15, 'MEMBER': 0.1\n    }\n    if coupon not in coupon_rates:\n        raise ValueError(f\"Discount for {coupon} not available.\")\n    \n    total = sum(item_price * quantity for item_price, quantity in items)\n    discount = total * coupon_rates[coupon]\n    return round(discount, 2)\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nImplement a function `calculate_discount(items, coupon)` that mimics the structure and error handling mechanism shown in the `calculate_tax(total, state)` function below:\n\n**Example Code:**\n\n```python\ndef calculate_tax(total, state):\n    \"\"\"\n    Computes the tax for a given total and state.\n\n    Args:\n        total (float): Total cost of items.\n        state (str): The U.S. state abbreviation.\n\n    Returns:\n        float: The tax amount.\n    \"\"\"\n    state_tax_rates = {\n        'CA': 0.075, 'TX': 0.0625, 'NY': 0.04, 'FL': 0.06\n    }\n    if state not in state_tax_rates:\n        raise ValueError(f\"Tax rate for {state} not available.\")\n    \n    tax = total * state_tax_rates[state]\n    return round(tax, 2)\n```",
+        " ```python\ndef calculate_discount(items, coupon):\n    \"\"\"\n    Computes the discount for given items and a coupon code.\n\n    Args:\n        items (list of tuple): List where each tuple represents (item_price, quantity)\n        coupon (str): Coupon code.\n\n    Returns:\n        float: The discount amount.\n    \"\"\"\n    coupon_discounts = {\n        'CA': 0.075, 'TX': 0.0625, 'NY': 0.04, 'FL': 0.06\n    }\n    if coupon not in coupon_discounts:\n        raise ValueError(f\"Discount for {coupon} not available.\")\n    \n    total = sum(item_price * quantity for item_price, quantity in items)\n    discount = total * coupon_discounts[coupon]\n    return round(discount, 2)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "response": [
+      [
+        "Adopt the formatting and commenting conventions exemplified in the provided `calculate_area()` function to create a new function called `calculate_perimeter(length, width)`. This function should compute the perimeter of a rectangle.\n\n**Example Code:**\n\n```python\ndef calculate_area(length, width):\n    \"\"\"\n    Calculates the area of a rectangle.\n\n    Args:\n        length (float): length of the rectangle\n        width (float): width of the rectangle\n\n    Returns:\n        float: Area of the rectangle calculated as length * width\n    \"\"\"\n    return length * width\n```",
+        "def calculate_perimeter(length, width):\n    \"\"\"\n    Calculates the perimeter of a rectangle.\n\n    Args:\n        length (float): length of the rectangle\n        width (float): width of the rectangle\n\n    Returns:\n        float: Perimeter of the rectangle calculated as 2 * (length + width)\n    \"\"\"\n    return 2 * (length + width)"
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "response": [
+      [
+        "Mimic the class-based organization, method structure, and backtracking control flow of the `SudokuSolver` class below to implement a `NQueensSolver` class that solves the N-Queens problem and returns one valid board configuration.\n\n**Example Code:**\n\n```python\nclass SudokuSolver:\n    def __init__(self, board):\n        self.board = board\n\n    def solve(self):\n        self._backtrack()\n\n    def _backtrack(self):\n        for i in range(9):\n            for j in range(9):\n                if self.board[i][j] == \".\":\n                    for c in map(str, range(1, 10)):\n                        if self._is_valid(i, j, c):\n                            self.board[i][j] = c\n                            if self._backtrack():\n                                return True\n                            self.board[i][j] = \".\"\n                    return False\n        return True\n\n    def _is_valid(self, row, col, c):\n        for i in range(9):\n            if self.board[i][col] == c or self.board[row][i] == c:\n                return False\n        block_row, block_col = 3 * (row // 3), 3 * (col // 3)\n        for i in range(3):\n            for j in range(3):\n                if self.board[block_row + i][block_col + j] == c:\n                    return False\n        return True\n```",
+        "class NQueensSolver:\n    def __init__(self, n):\n        self.n = n\n        self.board = [[\".\" for _ in range(n)] for _ in range(n)]\n\n    def solve(self):\n        self._backtrack(0)\n        return self.board\n\n    def _backtrack(self, row):\n        if row == self.n:\n            return True\n        \n        for col in range(self.n):\n            if self._is_valid(row, col):\n                self.board[row][col] = \"Q\"\n                if self._backtrack(row + 1):\n                    return True\n                self.board[row][col] = \".\"\n        return False\n\n    def _is_valid(self, row, col):\n        # Check column\n        for i in range(row):\n            if self.board[i][col] == \"Q\":\n                return False\n        \n        # Check upper left diagonal\n        for i, j in zip(range(row-1, -1, -1), range(col-1, -1, -1)):\n            if self.board[i][j] == \"Q\":\n                return False\n        \n        # Check upper right diagonal\n        for i, j in zip(range(row-1, -1, -1), range(col+1, self.n)):\n            if self.board[i][j] == \"Q\":\n                return False\n        \n        return True"
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "response": [
+      [
+        "Mimic the style of the provided React `ShoppingList` component to create a new `TodoList` component with similar props and state handling. The new component should have input functionality for adding items to the list and checkboxes for marking items as completed.\n\n**Example Code:**\n\n```javascript\nclass ShoppingList extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = { items: [], newItemText: '' };\n  }\n\n  handleTextChange = (event) => {\n    this.setState({ newItemText: event.target.value });\n  }\n\n  handleAddItem = () => {\n    if (this.state.newItemText !== '') {\n      this.setState(prevState => ({\n        items: [...prevState.items, this.state.newItemText],\n        newItemText: ''\n      }));\n    }\n  }\n\n  render() {\n    return (\n      <div>\n        <input \n          type=\"text\" \n          value={this.state.newItemText} \n          onChange={this.handleTextChange} \n          placeholder=\"Add New Item\" \n        />\n        <button onClick={this.handleAddItem}>Add Item</button>\n        <ul>\n          {this.state.items.map((item, index) => (\n            <li key={index}>{item}</li>\n          ))}\n        </ul>\n      </div>\n    );\n  }\n}\n```",
+        "class TodoList extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = { \n      items: [], \n      newItemText: '' \n    };\n  }\n\n  handleTextChange = (event) => {\n    this.setState({ newItemText: event.target.value });\n  }\n\n  handleAddItem = () => {\n    if (this.state.newItemText !== '') {\n      this.setState(prevState => ({\n        items: [...prevState.items, { text: this.state.newItemText, completed: false }],\n        newItemText: ''\n      }));\n    }\n  }\n\n  handleToggleComplete = (index) => {\n    this.setState(prevState => {\n      const updatedItems = [...prevState.items];\n      updatedItems[index] = {\n        ...updatedItems[index],\n        completed: !updatedItems[index].completed\n      };\n      return { items: updatedItems };\n    });\n  }\n\n  render() {\n    return (\n      <div>\n        <input \n          type=\"text\" \n          value={this.state.newItemText} \n          onChange={this.handleTextChange} \n          placeholder=\"Add New Todo\" \n        />\n        <button onClick={this.handleAddItem}>Add Todo</button>\n        <ul>\n          {this.state.items.map((item, index) => (\n            <li key={index}>\n              <input\n                type=\"checkbox\"\n                checked={item.completed}\n                onChange={() => this.handleToggleComplete(index)}\n              />\n              <span style={{ textDecoration: item.completed ? 'line-through' : 'none' }}>\n                {item.text}\n              </span>\n            </li>\n          ))}\n        </ul>\n      </div>\n    );\n  }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "response": [
+      [
+        "Model the following function `update_configuration(setting, value)` based on the structure, naming convention, and validation pattern shown in the `initialize_settings()` function provided below.\n\n**Example Code:**\n\n```python\ndef initialize_settings():\n    \"\"\"\n    Load initial settings from a configuration file and validate them.\n    \"\"\"\n    import json\n    try:\n        with open('settings.json', 'r') as file:\n            settings = json.load(file)\n            if not validate_settings(settings):\n                raise ValueError(\"Invalid settings configuration\")\n\n            return settings\n    except FileNotFoundError:\n        raise FileNotFoundError(\"Configuration file not found\")\n    except json.JSONDecodeError:\n        raise Exception(\"Error decoding JSON\")\n\ndef validate_settings(settings):\n    required_keys = ['host', 'port', 'environment']\n    return all(key in settings for key in required_keys)\n```",
+        "def update_configuration(setting, value):\n    \"\"\"\n    Update a specific setting in the configuration file with a new value.\n    \"\"\"\n    import json\n    try:\n        with open('settings.json', 'r') as file:\n            settings = json.load(file)\n            \n        settings[setting] = value\n            \n        if not validate_settings(settings):\n            raise ValueError(\"Invalid settings configuration\")\n            \n        with open('settings.json', 'w') as file:\n            json.dump(settings, file)\n            \n        return settings\n    except FileNotFoundError:\n        raise FileNotFoundError(\"Configuration file not found\")\n    except json.JSONDecodeError:\n        raise Exception(\"Error decoding JSON\")"
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "response": [
+      [
+        "Design a function `calculate_discounted_price(original_price, discount_percentage)` following the style of documented parameters, exception handling, and logic used in the `calculate_tax(income, tax_rate)` function below.\n\n**Example Code:**\n\n```python\ndef calculate_tax(income, tax_rate):\n    \"\"\"\n    Calculate the tax payable based on income and tax rate.\n\n    Args:\n        income (float): Taxable income\n        tax_rate (float): Applicable tax rate in percentage\n\n    Returns:\n        float: Calculated tax amount\n    \"\"\"\n    if income < 0 or tax_rate < 0:\n        raise ValueError(\"Income and tax rate should not be negative\")\n    \n    return income * (tax_rate / 100)\n```",
+        "def calculate_discounted_price(original_price, discount_percentage):\n    \"\"\"\n    Calculate the discounted price based on original price and discount percentage.\n\n    Args:\n        original_price (float): Original price of the item\n        discount_percentage (float): Discount percentage to apply\n\n    Returns:\n        float: Calculated discounted price\n    \"\"\"\n    if original_price < 0 or discount_percentage < 0:\n        raise ValueError(\"Original price and discount percentage should not be negative\")\n    \n    return original_price * (1 - discount_percentage / 100)"
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "response": [
+      [
+        "Imitate the example `find_all_products()` function's API interaction pattern and error handling to create a new function `fetch_user_details(user_id)`. It should interact with an API to fetch user details based on the user ID, handling any potential API call errors similarly.\n\n**Example Code:**\n\n```python\ndef find_all_products():\n    try:\n        import requests\n        response = requests.get('https://api.example.com/products', timeout=10)\n        response.raise_for_status()\n        return response.json()\n    except requests.HTTPError as http_err:\n        print(f\"HTTP error occurred: {http_err}\")\n        return None\n    except requests.RequestException as err:\n        print(f\"Other error occurred: {err}\")\n        return None\n```",
+        "def fetch_user_details(user_id):\n    try:\n        import requests\n        response = requests.get(f'https://api.example.com/users/{user_id}', timeout=10)\n        response.raise_for_status()\n        return response.json()\n    except requests.HTTPError as http_err:\n        print(f\"HTTP error occurred: {http_err}\")\n        return None\n    except requests.RequestException as err:\n        print(f\"Other error occurred: {err}\")\n        return None"
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "response": [
+      [
+        "Adapt the class structure and computational approach from the provided `Matrix` class code to create a new class `VectorMaths` in C++ for conducting vector operations including addition, dot product, and magnitude calculations.\n\n**Example Code:**\n\n```cpp\nclass Matrix {\npublic:\n    Matrix(std::vector<std::vector<int>> values) : m_values(values) {}\n\n    Matrix add(const Matrix& other) {\n        std::vector<std::vector<int>> result = m_values;\n        for (size_t i = 0; i < m_values.size(); i++) {\n            for (size_t j = 0; j < m_values[i].size(); j++) {\n                result[i][j] += other.m_values[i][j];\n            }\n        }\n        return Matrix(result);\n    }\n\n    Matrix multiply(const Matrix& other) {\n        std::vector<std::vector<int>> result(m_values.size(), std::vector<int>(other.m_values[0].size(), 0));\n        for (size_t i = 0; i < m_values.size(); i++) {\n            for (size_t k = 0; k < m_values[i].size(); k++) {\n                for (size_t j = 0; j < other.m_values[0].size(); j++) {\n                    result[i][j] += m_values[i][k] * other.m_values[k][j];\n                }\n            }\n        }\n        return Matrix(result);\n    }\n\n    void display() const {\n        for (const auto& row : m_values) {\n            for (int val : row) {\n                std::cout << val << \" \";\n            }\n            std::cout << std::endl;\n        }\n    }\n\nprivate:\n    std::vector<std::vector<int>> m_values;\n};\n```",
+        "#include <vector>\n#include <cmath>\n#include <iostream>\n\nclass VectorMaths {\npublic:\n    VectorMaths(const std::vector<int>& values) : m_values(values) {}\n\n    VectorMaths add(const VectorMaths& other) {\n        std::vector<int> result = m_values;\n        for (size_t i = 0; i < m_values.size(); i++) {\n            result[i] += other.m_values[i];\n        }\n        return VectorMaths(result);\n    }\n\n    int dotProduct(const VectorMaths& other) {\n        int result = 0;\n        for (size_t i = 0; i < m_values.size(); i++) {\n            result += m_values[i] * other.m_values[i];\n        }\n        return result;\n    }\n\n    double magnitude() {\n        int sumOfSquares = 0;\n        for (int val : m_values) {\n            sumOfSquares += val * val;\n        }\n        return std::sqrt(sumOfSquares);\n    }\n\n    void display() const {\n        for (int val : m_values) {\n            std::cout << val << \" \";\n        }\n        std::cout << std::endl;\n    }\n\nprivate:\n    std::vector<int> m_values;\n};"
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "response": [
+      [
+        "Adopt the memory management patterns and data types from the provided `array_insert()` function to implement a new function `array_delete()` in C. This new function should delete an element at a specified index and handle the memory resizing.\n\n**Example Code:**\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\n\nvoid array_insert(int **array, int *size, int index, int value) {\n    if (index < 0 || index > *size) {\n        fprintf(stderr, \"Index out of bounds\\n\");\n        return;\n    }\n    *array = (int *)realloc(*array, (*size + 1) * sizeof(int));\n    if (*array == NULL) {\n        perror(\"Realloc failed\");\n        exit(EXIT_FAILURE);\n    }\n    for(int i = *size; i > index; i--) {\n        (*array)[i] = (*array)[i - 1];\n    }\n    (*array)[index] = value;\n    (*size)++;\n}\n```",
+        "void array_delete(int **array, int *size, int index) {\n    if (index < 0 || index >= *size) {\n        fprintf(stderr, \"Index out of bounds\\n\");\n        return;\n    }\n    \n    for (int i = index; i < *size - 1; i++) {\n        (*array)[i] = (*array)[i + 1];\n    }\n    \n    (*size)--;\n    *array = (int *)realloc(*array, (*size) * sizeof(int));\n    if (*array == NULL && *size > 0) {\n        perror(\"Realloc failed\");\n        exit(EXIT_FAILURE);\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "response": [
+      [
+        "Based on the modularized design and specific I/O stream handling in the `FileReader` class below, implement a new C++ class `FileWriter` that writes provided text to a file. The class should offer functionalities for both appending to and overwriting a file, and handling file I/O errors similarly.\n\n**Example Code:**\n\n```cpp\n#include <fstream>\n#include <iostream>\n#include <string>\n\nclass FileReader {\npublic:\n    FileReader(const std::string& filename) : filename_(filename) {}\n\n    void ReadAllLines() {\n        std::ifstream file(filename_);\n        if (!file.is_open()) {\n            std::cerr << \"Error opening file: \" << filename_ << std::endl;\n            return;\n        }\n\n        std::string line;\n        while (getline(file, line)) {\n            std::cout << line << std::endl;\n        }\n\n        file.close();\n    }\n\nprivate:\n    std::string filename_;\n};\n```",
+        "#include <fstream>\n#include <iostream>\n#include <string>\n\nclass FileWriter {\npublic:\n    FileWriter(const std::string& filename) : filename_(filename) {}\n\n    void WriteText(const std::string& text, bool append = false) {\n        std::ofstream file;\n        \n        if (append) {\n            file.open(filename_, std::ios::app);\n        } else {\n            file.open(filename_, std::ios::out);\n        }\n        \n        if (!file.is_open()) {\n            std::cerr << \"Error opening file: \" << filename_ << std::endl;\n            return;\n        }\n\n        file << text;\n        file.close();\n    }\n\nprivate:\n    std::string filename_;\n};"
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "response": [
+      [
+        "Replicate the memory management strategy and error-handling approach from the `create_array()` function below to implement a new function `create_matrix(rows, cols)` which allocates memory for a 2D integer matrix and initializes all values to zero, handling memory allocation errors.\n\n**Example Code:**\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\n\nint* create_array(int size) {\n    int* array = (int*)malloc(size * sizeof(int));\n    if (array == NULL) {\n        fprintf(stderr, \"Memory allocation failed\\n\");\n        return NULL;\n    }\n    for (int i = 0; i < size; i++) {\n        array[i] = 0;\n    }\n    return array;\n}\n```",
+        "#include <stdio.h>\n#include <stdlib.h>\n\nint** create_matrix(int rows, int cols) {\n    int** matrix = (int**)malloc(rows * sizeof(int*));\n    if (matrix == NULL) {\n        fprintf(stderr, \"Memory allocation failed\\n\");\n        return NULL;\n    }\n    \n    for (int i = 0; i < rows; i++) {\n        matrix[i] = (int*)malloc(cols * sizeof(int));\n        if (matrix[i] == NULL) {\n            // Clean up previously allocated memory\n            for (int j = 0; j < i; j++) {\n                free(matrix[j]);\n            }\n            free(matrix);\n            fprintf(stderr, \"Memory allocation failed\\n\");\n            return NULL;\n        }\n        \n        // Initialize all elements to zero\n        for (int j = 0; j < cols; j++) {\n            matrix[i][j] = 0;\n        }\n    }\n    \n    return matrix;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "response": [
+      [
+        "Follow the encapsulation and method dependency structure demonstrated in the `GraphicsManager` class to create a `PhysicsManager` class in C++. The `PhysicsManager` should handle physics calculations such as velocity updates and collision detection for game objects.\n\n**Example Code:**\n\n```cpp\nclass GraphicsManager {\npublic:\n    GraphicsManager() {\n        initialize();\n    }\n\n    void drawObject(const GameObject& obj) {\n        if (isInitialized) {\n            render(obj);\n        }\n    }\n\nprivate:\n    bool isInitialized = false;\n\n    void initialize() {\n        // Graphics initialization code\n        isInitialized = true;\n    }\n\n    void render(const GameObject& obj) {\n        // Render object to the screen\n    }\n};\n```",
+        "class PhysicsManager {\npublic:\n    PhysicsManager() {\n        initialize();\n    }\n\n    void updatePhysics(GameObject& obj, float deltaTime) {\n        if (isInitialized) {\n            updateVelocity(obj, deltaTime);\n            checkCollisions(obj);\n        }\n    }\n\nprivate:\n    bool isInitialized = false;\n\n    void initialize() {\n        // Physics system initialization code\n        isInitialized = true;\n    }\n\n    void updateVelocity(GameObject& obj, float deltaTime) {\n        // Update object velocity based on forces and time\n    }\n\n    void checkCollisions(GameObject& obj) {\n        // Detect and resolve collisions with other objects\n    }\n};"
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "response": [
+      [
+        "Replicate the style, the structure with error handling, and the response patterns as demonstrated in the `create_user` function provided below to create a new function `update_user(id: String, update_data: UserData)` in Rust. This function will accept user ID and some userdata to update, perform schema validation, and update the user data in a simulated database, handling any potential errors.\n\n**Example Code:**\n\n```rust\nuse serde::{Deserialize, Serialize};\nuse serde_json::{json, Value};\nuse std::{collections::HashMap, sync::Mutex};\n\n#[derive(Serialize, Deserialize)]\nstruct UserData {\n    username: String,\n    email: String,\n}\n\nlazy_static! {\n    static ref DATABASE: Mutex<HashMap<String, UserData>> = Mutex::new(HashMap::new());\n}\n\nfn create_user(user_data: UserData) -> Result<Value, String> {\n    let db = DATABASE.lock().unwrap();\n    if db.contains_key(&user_data.username) {\n        return Err(\"Username already exists\".to_string());\n    }\n    \n    db.insert(user_data.username.clone(), user_data);\n    Ok(json!({\"message\": \"User created successfully\"}))\n}\n```",
+        "fn update_user(id: String, update_data: UserData) -> Result<Value, String> {\n    let mut db = DATABASE.lock().unwrap();\n    if !db.contains_key(&id) {\n        return Err(\"User not found\".to_string());\n    }\n    \n    let user = db.get_mut(&id).unwrap();\n    user.username = update_data.username;\n    user.email = update_data.email;\n\n    Ok(json!({\"message\": \"User updated successfully\"}))\n}"
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "response": [
+      [
+        "Adapt the structured programming and numerical computations style shown in the provided `calculate_area_of_circle()` function into a new function called `calculate_volume_of_cylinder(radius, height)`. Ensure that the new function calculates and returns the volume of a cylinder using the formula \\( V = \\pi \\times \\text{radius}^2 \\times \\text{height} \\).\n\n**Example Code:**\n\n```c\n#include <stdio.h>\n#define PI 3.14159265358979323846\n\ndouble calculate_area_of_circle(double radius) {\n    return PI * radius * radius;\n}\n```",
+        "#include <stdio.h>\n#define PI 3.14159265358979323846\n\ndouble calculate_volume_of_cylinder(double radius, double height) {\n    return PI * radius * radius * height;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "response": [
+      [
+        "Following the organization of classes and methods in the given `Account` example, write a new Java class `Transaction` that encapsulates the creation and processing of financial transactions. It should include proper exception handling and method documentation based on the example.\n\n**Example Code:**\n\n```java\npublic class Account {\n    private double balance;\n\n    public Account(double initialBalance) {\n        if (initialBalance < 0) {\n            throw new IllegalArgumentException(\"Initial balance cannot be negative.\");\n        }\n        this.balance = initialBalance;\n    }\n\n    public void deposit(double amount) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Deposit amount must be positive.\");\n        }\n        balance += amount;\n    }\n\n    public void withdraw(double amount) throws InsufficientFundsException {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Withdrawal amount must be positive.\");\n        }\n        if (amount > balance) {\n            throw new InsufficientFundsException(\"Insufficient funds for this withdrawal.\");\n        }\n        balance -= amount;\n    }\n\n    public double getBalance() {\n        return balance;\n    }\n}\n```",
+        "public class Transaction {\n    private double amount;\n    private String type;\n\n    public Transaction(double amount, String type) {\n        if (amount <= 0) {\n            throw new IllegalArgumentException(\"Transaction amount must be positive.\");\n        }\n        if (!type.equals(\"deposit\") && !type.equals(\"withdrawal\")) {\n            throw new IllegalArgumentException(\"Invalid transaction type. Must be 'deposit' or 'withdrawal'.\");\n        }\n        this.amount = amount;\n        this.type = type;\n    }\n\n    /**\n     * Processes this transaction for the given account.\n     *\n     * @param account the account to process the transaction on\n     * @throws InsufficientFundsException if the account balance is insufficient for a withdrawal\n     */\n    public void process(Account account) throws InsufficientFundsException {\n        switch (type) {\n            case \"deposit\":\n                account.deposit(amount);\n                break;\n            case \"withdrawal\":\n                account.withdraw(amount);\n                break;\n            default:\n                throw new IllegalArgumentException(\"Unsupported transaction type.\");\n        }\n    }\n\n    public double getAmount() {\n        return amount;\n    }\n\n    public String getType() {\n        return type;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "response": [
+      [
+        "Mimic the `calculate_distance()` function's explicit typing and output formatting in Rust to create a new function `calculate_area(width: f32, height: f32) -> String` that calculates the area of a rectangle and returns the result as a formatted string \"Area: X sq units\".\n\n**Example Code:**\n\n```rust\nfn calculate_distance(x1: f32, y1: f32, x2: f32, y2: f32) -> String {\n    let distance = ((x2 - x1).powi(2) + (y2 - y1).powi(2)).sqrt();\n    format!(\"Distance: {:.2} units\", distance)\n}\n```",
+        "fn calculate_area(width: f32, height: f32) -> String {\n    let area = width * height;\n    format!(\"Area: {:.2} sq units\", area)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 33,
+    "response": [
+      [
+        "Adopt the error handling and method structure from the `doCalculations()` method in the `Calculator` class to create a `divide()` method in a new `AdvancedMath` class in Java, which safely handles division by zero and returns a custom error message if division cannot be performed.\n\n**Example Code:**\n\n```java\npublic class Calculator {\n\n    public double doCalculations(double number1, double number2, String operation) {\n        try {\n            switch (operation) {\n                case \"add\":\n                    return number1 + number2;\n                case \"subtract\":\n                    return number1 - number2;\n                case \"multiply\":\n                    return number1 * number2;\n                case \"divide\":\n                    return number1 / number2;\n                default:\n                    throw new IllegalArgumentException(\"Invalid operation\");\n            }\n        } catch (ArithmeticException e) {\n            throw new ArithmeticException(\"Division by zero is not allowed\");\n        }\n    }\n}\n```",
+        "public class AdvancedMath {\n\n    public double divide(double dividend, double divisor) {\n        try {\n            if (divisor == 0) {\n                throw new ArithmeticException(\"Division by zero is not allowed\");\n            }\n            return dividend / divisor;\n        } catch (ArithmeticException e) {\n            throw new ArithmeticException(\"Division by zero is not allowed\");\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "response": [
+      [
+        "Following the methodological guide and interface implementation from the `add_item()` function in the example, create a function `remove_item()` in C++ that takes an item's ID and removes it from a std::vector if it exists, handling exceptions if the item is not found.\n\n**Example Code:**\n\n```cpp\n#include<vector>\n#include<iostream>\n#include<stdexcept>\n\nclass Inventory {\nprivate:\n    std::vector<int> items;\n\npublic:\n    void add_item(int item_id) {\n        try {\n            items.push_back(item_id);\n            std::cout << \"Item added successfully.\" << std::endl;\n        } catch (const std::bad_alloc& e) {\n            std::cout << \"Failed to add item: \" << e.what() << std::endl;\n        }\n    }\n};\n```",
+        "void remove_item(int item_id) {\n    auto it = std::find(items.begin(), items.end(), item_id);\n    if (it != items.end()) {\n        items.erase(it);\n        std::cout << \"Item removed successfully.\" << std::endl;\n    } else {\n        throw std::runtime_error(\"Item ID not found.\");\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "response": [
+      [
+        "Implement a dynamically resizable array in C, dealing with memory allocation and resizing patterns similar to the implementation shown in the `dynamic_vector` example. Ensure to handle memory errors and provide a mechanism for safely adding elements to the array.\n\n**Example Code:**\n\n```c\ntypedef struct {\n    int *array;\n    size_t used;\n    size_t size;\n} DynamicArray;\n\nvoid initArray(DynamicArray *a, size_t initialSize) {\n    a->array = malloc(initialSize * sizeof(int));\n    if(a->array == NULL) {\n        fprintf(stderr, \"Failed to allocate memory\\n\");\n        exit(1);\n    }\n    a->used = 0;\n    a->size = initialSize;\n}\n\nvoid insertArray(DynamicArray *a, int element) {\n    if (a->used == a->size) {\n        int *temp = realloc(a->array, 2 * a->size * sizeof(int));\n        if(temp == NULL) {\n            fprintf(stderr, \"Failed to reallocate memory\\n\");\n            free(a->array);\n            exit(2);\n        }\n        a->array = temp;\n        a->size *= 2;\n    }\n    a->array[a->used++] = element;\n}\n\nvoid freeArray(DynamicArray *a) {\n    free(a->array);\n    a->array = NULL;\n    a->used = a->size = 0;\n}\n```",
+        "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct {\n    int *array;\n    size_t used;\n    size_t size;\n} DynamicArray;\n\nvoid initArray(DynamicArray *a, size_t initialSize) {\n    a->array = malloc(initialSize * sizeof(int));\n    if (a->array == NULL) {\n        fprintf(stderr, \"Failed to allocate memory\\n\");\n        exit(EXIT_FAILURE);\n    }\n    a->used = 0;\n    a->size = initialSize;\n}\n\nvoid insertArray(DynamicArray *a, int element) {\n    if (a->used == a->size) {\n        size_t newSize = 2 * a->size;\n        int *temp = realloc(a->array, newSize * sizeof(int));\n        if (temp == NULL) {\n            fprintf(stderr, \"Failed to reallocate memory\\n\");\n            free(a->array);\n            exit(EXIT_FAILURE);\n        }\n        a->array = temp;\n        a->size = newSize;\n    }\n    a->array[a->used++] = element;\n}\n\nvoid freeArray(DynamicArray *a) {\n    free(a->array);\n    a->array = NULL;\n    a->used = 0;\n    a->size = 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "response": [
+      [
+        "Adopt the coding conventions displayed in the `calculateInterest(double amount, double rate)` function to write a method `calculateTax(double income, double taxRate)` in Java. This method should calculate and return the tax based on the given income and taxRate. Document the method using the same commenting style for parameters and return value.\n\n**Example Code:**\n\n```java\n/**\n * Calculates the total interest based on the amount and the yearly interest rate.\n *\n * @param amount the principal amount on which the interest is calculated\n * @param rate the yearly interest rate in percentage\n * @return the calculated interest\n */\npublic double calculateInterest(double amount, double rate) {\n    return amount * rate / 100;\n}\n```",
+        "/**\n * Calculates the total tax based on the income and the tax rate.\n *\n * @param income the income amount on which the tax is calculated\n * @param taxRate the tax rate in percentage\n * @return the calculated tax\n */\npublic double calculateTax(double income, double taxRate) {\n    return income * taxRate / 100;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "response": [
+      [
+        "Implement a function `calculate_average(score_list)` that replicates the error handling and structure shown in the `sum_of_list()` function below.\n\n**Example Code:**\n\n```python\ndef sum_of_list(nums):\n    \"\"\"\n    Calculates the sum of the given list of numbers. Raises an error if the input is not a list.\n\n    Args:\n        nums (list): List of numbers\n\n    Returns:\n        int: Sum of the numbers in the list\n    \"\"\"\n    if not isinstance(nums, list):\n        raise ValueError(\"Input should be a list of numbers\")\n    return sum(nums)\n```",
+        "def calculate_average(score_list):\n    \"\"\"\n    Calculates the average of the given list of scores. Raises an error if the input is not a list.\n\n    Args:\n        score_list (list): List of numbers\n\n    Returns:\n        float: Average of the numbers in the list\n    \"\"\"\n    if not isinstance(score_list, list):\n        raise ValueError(\"Input should be a list of numbers\")\n    if not score_list:\n        return 0\n    return sum(score_list) / len(score_list)"
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "response": [
+      [
+        "Implement a function `compressString(const std::string& input)` following the established coding style and efficiency pattern as exhibited in the `decompressString(const std::string& input)` function below:\n\n**Example Code:**\n\n```cpp\n#include <iostream>\n#include <string>\n\nstd::string decompressString(const std::string& input) {\n    std::string result;\n    int i = 0;\n    while (i < input.size()) {\n        int num_count = 0;\n        // Count the number of digits\n        while (isdigit(input[i])) {\n            num_count = num_count * 10 + (input[i] - '0');\n            i++;\n        }\n        char current_char = input[i];\n        // Repeat the char num_count times\n        for (int j = 0; j < num_count; j++) {\n            result.push_back(current_char);\n        }\n        i++;\n    }\n    return result;\n}\n```",
+        "#include <iostream>\n#include <string>\n\nstd::string compressString(const std::string& input) {\n    std::string result;\n    int i = 0;\n    while (i < input.size()) {\n        char current_char = input[i];\n        int count = 1;\n        // Count consecutive identical characters\n        while (i + count < input.size() && input[i + count] == current_char) {\n            count++;\n        }\n        // Add the count and the character to result\n        result += std::to_string(count) + current_char;\n        // Move to the next different character\n        i += count;\n    }\n    return result;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 39,
+    "response": [
+      [
+        "Implement a function called `calculate_mean_var_std(nums)` by using the same function declaration, docstring style, and import conventions as seen in the `calculate_median(nums)` example below. This function should compute the mean, variance, and standard deviation of a list of numbers.\n\n**Example Code:**\n\n```python\ndef calculate_median(nums):\n    \"\"\"\n    Calculates the median of a list of numbers.\n    \n    Args:\n        nums (list of int or float): The list of numbers to calculate the median from.\n\n    Returns:\n        float: The median of the numbers.\n    \"\"\"\n    import numpy as np\n    return np.median(nums)\n```",
+        "def calculate_mean_var_std(nums):\n    \"\"\"\n    Calculates the mean, variance, and standard deviation of a list of numbers.\n    \n    Args:\n        nums (list of int or float): The list of numbers to calculate statistics from.\n\n    Returns:\n        tuple: A tuple containing (mean, variance, standard deviation).\n    \"\"\"\n    import numpy as np\n    mean = np.mean(nums)\n    var = np.var(nums)\n    std = np.std(nums)\n    return mean, var, std"
+      ]
+    ]
+  },
+  {
+    "id": 40,
+    "response": [
+      [
+        "Adopt the structure and memory management practices from the given `create_array()` function to implement a new function `create_matrix(rows, cols)`. This new function should allocate memory for a 2D matrix of integers and return a pointer to this matrix. Handle any memory allocation errors as shown in the example.\n\n**Example Code:**\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\n\nint* create_array(int size) {\n    int *arr = malloc(size * sizeof(int));\n    if (arr == NULL) {\n        fprintf(stderr, \"Unable to allocate memory\\n\");\n        return NULL;\n    }\n    return arr;\n}\n```",
+        "#include <stdio.h>\n#include <stdlib.h>\n\nint** create_matrix(int rows, int cols) {\n    int **matrix = malloc(rows * sizeof(int*));\n    if (matrix == NULL) {\n        fprintf(stderr, \"Unable to allocate memory for rows\\n\");\n        return NULL;\n    }\n    \n    for (int i = 0; i < rows; i++) {\n        matrix[i] = malloc(cols * sizeof(int));\n        if (matrix[i] == NULL) {\n            fprintf(stderr, \"Unable to allocate memory for columns at row %d\\n\", i);\n            // Free previously allocated memory\n            for (int j = 0; j < i; j++) {\n                free(matrix[j]);\n            }\n            free(matrix);\n            return NULL;\n        }\n    }\n    \n    return matrix;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 41,
+    "response": [
+      [
+        "Model the `Vector3D` class following the structure and style of the `Point2D` class below, adding support for 3-dimensional operations like dot product, cross product, and magnitude calculations.\n\n**Example Code:**\n\n```cpp\nclass Point2D {\npublic:\n    Point2D(double x, double y) : x(x), y(y) {}\n\n    double distanceTo(const Point2D& other) const {\n        return sqrt((x - other.x) * (x - other.x) + (y - other.y) * (y - other.y));\n    }\n\nprivate:\n    double x, y;\n};\n```",
+        "class Vector3D {\npublic:\n    Vector3D(double x, double y, double z) : x(x), y(y), z(z) {}\n\n    double magnitude() const {\n        return sqrt(x*x + y*y + z*z);\n    }\n\n    double dot(const Vector3D& other) const {\n        return x*other.x + y*other.y + z*other.z;\n    }\n\n    Vector3D cross(const Vector3D& other) const {\n        return Vector3D(\n            y*other.z - z*other.y,\n            z*other.x - x*other.z,\n            x*other.y - y*other.x\n        );\n    }\n\n    double distanceTo(const Vector3D& other) const {\n        return sqrt((x - other.x)*(x - other.x) + \n                   (y - other.y)*(y - other.y) + \n                   (z - other.z)*(z - other.z));\n    }\n\nprivate:\n    double x, y, z;\n};"
+      ]
+    ]
+  },
+  {
+    "id": 42,
+    "response": [
+      [
+        "Adapt the function interface and parallelism technique demonstrated in the `find_prime_numbers()` function to implement a new function `calculate_fibonacci_numbers(n)` that calculates the first `n` Fibonacci numbers using multithreading.\n\n**Example Code:**\n\n```c\n#include <pthread.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <math.h>\n\nint is_prime(int num) {\n    if (num <= 1) return 0;\n    if (num % 2 == 0 && num > 2) return 0;\n    for (int i = 3; i <= sqrt(num); i += 2) {\n        if (num % i == 0) return 0;\n    }\n    return 1;\n}\n\nvoid* thread_function(void* arg) {\n    int* num = (int*) arg;\n    if (is_prime(*num)) {\n        printf(\"%d is prime\\n\", *num);\n    }\n    return NULL;\n}\n\nvoid find_prime_numbers(int start, int end, int num_threads) {\n    pthread_t* threads = malloc(sizeof(pthread_t) * num_threads);\n    int* numbers = malloc(sizeof(int) * num_threads);\n    int interval = (end - start) / num_threads;\n\n    for (int i = 0; i < num_threads; ++i) {\n        numbers[i] = start + i * interval;\n        pthread_create(&threads[i], NULL, thread_function, &numbers[i]);\n    }\n\n    for (int i = 0; i < num_threads; ++i) {\n        pthread_join(threads[i], NULL);\n    }\n\n    free(threads);\n    free(numbers);\n}\n```",
+        "#include <pthread.h>\n#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct {\n    int position;\n    long long result;\n} FibonacciData;\n\nlong long fibonacci(int n) {\n    if (n <= 1) return n;\n    \n    long long a = 0, b = 1, temp;\n    for (int i = 2; i <= n; i++) {\n        temp = a + b;\n        a = b;\n        b = temp;\n    }\n    return b;\n}\n\nvoid* fibonacci_thread_function(void* arg) {\n    FibonacciData* data = (FibonacciData*)arg;\n    data->result = fibonacci(data->position);\n    return NULL;\n}\n\nvoid calculate_fibonacci_numbers(int n) {\n    pthread_t* threads = malloc(sizeof(pthread_t) * n);\n    FibonacciData* thread_data = malloc(sizeof(FibonacciData) * n);\n\n    for (int i = 0; i < n; i++) {\n        thread_data[i].position = i;\n        pthread_create(&threads[i], NULL, fibonacci_thread_function, &thread_data[i]);\n    }\n\n    for (int i = 0; i < n; i++) {\n        pthread_join(threads[i], NULL);\n        printf(\"Fibonacci number %d is %lld\\n\", i, thread_data[i].result);\n    }\n\n    free(threads);\n    free(thread_data);\n}"
+      ]
+    ]
+  },
+  {
+    "id": 43,
+    "response": [
+      [
+        "Extend the established pattern and principles of the existing `Vector2D` class below to create a new class `Vector3D`, which will add a third dimension. Include methods for vector addition, vector subtraction, dot product, and magnitude calculation. Maintain the design, method signatures and comments style seen in the `Vector2D` example.\n\n**Example Code:**\n\n```cpp\n#include<iostream>\nusing namespace std;\n\nclass Vector2D {\npublic:\n    double x, y;\n\n    Vector2D(double x, double y) : x(x), y(y) {}\n\n    // Adds two vectors\n    Vector2D add(const Vector2D& other) {\n        return Vector2D(x + other.x, y + other.y);\n    }\n\n    // Subtracts two vectors\n    Vector2D subtract(const Vector2D& other) {\n        return Vector2D(x - other.x, y - other.y);\n    }\n\n    // Calculates the dot product\n    double dotProduct(const Vector2D& other) {\n        return x * other.x + y * other.y;\n    }\n\n    // Calculates magnitude of the vector\n    double magnitude() {\n        return sqrt(x * x + y * y);\n    }\n\n    // Prints the vector details\n    void print() {\n        cout << \"Vector(\" << x << \", \" << y << \")\" << endl;\n    }\n};\n```",
+        "#include<iostream>\n#include<cmath>\nusing namespace std;\n\nclass Vector2D {\npublic:\n    double x, y;\n\n    Vector2D(double x, double y) : x(x), y(y) {}\n\n    // Adds two vectors\n    Vector2D add(const Vector2D& other) {\n        return Vector2D(x + other.x, y + other.y);\n    }\n\n    // Subtracts two vectors\n    Vector2D subtract(const Vector2D& other) {\n        return Vector2D(x - other.x, y - other.y);\n    }\n\n    // Calculates the dot product\n    double dotProduct(const Vector2D& other) {\n        return x * other.x + y * other.y;\n    }\n\n    // Calculates magnitude of the vector\n    double magnitude() {\n        return sqrt(x * x + y * y);\n    }\n\n    // Prints the vector details\n    void print() {\n        cout << \"Vector(\" << x << \", \" << y << \")\" << endl;\n    }\n};\n\nclass Vector3D {\npublic:\n    double x, y, z;\n\n    Vector3D(double x, double y, double z) : x(x), y(y), z(z) {}\n\n    // Adds two vectors\n    Vector3D add(const Vector3D& other) {\n        return Vector3D(x + other.x, y + other.y, z + other.z);\n    }\n\n    // Subtracts two vectors\n    Vector3D subtract(const Vector3D& other) {\n        return Vector3D(x - other.x, y - other.y, z - other.z);\n    }\n\n    // Calculates the dot product\n    double dotProduct(const Vector3D& other) {\n        return x * other.x + y * other.y + z * other.z;\n    }\n\n    // Calculates magnitude of the vector\n    double magnitude() {\n        return sqrt(x * x + y * y + z * z);\n    }\n\n    // Prints the vector details\n    void print() {\n        cout << \"Vector(\" << x << \", \" << y << \", \" << z << \")\" << endl;\n    }\n};"
+      ]
+    ]
+  },
+  {
+    "id": 44,
+    "response": [
+      [
+        "Using the example of the `fetch_data` function provided, create a new Rust function `retrieve_image_data(url: &str) -> Result<Vec<u8>, reqwest::Error>` that makes an HTTP GET request to the specified URL to fetch image data and returns the binary content. Ensure the function is structured similarly, including error handling and result usage.\n\n**Example Code:**\n\n```rust\nuse reqwest;\n\nasync fn fetch_data(url: &str) -> Result<String, reqwest::Error> {\n    let response = reqwest::get(url).await?;\n    let content = response.text().await?;\n    Ok(content)\n}\n```",
+        "use reqwest;\n\nasync fn retrieve_image_data(url: &str) -> Result<Vec<u8>, reqwest::Error> {\n    let response = reqwest::get(url).await?;\n    let content = response.bytes().await?.to_vec();\n    Ok(content)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 45,
+    "response": [
+      [
+        "Adopt the recursive algorithm and styling guidelines from the `calculate_factorial()` example to implement a new function `calculate_fibonacci(n)` in C. The function should compute the nth Fibonacci number using a recursive approach.\n\n**Example Code:**\n\n```c\nint calculate_factorial(int n) {\n    if (n == 0) {\n        return 1;\n    } else {\n        return n * calculate_factorial(n - 1);\n    }\n}\n```",
+        "int calculate_fibonacci(int n) {\n    if (n <= 0) {\n        return 0;\n    } else if (n == 1) {\n        return 1;\n    } else {\n        return calculate_fibonacci(n - 1) + calculate_fibonacci(n - 2);\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 46,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: example: ```java\npublic class EmployeeManager {\n    private List<Employee> employees;\n\n    public EmployeeManager() {\n        employees = new ArrayList<>();\n    }\n\n    public void addEmployee(Employee employee) throws EmployeeException {\n        if(employee == null) {\n            throw new EmployeeException(\"Invalid employee object provided\");\n        }\n        try {\n            employees.add(employee);\n        } catch (Exception e) {\n            throw new EmployeeException(\"Failed to add employee\", e);\n        }\n    }\n    \n    public void removeEmployee(int employeeId) throws EmployeeException {\n        try {\n            boolean removed = employees.removeIf(emp -> emp.getId() == employeeId);\n            if (!removed) {\n                throw new EmployeeNotFoundException(\"Employee with ID \" + employeeId + \" not found\");\n            }\n        } catch (EmployeeNotFoundException e) {\n            throw e;\n        } catch (Exception e) {\n            throw new EmployeeException(\"Failed to remove employee\", e);\n        }\n    }\n}\n```.\n## previous code\npublic void removeEmployee(int employeeId) throws EmployeeException {\n    try {\n        boolean removed = employees.removeIf(emp -> emp.getId() == employeeId);\n        if (!removed) {\n            throw new EmployeeException(\"Employee with ID \" + employeeId + \" not found\");\n        }\n    } catch (Exception e) {\n        throw new EmployeeException(\"Failed to remove employee\", e);\n    }\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nFollow the encapsulation and exception handling style shown in the `EmployeeManager.addEmployee()` method to develop a new method `removeEmployee(employeeId)` which will remove an employee by their ID. Handle cases where the employee is not found with appropriate exception handling.\n\n**Example Code:**\n\n```java\npublic class EmployeeManager {\n    private List<Employee> employees;\n\n    public EmployeeManager() {\n        employees = new ArrayList<>();\n    }\n\n    public void addEmployee(Employee employee) throws EmployeeException {\n        if(employee == null) {\n            throw new EmployeeException(\"Invalid employee object provided\");\n        }\n        try {\n            employees.add(employee);\n        } catch (Exception e) {\n            throw new EmployeeException(\"Failed to add employee\", e);\n        }\n    }\n}\n```",
+        " ```java\npublic void removeEmployee(int employeeId) throws EmployeeException {\n    try {\n        boolean removed = employees.removeIf(emp -> emp.getId() == employeeId);\n        if (!removed) {\n            throw new EmployeeNotFoundException(\"Employee with ID \" + employeeId + \" not found\");\n        }\n    } catch (EmployeeNotFoundException e) {\n        throw e;\n    } catch (Exception e) {\n        throw new EmployeeException(\"Failed to remove employee\", e);\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 47,
+    "response": [
+      [
+        "Replicate the match expression error handling and lifetime management demonstrated in the `load_configuration` function below to implement a new function `process_input(input: &str) -> Result<(), String>` that processes a given string input and returns an appropriate error message on failure.\n\n**Example Code:**\n\n```rust\nfn load_configuration(file_path: &str) -> Result<Config, String> {\n    let configuration = std::fs::read_to_string(file_path);\n    match configuration {\n        Ok(content) => {\n            match serde_json::from_str::<Config>(&content) {\n                Ok(config) => Ok(config),\n                Err(_) => Err(\"Failed to parse configuration.\".to_string()),\n            }\n        },\n        Err(_) => Err(\"Failed to read configuration file.\".to_string()),\n    }\n}\n```",
+        "fn process_input(input: &str) -> Result<(), String> {\n    let parsed_data = input.parse::<i32>();\n    match parsed_data {\n        Ok(value) => {\n            match process_value(value) {\n                Ok(_) => Ok(()),\n                Err(_) => Err(\"Failed to process value.\".to_string()),\n            }\n        },\n        Err(_) => Err(\"Failed to parse input.\".to_string()),\n    }\n}\n\n// This would be your actual processing function\nfn process_value(value: i32) -> Result<(), std::io::Error> {\n    // Processing logic would go here\n    Ok(())\n}"
+      ]
+    ]
+  },
+  {
+    "id": 48,
+    "response": [
+      [
+        "Following the functional programming paradigm and the concise lambda expressions demonstrated in the `calculate` method, create a new method `transformList` in Java that applies a given function to elements of a provided list and returns a new list of transformed elements.\n\n**Example Code:**\n\n```java\nimport java.util.Arrays;\nimport java.util.List;\nimport java.util.stream.Collectors;\n\npublic class FunctionalUtils {\n\n    public double calculate(List<Integer> numbers, java.util.function.Function<Integer, Double> func) {\n        return numbers.stream()\n                      .map(func)\n                      .reduce(0.0, Double::sum);\n    }\n}\n```",
+        "import java.util.List;\nimport java.util.function.Function;\nimport java.util.stream.Collectors;\n\npublic class FunctionalUtils {\n\n    public double calculate(List<Integer> numbers, java.util.function.Function<Integer, Double> func) {\n        return numbers.stream()\n                      .map(func)\n                      .reduce(0.0, Double::sum);\n    }\n    \n    public <T, R> List<R> transformList(List<T> items, Function<T, R> transformer) {\n        return items.stream()\n                    .map(transformer)\n                    .collect(Collectors.toList());\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 49,
+    "response": [
+      [
+        "Following the pattern from the `printLinkedList` function, create a C++ function `printTree` which outputs the nodes of a binary tree. Each node should be printed in a new line followed by its depth. Handle the tree traversal recursively.\n\n**Example Code:**\n\n```cpp\nvoid printLinkedList(ListNode* head) {\n    if (head == nullptr) {\n        return;\n    }\n    std::cout << head->val << std::endl;\n    printLinkedList(head->next);\n}\n```",
+        "void printTree(TreeNode* root, int depth = 0) {\n    if (root == nullptr) {\n        return;\n    }\n    std::cout << root->val << \" \" << depth << std::endl;\n    printTree(root->left, depth + 1);\n    printTree(root->right, depth + 1);\n}"
+      ]
+    ]
+  },
+  {
+    "id": 50,
+    "response": [
+      [
+        "Following the function definition style and parameter usage from the `add_values()` function shown below, create a new function `multiply_values(x, y)` which should take two parameters, multiply them, and return the result.\n\n**Example Code:**\n\n```c\n#include <stdio.h>\n\nint add_values(int x, int y) {\n    return x + y;\n}\n```",
+        "#include <stdio.h>\n\nint multiply_values(int x, int y) {\n    return x * y;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 51,
+    "response": [
+      [
+        "Implement the `findByUsername(String username)` method using the same pattern and exception handling as the `findById(Integer id)` method in the following Java repository code:\n\n**Example Code:**\n\n```java\npublic class UserRepository {\n    private static final Map<Integer, User> users = new HashMap<>();\n\n    public static User findById(Integer id) throws NotFoundException {\n        User user = users.get(id);\n        if (user == null) {\n            throw new NotFoundException(\"User not found with id: \" + id);\n        }\n        return user;\n    }\n}\n```",
+        "public class UserRepository {\n    private static final Map<Integer, User> users = new HashMap<>();\n    private static final Map<String, User> usersByUsername = new HashMap<>();\n\n    public static User findById(Integer id) throws NotFoundException {\n        User user = users.get(id);\n        if (user == null) {\n            throw new NotFoundException(\"User not found with id: \" + id);\n        }\n        return user;\n    }\n    \n    public static User findByUsername(String username) throws NotFoundException {\n        User user = usersByUsername.get(username);\n        if (user == null) {\n            throw new NotFoundException(\"User not found with username: \" + username);\n        }\n        return user;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "response": [
+      [
+        "Implement a function named `calculate_sum` that behaves and is structured similarly to the `calculate_average` function provided below. The `calculate_sum` function should take a list of numbers and return the sum of these numbers.\n\n**Example Code:**\n\n```python\ndef calculate_average(numbers):\n    \"\"\"\n    Calculates the average of a list of numbers.\n\n    Args:\n        numbers (list): List of numbers (integers or floats)\n\n    Returns:\n        float: The average of the numbers\n    \"\"\"\n    total = sum(numbers)\n    count = len(numbers)\n    return total / count if count else 0\n```",
+        "def calculate_sum(numbers):\n    \"\"\"\n    Calculates the sum of a list of numbers.\n\n    Args:\n        numbers (list): List of numbers (integers or floats)\n\n    Returns:\n        float: The sum of the numbers\n    \"\"\"\n    return sum(numbers)"
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "response": [
+      [
+        "Using the OOP and template design from the `Vector2D<T>` class shown below, implement a `Matrix2D<T>` class for a 2x2 matrix that supports addition, subtraction, and multiplication operations.\n\n**Example Code:**\n\n```cpp\ntemplate<typename T>\nclass Vector2D {\npublic:\n    T x, y;\n\n    Vector2D(T x, T y) : x(x), y(y) {}\n\n    Vector2D operator+(const Vector2D& other) const {\n        return Vector2D(x + other.x, y + other.y);\n    }\n\n    Vector2D operator-(const Vector2D& other) const {\n        return Vector2D(x - other.x, y - other.y);\n    }\n\n    T dot(const Vector2D& other) const {\n        return x * other.x + y * other.y;\n    }\n};\n```",
+        "template<typename T>\nclass Matrix2D {\npublic:\n    Vector2D<T> row1, row2;\n\n    Matrix2D(T a11, T a12, T a21, T a22) : row1(a11, a12), row2(a21, a22) {}\n\n    Matrix2D operator+(const Matrix2D& other) const {\n        return Matrix2D(\n            row1.x + other.row1.x, row1.y + other.row1.y,\n            row2.x + other.row2.x, row2.y + other.row2.y\n        );\n    }\n\n    Matrix2D operator-(const Matrix2D& other) const {\n        return Matrix2D(\n            row1.x - other.row1.x, row1.y - other.row1.y,\n            row2.x - other.row2.x, row2.y - other.row2.y\n        );\n    }\n\n    Matrix2D operator*(const Matrix2D& other) const {\n        return Matrix2D(\n            row1.x * other.row1.x + row1.y * other.row2.x, \n            row1.x * other.row1.y + row1.y * other.row2.y,\n            row2.x * other.row1.x + row2.y * other.row2.x, \n            row2.x * other.row1.y + row2.y * other.row2.y\n        );\n    }\n\n    Vector2D<T> operator*(const Vector2D<T>& vec) const {\n        return Vector2D<T>(\n            row1.x * vec.x + row1.y * vec.y,\n            row2.x * vec.x + row2.y * vec.y\n        );\n    }\n};"
+      ]
+    ]
+  },
+  {
+    "id": 54,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: example: ```c\n#include <stdio.h>\n#include <string.h>\n\n#define MAX_PRODUCTS 100\n#define MAX_VENDORS 100\n\ntypedef struct {\n    int id;\n    char name[50];\n    float price;\n    char vendor[50];\n} Product;\n\nint search_vendor_id(Product products[], int count, char vendor_name[], int vendor_ids[]) {\n    int found_count = 0;\n\n    for (int i = 0; i < count; i++) {\n        if (strcmp(products[i].vendor, vendor_name) == 0) {\n            vendor_ids[found_count++] = products[i].id;\n        }\n    }\n\n    return found_count;\n}\n```.\n## previous code\nint search_vendor_id(Product products[], int count, char vendor_name[], int vendor_ids[]) {\n    int found_count = 0;\n\n    for (int i = 0; i < count; i++) {\n        if (strstr(products[i].vendor, vendor_name) != NULL) {\n            vendor_ids[found_count++] = products[i].id;\n        }\n    }\n\n    return found_count;\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nUsing the `search_product_name()` function's pattern and conventions, create a function `search_vendor_id(products, vendor_name)` in C which searches for products by the vendor's name and returns an array of product IDs.\n\n**Example Code:**\n\n```c\n#include <stdio.h>\n#include <string.h>\n\n#define MAX_PRODUCTS 100\n\ntypedef struct {\n    int id;\n    char name[50];\n    float price;\n} Product;\n\nint search_product_name(Product products[], int count, char search_name[]) {\n    int found_ids[MAX_PRODUCTS];\n    int found_count = 0;\n\n    for (int i = 0; i < count; i++) {\n        if (strstr(products[i].name, search_name) != NULL) {\n            found_ids[found_count++] = products[i].id;\n        }\n    }\n\n    return found_count;\n}\n```",
+        " ```c\nint search_vendor_id(Product products[], int count, char vendor_name[], int vendor_ids[]) {\n    int found_count = 0;\n\n    for (int i = 0; i < count; i++) {\n        if (strcmp(products[i].vendor, vendor_name) == 0) {\n            vendor_ids[found_count++] = products[i].id;\n        }\n    }\n\n    return found_count;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 55,
+    "response": [
+      [
+        "Replicate the explicit instantiation and template function approach from the `sortArray` function below to implement a new function `reverseArray` that reversely sorts an array of a generic type, ensuring the constraints are met and arranged accordingly.\n\n**Example Code:**\n\n```cpp\n#include <algorithm>\n#include <vector>\n\ntemplate <typename T>\nvoid sortArray(std::vector<T>& arr) {\n    std::sort(arr.begin(), arr.end());\n}\n\nint main() {\n    std::vector<int> nums = {3, 1, 4, 1, 5, 9};\n    sortArray(nums);\n    for (int num : nums) {\n        std::cout << num << \" \";\n    }\n    std::cout << std::endl;\n    return 0;\n}\n```",
+        "#include <algorithm>\n#include <vector>\n\ntemplate <typename T>\nvoid sortArray(std::vector<T>& arr) {\n    std::sort(arr.begin(), arr.end());\n}\n\ntemplate <typename T>\nvoid reverseArray(std::vector<T>& arr) {\n    std::sort(arr.begin(), arr.end(), std::greater<T>());\n}\n\nint main() {\n    std::vector<int> nums = {3, 1, 4, 1, 5, 9};\n    sortArray(nums);\n    for (int num : nums) {\n        std::cout << num << \" \";\n    }\n    std::cout << std::endl;\n    \n    std::vector<int> numsReverse = {3, 1, 4, 1, 5, 9};\n    reverseArray(numsReverse);\n    for (int num : numsReverse) {\n        std::cout << num << \" \";\n    }\n    std::cout << std::endl;\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 56,
+    "response": [
+      [
+        "Following the structure, type definitions, and error reporting style of the `create_file()` function, implement a new C function `delete_file(const char* filepath)` that deletes the specified file and reports whether the operation was successful or not.\n\n**Example Code:**\n\n```c\n#include <stdio.h>\n\nint create_file(const char* filepath) {\n    FILE* file = fopen(filepath, \"w\");\n    if (file == NULL) {\n        perror(\"Error creating file\");\n        return -1;\n    }\n    fputs(\"This is a test file.\\n\", file);\n    fclose(file);\n    return 0;\n}\n```",
+        "#include <stdio.h>\n\nint delete_file(const char* filepath) {\n    if (remove(filepath) != 0) {\n        perror(\"Error deleting file\");\n        return -1;\n    }\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 57,
+    "response": [
+      [
+        "Adapt the storage management and array optimization strategies from the `StaticArray` class to create a `DynamicArray` class in C++. Incorporate similar methods for element access, addition, and resizing.\n**Example Code:**\n```cpp\nclass StaticArray {\nprivate:\n    int arr[100];\n    int count;\n\npublic:\n    StaticArray() : count(0) {}\n\n    bool add(int element) {\n        if (count < 100) {\n            arr[count++] = element;\n            return true;\n        }\n        return false;\n    }\n\n    int get(int index) const {\n        if (index >= 0 && index < count) {\n            return arr[index];\n        }\n        throw std::out_of_range(\"Index out of bounds\");\n    }\n\n    int size() const {\n        return count;\n    }\n};\n```",
+        "#include <stdexcept>\n\nclass DynamicArray {\nprivate:\n    int* arr;\n    int capacity;\n    int count;\n\n    void resize() {\n        int newCapacity = capacity * 2;\n        int* newArr = new int[newCapacity];\n        \n        // Copy existing elements to new array\n        for (int i = 0; i < count; i++) {\n            newArr[i] = arr[i];\n        }\n        \n        // Free old memory and update pointers\n        delete[] arr;\n        arr = newArr;\n        capacity = newCapacity;\n    }\n\npublic:\n    DynamicArray(int initialCapacity = 10) : capacity(initialCapacity), count(0) {\n        arr = new int[capacity];\n    }\n    \n    ~DynamicArray() {\n        delete[] arr;\n    }\n    \n    // Copy constructor\n    DynamicArray(const DynamicArray& other) : capacity(other.capacity), count(other.count) {\n        arr = new int[capacity];\n        for (int i = 0; i < count; i++) {\n            arr[i] = other.arr[i];\n        }\n    }\n    \n    // Copy assignment operator\n    DynamicArray& operator=(const DynamicArray& other) {\n        if (this != &other) {\n            delete[] arr;\n            capacity = other.capacity;\n            count = other.count;\n            arr = new int[capacity];\n            for (int i = 0; i < count; i++) {\n                arr[i] = other.arr[i];\n            }\n        }\n        return *this;\n    }\n\n    bool add(int element) {\n        if (count >= capacity) {\n            resize();\n        }\n        arr[count++] = element;\n        return true;\n    }\n\n    int get(int index) const {\n        if (index >= 0 && index < count) {\n            return arr[index];\n        }\n        throw std::out_of_range(\"Index out of bounds\");\n    }\n\n    int size() const {\n        return count;\n    }\n    \n    int getCapacity() const {\n        return capacity;\n    }\n};"
+      ]
+    ]
+  },
+  {
+    "id": 58,
+    "response": [
+      [
+        "Adopt the functional and error handling design from the `calculate_discount(price, discount_percentage)` function to implement a new function `calculate_tax(price, tax_percentage)` in Rust. The new function should calculate the tax and deal with any potential errors if the input types are inappropriate.\n\n**Example Code:**\n\n```rust\nfn calculate_discount(price: f64, discount_percentage: f64) -> Result<f64, String> {\n    if price < 0.0 || discount_percentage < 0.0 {\n        Err(\"Price and discount percentage should be non-negative.\".to_string())\n    } else {\n        Ok(price * (discount_percentage / 100.0))\n    }\n}\n```",
+        "fn calculate_tax(price: f64, tax_percentage: f64) -> Result<f64, String> {\n    if price < 0.0 || tax_percentage < 0.0 {\n        Err(\"Price and tax percentage should be non-negative.\".to_string())\n    } else {\n        Ok(price * (tax_percentage / 100.0))\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 59,
+    "response": [
+      [
+        "Based on the structure and code comments of the `calculate_sum()` function, create a parallel implementation for a function named `calculate_product()` that takes an array of integers and returns their product.\n\n**Example Code:**\n\n```c\n#include <stdio.h>\n\nint calculate_sum(int arr[], int n) {\n    // Initialize sum variable to store the sum of the array elements\n    int sum = 0;\n\n    // loop through array and calculate the sum of elements\n    for (int i = 0; i < n; i++) {\n        sum += arr[i];\n    }\n\n    // return the calculated sum\n    return sum;\n}\n```",
+        "#include <stdio.h>\n\nint calculate_product(int arr[], int n) {\n    // Initialize product variable to store the product of the array elements\n    int product = 1;\n\n    // loop through array and calculate the product of elements\n    for (int i = 0; i < n; i++) {\n        product *= arr[i];\n    }\n\n    // return the calculated product\n    return product;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 60,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: example: ```java\npublic class FileManager {\n    public void writeFile(String path, String content) {\n        File file = new File(path);\n        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {\n            bw.write(content);\n        } catch (IOException e) {\n            System.out.println(\"An error occurred while writing to the file: \" + e.getMessage());\n        }\n    }\n}\n```.\n## previous code\npublic void writeFile(String path, String content) {\n    File file = new File(path);\n    try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {\n        bw.write(content);\n    } catch (IOException e) {\n        System.out.println(\"An error occurred while writing the file: \" + e.getMessage());\n    }\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nAdapt the signature, formatting, and exception handling found in the `readFile` method to create a new method `writeFile`, which writes a given `String` content to a file specified by its path.\n\n**Example Code:**\n\n```java\npublic class FileManager {\n    public String readFile(String path) {\n        File file = new File(path);\n        StringBuilder content = new StringBuilder();\n        try (BufferedReader br = new BufferedReader(new FileReader(file))) {\n            String line;\n            while ((line = br.readLine()) != null) {\n                content.append(line);\n                content.append(System.lineSeparator());\n            }\n        } catch (IOException e) {\n            System.out.println(\"An error occurred while reading the file: \" + e.getMessage());\n        }\n        return content.toString().trim();\n    }\n}\n```",
+        " \n```java\npublic void writeFile(String path, String content) {\n    File file = new File(path);\n    try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {\n        bw.write(content);\n    } catch (IOException e) {\n        System.out.println(\"An error occurred while reading the file: \" + e.getMessage());\n    }\n}\n```\n"
+      ]
+    ]
+  },
+  {
+    "id": 61,
+    "response": [
+      [
+        "Design and implement a Rust function `fetch_weather_data(city: &str)` following the naming convention, error-handling approach, and function documentation style used in the `fetch_stock_data(ticker: &str)` function below.\n\n**Example Code:**\n\n```rust\n/// Fetches the latest stock data for a provided ticker symbol from a financial API.\n/// * `ticker`: &str - The stock ticker symbol for which to fetch data.\n///\n/// Returns:\n/// Result<String, String> - The function returns Ok with the stock data in JSON format as a String,\n/// or an Err with an error message if the operation fails.\nfn fetch_stock_data(ticker: &str) -> Result<String, String> {\n    let url = format!(\"https://api.stockdata.com/data/{}\", ticker);\n    let mut response = match reqwest::blocking::get(&url) {\n        Ok(res) => res,\n        Err(_) => return Err(\"Failed to fetch data from the stock API\".to_string()),\n    };\n\n    if response.status().is_success() {\n        match response.text() {\n            Ok(data) => Ok(data),\n            Err(_) => Err(\"Failed to read response from the API\".to_string()),\n        }\n    } else {\n        Err(\"API returned an unsuccessful status code\".to_string())\n    }\n}\n```",
+        "/// Fetches the current weather data for a provided city name from a weather API.\n/// * `city`: &str - The city name for which to fetch weather data.\n///\n/// Returns:\n/// Result<String, String> - The function returns Ok with the weather data in JSON format as a String,\n/// or an Err with an error message if the operation fails.\nfn fetch_weather_data(city: &str) -> Result<String, String> {\n    let url = format!(\"https://api.weatherdata.com/data/{}\", city);\n    let mut response = match reqwest::blocking::get(&url) {\n        Ok(res) => res,\n        Err(_) => return Err(\"Failed to fetch data from the weather API\".to_string()),\n    };\n\n    if response.status().is_success() {\n        match response.text() {\n            Ok(data) => Ok(data),\n            Err(_) => Err(\"Failed to read response from the API\".to_string()),\n        }\n    } else {\n        Err(\"API returned an unsuccessful status code\".to_string())\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 62,
+    "response": [
+      [
+        "Implement a function in C++ named `process_vector` mimicking the structure, style, and functional logic provided in the example `modify_list` function, but for a vector of integers where each element should be squared.\n\n**Example Code:**\n\n```cpp\nvoid modify_list(list<int>& l) {\n    for(auto it=l.begin(); it!=l.end(); ++it) {\n        *it = (*it) * 2;\n    }\n}\n```",
+        "#include <vector>\n\nvoid process_vector(std::vector<int>& v) {\n    for(auto it=v.begin(); it!=v.end(); ++it) {\n        *it = (*it) * (*it);\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 63,
+    "response": [
+      [
+        "Create a C function named `multiply_matrices` following the style, parameter naming, and error handling showcased in the `add_matrices()` function provided below. This new function should multiply two matrices and return the result in a third matrix, handling incompatible dimensions through error checking.\n\n**Example Code:**\n\n```c\n#include <stdio.h>\n#include <stdlib.h>\n\nvoid add_matrices(int rA, int cA, int rB, int cB, int A[rA][cA], int B[rB][cB], int result[rA][cA]) {\n    if (rA != rB || cA != cB) {\n        printf(\"Error: Matrices have incompatible dimensions.\\n\");\n        exit(EXIT_FAILURE);\n    }\n    for (int i = 0; i < rA; i++) {\n        for (int j = 0; j < cA; j++) {\n            result[i][j] = A[i][j] + B[i][j];\n        }\n    }\n}\n```",
+        "void multiply_matrices(int rA, int cA, int rB, int cB, int A[rA][cA], int B[rB][cB], int result[rA][cB]) {\n    if (cA != rB) {\n        printf(\"Error: Matrices have incompatible dimensions.\\n\");\n        exit(EXIT_FAILURE);\n    }\n    for (int i = 0; i < rA; i++) {\n        for (int j = 0; j < cB; j++) {\n            result[i][j] = 0;\n            for (int k = 0; k < cA; k++) {\n                result[i][j] += A[i][k] * B[k][j];\n            }\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 64,
+    "response": [
+      [
+        "Using the object-oriented and encapsulated approach, and the same parameter handling and exception throwing technique as demonstrated in the `CustomerAccount` class below, create a new class `SupplierAccount` to manage supplier-related operations such as order tracking and payment processing.\n\n**Example Code:**\n\n```java\npublic class CustomerAccount {\n    private String customerId;\n    private double balance;\n    \n    public CustomerAccount(String customerId) {\n        this.customerId = customerId;\n        this.balance = 0.0;\n    }\n\n    public void deposit(double amount) {\n        if (amount < 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        balance += amount;\n    }\n\n    public void withdraw(double amount) throws InsufficientFundsException {\n        if (amount < 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        if (amount > balance) {\n            throw new InsufficientFundsException(\"Insufficient funds\");\n        }\n        balance -= amount;\n    }\n\n    public double getBalance() {\n        return balance;\n    }\n}\n```",
+        "public class SupplierAccount {\n    private String supplierId;\n    private double outstandingBalance;\n\n    public SupplierAccount(String supplierId) {\n        this.supplierId = supplierId;\n        this.outstandingBalance = 0.0;\n    }\n\n    public void recordOrderPayment(double amount) {\n        if (amount < 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        outstandingBalance -= amount;\n    }\n\n    public void recordNewOrder(double amount) {\n        if (amount < 0) {\n            throw new IllegalArgumentException(\"Amount must be positive\");\n        }\n        outstandingBalance += amount;\n    }\n\n    public double getOutstandingBalance() {\n        return outstandingBalance;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 65,
+    "response": [
+      [
+        "Extend the same testing style and structure found in the `test_sum()` function below to write a new unit test `test_product()` that verifies the `product()` function which calculates the product of a list of numbers.\n\n**Example Code:**\n\n```python\nimport unittest\n\ndef sum(nums):\n    return sum(nums)\n\nclass TestSum(unittest.TestCase):\n    def test_sum(self):\n        self.assertEqual(sum([1, 2, 3]), 6, \"Should calculate the sum of values\")\n        self.assertEqual(sum([]), 0, \"Should return 0 for empty list\")\n\nif __name__ == '__main__':\n    unittest.main()\n```",
+        "import unittest\n\ndef sum(nums):\n    total = 0\n    for num in nums:\n        total += num\n    return total\n\ndef product(nums):\n    result = 1\n    for num in nums:\n        result *= num\n    return result if nums else 0\n\nclass TestSum(unittest.TestCase):\n    def test_sum(self):\n        self.assertEqual(sum([1, 2, 3]), 6, \"Should calculate the sum of values\")\n        self.assertEqual(sum([]), 0, \"Should return 0 for empty list\")\n\nclass TestProduct(unittest.TestCase):\n    def test_product(self):\n        self.assertEqual(product([1, 2, 3, 4]), 24, \"Should calculate the product of values\")\n        self.assertEqual(product([]), 0, \"Should return 0 for empty list\")\n        self.assertEqual(product([0, 2, 3]), 0, \"Should return 0 if any element is 0\")\n        self.assertEqual(product([-1, 1, -1, 1]), 1, \"Should handle negative values correctly\")\n\nif __name__ == '__main__':\n    unittest.main()"
+      ]
+    ]
+  }
+]

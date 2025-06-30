@@ -1,0 +1,54 @@
+[
+    {
+        "name": "List",
+        "description": "A linear collection of elements with a defined order. Often used to return a sequence of results such as filtered or sorted items."
+    },
+    {
+        "name": "Set",
+        "description": "An unordered collection of unique elements. Useful for returning deduplicated data or results from set operations."
+    },
+    {
+        "name": "Map",
+        "description": "A collection of key-value pairs, typically used to return associations, such as frequencies, groupings, or mappings."
+    },
+    {
+        "name": "Tuple",
+        "description": "A fixed-size ordered collection of heterogeneous values. Often used to return multiple related values as a single result."
+    },
+    {
+        "name": "Matrix",
+        "description": "A two-dimensional array structure. Suitable for returning grid-like data such as tables, image pixels, or graph representations."
+    },
+    {
+        "name": "Tree",
+        "description": "A hierarchical data structure consisting of nodes, typically used for returning structured relationships such as parsed expressions or hierarchical configurations."
+    },
+    {
+        "name": "Graph",
+        "description": "A structure consisting of nodes and edges. The output may be in the form of adjacency lists or matrices, suitable for network and connectivity data."
+    },
+    {
+        "name": "Struct",
+        "description": "A user-defined data structure that groups related fields together. Often used to return complex structured results with named fields."
+    },
+    {
+        "name": "String",
+        "description": "A sequence of characters. Commonly used to return serialized data, formatted messages, text responses, or paths."
+    },
+    {
+        "name": "JSONObject",
+        "description": "A structured JSON object consisting of nested key-value mappings. Often used in web APIs and data interchange scenarios as a rich, self-describing output format."
+    },
+    {
+        "name": "Boolean",
+        "description": "A binary value indicating true or false. Typically used as the result of a condition, check, or predicate function."
+    },
+    {
+        "name": "Integer",
+        "description": "A numeric value used to return counts, computed values, indices, or rankings."
+    },
+    {
+        "name": "Float",
+        "description": "A numeric value with decimals, commonly used for returning averages, ratios, or other computations involving fractions."
+    }
+]

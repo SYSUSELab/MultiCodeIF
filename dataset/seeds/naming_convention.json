@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "naming_convention": "PascalCase"
+    },
+    {
+        "id": 2,
+        "naming_convention": "snake_case"
+    },
+    {
+        "id": 3,
+        "naming_convention": "camelCase"
+    },
+    {
+        "id": 4,
+        "naming_convention": "kebab-case"
+    }
+]

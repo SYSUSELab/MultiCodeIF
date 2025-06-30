@@ -1,0 +1,303 @@
+[
+    {
+        "id": 1,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Python",
+        "data_structure": "dict",
+        "description": "An unordered collection of key-value pairs used for fast lookup, insertion, and deletion by key."
+    },
+    {
+        "id": 2,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Python",
+        "data_structure": "list",
+        "description": "An ordered, mutable collection of elements that can be accessed by index."
+    },
+    {
+        "id": 3,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Python",
+        "data_structure": "set",
+        "description": "An unordered collection of unique elements used for fast membership testing and set operations."
+    },
+    {
+        "id": 4,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Python",
+        "data_structure": "tuple",
+        "description": "An ordered, immutable collection of elements, commonly used for fixed-size data or multiple return values."
+    },
+    {
+        "id": 5,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Python",
+        "data_structure": "collections.Counter",
+        "description": "A subclass of dict for counting hashable objects, returning elements and their counts."
+    },
+    {
+        "id": 6,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Python",
+        "data_structure": "collections.defaultdict",
+        "description": "A dictionary that provides a default value for nonexistent keys using a factory function."
+    },
+    {
+        "id": 7,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Python",
+        "data_structure": "collections.deque",
+        "description": "A double-ended queue supporting fast appends and pops from both ends."
+    },
+    {
+        "id": 8,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Java",
+        "data_structure": "HashMap",
+        "description": "A key-value map implementation with constant-time performance for basic operations and no ordering."
+    },
+    {
+        "id": 9,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Java",
+        "data_structure": "TreeMap",
+        "description": "A Red-Black tree-based implementation of the Map interface that stores entries in sorted order."
+    },
+    {
+        "id": 10,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Java",
+        "data_structure": "HashSet",
+        "description": "A set implementation backed by a HashMap that ensures unique elements without order."
+    },
+    {
+        "id": 11,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Java",
+        "data_structure": "TreeSet",
+        "description": "A NavigableSet implementation based on a TreeMap, storing elements in sorted order."
+    },
+    {
+        "id": 12,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Java",
+        "data_structure": "ArrayList",
+        "description": "A resizable array implementation of the List interface allowing random access and fast iteration."
+    },
+    {
+        "id": 13,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Java",
+        "data_structure": "LinkedList",
+        "description": "A doubly-linked list implementation of the List and Deque interfaces supporting fast insertions/removals."
+    },
+    {
+        "id": 14,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Cpp",
+        "data_structure": "unordered_map",
+        "description": "An associative container that uses hashing to store key-value pairs for average constant-time access."
+    },
+    {
+        "id": 15,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Cpp",
+        "data_structure": "map",
+        "description": "An ordered associative container that stores unique key-value pairs in sorted order using a balanced tree."
+    },
+    {
+        "id": 16,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Cpp",
+        "data_structure": "unordered_set",
+        "description": "A set container using hashing to store unique elements with average constant-time complexity."
+    },
+    {
+        "id": 17,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Cpp",
+        "data_structure": "set",
+        "description": "An ordered associative container storing unique elements in a sorted manner using a balanced tree."
+    },
+    {
+        "id": 18,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Cpp",
+        "data_structure": "vector",
+        "description": "A dynamic array that supports random access and amortized constant-time append at the end."
+    },
+    {
+        "id": 19,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Cpp",
+        "data_structure": "list",
+        "description": "A doubly-linked list providing fast insertions and deletions anywhere in the sequence."
+    },
+    {
+        "id": 20,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Cpp",
+        "data_structure": "deque",
+        "description": "A double-ended queue that allows fast insertion and removal at both ends."
+    },
+    {
+        "id": 21,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Cpp",
+        "data_structure": "array",
+        "description": "A container encapsulating fixed-size arrays with access similar to native arrays but with STL interface."
+    },
+    {
+        "id": 22,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Rust",
+        "data_structure": "HashMap",
+        "description": "A hash-based key-value map providing fast lookup, insertion, and removal."
+    },
+    {
+        "id": 23,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Rust",
+        "data_structure": "BTreeMap",
+        "description": "An ordered map structure that maintains sorted keys using a B-tree."
+    },
+    {
+        "id": 24,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Rust",
+        "data_structure": "HashSet",
+        "description": "A hash-based set used to store unique values with fast insertion and lookup."
+    },
+    {
+        "id": 25,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Rust",
+        "data_structure": "BTreeSet",
+        "description": "A set that stores unique values in sorted order using a B-tree."
+    },
+    {
+        "id": 26,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Rust",
+        "data_structure": "Vec",
+        "description": "A growable array type offering fast random access and dynamic resizing."
+    },
+    {
+        "id": 27,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Rust",
+        "data_structure": "VecDeque",
+        "description": "A double-ended queue implemented with a growable ring buffer."
+    },
+    {
+        "id": 28,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Rust",
+        "data_structure": "LinkedList",
+        "description": "A doubly-linked list with efficient insertions and removals but slower random access."
+    },
+    {
+        "id": 29,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Go",
+        "data_structure": "map",
+        "description": "A built-in hash table for storing key-value pairs with fast average-case access."
+    },
+    {
+        "id": 30,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Go",
+        "data_structure": "slice",
+        "description": "A dynamic, flexible view into an array supporting append and reslicing."
+    },
+    {
+        "id": 31,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Go",
+        "data_structure": "array",
+        "description": "A fixed-size collection of elements with a known length determined at compile time."
+    },
+    {
+        "id": 32,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Go",
+        "data_structure": "struct",
+        "description": "A composite data type that groups fields of various types into a single unit."
+    },
+    {
+        "id": 33,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Go",
+        "data_structure": "chan",
+        "description": "A concurrency-safe communication channel for goroutines to send and receive values."
+    },
+    {
+        "id": 34,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Go",
+        "data_structure": "sync.Map",
+        "description": "A concurrent map implementation that is safe for use by multiple goroutines without explicit locking."
+    },
+    {
+        "id": 35,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Python",
+        "data_structure": "queue.Queue",
+        "description": "A thread-safe FIFO queue designed for use between threads."
+    },
+    {
+        "id": 36,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Python",
+        "data_structure": "heapq",
+        "description": "A module providing a heap queue algorithm (priority queue) using a list."
+    },
+    {
+        "id": 37,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Java",
+        "data_structure": "PriorityQueue",
+        "description": "A queue that retrieves elements in priority order, typically implemented as a min-heap."
+    },
+    {
+        "id": 38,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Java",
+        "data_structure": "ConcurrentHashMap",
+        "description": "A thread-safe hash map that supports concurrent read and write operations efficiently."
+    },
+    {
+        "id": 39,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "C++",
+        "data_structure": "priority_queue",
+        "description": "A max-heap-based container adapter that provides constant-time access to the largest element."
+    },
+    {
+        "id": 40,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Cpp",
+        "data_structure": "stack",
+        "description": "A container adapter that follows the LIFO (Last-In, First-Out) principle."
+    },
+    {
+        "id": 41,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Rust",
+        "data_structure": "ArrayVec",
+        "description": "A vector-like structure with a fixed backing array, avoiding heap allocation."
+    },
+    {
+        "id": 42,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Go",
+        "data_structure": "buffer.Buffer",
+        "description": "A buffer for reading and writing bytes, typically used in I/O operations."
+    },
+    {
+        "id": 43,
+        "constraint_type": "data_structure_type_constraint",
+        "language": "Rust",
+        "data_structure": "SmallVec",
+        "description": "A vector-like container that stores a small number of elements inline, falling back to heap allocation as needed."
+    }
+]

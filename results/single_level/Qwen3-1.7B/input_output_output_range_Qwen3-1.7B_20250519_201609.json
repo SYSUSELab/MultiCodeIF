@@ -1,0 +1,344 @@
+[
+  {
+    "id": 1,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function that accepts a vector of product prices (doubles), applies a discount rate given as a separate parameter (double) to each product's price, and returns a new vector with the discounted prices. All values in the returned vector should be double data types, rounded to two decimal places.",
+        "#include <vector>\n#include <cmath>\n#include <iomanip>\n#include <iostream>\n\nstd::vector<double> applyDiscount(const std::vector<double>& prices, double discountRate) {\n    std::vector<double> discountedPrices;\n    for (double price : prices) {\n        double discounted = price * (1 - discountRate);\n        discountedPrices.push_back(std::round(discounted * 100.0) / 100.0);\n    }\n    return discountedPrices;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function that takes a list of dictionaries where each dictionary contains information about a product including \"id\" (integer), \"name\" (string), and \"prices\" (list of floats, representing the price history of the product). The function should calculate the average price for each product and return a list of tuples. Each tuple should contain the product's id and the average price, rounded to two decimal places. Ensuring all returned prices are floating-point numbers.",
+        "def average_price_per_product(products):\n    return [(product['id'], round(sum(product['prices']) / len(product['prices']), 2)) for product in products]"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function that reads a CSV containing three columns (id: integer, name: string, scores: string of comma-separated integers). The function should then calculate and return the average score for each row in the form of a tuple (id, name, average_score). Average scores must be floats rounded to one decimal place. Ensure that the output is a list of tuples, each representing one row of the CSV, preserving their original order.",
+        "```rust\nuse std::fs::File;\nuse std::io::{BufReader, BufRead};\nuse std::collections::HashMap;\n\nfn process_csv(file_path: &str) -> Vec<(i32, String, f64)> {\n    let mut result = Vec::new();\n    let mut scores: HashMap<i32, Vec<f64>> = HashMap::new();\n\n    let file = File::open(file_path).expect(\"File not found\");\n    let reader = BufReader::new(file);\n    let mut lines = reader.lines();\n\n    for line in lines {\n        let line = line.expect(\"Failed to read line\");\n        let mut values: Vec<&str> = line.split(',').collect();\n        let id: i32 = values[0].parse().expect(\"Invalid id\");\n        let name: String = values[1].to_string();\n        let scores_str: String = values[2].to_string();\n\n        let mut score_vec: Vec<f64> = scores_str\n            .split(',')\n            .map(|s| s.parse().expect(\"Invalid score\"))\n            .collect();\n\n        scores.insert(id, score_vec);\n    }\n\n    for (id, score_vec) in scores {\n        let average = score_vec.iter().sum::<f64>() / score_vec.len() as f64;\n        result.push((id, name, average));\n    }\n\n    result\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Java function that reads a JSON file containing data about organizational teams. Each entry in the JSON represents a team with \"teamName\" (string) and \"members\" (array of member IDs as integers). The function should construct a Tree where each node represents a team detailed with the team name and the number of members. The root node should be a general node named \"Organization\". The tree must be restricted such that no branch can have more than 3 child nodes and each node other than \"Organization\" must not exceed a depth of three levels deep.",
+        "import java.io.FileReader;\nimport java.io.IOException;\nimport java.util.*;\n\npublic class TeamTree {\n    public static void main(String[] args) {\n        try {\n            // Read JSON file\n            String json = new String(Files.readAllBytes(Paths.get(\"teams.json\")));\n            \n            // Parse JSON\n            JSONObject root = new JSONObject(json);\n            \n            // Build tree\n            buildTree(root, 0);\n        } catch (IOException | JSONException e) {\n            e.printStackTrace();\n        }\n    }\n\n    private static void buildTree(JSONObject node, int depth) {\n        // Check depth constraint\n        if (depth > 3) {\n            return;\n        }\n\n        // Get team name\n        String teamName = node.getString(\"teamName\");\n        List<Integer> members = new ArrayList<>();\n        for (Object member : node.getJSONArray(\"members\")) {\n            members.add((Integer) member);\n        }\n\n        // Create node\n        JSONObject teamNode = new JSONObject();\n        teamNode.put(\"teamName\", teamName);\n        teamNode.put(\"members\", members);\n\n        // Add to tree\n        if (depth == 0) {\n            // Root node is \"Organization\"\n            root.put(\"Organization\", teamNode);\n        } else {\n            // Add to parent node\n            JSONObject parent = (JSONObject) node.get(depth - 1);\n            parent.put(teamName, teamNode);\n        }\n\n        // Recursively build children\n        for (int i = 0; i < node.getJSONArray(\"members\").length(); i++) {\n            buildTree((JSONObject) node.getJSONArray(\"members\").get(i), depth + 1);\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function that reads from a given CSV file containing a series of boolean values under the column \"status\". The function should evaluate the overall status by checking if all the entries in this column are True. The result should be a single boolean output indicating whether all values are True or not.",
+        "import csv\n\ndef check_all_true(csv_file):\n    with open(csv_file, 'r') as file:\n        reader = csv.reader(file)\n        next(reader)  # skip header\n        for row in reader:\n            if not row[0]:  # check if the first element (status) is False\n                return False\n    return True"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method that takes as input a JSON file containing a list of objects, each representing a city with properties \"cityName\" (string) and \"distances\" (list of integers representing distances to other cities). The method should construct a graph data structure where each city becomes a node, and edges between nodes represent the distances. The output should be a graph where edges have weights within the range [10,100] and each node (city) has a unique ID ranging from 0 to 49.",
+        "import java.io.FileReader;\nimport java.io.IOException;\nimport java.util.*;\n\npublic class CityGraph {\n    public static void main(String[] args) {\n        // Example JSON file input (replace with actual file path)\n        String jsonFilePath = \"cities.json\";\n\n        try (FileReader reader = new FileReader(jsonFilePath)) {\n            // Parse JSON file into a list of cities\n            List<Map<String, Object>> cities = parseJson(reader);\n\n            // Construct graph\n            Map<Integer, String> cityMap = new HashMap<>();\n            Map<Integer, List<Integer>> graph = new HashMap<>();\n\n            for (int i = 0; i < cities.size(); i++) {\n                Map<String, Object> city = cities.get(i);\n                String cityName = (String) city.get(\"cityName\");\n                List<Integer> distances = (List<Integer>) city.get(\"distances\");\n\n                // Assign unique ID to city\n                int cityID = i;\n                cityMap.put(cityID, cityName);\n\n                // Create adjacency list\n                List<Integer> adjacencyList = new ArrayList<>();\n                for (int j = 0; j < distances.size(); j++) {\n                    adjacencyList.add(j);\n                }\n                graph.put(cityID, adjacencyList);\n            }\n\n            // Output graph\n            System.out.println(\"Graph constructed with nodes 0 to 49:\");\n            for (int i = 0; i <= 49; i++) {\n                System.out.println(\"Node \" + i + \": \" + cityMap.get(i));\n            }\n\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n    }\n\n    // Helper method to parse JSON file\n    private static List<Map<String, Object>> parseJson(FileReader reader) throws IOException {\n        // This is a simplified parser; in practice, use a JSON library like org.json or gson\n        // For this example, we'll use a mock parser\n        List<Map<String, Object>> cities = new ArrayList<>();\n        String json = new String(Files.readAllBytes(Paths.get(\"cities.json\")));\n        // Parse JSON string into list of maps\n        // In a real application, use a JSON library\n        return cities;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function to analyze a given vector of integers where each element represents the number of steps taken by a user on a particular day. The function should return a set containing only the unique total numbers of steps taken in periods of three consecutive days. The results should exclude any period where the sum exceeds 1000 steps and include only periods where the sum is at least 200 steps.",
+        "#include <iostream>\n#include <vector>\n#include <set>\n#include <algorithm>\n\nstd::set<int> analyzeSteps(const std::vector<int>& steps) {\n    std::set<int> result;\n    \n    for (size_t i = 0; i < steps.size() - 2; ++i) {\n        int sum = steps[i] + steps[i+1] + steps[i+2];\n        \n        if (sum >= 200 && sum <= 1000) {\n            result.insert(sum);\n        }\n    }\n    \n    return result;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `format_content_upper` which processes an input string, ensuring that each character in the string becomes uppercase. The output string should comply with the restriction that it only contains uppercase alphabetical characters. No numbers, special characters, or spaces are allowed in the resulting string. Implement error handling to return an error if the input contains any disallowed characters.",
+        "```rust\nuse std::error::Error;\n\nfn format_content_upper(input: &str) -> Result<String, Box<dyn Error>> {\n    let mut result = String::new();\n    for c in input.chars() {\n        if c.is_alphabetic() {\n            result.push(c.to_ascii_uppercase());\n        } else {\n            return Err(Box::new(std::fmt::Error::new(std::fmt::Error::code(1234)))); // Custom error code\n        }\n    }\n    Ok(result)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java class with a method to analyze a structured log file in JSON format. Each log entry includes \"timestamp\" (formatted as \"yyyy-MM-dd HH:mm:ss\"), \"severity\" (possible values: \"info\", \"warning\", \"error\"), and \"message\" (string). The method should categorize logs into three lists based on severity and provide a Struct output containing these lists. Each list should be encapsulated as a field in the Struct with the field name corresponding to the severity type.",
+        "public class LogAnalyzer {\n    public static struct LogEntry {\n        public String timestamp;\n        public String severity;\n        public String message;\n    }\n\n    public static struct LogAnalysis {\n        public List<LogEntry> info;\n        public List<LogEntry> warning;\n        public List<LogEntry> error;\n    }\n\n    public static LogAnalysis analyzeLogFile(String filePath) {\n        List<LogEntry> info = new ArrayList<>();\n        List<LogEntry> warning = new ArrayList<>();\n        List<LogEntry> error = new ArrayList<>();\n\n        try (FileReader reader = new FileReader(filePath);\n             JsonReader jsonReader = new JsonReader(new InputStreamReader(reader))) {\n            jsonReader.beginObject();\n            while (jsonReader.hasNext()) {\n                String key = jsonReader.nextName();\n                if (\"timestamp\".equals(key)) {\n                    String timestamp = jsonReader.nextString();\n                    LogEntry entry = new LogEntry();\n                    entry.timestamp = timestamp;\n                } else if (\"severity\".equals(key)) {\n                    String severity = jsonReader.nextString();\n                    LogEntry entry = new LogEntry();\n                    entry.severity = severity;\n                } else if (\"message\".equals(key)) {\n                    String message = jsonReader.nextString();\n                    LogEntry entry = new LogEntry();\n                    entry.message = message;\n                }\n            }\n            jsonReader.endObject();\n        } catch (Exception e) {\n            e.printStackTrace();\n        }\n\n        return new LogAnalysis() {\n            {\n                info = info;\n                warning = warning;\n                error = error;\n            }\n        };\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function that reads from a file containing a list of product prices (as integers). This function should compute the discount prices applying a 10% markdown on each product price, ensuring the resulting discounted prices are stored in a list of integers. The function should generate a new file containing this list of discounted prices, where each discounted price does not exceed 1000.",
+        "#include <iostream>\n#include <fstream>\n#include <vector>\n#include <string>\n\nvoid applyDiscounts(const std::string& inputFilePath, const std::string& outputFilePath) {\n    std::ifstream inputFile(inputFilePath);\n    std::ofstream outputFile(outputFilePath);\n\n    if (!inputFile.is_open() || !outputFile.is_open()) {\n        std::cerr << \"Error opening files.\" << std::endl;\n        return;\n    }\n\n    std::vector<int> discountedPrices;\n\n    int price;\n    while (inputFile >> price) {\n        int discounted = price - (price * 0.10);\n        discountedPrices.push_back(discounted);\n    }\n\n    for (int price : discountedPrices) {\n        outputFile << price << std::endl;\n    }\n\n    inputFile.close();\n    outputFile.close();\n}"
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function that takes a list of tuples, with each tuple containing a product name (string) and its price (float). The function should compute the average price of all products and return a single tuple containing a string message (\"Average Price\") and the computed average price, rounded to two decimal places.",
+        "def compute_average_price(products):\n    total_price = sum(price for name, price in products)\n    average_price = total_price / len(products) if products else 0.0\n    return (\"Average Price\", round(average_price, 2))"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function that manages inventory data provided in a JSON format, where each object contains \"item_id\" (string) and \"quantities\" (list of integers representing stock in different warehouses). The function should calculate the total quantity of each item across all warehouses and output the data as a JSON with \"item_id\" and \"total_quantity\". Ensure that the final output consists of integer data types representing precise total quantities.",
+        "fn calculate_total_quantity(json_data: &str) -> serde_json::Value {\n    let inventory: Vec<serde_json::Value> = serde_json::from_str(json_data).unwrap();\n    let mut total_quantities = std::collections::HashMap::new();\n\n    for item in &inventory {\n        if let Some(item_id) = item.get(\"item_id\") {\n            let item_id: String = item_id.into();\n            let quantities: Vec<i32> = item.get(\"quantities\").unwrap_or(&vec![]).iter().cloned().collect();\n            let total = quantities.iter().sum();\n\n            total_quantities.insert(item_id, total);\n        }\n    }\n\n    serde_json::to_value(total_quantities).unwrap()\n}"
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Construct a C++ function that takes a matrix of integers as input, normalizes the matrix by ensuring all elements are within the range of 0 to 100 inclusive. The function should adjust any value less than 0 to 0 and any value greater than 100 to 100. After normalization, output the adjusted matrix dimensions which should maintain the same dimensions as the input matrix.",
+        "#include <iostream>\n#include <vector>\n#include <stdexcept>\n\nstd::vector<std::vector<int>> normalizeMatrix(const std::vector<std::vector<int>>& matrix) {\n    int rows = matrix.size();\n    if (rows == 0) throw std::invalid_argument(\"Matrix is empty\");\n    int cols = matrix[0].size();\n    if (cols == 0) throw std::invalid_argument(\"Matrix is empty\");\n\n    std::vector<std::vector<int>> normalizedMatrix(rows, std::vector<int>(cols));\n\n    for (int i = 0; i < rows; ++i) {\n        for (int j = 0; j < cols; ++j) {\n            int value = matrix[i][j];\n            if (value < 0) {\n                normalizedMatrix[i][j] = 0;\n            } else if (value > 100) {\n                normalizedMatrix[i][j] = 100;\n            } else {\n                normalizedMatrix[i][j] = static_cast<int>(value * 1.0 / 100.0);\n            }\n        }\n    }\n\n    return normalizedMatrix;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `filter_unique_temperatures` that accepts a vector of integer temperatures and returns a set of temperatures. The function should filter out temperatures that are outside the acceptable range of 0°C to 100°C, inclusive. The returned set should include only unique temperatures that fall within this specified range.",
+        "fn filter_unique_temperatures(temperatures: Vec<i32>) -> Vec<i32> {\n    let mut unique_temperatures: std::collections::HashSet<i32> = std::collections::HashSet::new();\n    for temp in temperatures {\n        if temp >= 0 && temp <= 100 {\n            unique_temperatures.insert(temp);\n        }\n    }\n    unique_temperatures.into_iter().collect()\n}"
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python script that reads a JSON file containing a hierarchical tree structure where each node has \"id\" (integer) and \"children\" (list of child node ids). The script should ensure that no node appears as a child in more than one parent, and the output should return a report in JSON format with each node's id and a boolean attribute \"has_unique_parent\" indicating if the node complies with the unique parent condition. Ensure that the result explicitly lists each node only once and that the id values range between 1 and 100, with no node having more than 3 children.",
+        "import json\n\ndef validate_tree_structure(tree):\n    # Check if all ids are between 1 and 100\n    for node in tree:\n        if not (1 <= node['id'] <= 100):\n            return False\n    # Check if no node appears as a child in more than one parent\n    parent_map = {}\n    for node in tree:\n        if node['id'] in parent_map:\n            return False\n        parent_map[node['id']] = True\n    # Check if no node has more than 3 children\n    for node in tree:\n        if len(node['children']) > 3:\n            return False\n    return True\n\ndef process_json_file(json_file_path):\n    with open(json_file_path, 'r') as f:\n        tree = json.load(f)\n    if not validate_tree_structure(tree):\n        return None\n    # Create report\n    report = []\n    for node in tree:\n        report.append({\n            'id': node['id'],\n            'has_unique_parent': True\n        })\n    return report\n\n# Example usage\nif __name__ == \"__main__\":\n    json_file_path = 'tree_structure.json'\n    report = process_json_file(json_file_path)\n    print(json.dumps(report, indent=2))"
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java function to interpret a JSON file containing weather information, with each entry representing daily data in the format of a dictionary containing \"date\" (string in format yyyy-mm-dd) and \"temperature\" (integer). The function should calculate the highest temperature recorded and generate an output indicating this maximum temperature. The function must ensure that the calculated value precisely defines the highest single-day temperature from the provided dataset.",
+        "public class WeatherAnalyzer {\n    public static int findMaxTemperature(String jsonFilePath) {\n        // Read JSON file and parse into a list of maps\n        List<Map<String, Object>> weatherData = parseJsonFile(jsonFilePath);\n        \n        if (weatherData.isEmpty()) {\n            throw new IllegalArgumentException(\"No weather data found in the file.\");\n        }\n        \n        int maxTemp = Integer.MIN_VALUE;\n        for (Map<String, Object> entry : weatherData) {\n            String date = (String) entry.get(\"date\");\n            int temperature = (Integer) entry.get(\"temperature\");\n            \n            if (temperature > maxTemp) {\n                maxTemp = temperature;\n            }\n        }\n        \n        return maxTemp;\n    }\n    \n    private static List<Map<String, Object>> parseJsonFile(String filePath) {\n        // This is a simplified parser; in a real application, you would use a JSON library like Jackson or Gson\n        List<Map<String, Object>> data = new ArrayList<>();\n        try (FileReader fileReader = new FileReader(filePath);\n             JsonReader jsonReader = new JsonReader(new InputStreamReader(fileReader))) {\n            jsonReader.beginObject();\n            while (jsonReader.hasNext()) {\n                String key = jsonReader.nextName();\n                Object value = jsonReader.nextValue();\n                data.add(new HashMap<>());\n                data.get(data.size() - 1).put(key, value);\n            }\n            jsonReader.endObject();\n        } catch (Exception e) {\n            e.printStackTrace();\n        }\n        return data;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function that extracts text content from a given HTML file and checks if all href links within the <a> tags are formatted correctly (starting with \"http://\" or \"https://\"). The function should return a boolean value: True if all links are correctly formatted, and False otherwise.",
+        "def extract_and_check_links(html_file):\n    import urllib.parse\n    from urllib.parse import urlparse\n\n    with open(html_file, 'r', encoding='utf-8') as file:\n        html_content = file.read()\n\n    # Extract all <a> tags\n    import re\n    a_tags = re.findall(r'<a[^>]*>(.*?)</a>', html_content)\n\n    # Check if all hrefs are correctly formatted\n    for tag in a_tags:\n        href = re.search(r'href=\"([^\"]+)\"', tag)\n        if href:\n            href_value = href.group(1)\n            if not href_value.startswith('http://') and not href_value.startswith('https://'):\n                return False\n\n    return True"
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function to analyze a large dataset of products, where each product is represented as a map with keys \"id\" (string), \"name\" (string), and \"price\" (float). The function should return a new map where each entry's key is a product ID and its value is a boolean indicating whether the price is between $10.00 and $50.00. Ensure that the resulting map contains at least 100 entries and no individual key exceeds 20 characters in length.",
+        "fn analyze_products(products: &[HashMap<String, (String, f64)>>) -> HashMap<String, bool> {\n    let mut result = HashMap::new();\n    let mut count = 0;\n\n    for product in products {\n        let id = product.get(\"id\").unwrap().0;\n        let name = product.get(\"name\").unwrap().0;\n        let price = product.get(\"price\").unwrap().1;\n\n        if price >= 10.0 && price <= 50.0 {\n            result.insert(id.to_string(), true);\n            count += 1;\n        }\n\n        if count >= 100 {\n            break;\n        }\n    }\n\n    result\n}"
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function that processes a vector of Employee structs where each struct contains a name (string) and an array of salaries (vector of integers). The function should construct a Tree where each node represents an employee, the node value is the maximum salary of that employee, and the tree's structure represents their hierarchical relationship defined in a separate input vector of pairs (manager, employee). Ensure that the tree has a maximum depth of 3 and no node has more than 2 children.",
+        "#include <vector>\n#include <string>\n#include <algorithm>\n\nstruct Employee {\n    std::string name;\n    std::vector<int> salaries;\n};\n\nclass Tree {\npublic:\n    Tree() : root(nullptr) {}\n    \n    ~Tree() {\n        delete root;\n    }\n    \n    Employee* createTree(const std::vector<std::pair<int, int>>& hierarchy) {\n        // Initialize root\n        root = new Employee();\n        root->name = \"Root\";\n        root->salaries = {1000};\n        \n        // Process hierarchy\n        for (const auto& pair : hierarchy) {\n            int manager = pair.first;\n            int employee = pair.second;\n            \n            // Find manager and add employee as child\n            Employee* managerNode = findNode(manager);\n            if (managerNode) {\n                // Add employee as child\n                Employee* newEmployee = new Employee();\n                newEmployee->name = \"Employee \" + std::to_string(employee);\n                newEmployee->salaries = {2000};\n                \n                managerNode->salaries.push_back(newEmployee->salaries[0]);\n                managerNode->children.push_back(newEmployee);\n            }\n        }\n        \n        // Ensure depth is at most 3\n        if (depth(root) > 3) {\n            // Remove nodes beyond depth 3\n            std::vector<Employee*> toRemove;\n            std::queue<Employee*> q;\n            q.push(root);\n            while (!q.empty()) {\n                Employee* node = q.front();\n                q.pop();\n                if (depth(node) > 3) {\n                    toRemove.push_back(node);\n                }\n                for (auto child : node->children) {\n                    q.push(child);\n                }\n            }\n            for (auto node : toRemove) {\n                delete node;\n            }\n        }\n        \n        return root;\n    }\n    \nprivate:\n    Employee* root;\n    std::vector<Employee*> children;\n    int depth(Employee* node) {\n        if (!node) return 0;\n        return 1 + std::max(depth(node->children[0]), depth(node->children[1]));\n    }\n    \n    Employee* findNode(int id) {\n        if (!root) return nullptr;\n        if (root->name == std::to_string(id)) return root;\n        for (auto child : root->children) {\n            if (findNode(id)) return child;\n        }\n        return nullptr;\n    }\n};"
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method that verifies user-submitted form data by checking if all fields satisfy the provided conditions. This method should accept a Map&lt;String, String&gt; where each entry represents a form field's name and its value. This function should return true if all field values are non-null, non-empty, and contain only alphanumeric characters. If any field fails these checks, the method should return false.",
+        "public boolean verifyFormData(Map<String, String> formData) {\n    for (Map.Entry<String, String> entry : formData.entrySet()) {\n        String field = entry.getKey();\n        String value = entry.getValue();\n\n        if (value == null || value.isEmpty() || !value.matches(\"[a-zA-Z0-9]+\")) {\n            return false;\n        }\n    }\n    return true;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method that accepts an ArrayList of HashMap objects, each representing a product's attributes with keys \"productId\" (integer) and \"quantity\" (integer). The method should calculate the total inventory value assuming the same price per product, provided as an additional integer parameter to the method. The output should be the total inventory value as an integer which must be within the closed range [0, 10000].",
+        "public int calculateInventoryValue(ArrayList<HashMap<String, Integer>> products, int pricePerProduct) {\n    int total = 0;\n    for (HashMap<String, Integer> product : products) {\n        int productId = product.get(\"productId\");\n        int quantity = product.get(\"quantity\");\n        total += quantity * pricePerProduct;\n    }\n    return total;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function to extract and aggregate sales information from a JSON file containing a list of transactions. Each transaction is represented as a dictionary with fields \"product_id\" (string), \"quantity\" (integer), and \"sale_date\" (string in ISO format). The function should output a JSON string summarizing total sales for each product over all the transactions, formatted as a dictionary where keys are \"product_id\" and values are the total quantity. The output JSON string must ensure each total is represented as an integer.",
+        "```python\nimport json\n\ndef aggregate_sales(json_file):\n    with open(json_file, 'r') as file:\n        transactions = json.load(file)\n    \n    product_sales = {}\n    \n    for transaction in transactions:\n        product_id = transaction[\"product_id\"]\n        quantity = transaction[\"quantity\"]\n        sale_date = transaction[\"sale_date\"]\n        \n        if product_id in product_sales:\n            product_sales[product_id] += quantity\n        else:\n            product_sales[product_id] = quantity\n    \n    return json.dumps(product_sales, indent=2)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function named 'processUserInfo' that takes the path to a JSON file as input. This JSON file contains an array of objects, each representing user data with fields 'userID' (integer) and 'lastLogin' (string in ISO8601 timestamp format). The function reads the file, filters out users whose last login date is from the year 2020, and constructs a new JSON object with these filtered users. The output JSON object must include exactly 'userID' and 'lastLogin' fields for each user and be formatted properly in a structured key-value pair format.",
+        "#include <iostream>\n#include <fstream>\n#include <json/json.h>\n#include <vector>\n#include <algorithm>\n\nusing namespace json;\n\nvoid processUserInfo(const std::string& filePath) {\n    std::ifstream file(filePath);\n    if (!file.is_open()) {\n        std::cerr << \"Error opening file: \" << filePath << std::endl;\n        return;\n    }\n\n    std::vector<Json::Value> users;\n    file >> users;\n\n    Json::Value filteredUsers;\n    for (auto& user : users) {\n        if (user[\"lastLogin\"].asString().substr(0, 4) != \"2020\") {\n            filteredUsers.append(user);\n        }\n    }\n\n    std::ofstream outFile(\"filtered_users.json\");\n    outFile << filteredUsers.toStyledString();\n    outFile.close();\n}"
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function that generates a multiplication table matrix for a given integer 'n'. The matrix should be 'n x n' in dimension where the element at position (i, j) contains the product of (i + 1) and (j + 1). Ensure the matrix clearly represents the multiplication values for integers ranging from 1 to 'n'.",
+        "```rust\nfn multiplication_table(n: usize) -> Vec<Vec<usize>> {\n    let mut table = Vec::new();\n    for i in 0..n {\n        let row = Vec::new();\n        for j in 0..n {\n            row.push((i + 1) * (j + 1));\n        }\n        table.push(row);\n    }\n    table\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function that reads an input CSV file containing columns \"employee_id\" (integer) and \"hours_worked\" (integer for each day of the week). The function should sum the hours worked for each employee per week and generate a set of unique total hours worked across all employees. The set should then be returned by the function.",
+        "```python\nimport csv\n\ndef sum_hours_per_week(csv_file):\n    total_hours = {}\n    with open(csv_file, 'r') as file:\n        csv_reader = csv.DictReader(file)\n        for row in csv_reader:\n            employee_id = int(row['employee_id'])\n            hours = int(row['hours_worked'])\n            if employee_id in total_hours:\n                total_hours[employee_id] += hours\n            else:\n                total_hours[employee_id] = hours\n    unique_total_hours = set(total_hours.values())\n    return unique_total_hours\n```"
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function to analyze a given set of data representing a network of roads between cities, where each road has an associated 'weight' reflecting its traffic congestion. The input is a JSON file comprising a list of edges between nodes (cities), each with fields 'from' (integer city ID), 'to' (integer city ID), and 'weight' (integer traffic value). The function should generate a graph data structure and output the graph such that node IDs range from [1, 100] and edge weights vary from [1, 50]. Ensure the total number of edges does not exceed 200 as an additional constraint to prevent too complex graph instances.",
+        "```rust\nuse std::collections::HashMap;\n\nfn analyze_network(json_data: &str) -> HashMap<u32, Vec<(u32, u32, u32)>> {\n    let edges: Vec<(u32, u32, u32)> = serde_json::from_str(json_data).unwrap();\n    let mut graph = HashMap::new();\n\n    for edge in edges {\n        let from = edge.0;\n        let to = edge.1;\n        let weight = edge.2;\n\n        if from > 100 || to > 100 || from < 1 || to < 1 {\n            continue;\n        }\n\n        if let Some(adj) = graph.get_mut(&from) {\n            adj.push((to, weight));\n        } else {\n            graph.insert(from, vec![(to, weight)]);\n        }\n    }\n\n    graph\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java function that processes an input JSON file containing details of various products, each represented by a dictionary with attributes \"productID\" (string) and \"sales\" (list of integers representing monthly sales). The function should compute the total sales per product and generate an output in the form of a list of dictionaries, where each dictionary contains the \"productID\" and its corresponding \"totalSales\". The resulting list should be sorted in descending order based on \"totalSales\". Additional constraint: each \"totalSales\" value in the list should not exceed 5000.",
+        "```java\nimport java.io.File;\nimport java.io.FileReader;\nimport java.io.IOException;\nimport java.util.*;\nimport org.json.JSONArray;\nimport org.json.JSONObject;\n\npublic class ProductSalesProcessor {\n\n    public static List<JSONObject> processJsonFile(String filePath) throws IOException {\n        List<JSONObject> result = new ArrayList<>();\n        File file = new File(filePath);\n        \n        try (FileReader reader = new FileReader(file)) {\n            JSONArray jsonArray = new JSONArray(reader);\n            \n            for (int i = 0; i < jsonArray.length(); i++) {\n                JSONObject product = jsonArray.getJSONObject(i);\n                String productID = product.getString(\"productID\");\n                JSONArray sales = product.getJSONArray(\"sales\");\n                \n                int totalSales = 0;\n                for (int j = 0; j < sales.length(); j++) {\n                    totalSales += sales.getInt(j);\n                }\n                \n                if (totalSales <= 5000) {\n                    JSONObject totalSalesObj = new JSONObject();\n                    totalSalesObj.put(\"productID\", productID);\n                    totalSalesObj.put(\"totalSales\", totalSales);\n                    result.add(totalSalesObj);\n                }\n            }\n        }\n        \n        // Sort the result in descending order based on totalSales\n        result.sort(Comparator.comparingInt(o -> o.getInt(\"totalSales\"))\n                .reversed());\n        \n        return result;\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function that validates if all entry elements in a given boolean array are set to true. The function should return a boolean value, where true indicates that all elements in the array are true, and false indicates that at least one element is false.",
+        "#include <iostream>\n\nbool validateAllTrue(bool arr[], int size) {\n    for (int i = 0; i < size; ++i) {\n        if (arr[i] == false) {\n            return false;\n        }\n    }\n    return true;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java function that reads a list of employees' data from a file in JSON format. Each employee is represented as an object with \"id\" (integer) and \"salary\" (integer). The function should compute a graph where each node represents an employee, and an edge exists between nodes if the absolute difference in their salaries is less than 5000. The output should be a graph representation where each node has an ID, and each edge is labeled with the difference in salary. Restrictions: Node IDs should be within [100, 999], and the graph should contain a maximum of 50 edges.",
+        "```java\nimport java.io.*;\nimport java.util.*;\n\npublic class EmployeeGraph {\n    public static void main(String[] args) {\n        try (BufferedReader br = new BufferedReader(new FileReader(\"employees.json\"))) {\n            List<Employee> employees = new ArrayList<>();\n            String line;\n            while ((line = br.readLine()) != null) {\n                employees.add(parseEmployee(line));\n            }\n\n            Map<Integer, Employee> employeeMap = employees.stream()\n                    .collect(Collectors.toMap(Employee::getId, e -> e));\n\n            // Build graph\n            Set<Integer> nodeIds = new HashSet<>();\n            for (Employee emp : employees) {\n                nodeIds.add(emp.getId());\n            }\n\n            Map<Integer, List<Edge>> graph = new HashMap<>();\n            for (int i = 0; i < nodeIds.size(); i++) {\n                int nodeId = nodeIds.iterator().next();\n                for (int j = 0; j < nodeIds.size(); j++) {\n                    if (i == j) continue;\n                    int otherNodeId = nodeIds.iterator().next();\n                    if (otherNodeId == nodeId) continue;\n                    int diff = Math.abs(employeeMap.get(nodeId).getSalary() - employeeMap.get(otherNodeId).getSalary());\n                    if (diff < 5000) {\n                        Edge edge = new Edge(nodeId, otherNodeId, diff);\n                        if (!graph.containsKey(nodeId)) {\n                            graph.put(nodeId, new ArrayList<>());\n                        }\n                        graph.get(nodeId).add(edge);\n                    }\n                }\n            }\n\n            // Output graph\n            for (Map.Entry<Integer, List<Edge>> entry : graph.entrySet()) {\n                int nodeId = entry.getKey();\n                List<Edge> edges = entry.getValue();\n                System.out.println(\"Node \" + nodeId);\n                for (Edge edge : edges) {\n                    System.out.println(\"  Edge \" + edge.getOtherNodeId() + \" with diff \" + edge.getDiff());\n                }\n            }\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n    }\n\n    private static Employee parseEmployee(String line) {\n        String[] parts = line.split(\",\");\n        int id = Integer.parseInt(parts[0]);\n        int salary = Integer.parseInt(parts[1]);\n        return new Employee(id, salary);\n    }\n\n    static class Employee {\n        public final int id;\n        public final int salary;\n\n        public Employee(int id, int salary) {\n            this.id = id;\n            this.salary = salary;\n        }\n    }\n\n    static class Edge {\n        public final int from;\n        public final int to;\n        public final int diff;\n\n        public Edge(int from, int to, int diff) {\n            this.from = from;\n            this.to = to;\n            this.diff = diff;\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a function in C++ that reads a CSV file containing employee data with columns \"EmployeeID\" (integer) and \"HoursWorked\" (integer). The function should compute the total hours worked for each employee and return the results in a tuple. Each tuple element represents an individual employee's total, ordered by EmployeeID. Ensure the tuple is fixed in size according to the number of unique Employee IDs in the CSV input, and each tuple value falls between [0, 160], assuming standard working hours constraints.",
+        "#include <iostream>\n#include <fstream>\n#include <vector>\n#include <map>\n#include <tuple>\n#include <sstream>\n\nstd::tuple<std::vector<int>> computeEmployeeHours(const std::string& filename) {\n    std::ifstream file(filename);\n    std::vector<int> totalHours;\n    std::map<int, int> employeeHours;\n\n    if (!file.is_open()) {\n        std::cerr << \"Failed to open file.\" << std::endl;\n        return {};\n    }\n\n    std::string line;\n    int employeeID, hoursWorked;\n\n    while (std::getline(file, line)) {\n        std::istringstream iss(line);\n        if (iss >> employeeID >> hoursWorked) {\n            employeeHours[employeeID] += hoursWorked;\n        }\n    }\n\n    std::vector<int> result;\n    for (const auto& pair : employeeHours) {\n        result.push_back(pair.second);\n    }\n\n    return std::make_tuple(result);\n}"
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function to analyze log data from a JSON file that contains usage details like \"userid\" (string), \"session_time\" (in seconds, integer), and \"actions\" (list of strings depicting the activities). The function should return a JSON object summarizing the average session time and the total number of actions per user. Round the session time averages to the nearest whole number and list total actions. The output JSON should strictly adhere to having only integer values for session time and actions count.",
+        "import json\n\ndef analyze_log_data(file_path):\n    with open(file_path, 'r') as file:\n        data = json.load(file)\n    \n    user_actions = {}\n    total_actions = 0\n    total_session_time = 0\n\n    for entry in data:\n        userid = entry[\"userid\"]\n        session_time = entry[\"session_time\"]\n        actions = entry[\"actions\"]\n\n        if userid not in user_actions:\n            user_actions[userid] = []\n        user_actions[userid].append(session_time)\n        total_actions += len(actions)\n        total_session_time += sum(session_time for session_time in user_actions[userid])\n\n    average_session_time = total_session_time / total_actions\n    rounded_avg_session_time = round(average_session_time)\n\n    result = {\n        \"average_session_time\": rounded_avg_session_time,\n        \"total_actions\": total_actions\n    }\n\n    return result"
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Rust function that constructs a tree data structure from a list of tuples, where each tuple consists of a node ID (integer) and its parent node ID (integer). The root node ID will always be specified as 0, indicating the top of the tree. The function should ensure that the tree does not exceed a maximum depth of 3 levels and that no parent node has more than 2 children. Return the tree as the output.",
+        "fn construct_tree(nodes: Vec<(i32, i32)>) -> Option<Tree> {\n    // Define the Tree struct\n    #[derive(Debug, PartialEq, Eq)]\n    struct Tree {\n        id: i32,\n        children: Vec<Tree>,\n    }\n\n    // Check if the input is empty\n    if nodes.is_empty() {\n        return None;\n    }\n\n    // Find the root node (id 0)\n    let root = nodes.iter().find(|&&(id, _)| id == 0).unwrap();\n    let (root_id, parent_id) = root;\n\n    // Build the tree\n    let mut tree = Tree {\n        id: root_id,\n        children: Vec::new(),\n    };\n\n    // Process each node\n    for &(node_id, parent_id) in &nodes {\n        // Check if the parent exists\n        if let Some(parent) = tree.children.iter().find(|child| child.id == parent_id) {\n            parent.children.push(Tree { id: node_id, children: Vec::new() });\n        } else {\n            return None; // Parent does not exist\n        }\n    }\n\n    // Check depth constraint\n    if tree.children.len() > 2 {\n        return None; // Depth exceeds 3 levels\n    }\n\n    // Check child count constraint\n    for child in &tree.children {\n        if child.children.len() > 2 {\n            return None; // Each node can have at most 2 children\n        }\n    }\n\n    Some(tree)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 33,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function that processes an input collection of numeric timestamps (Vec<i64>) and identifies all unique timestamps within a range of the last hour from the current time, defined as Unix timestamp. The function should return a set of these timestamps. Ensure the set reflects precise constraints where the set size should not exceed 10 unique elements.",
+        "fn process_timestamps(timestamps: Vec<i64>) -> Vec<i64> {\n    let now = std::time::SystemTime::now()\n        .duration_since(std::time::UNIX_EPOCH)\n        .unwrap()\n        .as_secs();\n\n    let last_hour = now - 3600;\n    let mut unique_timestamps: std::collections::HashSet<i64> = std::collections::HashSet::new();\n\n    for &timestamp in &timestamps {\n        if timestamp >= last_hour {\n            unique_timestamps.insert(timestamp);\n        }\n    }\n\n    let mut result = Vec::new();\n    for t in unique_timestamps {\n        if result.len() >= 10 {\n            break;\n        }\n        result.push(t);\n    }\n\n    result\n}"
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Can you develop a Python function that takes a JSON object containing a list of users, each described by a dictionary with keys such as id, name, and age, and outputs a new JSON object that categorizes the users by age? Make sure the age you output is between 20 and 60.",
+        "def categorize_users_by_age(users):\n    aged_groups = {}\n    for user in users:\n        age = user.get('age')\n        if age is not None:\n            if 20 <= age <= 60:\n                if age not in aged_groups:\n                    aged_groups[age] = []\n                aged_groups[age].append(user)\n    return aged_groups"
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function to process a JSON file input, where the file is structured as a list of dictionaries. Each dictionary represents a student with attributes \"name\" (string) and \"grades\" (list of integers). The function calculates the average grade for each student and generates a new JSON file with each student's name alongside their average grade. Ensure that the output JSON file contains only floating-point numbers rounded to two decimal places for each average grade.",
+        "import json\n\ndef process_json_file(input_file, output_file):\n    with open(input_file, 'r') as infile:\n        data = json.load(infile)\n    \n    processed_data = []\n    for student in data:\n        avg_grade = sum(student[\"grades\"]) / len(student[\"grades\"])\n        processed_data.append({\n            \"name\": student[\"name\"],\n            \"average_grade\": round(avg_grade, 2)\n        })\n    \n    with open(output_file, 'w') as outfile:\n        json.dump(processed_data, outfile, indent=2)"
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method that accepts a multi-line string as input, where each line represents a mathematical expression (e.g., \"2 + 3\", \"5 * 4\"). The method should evaluate each expression and return a list of integer results in the same order, ensuring that each output value is a non-negative integer.",
+        "public List<Integer> evaluateExpressions(String input) {\n    List<Integer> results = new ArrayList<>();\n    String[] lines = input.split(\"\\n\");\n    for (String line : lines) {\n        String[] parts = line.split(\" \");\n        int result = 0;\n        for (String part : parts) {\n            if (part.equals(\"+\")) {\n                result += Integer.parseInt(parts[parts.length - 1]);\n            } else if (part.equals(\"*\")) {\n                result *= Integer.parseInt(parts[parts.length - 1]);\n            } else {\n                result = Integer.parseInt(part);\n            }\n        }\n        results.add(result);\n    }\n    return results;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named `validate_email(email)` that determines if a given string can be categorized as a the valid email address in a standard format like 'user@domain.com'.Evaluate the email format primarily based on the presence and correctness of the \"@\" symbol and the domain extensions. The function must return a boolean value: `True` if the email adheres to the valid format, and `False` if not. Additionally, the function should only return `True` for strings that not only follow the proper structure but are also limited to 254 characters or fewer, based on typical email length restrictions.",
+        "```python\ndef validate_email(email):\n    if \"@\" not in email:\n        return False\n    user, domain = email.split(\"@\", 1)\n    if \".\" in domain:\n        domain_parts = domain.split(\".\")\n        if len(domain_parts) > 2:\n            return False\n        if len(domain_parts) == 2:\n            if len(domain_parts[0]) > 254 or len(domain_parts[1]) > 254:\n                return False\n    else:\n        return False\n    return len(email) <= 254\n```"
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `longest_common_prefix(strs)` that identifies the longest common prefix among an array of strings. For example, if 'strs' holds [\"flower\", \"flow\", \"flight\"], the function should return the string \"fl\". Additionally, specify your output expectation in the following manner: if no common prefix is found among the input strings, the function must return an empty string \"\".",
+        "def longest_common_prefix(strs):\n    if not strs:\n        return \"\"\n    min_len = min(len(s) for s in strs)\n    for i in range(min_len):\n        char = strs[0][i]\n        for s in strs:\n            if s[i] != char:\n                return strs[0][:i]\n    return strs[0]"
+      ]
+    ]
+  }
+]

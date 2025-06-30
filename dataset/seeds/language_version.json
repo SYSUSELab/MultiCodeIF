@@ -1,0 +1,188 @@
+[
+  {
+    "id": 1,
+    "language": "java",
+    "version": "jdk11",
+    "feature": "core-libs/java.lang\n**[➜](https://www.oracle.com/java/technologies/javase/11-relnote-issues.html#JDK-8204243) Removal of Thread.destroy() and Thread.stop(Throwable) Methods**\n\nThe methods `Thread.destroy()` and `Thread.stop(Throwable)` have been removed. They have been deprecated for several Java SE releases. The `Thread.destroy()` method has never been implemented, and the `Thread.stop(Throwable)` method has been non-functional since Java SE 8. No code should rely on the behavior of these two methods; however, any code that uses these methods will cause compilation errors. The mitigation is to remove references to these methods from the source code. Note that the no-arg method `Thread.stop()` is unaffected by this change."
+  },
+  {
+    "id": 2,
+    "language": "java",
+    "version": "jdk11",
+    "feature": "javafx/other\n**[➜](https://www.oracle.com/java/technologies/javase/11-relnote-issues.html#JDK-8198527) Removal of JavaFX from the Oracle JDK**\n\nThe JavaFX modules have been removed from the JDK 11 release. These modules were included in earlier releases of the Oracle JDK, but not in the OpenJDK releases. The JavaFX modules will be available as a separate set of modules outside the JDK. More details are available in this white paper: [http://www.oracle.com/technetwork/java/javase/javaclientroadmapupdate2018mar-4414431.pdf](https://www.oracle.com/docs/tech/java/javaclientroadmapupdate2018mar.pdf) (PDF)"
+  },
+  {
+    "id": 3,
+    "language": "java",
+    "version": "jdk11",
+    "feature": "other-libs\n**[➜](https://www.oracle.com/java/technologies/javase/11-relnote-issues.html#JDK-8190378) JEP 320 Remove the Java EE and CORBA Modules**\n\nRemove the Java EE and CORBA modules from the Java SE Platform and the JDK. These modules were deprecated in Java SE 9 with the declared intent to remove them in a future release ([JEP 320](http://openjdk.java.net/jeps/320)).\n\nThe following modules have been removed from Java SE 11 and JDK 11:\n\n- `java.xml.ws` (JAX-WS, plus the related technologies SAAJ and Web Services Metadata)\n- `java.xml.bind` (JAXB)\n- `java.activation` (JAF)\n- `java.xml.ws.annotation` (Common Annotations)\n- `java.corba` (CORBA)\n- `java.transaction` (JTA)\n- `java.se.ee` (Aggregator module for the six modules above)\n- `jdk.xml.ws` (Tools for JAX-WS)\n- `jdk.xml.bind` (Tools for JAXB)\n\nThe following JAX-WS tools, from the `jdk.xml.ws` module, are removed:\n\n- `wsgen`\n- `wsimport`\n\nThe following JAXB tools, from the `jdk.xml.bind` module, are removed:\n\n- `schemagen`\n- `xjc`\n\nThe following CORBA tools, from the `java.corba` module, are removed:\n\n- `idlj`\n- `orbd`\n- `servertool`\n- `tnamesrv`\n\nThe `rmic` compiler was updated to remove the `-idl` and `-iiop` options. Consequently, the RMI compiler will no longer be able to generate IDL or IIOP stubs and tie classes.\n\nIn addition, the following system properties are no longer applicable due to the the removal of the Java EE and CORBA modules:\n\n- `com.sun.xml.internal.ws.client.ContentNegotiation`\n- `com.sun.xml.internal.ws.legacyWebMethod`\n- `javax.xml.bind.context.factory`\n- `javax.xml.bind.JAXBContext`\n- `javax.xml.soap.MetaFactory`\n- `javax.xml.ws.spi.Provider`\n- `jaxb.fragment`\n- `jaxb.noNamespaceSchemaLocation`\n- `jaxb.schemaLocation`\n- `jaxb.formatted.output`\n- `jaxb.encoding`\n- `mail.mime.decodetext.strict`\n- `mail.mime.encodeeol.strict`\n- `mail.mime.foldencodedwords`\n- `mail.mime.foldtext`\n- `mail.mime.charset`\n- `saaj.mime.optimization`\n- `saaj.lazy.contentlength`\n- `saaj.lazy.contentlength`\n- `saaj.lazy.mime.optimization`\n\nFor more detailed information on the removal and possible replacement for the modules, refer to [JEP 320](http://openjdk.java.net/jeps/320)."
+  },
+  {
+    "id": 4,
+    "language": "java",
+    "version": "jdk11",
+    "feature": "core-libs/java.util:i18n\n**[➜](https://www.oracle.com/java/technologies/javase/11-relnote-issues.html#JDK-8198385) Removal of sun.locale.formatasdefault Property**\n\nThe system property `sun.locale.formatasdefault`, introduced in JDK 7 for backwards compatibility, has been removed."
+  },
+  {
+    "id": 5,
+    "language": "java",
+    "version": "jdk11",
+    "feature": "core-libs/java.nio\n**[➜](https://www.oracle.com/java/technologies/javase/11-relnote-issues.html#JDK-8196535) Removal of sun.nio.ch.disableSystemWideOverlappingFileLockCheck Property**\n\nThe property `sun.nio.ch.disableSystemWideOverlappingFileLockCheck` has been removed. Consequently, compatibility with the older locking approach has also been removed.\n\nJDK 6 introduced the system property `sun.nio.ch.disableSystemWideOverlappingFileLockCheck` to control file locking behavior. Specifically, the property was used to enable suppression of JVM-wide file locking and provide compatibility with JDK 1.4 and JDK 5. The old behavior was constrained to check for locks obtained only on the channel instance and not JVM-wide, which is what was actually specified."
+  },
+  {
+    "id": 6,
+    "language": "java",
+    "version": "jdk11",
+    "feature": "core-svc/tools\n**[➜](https://www.oracle.com/java/technologies/javase/11-relnote-issues.html#JDK-8071367) Removal of SNMP Agent**\n\nThe `jdk.snmp` module has been removed.\n\nAs a result, the following `com.sun.management.snmp.*` properties are no-op when set by using the `-D` option or the `management.properties` configuration.\n\n- `com.sun.management.snmp.port`\n- `com.sun.management.snmp.trap`\n- `com.sun.management.snmp.interface`\n- `com.sun.management.snmp.acl`\n- `com.sun.management.snmp.acl.file`"
+  },
+  {
+    "id": 7,
+    "language": "java",
+    "version": "jdk17",
+    "feature": "core-libs\n\n**[➜](https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8243287) Removal of sun.misc.Unsafe::defineAnonymousClass**\n\n`sun.misc.Unsafe::defineAnonymousClass` API has been removed in JDK 17. The API replacement is `java.lang.invoke.MethodHandles.Lookup::defineHiddenClass` and `java.lang.invoke.MethodHandles.Lookup::defineHiddenClassWithClassData`."
+  },
+  {
+    "id": 8,
+    "language": "java",
+    "version": "jdk17",
+    "feature": "core-libs/java.rmi\n\n**[➜](https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8263550) JEP 407: Remove RMI Activation**\n\nThe Remote Method Invocation (RMI) Activation mechanism has been removed. RMI Activation was an obsolete part of RMI that has been optional since Java SE 8. RMI Activation was deprecated for removal by [JEP 385](https://openjdk.java.net/jeps/385) in Java SE 15, and it was removed from this release by [JEP 407](https://openjdk.java.net/jeps/407). The `rmid` tool has also been removed. See JEP 385 for background, rationale, risks, and alternatives. The rest of RMI remains unchanged."
+  },
+  {
+    "id": 9,
+    "language": "java",
+    "version": "jdk17",
+    "feature": "hotspot/compiler\n\n**[➜](https://www.oracle.com/java/technologies/javase/17-relnote-issues.html#JDK-8263327) JEP 410: Remove the Experimental AOT and JIT Compiler**\n\nAOT Compiler related code in HotSpot VM has been removed. Using HotSpot VM options defined by [JEP295](https://openjdk.java.net/jeps/295) produce \"Unrecognized VM option\" error on VM initialization.\n\nFor further details, see [JEP 410](https://openjdk.java.net/jeps/410)."
+  },
+  {
+    "id": 10,
+    "language": "java",
+    "version": "jdk21",
+    "feature": "core-libs/java.io\n\n**[➜](https://www.oracle.com/java/technologies/javase/21-relnote-issues.html#JDK-8300977) `java.io.File`'s Canonical Path Cache Is Removed** ([JDK-8300977](https://bugs.openjdk.org/browse/JDK-8300977))\n\n`java.io.File` has historically cached canonical paths, and part paths, to help the performance of the `File::getCanonicalFile` and `File::getCanonicalPath` when running with a `SecurityManager` set. The cache had correctness issues in environments with symbolic links and has been disabled by default since JDK 12. The cache has been removed in this release, along with the system properties `sun.io.useCanonCaches` and `sun.io.useCanonPrefixCache`. Setting these properties no longer has any effect."
+  },
+  {
+    "id": 11,
+    "language": "java",
+    "version": "jdk21",
+    "feature": "core-libs/java.lang\n\n**[➜](https://www.oracle.com/java/technologies/javase/21-relnote-issues.html#JDK-8297295) `ThreadGroup.allowThreadSuspension` Is Removed** ([JDK-8297295](https://bugs.openjdk.org/browse/JDK-8297295))\n\nThe method `java.lang.ThreadGroup.allowThreadSuspension(boolean)` has been removed in this release. The method was used for low memory handling in JDK 1.1 but was never fully specified. It was deprecated and changed to \"do nothing\" in JDK 1.2 (1998)."
+  },
+  {
+    "id": 12,
+    "language": "java",
+    "version": "jdk21",
+    "feature": "core-libs/java.lang\n\n**[➜](https://www.oracle.com/java/technologies/javase/21-relnote-issues.html#JDK-8041676) Removal of the `java.compiler` System Property** ([JDK-8041676](https://bugs.openjdk.org/browse/JDK-8041676))\n\nThe system property `java.compiler` has been removed from the list of standard system properties.\n\nRunning with this system property set on the command line will now print a warning to say that the system property is obsolete; it has no other effect. In previous releases, running with `-Djava.compiler` or `-Djava.compiler=NONE` on the command line selected interpreter only execution mode. If needed, the `-Xint` option can be used to run in interpreter only mode."
+  },
+  {
+    "id": 13,
+    "language": "java",
+    "version": "jdk21",
+    "feature": "core-libs/java.lang\n\n**[➜](https://www.oracle.com/java/technologies/javase/21-relnote-issues.html#JDK-8205129) The `java.lang.Compiler` Class Has Been Removed** ([JDK-8205129](https://bugs.openjdk.org/browse/JDK-8205129))\n\nThe `java.lang.Compiler` class has been removed. This under-specified API dates from JDK 1.0 and the \"Classic VM\" used in early JDK releases. Its implementation in the HotSpot VM does nothing but print a warning that it is not supported. The class has been deprecated and marked for removal since Java SE 9."
+  },
+  {
+    "id": 14,
+    "language": "python",
+    "version": "3.13",
+    "feature": "Removal in Python 3.13. Modules: [`crypt`](https://docs.python.org/3.12/library/crypt.html#module-crypt) — Function to check Unix passwords. *Deprecated since version 3.11, will be removed in version 3.13*: The crypt module is deprecated (see PEP 594 for details and alternatives). The `hashlib` module is a potential replacement for certain use cases. The `passlib` package can replace all use cases of this module. This module implements an interface to the *[crypt(3)](https://manpages.debian.org/crypt(3))* routine, which is a one-way hash function based upon a modified DES algorithm; see the Unix man page for further details. Possible uses include storing hashed passwords so you can check passwords without storing the actual password, or attempting to crack Unix passwords with a dictionary."
+  },
+  {
+    "id": 15,
+    "language": "python",
+    "version": "3.13",
+    "feature": "Removal in Python 3.13. Modules: [`msilib`](https://docs.python.org/3.12/library/msilib.html#module-msilib) — Read and write Microsoft Installer files. *Deprecated since version 3.11, will be removed in version 3.13:* The [`crypt`](https://docs.python.org/3.12/library/crypt.html#module-crypt) module is deprecated (see [**PEP 594**](https://peps.python.org/pep-0594/#crypt) for details and alternatives). The [`hashlib`](https://docs.python.org/3.12/library/hashlib.html#module-hashlib) module is a potential replacement for certain use cases. The [passlib](https://pypi.org/project/passlib/) package can replace all use cases of this module. This module implements an interface to the *[crypt(3)](https://manpages.debian.org/crypt(3))* routine, which is a one-way hash function based upon a modified DES algorithm; see the Unix man page for further details. Possible uses include storing hashed passwords so you can check passwords without storing the actual password, or attempting to crack Unix passwords with a dictionary."
+  },
+  {
+    "id": 16,
+    "language": "python",
+    "version": "3.13",
+    "feature": "Removal in Python 3.13. Modules: [`spwd`](https://docs.python.org/3.12/library/spwd.html#module-spwd) — The shadow password database. *Deprecated since version 3.11, will be removed in version 3.13:* The [`spwd`](https://docs.python.org/3.12/library/spwd.html#module-spwd) module is deprecated (see [**PEP 594**](https://peps.python.org/pep-0594/#spwd) for details and alternatives). This module provides access to the Unix shadow password database. It is available on various Unix versions."
+  },
+  {
+    "id": 17,
+    "language": "python",
+    "version": "3.13",
+    "feature": "Removal in Python 3.13. Modules: [`pipes`](https://docs.python.org/3.12/library/pipes.html#module-pipes) — Interface to shell pipelines. *Deprecated since version 3.11, will be removed in version 3.13:* The [`pipes`](https://docs.python.org/3.12/library/pipes.html#module-pipes) module is deprecated (see [**PEP 594**](https://peps.python.org/pep-0594/#pipes) for details). Please use the [`subprocess`](https://docs.python.org/3.12/library/subprocess.html#module-subprocess) module instead. The [`pipes`](https://docs.python.org/3.12/library/pipes.html#module-pipes) module defines a class to abstract the concept of a *pipeline* — a sequence of converters from one file to another."
+  },
+  {
+    "id": 18,
+    "language": "python",
+    "version": "3.13",
+    "feature": "Removal in Python 3.13. Modules: [`uu`](https://docs.python.org/3.12/library/uu.html#module-uu) — Encode and decode uuencode files. *Deprecated since version 3.11, will be removed in version 3.13:* The [`uu`](https://docs.python.org/3.12/library/uu.html#module-uu) module is deprecated (see [**PEP 594**](https://peps.python.org/pep-0594/#uu-and-the-uu-encoding) for details). [`base64`](https://docs.python.org/3.12/library/base64.html#module-base64) is a modern alternative. This module encodes and decodes files in uuencode format, allowing arbitrary binary data to be transferred over ASCII-only connections. Wherever a file argument is expected, the methods accept a file-like object. For backwards compatibility, a string containing a pathname is also accepted, and the corresponding file will be opened for reading and writing; the pathname `'-'` is understood to mean the standard input or output. However, this interface is deprecated; it’s better for the caller to open the file itself, and be sure that, when required, the mode is `'rb'` or `'wb'` on Windows."
+  },
+  {
+    "id": 19,
+    "language": "python",
+    "version": "3.10",
+    "feature": "Removed the `parser` module, which was deprecated in 3.9 due to the switch to the new PEG parser, as well as all the C source and header files that were only being used by the old parser, including `node.h`, `parser.h`, `graminit.h` and `grammar.h`."
+  },
+  {
+    "id": 20,
+    "language": "python",
+    "version": "3.10",
+    "feature": "Removed the `formatter` module, which was deprecated in Python 3.4. It is somewhat obsolete, little used, and not tested. It was originally scheduled to be removed in Python 3.6, but such removals were delayed until after Python 2.7 EOL. Existing users should copy whatever classes they use into their code. (Contributed by Dong-hee Na and Terry J. Reedy in [bpo-42299](https://bugs.python.org/issue?@action=redirect&bpo=42299).)"
+  },
+  {
+    "id": 21,
+    "language": "python",
+    "version": "3.8",
+    "feature": "The `macpath` module, deprecated in Python 3.7, has been removed. (Contributed by Victor Stinner in [bpo-35471](https://bugs.python.org/issue?@action=redirect&bpo=35471).)"
+  },
+  {
+    "id": 22,
+    "language": "python",
+    "version": "3.8",
+    "feature": "Removed the `doctype()` method of [`XMLParser`](https://docs.python.org/3.8/library/xml.etree.elementtree.html#xml.etree.ElementTree.XMLParser). (Contributed by Serhiy Storchaka in [bpo-29209](https://bugs.python.org/issue?@action=redirect&bpo=29209).)"
+  },
+  {
+    "id": 23,
+    "language": "python",
+    "version": "3.8",
+    "feature": "The function `platform.popen()` has been removed, after having been deprecated since Python 3.3: use [`os.popen()`](https://docs.python.org/3.8/library/os.html#os.popen) instead. (Contributed by Victor Stinner in [bpo-35345](https://bugs.python.org/issue?@action=redirect&bpo=35345).)"
+  },
+  {
+    "id": 24,
+    "language": "rust",
+    "version": "1.87.0",
+    "feature": "###Release Note\n\n#### Libraries\n\n- [Stabilize the anonymous pipe API](https://github.com/rust-lang/rust/issues/127154)\n- [Add support for unbounded left/right shift operations](https://github.com/rust-lang/rust/issues/129375)\n- [Print pointer metadata in `Debug` impl of raw pointers](https://github.com/rust-lang/rust/pull/135080)\n- [`Vec::with_capacity` guarantees it allocates with the amount requested, even if `Vec::capacity` returns a different number.](https://github.com/rust-lang/rust/pull/135933)\n- Most `std::arch` intrinsics which don’t take pointer arguments can now be called from safe code if the caller has the appropriate target features already enabled (https://github.com/rust-lang/stdarch/pull/1714, https://github.com/rust-lang/stdarch/pull/1716, https://github.com/rust-lang/stdarch/pull/1717)\n- [Undeprecate `env::home_dir`](https://github.com/rust-lang/rust/pull/137327)\n- [Denote `ControlFlow` as `#[must_use\\]`](https://github.com/rust-lang/rust/pull/137449)\n- [Macros such as `assert_eq!` and `vec!` now support `const {...}` expressions](https://github.com/rust-lang/rust/pull/138162)\n\n#### Stabilized APIs\n\n- [`Vec::extract_if`](https://doc.rust-lang.org/nightly/std/vec/struct.Vec.html#method.extract_if)\n- [`vec::ExtractIf`](https://doc.rust-lang.org/nightly/std/vec/struct.ExtractIf.html)\n- [`LinkedList::extract_if`](https://doc.rust-lang.org/nightly/std/collections/struct.LinkedList.html#method.extract_if)\n- [`linked_list::ExtractIf`](https://doc.rust-lang.org/nightly/std/collections/linked_list/struct.ExtractIf.html)\n- [`<[T\\]>::split_off`](https://doc.rust-lang.org/nightly/std/primitive.slice.html#method.split_off)\n- [`<[T\\]>::split_off_mut`](https://doc.rust-lang.org/nightly/std/primitive.slice.html#method.split_off_mut)\n- [`<[T\\]>::split_off_first`](https://doc.rust-lang.org/nightly/std/primitive.slice.html#method.split_off_first)\n- [`<[T\\]>::split_off_first_mut`](https://doc.rust-lang.org/nightly/std/primitive.slice.html#method.split_off_first_mut)\n- [`<[T\\]>::split_off_last`](https://doc.rust-lang.org/nightly/std/primitive.slice.html#method.split_off_last)\n- [`<[T\\]>::split_off_last_mut`](https://doc.rust-lang.org/nightly/std/primitive.slice.html#method.split_off_last_mut)\n- [`String::extend_from_within`](https://doc.rust-lang.org/stable/alloc/string/struct.String.html#method.extend_from_within)\n- [`os_str::Display`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.Display.html)\n- [`OsString::display`](https://doc.rust-lang.org/nightly/std/ffi/struct.OsString.html#method.display)\n- [`OsStr::display`](https://doc.rust-lang.org/nightly/std/ffi/struct.OsStr.html#method.display)\n- [`io::pipe`](https://doc.rust-lang.org/nightly/std/io/fn.pipe.html)\n- [`io::PipeReader`](https://doc.rust-lang.org/nightly/std/io/struct.PipeReader.html)\n- [`io::PipeWriter`](https://doc.rust-lang.org/nightly/std/io/struct.PipeWriter.html)\n- [`impl From for OwnedHandle`](https://doc.rust-lang.org/nightly/std/os/windows/io/struct.OwnedHandle.html#impl-From-for-OwnedHandle)\n- [`impl From for OwnedHandle`](https://doc.rust-lang.org/nightly/std/os/windows/io/struct.OwnedHandle.html#impl-From-for-OwnedHandle)\n- [`impl From for Stdio`](https://doc.rust-lang.org/nightly/std/process/struct.Stdio.html)\n- [`impl From for Stdio`](https://doc.rust-lang.org/nightly/std/process/struct.Stdio.html#impl-From-for-Stdio)\n- [`impl From for OwnedFd`](https://doc.rust-lang.org/nightly/std/os/fd/struct.OwnedFd.html#impl-From-for-OwnedFd)\n- [`impl From for OwnedFd`](https://doc.rust-lang.org/nightly/std/os/fd/struct.OwnedFd.html#impl-From-for-OwnedFd)\n- [`Box>::write`](https://doc.rust-lang.org/nightly/std/boxed/struct.Box.html#method.write)\n- [`impl TryFrom> for String`](https://doc.rust-lang.org/nightly/std/string/struct.String.html#impl-TryFrom>-for-String)"
+  },
+  {
+    "id": 25,
+    "language": "rust",
+    "version": "1.86.0",
+    "feature": "###Release Note\n\n[Remove `RustcDecodable` and `RustcEncodable`.](https://github.com/rust-lang/rust/pull/134272)"
+  },
+  {
+    "id": 26,
+    "language": "rust",
+    "version": "1.85.0",
+    "feature": "###Release Note\n\n#### Libraries\n\n- [Panics in the standard library now have a leading `library/` in their path](https://github.com/rust-lang/rust/pull/132390)\n\n- [`std::env::home_dir()` on Windows now ignores the non-standard `$HOME` environment variable](https://github.com/rust-lang/rust/pull/132515)\n\n  It will be un-deprecated in a subsequent release.\n\n- [Add `AsyncFn*` to the prelude in all editions.](https://github.com/rust-lang/rust/pull/132611)\n\n#### Stabilized APIs\n\n- [`BuildHasherDefault::new`](https://doc.rust-lang.org/stable/std/hash/struct.BuildHasherDefault.html#method.new)\n- [`ptr::fn_addr_eq`](https://doc.rust-lang.org/std/ptr/fn.fn_addr_eq.html)\n- [`io::ErrorKind::QuotaExceeded`](https://doc.rust-lang.org/stable/std/io/enum.ErrorKind.html#variant.QuotaExceeded)\n- [`io::ErrorKind::CrossesDevices`](https://doc.rust-lang.org/stable/std/io/enum.ErrorKind.html#variant.CrossesDevices)\n- [`{float}::midpoint`](https://doc.rust-lang.org/core/primitive.f32.html#method.midpoint)\n- [Unsigned `{integer}::midpoint`](https://doc.rust-lang.org/std/primitive.u64.html#method.midpoint)\n- [`NonZeroU*::midpoint`](https://doc.rust-lang.org/std/num/type.NonZeroU32.html#method.midpoint)\n- [impl `std::iter::Extend` for tuples with arity 1 through 12](https://doc.rust-lang.org/stable/std/iter/trait.Extend.html#impl-Extend<(A,)>-for-(EA,))\n- [`FromIterator<(A, ...)>` for tuples with arity 1 through 12](https://doc.rust-lang.org/stable/std/iter/trait.FromIterator.html#impl-FromIterator<(EA,)>-for-(A,))\n- [`std::task::Waker::noop`](https://doc.rust-lang.org/stable/std/task/struct.Waker.html#method.noop)"
+  },
+  {
+    "id": 27,
+    "language": "rust",
+    "version": "1.78.0",
+    "feature": "###Release Note\n\n#### Libraries\n\n- [Bump Unicode to version 15.1.0, regenerate tables](https://github.com/rust-lang/rust/pull/120777/)\n- [Make align_offset, align_to well-behaved in all cases](https://github.com/rust-lang/rust/pull/121201/)\n- [PartialEq, PartialOrd: document expectations for transitive chains](https://github.com/rust-lang/rust/pull/115386/)\n- [Optimize away poison guards when std is built with panic=abort](https://github.com/rust-lang/rust/pull/100603/)\n- [Replace pthread `RwLock` with custom implementation](https://github.com/rust-lang/rust/pull/110211/)\n- [Implement unwind safety for Condvar on all platforms](https://github.com/rust-lang/rust/pull/121768/)\n- [Add ASCII fast-path for `char::is_grapheme_extended`](https://github.com/rust-lang/rust/pull/121138/)\n\n#### Stabilized APIs\n\n- [`impl Read for &Stdin`](https://doc.rust-lang.org/stable/std/io/struct.Stdin.html#impl-Read-for-%26Stdin)\n- [Accept non `'static` lifetimes for several `std::error::Error` related implementations](https://github.com/rust-lang/rust/pull/113833/)\n- [Make `impl` impl take `?Sized`](https://github.com/rust-lang/rust/pull/114655/)\n- [`impl From for io::Error`](https://doc.rust-lang.org/stable/std/io/struct.Error.html#impl-From-for-Error)"
+  },
+  {
+    "id": 28,
+    "language": "rust",
+    "version": "1.74.0",
+    "feature": "###Release Note\n\n#### Libraries\n\n- [Implement `From` for ChildStdin/out/err](https://github.com/rust-lang/rust/pull/98704/)\n- [Implement `From<{&,&mut} [T; N\\]>` for `Vec` where `T: Clone`](https://github.com/rust-lang/rust/pull/111278/)\n- [impl Step for IP addresses](https://github.com/rust-lang/rust/pull/113748/)\n- [Implement `From<[T; N\\]>` for `Rc<[T]>` and `Arc<[T]>`](https://github.com/rust-lang/rust/pull/114041/)\n- [`impl TryFrom for u16`](https://github.com/rust-lang/rust/pull/114065/)\n- [Stabilize `io_error_other` feature](https://github.com/rust-lang/rust/pull/115453/)\n- [Stabilize the `Saturating` type](https://github.com/rust-lang/rust/pull/115477/)\n- [Stabilize const_transmute_copy](https://github.com/rust-lang/rust/pull/115520/)\n\n#### Stabilized APIs\n\n- [`core::num::Saturating`](https://doc.rust-lang.org/stable/std/num/struct.Saturating.html)\n- [`impl From for std::process::Stdio`](https://doc.rust-lang.org/stable/std/process/struct.Stdio.html#impl-From-for-Stdio)\n- [`impl From for std::process::Stdio`](https://doc.rust-lang.org/stable/std/process/struct.Stdio.html#impl-From-for-Stdio)\n- [`impl From for std::process::Child{Stdin, Stdout, Stderr}`](https://doc.rust-lang.org/stable/std/process/struct.ChildStderr.html#impl-From-for-ChildStderr)\n- [`impl From for std::process::Child{Stdin, Stdout, Stderr}`](https://doc.rust-lang.org/stable/std/process/struct.ChildStderr.html#impl-From-for-ChildStderr)\n- [`std::ffi::OsString::from_encoded_bytes_unchecked`](https://doc.rust-lang.org/stable/std/ffi/struct.OsString.html#method.from_encoded_bytes_unchecked)\n- [`std::ffi::OsString::into_encoded_bytes`](https://doc.rust-lang.org/stable/std/ffi/struct.OsString.html#method.into_encoded_bytes)\n- [`std::ffi::OsStr::from_encoded_bytes_unchecked`](https://doc.rust-lang.org/stable/std/ffi/struct.OsStr.html#method.from_encoded_bytes_unchecked)\n- [`std::ffi::OsStr::as_encoded_bytes`](https://doc.rust-lang.org/stable/std/ffi/struct.OsStr.html#method.as_encoded_bytes)\n- [`std::io::Error::other`](https://doc.rust-lang.org/stable/std/io/struct.Error.html#method.other)\n- [`impl TryFrom for u16`](https://doc.rust-lang.org/stable/std/primitive.u16.html#impl-TryFrom-for-u16)\n- [`impl From<&[T; N\\]> for Vec`](https://doc.rust-lang.org/stable/std/vec/struct.Vec.html#impl-From<%26[T;+N]>-for-Vec)\n- [`impl From<&mut [T; N\\]> for Vec`](https://doc.rust-lang.org/stable/std/vec/struct.Vec.html#impl-From<%26mut+[T;+N]>-for-Vec)\n- [`impl From<[T; N\\]> for Arc<[T]>`](https://doc.rust-lang.org/stable/std/sync/struct.Arc.html#impl-From<[T;+N]>-for-Arc<[T],+Global>)\n- [`impl From<[T; N\\]> for Rc<[T]>`](https://doc.rust-lang.org/stable/std/rc/struct.Rc.html#impl-From<[T;+N]>-for-Rc<[T],+Global>)"
+  },
+  {
+    "id": 29,
+    "language": "rust",
+    "version": "1.70.0",
+    "feature": "###Release Note\n\n#### Libraries\n\n- [Rework handling of recursive panics.](https://github.com/rust-lang/rust/pull/110975/) Additional panics are allowed while unwinding, as long as they are caught before escaping a `Drop` implementation, but panicking within a panic hook is now an immediate abort.\n- [Loosen `From<&[T\\]> for Box<[T]>` bound to `T: Clone`.](https://github.com/rust-lang/rust/pull/103406/)\n- [Remove unnecessary `T: Send` bound](https://github.com/rust-lang/rust/pull/111134/) in `Error for mpsc::SendError<T>` and `TrySendError<T>`.\n- [Fix docs for `alloc::realloc`](https://github.com/rust-lang/rust/pull/108630/) to match `Layout` requirements that the size must not exceed `isize::MAX`.\n- [Document `const {}` syntax for `std::thread_local`.](https://github.com/rust-lang/rust/pull/110620/) This syntax was stabilized in Rust 1.59, but not previously mentioned in release notes.\n\n#### Stabilized APIs\n\n- [`CStr::is_empty`](https://doc.rust-lang.org/stable/std/ffi/struct.CStr.html#method.is_empty)\n- [`BuildHasher::hash_one`](https://doc.rust-lang.org/stable/std/hash/trait.BuildHasher.html#method.hash_one)\n- [`NonZeroI*::is_positive`](https://doc.rust-lang.org/stable/std/num/struct.NonZeroI32.html#method.is_positive)\n- [`NonZeroI*::is_negative`](https://doc.rust-lang.org/stable/std/num/struct.NonZeroI32.html#method.is_negative)\n- [`NonZeroI*::checked_neg`](https://doc.rust-lang.org/stable/std/num/struct.NonZeroI32.html#method.checked_neg)\n- [`NonZeroI*::overflowing_neg`](https://doc.rust-lang.org/stable/std/num/struct.NonZeroI32.html#method.overflowing_neg)\n- [`NonZeroI*::saturating_neg`](https://doc.rust-lang.org/stable/std/num/struct.NonZeroI32.html#method.saturating_neg)\n- [`NonZeroI*::wrapping_neg`](https://doc.rust-lang.org/stable/std/num/struct.NonZeroI32.html#method.wrapping_neg)\n- [`Neg for NonZeroI*`](https://doc.rust-lang.org/stable/std/num/struct.NonZeroI32.html#impl-Neg-for-NonZeroI32)\n- [`Neg for &NonZeroI*`](https://doc.rust-lang.org/stable/std/num/struct.NonZeroI32.html#impl-Neg-for-%26NonZeroI32)\n- [`From<[T; N\\]> for (T...)`](https://doc.rust-lang.org/stable/std/primitive.array.html#impl-From<[T;+1]>-for-(T,)) (array to N-tuple for N in 1..=12)\n- [`From<(T...)> for [T; N\\]`](https://doc.rust-lang.org/stable/std/primitive.array.html#impl-From<(T,)>-for-[T;+1]) (N-tuple to array for N in 1..=12)\n- [`windows::io::AsHandle for Box`](https://doc.rust-lang.org/stable/std/os/windows/io/trait.AsHandle.html#impl-AsHandle-for-Box)\n- [`windows::io::AsHandle for Rc`](https://doc.rust-lang.org/stable/std/os/windows/io/trait.AsHandle.html#impl-AsHandle-for-Rc)\n- [`windows::io::AsHandle for Arc`](https://doc.rust-lang.org/stable/std/os/windows/io/trait.AsHandle.html#impl-AsHandle-for-Arc)\n- [`windows::io::AsSocket for Box`](https://doc.rust-lang.org/stable/std/os/windows/io/trait.AsSocket.html#impl-AsSocket-for-Box)\n- [`windows::io::AsSocket for Rc`](https://doc.rust-lang.org/stable/std/os/windows/io/trait.AsSocket.html#impl-AsSocket-for-Rc)\n- [`windows::io::AsSocket for Arc`](https://doc.rust-lang.org/stable/std/os/windows/io/trait.AsSocket.html#impl-AsSocket-for-Arc)"
+  },
+  {
+    "id": 30,
+    "language": "rust",
+    "version": "1.60.0",
+    "feature": "###Release Note\n\n#### Libraries\n\n- [Guarantee call order for `sort_by_cached_key`](https://github.com/rust-lang/rust/pull/89621)\n- [Improve `Duration::try_from_secs_f32`/`f64` accuracy by directly processing exponent and mantissa](https://github.com/rust-lang/rust/pull/90247)\n- [Make `Instant::{duration_since, elapsed, sub}` saturating](https://github.com/rust-lang/rust/pull/89926)\n- [Remove non-monotonic clocks workarounds in `Instant::now`](https://github.com/rust-lang/rust/pull/89926)\n- [Make `BuildHasherDefault`, `iter::Empty` and `future::Pending` covariant](https://github.com/rust-lang/rust/pull/92630)\n\n#### Stabilized APIs\n\n- [`Arc::new_cyclic`](https://doc.rust-lang.org/stable/std/sync/struct.Arc.html#method.new_cyclic)\n- [`Rc::new_cyclic`](https://doc.rust-lang.org/stable/std/rc/struct.Rc.html#method.new_cyclic)\n- [`slice::EscapeAscii`](https://doc.rust-lang.org/stable/std/slice/struct.EscapeAscii.html)\n- [`<[u8\\]>::escape_ascii`](https://doc.rust-lang.org/stable/std/primitive.slice.html#method.escape_ascii)\n- [`u8::escape_ascii`](https://doc.rust-lang.org/stable/std/primitive.u8.html#method.escape_ascii)\n- [`Vec::spare_capacity_mut`](https://doc.rust-lang.org/stable/std/vec/struct.Vec.html#method.spare_capacity_mut)\n- [`MaybeUninit::assume_init_drop`](https://doc.rust-lang.org/stable/std/mem/union.MaybeUninit.html#method.assume_init_drop)\n- [`MaybeUninit::assume_init_read`](https://doc.rust-lang.org/stable/std/mem/union.MaybeUninit.html#method.assume_init_read)\n- [`i8::abs_diff`](https://doc.rust-lang.org/stable/std/primitive.i8.html#method.abs_diff)\n- [`i16::abs_diff`](https://doc.rust-lang.org/stable/std/primitive.i16.html#method.abs_diff)\n- [`i32::abs_diff`](https://doc.rust-lang.org/stable/std/primitive.i32.html#method.abs_diff)\n- [`i64::abs_diff`](https://doc.rust-lang.org/stable/std/primitive.i64.html#method.abs_diff)\n- [`i128::abs_diff`](https://doc.rust-lang.org/stable/std/primitive.i128.html#method.abs_diff)\n- [`isize::abs_diff`](https://doc.rust-lang.org/stable/std/primitive.isize.html#method.abs_diff)\n- [`u8::abs_diff`](https://doc.rust-lang.org/stable/std/primitive.u8.html#method.abs_diff)\n- [`u16::abs_diff`](https://doc.rust-lang.org/stable/std/primitive.u16.html#method.abs_diff)\n- [`u32::abs_diff`](https://doc.rust-lang.org/stable/std/primitive.u32.html#method.abs_diff)\n- [`u64::abs_diff`](https://doc.rust-lang.org/stable/std/primitive.u64.html#method.abs_diff)\n- [`u128::abs_diff`](https://doc.rust-lang.org/stable/std/primitive.u128.html#method.abs_diff)\n- [`usize::abs_diff`](https://doc.rust-lang.org/stable/std/primitive.usize.html#method.abs_diff)\n- [`Display for io::ErrorKind`](https://doc.rust-lang.org/stable/std/io/enum.ErrorKind.html#impl-Display)\n- [`From for ExitCode`](https://doc.rust-lang.org/stable/std/process/struct.ExitCode.html#impl-From)\n- [`Not for !` (the “never” type)](https://doc.rust-lang.org/stable/std/primitive.never.html#impl-Not)\n- [*Op*`Assign<$t> for Wrapping<$t>`](https://doc.rust-lang.org/stable/std/num/struct.Wrapping.html#trait-implementations)\n- [`arch::is_aarch64_feature_detected!`](https://doc.rust-lang.org/stable/std/arch/macro.is_aarch64_feature_detected.html)\n\n---"
+  },
+  {
+    "id": 31,
+    "language": "rust",
+    "version": "1.86.0",
+    "feature": "###Release Note\n\n#### Libraries\n\n- The type of `FromBytesWithNulError` in `CStr::from_bytes_with_nul(bytes: &[u8]) -> Result<&Self, FromBytesWithNulError>` was [changed from an opaque struct to an enum](https://github.com/rust-lang/rust/pull/134143), allowing users to examine why the conversion failed.\n- [Remove `RustcDecodable` and `RustcEncodable`.](https://github.com/rust-lang/rust/pull/134272)\n- [Deprecate libtest’s `--logfile` option.](https://github.com/rust-lang/rust/pull/134283)\n- [On recent versions of Windows, `std::fs::remove_file` will now remove read-only files.](https://github.com/rust-lang/rust/pull/134679)\n\n####  Stabilized APIs\n\n- [`{float}::next_down`](https://doc.rust-lang.org/stable/std/primitive.f64.html#method.next_down)\n- [`{float}::next_up`](https://doc.rust-lang.org/stable/std/primitive.f64.html#method.next_up)\n- [`<[_\\]>::get_disjoint_mut`](https://doc.rust-lang.org/stable/std/primitive.slice.html#method.get_disjoint_mut)\n- [`<[_\\]>::get_disjoint_unchecked_mut`](https://doc.rust-lang.org/stable/std/primitive.slice.html#method.get_disjoint_unchecked_mut)\n- [`slice::GetDisjointMutError`](https://doc.rust-lang.org/stable/std/slice/enum.GetDisjointMutError.html)\n- [`HashMap::get_disjoint_mut`](https://doc.rust-lang.org/std/collections/hash_map/struct.HashMap.html#method.get_disjoint_mut)\n- [`HashMap::get_disjoint_unchecked_mut`](https://doc.rust-lang.org/std/collections/hash_map/struct.HashMap.html#method.get_disjoint_unchecked_mut)\n- [`NonZero::count_ones`](https://doc.rust-lang.org/stable/std/num/struct.NonZero.html#method.count_ones)\n- [`Vec::pop_if`](https://doc.rust-lang.org/std/vec/struct.Vec.html#method.pop_if)\n- [`sync::Once::wait`](https://doc.rust-lang.org/stable/std/sync/struct.Once.html#method.wait)\n- [`sync::Once::wait_force`](https://doc.rust-lang.org/stable/std/sync/struct.Once.html#method.wait_force)\n- [`sync::OnceLock::wait`](https://doc.rust-lang.org/stable/std/sync/struct.OnceLock.html#method.wait)"
+  }
+]

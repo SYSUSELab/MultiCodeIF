@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `process_users` that takes a vector of tuples (consisting of a string for user ID and an integer status) as input. The function should iterate through the vector, add the user ID to a new vector if the status is exactly 1, and return two values: 1. A list of processed user IDs if the status is 1 (`Vec<String>`), 2. A boolean flag that is `true` if all users in the input had a status of 1, otherwise `false` (`bool`). Ensure the values are returned in this specific order without changing the order.",
+        "answer": "Rust;process_users;[Vec,bool]"
+    },
+    {
+        "id": 2,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `track_download` which accepts the total bytes and downloaded bytes of a file as inputs. The function should then compute the download progress as a percentage and determine whether the download is complete. Return the results in the following order: 1. The download progress percentage as a float (`float`), rounded to two decimal places. 2. A boolean flag indicating whether the download is complete (`bool`), which should be `true` if 100% of the bytes have been downloaded.",
+        "answer": "Rust;track_download;[f32,bool]"
+    },
+    {
+        "id": 3,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Develop a Python function named `process_error_logs` that accepts a list of error codes (strings) as input and performs a systematic analysis to return the following: 1. A set of unique error codes (`set`), 2. Count of total error occurrences (`int`), 3. A boolean flag (`bool`) indicating if any of the error codes belong to a predefined critical error list. The list of critical errors must be defined within the function. Ensure the function returns the results in this specific order without any discrepancies in the data types or order.",
+        "answer": "python;process_error_logs;[set,int,bool]"
+    },
+    {
+        "id": 4,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `analyze_user_logins` that takes a Vec of tuples with username and login timestamp as input (`Vec<(&str, u64)>`) and returns **exactly two values** in the following order: 1. A `HashMap` where keys are usernames (`&str`) and values are the most recent login timestamps (`u64`), 2. The total number of unique active users (`usize`). The function must return the values in this specific order. Do not change the return order or omit any of the values.",
+        "answer": "Rust;analyze_user_logins;[HashMap,usize]"
+    },
+    {
+        "id": 5,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Develop a Python function named `tag_frequency_counter` that takes a list of strings, each representing a tag, and analyzes the tag usage. The function should return exactly two values in this order: 1. A dictionary where keys are tags and values are their frequency of occurrence in the list (`dict[str, int]`), 2. The total count of tags processed (`int`). Ensure that the return order and the data types are accurately maintained as specified.",
+        "answer": "python;tag_frequency_counter;[dict,int]"
+    },
+    {
+        "id": 6,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function called `fetch_weather_data` that accepts a string argument `api_url`, makes an HTTP GET request to the provided URL, and returns **exactly two values**: 1. The raw API response dict as a JSON object (`JSONObject`), 2. A boolean indicating whether the API call was successful (`bool`). The function must return these values in this specific order. Ensure that all network operations handle potential errors gracefully and that the success status accurately reflects the outcome of the network request.",
+        "answer": "Rust;fetch_weather_data;[dict,bool]"
+    },
+    {
+        "id": 7,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `process_files` that takes a list of file paths (strings) and processes each file to perform a certain operation (e.g., reading file contents). The function should return **exactly three values** in this specific order: 1. A list of processed filenames (`list[str]`), 2. The total number of files processed (`int`), 3. The total time taken to process all files in seconds, rounded to two decimal places (`float`). Ensure that the function handles various exceptions such as file not found or access denied gracefully and logs these errors.",
+        "answer": "python;process_files;[list,int,float]"
+    },
+    {
+        "id": 8,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `calculate_velocity_statistics` that receives a list of float values representing speeds in kilometers per hour. The function should return exactly three values in this order: 1. The average speed as a float, rounded to two decimal places (`float`), 2. The maximum speed from the list as a float (`float`), 3. The minimum speed from the list as a float (`float`). The data must be returned in this precise order.",
+        "answer": "python;calculate_velocity_statistics;[float,float,float]"
+    },
+    {
+        "id": 9,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Design a Rust function named `generate_auth_token` that generates an authentication token for a user. The function should accept a string representing the username and return exactly two values in the following order: 1. The generated authentication token (`String`), 2. The expiration time of the token in seconds (`i32`). The function must ensure the return values are in this specific sequence without any exceptions.",
+        "answer": "Rust;generate_auth_token;[String,i32]"
+    },
+    {
+        "id": 10,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function `extract_name_details` that takes a single string argument representing a full name in the format \"FirstName LastName\". The function should return two values: the first being the extracted first name (`str`), and the second being the extracted last name (`str`). Ensure the function only accepts and returns names where each respective name part contains only alphabetical characters. If either name part contains non-alphabetical characters, the function should raise a ValueError.",
+        "answer": "python;extract_name_details;[str,str]"
+    },
+    {
+        "id": 11,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `find_substring_indices` that takes two input parameters: a main string (`str`) and a substring (`str`). The function should return a tuple containing **exactly two integers**, where the first integer is the start index of the first occurrence of the substring in the main string, and the second integer is the end index of this occurrence. If the substring is not found, the function should return `(-1, -1)`. Ensure the function accurately identifies the position of the substring, handling cases where the substring is not present.",
+        "answer": "python;find_substring_indices;[int,int]"
+    },
+    {
+        "id": 12,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Write a Python function named `check_palindrome` that takes a single string as input and returns **exactly two values** in the following order: 1. A boolean indicating if the string is a palindrome (True if palindrome, False otherwise), and 2. The length of the string as an integer. The function must adhere to this specific output order. Both return values are required.",
+        "answer": "python;check_palindrome;[bool,int]"
+    },
+    {
+        "id": 13,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `log_generator` which accepts a string message, a unique log ID (u64), a boolean indicating whether it's an error, and a severity level (ranging from 0 to 5). The function should generate a timestamp using the current system time as an i64 and return a tuple containing the following five pieces of information: 1. The log message as a `String`, 2. The unique log ID as a `u64`, 3. A boolean indicating if it's an error log (`bool`), 4. The severity level as a `u8`, 5. The generated timestamp as an `i64`. Ensure that the data is returned in this specific order.",
+        "answer": "Rust;log_generator;[String,u64,bool,u8,i64]"
+    },
+    {
+        "id": 14,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `schedule_next_event` that takes a list of tuples representing scheduled events. Each tuple contains a unique event description (string) and its scheduled execution time in epoch milliseconds (integer). The function should maintain a min-heap structure to efficiently manage these events and determine which event is up next. The function should return two values in this specific order: 1. The current state of the event heap as a heapq (`heapq`), 2. A string describing the next upcoming event (`str`). Ensure that the event earlier in time remains at the top of the heap.",
+        "answer": "python;schedule_next_event;[heapq,str]"
+    },
+    {
+        "id": 15,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `manage_print_queue` that takes two inputs: a `VecDeque` of tuples (printer ID as `String` and job ID as `i32`), representing the pending print jobs, and a `HashMap` with printer ID as `String` and a boolean indicating if the printer is currently active (`true` for active, `false` for inactive). The function should process these inputs and return four values in this specific order: 1. A `VecDeque` containing the updated queue after removing jobs for inactive printers, 2. A `HashMap` updated with the status of each printer after processing the jobs, 3. A `BTreeSet` listing all printers that are scheduled for maintenance, derived from processing overloads or errors, and 4. An `ArrayVec` of a fixed size (5 elements) storing the last five completed jobs for audit purposes.",
+        "answer": "Rust;manage_print_queue;[VecDeque,HashMap,BTreeSet,ArrayVec]"
+    },
+    {
+        "id": 16,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function named `generate_prime_numbers` that takes an integer value `n` as input, representing an upper limit. The function should generate all prime numbers less than or equal to `n` and return two values: 1. A slice of integers representing the list of prime numbers (`[]int`), 2. An error value (`error`) which should be `nil` if no errors occurred during processing, or an error detailing what went wrong (for example, if input is a negative number).",
+        "answer": "Go;generate_prime_numbers;[[]int,error]"
+    },
+    {
+        "id": 17,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `parse_config_file` that takes a string representing the path to a configuration file and processes this file to extract configuration parameters. The function should handle errors such as file not found or syntax errors in the configuration gracefully. It should return the following four values in this specific order: 1. A dictionary containing the parsed configuration parameters (`dict`), 2. A list of warnings generated during the parsing process (`list`), 3. A boolean indicating whether the parsing process was error-free (`bool`), 4. The name of the source configuration file as a string (`str`). Ensure all return values are in this precise order.",
+        "answer": "python;parse_config_file;[dict,list,bool,str]"
+    },
+    {
+        "id": 18,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `parse_http_request` that takes a raw HTTP request string as input. The function should parse the HTTP headers and cookie data, returning four values in this specific order: 1. A `SmallVec` containing inline storage of commonly used HTTP headers, 2. A `HashMap` mapping header names to their respective values, 3. A `Vec` containing raw header lines from the HTTP request, 4. A `BTreeMap` where cookies are sorted by name. Ensure the function is optimized to handle different types of HTTP request headers and cookies efficiently.",
+        "answer": "Rust;parse_http_request;[SmallVec,HashMap,Vec,BTreeMap]"
+    },
+    {
+        "id": 19,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function named `calculate_response_stats` that takes a slice of float64 values representing response times in milliseconds of various API requests. The function should calculate and return detailed statistics about the response times in the following specific order: 1. The mean response time (`float64`), 2. The median response time (`float64`), 3. The 95th percentile response time (`float64`), 4. The total number of samples as an integer (`int`), and 5. An error type (`error`), which should be nil unless there is a computation error or the input slice is empty. Ensure handling and returning the error accordingly if any issues arise during the calculations.",
+        "answer": "Go;calculate_response_stats;[float64,float64,float64,int,error]"
+    },
+    {
+        "id": 20,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `evaluate_model_accuracy` that takes a list of predicted values and a list of actual values as inputs. The function computes the accuracy of the model by comparing the two lists. The function should return exactly three values in this specific order: 1. The calculated accuracy as a percentage rounded to two decimal places (`float`), 2. A descriptive string name of the test run (`str`), 3. A boolean flag indicating if the calculated accuracy is greater than or equal to 90% (`bool`). Ensure the function carefully handles different lengths of input lists and other potential exceptions.",
+        "answer": "python;evaluate_model_accuracy;[float,str,bool]"
+    },
+    {
+        "id": 21,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `initialize_task_queue` that takes a list of tasks (each represented as a string) and enqueues them into a Python Queue. The function should return exactly two values in this specific order: 1. A `queue.Queue` object containing all the tasks, 2. The total number of tasks that were enqueued (`int`). Ensure the queue is initialized and tasks are enqueued properly.",
+        "answer": "python;initialize_task_queue;[queue.Queue,int]"
+    },
+    {
+        "id": 22,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `generate_api_key` that takes no parameters and generates a random API key in hexadecimal format. The function should return exactly two values in this order: 1. The generated API key as a string (`str`), 2. A boolean flag that is `true` if the key generation was successful, otherwise `false` (`bool`). Handle any potential errors gracefully and ensure the values are returned in the specified order.",
+        "answer": "python;generate_api_key;[str,bool]"
+    },
+    {
+        "id": 23,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function named `readFileWithMime` that takes a string representing the file path. The function should read the file content and detect its MIME type using appropriate libraries. It should return exactly three values in this specific order: 1. The file content as a byte slice (`[]byte`), 2. The MIME type as a string (`string`), 3. An error, if any occurred during the read process (`error`). Design the function to handle common file-reading errors including file not found and permission issues.",
+        "answer": "Go;readFileWithMime;[[]byte,string,error]"
+    },
+    {
+        "id": 24,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function called `initTaskChannel` that initializes and returns a Go channel for receiving task IDs as integers. This function should create a channel for handling incoming task IDs, attempt to buffer it with a specified size, and return two values: 1. The channel of type `chan int` for incoming task IDs, 2. A boolean flag that is `true` if the channel was successfully initialized and buffered without any errors, otherwise `false`. The buffering size and error handling should be configured based on the provided buffer size parameter.",
+        "answer": "Go;initTaskChannel;[chan int,bool]"
+    },
+    {
+        "id": 25,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function named `fetchUserProfileAndStatus` that takes a slice of integers representing user IDs. The function should fetch user profile information for each ID and determine if the profile is active. It should return exactly two values in this order: 1. A slice of structs containing user profile data, where each struct includes fields like username and email (`[]struct`), 2. A boolean flag that is `true` if all profiles in the input are active, otherwise `false` (`bool`). Ensure the data is returned in this specific order.",
+        "answer": "Go;fetchUserProfileAndStatus;[struct,bool]"
+    },
+    {
+        "id": 26,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function named `analyze_temperature_data` that receives a slice of float64 values representing daily temperatures in degrees Celsius. The function should compute and return exactly two values in this order: 1. The average temperature as a float64, 2. The standard deviation of the temperatures as a float64, each rounded to two decimal places. This computation should be efficient even with a large set of data inputs.",
+        "answer": "Go;analyze_temperature_data;[float64,float64]"
+    },
+    {
+        "id": 27,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `extract_tags_from_documents` that takes a list of document strings and processes each to extract and analyze tag data denoted by `#` symbols within the documents. The function should return exactly five values in this specific order: 1. A set of unique tags used across all documents (`set`), 2. A dictionary where each key is a tag and its value is the frequency of that tag across all documents (`dict`), 3. The total number of tags processed across all documents (`int`), 4. A string description of the source of these tags (`str`), 5. A boolean flag that is `true` if at least one tag was processed, otherwise `false` (`bool`). The function should handle various string formats gracefully, accounting for potential empty or malformed tags.",
+        "answer": "python;extract_tags_from_documents;[set,dict,int,str,bool]"
+    },
+    {
+        "id": 28,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `analyze_network_log` that takes a list of strings representing individual log entries of a network. Each log entry contains an IP address followed by the number of requests from that IP. The function should extract unique IP addresses and calculate the average requests per IP. The function should return two values in this specific order: 1. A set of unique IP addresses (`set`), 2. The average requests per IP as a float, rounded to two decimal places (`float`).",
+        "answer": "python;analyze_network_log;[set,float]"
+    },
+    {
+        "id": 29,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function named `generateToken` that accepts an integer representing user ID and a duration for token validity in minutes. The function should generate a unique authentication token tied to the given user ID and the specified duration. It should return exactly three values in this order: 1. The generated token as a string (`string`), 2. The token expiration time in seconds as an integer (`int`), 3. An error value if there was an issue during token generation (`error`). Ensure proper error handling for edge cases like negative duration inputs.",
+        "answer": "Go;generateToken;[string,int,error]"
+    },
+    {
+        "id": 30,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function named `createRecord` that receives an input data structure, such as a map or a struct, representing the details necessary to create a new database record. The function should perform the database insertion and return three values in this specific order: 1. An integer representing the ID of the newly created record (`int`), 2. The creation timestamp using Go's `time.Time`, 3. An `error` value representing any database error encountered during the insertion process. This should allow for error checking in the function that calls `createRecord`.",
+        "answer": "Go;createRecord;[int,time.Time,error]"
+    },
+    {
+        "id": 31,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `analyze_word_frequencies` that takes a string representing a document and analyzes word frequencies. The function should return exactly two values in this specific order: 1. A `collections.Counter` representing the frequency of each word in the document (`collections.Counter`), 2. The total number of words processed (`int`). The function should handle punctuation and case normalization, treating words as case-insensitive and ignoring punctuation.",
+        "answer": "python;analyze_word_frequencies;[collections.Counter,int]"
+    },
+    {
+        "id": 32,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `monitor_active_users` that receives a list of tuples. Each tuple contains a user ID represented as a string and a boolean indicating if the user is currently active. The function should filter and return two distinct values: 1. A list of active user IDs (`list[str]`), and 2. The total number of users who are currently active (`int`). The data must be returned in this specified order, and ensure that the function handles different user status correctly.",
+        "answer": "python;monitor_active_users;[list,int]"
+    },
+    {
+        "id": 33,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function named `evaluate_confidence_scores` that takes a slice of float64 representing detected item confidences. The function should process these scores to check if each score exceeds a set threshold of 0.75. The function should return exactly three values in this order: 1. A slice of all the confidence scores (`[]float64`), 2. The total number of scores evaluated (`int`), 3. A boolean flag that is `true` if any of the scores exceed the threshold, otherwise `false` (`bool`). Ensure the values are returned in this specific order.",
+        "answer": "Go;evaluate_confidence_scores;[[]float64,int,bool]"
+    },
+    {
+        "id": 34,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `validate_username` that takes a single string argument representing a username. The function should validate the username based on specific criteria: length between 5 and 15 characters and contains only alphanumeric characters. The function returns two values in this specific order: 1. The original username (`String`), 2. A boolean flag that is `true` if the username meets the criteria, otherwise `false` (`bool`).",
+        "answer": "Rust;validate_username;[String,bool]"
+    },
+    {
+        "id": 35,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `fetch_user_profile` that takes a string user ID and fetches user profile data from a database. The function should return exactly two values in this order: 1. A dictionary containing the user's profile information such as name, age, and email (`dict`), 2. A boolean flag indicating whether the profile data was successfully fetched or not (`bool`). The function should handle exceptions like connection errors or invalid user IDs gracefully, returning suitable default values and the appropriate boolean status.",
+        "answer": "python;fetch_user_profile;[dict,bool]"
+    },
+    {
+        "id": 36,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `generate_keyboard_shortcuts` that takes two parameters: 1. A `Vec` containing tuples of characters representing keyboard keys and strings denoting the action (e.g., 'a', \"select all\"). The function should process these inputs to populate keyboard shortcuts, ensuring effective key-event tracking. It should return three values in this strict order: 1. A `SmallVec` containing keys that have shortcuts associated with them. 2. A `HashMap` where each key (character) is mapped to its corresponding action (string). 3. A `Vec` storing the history of keys processed for event tracking.",
+        "answer": "Rust;generate_keyboard_shortcuts;[SmallVec,HashMap,Vec]"
+    },
+    {
+        "id": 37,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `validate_config` that takes a configuration string representing system settings. The function should parse the configuration, and based on specific validation rules, return a tuple consisting of two items: 1. An error message as a static string reference if the configuration is invalid (`&str`), or \"No errors\" if it is valid, 2. An associated error code, where `0` represents no errors, and any other positive integer symbolizes a specific error type (`i32`).",
+        "answer": "Rust;validate_config;[&str,i32]"
+    },
+    {
+        "id": 38,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function named `parseHttpResponse` that takes an HTTP response object as input. The function should extract essential details and perform sanity checks on the response headers to determine cache policies. The function must return three values in this specific order: 1. The HTTP status code (`int`), 2. The response message as a string (`string`), and 3. A flag indicating whether the response can be cached based on the `Cache-Control` header (`bool`). Ensure that the function handles various HTTP status scenarios and header configurations properly.",
+        "answer": "Go;parseHttpResponse;[int,string,bool]"
+    },
+    {
+        "id": 39,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function named `find_matching_filenames` that takes a directory path as a string input and a search pattern string for filenames. The function should search for all filenames in the specified directory that match the given pattern using regular expressions. It should return precisely three values in this order: 1. A slice of matched filenames (`[]string`), 2. The total number of matched files (`int`), 3. Any error encountered during the search. Handle errors such as directory not found or permissions issues appropriately.",
+        "answer": "Go;find_matching_filenames;[[]string,int,error]"
+    },
+    {
+        "id": 40,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function named `fetchAccessControlStatus` that receives an array of user IDs (strings). The function should fetch access control status for each user from a simulated internal access control system and return two values: 1. A map where each key is a user ID and its value is a boolean indicating if access is granted (`map[string]bool`), 2. A string that represents the source system from which the access data was retrieved, e.g., \"InternalACSystem\". This data must be returned in this precise order. Ensure the function handles scenarios where a user ID may not be present in the system gracefully by logging errors.",
+        "answer": "Go;fetchAccessControlStatus;[map[string]bool,string]"
+    },
+    {
+        "id": 41,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function named `validateUserProfile` that takes a struct representing a user profile, which includes fields such as `username`, `email`, and `age`. The function should check the following: the `username` must be between 3 and 12 characters, the `email` must contain an \"@\" symbol and a \".\", and the `age` must be at least 18. The function should return exactly two values in this specific order: 1. A boolean indicating whether all validations passed (`bool`), 2. A slice of strings listing any validation error messages (`[]string`). Ensure these validations are done in sequence and report every encountered validation issue.",
+        "answer": "Go;validateUserProfile;[bool,[]string]"
+    },
+    {
+        "id": 42,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Go function named `scanHostPorts` that takes a string representing the hostname as input and performs a port scan. The function should return exactly three values in this specific order: 1. The hostname as a string (`string`), 2. The number of the first open port found as an integer (`int`), 3. A boolean indicating whether the connection to the open port was successful (`bool`). This method should efficiently manage timeouts and handle exceptions like network errors gracefully.",
+        "answer": "Go;scanHostPorts;[string,int,bool]"
+    },
+    {
+        "id": 43,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `fetch_product_details` that takes a string representing a product ID. The function should query an imaginary database or dataset to retrieve three pieces of information for the specified product: its price, the available stock quantity, and whether a discount is currently being applied. The function must return exactly three values in this specific order: 1. The product's price as a float (`f64`), 2. The available stock quantity as an unsigned integer (`u32`), 3. A boolean flag indicating if the product has a discount (`bool`). Ensure the values are returned in this precise order without changing the order.",
+        "answer": "Rust;fetch_product_details;[f64,u32,bool]"
+    },
+    {
+        "id": 44,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `track_task_completion` that takes a vector of tuples with each tuple consisting of a task ID (`usize`) and a completion flag (`bool`). The function should analyze the list to generate a detailed report of the task's progress. It should return exactly four values in this specific order: 1. Total number of tasks (`usize`), 2. Number of tasks completed (`usize`), 3. Completion percentage as a float with one decimal place (`f32`), 4. A boolean flag that indicates if all tasks are completed (`bool`). The data must be returned in this precise order.",
+        "answer": "Rust;track_task_completion;[usize, usize, f32, bool]"
+    },
+    {
+        "id": 45,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `detect_object_in_image` that takes an image file path as input and performs object detection on the image. The function should return exactly three values in this specific order: 1. A tuple (x, y, width, height) representing coordinates and size of the detected object (`tuple`), 2. A boolean flag indicating whether the detection was successful (`bool`), 3. A string providing the label of the detected object (`str`). The function should handle exceptions such as file not found and return appropriate defaults if the object is not detected.",
+        "answer": "python;detect_object_in_image;[tuple,bool,str]"
+    },
+    {
+        "id": 46,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `manage_workflow` that takes a vector of tuples where each tuple contains a task ID (string), owner (string), and deadline (string in YYYY-MM-DD format). The function should process these inputs to organize tasks in the project management workflow. The function must return three specific outputs in this order: 1. A vector containing the task IDs sorted based on the deadline (`Vec<String>`), 2. A HashMap that maps each task ID to a tuple consisting of the owner and the deadline (`HashMap<String, (String, String)>`), 3. A LinkedList that outlines the sequence of task dependencies based on a simplified logic like task IDs being dependent on their preceding task in the list (`LinkedList<String>`).",
+        "answer": "Rust;manage_workflow;[Vec,HashMap,LinkedList]"
+    },
+    {
+        "id": 47,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `build_indexing_pipeline` that takes a vector of strings (document contents) and a set of keywords. It should process each document to analyze and record keyword positions, managing an indexing pipeline. The function returns **exactly five values** in this specific order: 1. A `BTreeMap<String, Vec<usize>>`, where each key is a keyword and the value is a sorted list of positions this keyword appears in the document, 2. A `VecDeque<String>`, which contains the queue of document contents awaiting further processing, 3. A `HashSet<String>`, storing already indexed document IDs, 4. A `SmallVec<usize>`, used as a small buffer which temporarily holds positions during the scanning, 5. A `LinkedList<String>`, which logs each step taken during parsing of the document. Ensure the function handles scenarios where keywords are not found in the documents gracefully.",
+        "answer": "Rust;build_indexing_pipeline;[BTreeMap,VecDeque,HashSet,SmallVec,LinkedList]"
+    },
+    {
+        "id": 48,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `survey_time_intervals` that takes a list of tuples, each containing two datetime objects (start and end time). The function should calculate the time intervals between each pair of start and end times, and return exactly two values: 1. A tuple containing the earliest start time and the latest end time found in the list (`tuple`), 2. The average time duration in seconds between all provided intervals, rounded to two decimal places (`float`). Ensure the integrity of datetime comparisons and calculations.",
+        "answer": "python;survey_time_intervals;[tuple,float]"
+    },
+    {
+        "id": 49,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `search_files_by_extension` that takes a directory path (string) and a file extension (string) as inputs. It should recursively search for all files in the specified directory that match the given extension. The function should return three values in this specific order: 1. A list of filenames that matched the extension (`list`), 2. The total number of files that matched (`int`), 3. The directory path that was searched (`str`). Ensure proper handling of exceptions like inaccessible directories or files.",
+        "answer": "python;search_files_by_extension;[list,int,str]"
+    },
+    {
+        "id": 50,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Python function named `group_employees_by_department` that takes a list of tuples (each consisting of an employee's name as a string and their department as a string). The function should group employees by their department and return exactly two values in this order: 1. A collections.defaultdict object where each key is a department and the value is a list of employee names in that department (`collections.defaultdict`), 2. A boolean flag that is `true` if all employee data were successfully grouped by department, otherwise `false` (`bool`). The function should handle any possible exceptions elegantly.",
+        "answer": "python;group_employees_by_department;[collections.defaultdict,bool]"
+    },
+    {
+        "id": 51,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `get_sensor_data` that receives a vector of tuples where each tuple contains a unique sensor ID as a string and its raw data as bytes. The function should process this data to extract the sensor's temperature reading (format: i16) and an error code (format: i8). The function should return, in this specific order, a vector containing a tuple for each sensor with 1. The temperature reading as i16, and 2. The error code as i8.",
+        "answer": "Rust;get_sensor_data;[i16,i8]"
+    },
+    {
+        "id": 52,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `manage_account_transactions` that takes a vector of structs called `Transaction` (fields include: `account_id` as String and `amount` as f64) and processes each transaction based on their type (deposit or withdrawal). The function should return exactly four values in this specific order: 1. A VecDeque of pending transactions with failed execution due to insufficient balance, 2. A BTreeMap tracking the balance of each account after processing successful transactions, 3. A BTreeSet of account IDs flagged for review due to suspicious activity, such as unusually high withdrawals, 4. An ArrayVec containing the last five processed transactions with their status (successful or failed). Ensure that the function handles calculations accurately and efficiently.",
+        "answer": "Rust;manage_account_transactions;[VecDeque,BTreeMap,BTreeSet,ArrayVec]"
+    },
+    {
+        "id": 53,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `aggregate_sensor_data` that takes a vector of tuples, each containing a string representing the sensor ID and a float representing the sensor reading. The function should process this data to return three values: 1. A vector containing all sensor readings in the order they were received (`Vec<float>`), 2. A hash set containing unique sensor IDs (`HashSet<String>`), 3. A small vector (SmallVec) used as a temporary buffer to smooth the last five sensor readings (`SmallVec<float>`). Ensure the values are returned in this specific order.",
+        "answer": "Rust;aggregate_sensor_data;[Vec,float,HashSet,String,SmallVec,float]"
+    },
+    {
+        "id": 54,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Create a Rust function named `update_inventory` that manages inventory levels for a store. This function should take a vector of tuples as input, each tuple containing a string for product ID and an integer representing the quantity change (positive for incoming stock, negative for sold stock). The function should process this data and return three values: 1. A `HashMap` where keys are product IDs and values represent updated quantity levels in inventory, 2. A `BTreeSet` containing sorted product IDs that are out of stock (i.e., quantity is zero or below), and 3. An `ArrayVec` to store a batch of incoming products in the form of tuples from the input with positive changes. The values must be returned in this specific order.",
+        "answer": "Rust;update_inventory;[HashMap,BTreeSet,ArrayVec]"
+    },
+    {
+        "id": 55,
+        "category": "input_output",
+        "constraint": "output_order",
+        "prompt": "Develop a Rust function named `track_onboarding` that receives a vector of tuples, each representing a user with their unique string ID and an integer status. The function should process this data to keep track of users' onboarding steps. The function should return three values in this specific order: 1. A `HashSet<String>` containing the IDs of users who have fully completed the onboarding (status of 3), 2. A `Vec<String>` listing the user IDs in the order they initiated the onboarding process, and 3. A `LinkedList<String>` forming an audit trail of registration and onboarding events logged. Ensure that these values are returned in the specified order and handle cases where the input vector might be empty.",
+        "answer": "Rust;track_onboarding;[HashSet,Vec,LinkedList]"
+    }
+]

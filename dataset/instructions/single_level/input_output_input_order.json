@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Python function called `sequential_counter` that takes one integer parameter which specifies the count limit. The function should print numbers sequentially from 1 up to the specified limit inclusively. Implement a check to ensure the passed limit is a positive integer greater than zero. If an invalid input is passed (such as a negative integer, zero, or non-integer type), the function should print \"Invalid input\" and return None. This exercise aims to encourage best practices in input validation and looping constructs.",
+        "answer": "Python;sequential_counter;[int]"
+    },
+    {
+        "id": 2,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Java method named `calculateMortgage` that calculates and returns the monthly mortgage payment amount based on user input for the principal loan amount, annual interest rate, and the loan period in years. This method should include inputs as a floating-point number for the principal, a floating-point for the interest rate, and an integer for the number of years. Implement error handling to manage negative inputs and format the output to two decimal places. Provide a user interface to input these values, display the formatted result, and handle invalid entries gracefully. Ensure the program repeatedly prompts for input until explicitly exited.",
+        "answer": "Java;calculateMortgage;[Float,Float,Integer]"
+    },
+    {
+        "id": 3,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Rust function called `paginate_results` that accepts two integer parameters: page_number and page_size. This function should simulate fetching data from a database with pagination support. The data is represented as a vector of strings for simplicity. It's required to calculate the correct subset of data based on pagination parameters, and handle cases where page_number or page_size are zero or negative with appropriate error messages. The output should be either the subset of data for the requested page or error messages.",
+        "answer": "Rust;paginate_results;[integer,integer]"
+    },
+    {
+        "id": 4,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a C++ function named `saveFilesToDirectory` that takes a list of filenames and a directory path as input. The function should move all the specified files from their current location to the provided directory path, ensuring error handling for cases where files do not exist or cannot be moved due to permission issues. The function should output success messages for each file successfully moved and error messages for failures. Include input validation to check that the directory exists and is writable before attempting to move any files.",
+        "answer": "cpp;saveFilesToDirectory;[List,String]"
+    },
+    {
+        "id": 5,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Rust function named `age_validator` that takes two integer parameters: `min_age` and `max_age`. The function should validate if the given `min_age` is less than or equal to `max_age`. If `min_age` is not less than or equal to `max_age`, the function should return a custom error message indicating the issue. If the ages are valid, return a success message indicating the age range is valid. Ensure the function handles any possible input and provides appropriate error handling for invalid types.",
+        "answer": "Rust;age_validator;[integer,integer]"
+    },
+    {
+        "id": 6,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Java function named `loadConfiguration` that reads configuration settings from a specified XML file path passed as a string. The function should handle exceptions related to file access, such as FileNotFoundException and IOException. Ensure that this configuration allows setting parameters for server details, such as the port number and timeout settings, which are stored in predefined tags within the XML file. Validate the presence and correct format of these tags and provide meaningful error messages if any issues are detected. The result should be structured in a Java object that represents the configuration settings.",
+        "answer": "Java;loadConfiguration;[String]"
+    },
+    {
+        "id": 7,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Python function named `load_and_process_data` that takes two parameters: a string representing the filepath to a dataset, and an integer indicating the number of rows to read. The function should load the specified number of rows from a CSV file located at the given filepath, handle any file reading errors, and return the loaded data. Implement appropriate error handling for file access issues and validate the integer parameter to ensure it is positive. Additionally, log each file access attempt and result for debugging purposes.",
+        "answer": "Python;load_and_process_data;[str,int]"
+    },
+    {
+        "id": 8,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a C++ function named `toggleFeature` which enables or disables a software feature based on a user's input. The function should accept a single Boolean parameter indicating whether the feature should be activated (`true`) or deactivated (`false`). Include user prompts to confirm the action before proceeding and to show successful activation or deactivation. The function must handle unexpected input gracefully and provide error messages accordingly. Assume that initial settings have the feature disabled.",
+        "answer": "cpp;toggleFeature;[Boolean]"
+    },
+    {
+        "id": 9,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Rust function `filter_above_threshold` which takes a list of numeric values and an integer threshold as inputs. The function should filter out all numbers in the list that are above the specified threshold and return the remaining list. Ensure the function handles different numeric types within the list and provides adequate error handling for non-numeric and nil values.",
+        "answer": "Rust;filter_above_threshold;[List,Integer]"
+    },
+    {
+        "id": 10,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a C++ function named configureFeatures that allows the user to manage application settings through a menu-driven interface. The function should accept two parameters: a Set of enabled features, and a JSONObject detailing configuration options for those features. Users can enable or disable features, update feature parameters, and view the current configuration. Ensure robust error handling for invalid feature names and configuration settings. The function should also support saving the current configuration to a file and reloading a configuration from a file, with the ability to revert to default settings if needed.",
+        "answer": "cpp;configureFeatures;[Set,JSONObject]"
+    },
+    {
+        "id": 11,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Java method called adjustBrightness that takes a single Float parameter representing the current brightness level of a screen, ranging from 0.0 (complete darkness) to 1.0 (full brightness). The method should adjust the brightness based on user input that instructs either to increase, decrease, or reset the brightness level. Use explicit conditions to ensure that the brightness does not exceed 1.0 or drop below 0.0, and provide feedback to the user about the outcome of their adjustment including any errors due to invalid input values.",
+        "answer": "Java;adjustBrightness;[Float]"
+    },
+    {
+        "id": 12,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Python function named `searchDocuments` that takes two parameters: a search query and a list of document contents. The function should perform a case-insensitive search to find and return a list of documents containing the query string. Each document in the list must be a string. Implement comprehensive error handling to deal with incorrect data types and empty strings or lists. Additionally, include comments in your code to explain the functionality and any edge cases handled.",
+        "answer": "Python;searchDocuments;[str,list]"
+    },
+    {
+        "id": 13,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a C++ function named \"traverseGraph\" that performs a breadth-first search (BFS) on a given directed graph represented by an adjacency matrix. The function should accept two parameters: an adjacency matrix of a graph and an integer representing the starting node index. It should output the order of nodes visited. Implement error handling for invalid node indices and ensure the matrix and the starting index are correctly validated before processing.",
+        "answer": "cpp;traverseGraph;[Matrix,Integer]"
+    },
+    {
+        "id": 14,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Rust function named 'calculate_displacement' that computes the displacement of a moving object using the formula: displacement = initial_velocity * time + 0.5 * 9.8 * time^2. The function should accept two float parameters: initial velocity and time in seconds, and return the displacement as a float. Make sure to provide adequate documentation comments explaining the parameters and the return value. The function should handle possible anomalies like negative time values by returning a message indicating an invalid input.",
+        "answer": "Rust;calculate_displacement;[float,float]"
+    },
+    {
+        "id": 15,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Python function named \"processUserData\" that accepts a single parameter, a dictionary mapping user IDs to user data. The function should improve user data entries by formatting names to be capitalized and filtering out any users below age 18. The processed data should then be returned in a new dictionary with the same structure. Implement robust error handling for possible incorrect data types and missing dictionary keys.",
+        "answer": "Python;processUserData;[map]"
+    },
+    {
+        "id": 16,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Java function named 'checkAccess' that determines if a given IP address can access a system based on a set of blocked IP addresses. The function should accept a Set of blocked IPs (Set<String>) and an IP address to test (String) as parameters. The function returns 'true' if the IP address is allowed access, and 'false' if it is in the blocked set. Implement robust input validation to ensure that the IP format is correct before checking against the blocked set.",
+        "answer": "Java;checkAccess;[Set,String]"
+    },
+    {
+        "id": 17,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a C++ function named `processLinkedList` that accepts a singly linked list of integers and returns a modified linked list where each node's value is multiplied by its position in the list (1-indexed). The function should handle edge cases efficiently, including an empty list, and ensure robust error checking. The linked list should be implemented using a struct with an integer value and a pointer to the next node. Provide comments and documentation within the code to explain the logic and function flows.",
+        "answer": "cpp;processLinkedList;[LinkedList]"
+    },
+    {
+        "id": 18,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Rust function called `sort_numbers` that receives a list of numbers and sorts them in ascending order. This function should efficiently handle various types of numbers, including integers and floating points. The function should return the sorted list. Implement appropriate error handling and input validation to ensure that all elements in the list are numerical before sorting. Provide comments in the code outlining the sorting algorithm used.",
+        "answer": "Rust;sort_numbers;[List]"
+    },
+    {
+        "id": 19,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Java function named `uniqueElementAnalyzer` that takes a Set of integers as input. The function should analyze the provided set to compute and return the maximum, minimum, and the arithmetic mean of the elements. Ensure that the function can handle cases when the set is empty by throwing a custom exception. Provide clear documentation for users on how to use the function and what exceptions they might encounter.",
+        "answer": "Java;uniqueElementAnalyzer;[Set]"
+    },
+    {
+        "id": 20,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Python function named process_sensor_data that takes in a matrix of temperature readings and a float representing a calibration offset. The function should apply this calibration offset to each temperature reading in the matrix. The result should be a matrix of the same dimensions with the adjusted temperatures. Additionally, implement error handling for non-numeric inputs and ensure floating-point precision is maintained throughout the operations. Provide a mechanism to fetch the maximum and minimum temperatures after adjustment.",
+        "answer": "Python;process_sensor_data;[matrix,float]"
+    },
+    {
+        "id": 21,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Implement a C++ function named `processData` that accepts a single `std::map<std::string, double>` parameter representing key-value pairs of string identifiers to numerical data. The function should compute basic statistical metrics (minimum, maximum, average, sum) on the data values. The function should return these metrics as a map with keys \"min\", \"max\", \"average\", and \"sum\". Ensure the function handles cases where the map is empty by returning an empty result map. The implementation should also include input validation to ensure all provided data values are non-negative doubles.",
+        "answer": "cpp;processData;[Map]"
+    },
+    {
+        "id": 22,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Java function `findClosestValueInBst` that finds the value in a binary search tree that is closest to the target integer provided. The function should accept a binary search tree (BST) as its first parameter and an integer as its second parameter. The BST is represented by a node class with properties `value`, `left`, and `right`. Implement the function to traverse the tree iteratively, comparing the current node value with the target and deciding whether to go left or right based on this comparison, ensuring efficient tree traversal without recursion. The closest value found during the traversal should be returned.",
+        "answer": "Java;findClosestValueInBst;[Tree,Integer]"
+    },
+    {
+        "id": 23,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Rust function named process_tasks that performs operations on a list of task durations (represented as List of floats), adjusts them based on a scaling factor, and logs each adjusted duration. The function should take three parameters: a list of task durations, a configuration string containing processing modes ('Linear' or 'Exponential'), and a scaling factor (Float). Depending on the configuration mode, the duration should either be multiplied (Linear) or raised to the power (Exponential) of the scaling factor. Ensure that the processing logs each task's original and adjusted duration and allows for error handling if the list contains any non-numeric values.",
+        "answer": "Rust;process_tasks;[List,String,Float]"
+    },
+    {
+        "id": 24,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Python function named `manage_queue_operations` that handles queue operations using a deque. This function should accept two parameters: a deque and an integer specifying the maximum allowed size of the deque. Implement functionality to add elements to the deque from the end until the maximum size is reached, and provide the ability to pop elements from the front. Additionally, include error handling to prevent adding more elements than the maximum size allowed, and ensure that the function can handle requests to pop from an empty deque gracefully.",
+        "answer": "Python;manage_queue_operations;[deque,int]"
+    },
+    {
+        "id": 25,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a C++ function named \"processCoordinates\" that takes a single parameter: a tuple containing two integer values representing Cartesian coordinates (x, y). The function should compute and return both the Euclidean distance from the origin (0,0) and the coordinates scaled by a factor of 2. The results should be structured as a tuple containing the distance followed by the new scaled coordinates. Include appropriate error handling for non-integer input values and ensure that inputs are in the correct format and range.",
+        "answer": "cpp;processCoordinates;[Tuple]"
+    },
+    {
+        "id": 26,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Rust function named `calculate_compound_interest` that computes the compound interest over a specified number of years. The function should accept two parameters: the annual interest rate as a float and the number of years as an integer. The function should return the final investment amount calculated based on a principal amount of 1000.0. Ensure the function correctly handles non-positive values for years by returning the principal amount without change.",
+        "answer": "Rust;calculate_compound_interest;[float,integer]"
+    },
+    {
+        "id": 27,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Java function named `configureServer` that accepts a JSONObject containing configuration parameters for a web server. The configuration should include options for enabling SSL, setting the maximum number of connections, and specifying a port number. The function must parse these configurations from the JSONObject and apply them to initialize the server settings. Include error handling to manage missing configuration fields or incorrect value types within the JSONObject. Additionally, implement functionality to log the applied configurations for future reference and verification.",
+        "answer": "Java;configureServer;[JSONObject]"
+    },
+    {
+        "id": 28,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Python function named `calculate_grades`, which accepts a list of student records and a map of student IDs to their grades. The function should calculate the average grade for each student and print a detailed report of student names with their average grades. Ensure the function can handle cases where a student ID in the list does not have a corresponding grade in the map. Such students should receive an average grade of \"Not Available\" in the report. The list should contain dictionaries representing student names and IDs.",
+        "answer": "Python;calculate_grades;[list,map]"
+    },
+    {
+        "id": 29,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Python function `paginate_results` that receives a list of dictionaries and two integers, `page_number` and `page_size`, and returns a slice of the list that corresponds to the specified page of results. Implement error handling to manage cases where the `page_number` or `page_size` are out of range or invalid. The function should return an empty list in such scenarios and ensure no exceptions are thrown in the user's console.",
+        "answer": "Python;paginate_results;[int,int]"
+    },
+    {
+        "id": 30,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Rust function named `find_path` that, given a Graph structure as an input, computes a valid path from a starting node to an ending node using Depth-First Search (DFS) algorithm. The function should ensure that the graph, start, and end nodes are correctly validated. Implement error handling to manage non-existent nodes and disconnected graphs. Additionally, include functionality to allow adjustment of the traversal approach between DFS and Breadth-First Search (BFS) dynamically based on user choice.",
+        "answer": "Rust;find_path;[Graph]"
+    },
+    {
+        "id": 31,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Java function named `configureFeatureSet` that accepts a Set of String features and a boolean flag `enableAdvanced`. Based on whether `enableAdvanced` is true or false, this function should either apply all features in the set or only a subset that excludes those marked as 'advanced'. The function should also print the resultant feature set after processing. Handle scenarios where the Set might be empty or null gracefully, ensuring that no exceptions are thrown and providing a clear message indicating the state or result of the operation.",
+        "answer": "Java;configureFeatureSet;[Set,Boolean]"
+    },
+    {
+        "id": 32,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a C++ function named `findShortestPath` which calculates the shortest path between two nodes in a graph using Dijkstra's algorithm. The graph is represented by an adjacency list, and the nodes are identified by integers. The function should accept three parameters: a graph, a starting node ID, and an ending node ID. Additionally, implement error handling to manage cases where the starting or ending nodes do not exist in the graph.",
+        "answer": "cpp;findShortestPath;[Graph,Integer,Integer]"
+    },
+    {
+        "id": 33,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Python function `dfs` that accepts a graph represented as a dictionary of adjacency lists (where keys are nodes and values are lists of connected nodes) and a starting node. The function should return a list of nodes visited in a Depth-First Search (DFS) order.  The function accept a parameter max_depth (default to None). If max_depth is provided, the DFS should stop exploring nodes beyond the specified depth.",
+        "answer": "python;dfs;[graph,node,none]"
+    },
+    {
+        "id": 34,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Python function `shortest_path_distances` that accepts a weighted graph represented as a dictionary of adjacency lists (where keys are nodes and values are dictionaries of connected nodes with edge weights) and a starting node. The function should return the shortest path distances from the starting node to all other nodes using Dijkstra's algorithm. The function to accept an optional parameter algorithm (default to 'dijkstra'). If algorithm is set to 'bellman-ford', the function should use the Bellman-Ford algorithm instead of Dijkstra's.",
+        "answer": "python;shortest_path_distances;[graph,node,str]"
+    },
+    {
+        "id": 35,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Design a C++ function named `calculateCompoundInterest` which computes the compound interest earned on an investment over a certain number of years. The function should receive two parameters: the annual interest rate (Float) and the total number of years (Integer). Ensure to validate input data, handling non-positive values for interest rate and years appropriately and providing informative error messages.",
+        "answer": "cpp;calculateCompoundInterest;[Float,Integer]"
+    },
+    {
+        "id": 36,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Python function named `adjustTemperatureReadings` that processes a matrix of temperature readings from various sensors and applies a calibration offset to each value. The function should accept two parameters: a matrix representing temperature readings and a float representing the calibration offset. The function should return a new matrix with the adjusted temperatures. Include appropriate error handling to manage cases where the matrix is empty or contains invalid (non-numeric) values.",
+        "answer": "python;adjustTemperatureReadings;[Matrix,Float]"
+    },
+    {
+        "id": 37,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Java function named `fetchCustomerPage` that retrieves a specified page of customer data from a database. The function should accept two parameters: page number and page size, both as integers. It should query the database and return customer data corresponding to the offset calculated by (page number - 1) * page size. Implement error handling to gracefully manage scenarios where the database is unreachable or the query returns no results.",
+        "answer": "Java;fetchCustomerPage;[Integer,Integer]"
+    },
+    {
+        "id": 38,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Rust function named `organizeDirectories` that manages file operations based on directory configurations. The function must take two parameters: a base directory path (String) and a list of subdirectory names (List). It should handle creation or verification of these subdirectories under the base directory, logging each operation, and must gracefully handle and log any errors encountered if directory paths are invalid or if there are permissions issues.",
+        "answer": "Rust;organizeDirectories;[String,List]"
+    },
+    {
+        "id": 39,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Python function named `calculateWaterRetention` that takes a matrix representing different elevations on a grid as the only parameter. This function should calculate and return the volume of water that can be retained after a rain, based on the input elevations between the ridges. It is essential to handle scenarios where the matrix might contain negative values or be empty, ensuring the function returns an appropriate result without causing errors.",
+        "answer": "Python;calculateWaterRetention;[Matrix]"
+    },
+    {
+        "id": 40,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Java function named `analyzeGraphTraversal` that takes an undirected graph and a boolean flag `useBFS`. If `useBFS` is true, the function should use the Breadth-First Search (BFS) technique to traverse the graph, otherwise, it should use Depth-First Search (DFS). After completing the traversal, the function should return a list containing the nodes in the order they were visited. Ensure the function handles any special cases such as empty or disconnected graphs, and provide appropriate error handling and logging of operations.",
+        "answer": "Java;analyzeGraphTraversal;[Graph,Boolean]"
+    },
+    {
+        "id": 41,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a C++ function named `processApiRequest` that handles HTTP API requests. This function should accept two parameters: a `JSONObject` named `requestData` representing the API request body and a `String` parameter named `url` which indicates the API endpoint URL. The function should decode the JSON request, process by generating a response based on the API logic, and then log the request and response details. Include error handling to manage cases where JSON decoding fails or the URL is invalid.",
+        "answer": "cpp;processApiRequest;[JSONObject,String]"
+    },
+    {
+        "id": 42,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Rust function named `expireSessions` that manages a set of user session tokens and expires them based on a given timeout period in seconds. The function takes two parameters: a mutable set of active session tokens, and an integer representing the token expiration time in seconds. This function should remove tokens from the set that have exceeded the specified expiration time and log each expired session token. Ensure the function handles an empty set gracefully by logging a message stating that no tokens are currently active.",
+        "answer": "Rust;expireSessions;[Set,Integer]"
+    },
+    {
+        "id": 43,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Python function named `configureEnvironment` that manages the configuration settings for an application environment. This function should accept a JSONObject containing key-value pairs for settings and a String specifying the environment mode (such as 'development', 'production', or 'test'). Based on the mode provided, the function should selectively apply configuration values from the JSONObject accordingly and print the final configuration state. Ensure error handling for cases where either the JSONObject is malformed or the mode is not recognized.",
+        "answer": "Python;configureEnvironment;[JSONObject,String]"
+    },
+    {
+        "id": 44,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a C++ function named `calculateMortgagePayment` that computes the monthly payment for a loan. The function should accept three parameters: the principal loan amount as a float, the annual interest rate as a float, and the loan term in years as an integer. The function should return the monthly payment calculated using the formula for fixed-rate mortgages. Include error handling to manage scenarios where the input values are zero or negative.",
+        "answer": "cpp;calculateMortgagePayment;[Float,Float,Integer]"
+    },
+    {
+        "id": 45,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Java function called `calculateKeywordFrequency` that accepts a Map of words (with frequencies) and a String (as a search keyword). This function should calculate and return the frequency of the keyword from the Map. If the keyword does not exist in the Map, the function should return 0. The function must gracefully handle cases where the Map is null or contains non-String keys, returning -1 in such cases.",
+        "answer": "Java;calculateKeywordFrequency;[Map,String]"
+    },
+    {
+        "id": 46,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Rust function named `createStudentGradeReport` that processes a list of student names along with a corresponding map linking student names to their grades. The function should accept two parameters: a list of student names in the order they were registered and a map connecting each student name to a grade. The function should return a structured report detailing each student's name paired with their respective grade. Ensure optimal error handling if any names are not found in the map or if any map values are not valid grades.",
+        "answer": "Rust;createStudentGradeReport;[List,Map]"
+    },
+    {
+        "id": 47,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a C++ function named `computeShortestPathFromNode` that calculates the shortest path in a directed graph starting from a given node. The graph is represented by an adjacency matrix, and the function should accept this matrix as well as an integer representing the starting node index. Implement error handling to gracefully manage scenarios where the starting node index is beyond the matrix scope or invalid.",
+        "answer": "cpp;computeShortestPathFromNode;[Matrix,Integer]"
+    },
+    {
+        "id": 48,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Rust function named `filter_blog_posts` that processes a list of blog post IDs and a boolean flag `include_drafts`. The function should filter the posts based on their publication status. If `include_drafts` is true, the function should keep both draft and published posts; otherwise, it should only include published posts. Ensure the function is robust against invalid ID types in the list and can log the final list of filtered post IDs.",
+        "answer": "Rust;filter_blog_posts;[List,Boolean]"
+    },
+    {
+        "id": 49,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Python function named `process_file_content` that takes two parameters: a file path as a string and a boolean flag indicating whether to open the file in binary mode. This function should read data from the specified file accordingly and apply a simple transformation to the content: converting all characters to uppercase if in text mode or doubling each byte value in binary mode. Ensure proper error handling for cases such as file not existing or access permissions issues.",
+        "answer": "Python;process_file_content;[String,Boolean]"
+    },
+    {
+        "id": 50,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Java function named `paginateResults` that accepts two integer parameters: `pageNumber` and `pageSize`. This function should simulate a pagination mechanism by printing a message indicating the current page and the number of items per page. The function should handle scenarios where either the `pageNumber` or `pageSize` is non-positive, and in such cases, it should print an error message rather than proceeding with the pagination simulation.",
+        "answer": "Java;paginateResults;[Integer,Integer]"
+    },
+    {
+        "id": 51,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Rust function named `aggregateUserData` that takes a single parameter: a Map correlating User IDs (strings) to a user data structure. This function should compile statistics such as average age, most frequent occupation, and the most common city from the user data. Provide detailed error handling for scenarios where the map is empty, or data fields are missing or malformed. The result should be logged verbatim to the console.",
+        "answer": "Rust;aggregateUserData;[Map]"
+    },
+    {
+        "id": 52,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a Python function named `batch_file_transfer` which takes two parameters: a list of filenames and a string representing a directory path. The function should attempt to copy all files listed in the filenames from their current location to the specified directory path. Incorporate error handling to manage scenarios where files might not exist or the directory path is inaccessible. Provide a detailed log message for each file processed indicating the success or failure of the transfer.",
+        "answer": "python;batch_file_transfer;[List,String]"
+    },
+    {
+        "id": 53,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Java function named `analyzeRoadNetwork` that takes two arguments: a 2D matrix of integers representing a connectivity grid for a city's roads (where 1 indicates a connected path and 0 indicates no path) and a tuple of integers representing the position of a specific road junction. The function should determine and print all direct connections from that junction based on the matrix input. Additionally, handle and log any errors that might occur if the tuple points to a position outside of the matrix boundaries.",
+        "answer": "Java;analyzeRoadNetwork;[Matrix,Tuple]"
+    },
+    {
+        "id": 54,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Create a C++ function named `updateTableSchema` which alters the schema of a specified database table. This function should accept two parameters: a string representing the name of the database table and a JSONObject detailing the new schema definitions for the table adjustments. The function should perform checks to ensure the table exists before attempting to modify its schema and should handle any potential errors during the schema update process.",
+        "answer": "cpp;updateTableSchema;[String,JSONObject]"
+    },
+    {
+        "id": 55,
+        "category": "input_output",
+        "constraint": "input_order",
+        "prompt": "Develop a Java function named `initializeContactSubscription` that accepts two parameters: an email address as a String and a boolean flag `subscriptionStatus`. This function should check if the email provided is valid and if so, update the user's subscription status based on the boolean flag. The function should also print a message indicating whether the subscription was updated successfully or if there was an error (such as an invalid email format). Gracefully handle any improper inputs or exceptions, and ensure proper log entries are made for each stage of the operation.",
+        "answer": "Java;initializeContactSubscription;[String,Boolean]"
+    }
+]

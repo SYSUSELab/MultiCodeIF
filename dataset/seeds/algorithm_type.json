@@ -1,0 +1,307 @@
+[
+    {
+        "id": 1,
+        "Name": "Array shuffle",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/shuffle.h"
+    },
+    {
+        "id": 2,
+        "Name": "Prime test(trial division)",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/prime.h"
+    },
+    {
+        "id": 3,
+        "Name": "Prime test(Miller-Rabin's method)",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/prime.h"
+    },
+    {
+        "id": 4,
+        "Name": "2D Array",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/2darray.h"
+    },
+    {
+        "id": 5,
+        "Name": "Arbitrary Integer",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/integer.h"
+    },
+    {
+        "id": 6,
+        "Name": "Linear congruential generator",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/random.h"
+    },
+    {
+        "id": 7,
+        "Name": "Maximum subarray problem",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/max_subarray.h"
+    },
+    {
+        "id": 8,
+        "Name": "Bit-Set",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/bitset.h"
+    },
+    {
+        "id": 9,
+        "Name": "Queue",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/queue.h"
+    },
+    {
+        "id": 10,
+        "Name": "Stack",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/stack.h"
+    },
+    {
+        "id": 11,
+        "Name": "Binary Heap",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/heap.h"
+    },
+    {
+        "id": 12,
+        "Name": "Fibonacci Heap",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/fib-heap.h"
+    },
+    {
+        "id": 13,
+        "Name": "Priority Queue (list based)",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/priority_queue.h"
+    },
+    {
+        "id": 14,
+        "Name": "Bubble sort",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/bubble_sort.h"
+    },
+    {
+        "id": 15,
+        "Name": "Selection sort",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/selection_sort.h"
+    },
+    {
+        "id": 16,
+        "Name": "Insertion sort",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/insertion_sort.h"
+    },
+    {
+        "id": 17,
+        "Name": "Shell sort",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/shell_sort.h"
+    },
+    {
+        "id": 18,
+        "Name": "Radix sort",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/radix_sort.h"
+    },
+    {
+        "id": 19,
+        "Name": "Quicksort",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/quick_sort.h"
+    },
+    {
+        "id": 20,
+        "Name": "Merge sort",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/merge_sort.h"
+    },
+    {
+        "id": 21,
+        "Name": "Double linked list",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/double_linked_list.h"
+    },
+    {
+        "id": 22,
+        "Name": "Skip list",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/skiplist.h"
+    },
+    {
+        "id": 23,
+        "Name": "Largest common sequence",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/lcs.h"
+    },
+    {
+        "id": 24,
+        "Name": "Binary search tree",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/binary_search_tree.h"
+    },
+    {
+        "id": 25,
+        "Name": "AVL tree",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/avl.h"
+    },
+    {
+        "id": 26,
+        "Name": "Dynamic order statistics",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/dos_tree.h"
+    },
+    {
+        "id": 27,
+        "Name": "Red-black tree",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/rbtree.h"
+    },
+    {
+        "id": 28,
+        "Name": "Interval tree",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/interval_tree.h"
+    },
+    {
+        "id": 29,
+        "Name": "Prefix Tree(Trie)",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/trie.h"
+    },
+    {
+        "id": 30,
+        "Name": "Suffix Tree",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/suffix_tree.h"
+    },
+    {
+        "id": 31,
+        "Name": "B-Tree",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/btree.h"
+    },
+    {
+        "id": 32,
+        "Name": "Suffix Array",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/suffix_array.h"
+    },
+    {
+        "id": 33,
+        "Name": "Hash by multiplication",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/hash_multi.h"
+    },
+    {
+        "id": 34,
+        "Name": "Hash table",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/hash_table.h"
+    },
+    {
+        "id": 35,
+        "Name": "Universal hash function",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/universal_hash.h"
+    },
+    {
+        "id": 36,
+        "Name": "Perfect hash",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/perfect_hash.h"
+    },
+    {
+        "id": 37,
+        "Name": "Java's string hash",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/hash_string.h"
+    },
+    {
+        "id": 38,
+        "Name": "FNV-1a string hash",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/hash_string.h"
+    },
+    {
+        "id": 39,
+        "Name": "SimHash",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/simhash.h"
+    },
+    {
+        "id": 40,
+        "Name": "Bloom Filter",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/bloom_filter.h"
+    },
+    {
+        "id": 41,
+        "Name": "SHA-1 Message Digest Algorithm",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/sha1.h"
+    },
+    {
+        "id": 42,
+        "Name": "MD5",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/md5.h"
+    },
+    {
+        "id": 43,
+        "Name": "Base64",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/base64.h"
+    },
+    {
+        "id": 44,
+        "Name": "Strongly Connected Components(SCC)",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/scc.h"
+    },
+    {
+        "id": 45,
+        "Name": "Prim's minimum spanning tree",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/prim_mst.h"
+    },
+    {
+        "id": 46,
+        "Name": "Kruskal MST",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/kruskal_mst.h"
+    },
+    {
+        "id": 47,
+        "Name": "Breadth First Search",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/graph_search.h"
+    },
+    {
+        "id": 48,
+        "Name": "Depth First Search",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/graph_search.h"
+    },
+    {
+        "id": 49,
+        "Name": "Dijkstra's algorithm",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/dijkstra.h"
+    },
+    {
+        "id": 50,
+        "Name": "Bellman-Ford algorithm",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/bellman_ford.h"
+    },
+    {
+        "id": 51,
+        "Name": "Edmonds-Karp Maximal Flow",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/edmonds_karp.h"
+    },
+    {
+        "id": 52,
+        "Name": "Push–Relabel algorithm",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/relabel_to_front.h"
+    },
+    {
+        "id": 53,
+        "Name": "Huffman Coding",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/huffman.h"
+    },
+    {
+        "id": 54,
+        "Name": "Word segementation",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/word_seg.h"
+    },
+    {
+        "id": 55,
+        "Name": "A* algorithm",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/astar.h"
+    },
+    {
+        "id": 56,
+        "Name": "K-Means",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/k-means.h"
+    },
+    {
+        "id": 57,
+        "Name": "Knuth–Morris–Pratt algorithm",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/kmp.h"
+    },
+    {
+        "id": 58,
+        "Name": "Disjoint-Set",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/disjoint-set.h"
+    },
+    {
+        "id": 59,
+        "Name": "8-Queen Problem",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/8queen.h"
+    },
+    {
+        "id": 60,
+        "Name": "Palindrome",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/palindrome.h"
+    },
+    {
+        "id": 61,
+        "Name": "LCA using Binary Lifting",
+        "File": "https://github.com/xtaci/algorithms/blob/master/include/LCA.h"
+    }
+]

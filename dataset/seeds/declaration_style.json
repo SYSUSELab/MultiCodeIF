@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "type": "explicitTypeAnnotation",
+        "description": "All variables, function parameters, and return values must have explicit type annotations.",
+        "example": "int add(int a, int b) {\n    int result = a + b;\n    return result;\n}"
+    },
+    {
+        "id": 2,
+        "type": "topLevelVariableDeclaration",
+        "description": "All variables must be declared at the top of a function or module.",
+        "example": "void process() {\n    int total = 0;\n    int count = 0;\n    // ... logic using total and count\n}"
+    },
+    {
+        "id": 3,
+        "type": "noInlineDeclaration",
+        "description": "Inline variable declarations within expressions are not allowed.",
+        "example": "// Not allowed:\n// if (int x = getValue()) {...}\n\n// Allowed:\nint x = getValue();\nif (x) {\n    // ...\n}"
+    },
+    {
+        "id": 4,
+        "type": "constantAtTop",
+        "description": "All constants must be declared collectively at the top of the file.",
+        "example": "const int MAX_USERS = 100;\nconst string APP_NAME = \"MyApp\";\n\nint main() {\n    // Use constants here\n}"
+    },
+    {
+        "id": 5,
+        "type": "orderedClassMembers",
+        "description": "Class members must be ordered as public → protected → private.",
+        "example": "class User {\npublic:\n    string getName();\nprotected:\n    void loadData();\nprivate:\n    int id;\n};"
+    },
+    {
+        "id": 6,
+        "type": "disallowTypeInference",
+        "description": "Type inference keywords like 'var' or 'auto' are disallowed.",
+        "example": "// Not allowed:\n// var count = 10;\n\n// Allowed:\nint count = 10;"
+    },
+    {
+        "id": 7,
+        "type": "descriptiveNames",
+        "description": "The code convention of using descriptive and explicit naming for variables and functions",
+        "example": "self.access_order.insert(0, key)\n    self.access_order.remove(key)"
+    }
+]

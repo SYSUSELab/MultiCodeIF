@@ -1,0 +1,497 @@
+[
+  {
+    "id": 1,
+    "response": [
+      [
+        "Construct a Rust function named `calculate_shipping_cost` that takes two parameters: an integer `distance` representing the distance in kilometers, and a floating-point `weight` representing the weight of the package in kilograms. The function should calculate the shipping cost based on a rate of $1.50 per kilometer plus $0.50 per kilogram of weight. The total cost should be formatted as a floating-point number rounded to two decimal places. Implement this function with K&R brace style.",
+        "fn calculate_shipping_cost(distance: i32, weight: f64) -> f64 {\n    let total_cost = (1.50 * distance as f64) + (0.50 * weight);\n    (total_cost * 100.0).round() / 100.0\n}"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: brace_block_formatting: python;1TBS.\n## previous code\ndef parse_and_aggregate(items):\n    result = {}\n    for item in items:\n        category = item['category']\n        quantity = item['quantity']\n        if category in result {\n            result[category] += quantity\n        } else {\n            result[category] = quantity\n        }\n    return result\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nDevelop a Python function named `parse_and_aggregate` that accepts a list of dictionaries as an input. Each dictionary has keys 'name', 'quantity', and 'category'. The function should sum the quantities of items that belong to the same category and return the result as a dictionary where keys are the categories and values are the summed quantities. Ensure the function definition and all conditionals adhere to the 1TBS (One True Brace Style) formatting rules.",
+        "```python\ndef parse_and_aggregate(items):\n    result = {}\n    for item in items:\n        category = item['category']\n        quantity = item['quantity']\n        if category in result:\n            result[category] += quantity\n        else:\n            result[category] = quantity\n    return result\n```"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "response": [
+      [
+        "Develop a Java function named `validateUserAccess` which takes two parameters: a `User` object and a `String` representing an access level. The function should check if the provided `User` object has a privilege level equal to or higher than the specified access level. If the condition is satisfied, return `true`, otherwise return `false`. Ensure the code uses the Allman style for brace placement.",
+        "public class User\n{\n    private String privilegeLevel;\n\n    public User(String privilegeLevel)\n    {\n        this.privilegeLevel = privilegeLevel;\n    }\n\n    public String getPrivilegeLevel()\n    {\n        return privilegeLevel;\n    }\n}\n\npublic class AccessValidator\n{\n    public boolean validateUserAccess(User user, String accessLevel)\n    {\n        return user.getPrivilegeLevel().compareTo(accessLevel) >= 0;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "response": [
+      [
+        "Develop a JavaScript function named computeDiscount. This function should accept two parameters: an array of numbers representing item prices and a flat discount value. The function should return a new array containing the discounted prices for each item, where the discount is subtracted from the original price. Use the Allman brace style for all functions, loops, and condition blocks to define the braces and block formatting rules.",
+        "function computeDiscount(prices, discount) \n{\n    let discountedPrices = [];\n    \n    for (let i = 0; i < prices.length; i++) \n    {\n        discountedPrices.push(prices[i] - discount);\n    }\n    \n    return discountedPrices;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "response": [
+      [
+        "Develop a C function named 'transformAndConcat' that accepts two parameters: an array of pointers to char arrays 'stringList' and an integer 'threshold'. The function should process each string and include in the result only those whose length is greater than the 'threshold'. Return the result as a single string, concatenated in the order they appear in the array, separated by a newline character. Ensure that function definitions, loops, and conditionals follow the K&R brace style.",
+        "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nchar* transformAndConcat(char **stringList, int count, int threshold) {\n    char *result = NULL;\n    size_t totalLength = 0;\n    for (int i = 0; i < count; i++) {\n        if (strlen(stringList[i]) > threshold) {\n            totalLength += strlen(stringList[i]) + 1;\n        }\n    }\n    \n    result = (char*)malloc(totalLength + 1);\n    if (result == NULL) {\n        return NULL;\n    }\n    \n    result[0] = '\\0';\n    for (int i = 0; i < count; i++) {\n        if (strlen(stringList[i]) > threshold) {\n            strcat(result, stringList[i]);\n            strcat(result, \"\\n\");\n        }\n    }\n    return result;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "response": [
+      [
+        "Develop a C++ function named `sortAndPack` that takes a vector of integers as input and sorts it in descending order. Then, the function should remove any duplicate numbers while keeping the vector sorted. The definition and control flow statements must conform to the \"1TBS\" (One True Brace Style) formatting where the `else` or `else if` must appear on the same line as the previous closing brace. Ensure the function maximizes memory efficiency by using appropriate container or techniques.",
+        "#include <vector>\n#include <algorithm>\n\nstd::vector<int> sortAndPack(const std::vector<int>& nums) {\n    std::vector<int> sortedNums(nums);\n    std::sort(sortedNums.begin(), sortedNums.end(), std::greater<int>());\n    sortedNums.erase(std::unique(sortedNums.begin(), sortedNums.end()), sortedNums.end());\n    return sortedNums;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "response": [
+      [
+        "Develop a C function named \"extractContact\" that accepts an array of employee records and the length of the array as parameters. Each employee record is a struct containing the fields 'name', 'email', and 'department'. The function should filter these records to include only those belonging to the 'Finance' department and return a new dynamically allocated array of structs containing only the 'name' and 'email' for these selected records. Use the Allman brace style for all conditionals, loops, and function definitions to specify the block formatting standards.",
+        "#include <stdlib.h>\n#include <string.h>\n\ntypedef struct\n{\n    char *name;\n    char *email;\n    char *department;\n} Employee;\n\ntypedef struct\n{\n    char *name;\n    char *email;\n} Contact;\n\nContact *extractContact(Employee *employees, int length, int *resultLength)\n{\n    Contact *filteredContacts = NULL;\n    int count = 0;\n\n    for (int i = 0; i < length; i++)\n    {\n        if (strcmp(employees[i].department, \"Finance\") == 0)\n        {\n            count++;\n            filteredContacts = realloc(filteredContacts, count * sizeof(Contact));\n\n            if (filteredContacts == NULL)\n            {\n                *resultLength = 0;\n                return NULL;\n            }\n\n            filteredContacts[count - 1].name = employees[i].name;\n            filteredContacts[count - 1].email = employees[i].email;\n        }\n    }\n\n    *resultLength = count;\n    return filteredContacts;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "response": [
+      [
+        "Create a Rust function `validate_json_structure` that takes a JSON string as input and an expected structure defined as a hash map (`HashMap<&str, &str>`). The function should deserialize the JSON input and validate if it conforms to the specified structure. Return a boolean indicating whether the JSON matches the expected structure. Ensure all blocks adhere to the 1TBS brace style for conditionals and loops.",
+        "use serde_json::Value;\nuse std::collections::HashMap;\n\nfn validate_json_structure(json_str: &str, expected_structure: HashMap<&str, &str>) -> bool {\n    let parsed: Value = match serde_json::from_str(json_str) {\n        Ok(value) => value,\n        Err(_) => return false,\n    };\n\n    if let Value::Object(map) = parsed {\n        for (key, expected_type) in &expected_structure {\n            if let Some(value) = map.get(*key) {\n                let value_type = match value {\n                    Value::String(_) => \"string\",\n                    Value::Number(_) => \"number\",\n                    Value::Bool(_) => \"bool\",\n                    Value::Array(_) => \"array\",\n                    Value::Object(_) => \"object\",\n                    Value::Null => \"null\",\n                };\n\n                if value_type != *expected_type {\n                    return false;\n                }\n            } else {\n                return false;\n            }\n        }\n        true\n    } else {\n        false\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "response": [
+      [
+        "Create a Java method named `processWorkTasks` that accepts a List of `Task` objects and an Enum `Priority`. The method needs to return a `List<Task>` containing all tasks that have a priority equal to the provided Enum priority, sorted by their due date in ascending order. All implementation and classes should follow the K&R brace style. The `Task` object has fields `priority`, `dueDate`, and `description`.",
+        "import java.util.*;\n\npublic class Task {\n    private Priority priority;\n    private Date dueDate;\n    private String description;\n\n    public Task(Priority priority, Date dueDate, String description) {\n        this.priority = priority;\n        this.dueDate = dueDate;\n        this.description = description;\n    }\n\n    public Priority getPriority() {\n        return priority;\n    }\n\n    public Date getDueDate() {\n        return dueDate;\n    }\n\n    public String getDescription() {\n        return description;\n    }\n}\n\npublic enum Priority {\n    LOW, MEDIUM, HIGH\n}\n\npublic class TaskProcessor {\n    public List<Task> processWorkTasks(List<Task> tasks, Priority priority) {\n        List<Task> filteredTasks = new ArrayList<>();\n        for (Task task : tasks) {\n            if (task.getPriority() == priority) {\n                filteredTasks.add(task);\n            }\n        }\n        filteredTasks.sort(Comparator.comparing(Task::getDueDate));\n        return filteredTasks;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: brace_block_formatting: javascript;1TBS.\n## previous code\nfunction parseQueryParams(url) {\n    const params = {};\n    const queryString = url.split('?')[1];\n    if (!queryString) {\n        return params;\n    }\n    const pairs = queryString.split('&');\n    for (let pair of pairs) {\n        const [key, value] = pair.split('=');\n        params[key] = decodeURIComponent(value || '');\n    }\n    return params;\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nDevelop a JavaScript function named parseQueryParams that takes a single string argument representing a URL containing query parameters. The function should extract and return an object where each key-value pair corresponds to the parameters in the query string. Also, format the function's code blocks and curly braces according to the 1TBS style.",
+        "```javascript\nfunction parseQueryParams(url) {\n    const params = {};\n    const queryString = url.split('?')[1];\n    if (!queryString) {\n        return params;\n    }\n    const pairs = queryString.split('&');\n    for (let pair of pairs) {\n        const [key, value] = pair.split('=');\n        params[key] = decodeURIComponent(value || '');\n    }\n    return params;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "response": [
+      [
+        "Create a Python function `extract_and_mask_data` that takes a dictionary `data` and a string `key_field`. The function should search for the specified `key_field` in the dictionary, and if found, replace the last three characters of the corresponding string value with asterisks ('***'). The function should then return the updated dictionary. Ensure that the function is formatted using the Allman brace style.",
+        "def extract_and_mask_data(data, key_field):\n    if key_field in data:\n        value = data[key_field]\n        if isinstance(value, str):\n            data[key_field] = value[:-3] + '***'\n    return data"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "response": [
+      [
+        "Develop a C++ function named `computeStatistics` that takes a vector of integers representing the grades of students and calculates the minimum, maximum, and average grades. The function should return a tuple containing these values in the given order. Ensure that the implementation adheres to the K&R brace style as specified in the constraints pool.",
+        "#include <vector>\n#include <tuple>\n#include <numeric>\n#include <algorithm>\n\nstd::tuple<int, int, double> computeStatistics(const std::vector<int>& grades) {\n    int minGrade = *std::min_element(grades.begin(), grades.end());\n    int maxGrade = *std::max_element(grades.begin(), grades.end());\n    double averageGrade = std::accumulate(grades.begin(), grades.end(), 0.0) / grades.size();\n    return std::make_tuple(minGrade, maxGrade, averageGrade);\n}"
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "response": [
+      [
+        "Develop a Python function called `extract_and_transform` that accepts a list of dictionary objects `data` and a key name `key_name`. The function should find dictionaries within `data` where `key_name` exists and is not null, and return a new list containing the values associated with `key_name` from each dictionary but transformed into lowercase strings. Ensure the function complies with the Allman style of brace placement.",
+        "def extract_and_transform(data, key_name):\n    result = []\n    for item in data:\n        if key_name in item and item[key_name] is not None:\n            result.append(str(item[key_name]).lower())\n    return result"
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "response": [
+      [
+        "Create a Java method named `manageLogging` where this method accepts an object implementing a `Loggable` interface with the methods `isEnabled()` and `logMessage(String msg)`. The method should check if logging is enabled; and if so, log the message \"Action performed successfully\". Ensure the method adheres to the 1TBS (one true brace style).",
+        "public void manageLogging(Loggable loggable) {\n    if (loggable.isEnabled()) {\n        loggable.logMessage(\"Action performed successfully\");\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "response": [
+      [
+        "Design a JavaScript function called 'computeDiscountedPrices' that accepts two parameters: an array of numbers representing prices and a discount percentage. The function should compute the final prices after applying the specified discount to each original price and return the resulting array of discounted prices. Ensure all function and conditional blocks use the K&R brace style for consistency.",
+        "function computeDiscountedPrices(prices, discountPercentage) {\n    return prices.map(function(price) {\n        return price - (price * (discountPercentage / 100));\n    });\n}"
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: brace_block_formatting: Cpp;Allman.\n## previous code\n#include <vector>\n#include <string>\n#include <map>\n#include <algorithm>\n\nstd::vector<std::string> processStocks(const std::vector<std::string>& stockSymbols, const std::string& sector)\n{\n    std::map<std::string, std::string> stockSymbolToSector = \n    {\n        {\"AAPL\", \"Technology\"},\n        {\"MSFT\", \"Technology\"},\n        {\"JPM\", \"Finance\"},\n        {\"GOOGL\", \"Technology\"},\n        {\"TSLA\", \"Automotive\"}\n    };\n\n    std::vector<std::string> filteredSymbols;\n\n    for (const std::string& symbol : stockSymbols)\n    {\n        if (stockSymbolToSector[symbol] == sector)\n        {\n            filteredSymbols.push_back(symbol);\n        }\n    }\n\n    std::sort(filteredSymbols.begin(), filteredSymbols.end());\n\n    return filteredSymbols;\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nDevelop a C++ function named `processStocks` that accepts two parameters: a vector of strings representing stock symbols and a string sector. The function should filter the vector to include only stock symbols that belong to the specified sector by referencing a predetermined map of `stockSymbolToSector`. Then, it must sort the filtered symbols alphabetically and return the sorted vector. Ensure to use the Allman style for all loops, conditionals, and function definitions to enforce proper code block formatting rules.",
+        "```cpp\n#include <vector>\n#include <string>\n#include <map>\n#include <algorithm>\n\nstd::vector<std::string> processStocks(const std::vector<std::string>& stockSymbols, const std::string& sector)\n{\n    std::map<std::string, std::string> stockSymbolToSector = \n    {\n        {\"AAPL\", \"Technology\"},\n        {\"MSFT\", \"Technology\"},\n        {\"JPM\", \"Finance\"},\n        {\"GOOGL\", \"Technology\"},\n        {\"TSLA\", \"Automotive\"}\n    };\n\n    std::vector<std::string> filteredSymbols;\n\n    for (const std::string& symbol : stockSymbols)\n    {\n        if (stockSymbolToSector[symbol] == sector)\n        {\n            filteredSymbols.push_back(symbol);\n        }\n    }\n\n    std::sort(filteredSymbols.begin(), filteredSymbols.end());\n\n    return filteredSymbols;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "response": [
+      [
+        "Develop a Rust function named `merge_intervals` that accepts a vector of tuples representing intervals, where each tuple consists of two integers, the start and end of the interval. The function should merge all overlapping intervals and return a new vector containing only the non-overlapping merged intervals. Each interval returned should be formatted with the minimum start and maximum end of any overlapping intervals. Additionally, the function should be implemented following the 1TBS brace block formatting style. Provide thorough documentation for the function.",
+        "/// Merges a vector of intervals to eliminate overlapping intervals.\n/// \n/// # Arguments\n/// \n/// * `intervals` - A vector of tuples where each tuple contains two integers representing the start and end of an interval.\n/// \n/// # Returns\n/// \n/// A vector of tuples containing merged intervals with the minimum start\n/// and maximum end of overlapping intervals.\n/// \n/// # Example\n/// \n///"
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "response": [
+      [
+        "Create a C function 'removeOddNumbers' that takes an array of integers and its size as parameters. The function should iterate through the array, remove all odd numbers, and return a new array containing only the even numbers. All loops and conditional blocks must adhere to the K&R brace style. The implementation should effectively demonstrate memory management in C while avoiding memory leaks.",
+        "#include <stdlib.h>\n\nint* removeOddNumbers(int* arr, int size, int* newSize) {\n    int count = 0, i, j;\n    for (i = 0; i < size; i++) {\n        if (arr[i] % 2 == 0) {\n            count++;\n        }\n    }\n    \n    int* newArr = (int*)malloc(count * sizeof(int));\n    if (newArr == NULL) {\n        *newSize = 0;\n        return NULL;\n    }\n    \n    for (i = 0, j = 0; i < size; i++) {\n        if (arr[i] % 2 == 0) {\n            newArr[j++] = arr[i];\n        }\n    }\n    \n    *newSize = count;\n    return newArr;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "response": [
+      [
+        "Design a C function 'calculate_sum' which accepts an integer array and its size as parameters. This function should compute the sum of all elements in the array that are even numbers and return the result. Ensure to use the K&R brace style in your function definition and any loop or conditional blocks.",
+        "int calculate_sum(int arr[], int size) {\n    int sum = 0;\n    for (int i = 0; i < size; i++) {\n        if (arr[i] % 2 == 0) {\n            sum += arr[i];\n        }\n    }\n    return sum;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "response": [
+      [
+        "Create a JavaScript function named 'compactDiscs' that takes two parameters: an array of objects 'albums' where each object represents an album with properties 'title', 'artist', and 'year', and a number 'releaseYear'. The function should filter the array to include only albums released on or after 'releaseYear' and return a new array sorted alphabetically by the album's title. Ensure that the function uses Allman style for brace positioning in conditional blocks and loops.",
+        "function compactDiscs(albums, releaseYear)\n{\n    return albums\n        .filter(function(album)\n        {\n            return album.year >= releaseYear;\n        })\n        .sort(function(a, b)\n        {\n            if (a.title < b.title)\n            {\n                return -1;\n            }\n            if (a.title > b.title)\n            {\n                return 1;\n            }\n            return 0;\n        });\n}"
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "response": [
+      [
+        "Develop a Java method addCustomerDiscount that takes two parameters: a HashMap called customerInfo containing customer ID as a key and a double representing their current discount rate, and a double called flatRate to be added to each customer's discount. The method should update the discount for each customer in the passed HashMap by adding the flatRate to the current discount rate, ensuring the sum doesn't exceed 100%. Apply the 1TBS brace style to all conditionals and loops.",
+        "import java.util.HashMap;\n\npublic class DiscountManager {\n    public void addCustomerDiscount(HashMap<Integer, Double> customerInfo, double flatRate) {\n        for (Integer customerID : customerInfo.keySet()) {\n            double newDiscount = customerInfo.get(customerID) + flatRate;\n            if (newDiscount > 100.0) {\n                customerInfo.put(customerID, 100.0);\n            } else {\n                customerInfo.put(customerID, newDiscount);\n            }\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "response": [
+      [
+        "Develop a C++ function named sortAndDistinct that accepts a vector of integers as its parameter. This function should first sort the array in ascending order and then remove any duplicate integers. Return the processed vector. Ensure your function adheres to the Allman brace style for all blocks, loops, and conditionals.",
+        "#include <vector>\n#include <algorithm>\n\nstd::vector<int> sortAndDistinct(std::vector<int> nums)\n{\n    std::sort(nums.begin(), nums.end());\n\n    auto it = std::unique(nums.begin(), nums.end());\n    nums.erase(it, nums.end());\n\n    return nums;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: brace_block_formatting: rust;1TBS.\n## previous code\nfn filter_by_suffix(words: Vec<String>, suffix: String) -> Vec<String> {\n    words.into_iter().filter(|word| {\n        word.ends_with(&suffix)\n    }).collect::<Vec<String>>().into_iter().rev().collect()\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nDevelop a Rust function named `filter_by_suffix` that takes a `Vec<String>` and a `String` suffix as parameters. This function should filter out strings that do not end with the specified suffix and return a new vector containing the original elements in reverse order. The implementation should strictly adhere to the 1TBS brace block formatting.",
+        "```rust\nfn filter_by_suffix(words: Vec<String>, suffix: String) -> Vec<String> {\n    words.into_iter().filter(|word| {\n        word.ends_with(&suffix)\n    }).collect::<Vec<String>>().into_iter().rev().collect()\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: brace_block_formatting: python;K&R.\n## previous code\ndef merge_and_format(dict1, dict2):\n    merged_dict = {}\n    for key in set(dict1) | set(dict2):\n        if key in dict1 and key in dict2: \n            merged_dict[key] = sorted([dict1[key], dict2[key]], key=lambda s: s.lower())\n        else {\n            merged_dict[key] = dict1.get(key, dict2.get(key))\n        }\n    return dict(sorted(merged_dict.items()))\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Python function called merge_and_format that accepts two dictionaries, dict1 and dict2. The function should merge both dictionaries such that if they contain the same key, the corresponding values will be concatenated in a sorted order (non-case sensitive). Additionally, please ensure all dictionary keys are returned in lexicographical order, and follow K&R brace style strictly for all conditional statements.",
+        "```python\ndef merge_and_format(dict1, dict2):\n    merged_dict = {}\n    for key in set(dict1) | set(dict2):\n        if key in dict1 and key in dict2: \n            merged_dict[key] = sorted([dict1[key], dict2[key]], key=lambda s: s.lower())\n        else:\n            merged_dict[key] = dict1.get(key, dict2.get(key))\n    return dict(sorted(merged_dict.items()))\n```"
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "response": [
+      [
+        "Develop a Java method named 'calculateDistance' within a class named 'GeometryCalculator'. This method should take two parameters: a Point object 'start' and a Point object 'end'. The method should return the Euclidean distance between these two points. Ensure that the formatting of braces follows the One True Brace Style (1TBS). Additionally, ensure that 'calculateDistance' is part of an appropriate interface named 'DistanceCalculator' which the 'GeometryCalculator' class implements.",
+        "public interface DistanceCalculator {\n    double calculateDistance(Point start, Point end);\n}\n\npublic class GeometryCalculator implements DistanceCalculator {\n    @Override\n    public double calculateDistance(Point start, Point end) {\n        double deltaX = end.getX() - start.getX();\n        double deltaY = end.getY() - start.getY();\n        return Math.sqrt(deltaX * deltaX + deltaY * deltaY);\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "response": [
+      [
+        "Develop a JavaScript function called computeStats that accepts an array of numerical data. The function should calculate and return an object containing the minimum, maximum, and average values of the array. All controls in the function, such as loops or conditionals, must use the K&R brace style to enforce consistency in code formatting.",
+        "function computeStats(data) {\n    if (data.length === 0) return { min: null, max: null, avg: null };\n    let min = Infinity, max = -Infinity, sum = 0;\n\n    for (let i = 0; i < data.length; i++) {\n        if (data[i] < min) { min = data[i]; }\n        if (data[i] > max) { max = data[i]; }\n        sum += data[i];\n    }\n\n    return { min: min, max: max, avg: sum / data.length };\n}"
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "response": [
+      [
+        "Develop a Rust function called `calculate_statistics` that takes a vector of floating-point numbers representing data points as input. The function should calculate and return a struct containing the count of elements, the maximum value, and the average of the values in the vector. Ensure all blocks of code adhere to the Allman brace formatting style for clarity.",
+        "struct Statistics\n{\n    count: usize,\n    max_value: f64,\n    average: f64,\n}\n\nfn calculate_statistics(data: Vec<f64>) -> Statistics\n{\n    let count = data.len();\n    let max_value = data.iter().cloned().fold(f64::MIN, f64::max);\n    let average = if count > 0\n    {\n        data.iter().sum::<f64>() / count as f64\n    }\n    else\n    {\n        0.0\n    };\n\n    Statistics\n    {\n        count,\n        max_value,\n        average,\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "response": [
+      [
+        "Create a C function 'processRequests' that takes an integer array 'requests' and its size 'n' as parameters. The function should identify all even numbers in the array, double their value, and create a new array with these doubled values. The function should return the pointer to the new dynamically allocated array. Ensure to follow the 1TBS (One True Brace Style) formatting for all conditionals and loops within your code.",
+        "#include <stdlib.h>\n\nint* processRequests(int* requests, int n) {\n    int count = 0;\n    for(int i = 0; i < n; i++) {\n        if(requests[i] % 2 == 0) {\n            count++;\n        }\n    }\n    \n    int* doubledValues = (int*)malloc(count * sizeof(int));\n    int index = 0;\n    for(int i = 0; i < n; i++) {\n        if(requests[i] % 2 == 0) {\n            doubledValues[index++] = requests[i] * 2;\n        }\n    }\n    \n    return doubledValues;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: brace_block_formatting: python;Allman.\n## previous code\ndef extract_relevant_data(records)\n{\n    return [\n        {'username': record['username'], 'email': record['email']}\n        for record in records if record['status'] == 'active'\n    ]\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Python function named `extract_relevant_data` that receives a list of dictionaries called `records`, where each dictionary represents a user record containing keys `username`, `email`, and `status`. The function should filter these records to include only those with a status value of 'active'. The result should be a new list where each dictionary is reduced to contain only the `username` and `email` keys. Implement the function using Allman brace style to ensure the visual clarity of blocks.",
+        "```python\ndef extract_relevant_data(records)\n{\n    return [\n        {'username': record['username'], 'email': record['email']}\n        for record in records if record['status'] == 'active'\n    ]\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "response": [
+      [
+        "Develop a C++ function named `calculateDiscount` that takes two parameters: a double `totalAmount` representing the total cost of items, and a double `discountPercentage` representing the discount rate. The function should compute the discounted price from the `totalAmount` by applying the `discountPercentage` and return the discounted price. The function must use the K&R brace style for all function definitions, loops, and conditional statements.",
+        "double calculateDiscount(double totalAmount, double discountPercentage) {\n    double discount = totalAmount * (discountPercentage / 100);\n    double discountedPrice = totalAmount - discount;\n    return discountedPrice;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "response": [
+      [
+        "Design a Rust function named `apply_discount` that takes two parameters: a mutable reference to a hash map (`item_prices: &mut HashMap<String, f64>`) containing item names and their corresponding prices, and a discount percentage (`discount_percentage: f64`). The function should apply the given discount to each item’s price and update the hash map in place. Implement the function using the Allman brace style for all function definitions, loops, and conditionals.",
+        "use std::collections::HashMap;\n\nfn apply_discount(item_prices: &mut HashMap<String, f64>, discount_percentage: f64)\n{\n    for price in item_prices.values_mut()\n    {\n        *price *= 1.0 - (discount_percentage / 100.0);\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "response": [
+      [
+        "Develop a C++ function called 'sortAndFilterVector' which accepts a vector of integers and an integer threshold. This function should remove elements that are below the threshold, sort the remaining elements in ascending order, and return the sorted vector. Ensure that your implementation follows the K&R brace style for defining all function bodies, loops, and conditionals.",
+        "#include <vector>\n#include <algorithm>\n\nstd::vector<int> sortAndFilterVector(std::vector<int> vec, int threshold) {\n    vec.erase(std::remove_if(vec.begin(), vec.end(), [threshold](int val) {\n        return val < threshold;\n    }), vec.end());\n    std::sort(vec.begin(), vec.end());\n    return vec;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 33,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: brace_block_formatting: javascript;1TBS.\n## previous code\nfunction exportFilteredData(data, key1, value1, key2, value2) {\n    const filteredData = data.filter(obj => {\n        if (obj[key1] === value1 && obj[key2] === value2) {\n            return false;\n        } else {\n            return true;\n        }\n    });\n    return JSON.stringify(filteredData);\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nDevelop a function named exportFilteredData in JavaScript, which accepts an array of objects data and two filtering criteria keys key1 and key2 with their respective values value1 and value2. This function should filter out objects from the array that exactly match both the provided key-value pairs. Return the array of filtered objects in JSON format. Additionally, format your code blocks using the 1TBS (One True Brace Style), where braces open in the end of the statement line and related ‘else’ or ‘else if’ must be on the same line as the closing brace for the 'if' block.",
+        "```javascript\nfunction exportFilteredData(data, key1, value1, key2, value2) {\n    const filteredData = data.filter(obj => {\n        if (obj[key1] === value1 && obj[key2] === value2) {\n            return false;\n        } else {\n            return true;\n        }\n    });\n    return JSON.stringify(filteredData);\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "response": [
+      [
+        "Create a C function named `calculateDiscounts` that takes two parameters: an array of float prices and an array of int percentages representing discount rates. The function should calculate the final prices after applying the corresponding discounts. The length of both arrays will be the same. The function should return a dynamically allocated array of float containing the discounted prices. Ensure that the function and any loops or conditionals in it follow the K&R brace style, as common in C programming.",
+        "#include <stdlib.h>\n\nfloat* calculateDiscounts(float prices[], int percentages[], int length) {\n    float *discountedPrices = malloc(length * sizeof(float));\n    if (discountedPrices == NULL) {\n        return NULL;\n    }\n    for (int i = 0; i < length; i++) {\n        discountedPrices[i] = prices[i] * (1 - percentages[i] / 100.0);\n    }\n    return discountedPrices;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "response": [
+      [
+        "Create a Java method called `processTransactions` that takes a `List<Transaction>` as input and filters out all transactions with a status of \"FAILED\". The method should then return a `List<Transaction>` containing only the successful transactions. Ensure that the method follows the 1TBS (One True Brace Style) for all conditional and loop constructions.",
+        "import java.util.List;\nimport java.util.stream.Collectors;\n\npublic class TransactionProcessor {\n    public List<Transaction> processTransactions(List<Transaction> transactions) {\n        return transactions.stream()\n            .filter(transaction -> !transaction.getStatus().equals(\"FAILED\"))\n            .collect(Collectors.toList());\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "response": [
+      [
+        "Design a Python function called `extract_min_max` that takes a list of integers as an argument and returns a tuple containing the minimum and maximum values from that list. Ensure the function definition and all control structures adhere to the Allman brace block formatting style.",
+        "def extract_min_max(numbers) :\n    if not numbers :\n        return None, None\n    \n    min_val = min(numbers)\n    max_val = max(numbers)\n    \n    return min_val, max_val"
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "response": [
+      [
+        "Develop a C++ function named `computeStatistics` that takes a vector of integers representing test scores and returns a struct containing the maximum score, minimum score, and the average score as double precision. All blocks in the function should utilize 1TBS (One True Brace Style) formatting. Ensure proper use of STL algorithms where appropriate to demonstrate effective use of the C++ Standard Library.",
+        "#include <vector>\n#include <algorithm>\n#include <numeric>\n\nstruct Statistics {\n    int maxScore;\n    int minScore;\n    double averageScore;\n};\n\nStatistics computeStatistics(const std::vector<int>& scores) {\n    Statistics stats;\n    auto [minElem, maxElem] = std::minmax_element(scores.begin(), scores.end());\n    stats.minScore = *minElem;\n    stats.maxScore = *maxElem;\n    stats.averageScore = std::accumulate(scores.begin(), scores.end(), 0.0) / scores.size();\n    return stats;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "response": [
+      [
+        "Create a Java method called `createEmployeeReport` that takes a `HashMap<String, Employee>` where the key is the department name and the Employee is an object holding information on employees. The method should process each department and generate a report listing the names and IDs of employees in ascending order of their ID. Ensure that the method fits the 'Kernighan and Ritchie style' (K&R) brace formatting for the entire method definition and all control constructs used within the method.",
+        "import java.util.*;\n\nclass Employee {\n    String name;\n    int id;\n    // Assume necessary constructors and methods are defined here\n}\n\npublic class ReportGenerator {\n    public void createEmployeeReport(HashMap<String, Employee> departmentEmployees) {\n        for (Map.Entry<String, Employee> entry : departmentEmployees.entrySet()) {\n            String department = entry.getKey();\n            List<Employee> employees = new ArrayList<>(departmentEmployees.values());\n            employees.sort(Comparator.comparingInt(emp -> emp.id));\n            System.out.println(\"Department: \" + department);\n            for (Employee emp : employees) {\n                System.out.println(\"ID: \" + emp.id + \", Name: \" + emp.name);\n            }\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 39,
+    "response": [
+      [
+        "Develop a JavaScript function named `calculateDiscounts` that takes two parameters: an array of item prices and a discount percentage. The function should compute a new array where each item price is reduced by the given discount percentage and ensure that the function returns this new array. Ensure that you use Allman brace style for all function definitions, loops, and conditionals to clearly delineate code blocks.",
+        "function calculateDiscounts(itemPrices, discountPercentage)\n{\n    var discountedPrices = [];\n    for (var i = 0; i < itemPrices.length; i++)\n    {\n        var discountedPrice = itemPrices[i] * (1 - discountPercentage / 100);\n        discountedPrices.push(discountedPrice);\n    }\n    return discountedPrices;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 40,
+    "response": [
+      [
+        "Develop a Rust function named `calculate_discount` that takes two parameters: a f64 value `price` representing the original price of an item, and an i32 `day_of_week` representing the day of the week as an integer (1 for Monday through 7 for Sunday). The function should apply a 10% discount on weekends (Saturday and Sunday), and return the new price. Ensure the function uses the Allman brace and block formatting style.",
+        "fn calculate_discount(price: f64, day_of_week: i32) -> f64\n{\n    if day_of_week == 6 || day_of_week == 7\n    {\n        price * 0.9\n    }\n    else\n    {\n        price\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 41,
+    "response": [
+      [
+        "Design a Python function named 'merge_and_filter' that takes two dictionary inputs: 'original_data' and 'additional_data'. The function should merge these dictionaries, but only include entries from 'additional_data' if the key does not exist in 'original_data'. It should then filter out entries where values are None or empty strings. Utilize the K&R brace style for blocks and function formatting.",
+        "def merge_and_filter(original_data, additional_data):\n    merged = original_data.copy()\n    for key, value in additional_data.items():\n        if key not in original_data and value not in [None, '']:\n            merged[key] = value\n    return {k: v for k, v in merged.items() if v not in [None, '']}"
+      ]
+    ]
+  },
+  {
+    "id": 42,
+    "response": [
+      [
+        "Create a C function named 'calculateTax' that takes two parameters: a float representing the price of an item, and a float representing the tax rate as a percentage (e.g., 5.5 for 5.5%). The function should compute the total price after tax and return it. Implement this function using the 1TBS (One True Brace Style) for all loops, conditionals, and function definitions to specify braces and block formatting rules.",
+        "#include <stdio.h>\n\nfloat calculateTax(float price, float taxRate) {\n    float taxAmount = price * (taxRate / 100.0);\n    return price + taxAmount;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 43,
+    "response": [
+      [
+        "Develop a C function called `expandTabs` that takes a const char pointer `inputString` and an integer `tabSize`, and returns a new dynamically allocated string where all tab characters ('\\t') in `inputString` are replaced by spaces equivalent to `tabSize`. The block of code in the `expandTabs` function should be formatted using the Allman style.",
+        "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nchar* expandTabs(const char* inputString, int tabSize)\n{\n    int i, j, count = 0, length = strlen(inputString);\n    for (i = 0; i < length; i++)\n    {\n        if (inputString[i] == '\\t')\n        {\n            count += tabSize;\n        }\n        else\n        {\n            count++;\n        }\n    }\n\n    char* result = (char*)malloc(count + 1);\n    if (!result)\n    {\n        return NULL;\n    }\n\n    int k = 0;\n    for (i = 0; i < length; i++)\n    {\n        if (inputString[i] == '\\t')\n        {\n            for (j = 0; j < tabSize; j++)\n            {\n                result[k++] = ' ';\n            }\n        }\n        else\n        {\n            result[k++] = inputString[i];\n        }\n    }\n    \n    result[k] = '\\0';\n    return result;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 44,
+    "response": [
+      [
+        "Develop a Java function called sortByValueAndExport that takes a HashMap<Integer, String> named 'itemMap' and an integer 'threshold'. The function should sort the map's entries ascending by their integer keys if their values are numeric and larger than the 'threshold'. Then, it should write the filtered and sorted entries to a CSV file named 'filteredItems.csv' with the column headers 'Key,Value'. Follow the K&R brace style for the function definition and all control statements within the function.",
+        "import java.io.FileWriter;\nimport java.io.IOException;\nimport java.util.HashMap;\nimport java.util.Map;\nimport java.util.TreeMap;\n\npublic class SortAndExport {\n    public static void sortByValueAndExport(HashMap<Integer, String> itemMap, int threshold) {\n        TreeMap<Integer, String> sortedMap = new TreeMap<>();\n        for (Map.Entry<Integer, String> entry : itemMap.entrySet()) {\n            try {\n                int value = Integer.parseInt(entry.getValue());\n                if (value > threshold) {\n                    sortedMap.put(entry.getKey(), entry.getValue());\n                }\n            } catch (NumberFormatException e) {\n                // Ignore non-numeric values\n            }\n        }\n        try (FileWriter writer = new FileWriter(\"filteredItems.csv\")) {\n            writer.write(\"Key,Value\\n\");\n            for (Map.Entry<Integer, String> entry : sortedMap.entrySet()) {\n                writer.write(entry.getKey() + \",\" + entry.getValue() + \"\\n\");\n            }\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 45,
+    "response": [
+      [
+        "Design a JavaScript function, sortAndExtract, that incorporates two parameters: an array of objects 'items' where each object possesses properties 'category' and 'price', and a numerical value 'maxPrice'. The function should first filter the array to include only the items with a price less than or equal to 'maxPrice', then sort these filtered items by price in ascending order. Finally, it should return a list of categories for these sorted items, ensuring no category is listed more than once. Implement this using 1TBS brace style for all loops, conditionals, and function definitions.",
+        "function sortAndExtract(items, maxPrice) {\n    let filteredItems = items.filter(item => item.price <= maxPrice);\n    filteredItems.sort((a, b) => a.price - b.price);\n    let categories = [];\n    for (let item of filteredItems) {\n        if (!categories.includes(item.category)) {\n            categories.push(item.category);\n        }\n    }\n    return categories;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 46,
+    "response": [
+      [
+        "Develop a C++ function named computeGrade that takes two parameters: a vector of integers representing scores and an integer threshold. The function should calculate the total score, and if the total exceeds the threshold, it should return 'A', otherwise 'B'. Ensure the function and all control structures, including loops and conditionals, adhere to K&R brace style.",
+        "#include <vector>\n\nchar computeGrade(const std::vector<int>& scores, int threshold) {\n    int total = 0;\n    for(int score : scores) {\n        total += score;\n    }\n    if(total > threshold) {\n        return 'A';\n    } else {\n        return 'B';\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 47,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: brace_block_formatting: python;Allman.\n## previous code\ndef process_data(data_dict, keys_list):\n    filtered_dict = {}\n\n    for key in keys_list\n    {\n        if key in data_dict\n        {\n            filtered_dict[key] = data_dict[key]\n        }\n    }\n\n    return filtered_dict\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Python function called 'process_data' that accepts a dictionary 'data_dict' containing various business data and a list of keys 'keys_list'. The function should filter 'data_dict' using given 'keys_list', only keeping key-value pairs where the key is present in 'keys_list'. Return a new dictionary with proper Allman style formatting for any conditional or loop structures.",
+        "```python\ndef process_data(data_dict, keys_list):\n    filtered_dict = {}\n\n    for key in keys_list:\n    {\n        if key in data_dict:\n        {\n            filtered_dict[key] = data_dict[key]\n        }\n    }\n\n    return filtered_dict\n```"
+      ]
+    ]
+  },
+  {
+    "id": 48,
+    "response": [
+      [
+        "Develop a Rust function called `validate_user_input` that takes a string argument `input` representing user identifiers. The function should check if the `input` starts with a letter and contains only alphanumeric characters or underscores. Only if these conditions are met should it return `true`; otherwise, it should return `false`. Ensure the function uses the 1TBS brace formatting.",
+        "fn validate_user_input(input: &str) -> bool {\n    if input.chars().next().map(|c| c.is_alphabetic()).unwrap_or(false) {\n        if input.chars().all(|c| c.is_alphanumeric() || c == '_') {\n            return true;\n        }\n    }\n    return false;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 49,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: brace_block_formatting: python;Allman.\n## previous code\ndef apply_discount(prices, discount_percent)\n{\n    discounted_prices = {}\n    \n    for product, price in prices.items()\n    {\n        new_price = price * (1 - discount_percent / 100)\n        discounted_prices[product] = new_price\n    }\n    \n    return discounted_prices\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nDevelop a Python function named `apply_discount` that takes a dictionary `prices` where each key represents a product name, and corresponding value represents its original price. The function should also accept a float `discount_percent`, representing the percentage discount to be applied to all products. Return a new dictionary with the updated prices after applying the discount. Ensure to follow Allman style brace formatting in your function and any loop or conditional code blocks.",
+        "```python\ndef apply_discount(prices, discount_percent):\n{\n    discounted_prices = {}\n    \n    for product, price in prices.items():\n    {\n        new_price = price * (1 - discount_percent / 100)\n        discounted_prices[product] = new_price\n    }\n    \n    return discounted_prices\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 50,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: brace_block_formatting: Rust;K&R.\n## previous code\nuse std::string::ToString;\n\nfn filter_and_transform(items: Vec<(String, i32)>, threshold: i32) -> Vec<String> {\n    let mut result = Vec::new();\n    for item in items {\n        if item.1 > threshold {\n            result.push(item.0.to_uppercase());\n        }\n    }\n    result\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nDevelop a Rust function `filter_and_transform` that accepts a vector of tuples (Vec<(String, i32)>) called `items` and an integer `threshold`. The function should iterate over `items`, filtering to only include tuples where the second element (i32) exceeds the `threshold`, and return a new vector containing the transformed first elements (strings) to uppercase. The function should use K&R brace style for all conditional and looping structures.",
+        "```rust\nuse std::string::ToString;\n\nfn filter_and_transform(items: Vec<(String, i32)>, threshold: i32) -> Vec<String> {\n    let mut result = Vec::new();\n    for item in items {\n        if item.1 > threshold {\n            result.push(item.0.to_uppercase());\n        }\n    }\n    result\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 51,
+    "response": [
+      [
+        "Develop a C++ function named sortArray to organize an integer array into ascending order using the quicksort algorithm. Ensure all braces are formatted in the K&R style, where the opening brace is on the same line as the statement and the closing brace is on its own line.",
+        "#include <vector>\n\nvoid quicksort(std::vector<int> &arr, int left, int right) {\n    if (left >= right) return;\n    int pivot = arr[left + (right - left) / 2];\n    int i = left, j = right;\n\n    while (i <= j) {\n        while (arr[i] < pivot) i++;\n        while (arr[j] > pivot) j--;\n        if (i <= j) {\n            std::swap(arr[i], arr[j]);\n            i++;\n            j--;\n        }\n    }\n    quicksort(arr, left, j);\n    quicksort(arr, i, right);\n}\n\nvoid sortArray(std::vector<int> &arr) {\n    quicksort(arr, 0, arr.size() - 1);\n}"
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: brace_block_formatting: java;K&R.\n## previous code\nimport java.util.Arrays;\n\npublic class FloydWarshall {\n    public static void floydWarshall(int[][] graph) {\n        int V = graph.length;\n        int[][] dist = new int[V][V];\n        \n        for (int i = 0; i < V; i++) {\n            for (int j = 0; j < V; j++) {\n                dist[i][j] = graph[i][j];\n            }\n        }\n\n        for (int k = 0; k < V; k++) {\n            for (int i = 0; i < V; i++) {\n                for (int j = 0; j < V; j++) {\n                    if (dist[i][k] != Integer.MAX_VALUE && dist[k][j] != Integer.MAX_VALUE \n                        && dist[i][k] + dist[k][j] < dist[i][j]) {\n                        dist[i][j] = dist[i][k] + dist[k][j];\n                    }\n                }\n            }\n        }\n\n        printSolution(dist);\n    }\n\n    private static void printSolution(int[][] dist) {\n        System.out.println(\"Shortest distances between every pair of vertices:\");\n        for (int i = 0; i < dist.length; i++) {\n            for (int j = 0; j < dist[i].length; j++) {\n                if (dist[i][j] == Integer.MAX_VALUE) {\n                    System.out.print(\"INF \");\n                } else {\n                    System.out.print(dist[i][j] + \" \");\n                }\n            }\n            System.out.println();\n        }\n    }\n\n    public static void main(String[] args) {\n        int INF = Integer.MAX_VALUE;\n        int[][] graph = {\n            {0, 3, INF, INF},\n            {2, 0, INF, INF},\n            {INF, 7, 0, 1},\n            {6, INF, INF, 0}\n        };\n\n        floydWarshall(graph);\n    }\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Java implementation of the Floyd-Warshall algorithm to calculate the minimum distances among all vertex pairs in a graph. Ensure that the coding style adheres to Java's braces and block formatting rules, specifically using the K&R style, where braces open on the same line as the control statement.",
+        "```java\nimport java.util.Arrays;\n\npublic class FloydWarshall {\n    public static void floydWarshall(int[][] graph) {\n        int V = graph.length;\n        int[][] dist = new int[V][V];\n        \n        for (int i = 0; i < V; i++) {\n            for (int j = 0; j < V; j++) {\n                dist[i][j] = graph[i][j];\n            }\n        }\n\n        for (int k = 0; k < V; k++) {\n            for (int i = 0; i < V; i++) {\n                for (int j = 0; j < V; j++) {\n                    if (dist[i][k] != Integer.MAX_VALUE && dist[k][j] != Integer.MAX_VALUE \n                        && dist[i][k] + dist[k][j] < dist[i][j]) {\n                        dist[i][j] = dist[i][k] + dist[k][j];\n                    }\n                }\n            }\n        }\n\n        printSolution(dist);\n    }\n\n    private static void printSolution(int[][] dist) {\n        System.out.println(\"Shortest distances between every pair of vertices:\");\n        for (int i = 0; i < dist.length; i++) {\n            for (int j = 0; j < dist[i].length; j++) {\n                if (dist[i][j] == Integer.MAX_VALUE) {\n                    System.out.print(\"INF \");\n                } else {\n                    System.out.print(dist[i][j] + \" \");\n                }\n            }\n            System.out.println();\n        }\n    }\n\n    public static void main(String[] args) {\n        int INF = Integer.MAX_VALUE;\n        int[][] graph = {\n            {0, 3, INF, INF},\n            {2, 0, INF, INF},\n            {INF, 7, 0, 1},\n            {6, INF, INF, 0}\n        };\n\n        floydWarshall(graph);\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "response": [
+      [
+        "Develop a Java method named findCommonElements ensuring it follows the Allman style for braces, where each brace '{' and '}' begins on a new line. This method must accept two numerical arrays as parameters and return an array containing common elements from both.",
+        "import java.util.ArrayList;\nimport java.util.List;\n\npublic class CommonElementsFinder\n{\n    public static int[] findCommonElements(int[] array1, int[] array2)\n    {\n        List<Integer> commonList = new ArrayList<>();\n\n        for (int i = 0; i < array1.length; i++)\n        {\n            for (int j = 0; j < array2.length; j++)\n            {\n                if (array1[i] == array2[j])\n                {\n                    commonList.add(array1[i]);\n                    break;\n                }\n            }\n        }\n\n        int[] commonArray = new int[commonList.size()];\n        \n        for (int i = 0; i < commonList.size(); i++)\n        {\n            commonArray[i] = commonList.get(i);\n        }\n\n        return commonArray;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 54,
+    "response": [
+      [
+        "Create a Rust module named `file_processor` that includes a function named `process_files`. This function should accept an array of file paths and asynchronously process each file. Additionally, apply the Allman brace style where opening braces for functions and control structures are placed on a new line, improving code clarity.",
+        "mod file_processor\n{\n    use tokio::fs::File;\n    use tokio::prelude::*;\n    \n    pub async fn process_files(file_paths: &[&str])\n    {\n        for path in file_paths.iter()\n        {\n            let file = File::open(path).await.unwrap();\n            let mut contents = vec![];\n            file.read_to_end(&mut contents).await.unwrap();\n            // Process the contents\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 55,
+    "response": [
+      [
+        "Create a JavaScript function filterAndTransform that takes two parameters: an array of strings words and a string prefix. The function should filter the array to include only words that start with the given prefix and return a new array where each matching word is transformed to uppercase. Use K&R brace style for all loops, conditionals, and function definitions to specify braces and block formatting rules.",
+        "function filterAndTransform(words, prefix) {\n    let result = [];\n    for (let word of words) {\n        if (word.startsWith(prefix)) {\n            result.push(word.toUpperCase());\n        }\n    }\n    return result;\n}"
+      ]
+    ]
+  }
+]

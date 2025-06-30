@@ -1,0 +1,443 @@
+[
+    {
+        "id": 1,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Could you create a Python3 function to reverse the sequence of words in a given sentence?",
+        "answer": "python"
+    },
+    {
+        "id": 2,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "What method would you use to calculate the maximum length of a common subsequence shared by two specified strings, ensuring the solution utilizes the standard library functions in Python 3?",
+        "answer": "python"
+    },
+    {
+        "id": 3,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Describe how you would construct a JavaScript function to set a particular string as the content of an HTML element identified by its id, ensuring your implementation remains compatible with ES6 standards.",
+        "answer": "javascript"
+    },
+    {
+        "id": 4,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a JavaScript code example that utilizes the map function to apply the squaring operation to each item in a numerical array. Ensure the code is compatible with the ECMAScript 6 standard.",
+        "answer": "javascript"
+    },
+    {
+        "id": 5,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "How would you write a Python3 function to get the list of square numbers from 1 to N.",
+        "answer": "python"
+    },
+    {
+        "id": 6,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a Python code example that utilizes a list comprehension to apply the cubing operation to each element in a numerical list.",
+        "answer": "python"
+    },
+    {
+        "id": 7,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Develop a Java program implementing a for-loop to double every number in an integer array and print the modified array.",
+        "answer": "java"
+    },
+    {
+        "id": 8,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Construct a C++ function employing std::transform to convert all negative values to positive in a vector of doubles.",
+        "answer": "c++"
+    },
+    {
+        "id": 9,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Design a Haskell script using map function to calculate absolute values of elements in a list of floating-point numbers.",
+        "answer": "haskell"
+    },
+    {
+        "id": 10,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Implement a Prolog predicate using recursion to increment each element in a list of integers by 3 and return the modified list.",
+        "answer": "prolog"
+    },
+    {
+        "id": 11,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Write a Rust function leveraging iterators to filter out odd numbers and square the remaining elements in a Vec<i32>.",
+        "answer": "rust"
+    },
+    {
+        "id": 12,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a Lua script utilizing anonymous functions with table traversal to reverse all string elements in a table and convert them to uppercase.",
+        "answer": "lua"
+    },
+    {
+        "id": 13,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Develop a Julia program using element-wise broadcasting to compute hyperbolic tangent values for each entry in a Float64 array.",
+        "answer": "julia"
+    },
+    {
+        "id": 14,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Design a CoffeeScript snippet with arrow functions to generate SHA-256 hashes for each string in an array asynchronously.",
+        "answer": "coffeescript"
+    },
+    {
+        "id": 15,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Develop a Rust code snippet that employs the iter().map() method to compute the cube of each element in a floating-point vector, preserving the original data type in the output collection.",
+        "answer": "rust"
+    },
+    {
+        "id": 16,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Write a Haskell function that leverages the map higher-order function to convert a list of strings to uppercase using the Data.Char library, maintaining list structure and element ordering.",
+        "answer": "haskell"
+    },
+    {
+        "id": 17,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Implement a Prolog predicate using maplist/3 to calculate the factorial of each number in a list of integers, returning the results in a new list.",
+        "answer": "prolog"
+    },
+    {
+        "id": 18,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Develop a Java program that reads a list of names from the console and sorts them in alphabetical order before printing the sorted list.",
+        "answer": "java"
+    },
+    {
+        "id": 19,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Develop a Java code example that implements a multi-threaded matrix multiplication. The program should generate two random matrices, compute their product using multiple threads, and display the resulting matrix. The solution must include proper synchronization to handle potential concurrency issues.",
+        "answer": "java"
+    },
+    {
+        "id": 20,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Develop a Python script that reads a CSV file containing sales data (with columns \"Region\", \"Product\", and \"Sales\"), calculates the total sales for each region, and writes the aggregated results into a new CSV file. The script must include proper error handling for file operations and data conversion.",
+        "answer": "python"
+    },
+    {
+        "id": 21,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Design a Rust library function named \"parse_log\" that takes a file path to a log file, reads the file, and extracts all unique IP addresses found in the logs. The function should return a sorted vector of IP addresses (as strings) wrapped in a Result type to gracefully handle file I/O errors.",
+        "answer": "rust"
+    },
+    {
+        "id": 22,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Implement a Java program that connects to a PostgreSQL database, retrieves all records from an \"employees\" table, and prints the results to the console.",
+        "answer": "java"
+    },
+    {
+        "id": 23,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a Prolog program implementing depth-first search to find all paths between two nodes in a directed graph represented by edge facts.",
+        "answer": "Prolog"
+    },
+    {
+        "id": 24,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Write a Python script that connects to a SQLite database, creates a table for storing user profiles (with fields: id, name, and email), inserts at least three sample records, and queries the table to display all records.",
+        "answer": "python"
+    },
+    {
+        "id": 25,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Develop a Python script that sends a GET request to a public API endpoint (e.g., \"https://jsonplaceholder.typicode.com/posts\"), retrieves the JSON data containing a list of posts, and prints the title of the post with the highest id. The script should include proper error handling for HTTP errors and exceptions.",
+        "answer": "python"
+    },
+    {
+        "id": 26,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Develop a Rust program that reads a text file from disk, processes its content to count the occurrence of each unique word (ignoring case and punctuation), and then displays the top five most frequently occurring words along with their counts. The program should handle errors gracefully (e.g., file not found).",
+        "answer": "rust"
+    },
+    {
+        "id": 27,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Implement a C++ program that reads a list of integers from a text file, sorts them in descending order using a custom comparator, and writes the sorted integers to a new file. The program should handle file I/O errors gracefully.",
+        "answer": "c++"
+    },
+    {
+        "id": 28,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Write a Lua script using coroutines with proper error handling and synchronization primitives to concurrently simulate sensor data aggregation from three different sources (temperature, pressure, motion) with randomized delay intervals (100-2000ms), implementing data validation, timeout handling, and graceful coroutine termination.",
+        "answer": "Lua"
+    },
+    {
+        "id": 29,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a CoffeeScript decorator using Node.js crypto module that memoizes function results in LRU cache with size constraints, implementing SHA-256 hashed argument signatures with JSON serialization/deserialization, circular reference handling, and cache invalidation based on TTL (time-to-live) and manual flush capabilities.",
+        "answer": "CoffeeScript"
+    },
+    {
+        "id": 30,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Develop a Haskell type-safe state transition system using monad transformers (StateT/ReaderT/ExceptT) with formal model checking to model secure ATM transaction workflows including PIN verification, transaction logging, withdrawal limits, balance integrity checks, and rollback capabilities, with algebraic data types enforcing valid state transitions and QuickCheck property tests.",
+        "answer": "Haskell"
+    },
+    {
+        "id": 31,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a Java code example that reads an input text file named \"products.txt\", where each line contains a product name and its price separated by a comma. The program should filter out products priced below $20, sort the remaining products by price in descending order, and print the sorted list to the console.",
+        "answer": "java"
+    },
+    {
+        "id": 32,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Develop a Java program that utilizes multithreading to compute the sum of an integer array. The program should divide the array into multiple segments, calculate the sum of each segment concurrently using threads, and then combine the results to display the total sum.",
+        "answer": "java"
+    },
+    {
+        "id": 33,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Implement a C++ program that reads a text file containing a list of product names and their prices, calculates the total cost, and outputs the result to the console. Ensure the program handles file input errors gracefully.",
+        "answer": "c++"
+    },
+    {
+        "id": 34,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a Haskell program that defines a binary tree data structure. Implement functions to insert nodes, search for a specific value, and traverse the tree in an in-order manner. The program should then allow the user to interactively build a tree by inserting nodes and perform a search for a given value.",
+        "answer": "haskell"
+    },
+    {
+        "id": 35,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Write a Rust program that implements a simple multi-threaded web server. The server should handle HTTP GET requests and return a static \"Hello, World!\" message. Use Rust's async/await functionality for handling multiple concurrent requests efficiently.",
+        "answer": "rust"
+    },
+    {
+        "id": 36,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a Haskell program that implements a simple functional calculator. The calculator should support basic operations like addition, subtraction, multiplication, and division. It should take input from the user as a string and output the result of the operation.",
+        "answer": "haskell"
+    },
+    {
+        "id": 37,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a Prolog program that defines a family tree, including parent-child relationships. Implement a rule to check if one person is an ancestor of another. Provide sample queries to test this rule.",
+        "answer": "prolog"
+    },
+    {
+        "id": 38,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a Lua script that fetches data from an API endpoint using the HTTP GET method and prints the response. Ensure proper error handling for request failures.",
+        "answer": "lua"
+    },
+    {
+        "id": 39,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a Rust iterator chain that uses map to safely parse a vector of string slices into integers, handling parse errors by converting them to -1 and logging \"Invalid input\" via closure-captured logger.",
+        "answer": "rust"
+    },
+    {
+        "id": 40,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Implement a Haskell lazy infinite list using map that generates triangular numbers with memoization, then extract the first 20 elements strictly.",
+        "answer": "haskell"
+    },
+    {
+        "id": 41,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Build a Prolog meta-predicate using maplist/2 that recursively checks if all elements in a nested list structure are prime numbers (depth-first traversal).",
+        "answer": "prolog"
+    },
+    {
+        "id": 42,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Design a Julia parallel @distributed map pipeline that processes 10,000 DNA sequences simultaneously to count GC-content percentages across 4 CPU cores.",
+        "answer": "julia"
+    },
+    {
+        "id": 43,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Write CoffeeScript code using chained map operations to transform jQuery-selected DOM elements into React component props while preserving event delegation.",
+        "answer": "coffeescript"
+    },
+    {
+        "id": 44,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Implement a Lua coroutine scheduler that uses a map-like function to asynchronously fetch and process multiple URLs, storing results in a table with error handling.",
+        "answer": "lua"
+    },
+    {
+        "id": 45,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a C++ template metaprogramming solution using std::transform and constexpr to generate CRC32 checksums for fixed-size arrays at compile-time.",
+        "answer": "c++"
+    },
+    {
+        "id": 46,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Develop a Java parallel stream pipeline with map operations to analyze 1 million sensor readings, detecting anomalies using thread-safe atomic counters.",
+        "answer": "java"
+    },
+    {
+        "id": 47,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Build a Haskell type-safe ETL pipeline using functor maps to transform JSON ASTs into SQL queries with compile-time schema validation.",
+        "answer": "haskell"
+    },
+    {
+        "id": 48,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Design a Prolog constraint solver using maplist/2 that generates valid chemical compound formulas adhering to valence rules across nested molecular structures.",
+        "answer": "prolog"
+    },
+    {
+        "id": 49,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a Julia GPU-accelerated map kernel using CUDA.jl to compute Mandelbrot set visualizations in parallel across 10,000×10,000 pixel grids.",
+        "answer": "julia"
+    },
+    {
+        "id": 50,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Write CoffeeScript code using nested map operations to transform GraphQL response data into Vue 3 reactive objects with computed property caching.",
+        "answer": "coffeescript"
+    },
+    {
+        "id": 51,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Implement a Rust async task manager using map on futures::stream to process IoT device telemetry with backpressure control and tokio runtime.",
+        "answer": "rust"
+    },
+    {
+        "id": 52,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Build a Node.js Express middleware using array mapping to dynamically inject React hydration state into SSR templates while sanitizing XSS vulnerabilities.",
+        "answer": "javascript"
+    },
+    {
+        "id": 53,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a Python PySpark UDF using map on RDDs to process real-time geospatial trajectories with haversine distance calculations across distributed clusters.",
+        "answer": "python"
+    },
+    {
+        "id": 54,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a Python generator pipeline using map and itertools to process real-time sensor data streams, implementing exponential smoothing with stateful lambda closures.",
+        "answer": "python"
+    },
+    {
+        "id": 55,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Build a JavaScript WebAssembly module that uses TypedArray.map to parallelize fractal calculations with SIMD instructions in the browser main thread.",
+        "answer": "javascript"
+    },
+    {
+        "id": 56,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Develop a Java annotation processor using map operations on AST elements to automatically generate gRPC service stubs during compilation.",
+        "answer": "java"
+    },
+    {
+        "id": 57,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Implement a Python async map-reduce system using aiohttp and asyncio.BoundedSemaphore to crawl 500 URLs/sec with rate limiting and DOM sanitization.",
+        "answer": "python"
+    },
+    {
+        "id": 58,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a React Native animation driver using Array.map to synchronize SVG morphing paths across multiple device orientations with gesture handlers.",
+        "answer": "javascript"
+    },
+    {
+        "id": 59,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Design a Java Spring Cloud Function that applies map transformations to Kafka records for GDPR data pseudonymization in real-time event streams.",
+        "answer": "java"
+    },
+    {
+        "id": 60,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Build a Python computer vision pipeline using functools.map with thread pools to process 4K video frames in batches of 16 with OpenCV CUDA acceleration.",
+        "answer": "python"
+    },
+    {
+        "id": 61,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Develop a Node.js V8 extension using N-API and TypedArray.map to accelerate quantum circuit simulations through WebGL shader parallelization.",
+        "answer": "javascript"
+    },
+    {
+        "id": 62,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Create a Java GraalVM polyglot service that maps JSONata queries across MongoDB change streams using reactive streams backpressure mechanisms.",
+        "answer": "java"
+    },
+    {
+        "id": 63,
+        "category": "syntax",
+        "constraint": "language_type",
+        "prompt": "Implement a Python JAX-powered map function using jit and vmap to parallelize neural network inference across TPU slices with automatic batch padding.",
+        "answer": "python"
+    }
+]

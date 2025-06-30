@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Go application using the Gin library to build a RESTful API that serves user profiles stored in a PostgreSQL database. The API should have endpoints to create, read, update, and delete (CRUD) user profiles. Each user profile should include fields like 'id', 'name', 'age', and 'email'. Ensure that the application handles errors gracefully and provides appropriate responses for different HTTP requests, such as a 404 response for non-existent user profiles.",
+        "answer": "Go;Gin"
+    },
+    {
+        "id": 2,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a CLI application using the Cobra library in Go that helps users manage their personal digital photography archive. The application should allow users to initialize a new archive, add new photo entries, and generate a summary report of all photos by category. Each command (`init`, `add`, and `report`) should be implemented as a subcommand. The `init` command will set up the necessary directory structure, `add` should include options to input the photo's metadata (e.g., date, category, and description), and `report` should summarize the photos by respective categories.",
+        "answer": "Go;cobra"
+    },
+    {
+        "id": 3,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Design a Node.js command-line application using the Commander.js library to create a utility that processes input arguments corresponding to file paths. The application should read each file, count the number of lines, and output the count in the console. The tool should allow for handling multiple file paths provided as command-line arguments and also include error checks for non-existing files or access errors.",
+        "answer": "javascript;commander"
+    },
+    {
+        "id": 4,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a JavaScript application using the RxJS library to monitor a specific URL for changes. Your application should create an Observable that polls the target URL every 30 seconds. Use RxJS operators to handle the HTTP requests and process the responses. If the content of the URL has changed since the last poll, log the new content to the console. Ensure robust error handling for failed HTTP requests or timeouts.",
+        "answer": "javascript;rxjs"
+    },
+    {
+        "id": 5,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Build a Rust application using the 'futures' library to efficiently handle file I/O operations for a large number of small files asynchronously. The program should read a list of file paths from a provided JSON input, perform asynchronous read operations on these files, concatenate the content of all files, and then write this concatenated result to a new output file. Include error handling to manage scenarios where files might not be existent or readable.",
+        "answer": "Rust;futures"
+    },
+    {
+        "id": 6,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Go application utilizing the go-resty/resty library to send a POST request to a provided API endpoint containing user information from a JSON file. The application should parse the JSON file to retrieve user data, send this data as the body of the POST request, and correctly handle the response by outputting successful status messages to the console, and logging errors if they occur.",
+        "answer": "go;go-resty/resty"
+    },
+    {
+        "id": 7,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Python CLI tool using the Click library that accepts a --file argument. The tool should read a text file containing URLs, make HTTP GET requests to each URL using the Requests library, and then print the HTTP status code and response length for each request to the console. The tool must handle exceptions for invalid URLs and connection errors gracefully, displaying an appropriate error message.",
+        "answer": "python;click"
+    },
+    {
+        "id": 8,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a JavaScript-based API using Express.js that integrates Sequelize to interact with a PostgreSQL database. The API should allow users to create, read, update, and delete entries in a 'Product' model, which Sequelize will define. The 'Product' model should include fields for 'id', 'name', 'description', and 'price'. Additionally, implement a route that specifically fetches all products priced over $100, displaying them in a sorted order based on price.",
+        "answer": "javascript;sequelize"
+    },
+    {
+        "id": 9,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Node.js command-line application using the Inquirer.js library to guide users through setting up a new project. The application should present a series of prompts asking the user to select a project template from a list (e.g., \"Web\", \"Mobile\", \"API\") and input a name for the project. Once the choices are made, the application should output a confirmation message summarizing the selected template and the entered project name.",
+        "answer": "javascript;inquirer"
+    },
+    {
+        "id": 10,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Node.js web application using the Express library to create an API endpoint. This endpoint should accept POST requests containing user data in JSON format, such as username and email. The API should validate the email format and username length (>3 characters) and respond with appropriate messages indicating whether the data is valid or not. Include middleware for logging request details and handle any errors gracefully to ensure robust and reliable API functioning.",
+        "answer": "javascript;express"
+    },
+    {
+        "id": 11,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Create a Node.js application using the Mongoose library to manage a user registration system interfacing with MongoDB. The task should involve defining a complex User schema with Mongoose that includes fields for username, email, password (hashed), date of registration, and an array of interests. Implement functionality to register a new user, validate the uniqueness of the email, hash the password, and save the user data to MongoDB. Additionally, include error handling for database connection issues and input validation.",
+        "answer": "javascript;mongoose"
+    },
+    {
+        "id": 12,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Rust application employing the Tide framework to build a simple HTTP server. This server should handle POST requests with JSON bodies that contain a list of product codes. The server should parse these codes, check their validity against a predefined list of valid codes, respond with a JSON object indicating which codes are valid and which are not. Include error handling for malformed JSON in the requests.",
+        "answer": "Rust;tide"
+    },
+    {
+        "id": 13,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Python script that leverages the Polars library to efficiently process a large CSV file containing real estate property listings. The script should read the file, filter the data to include only properties with a price greater than $500,000, and then calculate and display the average price of these filtered properties. Include error handling to manage any issues with file reading or data processing.",
+        "answer": "python;polars"
+    },
+    {
+        "id": 14,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Rust application that utilizes the Hyper library to construct a simple HTTP server. This server should accept GET requests for JSON data regarding employee details, process these requests, and respond with the appropriate information stored in a local file. Include error handling for missing or inaccessible files and ensure proper JSON formatting in responses.",
+        "answer": "rust;hyper"
+    },
+    {
+        "id": 15,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a TypeScript backend API using Express and the class-validator library to create a user registration system. The system should accept JSON data containing a user’s email and password. Implement a CreateUserDTO class with class-validator decorators to ensure the email is valid and the password is at least 8 characters long. The API should validate the incoming request, and if validation fails, respond with appropriate error messages. If the data passes the validation, respond with a success message.",
+        "answer": "TypeScript;class-validator"
+    },
+    {
+        "id": 16,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Rust application using the Tokio library to create an asynchronous server. The server should accept JSON POST requests containing lists of integers. For each request, the server should perform asynchronous sorting of these integers and return the sorted list. Ensure the server can handle multiple concurrent requests efficiently and implement error handling for invalid JSON formats.",
+        "answer": "Rust;tokio"
+    },
+    {
+        "id": 17,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Rust-based WebSocket server using the tokio-tungstenite library that accepts messages from multiple clients. The server should asynchronously handle each client connection, echoing back any string messages received. Implement functionality where if a received message is the string \"END\", the server safely closes the client connection. Ensure to include comprehensive error handling, such as disconnections or erroneous data.",
+        "answer": "Rust;tokio-tungstenite"
+    },
+    {
+        "id": 18,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Rust-based web server using the Rocket framework that responds to incoming HTTP requests with a personalized greeting. The web server should extract the \"name\" parameter from the query string and respond with \"Hello, [name]!\" If the \"name\" parameter is missing, the server should default to responding with \"Hello, Guest!\". Implement route handling and query string parsing to achieve this functionality, ensuring that the server properly decodes the URL and handles possible errors gracefully.",
+        "answer": "Rust;rocket"
+    },
+    {
+        "id": 19,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a TypeScript backend service using the fp-ts library to manage user configurations for a web application. The service should read user settings from a JSON file, validate the settings using the Either data type for error handling and correct values extraction, update configurations based on user input while ensuring immutability with the correct use of fp-ts. The service must also implement functionality to asynchronously store updated settings back to the JSON file using the Task data type and handle potential errors robustly.",
+        "answer": "TypeScript;fp-ts"
+    },
+    {
+        "id": 20,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a TypeScript application utilizing the io-ts library to decode and validate JSON data received from a blogging platform's API. The Task involves defining an io-ts codec for a 'BlogPost' model that includes fields such as 'id', 'title', 'content', and 'publishedDate'. Fetch JSON array data from a provided API endpoint, use the defined codec to validate and decode the data ensuring all fields match the required types, and finally print out the title and content of each validated blog post. Include detailed error handling for any potential validation failures or data fetching issues.",
+        "answer": "TypeScript;io-ts"
+    },
+    {
+        "id": 21,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Python script using the Pandas library to process a sales data CSV file named 'sales.csv'. The script should read the file, compute and display the total sales amounts grouped by each region. Ensure the script handles any errors from missing files or incorrect data formats gracefully.",
+        "answer": "python;pandas"
+    },
+    {
+        "id": 22,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Rust command-line application using the Diesel ORM library to manage a bookstore inventory system. The application should allow users to interact with a PostgreSQL database to perform CRUD operations on books. Each book record in the inventory should contain the following fields: title, author, year published, and quantity in stock. Provide functionalities to add new books, update existing records, query books by different criteria (like title or author), and delete books. Implement error handling for database connection issues and input validation.",
+        "answer": "Rust;diesel"
+    },
+    {
+        "id": 23,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a JavaScript application that utilizes the socket.io library to construct a real-time chat room where users can join and communicate. The application should allow users to create and enter different chat rooms identified by unique names. All messages within a chat room should be broadcasted to all participants. There must be functionality to handle new user connections and disconnections, and display messages with the user's name and timestamp.",
+        "answer": "javascript;socket.io"
+    },
+    {
+        "id": 24,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a RESTful API in Go using the Chi router to manage a simple bookstore inventory. The API should support CRUD operations for books where each book has an ISBN, title, author, and stock count. Implement middleware to log incoming requests and ensure all responses are in JSON format. Include nested routing to handle different versions of the API (e.g., /v1/books, /v2/books) allowing seamless upgrades and backwards compatibility.",
+        "answer": "Go;go-chi/chi"
+    },
+    {
+        "id": 25,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Rust application that uses the async-std library to create an asynchronous TCP server. The server should be able to handle multiple client connections concurrently. When a client connects, the server should send a greeting message and then echo back any messages it receives from the client, appending \"Received: \" before the echoed message. Include error handling for scenarios such as connection drops and failed message sends.",
+        "answer": "Rust;async-std"
+    },
+    {
+        "id": 26,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Go web application that leverages the Gorilla Mux library to manage a REST API. This API should handle HTTP GET, POST, PUT, and DELETE methods for a resource named \"products\". Implement URL path parameters for product ID to fetch, update, and delete specific product details. Additionally, ensure the application gracefully handles incorrect or non-existing product IDs in HTTP requests.",
+        "answer": "Go;gorilla/mux"
+    },
+    {
+        "id": 27,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Python Flask web application where users can input their contact details such as name, email, and a message through a form. The application should save this information in a SQLite database and display a confirmation page with the submitted details and a personalized greeting. Ensure proper handling of both GET and POST methods and incorporate error handling for form submissions.",
+        "answer": "python;flask"
+    },
+    {
+        "id": 28,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Build a Rust application using the Reqwest library to gather cryptocurrency prices from the CoinGecko API. The application should read a list of cryptocurrency IDs from a configuration file, send asynchronous GET requests for each ID, parse the JSON responses to extract the price in USD, and then print each cryptocurrency's name along with its price in USD to the console. Include error handling for both nonexistent cryptocurrency IDs and connection issues.",
+        "answer": "Rust;reqwest"
+    },
+    {
+        "id": 29,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Node.js script that leverages the 'got' library for making HTTP requests to the GitHub API to retrieve and list all repositories for a specific user. The script should read the username from a JSON file, execute the request, and then print each repository name along with its description in a list format. Additionally, include handling for possible HTTP errors and invalid usernames.",
+        "answer": "javascript;got"
+    },
+    {
+        "id": 30,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a server-side application using NestJS in TypeScript that features a REST API controller to handle user registrations. The application must validate incoming user data against specified rules: username must be between 5 to 15 characters, email should be valid, and password must contain at least one uppercase letter, one lowercase letter, one number, and be 8 to 20 characters long. Implement dependency injection to manage services related to user data processing. Additionally, include error handling mechanisms to provide appropriate responses for invalid inputs.",
+        "answer": "TypeScript;nestjs"
+    },
+    {
+        "id": 31,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a TypeScript application that utilizes the tsyringe library for dependency management. The application should consist of a Scheduler class and a TaskService class where the Scheduler depends on TaskService. Use the @injectable and @inject decorators to register and resolve these dependencies. The Scheduler class should have a method to initiate tasks and log the start and completion time for each task. Errors in task execution should be handled gracefully and logged appropriately using a custom error handling mechanism.",
+        "answer": "TypeScript;tsyringe"
+    },
+    {
+        "id": 32,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Python script using the selectolax library to crawl multiple predefined URLs. The script should extract all hyperlinks from each HTML page and generate a CSV file containing the URL of the page and all found hyperlinks. Ensure to handle exceptions for URLs that do not respond or return invalid HTML.",
+        "answer": "python;selectolax"
+    },
+    {
+        "id": 33,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Go application using the Ent library for managing a local database of books. Your application should be able to perform CRUD operations (create, read, update, delete) on a books table. Each book should be modeled using an Ent schema with attributes like ID, title, author, and publication year. Additionally, include functions to retrieve all books by a specific author and to update the publication year of a book given its ID. Ensure the application is type-safe and error handling is incorporated for database interactions.",
+        "answer": "Go;ent"
+    },
+    {
+        "id": 34,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a TypeScript based backend service using the type-graphql library to create a GraphQL API. The API should define a resolver for fetching and displaying user details such as name, age, and address provided in a pre-populated PostgreSQL database. Ensure that the GraphQL schema and resolvers use classes and decorators provided by type-graphql, and implement error handling for database access failures and bad requests.",
+        "answer": "TypeScript;type-graphql"
+    },
+    {
+        "id": 35,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a JavaScript-based server using Express that handles user sign-ups. Utilize the Zod library to validate the incoming data according to predefined schemas. The incoming data for each user should include name, email, and password. Before saving the user's data on the server, validate it against the schema to ensure it adheres to requirements: name as a non-empty string, email as a valid email format, and password as a string with a minimum length of 8 characters. Include error handling to respond with proper error messages if the validation fails.",
+        "answer": "javascript;zod"
+    },
+    {
+        "id": 36,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a TypeScript application to process user registration forms. Use the Zod library to create a schema that validates the following fields: \"username\", \"email\", and \"password\". The \"username\" should be a non-empty string under 20 characters, the \"email\" must match a standard email format, and the \"password\" should be at least 8 characters long. Utilize the schema to both validate the form data and infer the TypeScript type of the form. Display error messages for any validation failures.",
+        "answer": "TypeScript;zod"
+    },
+    {
+        "id": 37,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Go application using the urfave/cli library to build a command-line tool that processes a directory of JSON files. Each file contains an array of records with names and timestamps. The tool should accept flags to specify the directory path and an optional time filter. It should read all the files, filter records based on the provided time if specified, aggregate and sort all names alphabetically, and then print this list to the console. Include error handling for missing directories or files and parsing errors.",
+        "answer": "Go;urfave/cli"
+    },
+    {
+        "id": 38,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a TypeScript application using the tsoa library to create a REST API that manages a bookstore inventory. The application should define models for books and authors using TypeScript interfaces, and controllers with tsoa decorators to handle CRUD operations on these models. The API routes should be decorated to automatically generate OpenAPI documentation. Include detailed error handling for each API endpoint to return appropriate HTTP responses under different error conditions, such as resource not found or invalid input data.",
+        "answer": "TypeScript;tsoa"
+    },
+    {
+        "id": 39,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Go application that leverages the go-co-op/gocron library to schedule and execute an automated task every 10 minutes to check the server's disk space usage. The scheduled task should log the disk space usage percentage to a file named `disk_usage.log`. Include appropriate error handling for cases such as failed task scheduling and issues in writing to the log file.",
+        "answer": "Go;go-co-op/gocron"
+    },
+    {
+        "id": 40,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Rust application that reads a JSON file containing student data with properties such as name, age, and gpa. Utilize the Serde library to deserialize the JSON content into a list of Rust student structs. Once deserialized, calculate the average GPA of all students and serialize this result back into a JSON file. Ensure your solution handles possible deserialization errors gracefully.",
+        "answer": "Rust;serde"
+    },
+    {
+        "id": 41,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Create a Node.js application that utilizes the Yup library for input validation. Design the app to accept user inputs through a CLI interface. Using Yup, define a schema to validate that the user provides a correctly formatted email and a password containing at least 8 characters, one uppercase letter, one lowercase letter, and one numeral. If inputs are invalid, the app should provide detailed error messages. If valid, display a success message.",
+        "answer": "javascript;yup"
+    },
+    {
+        "id": 42,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Rust Backend API using the SQLx library to asynchronously handle user authentication. The implementation should support registering new users and logging in existing users with username and password. It needs to securely store user credentials in a PostgreSQL database, with passwords being hashed before storage. Additionally, include error handling for failed database connections and unsuccessful authentication attempts. All database queries should be compile-time checked.",
+        "answer": "Rust;sqlx"
+    },
+    {
+        "id": 43,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Python script using asyncio to perform parallel HTTP GET requests to multiple financial news APIs simultaneously. The script should extract the headlines from each response, combine them into a single list, and print this list sorted by timestamp. Handle exceptions for connectivity issues or data parsing errors during the asynchronous operations.",
+        "answer": "python;asyncio"
+    },
+    {
+        "id": 44,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a JavaScript web application utilizing the Axios library to handle user file uploads. The application should accept CSV files containing product data, read and parse the content, then use Axios to send POST requests containing this data to a remote API endpoint at 'https://api.examplecompany.com/products'. Ensure to handle errors gracefully and provide feedback to the user on successful submission or in case of any errors during the upload or API interaction.",
+        "answer": "javascript;axios"
+    },
+    {
+        "id": 45,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Create a Go application using the GORM library to handle a bookstore inventory system. This program should be able to add, update, delete, and fetch book details from a PostgreSQL database using a command-line interface. Each book's data should include its title, author, ISBN, and quantity in stock. Ensure structured logging of each action (CRUD) and implement unit tests for each of the created database functions.",
+        "answer": "Go;gorm"
+    },
+    {
+        "id": 46,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Go application utilizing the Proto.Actor library to manage a distributed system of actors responsible for processing real-time stock trading data. The application should read trading data from a CSV file, dispatch messages to multiple actor instances, each representing a trading firm, and aggregate their responses to calculate and display the overall trading volume and the highest stock price traded during the session. Ensure robust error handling for incomplete or corrupted data entries.",
+        "answer": "Go;asynkron/protoactor-go"
+    },
+    {
+        "id": 47,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Python script using the httpx library to asynchronously request data from a news API for a list of countries provided by the user. The countries should be listed in a CSV file with two columns: country name and minimum article count. The script should parse this file, perform asynchronous API calls to fetch news articles for each country, and filter the articles to count only those that meet or exceed the minimum article count specified. Summarize and print the results showing country names along with their corresponding total qualifying articles. Include error handling for failed requests and malformed CSV entries.",
+        "answer": "Python;httpx"
+    },
+    {
+        "id": 48,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a TypeScript application that uses the TypeDI library to implement a service-oriented architecture. Create `LoggerService` and `UserService` classes. Inject `LoggerService` into `UserService` using TypeDI's dependency injection capabilities. Include functionality in `UserService` to log a message using `LoggerService`. Instantiate `UserService` from the TypeDI container and invoke the logging method. Ensure the application has appropriate error handling for dependency resolution failures.",
+        "answer": "TypeScript;typedi"
+    },
+    {
+        "id": 49,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Python application that utilizes the Trio library to handle multiple asynchronous operations. Specifically, write a program that launches three asynchronous tasks concurrently. Each task should simulate a different network I/O operation, with random wait times between 1 to 5 seconds. Once all tasks are completed, log the duration of each task to the console, showcasing the effective use of Trio for parallel operations in Python.",
+        "answer": "Python;trio"
+    },
+    {
+        "id": 50,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a TypeScript web application that uses Axios for making HTTP requests to the Star Wars API (SWAPI) to retrieve character data. Utilize the ts-pattern library to safely match and extract different properties such as name, gender, and species from the API response. Each character's data should then be formatted and printed to the console. Ensure the application implements exhaustive pattern matching to handle different response schemas and potential API errors elegantly.",
+        "answer": "TypeScript;ts-pattern"
+    },
+    {
+        "id": 51,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Go program that reads a JSON file using the \"encoding/json\" standard library and parses its contents into a Go data structure.",
+        "answer": "go;encoding/json"
+    },
+    {
+        "id": 52,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Python function to generate a pie chart that displays the market distribution among various firms, using the matplotlib library to create the visualization.",
+        "answer": "python;matplotlib"
+    },
+    {
+        "id": 53,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Create a Node.js application that utilizes the Axios library to make HTTP requests for retrieving weather information from the API at https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY. Specifically, use Axios to fetch the data and output the temperature in the console.",
+        "answer": "javascript;axios"
+    },
+    {
+        "id": 54,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Use Go with the `sync` package to create a function that computes the sum of an array of numbers concurrently. Employ the new Generics features from this Go version for type flexibility, utilizing `sync.WaitGroup` to handle the concurrent operations effectively.",
+        "answer": "go;sync"
+    },
+    {
+        "id": 55,
+        "category": "syntax",
+        "constraint": "library",
+        "prompt": "Develop a Python REST API client using the requests library to retrieve real-time weather data from a configurable API endpoint. Parse the JSON response to extract temperature, humidity, and weather conditions, format the output neatly, and incorporate robust error handling, retry logic, and logging using sys.version_info for runtime version detection.",
+        "answer": "python;requests"
+    }
+]

@@ -1,0 +1,569 @@
+[
+  {
+    "id": 1,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Could you create a Python3 function to reverse the sequence of words in a given sentence?",
+        "```python\ndef reverse_words(sentence):\n    return ' '.join(sentence.split()[::-1])\n```"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: What method would you use to calculate the maximum length of a common subsequence shared by two specified strings, ensuring the solution utilizes the standard library functions in Python 3?",
+        "```python\nfrom functools import lru_cache\n\ndef longest_common_subsequence_length(text1: str, text2: str) -> int:\n    @lru_cache(maxsize=None)\n    def dp(i, j):\n        if i == -1 or j == -1:\n            return 0\n        if text1[i] == text2[j]:\n            return dp(i - 1, j - 1) + 1\n        else:\n            return max(dp(i - 1, j), dp(i, j - 1))\n    return dp(len(text1) - 1, len(text2) - 1)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Describe how you would construct a JavaScript function to set a particular string as the content of an HTML element identified by its id, ensuring your implementation remains compatible with ES6 standards.",
+        "```javascript\nconst setElementContent = (elementId, content) => {\n    const element = document.getElementById(elementId);\n    if (element) {\n        element.textContent = content;\n    }\n};\n```"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a JavaScript code example that utilizes the map function to apply the squaring operation to each item in a numerical array. Ensure the code is compatible with the ECMAScript 6 standard.",
+        "```javascript\nconst numbers = [1, 2, 3, 4, 5];\nconst squaredNumbers = numbers.map(num => num * num);\n```"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: How would you write a Python3 function to get the list of square numbers from 1 to N.",
+        "```python\ndef get_squares(N):\n    return [i**2 for i in range(1, N+1)]\n```"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python code example that utilizes a list comprehension to apply the cubing operation to each element in a numerical list.",
+        "```python\nnumbers = [1, 2, 3, 4, 5]\ncubed = [x**3 for x in numbers]\n```"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java program implementing a for-loop to double every number in an integer array and print the modified array.",
+        "```java\npublic class Main {\n    public static void main(String[] args) {\n        int[] numbers = {1, 2, 3, 4, 5};\n        for (int i = 0; i < numbers.length; i++) {\n            numbers[i] *= 2;\n        }\n        for (int num : numbers) {\n            System.out.print(num + \" \");\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Construct a C++ function employing std::transform to convert all negative values to positive in a vector of doubles.",
+        "```cpp\n#include <vector>\n#include <algorithm>\n#include <cmath>\n\nvoid convertNegativesToPositives(std::vector<double>& vec) {\n    std::transform(vec.begin(), vec.end(), vec.begin(), [](double x) {\n        return std::abs(x);\n    });\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Haskell script using map function to calculate absolute values of elements in a list of floating-point numbers.",
+        "```haskell\nabsoluteValues :: [Float] -> [Float]\nabsoluteValues xs = map abs xs\n```"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Prolog predicate using recursion to increment each element in a list of integers by 3 and return the modified list.",
+        "```prolog\nincrement_list([], []).\nincrement_list([H|T], [H3|T3]) :-\n    H3 is H + 3,\n    increment_list(T, T3).\n```"
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Write a Rust function leveraging iterators to filter out odd numbers and square the remaining elements in a Vec<i32>.",
+        "```rust\nfn filter_and_square_even_numbers(numbers: Vec<i32>) -> Vec<i32> {\n    numbers.into_iter()\n        .filter(|&x| x % 2 == 0)\n        .map(|x| x * x)\n        .collect()\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Lua script utilizing anonymous functions with table traversal to reverse all string elements in a table and convert them to uppercase.",
+        "```lua\nlocal function reverseAndUpper(tbl)\n    for i, v in ipairs(tbl) do\n        if type(v) == \"string\" then\n            tbl[i] = v:reverse():upper()\n        end\n    end\nend\n\nlocal tableToProcess = {\"hello\", \"world\", \"lua\"}\nreverseAndUpper(tableToProcess)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Julia program using element-wise broadcasting to compute hyperbolic tangent values for each entry in a Float64 array.",
+        "```julia\ntanh.(array::Array{Float64})\n```"
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a CoffeeScript snippet with arrow functions to generate SHA-256 hashes for each string in an array asynchronously.",
+        "```coffeescript\ncrypto = require 'crypto'\n\ngenerateSHA256 = (strings) =>\n  Promise.all strings.map (str) =>\n    new Promise (resolve) =>\n      hash = crypto.createHash 'sha256'\n      hash.update str\n      resolve hash.digest 'hex'\n```"
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust code snippet that employs the iter().map() method to compute the cube of each element in a floating-point vector, preserving the original data type in the output collection.",
+        "```rust\nlet vector: Vec<f64> = vec![1.0, 2.0, 3.0];\nlet cubed: Vec<f64> = vector.iter().map(|x| x.powi(3)).collect();\n```"
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Write a Haskell function that leverages the map higher-order function to convert a list of strings to uppercase using the Data.Char library, maintaining list structure and element ordering.",
+        "```haskell\nimport Data.Char (toUpper)\n\ntoUpperStrings :: [String] -> [String]\ntoUpperStrings = map (map toUpper)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Prolog predicate using maplist/3 to calculate the factorial of each number in a list of integers, returning the results in a new list.",
+        "```prolog\nfactorial(0, 1).\nfactorial(N, F) :-\n    N > 0,\n    N1 is N - 1,\n    factorial(N1, F1),\n    F is N * F1.\n\nfactorial_list(InputList, OutputList) :-\n    maplist(factorial, InputList, OutputList).\n```"
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java program that reads a list of names from the console and sorts them in alphabetical order before printing the sorted list.",
+        "```java\nimport java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.Scanner;\n\npublic class SortNames {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        ArrayList<String> names = new ArrayList<>();\n        \n        System.out.println(\"Enter names (type 'done' to finish):\");\n        while (true) {\n            String input = scanner.nextLine();\n            if (input.equalsIgnoreCase(\"done\")) {\n                break;\n            }\n            names.add(input);\n        }\n        \n        Collections.sort(names);\n        \n        System.out.println(\"Sorted names:\");\n        for (String name : names) {\n            System.out.println(name);\n        }\n        \n        scanner.close();\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java code example that implements a multi-threaded matrix multiplication. The program should generate two random matrices, compute their product using multiple threads, and display the resulting matrix. The solution must include proper synchronization to handle potential concurrency issues.",
+        "```java\nimport java.util.Random;\n\npublic class MatrixMultiplication {\n    private static int[][] matrixA;\n    private static int[][] matrixB;\n    private static int[][] result;\n    private static int size;\n\n    public static void main(String[] args) {\n        size = 3; // Example size, can be changed\n        matrixA = generateRandomMatrix(size);\n        matrixB = generateRandomMatrix(size);\n        result = new int[size][size];\n\n        System.out.println(\"Matrix A:\");\n        printMatrix(matrixA);\n        System.out.println(\"Matrix B:\");\n        printMatrix(matrixB);\n\n        Thread[] threads = new Thread[size];\n        for (int i = 0; i < size; i++) {\n            final int row = i;\n            threads[i] = new Thread(() -> multiplyRow(row));\n            threads[i].start();\n        }\n\n        for (Thread thread : threads) {\n            try {\n                thread.join();\n            } catch (InterruptedException e) {\n                e.printStackTrace();\n            }\n        }\n\n        System.out.println(\"Result:\");\n        printMatrix(result);\n    }\n\n    private static int[][] generateRandomMatrix(int size) {\n        Random random = new Random();\n        int[][] matrix = new int[size][size];\n        for (int i = 0; i < size; i++) {\n            for (int j = 0; j < size; j++) {\n                matrix[i][j] = random.nextInt(10);\n            }\n        }\n        return matrix;\n    }\n\n    private static synchronized void multiplyRow(int row) {\n        for (int col = 0; col < size; col++) {\n            for (int k = 0; k < size; k++) {\n                result[row][col] += matrixA[row][k] * matrixB[k][col];\n            }\n        }\n    }\n\n    private static void printMatrix(int[][] matrix) {\n        for (int[] row : matrix) {\n            for (int num : row) {\n                System.out.print(num + \" \");\n            }\n            System.out.println();\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python script that reads a CSV file containing sales data (with columns \"Region\", \"Product\", and \"Sales\"), calculates the total sales for each region, and writes the aggregated results into a new CSV file. The script must include proper error handling for file operations and data conversion.",
+        "```python\nimport csv\nimport sys\n\ndef calculate_regional_sales(input_file, output_file):\n    try:\n        # Read input CSV and calculate regional sales\n        regional_sales = {}\n        with open(input_file, mode='r') as infile:\n            reader = csv.DictReader(infile)\n            if not all(col in reader.fieldnames for col in [\"Region\", \"Product\", \"Sales\"]):\n                raise ValueError(\"Input CSV must contain 'Region', 'Product', and 'Sales' columns\")\n            \n            for row in reader:\n                try:\n                    region = row[\"Region\"]\n                    sales = float(row[\"Sales\"])\n                    regional_sales[region] = regional_sales.get(region, 0) + sales\n                except ValueError as e:\n                    print(f\"Error converting sales value in row: {row}. Error: {e}\")\n                    continue\n\n        # Write aggregated results to output CSV\n        with open(output_file, mode='w', newline='') as outfile:\n            writer = csv.writer(outfile)\n            writer.writerow([\"Region\", \"Total Sales\"])\n            for region, total in regional_sales.items():\n                writer.writerow([region, total])\n\n    except FileNotFoundError:\n        print(f\"Error: Input file '{input_file}' not found.\")\n        sys.exit(1)\n    except PermissionError:\n        print(f\"Error: Permission denied when accessing file '{input_file}' or '{output_file}'.\")\n        sys.exit(1)\n    except Exception as e:\n        print(f\"An unexpected error occurred: {e}\")\n        sys.exit(1)\n\nif __name__ == \"__main__\":\n    if len(sys.argv) != 3:\n        print(\"Usage: python sales_aggregator.py <input_file.csv> <output_file.csv>\")\n        sys.exit(1)\n    \n    input_file = sys.argv[1]\n    output_file = sys.argv[2]\n    calculate_regional_sales(input_file, output_file)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Rust library function named \"parse_log\" that takes a file path to a log file, reads the file, and extracts all unique IP addresses found in the logs. The function should return a sorted vector of IP addresses (as strings) wrapped in a Result type to gracefully handle file I/O errors.",
+        "```rust\nuse std::fs::File;\nuse std::io::{BufRead, BufReader};\nuse std::net::IpAddr;\nuse std::path::Path;\nuse std::collections::HashSet;\n\npub fn parse_log(file_path: &Path) -> Result<Vec<String>, std::io::Error> {\n    let file = File::open(file_path)?;\n    let reader = BufReader::new(file);\n    let mut ip_set = HashSet::new();\n\n    for line in reader.lines() {\n        let line = line?;\n        for word in line.split_whitespace() {\n            if let Ok(ip) = word.parse::<IpAddr>() {\n                ip_set.insert(ip.to_string());\n            }\n        }\n    }\n\n    let mut ips: Vec<String> = ip_set.into_iter().collect();\n    ips.sort();\n    Ok(ips)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Java program that connects to a PostgreSQL database, retrieves all records from an \"employees\" table, and prints the results to the console.",
+        "```java\nimport java.sql.*;\n\npublic class PostgreSQLExample {\n    public static void main(String[] args) {\n        String url = \"jdbc:postgresql://localhost:5432/your_database\";\n        String user = \"your_username\";\n        String password = \"your_password\";\n\n        try (Connection conn = DriverManager.getConnection(url, user, password)) {\n            Statement stmt = conn.createStatement();\n            ResultSet rs = stmt.executeQuery(\"SELECT * FROM employees\");\n\n            ResultSetMetaData metaData = rs.getMetaData();\n            int columnCount = metaData.getColumnCount();\n\n            while (rs.next()) {\n                for (int i = 1; i <= columnCount; i++) {\n                    System.out.print(rs.getString(i) + \" \");\n                }\n                System.out.println();\n            }\n        } catch (SQLException e) {\n            e.printStackTrace();\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Prolog program implementing depth-first search to find all paths between two nodes in a directed graph represented by edge facts.",
+        "```prolog\n% Directed graph represented by edge facts\nedge(a, b).\nedge(b, c).\nedge(b, d).\nedge(c, e).\nedge(d, e).\n\n% Depth-first search to find all paths between two nodes\nfind_all_paths(Start, End, Paths) :-\n    findall(Path, dfs(Start, End, [Start], Path), Paths).\n\ndfs(End, End, Visited, Path) :-\n    reverse(Visited, Path).\n\ndfs(Current, End, Visited, Path) :-\n    edge(Current, Next),\n    \\+ member(Next, Visited),\n    dfs(Next, End, [Next|Visited], Path).\n```"
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Write a Python script that connects to a SQLite database, creates a table for storing user profiles (with fields: id, name, and email), inserts at least three sample records, and queries the table to display all records.",
+        "```python\nimport sqlite3\n\n# Connect to SQLite database (creates if not exists)\nconn = sqlite3.connect('user_profiles.db')\ncursor = conn.cursor()\n\n# Create user_profiles table\ncursor.execute('''\n    CREATE TABLE IF NOT EXISTS user_profiles (\n        id INTEGER PRIMARY KEY,\n        name TEXT NOT NULL,\n        email TEXT NOT NULL UNIQUE\n    )\n''')\n\n# Insert sample records\nsample_users = [\n    (1, 'Alice Smith', 'alice@example.com'),\n    (2, 'Bob Johnson', 'bob@example.com'),\n    (3, 'Charlie Brown', 'charlie@example.com')\n]\ncursor.executemany('INSERT OR IGNORE INTO user_profiles (id, name, email) VALUES (?, ?, ?)', sample_users)\n\n# Query and display all records\ncursor.execute('SELECT * FROM user_profiles')\nrecords = cursor.fetchall()\nfor row in records:\n    print(row)\n\n# Commit changes and close connection\nconn.commit()\nconn.close()\n```"
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python script that sends a GET request to a public API endpoint (e.g., \"https://jsonplaceholder.typicode.com/posts\"), retrieves the JSON data containing a list of posts, and prints the title of the post with the highest id. The script should include proper error handling for HTTP errors and exceptions.",
+        "```python\nimport requests\n\ndef get_post_with_highest_id():\n    url = \"https://jsonplaceholder.typicode.com/posts\"\n    try:\n        response = requests.get(url)\n        response.raise_for_status()\n        posts = response.json()\n        if not posts:\n            print(\"No posts found.\")\n            return\n        \n        highest_id_post = max(posts, key=lambda post: post['id'])\n        print(highest_id_post['title'])\n        \n    except requests.exceptions.HTTPError as http_err:\n        print(f\"HTTP error occurred: {http_err}\")\n    except requests.exceptions.RequestException as req_err:\n        print(f\"Request error occurred: {req_err}\")\n    except Exception as e:\n        print(f\"An error occurred: {e}\")\n\nif __name__ == \"__main__\":\n    get_post_with_highest_id()\n```"
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust program that reads a text file from disk, processes its content to count the occurrence of each unique word (ignoring case and punctuation), and then displays the top five most frequently occurring words along with their counts. The program should handle errors gracefully (e.g., file not found).",
+        "```rust\nuse std::collections::HashMap;\nuse std::fs::File;\nuse std::io::{self, Read};\nuse std::path::Path;\n\nfn main() {\n    let file_path = \"input.txt\"; // Change this to your file path\n    match count_words(file_path) {\n        Ok(word_counts) => {\n            let mut sorted_counts: Vec<_> = word_counts.iter().collect();\n            sorted_counts.sort_by(|a, b| b.1.cmp(a.1));\n            \n            println!(\"Top 5 most frequent words:\");\n            for (i, (word, count)) in sorted_counts.iter().take(5).enumerate() {\n                println!(\"{}. {}: {}\", i + 1, word, count);\n            }\n        }\n        Err(e) => eprintln!(\"Error: {}\", e),\n    }\n}\n\nfn count_words<P: AsRef<Path>>(path: P) -> io::Result<HashMap<String, u32>> {\n    let mut file = File::open(path)?;\n    let mut contents = String::new();\n    file.read_to_string(&mut contents)?;\n\n    let mut word_counts = HashMap::new();\n    for word in contents.split_whitespace() {\n        let cleaned_word = word\n            .chars()\n            .filter(|c| c.is_alphabetic())\n            .collect::<String>()\n            .to_lowercase();\n        \n        if !cleaned_word.is_empty() {\n            *word_counts.entry(cleaned_word).or_insert(0) += 1;\n        }\n    }\n\n    Ok(word_counts)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a C++ program that reads a list of integers from a text file, sorts them in descending order using a custom comparator, and writes the sorted integers to a new file. The program should handle file I/O errors gracefully.",
+        "```cpp\n#include <iostream>\n#include <fstream>\n#include <vector>\n#include <algorithm>\n#include <stdexcept>\n\n// Custom comparator for descending order\nbool descendingComparator(int a, int b) {\n    return a > b;\n}\n\nvoid handleFileIOError(const std::string& message) {\n    std::cerr << \"Error: \" << message << std::endl;\n    exit(1);\n}\n\nint main() {\n    std::string inputFilename = \"input.txt\";\n    std::string outputFilename = \"output.txt\";\n\n    std::ifstream inputFile(inputFilename);\n    if (!inputFile.is_open()) {\n        handleFileIOError(\"Failed to open input file.\");\n    }\n\n    std::vector<int> numbers;\n    int num;\n    while (inputFile >> num) {\n        numbers.push_back(num);\n    }\n    inputFile.close();\n\n    if (inputFile.bad()) {\n        handleFileIOError(\"Error occurred while reading input file.\");\n    }\n\n    std::sort(numbers.begin(), numbers.end(), descendingComparator);\n\n    std::ofstream outputFile(outputFilename);\n    if (!outputFile.is_open()) {\n        handleFileIOError(\"Failed to open output file.\");\n    }\n\n    for (const auto& n : numbers) {\n        outputFile << n << \" \";\n    }\n    outputFile.close();\n\n    if (outputFile.bad()) {\n        handleFileIOError(\"Error occurred while writing to output file.\");\n    }\n\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Write a Lua script using coroutines with proper error handling and synchronization primitives to concurrently simulate sensor data aggregation from three different sources (temperature, pressure, motion) with randomized delay intervals (100-2000ms), implementing data validation, timeout handling, and graceful coroutine termination.",
+        "```lua\nlocal co = require('coroutine')\nlocal timer = require('timer')\n\n-- Sensor data generators\nlocal function generate_temperature()\n    math.randomseed(os.time())\n    return math.random(15, 35) -- Celsius\nend\n\nlocal function generate_pressure()\n    math.randomseed(os.time() + 100)\n    return math.random(950, 1050) -- hPa\nend\n\nlocal function generate_motion()\n    math.randomseed(os.time() + 200)\n    return math.random(0, 1) == 1 -- Boolean\nend\n\n-- Data validation\nlocal function validate_data(data, sensor_type)\n    if sensor_type == \"temperature\" then\n        return data >= -40 and data <= 60\n    elseif sensor_type == \"pressure\" then\n        return data >= 800 and data <= 1200\n    elseif sensor_type == \"motion\" then\n        return type(data) == \"boolean\"\n    end\n    return false\nend\n\n-- Sensor coroutine with error handling\nlocal function sensor_coroutine(sensor_func, sensor_type, timeout)\n    return co.create(function()\n        local delay = math.random(100, 2000)\n        timer.sleep(delay)\n        \n        local data = sensor_func()\n        if not validate_data(data, sensor_type) then\n            error(string.format(\"Invalid %s data: %s\", sensor_type, tostring(data)))\n        end\n        \n        if delay > timeout then\n            error(string.format(\"%s sensor timeout (%dms > %dms)\", \n                  sensor_type, delay, timeout))\n        end\n        \n        return data\n    end)\nend\n\n-- Main aggregation function\nlocal function aggregate_sensor_data(timeout)\n    local sensors = {\n        {func = generate_temperature, type = \"temperature\"},\n        {func = generate_pressure, type = \"pressure\"},\n        {func = generate_motion, type = \"motion\"}\n    }\n    \n    local results = {}\n    local errors = {}\n    local threads = {}\n    \n    -- Create and run coroutines\n    for i, sensor in ipairs(sensors) do\n        local thread = sensor_coroutine(sensor.func, sensor.type, timeout)\n        table.insert(threads, thread)\n    end\n    \n    -- Wait for completion with timeout\n    local start = os.time()\n    local running = #threads\n    \n    while running > 0 and (os.time() - start) * 1000 < timeout * 2 do\n        for i, thread in ipairs(threads) do\n            if coroutine.status(thread) ~= \"dead\" then\n                local ok, res = coroutine.resume(thread)\n                if coroutine.status(thread) == \"dead\" then\n                    running = running - 1\n                    if ok then\n                        results[threads[i].type] = res\n                    else\n                        errors[threads[i].type] = res\n                    end\n                end\n            end\n        end\n        timer.sleep(100) -- Polling interval\n    end\n    \n    -- Cleanup any remaining coroutines\n    for _, thread in ipairs(threads) do\n        if coroutine.status(thread) ~= \"dead\" then\n            coroutine.close(thread)\n        end\n    end\n    \n    return results, errors\nend\n\n-- Example usage\nlocal results, errors = aggregate_sensor_data(1500)\nprint(\"Results:\")\nfor k, v in pairs(results) do\n    print(k, v)\nend\nprint(\"\\nErrors:\")\nfor k, v in pairs(errors) do\n    print(k, v)\nend\n```"
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a CoffeeScript decorator using Node.js crypto module that memoizes function results in LRU cache with size constraints, implementing SHA-256 hashed argument signatures with JSON serialization/deserialization, circular reference handling, and cache invalidation based on TTL (time-to-live) and manual flush capabilities.",
+        "```coffeescript\ncrypto = require 'crypto'\nLRU = require 'lru-cache'\n\nmemoizeDecorator = (options = {}) ->\n  {\n    maxSize = 100\n    ttl = 0\n    circularRefs = false\n  } = options\n\n  cache = new LRU\n    max: maxSize\n    maxAge: if ttl then ttl * 1000 else undefined\n\n  stringifyArgs = (args) ->\n    try\n      cache = []\n      json = JSON.stringify args, (key, value) ->\n        if typeof value is 'object' and value isnt null\n          if cache.indexOf(value) isnt -1\n            return '[Circular]' unless circularRefs\n            throw new Error 'Circular reference detected' if not circularRefs\n          cache.push value\n        value\n      json\n    catch e\n      throw new Error \"Argument serialization failed: #{e.message}\"\n\n  getHash = (args) ->\n    str = stringifyArgs args\n    crypto.createHash('sha256').update(str).digest('hex')\n\n  (target, key, descriptor) ->\n    original = descriptor.value\n\n    descriptor.value = ->\n      args = Array.prototype.slice.call arguments\n      hash = getHash args\n\n      if cache.has hash\n        return cache.get hash\n\n      result = original.apply this, args\n      cache.set hash, result\n      result\n\n    descriptor.value.flush = -> cache.reset()\n    descriptor.value.getCacheStats = -> \n      hits: cache.hits\n      misses: cache.misses\n      size: cache.length\n\n    descriptor.value\n```"
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Haskell type-safe state transition system using monad transformers (StateT/ReaderT/ExceptT) with formal model checking to model secure ATM transaction workflows including PIN verification, transaction logging, withdrawal limits, balance integrity checks, and rollback capabilities, with algebraic data types enforcing valid state transitions and QuickCheck property tests.",
+        "```haskell\n{-# LANGUAGE GeneralizedNewtypeDeriving #-}\n{-# LANGUAGE DeriveFunctor #-}\n\nmodule SecureATM where\n\nimport Control.Monad.Trans.State.Strict\nimport Control.Monad.Trans.Reader\nimport Control.Monad.Trans.Except\nimport Control.Monad (when, unless)\nimport Data.Time (UTCTime, getCurrentTime)\nimport Test.QuickCheck (Arbitrary(..), Property, (==>), forAll)\nimport Test.QuickCheck.Monadic (monadicIO, run, assert)\n\n-- Algebraic data types for state transitions\ndata ATMState = \n    Ready \n  | AwaitingPIN \n  | Authenticated \n  | TransactionInProgress \n  | TransactionComplete \n  | Locked \n  deriving (Eq, Show, Enum, Bounded)\n\ndata TransactionType = Withdrawal | Deposit | BalanceCheck\n  deriving (Eq, Show)\n\ndata Transaction = Transaction {\n    txType :: TransactionType\n  , txAmount :: Maybe Integer\n  , txTime :: UTCTime\n  } deriving (Show)\n\ndata ATMAction =\n    InsertCard\n  | EnterPIN String\n  | SelectTransaction TransactionType\n  | EnterAmount Integer\n  | Confirm\n  | Cancel\n  | EjectCard\n  deriving (Eq, Show)\n\ndata ATMError =\n    InvalidPIN\n  | InsufficientFunds\n  | DailyLimitExceeded\n  | InvalidStateTransition\n  | SystemFailure\n  deriving (Eq, Show)\n\ndata ATMEnv = ATMEnv {\n    maxDailyWithdrawal :: Integer\n  , correctPIN :: String\n  , systemTime :: IO UTCTime\n  }\n\ndata ATMData = ATMData {\n    currentState :: ATMState\n  , accountBalance :: Integer\n  , dailyWithdrawal :: Integer\n  , currentTransaction :: Maybe Transaction\n  , transactionLog :: [Transaction]\n  , failedAttempts :: Int\n  }\n\n-- Type-safe monad stack\nnewtype ATMM a = ATM { \n    unATM :: ReaderT ATMEnv (StateT ATMData (ExceptT ATMError IO)) a \n  } deriving (Functor, Applicative, Monad, \n              MonadReader ATMEnv, \n              MonadState ATMData, \n              MonadError ATMError,\n              MonadIO)\n\n-- State transition helpers\ntransition :: ATMState -> ATMM ()\ntransition newState = modify $ \\s -> s { currentState = newState }\n\nvalidateTransition :: ATMState -> ATMState -> Bool\nvalidateTransition from to = case (from, to) of\n  (Ready, AwaitingPIN) -> True\n  (AwaitingPIN, Authenticated) -> True\n  (AwaitingPIN, Locked) -> True\n  (Authenticated, TransactionInProgress) -> True\n  (TransactionInProgress, TransactionComplete) -> True\n  (TransactionComplete, Ready) -> True\n  (_, Locked) -> True\n  (_, Ready) -> True\n  _ -> False\n\n-- Core operations\ninsertCard :: ATMM ()\ninsertCard = do\n  s <- gets currentState\n  unless (s == Ready) $ throwError InvalidStateTransition\n  transition AwaitingPIN\n\nenterPIN :: String -> ATMM ()\nenterPIN pin = do\n  s <- gets currentState\n  unless (s == AwaitingPIN) $ throwError InvalidStateTransition\n  \n  correct <- asks correctPIN\n  attempts <- gets failedAttempts\n  \n  if pin == correct\n    then do\n      put $ ATMData Authenticated 0 0 Nothing [] 0\n    else do\n      modify $ \\st -> st { failedAttempts = attempts + 1 }\n      when (attempts + 1 >= 3) $ do\n        transition Locked\n        throwError InvalidPIN\n      throwError InvalidPIN\n\nselectTransaction :: TransactionType -> ATMM ()\nselectTransaction txType = do\n  s <- gets currentState\n  unless (s == Authenticated) $ throwError InvalidStateTransition\n  \n  now <- liftIO getCurrentTime\n  let tx = Transaction txType Nothing now\n  modify $ \\st -> st { \n    currentState = TransactionInProgress,\n    currentTransaction = Just tx \n  }\n\nenterAmount :: Integer -> ATMM ()\nenterAmount amount = do\n  s <- gets currentState\n  tx <- gets currentTransaction\n  unless (s == TransactionInProgress) $ throwError InvalidStateTransition\n  unless (isJust tx) $ throwError InvalidStateTransition\n  \n  let tx' = fmap (\\t -> t { txAmount = Just amount }) tx\n  modify $ \\st -> st { currentTransaction = tx' }\n\nconfirmTransaction :: ATMM ()\nconfirmTransaction = do\n  s <- gets currentState\n  tx <- gets currentTransaction\n  bal <- gets accountBalance\n  daily <- gets dailyWithdrawal\n  maxDaily <- asks maxDailyWithdrawal\n  \n  unless (s == TransactionInProgress) $ throwError InvalidStateTransition\n  unless (isJust tx) $ throwError InvalidStateTransition\n  \n  let (Just t) = tx\n      amount = fromMaybe 0 (txAmount t)\n  \n  case txType t of\n    Withdrawal -> do\n      when (amount > bal) $ throwError InsufficientFunds\n      when (daily + amount > maxDaily) $ throwError DailyLimitExceeded\n      modify $ \\st -> st {\n        accountBalance = bal - amount,\n        dailyWithdrawal = daily + amount\n      }\n    Deposit -> \n      modify $ \\st -> st { accountBalance = bal + amount }\n    BalanceCheck -> return ()\n  \n  now <- liftIO getCurrentTime\n  let completedTx = t { txTime = now }\n  \n  modify $ \\st -> st {\n    currentState = TransactionComplete,\n    currentTransaction = Nothing,\n    transactionLog = completedTx : transactionLog st\n  }\n\ncancelTransaction :: ATMM ()\ncancelTransaction = do\n  s <- gets currentState\n  unless (s `elem` [AwaitingPIN, TransactionInProgress]) $ \n    throwError InvalidStateTransition\n  modify $ \\st -> st { \n    currentState = Ready,\n    currentTransaction = Nothing \n  }\n\nejectCard :: ATMM ()\nejectCard = do\n  s <- gets currentState\n  unless (s `elem` [Authenticated, TransactionComplete]) $ \n    throwError InvalidStateTransition\n  transition Ready\n\n-- QuickCheck properties\nprop_validStateTransitions :: ATMAction -> ATMState -> Property\nprop_validStateTransitions action fromState = \n  monadicIO $ do\n    let env = ATMEnv 1000 \"1234\" getCurrentTime\n        initData = ATMData fromState 1000 0 Nothing [] 0\n        m = case action of\n              InsertCard -> insertCard\n              EnterPIN pin -> enterPIN pin\n              SelectTransaction tx -> selectTransaction tx\n              EnterAmount amt -> enterAmount amt\n              Confirm -> confirmTransaction\n              Cancel -> cancelTransaction\n              EjectCard -> ejectCard\n    (result, newState) <- run $ runStateT (runReaderT (runExceptT (unATM m)) env) initData\n    case result of\n      Left _ -> assert $ True -- Error is acceptable\n      Right _ -> assert $ validateTransition fromState (currentState newState)\n\n-- Arbitrary instances for testing\ninstance Arbitrary ATMState where\n  arbitrary = arbitraryBoundedEnum\n\ninstance Arbitrary TransactionType where\n  arbitrary = arbitraryBoundedEnum\n\ninstance Arbitrary ATMAction where\n  arbitrary = oneof [\n    return InsertCard,\n    EnterPIN <$> elements [\"1234\", \"0000\", \"9999\"],\n    SelectTransaction <$> arbitrary,\n    EnterAmount <$> choose (1, 1000),\n    return Confirm,\n    return Cancel,\n    return EjectCard\n    ]\n```"
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java code example that reads an input text file named \"products.txt\", where each line contains a product name and its price separated by a comma. The program should filter out products priced below $20, sort the remaining products by price in descending order, and print the sorted list to the console.",
+        "```java\nimport java.io.BufferedReader;\nimport java.io.FileReader;\nimport java.io.IOException;\nimport java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.Comparator;\nimport java.util.List;\n\npublic class ProductFilter {\n    public static void main(String[] args) {\n        List<Product> products = new ArrayList<>();\n        \n        try (BufferedReader br = new BufferedReader(new FileReader(\"products.txt\"))) {\n            String line;\n            while ((line = br.readLine()) != null) {\n                String[] parts = line.split(\",\");\n                String name = parts[0].trim();\n                double price = Double.parseDouble(parts[1].trim());\n                if (price >= 20) {\n                    products.add(new Product(name, price));\n                }\n            }\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n        \n        Collections.sort(products, Comparator.comparing(Product::getPrice).reversed());\n        \n        for (Product product : products) {\n            System.out.println(product.getName() + \": $\" + product.getPrice());\n        }\n    }\n    \n    static class Product {\n        private String name;\n        private double price;\n        \n        public Product(String name, double price) {\n            this.name = name;\n            this.price = price;\n        }\n        \n        public String getName() {\n            return name;\n        }\n        \n        public double getPrice() {\n            return price;\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java program that utilizes multithreading to compute the sum of an integer array. The program should divide the array into multiple segments, calculate the sum of each segment concurrently using threads, and then combine the results to display the total sum.",
+        "```java\nimport java.util.concurrent.*;\n\npublic class MultithreadedArraySum {\n    public static void main(String[] args) {\n        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};\n        int numThreads = 4;\n        ExecutorService executor = Executors.newFixedThreadPool(numThreads);\n        Future<Integer>[] partialSums = new Future[numThreads];\n        \n        int segmentSize = array.length / numThreads;\n        \n        for (int i = 0; i < numThreads; i++) {\n            int start = i * segmentSize;\n            int end = (i == numThreads - 1) ? array.length : start + segmentSize;\n            partialSums[i] = executor.submit(new SumTask(array, start, end));\n        }\n        \n        int totalSum = 0;\n        try {\n            for (Future<Integer> partialSum : partialSums) {\n                totalSum += partialSum.get();\n            }\n        } catch (InterruptedException | ExecutionException e) {\n            e.printStackTrace();\n        }\n        \n        executor.shutdown();\n        System.out.println(\"Total sum: \" + totalSum);\n    }\n}\n\nclass SumTask implements Callable<Integer> {\n    private final int[] array;\n    private final int start;\n    private final int end;\n    \n    public SumTask(int[] array, int start, int end) {\n        this.array = array;\n        this.start = start;\n        this.end = end;\n    }\n    \n    @Override\n    public Integer call() {\n        int sum = 0;\n        for (int i = start; i < end; i++) {\n            sum += array[i];\n        }\n        return sum;\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 33,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a C++ program that reads a text file containing a list of product names and their prices, calculates the total cost, and outputs the result to the console. Ensure the program handles file input errors gracefully.",
+        "```cpp\n#include <iostream>\n#include <fstream>\n#include <string>\n#include <stdexcept>\n\nint main() {\n    std::string filename;\n    std::cout << \"Enter the filename: \";\n    std::cin >> filename;\n\n    std::ifstream file(filename);\n    if (!file.is_open()) {\n        std::cerr << \"Error: Could not open file '\" << filename << \"'\\n\";\n        return 1;\n    }\n\n    double total = 0.0;\n    std::string product;\n    double price;\n\n    while (file >> product >> price) {\n        total += price;\n    }\n\n    if (file.bad()) {\n        std::cerr << \"Error: Failed to read data from file\\n\";\n        return 1;\n    }\n\n    std::cout << \"Total cost: \" << total << \"\\n\";\n    file.close();\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Haskell program that defines a binary tree data structure. Implement functions to insert nodes, search for a specific value, and traverse the tree in an in-order manner. The program should then allow the user to interactively build a tree by inserting nodes and perform a search for a given value.",
+        "```haskell\nmodule Main where\n\ndata BinaryTree a = EmptyTree | Node a (BinaryTree a) (BinaryTree a) deriving (Show)\n\ninsert :: (Ord a) => a -> BinaryTree a -> BinaryTree a\ninsert x EmptyTree = Node x EmptyTree EmptyTree\ninsert x (Node a left right)\n    | x == a = Node a left right\n    | x < a  = Node a (insert x left) right\n    | x > a  = Node a left (insert x right)\n\nsearch :: (Ord a) => a -> BinaryTree a -> Bool\nsearch _ EmptyTree = False\nsearch x (Node a left right)\n    | x == a = True\n    | x < a  = search x left\n    | x > a  = search x right\n\ninOrder :: BinaryTree a -> [a]\ninOrder EmptyTree = []\ninOrder (Node a left right) = inOrder left ++ [a] ++ inOrder right\n\nmain :: IO ()\nmain = do\n    putStrLn \"Interactive Binary Tree\"\n    putStrLn \"Enter integers to insert into the tree (type 'done' to finish):\"\n    tree <- buildTree EmptyTree\n    putStrLn \"Enter a value to search for:\"\n    value <- getLine\n    if value == \"done\"\n        then putStrLn \"No search performed.\"\n        else do\n            let val = read value :: Int\n            putStrLn $ if search val tree then \"Value found!\" else \"Value not found.\"\n    putStrLn $ \"In-order traversal: \" ++ show (inOrder tree)\n\nbuildTree :: (Ord a, Read a) => BinaryTree a -> IO (BinaryTree a)\nbuildTree tree = do\n    input <- getLine\n    if input == \"done\"\n        then return tree\n        else do\n            let val = read input :: a\n            buildTree (insert val tree)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Write a Rust program that implements a simple multi-threaded web server. The server should handle HTTP GET requests and return a static \"Hello, World!\" message. Use Rust's async/await functionality for handling multiple concurrent requests efficiently.",
+        "```rust\nuse std::net::SocketAddr;\nuse tokio::io::{AsyncReadExt, AsyncWriteExt};\nuse tokio::net::{TcpListener, TcpStream};\n\nasync fn handle_connection(mut stream: TcpStream) {\n    let mut buffer = [0; 1024];\n    stream.read(&mut buffer).await.unwrap();\n\n    let response = \"HTTP/1.1 200 OK\\r\\nContent-Type: text/plain\\r\\n\\r\\nHello, World!\";\n    stream.write_all(response.as_bytes()).await.unwrap();\n    stream.flush().await.unwrap();\n}\n\n#[tokio::main]\nasync fn main() {\n    let addr: SocketAddr = \"127.0.0.1:8080\".parse().unwrap();\n    let listener = TcpListener::bind(addr).await.unwrap();\n\n    loop {\n        let (stream, _) = listener.accept().await.unwrap();\n        tokio::spawn(async move {\n            handle_connection(stream).await;\n        });\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Haskell program that implements a simple functional calculator. The calculator should support basic operations like addition, subtraction, multiplication, and division. It should take input from the user as a string and output the result of the operation.",
+        "```haskell\nmodule Main where\n\nimport Text.Read (readMaybe)\n\ndata Operation = Add | Subtract | Multiply | Divide deriving (Show, Eq)\n\nparseOperation :: String -> Maybe Operation\nparseOperation \"+\" = Just Add\nparseOperation \"-\" = Just Subtract\nparseOperation \"*\" = Just Multiply\nparseOperation \"/\" = Just Divide\nparseOperation _   = Nothing\n\ncalculate :: Operation -> Double -> Double -> Maybe Double\ncalculate Add x y      = Just (x + y)\ncalculate Subtract x y = Just (x - y)\ncalculate Multiply x y = Just (x * y)\ncalculate Divide x y   = if y == 0 then Nothing else Just (x / y)\n\nparseInput :: String -> Maybe (Double, Operation, Double)\nparseInput input = do\n    let parts = words input\n    if length parts /= 3\n        then Nothing\n        else do\n            x <- readMaybe (head parts)\n            op <- parseOperation (parts !! 1)\n            y <- readMaybe (parts !! 2)\n            return (x, op, y)\n\nmain :: IO ()\nmain = do\n    putStrLn \"Enter an expression (e.g., '2 + 3'):\"\n    input <- getLine\n    case parseInput input of\n        Nothing -> putStrLn \"Invalid input. Please use format: <number> <operation> <number>\"\n        Just (x, op, y) -> case calculate op x y of\n            Nothing -> putStrLn \"Error: Division by zero\"\n            Just result -> putStrLn $ \"Result: \" ++ show result\n```"
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Prolog program that defines a family tree, including parent-child relationships. Implement a rule to check if one person is an ancestor of another. Provide sample queries to test this rule.",
+        "```prolog\n% Family tree facts\nparent(john, mary).\nparent(john, lisa).\nparent(mary, ann).\nparent(mary, bob).\nparent(lisa, eve).\nparent(lisa, tom).\n\n% Ancestor rule\nancestor(X, Y) :- parent(X, Y).\nancestor(X, Y) :- parent(X, Z), ancestor(Z, Y).\n\n% Sample queries\n% ?- ancestor(john, ann).\n% ?- ancestor(mary, tom).\n% ?- ancestor(lisa, bob).\n```"
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Lua script that fetches data from an API endpoint using the HTTP GET method and prints the response. Ensure proper error handling for request failures.",
+        "```lua\nlocal http = require(\"socket.http\")\nlocal ltn12 = require(\"ltn12\")\n\nlocal url = \"https://api.example.com/data\"  -- Replace with your API endpoint\n\nlocal response_body = {}\nlocal request_headers = {\n    [\"Content-Type\"] = \"application/json\"\n}\n\nlocal success, status_code, response_headers = http.request{\n    url = url,\n    method = \"GET\",\n    headers = request_headers,\n    sink = ltn12.sink.table(response_body)\n}\n\nif not success then\n    print(\"Error: Request failed with status code \" .. tostring(status_code))\nelse\n    print(table.concat(response_body))\nend\n```"
+      ]
+    ]
+  },
+  {
+    "id": 39,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust iterator chain that uses map to safely parse a vector of string slices into integers, handling parse errors by converting them to -1 and logging \"Invalid input\" via closure-captured logger.",
+        "```rust\nlet strings = vec![\"10\", \"20\", \"foo\", \"30\"];\nlet logger = |s: &str| eprintln!(\"{}\", s);\n\nlet parsed: Vec<i32> = strings\n    .into_iter()\n    .map(|s| s.parse().unwrap_or_else(|_| {\n        logger(\"Invalid input\");\n        -1\n    }))\n    .collect();\n```"
+      ]
+    ]
+  },
+  {
+    "id": 40,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Haskell lazy infinite list using map that generates triangular numbers with memoization, then extract the first 20 elements strictly.",
+        "```haskell\ntriangulars :: [Integer]\ntriangulars = map (\\n -> n * (n + 1) `div` 2) [1..]\n\nfirst20Triangulars :: [Integer]\nfirst20Triangulars = take 20 triangulars\n```"
+      ]
+    ]
+  },
+  {
+    "id": 41,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Build a Prolog meta-predicate using maplist/2 that recursively checks if all elements in a nested list structure are prime numbers (depth-first traversal).",
+        "```prolog\nis_prime(2).\nis_prime(3).\nis_prime(P) :- \n    P > 3, \n    P mod 2 =\\= 0, \n    \\+ has_factor(P, 3).\n\nhas_factor(N, F) :- \n    N mod F =:= 0.\nhas_factor(N, F) :- \n    F * F < N, \n    F2 is F + 2, \n    has_factor(N, F2).\n\nall_primes([]).\nall_primes([H|T]) :-\n    (   is_list(H) \n    ->  all_primes(H)\n    ;   is_prime(H)\n    ),\n    all_primes(T).\n\ncheck_all_primes(List) :-\n    maplist(all_primes, List).\n```"
+      ]
+    ]
+  },
+  {
+    "id": 42,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Julia parallel @distributed map pipeline that processes 10,000 DNA sequences simultaneously to count GC-content percentages across 4 CPU cores.",
+        "```julia\nusing Distributed\n\n@everywhere function gc_content(sequence)\n    gc = count(c -> c in ['G', 'C', 'g', 'c'], sequence)\n    return (gc / length(sequence)) * 100\nend\n\nfunction process_sequences(sequences)\n    addprocs(4 - nprocs())  # Ensure 4 cores total\n    @distributed (vcat) for seq in sequences\n        gc_content(seq)\n    end\nend\n\n# Example usage (replace with your 10,000 sequences)\nsequences = [rand(['A','T','G','C'], 100) for _ in 1:10_000]\nresults = process_sequences(sequences)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 43,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Write CoffeeScript code using chained map operations to transform jQuery-selected DOM elements into React component props while preserving event delegation.",
+        "```coffeescript\n$('.elements')\n  .map ->\n    props = \n      id: $(this).attr('id')\n      className: $(this).attr('class')\n      onClick: (e) => $(this).trigger(e)\n      # Add other props/events as needed\n    props\n  .get()\n```"
+      ]
+    ]
+  },
+  {
+    "id": 44,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Lua coroutine scheduler that uses a map-like function to asynchronously fetch and process multiple URLs, storing results in a table with error handling.",
+        "```lua\nlocal function fetch_url(url)\n    local co = coroutine.create(function()\n        local ok, res = pcall(function()\n            -- Simulate HTTP request\n            local http = require(\"socket.http\")\n            local body, code, headers = http.request(url)\n            if code ~= 200 then\n                error(\"HTTP error: \" .. code)\n            end\n            return body\n        end)\n        \n        if not ok then\n            coroutine.yield({url = url, error = res})\n        else\n            coroutine.yield({url = url, result = res})\n        end\n    end)\n    return co\nend\n\nlocal function map_urls(urls, callback)\n    local results = {}\n    local threads = {}\n    \n    -- Create coroutines for each URL\n    for i, url in ipairs(urls) do\n        threads[i] = fetch_url(url)\n    end\n    \n    -- Run scheduler\n    local active = #threads\n    while active > 0 do\n        for i, thread in ipairs(threads) do\n            if thread ~= nil and coroutine.status(thread) ~= \"dead\" then\n                local _, res = coroutine.resume(thread)\n                if res then\n                    results[#results + 1] = res\n                    if callback then callback(res) end\n                end\n                \n                if coroutine.status(thread) == \"dead\" then\n                    active = active - 1\n                    threads[i] = nil\n                end\n            end\n        end\n    end\n    \n    return results\nend\n\n-- Example usage:\n-- local urls = {\"http://example.com\", \"http://example.org\"}\n-- local results = map_urls(urls, function(res) print(res.url, res.result or res.error) end)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 45,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ template metaprogramming solution using std::transform and constexpr to generate CRC32 checksums for fixed-size arrays at compile-time.",
+        "```cpp\n#include <array>\n#include <algorithm>\n#include <cstdint>\n\nconstexpr uint32_t crc32_table[] = {\n    0x00000000, 0x77073096, 0xee0e612c, 0x990951ba, 0x076dc419, 0x706af48f,\n    0xe963a535, 0x9e6495a3, 0x0edb8832, 0x79dcb8a4, 0xe0d5e91e, 0x97d2d988,\n    0x09b64c2b, 0x7eb17cbd, 0xe7b82d07, 0x90bf1d91, 0x1db71064, 0x6ab020f2,\n    0xf3b97148, 0x84be41de, 0x1adad47d, 0x6ddde4eb, 0xf4d4b551, 0x83d385c7,\n    0x136c9856, 0x646ba8c0, 0xfd62f97a, 0x8a65c9ec, 0x14015c4f, 0x63066cd9,\n    0xfa0f3d63, 0x8d080df5, 0x3b6e20c8, 0x4c69105e, 0xd56041e4, 0xa2677172,\n    0x3c03e4d1, 0x4b04d447, 0xd20d85fd, 0xa50ab56b, 0x35b5a8fa, 0x42b2986c,\n    0xdbbbc9d6, 0xacbcf940, 0x32d86ce3, 0x45df5c75, 0xdcd60dcf, 0xabd13d59,\n    0x26d930ac, 0x51de003a, 0xc8d75180, 0xbfd06116, 0x21b4f4b5, 0x56b3c423,\n    0xcfba9599, 0xb8bda50f, 0x2802b89e, 0x5f058808, 0xc60cd9b2, 0xb10be924,\n    0x2f6f7c87, 0x58684c11, 0xc1611dab, 0xb6662d3d, 0x76dc4190, 0x01db7106,\n    0x98d220bc, 0xefd5102a, 0x71b18589, 0x06b6b51f, 0x9fbfe4a5, 0xe8b8d433,\n    0x7807c9a2, 0x0f00f934, 0x9609a88e, 0xe10e9818, 0x7f6a0dbb, 0x086d3d2d,\n    0x91646c97, 0xe6635c01, 0x6b6b51f4, 0x1c6c6162, 0x856530d8, 0xf262004e,\n    0x6c0695ed, 0x1b01a57b, 0x8208f4c1, 0xf50fc457, 0x65b0d9c6, 0x12b7e950,\n    0x8bbeb8ea, 0xfcb9887c, 0x62dd1ddf, 0x15da2d49, 0x8cd37cf3, 0xfbd44c65,\n    0x4db26158, 0x3ab551ce, 0xa3bc0074, 0xd4bb30e2, 0x4adfa541, 0x3dd895d7,\n    0xa4d1c46d, 0xd3d6f4fb, 0x4369e96a, 0x346ed9fc, 0xad678846, 0xda60b8d0,\n    0x44042d73, 0x33031de5, 0xaa0a4c5f, 0xdd0d7cc9, 0x5005713c, 0x270241aa,\n    0xbe0b1010, 0xc90c2086, 0x5768b525, 0x206f85b3, 0xb966d409, 0xce61e49f,\n    0x5edef90e, 0x29d9c998, 0xb0d09822, 0xc7d7a8b4, 0x59b33d17, 0x2eb40d81,\n    0xb7bd5c3b, 0xc0ba6cad, 0xedb88320, 0x9abfb3b6, 0x03b6e20c, 0x74b1d29a,\n    0xead54739, 0x9dd277af, 0x04db2615, 0x73dc1683, 0xe3630b12, 0x94643b84,\n    0x0d6d6a3e, 0x7a6a5aa8, 0xe40ecf0b, 0x9309ff9d, 0x0a00ae27, 0x7d079eb1,\n    0xf00f9344, 0x8708a3d2, 0x1e01f268, 0x6906c2fe, 0xf762575d, 0x806567cb,\n    0x196c3671, 0x6e6b06e7, 0xfed41b76, 0x89d32be0, 0x10da7a5a, 0x67dd4acc,\n    0xf9b9df6f, 0x8ebeeff9, 0x17b7be43, 0x60b08ed5, 0xd6d6a3e8, 0xa1d1937e,\n    0x38d8c2c4, 0x4fdff252, 0xd1bb67f1, 0xa6bc5767, 0x3fb506dd, 0x48b2364b,\n    0xd80d2bda, 0xaf0a1b4c, 0x36034af6, 0x41047a60, 0xdf60efc3, 0xa867df55,\n    0x316e8eef, 0x4669be79, 0xcb61b38c, 0xbc66831a, 0x256fd2a0, 0x5268e236,\n    0xcc0c7795, 0xbb0b4703, 0x220216b9, 0x5505262f, 0xc5ba3bbe, 0xb2bd0b28,\n    0x2bb45a92, 0x5cb36a04, 0xc2d7ffa7, 0x5b5daee5, 0x9b64c2b0, 0xec63f226,\n    0x756aa39c, 0x026d930a, 0x9c0906a9, 0xeb0e363f, 0x72076785, 0x05005713,\n    0x95bf4a82, 0xe2b87a14, 0x7bb12bae, 0x0cb61b38, 0x92d28e9b, 0xe5d5be0d,\n    0x7cdcefb7, 0x0bdbdf21, 0x86d3d2d4, 0xf1d4e242, 0x68ddb3f8, 0x1fda836e,\n    0x81be16cd, 0xf6b9265b, 0x6fb077e1, 0x18b74777, 0x88085ae6, 0xff0f6a70,\n    0x66063bca, 0x11010b5c, 0x8f659eff, 0xf862ae69, 0x616bffd3, 0x166ccf45,\n    0xa00ae278, 0xd70dd2ee, 0x4e048354, 0x3903b3c2, 0xa7672661, 0xd06016f7,\n    0x4969474d, 0x3e6e77db, 0xaed16a4a, 0xd9d65adc, 0x40df0b66, 0x37d83bf0,\n    0xa9bcae53, 0xdebb9ec5, 0x47b2cf7f, 0x30b5ffe9, 0xbdbdf21c, 0xcabac28a,\n    0x53b39330, 0x24b4a3a6, 0xbad03605, 0xcdd70693, 0x54de5729, 0x23d967bf,\n    0xb3667a2e, 0xc4614ab8, 0x5d681b02, 0x2a6f2b94, 0xb40bbe37, 0xc30c8ea1,\n    0x5a05df1b, 0x2d02ef8d\n};\n\ntemplate<size_t N>\nconstexpr uint32_t crc32(const std::array<uint8_t, N>& data) {\n    uint32_t crc = 0xFFFFFFFF;\n    std::transform(data.begin(), data.end(), data.begin(), [&](uint8_t byte) {\n        crc = (crc >> 8) ^ crc32_table[(crc ^ byte) & 0xFF];\n        return byte;\n    });\n    return crc ^ 0xFFFFFFFF;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 46,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java parallel stream pipeline with map operations to analyze 1 million sensor readings, detecting anomalies using thread-safe atomic counters.",
+        "```java\nimport java.util.concurrent.atomic.AtomicInteger;\nimport java.util.stream.IntStream;\n\npublic class SensorAnalysis {\n    public static void main(String[] args) {\n        AtomicInteger anomalyCounter = new AtomicInteger(0);\n        \n        IntStream.range(0, 1_000_000)\n            .parallel()\n            .map(i -> (int) (Math.random() * 100)) // Simulate sensor reading\n            .map(reading -> {\n                if (reading > 90) { // Example anomaly threshold\n                    anomalyCounter.incrementAndGet();\n                }\n                return reading;\n            })\n            .count(); // Terminal operation to trigger processing\n        \n        System.out.println(\"Anomalies detected: \" + anomalyCounter.get());\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 47,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Build a Haskell type-safe ETL pipeline using functor maps to transform JSON ASTs into SQL queries with compile-time schema validation.",
+        "```haskell\n{-# LANGUAGE DeriveGeneric #-}\n{-# LANGUAGE TypeApplications #-}\n{-# LANGUAGE DataKinds #-}\n{-# LANGUAGE KindSignatures #-}\n{-# LANGUAGE GADTs #-}\n\nimport GHC.Generics (Generic)\nimport Data.Aeson (FromJSON, ToJSON, decode, encode)\nimport Data.Proxy (Proxy(..))\nimport Data.Text (Text)\nimport Data.Kind (Type)\nimport qualified Database.SQLite.Simple as SQL\n\n-- Schema definition using type-level strings\ndata Schema (name :: Symbol) (fields :: [(Symbol, Type)]) where\n  Nil :: Schema name '[]\n  (:->) :: Proxy name -> Proxy ty -> Schema name fs -> Schema name ('(name, ty) ': fs)\n\n-- Example schema\ntype UserSchema = Schema \"users\" '[ '(\"id\", Int), '(\"name\", Text), '(\"age\", Int) ]\n\n-- JSON AST representation\ndata JsonValue\n  = JsonObject [(Text, JsonValue)]\n  | JsonArray [JsonValue]\n  | JsonString Text\n  | JsonNumber Double\n  | JsonBool Bool\n  | JsonNull\n  deriving (Generic, Show)\n\ninstance FromJSON JsonValue\ninstance ToJSON JsonValue\n\n-- Type-safe ETL pipeline\netlPipeline :: Schema name fields -> JsonValue -> Maybe (SQL.Query)\netlPipeline schema json = do\n  validated <- validateJson schema json\n  pure $ transformToSQL schema validated\n\nvalidateJson :: Schema name fields -> JsonValue -> Maybe (JsonValue)\nvalidateJson schema json = case (schema, json) of\n  (Nil, JsonObject []) -> Just json\n  ((_ :-> _) :-> rest, JsonObject ((k, v):xs)) -> do\n    validatedRest <- validateJson rest (JsonObject xs)\n    pure $ JsonObject ((k, v):xs)\n  _ -> Nothing\n\ntransformToSQL :: Schema name fields -> JsonValue -> SQL.Query\ntransformToSQL schema json = case (schema, json) of\n  (Nil, _) -> SQL.Query \"SELECT 1\"  -- Dummy query\n  ((name :-> _) :-> rest, JsonObject ((_, v):xs)) ->\n    let restQuery = transformToSQL rest (JsonObject xs)\n    in SQL.Query $ \"INSERT INTO \" <> name <> \" VALUES (\" <> show v <> \"); \" <> SQL.fromQuery restQuery\n  _ -> SQL.Query \"\"\n\n-- Example usage\nexampleETL :: Maybe (SQL.Query)\nexampleETL = do\n  let json = JsonObject [(\"id\", JsonNumber 1), (\"name\", JsonString \"Alice\"), (\"age\", JsonNumber 30)]\n  etlPipeline (Proxy @\"users\" :-> Proxy @Int :-> Proxy @\"name\" :-> Proxy @Text :-> Proxy @\"age\" :-> Proxy @Int :-> Nil) json\n```"
+      ]
+    ]
+  },
+  {
+    "id": 48,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Prolog constraint solver using maplist/2 that generates valid chemical compound formulas adhering to valence rules across nested molecular structures.",
+        "```prolog\n:- use_module(library(clpfd)).\n\n% Valence rules for common elements\nvalence(h, 1).\nvalence(o, 2).\nvalence(c, 4).\nvalence(n, 3).\n\n% Check if an atom is valid\nvalid_atom(Atom) :- valence(Atom, _).\n\n% Check valence constraints for a molecule\ncheck_valence([Atom]) :- valence(Atom, _).\ncheck_valence([Atom|Rest]) :-\n    valence(Atom, V),\n    length(Rest, L),\n    V #>= L,\n    check_valence(Rest).\n\n% Recursive molecular structure validator\nvalid_molecule([]).\nvalid_molecule([Sub|Rest]) :-\n    (   is_list(Sub)\n    ->  valid_molecule(Sub)\n    ;   valid_atom(Sub)\n    ),\n    valid_molecule(Rest).\n\n% Main solver using maplist/2\nsolve_compound(Compound) :-\n    maplist(valid_atom, Compound),\n    check_valence(Compound),\n    valid_molecule(Compound).\n```"
+      ]
+    ]
+  },
+  {
+    "id": 49,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Julia GPU-accelerated map kernel using CUDA.jl to compute Mandelbrot set visualizations in parallel across 10,000×10,000 pixel grids.",
+        "```julia\nusing CUDA\n\nfunction mandelbrot_kernel(output, max_iter, xmin, xmax, ymin, ymax)\n    i = (blockIdx().x - 1) * blockDim().x + threadIdx().x\n    j = (blockIdx().y - 1) * blockDim().y + threadIdx().y\n\n    if i <= size(output, 1) && j <= size(output, 2)\n        x = xmin + (i - 1) * (xmax - xmin) / (size(output, 1) - 1)\n        y = ymin + (j - 1) * (ymax - ymin) / (size(output, 2) - 1)\n\n        c = x + y * im\n        z = zero(c)\n        iter = 0\n\n        while abs(z) <= 2 && iter < max_iter\n            z = z^2 + c\n            iter += 1\n        end\n\n        output[i, j] = iter\n    end\n\n    return nothing\nend\n\nfunction compute_mandelbrot(width=10000, height=10000; max_iter=1000, xmin=-2.0, xmax=1.0, ymin=-1.5, ymax=1.5)\n    output = CUDA.zeros(Int32, width, height)\n    \n    threads = (16, 16)\n    blocks = (ceil(Int, width / threads[1]), ceil(Int, height / threads[2]))\n    \n    @cuda threads=threads blocks=blocks mandelbrot_kernel(output, max_iter, xmin, xmax, ymin, ymax)\n    \n    return output\nend\n```"
+      ]
+    ]
+  },
+  {
+    "id": 50,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Write CoffeeScript code using nested map operations to transform GraphQL response data into Vue 3 reactive objects with computed property caching.",
+        "```coffeescript\ntransformToReactive = (graphqlResponse) ->\n  Vue.reactive\n    data: graphqlResponse.data?.map (item) ->\n      Vue.reactive\n        ...item\n        computed: Vue.computed =>\n          item.nested?.map (nestedItem) ->\n            Vue.reactive nestedItem\n```"
+      ]
+    ]
+  },
+  {
+    "id": 51,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Rust async task manager using map on futures::stream to process IoT device telemetry with backpressure control and tokio runtime.",
+        "```rust\nuse futures::StreamExt;\nuse tokio::sync::mpsc;\nuse tokio_stream::wrappers::ReceiverStream;\n\n#[tokio::main]\nasync fn main() {\n    // Create channel for backpressure control\n    let (tx, rx) = mpsc::channel::<String>(100);\n    \n    // Simulate IoT telemetry stream\n    let telemetry_stream = ReceiverStream::new(rx);\n    \n    // Process stream with map and backpressure\n    let processed_stream = telemetry_stream\n        .map(|data| async move {\n            // Process telemetry data here\n            format!(\"Processed: {}\", data)\n        })\n        .buffer_unordered(10); // Control concurrency\n    \n    // Spawn producer task\n    tokio::spawn(async move {\n        for i in 0..100 {\n            let data = format!(\"Telemetry {}\", i);\n            tx.send(data).await.expect(\"Failed to send data\");\n        }\n    });\n    \n    // Consume processed stream\n    let mut processed_stream = processed_stream;\n    while let Some(result) = processed_stream.next().await {\n        println!(\"{}\", result);\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Build a Node.js Express middleware using array mapping to dynamically inject React hydration state into SSR templates while sanitizing XSS vulnerabilities.",
+        "```javascript\nconst express = require('express');\nconst React = require('react');\nconst ReactDOMServer = require('react-dom/server');\nconst { sanitize } = require('dompurify');\n\nconst app = express();\n\nconst injectHydrationState = (components) => {\n  return (req, res, next) => {\n    const hydratedComponents = components.map(Component => {\n      const element = React.createElement(Component);\n      const html = ReactDOMServer.renderToString(element);\n      const sanitizedHtml = sanitize(html);\n      const state = JSON.stringify(Component.defaultProps || {});\n      return { html: sanitizedHtml, state };\n    });\n\n    res.locals.hydratedComponents = hydratedComponents;\n    next();\n  };\n};\n\nmodule.exports = injectHydrationState;\n```"
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python PySpark UDF using map on RDDs to process real-time geospatial trajectories with haversine distance calculations across distributed clusters.",
+        "```python\nfrom pyspark.sql.functions import udf\nfrom pyspark.sql.types import DoubleType\nimport numpy as np\n\ndef haversine(lat1, lon1, lat2, lon2):\n    R = 6371.0  # Earth radius in km\n    dlat = np.radians(lat2 - lat1)\n    dlon = np.radians(lon2 - lon1)\n    a = np.sin(dlat/2)**2 + np.cos(np.radians(lat1)) * np.cos(np.radians(lat2)) * np.sin(dlon/2)**2\n    c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1-a))\n    return R * c\n\nhaversine_udf = udf(lambda lat1, lon1, lat2, lon2: haversine(lat1, lon1, lat2, lon2), DoubleType())\n\n# Example RDD map usage (assuming rdd contains tuples of (lat1, lon1, lat2, lon2))\n# rdd.map(lambda x: haversine(x[0], x[1], x[2], x[3]))\n```"
+      ]
+    ]
+  },
+  {
+    "id": 54,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python generator pipeline using map and itertools to process real-time sensor data streams, implementing exponential smoothing with stateful lambda closures.",
+        "```python\nimport itertools\n\ndef exponential_smoothing(alpha):\n    state = None\n    def smoother(value):\n        nonlocal state\n        if state is None:\n            state = value\n        else:\n            state = alpha * value + (1 - alpha) * state\n        return state\n    return smoother\n\ndef sensor_data_pipeline(data_stream, alpha=0.3):\n    smoother = exponential_smoothing(alpha)\n    return map(smoother, data_stream)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 55,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Build a JavaScript WebAssembly module that uses TypedArray.map to parallelize fractal calculations with SIMD instructions in the browser main thread.",
+        "Here's the JavaScript WebAssembly module code:\n\n```javascript\nconst wasmCode = new Uint8Array([\n  0x00, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00, 0x01, 0x0d, 0x03, 0x60,\n  0x01, 0x7f, 0x01, 0x7f, 0x60, 0x02, 0x7f, 0x7f, 0x01, 0x7f, 0x60, 0x00,\n  0x00, 0x02, 0x1a, 0x01, 0x07, 0x69, 0x6d, 0x70, 0x6f, 0x72, 0x74, 0x73,\n  0x06, 0x6d, 0x65, 0x6d, 0x6f, 0x72, 0x79, 0x02, 0x00, 0x01, 0x03, 0x03,\n  0x02, 0x00, 0x01, 0x07, 0x11, 0x02, 0x06, 0x6d, 0x65, 0x6d, 0x6f, 0x72,\n  0x79, 0x02, 0x00, 0x07, 0x66, 0x72, 0x61, 0x63, 0x74, 0x61, 0x6c, 0x00,\n  0x01, 0x0a, 0x3a, 0x02, 0x02, 0x00, 0x0b, 0x34, 0x01, 0x01, 0x7f, 0x20,\n  0x00, 0x41, 0x80, 0x80, 0x80, 0x80, 0x78, 0x72, 0x41, 0x80, 0x80, 0x80,\n  0x80, 0x78, 0x71, 0x20, 0x00, 0x41, 0x80, 0x80, 0x80, 0x80, 0x78, 0x72,\n  0x41, 0x80, 0x80, 0x80, 0x80, 0x78, 0x71, 0x6c, 0x41, 0x01, 0x6a, 0x41,\n  0x80, 0x80, 0x80, 0x80, 0x78, 0x72, 0x41, 0x80, 0x80, 0x80, 0x80, 0x78,\n  0x71, 0x0b\n]);\n\nconst wasmModule = new WebAssembly.Module(wasmCode);\nconst wasmInstance = new WebAssembly.Instance(wasmModule, {\n  imports: { memory: new WebAssembly.Memory({ initial: 1 }) }\n});\n\nfunction calculateFractal(width, height, maxIterations) {\n  const buffer = new SharedArrayBuffer(width * height * 4);\n  const pixels = new Uint32Array(buffer);\n  \n  const simdPixels = new Uint32Array(pixels.buffer);\n  simdPixels.map((_, i) => {\n    const x = i % width;\n    const y = Math.floor(i / width);\n    return wasmInstance.exports.fractal(x, y, maxIterations);\n  });\n  \n  return pixels;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 56,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java annotation processor using map operations on AST elements to automatically generate gRPC service stubs during compilation.",
+        "Here's the Java code for a basic annotation processor that generates gRPC service stubs:\n\n```java\nimport javax.annotation.processing.*;\nimport javax.lang.model.SourceVersion;\nimport javax.lang.model.element.*;\nimport javax.lang.model.util.*;\nimport javax.tools.Diagnostic;\nimport java.io.IOException;\nimport java.io.Writer;\nimport java.util.*;\nimport java.util.stream.Collectors;\n\n@SupportedAnnotationTypes(\"com.example.GrpcService\")\n@SupportedSourceVersion(SourceVersion.RELEASE_11)\npublic class GrpcStubGeneratorProcessor extends AbstractProcessor {\n\n    @Override\n    public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {\n        for (TypeElement annotation : annotations) {\n            Set<? extends Element> annotatedElements = roundEnv.getElementsAnnotatedWith(annotation);\n            \n            annotatedElements.stream()\n                .filter(element -> element.getKind() == ElementKind.INTERFACE)\n                .map(element -> (TypeElement) element)\n                .forEach(this::generateGrpcStub);\n        }\n        return true;\n    }\n\n    private void generateGrpcStub(TypeElement serviceInterface) {\n        String packageName = processingEnv.getElementUtils().getPackageOf(serviceInterface).toString();\n        String className = serviceInterface.getSimpleName() + \"GrpcStub\";\n        \n        try (Writer writer = processingEnv.getFiler()\n                .createSourceFile(packageName + \".\" + className)\n                .openWriter()) {\n            \n            writer.write(\"package \" + packageName + \";\\n\\n\");\n            writer.write(\"import io.grpc.stub.AbstractStub;\\n\");\n            writer.write(\"import io.grpc.Channel;\\n\\n\");\n            writer.write(\"public class \" + className + \" extends AbstractStub<\" + className + \"> {\\n\\n\");\n            \n            writer.write(\"    protected \" + className + \"(Channel channel) {\\n\");\n            writer.write(\"        super(channel);\\n\");\n            writer.write(\"    }\\n\\n\");\n            \n            writer.write(\"    @Override\\n\");\n            writer.write(\"    protected \" + className + \" build(Channel channel, io.grpc.CallOptions callOptions) {\\n\");\n            writer.write(\"        return new \" + className + \"(channel);\\n\");\n            writer.write(\"    }\\n\\n\");\n            \n            serviceInterface.getEnclosedElements().stream()\n                .filter(element -> element.getKind() == ElementKind.METHOD)\n                .map(element -> (ExecutableElement) element)\n                .forEach(method -> generateMethod(writer, method));\n            \n            writer.write(\"}\\n\");\n        } catch (IOException e) {\n            processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR, \n                \"Failed to generate gRPC stub: \" + e.getMessage());\n        }\n    }\n\n    private void generateMethod(Writer writer, ExecutableElement method) {\n        try {\n            String methodName = method.getSimpleName().toString();\n            String returnType = method.getReturnType().toString();\n            String params = method.getParameters().stream()\n                .map(param -> param.asType().toString() + \" \" + param.getSimpleName())\n                .collect(Collectors.joining(\", \"));\n            \n            writer.write(\"    public \" + returnType + \" \" + methodName + \"(\" + params + \") {\\n\");\n            writer.write(\"        // TODO: Implement gRPC call\\n\");\n            writer.write(\"        throw new UnsupportedOperationException();\\n\");\n            writer.write(\"    }\\n\\n\");\n        } catch (IOException e) {\n            processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR, \n                \"Failed to generate method: \" + e.getMessage());\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 57,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Python async map-reduce system using aiohttp and asyncio.BoundedSemaphore to crawl 500 URLs/sec with rate limiting and DOM sanitization.",
+        "```python\nimport asyncio\nimport aiohttp\nfrom bs4 import BeautifulSoup\nfrom urllib.parse import urlparse\n\nclass AsyncMapReduceCrawler:\n    def __init__(self, urls, max_concurrent=500):\n        self.urls = urls\n        self.semaphore = asyncio.BoundedSemaphore(max_concurrent)\n        self.results = []\n\n    async def fetch(self, session, url):\n        async with self.semaphore:\n            try:\n                async with session.get(url, timeout=10) as response:\n                    if response.status == 200:\n                        html = await response.text()\n                        sanitized = self.sanitize_dom(html)\n                        return (url, sanitized)\n            except Exception as e:\n                return (url, f\"Error: {str(e)}\")\n\n    def sanitize_dom(self, html):\n        soup = BeautifulSoup(html, 'html.parser')\n        for script in soup([\"script\", \"style\", \"iframe\", \"noscript\"]):\n            script.decompose()\n        return soup.get_text(separator=' ', strip=True)\n\n    async def map_tasks(self, session):\n        tasks = [self.fetch(session, url) for url in self.urls]\n        return await asyncio.gather(*tasks)\n\n    async def reduce(self, results):\n        self.results = results\n\n    async def run(self):\n        async with aiohttp.ClientSession() as session:\n            mapped = await self.map_tasks(session)\n            await self.reduce(mapped)\n\nasync def main(urls):\n    crawler = AsyncMapReduceCrawler(urls)\n    await crawler.run()\n    return crawler.results\n\n# Example usage:\n# urls = [\"https://example.com\", ...]  # 500 URLs\n# results = asyncio.run(main(urls))\n```"
+      ]
+    ]
+  },
+  {
+    "id": 58,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a React Native animation driver using Array.map to synchronize SVG morphing paths across multiple device orientations with gesture handlers.",
+        "```javascript\nimport React, { useRef, useState } from 'react';\nimport { View, StyleSheet, PanResponder, Dimensions } from 'react-native';\nimport Svg, { Path } from 'react-native-svg';\nimport * as shape from 'd3-shape';\n\nconst { width, height } = Dimensions.get('window');\n\nconst MorphingSVG = () => {\n  const [paths, setPaths] = useState([]);\n  const panResponder = useRef(\n    PanResponder.create({\n      onStartShouldSetPanResponder: () => true,\n      onPanResponderMove: (evt, gestureState) => {\n        const { moveX, moveY } = gestureState;\n        updatePaths(moveX, moveY);\n      },\n    })\n  ).current;\n\n  const updatePaths = (x, y) => {\n    const newPaths = Array(5).fill(0).map((_, i) => {\n      const line = shape.line()\n        .x(d => d.x)\n        .y(d => d.y)\n        .curve(shape.curveCardinal.tension(0.5))([\n        { x: x - 50 * (i + 1), y: y - 50 * (i + 1) },\n        { x: x, y: y },\n        { x: x + 50 * (i + 1), y: y + 50 * (i + 1) },\n      ]);\n      return line;\n    });\n    setPaths(newPaths);\n  };\n\n  return (\n    <View style={styles.container} {...panResponder.panHandlers}>\n      <Svg width={width} height={height}>\n        {paths.map((path, index) => (\n          <Path\n            key={index}\n            d={path}\n            fill=\"transparent\"\n            stroke=\"blue\"\n            strokeWidth={3}\n          />\n        ))}\n      </Svg>\n    </View>\n  );\n};\n\nconst styles = StyleSheet.create({\n  container: {\n    flex: 1,\n    backgroundColor: 'white',\n  },\n});\n\nexport default MorphingSVG;\n```"
+      ]
+    ]
+  },
+  {
+    "id": 59,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Java Spring Cloud Function that applies map transformations to Kafka records for GDPR data pseudonymization in real-time event streams.",
+        "```java\nimport org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\nimport org.springframework.cloud.function.context.FunctionRegistration;\nimport org.springframework.cloud.function.context.FunctionType;\nimport org.springframework.cloud.function.context.FunctionalSpringApplication;\nimport org.springframework.context.ApplicationContextInitializer;\nimport org.springframework.context.support.GenericApplicationContext;\nimport org.springframework.messaging.Message;\nimport reactor.core.publisher.Flux;\n\nimport java.util.function.Function;\n\n@SpringBootApplication\npublic class GdprPseudonymizationFunction implements ApplicationContextInitializer<GenericApplicationContext> {\n\n    public static void main(String[] args) {\n        FunctionalSpringApplication.run(GdprPseudonymizationFunction.class, args);\n    }\n\n    @Override\n    public void initialize(GenericApplicationContext context) {\n        context.registerBean(\"pseudonymize\", FunctionRegistration.class,\n                () -> new FunctionRegistration<>(pseudonymize())\n                        .type(FunctionType.from(Message.class).to(Message.class).getType()));\n    }\n\n    public Function<Message<String>, Message<String>> pseudonymize() {\n        return message -> {\n            // Implement GDPR pseudonymization logic here\n            String pseudonymizedData = pseudonymizeData(message.getPayload());\n            return new Message<String>() {\n                @Override\n                public String getPayload() {\n                    return pseudonymizedData;\n                }\n\n                @Override\n                public MessageHeaders getHeaders() {\n                    return message.getHeaders();\n                }\n            };\n        };\n    }\n\n    private String pseudonymizeData(String originalData) {\n        // Example: Replace sensitive fields with pseudonyms\n        // Implement your specific pseudonymization logic here\n        return originalData.replaceAll(\"(?<=\\\\bname\\\\b\\\\s*=\\\\s*)\\\\\\\".*?\\\\\\\"\", \"\\\"[REDACTED]\\\"\")\n                          .replaceAll(\"(?<=\\\\bemail\\\\b\\\\s*=\\\\s*)\\\\\\\".*?\\\\\\\"\", \"\\\"[REDACTED]\\\"\");\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 60,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Build a Python computer vision pipeline using functools.map with thread pools to process 4K video frames in batches of 16 with OpenCV CUDA acceleration.",
+        "```python\nimport cv2\nimport concurrent.futures\nfrom functools import partial\n\ndef process_frame(frame, cuda_ctx):\n    # Convert frame to grayscale using CUDA acceleration (example operation)\n    gpu_frame = cv2.cuda_GpuMat()\n    gpu_frame.upload(frame)\n    gray_gpu = cv2.cuda.cvtColor(gpu_frame, cv2.COLOR_BGR2GRAY)\n    return gray_gpu.download()\n\ndef process_batch(frames_batch, cuda_ctx):\n    # Initialize CUDA context for this thread\n    cv2.cuda.setDevice(cuda_ctx)\n    \n    # Process each frame in parallel\n    with concurrent.futures.ThreadPoolExecutor() as executor:\n        process_func = partial(process_frame, cuda_ctx=cuda_ctx)\n        results = list(executor.map(process_func, frames_batch))\n    \n    return results\n\ndef video_processing_pipeline(video_path, batch_size=16):\n    cap = cv2.VideoCapture(video_path)\n    cuda_ctx = cv2.cuda.getDevice()  # Get default CUDA device\n    \n    while True:\n        frames_batch = []\n        for _ in range(batch_size):\n            ret, frame = cap.read()\n            if not ret:\n                break\n            frames_batch.append(frame)\n        \n        if not frames_batch:\n            break\n            \n        processed_batch = process_batch(frames_batch, cuda_ctx)\n        \n        # Do something with processed batch (e.g., save, display)\n        for result in processed_batch:\n            cv2.imshow('Processed Frame', result)\n            if cv2.waitKey(1) & 0xFF == ord('q'):\n                break\n    \n    cap.release()\n    cv2.destroyAllWindows()\n\n# Example usage\n# video_processing_pipeline(\"4k_video.mp4\")\n```"
+      ]
+    ]
+  },
+  {
+    "id": 61,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Node.js V8 extension using N-API and TypedArray.map to accelerate quantum circuit simulations through WebGL shader parallelization.",
+        "Here's the Node.js V8 extension using N-API and TypedArray.map for quantum circuit simulations with WebGL parallelization:\n\n```c\n#include <node_api.h>\n#include <GL/glew.h>\n#include <GLFW/glfw3.h>\n#include <vector>\n\nnapi_value QuantumSimulation(napi_env env, napi_callback_info info) {\n    napi_status status;\n    size_t argc = 1;\n    napi_value args[1];\n    status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);\n    \n    if (argc < 1) {\n        napi_throw_error(env, nullptr, \"Wrong number of arguments\");\n        return nullptr;\n    }\n\n    bool is_typedarray;\n    status = napi_is_typedarray(env, args[0], &is_typedarray);\n    \n    if (!is_typedarray) {\n        napi_throw_type_error(env, nullptr, \"Argument must be a TypedArray\");\n        return nullptr;\n    }\n\n    napi_typedarray_type type;\n    size_t length;\n    void* data;\n    napi_value arraybuffer;\n    size_t byte_offset;\n    \n    status = napi_get_typedarray_info(\n        env, args[0], &type, &length, &data, &arraybuffer, &byte_offset);\n    \n    if (type != napi_float32_array) {\n        napi_throw_type_error(env, nullptr, \"TypedArray must be Float32Array\");\n        return nullptr;\n    }\n\n    if (!glfwInit()) {\n        napi_throw_error(env, nullptr, \"Failed to initialize GLFW\");\n        return nullptr;\n    }\n\n    GLFWwindow* window = glfwCreateWindow(1, 1, \"Quantum Sim\", NULL, NULL);\n    if (!window) {\n        glfwTerminate();\n        napi_throw_error(env, nullptr, \"Failed to create GLFW window\");\n        return nullptr;\n    }\n\n    glfwMakeContextCurrent(window);\n    glewExperimental = GL_TRUE;\n    if (glewInit() != GLEW_OK) {\n        glfwTerminate();\n        napi_throw_error(env, nullptr, \"Failed to initialize GLEW\");\n        return nullptr;\n    }\n\n    GLuint shaderProgram;\n    const char* vertexShaderSource = \"#version 330 core\\nlayout(location=0)in vec3 aPos;void main(){gl_Position=vec4(aPos,1.0);}\";\n    const char* fragmentShaderSource = \"#version 330 core\\nuniform float quantumData[1024];out vec4 FragColor;void main(){float sum=0.0;for(int i=0;i<1024;i++){sum+=quantumData[i];}FragColor=vec4(sum,sum,sum,1.0);}\";\n\n    GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);\n    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);\n    glCompileShader(vertexShader);\n\n    GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);\n    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);\n    glCompileShader(fragmentShader);\n\n    shaderProgram = glCreateProgram();\n    glAttachShader(shaderProgram, vertexShader);\n    glAttachShader(shaderProgram, fragmentShader);\n    glLinkProgram(shaderProgram);\n\n    glUseProgram(shaderProgram);\n    GLint quantumDataLoc = glGetUniformLocation(shaderProgram, \"quantumData\");\n    glUniform1fv(quantumDataLoc, length, (GLfloat*)data);\n\n    float vertices[] = {-1.0f, -1.0f, 0.0f, 1.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f};\n    GLuint VBO, VAO;\n    glGenVertexArrays(1, &VAO);\n    glGenBuffers(1, &VBO);\n    glBindVertexArray(VAO);\n    glBindBuffer(GL_ARRAY_BUFFER, VBO);\n    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);\n    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);\n    glEnableVertexAttribArray(0);\n\n    glDrawArrays(GL_TRIANGLES, 0, 3);\n    glfwSwapBuffers(window);\n    glfwPollEvents();\n\n    glfwTerminate();\n\n    napi_value result;\n    status = napi_create_object(env, &result);\n    \n    napi_value processedData;\n    status = napi_create_typedarray(env, napi_float32_array, length, arraybuffer, byte_offset, &processedData);\n    status = napi_set_named_property(env, result, \"processedData\", processedData);\n    \n    return result;\n}\n\nnapi_value Init(napi_env env, napi_value exports) {\n    napi_status status;\n    napi_value fn;\n    \n    status = napi_create_function(env, nullptr, 0, QuantumSimulation, nullptr, &fn);\n    if (status != napi_ok) return nullptr;\n    \n    status = napi_set_named_property(env, exports, \"accelerateQuantumSimulation\", fn);\n    if (status != napi_ok) return nullptr;\n    \n    return exports;\n}\n\nNAPI_MODULE(NODE_GYP_MODULE_NAME, Init)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 62,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java GraalVM polyglot service that maps JSONata queries across MongoDB change streams using reactive streams backpressure mechanisms.",
+        "```java\nimport org.graalvm.polyglot.*;\nimport org.graalvm.polyglot.proxy.*;\nimport com.mongodb.reactivestreams.client.*;\nimport org.bson.*;\nimport org.reactivestreams.*;\n\npublic class JsonataMongoService {\n    private final MongoClient mongoClient;\n    private final Context polyglotContext;\n\n    public JsonataMongoService(String connectionString) {\n        this.mongoClient = MongoClients.create(connectionString);\n        this.polyglotContext = Context.newBuilder()\n            .allowAllAccess(true)\n            .build();\n    }\n\n    public Publisher<Document> mapChangeStream(String dbName, String collName, String jsonataQuery) {\n        return SubscriberWithBackpressure.create(subscriber -> {\n            MongoDatabase database = mongoClient.getDatabase(dbName);\n            MongoCollection<Document> collection = database.getCollection(collName);\n            \n            collection.watch().subscribe(new Subscriber<ChangeStreamDocument<Document>>() {\n                private Subscription subscription;\n\n                @Override\n                public void onSubscribe(Subscription s) {\n                    this.subscription = s;\n                    subscriber.onSubscribe(new Subscription() {\n                        @Override\n                        public void request(long n) {\n                            subscription.request(n);\n                        }\n\n                        @Override\n                        public void cancel() {\n                            subscription.cancel();\n                        }\n                    });\n                }\n\n                @Override\n                public void onNext(ChangeStreamDocument<Document> changeEvent) {\n                    try {\n                        Value jsonata = polyglotContext.eval(\"jsonata\", jsonataQuery);\n                        Value result = jsonata.execute(ProxyObject.fromMap(changeEvent.getFullDocument()));\n                        subscriber.onNext(Document.parse(result.asString()));\n                    } catch (Exception e) {\n                        subscriber.onError(e);\n                    }\n                }\n\n                @Override\n                public void onError(Throwable t) {\n                    subscriber.onError(t);\n                }\n\n                @Override\n                public void onComplete() {\n                    subscriber.onComplete();\n                }\n            });\n        });\n    }\n\n    public void close() {\n        mongoClient.close();\n        polyglotContext.close();\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 63,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Python JAX-powered map function using jit and vmap to parallelize neural network inference across TPU slices with automatic batch padding.",
+        "```python\nimport jax\nimport jax.numpy as jnp\nfrom jax import jit, vmap\n\ndef batched_predict(params, inputs, model_fn, batch_size=128):\n    \"\"\"Parallelize neural network inference with automatic padding.\"\"\"\n    # Pad inputs to nearest multiple of batch_size\n    pad_size = (-len(inputs)) % batch_size\n    padded_inputs = jnp.pad(inputs, [(0, pad_size)] + [(0, 0)] * (inputs.ndim - 1))\n    \n    # Reshape into batches\n    batched_inputs = padded_inputs.reshape(-1, batch_size, *inputs.shape[1:])\n    \n    # Create batched prediction function\n    @jit\n    @vmap\n    def batch_predict(batch):\n        return model_fn(params, batch)\n    \n    # Process all batches\n    batched_outputs = batch_predict(batched_inputs)\n    \n    # Flatten and remove padding\n    outputs = batched_outputs.reshape(-1, *batched_outputs.shape[2:])\n    return outputs[:len(inputs)]\n```"
+      ]
+    ]
+  }
+]

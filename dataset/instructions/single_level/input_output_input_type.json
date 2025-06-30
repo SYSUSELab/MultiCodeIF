@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Rust function called `validate_user_access` that determines whether a user has access to a classified data system based on their security clearance. The input should be a Boolean value representing whether the user's clearance level is adequate (`true`) or not (`false`). The function should return a Boolean signaling if the user is granted access.",
+        "answer": "Rust;validate_user_access;Boolean"
+    },
+    {
+        "id": 2,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Python function named `calculateStatistics` that receives a string representation of student test scores in a JSON format. The function should calculate and return the mean, median, and mode of the scores. Also, it should handle potential discrepancies in the input data format and provide appropriate error handling for non-numeric values.",
+        "answer": "python;calculateStatistics;String"
+    },
+    {
+        "id": 3,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Java function named `trafficOptimizer` that simulates traffic flow optimization in an urban network using a Graph data structure. This function should be able to analyze the current traffic on various routes and suggest optimized paths with decreased congestion. The input should be a graph representing the city's road network, where vertices denote intersections and edges represent roads connecting these intersections, along with their current traffic density.",
+        "answer": "java;trafficOptimizer;Graph"
+    },
+    {
+        "id": 4,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a C++ function `processNetworkRequests` that would be capable of simulating network request handling for a server. The function should accept requests represented as a structured `ReqStruct` containing fields like requestID, endpoint, and payload. The function should support actions such as logging the request, validating the endpoint, and generating a response based on the payload contents.",
+        "answer": "Cpp;processNetworkRequests;Struct:ReqStruct"
+    },
+    {
+        "id": 5,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Java function named `recordUserStatistics` specifically engineered to capture user interactions on a website. The function should record data such as clicks, views, and time spent on each page. This function must accept input in the form of a Java Map where each entry represents a discrete user interaction, characterized by action type and associated metadata.",
+        "answer": "java;recordUserStatistics;Map"
+    },
+    {
+        "id": 6,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Python function `updateProjectStatus` that handles the update of project statuses in an organization's project management tool. This function should take a list of tuples as an input, where each tuple contains a project identification code and a new status. The function should update the internal database represented as a dictionary and return an updated dictionary reflecting these changes.",
+        "answer": "python;updateProjectStatus;List"
+    },
+    {
+        "id": 7,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Rust function `calculateStats` that computes and returns various statistics (minimum, maximum, average) of an input list of integers. The function should efficiently process potentially large lists by minimizing memory usage and ensuring quick calculation times.",
+        "answer": "Rust;calculateStats;Integer"
+    },
+    {
+        "id": 8,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a C++ function named `filterUniqueErrors` designed to take a set of error codes as input and identify unique errors. This function should further classify these errors into categories such as 'Critical', 'Warning', and 'Info' based on predefined codes and return a set containing the classified unique errors. Ensure the input to the function is in the form of a C++ Set containing error codes, and the output should also be a Set with classified error strings labeled appropriately.",
+        "answer": "Cpp;filterUniqueErrors;Set"
+    },
+    {
+        "id": 9,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Write a Python function named `calculateWeightedAverage` that takes a list of tuples as input, each containing a float number and its associated weight (another float). The function should compute and return the weighted average of all the numbers based on their weights. Ensure the function works with a list of any length, handling empty lists by returning zero.",
+        "answer": "python;calculateWeightedAverage;Float"
+    },
+    {
+        "id": 10,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Java method named `analyzeNetworkConnectivity` that processes network data to identify critical connection points within the network. The method should accept a graph data structure representing the network, where nodes represent connection points and edges represent the connections between them. The method should analyze the graph to determine the critical nodes that if removed, would separate the network into distinct subnetworks.",
+        "answer": "java;analyzeNetworkConnectivity;Graph"
+    },
+    {
+        "id": 11,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a C++ function `processCommandLine` that interprets command-line arguments to modify settings in a configuration file. Ensure the function can handle actions like setting values, displaying settings, and resetting to defaults based on inputs provided as a single string, specifying the command type followed by necessary details if required.",
+        "answer": "Cpp;processCommandLine;String"
+    },
+    {
+        "id": 12,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Rust function `manageAirportGates` capable of handling the scheduling and availability of airport gates. The function should process gate allocation, deallocation, and status requests efficiently. Function input should consist of actions (allocate, deallocate, and status check) and gate identifiers as a nested Struct `GateAction` that defines both the action type and gate details.",
+        "answer": "Rust;manageAirportGates;Struct:GateAction"
+    },
+    {
+        "id": 13,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Rust function `calculate_battery_life` that forecasts the remaining battery life of a device based on real-time user activities. The function should take a floating-point number representing the current battery percentage (0.0 to 100.0) and a list of upcoming user activities, each generating a predicted battery usage as a floating-point value. The function should return the estimated remaining percentage of the battery after all activities are accounted for.",
+        "answer": "Rust;calculate_battery_life;Float"
+    },
+    {
+        "id": 14,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Python function `manage_job_applications` to handle job applications efficiently. This function should accept a tuple containing various operations such as adding, updating, or removing job application details. Each operation should be specified with relevant details like applicant name, job position, and operation type (add, update, remove).",
+        "answer": "python;manage_job_applications;Tuple"
+    },
+    {
+        "id": 15,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a C++ function `manageAirportGates` that simulates the allocation and management of gates at an airport terminal using a Map data structure. This function should handle actions like assigning a flight to a gate, unassigning a flight from a gate, and querying which flight is assigned to a specific gate. The function inputs should include a nested Map specifying the action type ('assign', 'unassign', 'query') and the relevant flight details or gate number.",
+        "answer": "Cpp;manageAirportGates;Map"
+    },
+    {
+        "id": 16,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Java function named `processLoginHistory` that manages user login history in a server environment. The function should handle storing new login records, retrieving recent login activities, and deleting specific user login data. These operations should be received through a nested JSON object indicating the operation type (add, retrieve, delete) and necessary data such as user ID or timestamp.",
+        "answer": "java;processLoginHistory;JSONObject"
+    },
+    {
+        "id": 17,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Develop a C++ function `validateUserActivity` that checks if user actions on a software platform are compliant with predefined rules. The function should accept a Boolean indicating if the user's last action violated any rules and return a message indicating either \"Action Approved\" if no rules were broken, or \"Action Denied\" if a rule was violated.",
+        "answer": "Cpp;validateUserActivity;Boolean"
+    },
+    {
+        "id": 18,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Design a Rust function named `calculate_square_root`, that takes a single `Float` parameter representing a non-negative number, and computes its square root. This function should verify that the input is non-negative and return either a valid square root as a Float, or an error message indicating the input was negative. Ensure proper error handling and precision standards are in place.",
+        "answer": "Rust;calculate_square_root;Float"
+    },
+    {
+        "id": 19,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Python function named `manageStudentRecords` that handles operations on student data such as adding, updating, and removing student details, along with fetching specific student information. The function should accept a list of dictionaries as input, where each dictionary represents a student and contains operations (add, update, remove, fetch) along with necessary student detail fields (e.g., student ID, name, age).",
+        "answer": "python;manageStudentRecords;List"
+    },
+    {
+        "id": 20,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Java method named `configureReminderSystem` that helps in setting up reminders for different events like meetings, appointments, and tasks. The method should take a JSONObject as input, where each entry contains details like event type, date, time, and importance level. The system should allow settings updates such as changing the reminder time or deleting a reminder and retrieving details of a particular event based on the event type.",
+        "answer": "java;configureReminderSystem;JSONObject"
+    },
+    {
+        "id": 21,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a C++ function named `managePermissions` that manages a user permission tree. This function should accept a permission tree, and user operations such as adding, updating, or removing permissions. Implement this so that the function accepts operations and their details in the form of a Tree data structure, defining the relationship and hierarchy of permissions.",
+        "answer": "Cpp;managePermissions;Tree"
+    },
+    {
+        "id": 22,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Rust function named `process_grid_operations` that can perform multiple operations on a grid (matrix). The function should take a matrix of integers as input and a list of operation details. Operations include \"rotate\" (90 degrees clockwise), \"flip\" (horizontally), and \"invert\" (replace all 0s with 1s and vice versa). Each operation will be specified in a sequence within an input list of strings describing the order of operations to be applied to the matrix.",
+        "answer": "Rust;process_grid_operations;Matrix"
+    },
+    {
+        "id": 23,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Java method named `processPaymentInfo` that takes a String input representing a serialized JSON of payment details, including card type, card number, and amount. This method should parse the JSON, validate the card number with Luhn's algorithm, and return a JSON formatted String indicating whether the payment is valid and the transaction status.",
+        "answer": "java;processPaymentInfo;String"
+    },
+    {
+        "id": 24,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Python function `analyzeNetworkConnectivity` that utilizes a graph data structure to represent a network of computers. This function should determine the number of isolated subnetworks within the network. The graph nodes represent computers, and the edges represent connections between computers. The function must accept an adjacency list as input.",
+        "answer": "python;analyzeNetworkConnectivity;Graph"
+    },
+    {
+        "id": 25,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Java method named `processTransaction` that computes transaction charges based on the amount of a financial transaction. The method should accept a tuple containing two elements: the transaction type and the amount. Supported transaction types and their charges are: 'international' with 3.5% fee and 'domestic' with 2.0% fee of the transaction amount. The method should return the final amount after the transaction charge has been applied.",
+        "answer": "java;processTransaction;Tuple"
+    },
+    {
+        "id": 26,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Python function named `filter_data` that processes a list of records. Each record is a dictionary that may contain a variety of fields including 'name', 'age', and 'email'. The function should accept filtering criteria in the form of a dictionary where the keys correspond to record fields and the values specify conditions that must be met. The function should return a list of all records that match all the given criteria.",
+        "answer": "python;filter_data;Map"
+    },
+    {
+        "id": 27,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Rust function named `manageNetworkConfig` that can process and manage network configurations in a tree-structured format. This function should be able to handle operations like adding, updating, and removing network nodes (representing devices or subnets), and retrieving configuration details for a specific node. All data should be handled using a Tree data structure, and actions on the tree should be triggered by passing a specific action type and other relevant details.",
+        "answer": "Rust;manageNetworkConfig;Tree"
+    },
+    {
+        "id": 28,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a C++ function `manageUserSettings` that oversees a user settings management system. The system should support adding, updating, and deleting user settings. Each operation requires a unique identifier and relevant setting details, and the function will accept parameters in the form of a Map data structure containing operation type and associated information.",
+        "answer": "Cpp;manageUserSettings;Map"
+    },
+    {
+        "id": 29,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Java method named `graphTraversalManager` that handles operations for traversing a graph data structure. The method should accept inputs specifying the traversal algorithm (like BFS, DFS), the starting node, and potentially the graph type (directed or undirected). The input should be structured as a JSON object containing relevant details for the traversal operation.",
+        "answer": "java;graphTraversalManager;Graph"
+    },
+    {
+        "id": 30,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a C++ function `rotateMatrix` that accepts a square matrix (n x n array) and rotates it by 90 degrees clockwise. The function should modify the matrix in place, without using an additional matrix for storage. Ensure the function correctly handles edge cases, such as empty matrices or single-element matrices.",
+        "answer": "Cpp;rotateMatrix;Matrix"
+    },
+    {
+        "id": 31,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Rust function `process_image_data` that accepts a tuple containing a byte array of an image and a string specifying the format (e.g., \"jpg\", \"png\"). The function should decode the byte array into an image, apply a grayscale filter, and then re-encode the image into the same format specified in the input tuple.",
+        "answer": "Rust;process_image_data;Tuple"
+    },
+    {
+        "id": 32,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Python function named `unifyContactDetails` that processes a set of contact entries. Each contact entry includes information such as name, phone, and email address. Ensure the function is designed to merge duplicate entries based on the email address, returning a deduplicated set of contact entries. Each entry should be stored in a dictionary and passed as a set of dictionaries to the function.",
+        "answer": "python;unifyContactDetails;Set"
+    },
+    {
+        "id": 33,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Rust function `manageTaskPriority` designed to automate the task management system. This function should accept a priority modification request in the form of a JSONObject detailing the task's ID and the new priority level. The function must validate if the task exists and then update its priority accordingly within an internal data structure.",
+        "answer": "Rust;manageTaskPriority;JSONObject"
+    },
+    {
+        "id": 34,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Python function `filterUserProfile` that selects and returns user profiles from a list based on specified filtering rules. The rules include age range, occupation, and location. The function should accept a list of dictionaries (each representing a user profile) and a filter dictionary specifying the criteria for selection. The output should be another list containing filtered user profiles that match all given criteria.",
+        "answer": "python;filterUserProfile;List"
+    },
+    {
+        "id": 35,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Build a Python ETL pipeline `jsonProcess` to process JSON formatted sensor data, batch-inserting valid records into PostgreSQL (100/transaction), routing invalid entries to CSV dead-letter queues with error codes, while generating hourly Redis-cached aggregates (average, maximum, and minimum per sensor) exposed via a FastAPI endpoint.",
+        "answer": "python;jsonProcess;JSONObject"
+    },
+    {
+        "id": 36,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Write a C++ function `divisor` that takes a list of integers and returns the greatest common divisor of all the integers in the list.",
+        "answer": "cpp;divisor;List"
+    },
+    {
+        "id": 37,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Develop a Java method `fs_simulator` equipped to simulate a file system's structure, enabling operations such as adding, repositioning, removing folders, and retrieving a folder's directory path by its name. Ensure the method accepts folder actions (add, move, remove, fetch path) and folder names as input in the form of a nested JSON object specifying the action type and relevant details.",
+        "answer": "java;fs_simulator;JSONObject"
+    },
+    {
+        "id": 38,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Java function named `processOrderList` designed to handle batch processing of customer orders. The function should accept a List of JSON objects, each representing an individual order, which includes details like `orderId`, `customerName`, and `orderAmount`. Implement functionality to calculate the total amount of all orders and filter out orders below a specified amount threshold given as an input parameter.",
+        "answer": "java;processOrderList;List"
+    },
+    {
+        "id": 39,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Design a Python function `calculateAverageSpeed` that computes the average speed over a given period based on continuous records of distances traveled at equal intervals. The function should accept a list of distances (floats) and the time interval between records (float) and return the average speed as a float. Ensure proper documentation and error handling for non-numeric inputs.",
+        "answer": "python;calculateAverageSpeed;Float"
+    },
+    {
+        "id": 40,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Construct a C++ function named `manageContacts` which facilitates the editing and querying of a contact list. The function should accept operations like adding, deleting, updating, and fetching contact details, and process these commands based on a nested Struct `Contact` specifying the action type, contact details, and additional required information.",
+        "answer": "Cpp;manageContacts;Struct:Contact"
+    },
+    {
+        "id": 41,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Rust function `calculateDivisors` that takes an integer and returns the list of all divisors of that number. The function should efficiently compute divisors up to the integer input. The divisors should be returned as a vector and should be sorted in ascending order. Additionally, validate if the input is greater than zero, returning an empty vector for invalid inputs.",
+        "answer": "Rust;calculateDivisors;Integer"
+    },
+    {
+        "id": 42,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a C++ function named `manageContacts` that manages contact information in a phonebook. It should handle operations like adding, deleting, updating, and searching contacts. The function should accept commands and data about contacts in the form of a JSON-like Map object specifying the command type and required details for each contact.",
+        "answer": "Cpp;manageContacts;Map"
+    },
+    {
+        "id": 43,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Develop a Python function `generateConfigTree` that constructs a configuration tree for a network device given a set of parameters like hostname, IP addresses, and routing protocols. The function should accept these parameters as a nested dictionary and return the configuration tree, which can then be retrieved or modified based on the provided keys. Ensure that the function is capable of handling modifications to the configuration tree such as altering IP addresses and adding new routes.",
+        "answer": "python;generateConfigTree;Tree"
+    },
+    {
+        "id": 44,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Rust function named `validate_user_access` that takes a boolean parameter `has_permission`. The function should check whether a user has the appropriate permissions to access a secure resource. If `has_permission` is true, the function returns \"Access granted\". Otherwise, it returns \"Access denied\".",
+        "answer": "Rust;validate_user_access;Boolean"
+    },
+    {
+        "id": 45,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Java method named `manageEmployeeSet` that allows operations such as adding, deleting, and searching employees by their unique identifiers. This method should handle a Set collection of employee identifiers. The method should be able to process a JSON object detailing the operation type (add, delete, search) and the associated employee identifier details.",
+        "answer": "java;manageEmployeeSet;Set"
+    },
+    {
+        "id": 46,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Write a Python function named `calculate_statistics` that takes a tuple containing two integers: `total_items` and `defective_items`. The function should compute and return a tuple with the percentage of defective items and the remaining non-defective items.",
+        "answer": "python;calculate_statistics;Tuple"
+    },
+    {
+        "id": 47,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Write a C++ function named `findShortestPath` that takes a Graph (represented as an adjacency list) and two integers indicating the start and end nodes. The function should implement the Dijkstra's algorithm to find the shortest path from the start node to the end node and return this path as a list of integers representing the nodes in the order they are visited.",
+        "answer": "cpp;findShortestPath;Graph"
+    },
+    {
+        "id": 48,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Rust function named `adjust_settings` that takes a Set of strings representing enabled features. The function should return a message \"Settings updated\" if the Set includes \"night_mode\", otherwise it returns \"No changes made\".",
+        "answer": "rust;adjust_settings;Set"
+    },
+    {
+        "id": 49,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Java method named `configureApplicationSettings` that takes a Tree structure as an argument representing the hierarchical settings of an application. This method should traverse the Tree to apply configuration settings based on the hierarchy and values specified in each node.",
+        "answer": "java;configureApplicationSettings;Tree"
+    },
+    {
+        "id": 50,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Rust function named `analyze_transaction` that takes a `TransactionDetails` struct as a parameter. The struct should contain fields `amount: f64`, `currency: String`, and `approved: bool`. The function should return \"Transaction approved\" if the `approved` field is true, and \"Transaction denied\" if it's false.",
+        "answer": "Rust;analyze_transaction;Struct: TransactionDetails"
+    },
+    {
+        "id": 51,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Write a C++ function named `calculateFactorial` that takes an integer `n` and computes its factorial. The function should return the factorial as an integer.",
+        "answer": "cpp;calculateFactorial;Integer"
+    },
+    {
+        "id": 52,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Write a Python function named `calculate_average_temp` that takes a list of floating-point numbers representing daily temperatures and returns the average temperature. The function should handle possible exceptions if the input list is empty, returning a message \"List is empty\".",
+        "answer": "python;calculate_average_temp;Float"
+    },
+    {
+        "id": 53,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Java method named `analyzeFrequency` that takes a Map parameter `wordFrequency`. The method should analyze the frequency of each word provided in the `wordFrequency` map. If a word's frequency is more than a given threshold, it should return a list of frequent words. The threshold should be provided as an additional integer parameter `threshold`.",
+        "answer": "java;analyzeFrequency;Map"
+    },
+    {
+        "id": 54,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Create a Java method named `transformMatrix` that applies a specific transformation (e.g. rotate, flip) to a given Matrix of integers based on a provided operation mode. The operation mode is denoted as a string which can be \"rotate_left\", \"rotate_right\", \"flip_vertical\", or \"flip_horizontal\". The function should return the transformed Matrix after applying the specified operation.",
+        "answer": "java;transformMatrix;Matrix"
+    },
+    {
+        "id": 55,
+        "category": "input_output",
+        "constraint": "input_type",
+        "prompt": "Develop a Python function named `process_user_data` that takes a JSONObject as input. This JSONObject contains user data including name, age, and a list of interests. The function should validate that the age is above 18 and at least one interest is provided. If valid, return a JSONObject `{ \"status\": \"Valid\", \"message\": \"Data Accepted\" }`; otherwise, return `{ \"status\": \"Invalid\", \"message\": \"Check Data\" }`.",
+        "answer": "python;process_user_data;JSONObject"
+    }
+]

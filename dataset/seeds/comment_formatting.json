@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Single-line comment",
+        "feature": "A comment that occupies a single line, used for brief explanations or notes.",
+        "example": "# Calculate the total\nresult = a + b"
+    },
+    {
+        "id": 2,
+        "name": "Multi-line comment",
+        "feature": "A comment that spans multiple lines, used for detailed explanations or documentation.",
+        "example": "/*\n This function adds two numbers\n and returns the result.\n*/\nfunction add(a, b) {\n    return a + b;\n}"
+    },
+    {
+        "id": 3,
+        "name": "Inline comment",
+        "feature": "A comment placed on the same line as code, usually after a statement to clarify its purpose.",
+        "example": "total = a + b  # Add a and b"
+    },
+    {
+        "id": 4,
+        "name": "Block comment",
+        "feature": "A comment placed before a block of code to describe the overall logic or purpose of the block.",
+        "example": "// Initialize the database connection\ndb := InitDB()"
+    },
+    {
+        "id": 5,
+        "name": "Python docstring",
+        "feature": "A special multi-line string used for documenting Python modules, classes, functions, or methods.",
+        "example": "def add(a, b):\n    \"\"\"Add two numbers and return the result.\"\"\"\n    return a + b"
+    },
+    {
+        "id": 6,
+        "name": "Javadoc",
+        "feature": "A standardized multi-line comment format in Java used to generate API documentation, often with tags like @param and @return.",
+        "example": "/**\n * Adds two integers.\n * @param a the first integer\n * @param b the second integer\n * @return the sum\n */\npublic int add(int a, int b) {\n    return a + b;\n}"
+    },
+    {
+        "id": 7,
+        "name": "Rustdoc",
+        "feature": "A comment style in Rust that uses triple slashes to create documentation, supporting Markdown formatting.",
+        "example": "/// Adds two numbers.\n/// \n/// # Example\n/// ```\n/// assert_eq!(add(2, 3), 5);\n/// ```\nfn add(a: i32, b: i32) -> i32 {\n    a + b\n}"
+    },
+    {
+        "id": 8,
+        "name": "GoDoc",
+        "feature": "A commenting convention in Go where documentation comments are placed immediately before the declaration and start with the name being documented.",
+        "example": "// Add adds two integers and returns the result.\nfunc Add(a int, b int) int {\n    return a + b\n}"
+    },
+    {
+        "id": 9,
+        "name": "KotlinDoc",
+        "feature": "A documentation comment style in Kotlin similar to Javadoc, supporting tags like @param, @return, and formatted for KDoc generation.",
+        "example": "/**\n * Adds two integers.\n *\n * @param a First integer to add.\n * @param b Second integer to add.\n * @return Sum of a and b.\n */\nfun add(a: Int, b: Int): Int {\n    return a + b\n}"
+    }
+]

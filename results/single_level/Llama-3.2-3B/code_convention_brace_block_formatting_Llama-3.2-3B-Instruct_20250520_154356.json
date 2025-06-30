@@ -1,0 +1,497 @@
+[
+  {
+    "id": 1,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Construct a Rust function named `calculate_shipping_cost` that takes two parameters: an integer `distance` representing the distance in kilometers, and a floating-point `weight` representing the weight of the package in kilograms. The function should calculate the shipping cost based on a rate of $1.50 per kilometer plus $0.50 per kilogram of weight. The total cost should be formatted as a floating-point number rounded to two decimal places. Implement this function with K&R brace style.",
+        "```rust\nfn calculate_shipping_cost(distance: i32, weight: f64) -> f64 {\n    let cost = distance as f64 * 1.5 + weight * 0.5;\n    format!(\"${:.2}\", cost)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named `parse_and_aggregate` that accepts a list of dictionaries as an input. Each dictionary has keys 'name', 'quantity', and 'category'. The function should sum the quantities of items that belong to the same category and return the result as a dictionary where keys are the categories and values are the summed quantities. Ensure the function definition and all conditionals adhere to the 1TBS (One True Brace Style) formatting rules.",
+        "```python\ndef parse_and_aggregate(data):\n    result = {}\n    for item in data:\n        category = item['category']\n        quantity = item['quantity']\n        if category in result:\n            result[category] += quantity\n        else:\n            result[category] = quantity\n    return result\n```"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java function named `validateUserAccess` which takes two parameters: a `User` object and a `String` representing an access level. The function should check if the provided `User` object has a privilege level equal to or higher than the specified access level. If the condition is satisfied, return `true`, otherwise return `false`. Ensure the code uses the Allman style for brace placement.",
+        "```java\npublic class User {\n    private int privilegeLevel;\n\n    public User(int privilegeLevel) {\n        this.privilegeLevel = privilegeLevel;\n    }\n\n    public int getPrivilegeLevel() {\n        return privilegeLevel;\n    }\n}\n\npublic class Main {\n    public static boolean validateUserAccess(User user, String accessLevel) {\n        int accessLevelValue = Integer.parseInt(accessLevel);\n        return user.getPrivilegeLevel() >= accessLevelValue;\n    }\n\n    public static void main(String[] args) {\n        User user = new User(5);\n        System.out.println(validateUserAccess(user, \"3\")); // prints: true\n        System.out.println(validateUserAccess(user, \"6\")); // prints: false\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript function named computeDiscount. This function should accept two parameters: an array of numbers representing item prices and a flat discount value. The function should return a new array containing the discounted prices for each item, where the discount is subtracted from the original price. Use the Allman brace style for all functions, loops, and condition blocks to define the braces and block formatting rules.",
+        "```javascript\nfunction computeDiscount(prices, discount) {\n    var discountedPrices = [];\n    for (var i = 0; i < prices.length; i++) {\n        discountedPrices.push(prices[i] - discount);\n    }\n    return discountedPrices;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C function named 'transformAndConcat' that accepts two parameters: an array of pointers to char arrays 'stringList' and an integer 'threshold'. The function should process each string and include in the result only those whose length is greater than the 'threshold'. Return the result as a single string, concatenated in the order they appear in the array, separated by a newline character. Ensure that function definitions, loops, and conditionals follow the K&R brace style.",
+        "```c\n#include <stdio.h>\n#include <string.h>\n\nchar *transformAndConcat(char **stringList, int threshold) {\n    int len = 0;\n    char *result = NULL;\n\n    for (char **s = stringList; *s != NULL; s++) {\n        len += strlen(*s) + 1;\n    }\n\n    result = malloc(len);\n\n    int index = 0;\n    for (char **s = stringList; *s != NULL; s++) {\n        if (strlen(*s) > threshold) {\n            strcat(result, *s);\n            strcat(result, \"\\n\");\n            index++;\n        }\n    }\n\n    result[index] = '\\0';\n\n    return result;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function named `sortAndPack` that takes a vector of integers as input and sorts it in descending order. Then, the function should remove any duplicate numbers while keeping the vector sorted. The definition and control flow statements must conform to the \"1TBS\" (One True Brace Style) formatting where the `else` or `else if` must appear on the same line as the previous closing brace. Ensure the function maximizes memory efficiency by using appropriate container or techniques.",
+        "```cpp\n#include <iostream>\n#include <vector>\n#include <algorithm>\n\nvoid sortAndPack(std::vector<int>& numbers) {\n    std::sort(numbers.rbegin(), numbers.rend());\n    for (auto it = numbers.begin(); it != numbers.end(); ++it) {\n        if (it != numbers.begin() && *it == *(it - 1)) {\n            numbers.erase(it);\n        }\n    }\n}\n\nint main() {\n    std::vector<int> numbers = {5, 2, 8, 2, 1, 4, 5, 9};\n    sortAndPack(numbers);\n    for (const auto& num : numbers) {\n        std::cout << num << \" \";\n    }\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C function named \"extractContact\" that accepts an array of employee records and the length of the array as parameters. Each employee record is a struct containing the fields 'name', 'email', and 'department'. The function should filter these records to include only those belonging to the 'Finance' department and return a new dynamically allocated array of structs containing only the 'name' and 'email' for these selected records. Use the Allman brace style for all conditionals, loops, and function definitions to specify the block formatting standards.",
+        "```c\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\ntypedef struct Employee {\n    char name[100];\n    char email[100];\n    char department[100];\n} Employee;\n\nEmployee* extractContact(Employee* employees, int length) {\n    int i = 0;\n    while (i < length) {\n        if (strcmp(employees[i].department, \"Finance\") == 0) {\n            Employee* new_array = (Employee*) malloc(sizeof(Employee));\n            strcpy(new_array->name, employees[i].name);\n            strcpy(new_array->email, employees[i].email);\n            new_array->department[0] = '\\0';\n            new_array->department[0] = 'F';\n            (i++) {\n                new_array->department = realloc(new_array->department, 2);\n                new_array->department[1] = 'n';\n            }\n            new_array->department = realloc(new_array->department, 3);\n            new_array->department[2] = 'i';\n            (i++) {\n                new_array->department = realloc(new_array->department, 4);\n                new_array->department[3] = 's';\n            }\n            new_array->department = realloc(new_array->department, 5);\n            new_array->department[4] = 'n';\n            new_array->department[5] = 'c';\n            new_array->department[6] = 'e';\n            new_array->department[7] = ' ';\n            new_array->department[8] = 'F';\n            new_array->department[9] = 'i';\n            new_array->department[10] = 'n';\n            new_array->department[11] = 'a';\n            new_array->department[12] = 'n';\n            new_array->department[13] = 'c';\n            new_array->department[14] = 'e';\n            new_array->department[15] = '\\0';\n            new_array = realloc(new_array, (i + 1) * sizeof(Employee));\n            new_array[i].name = malloc(strlen(new_array->name) + 1);\n            new_array[i].email = malloc(strlen(new_array->email) + 1);\n            strcpy(new_array[i].name, new_array->name);\n            strcpy(new_array[i].email, new_array->email);\n            i++;\n        } else {\n            i++;\n        }\n    }\n    return new_array;\n}\n\nint main() {\n    Employee employees[] = {\n        {\"John\", \"john@example.com\", \"Finance\"},\n        {\"Alice\", \"alice@example.com\", \"Marketing\"},\n        {\"Bob\", \"bob@example.com\", \"Finance\"},\n        {\"Eve\", \"eve@example.com\", \"HR\"}\n    };\n    int length = sizeof(employees) / sizeof(employees[0]);\n    Employee* result = extractContact(employees, length);\n    for (int i = 0; i < length; i++) {\n        printf(\"%s %s\\n\", result[i].name, result[i].email);\n    }\n    free(result);\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function `validate_json_structure` that takes a JSON string as input and an expected structure defined as a hash map (`HashMap<&str, &str>`). The function should deserialize the JSON input and validate if it conforms to the specified structure. Return a boolean indicating whether the JSON matches the expected structure. Ensure all blocks adhere to the 1TBS brace style for conditionals and loops.",
+        "```rust\nuse serde::{Deserialize, Serialize};\nuse serde_json;\n\npub fn validate_json_structure(json_string: &str, expected_structure: HashMap<&str, &str>) -> bool {\n    let expected_structure: serde_json::Value = serde_json::from_str(expected_structure.into_iter().map(|(k, v)| serde_json::json!({k: v})).collect::<Vec<_>>()[0].as_object().unwrap()).unwrap();\n\n    let actual_structure: serde_json::Value = serde_json::from_str(json_string).unwrap();\n\n    if actual_structure.is_object() && expected_structure.is_object() {\n        let actual_object = actual_structure.as_object().unwrap();\n        let expected_object = expected_structure.as_object().unwrap();\n\n        for (key, value) in actual_object {\n            if expected_object.contains_key(key) {\n                if value != expected_structure.get(key).unwrap() {\n                    return false;\n                }\n            } else {\n                return false;\n            }\n        }\n    } else if actual_structure.is_array() && expected_structure.is_array() {\n        let actual_array = actual_structure.as_array().unwrap();\n        let expected_array = expected_structure.as_array().unwrap();\n\n        if actual_array.len() != expected_array.len() {\n            return false;\n        }\n\n        for (index, value) in actual_array.iter().enumerate() {\n            if expected_array.get(index).unwrap().as_str().unwrap() != value.as_str().unwrap() {\n                return false;\n            }\n        }\n    } else {\n        return false;\n    }\n\n    true\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method named `processWorkTasks` that accepts a List of `Task` objects and an Enum `Priority`. The method needs to return a `List<Task>` containing all tasks that have a priority equal to the provided Enum priority, sorted by their due date in ascending order. All implementation and classes should follow the K&R brace style. The `Task` object has fields `priority`, `dueDate`, and `description`.",
+        "```java\nimport java.util.ArrayList;\nimport java.util.Comparator;\nimport java.util.List;\nimport java.util.stream.Collectors;\n\npublic class Task {\n    private Priority priority;\n    private String dueDate;\n    private String description;\n\n    public Task(Priority priority, String dueDate, String description) {\n        this.priority = priority;\n        this.dueDate = dueDate;\n        this.description = description;\n    }\n\n    public Priority getPriority() {\n        return priority;\n    }\n\n    public String getDueDate() {\n        return dueDate;\n    }\n\n    public String getDescription() {\n        return description;\n    }\n}\n\nenum Priority {\n    HIGH,\n    MEDIUM,\n    LOW\n}\n\npublic class Main {\n    public static List<Task> processWorkTasks(List<Task> tasks, Priority priority) {\n        return tasks.stream()\n                .filter(task -> task.getPriority() == priority)\n                .sorted(Comparator.comparingInt(Task::getDueDate))\n                .collect(Collectors.toList());\n    }\n\n    public static void main(String[] args) {\n        List<Task> tasks = new ArrayList<>();\n        tasks.add(new Task(Priority.HIGH, \"2024-02-20\", \"Task 1\"));\n        tasks.add(new Task(Priority.MEDIUM, \"2024-02-15\", \"Task 2\"));\n        tasks.add(new Task(Priority.LOW, \"2024-02-25\", \"Task 3\"));\n\n        List<Task> result = processWorkTasks(tasks, Priority.MEDIUM);\n        result.forEach(task -> System.out.println(task.getPriority() + \": \" + task.getDueDate() + \" - \" + task.getDescription()));\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript function named parseQueryParams that takes a single string argument representing a URL containing query parameters. The function should extract and return an object where each key-value pair corresponds to the parameters in the query string. Also, format the function's code blocks and curly braces according to the 1TBS style.",
+        "```javascript\n/**\n * Extracts query parameters from a URL and returns an object.\n * \n * @param {string} url - The URL containing query parameters.\n * @returns {object} An object where each key-value pair corresponds to the parameters in the query string.\n */\nfunction parseQueryParams(url) {\n  // Use the URL class to break the URL into its components\n  const parsedUrl = new URL(url);\n  \n  // Extract the query parameters from the URL\n  const queryParams = Object.fromEntries(\n    // Use the searchParams property to get the query parameters\n    parsedUrl.searchParams\n      // Convert the query parameters to key-value pairs\n      .entries()\n      // Use the map function to create an array of key-value pairs\n      .map(([key, value]) => [key, value])\n  );\n  \n  // Return the query parameters\n  return queryParams;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function `extract_and_mask_data` that takes a dictionary `data` and a string `key_field`. The function should search for the specified `key_field` in the dictionary, and if found, replace the last three characters of the corresponding string value with asterisks ('***'). The function should then return the updated dictionary. Ensure that the function is formatted using the Allman brace style.",
+        "```python\ndef extract_and_mask_data(data, key_field):\n    \"\"\"\n    This function takes a dictionary and a key field as input. It searches for the specified key field in the dictionary,\n    replaces the last three characters of the corresponding string value with asterisks, and returns the updated dictionary.\n\n    Args:\n        data (dict): The dictionary to be updated.\n        key_field (str): The key to search for in the dictionary.\n\n    Returns:\n        dict: The updated dictionary.\n    \"\"\"\n    # Check if the key field exists in the dictionary\n    if key_field in data:\n        # Get the value of the key field\n        value = data[key_field]\n        \n        # Check if the value is a string\n        if isinstance(value, str):\n            # Replace the last three characters of the value with asterisks\n            data[key_field] = value[:-3] + '***'\n    \n    # Return the updated dictionary\n    return data\n```"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function named `computeStatistics` that takes a vector of integers representing the grades of students and calculates the minimum, maximum, and average grades. The function should return a tuple containing these values in the given order. Ensure that the implementation adheres to the K&R brace style as specified in the constraints pool.",
+        "```cpp\n#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <tuple>\n\nstd::tuple<int, int, double> computeStatistics(const std::vector<int>& grades) {\n    if (grades.empty()) {\n        throw std::invalid_argument(\"Input list cannot be empty\");\n    }\n\n    int minGrade = *std::min_element(grades.begin(), grades.end());\n    int maxGrade = *std::max_element(grades.begin(), grades.end());\n    double avgGrade = 0.0;\n    for (const auto& grade : grades) {\n        avgGrade += grade;\n    }\n    avgGrade /= grades.size();\n\n    return std::make_tuple(minGrade, maxGrade, avgGrade);\n}\n\nint main() {\n    try {\n        std::vector<int> grades = {90, 85, 95, 88, 92};\n        auto stats = computeStatistics(grades);\n        std::cout << \"Min Grade: \" << std::get<0>(stats) << std::endl;\n        std::cout << \"Max Grade: \" << std::get<1>(stats) << std::endl;\n        std::cout << \"Average Grade: \" << std::get<2>(stats) << std::endl;\n    } catch (const std::exception& e) {\n        std::cerr << \"Error: \" << e.what() << std::endl;\n    }\n\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function called `extract_and_transform` that accepts a list of dictionary objects `data` and a key name `key_name`. The function should find dictionaries within `data` where `key_name` exists and is not null, and return a new list containing the values associated with `key_name` from each dictionary but transformed into lowercase strings. Ensure the function complies with the Allman style of brace placement.",
+        "```python\ndef extract_and_transform(data, key_name):\n    \"\"\"\n    Extracts and transforms values associated with a given key name from a list of dictionaries.\n\n    Args:\n        data (list): A list of dictionary objects.\n        key_name (str): The key name to search for in the dictionaries.\n\n    Returns:\n        list: A list of transformed values associated with the given key name.\n    \"\"\"\n    transformed_values = []\n    for dictionary in data:\n        if key_name in dictionary and dictionary[key_name] is not None:\n            transformed_values.append(str(dictionary[key_name]).lower())\n    return transformed_values\n```"
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method named `manageLogging` where this method accepts an object implementing a `Loggable` interface with the methods `isEnabled()` and `logMessage(String msg)`. The method should check if logging is enabled; and if so, log the message \"Action performed successfully\". Ensure the method adheres to the 1TBS (one true brace style).",
+        "```java\npublic interface Loggable {\n    boolean isEnabled();\n    void logMessage(String msg);\n}\n\npublic class Main {\n    public static void manageLogging(Loggable loggable) {\n        if (loggable.isEnabled()) {\n            loggable.logMessage(\"Action performed successfully\");\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a JavaScript function called 'computeDiscountedPrices' that accepts two parameters: an array of numbers representing prices and a discount percentage. The function should compute the final prices after applying the specified discount to each original price and return the resulting array of discounted prices. Ensure all function and conditional blocks use the K&R brace style for consistency.",
+        "```javascript\nfunction computeDiscountedPrices(prices, discount) {\n  let discountedPrices = [];\n  for (let price of prices) {\n    let discountedPrice = price * (1 - discount / 100);\n    discountedPrices.push(discountedPrice);\n  }\n  return discountedPrices;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function named `processStocks` that accepts two parameters: a vector of strings representing stock symbols and a string sector. The function should filter the vector to include only stock symbols that belong to the specified sector by referencing a predetermined map of `stockSymbolToSector`. Then, it must sort the filtered symbols alphabetically and return the sorted vector. Ensure to use the Allman style for all loops, conditionals, and function definitions to enforce proper code block formatting rules.",
+        "```cpp\n#include <iostream>\n#include <vector>\n#include <string>\n#include <map>\n#include <algorithm>\n\nstd::vector<std::string> processStocks(const std::vector<std::string>& stockSymbols, const std::string& sector) {\n    std::map<std::string, std::string> stockSymbolToSector = {\n        {\"AAPL\", \"Technology\"},\n        {\"GOOG\", \"Technology\"},\n        {\"MSFT\", \"Technology\"},\n        {\"AMZN\", \"Consumer Discretionary\"},\n        {\"JPM\", \"Financials\"}\n    };\n\n    std::vector<std::string> filteredSymbols;\n\n    for (const auto& symbol : stockSymbols) {\n        if (stockSymbolToSector.at(symbol) == sector) {\n            filteredSymbols.push_back(symbol);\n        }\n    }\n\n    std::sort(filteredSymbols.begin(), filteredSymbols.end());\n\n    return filteredSymbols;\n}\n\nint main() {\n    std::vector<std::string> stockSymbols = {\"AAPL\", \"GOOG\", \"MSFT\", \"AMZN\", \"JPM\"};\n    std::string sector = \"Technology\";\n\n    std::vector<std::string> result = processStocks(stockSymbols, sector);\n\n    for (const auto& symbol : result) {\n        std::cout << symbol << \" \";\n    }\n\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function named `merge_intervals` that accepts a vector of tuples representing intervals, where each tuple consists of two integers, the start and end of the interval. The function should merge all overlapping intervals and return a new vector containing only the non-overlapping merged intervals. Each interval returned should be formatted with the minimum start and maximum end of any overlapping intervals. Additionally, the function should be implemented following the 1TBS brace block formatting style. Provide thorough documentation for the function.",
+        "```rust\n/// Merges a list of intervals into a new list containing non-overlapping merged intervals.\n///\n/// The function takes a vector of tuples, where each tuple represents an interval with a start and end value.\n/// It merges overlapping intervals and returns a new vector containing only the non-overlapping merged intervals.\n///\n/// Each interval returned is formatted with the minimum start and maximum end of any overlapping intervals.\n///\n/// # Example\n///\n/// ```\n/// let intervals = [(1, 3), (2, 6), (8, 10), (15, 18)];\n/// let merged = merge_intervals(intervals);\n/// assert_eq!(merged, [(1, 6), (8, 10), (15, 18)]);\n/// ```rust\n///\n/// # Panics\n///\n/// The function will panic if the input vector is empty.\npub fn merge_intervals(intervals: Vec<(i32, i32)>) -> Vec<(i32, i32)> {\n    if intervals.is_empty() {\n        panic!(\"Input vector is empty\");\n    }\n\n    intervals.into_iter()\n        .map(|interval| (interval.0, interval.1))\n        .collect::<Vec<_>>()\n        .into_iter()\n        .fold(vec![], |mut merged, current| {\n            let last_merged = *merged.last().unwrap_or(&current);\n            if current.0 <= last_merged.1 {\n                merged.pop();\n                merged.push((last_merged.0, current.1.max(last_merged.1)));\n            } else {\n                merged.push(current);\n            }\n            merged\n        })\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C function 'removeOddNumbers' that takes an array of integers and its size as parameters. The function should iterate through the array, remove all odd numbers, and return a new array containing only the even numbers. All loops and conditional blocks must adhere to the K&R brace style. The implementation should effectively demonstrate memory management in C while avoiding memory leaks.",
+        "```c\n#include <stdio.h>\n#include <stdlib.h>\n\nint* removeOddNumbers(int arr[], int size) {\n    int* new_arr = (int*)malloc((size + 1) * sizeof(int));\n    int count = 0;\n\n    for (int i = 0; i < size; i++) {\n        if (arr[i] % 2 == 0) {\n            new_arr[count++] = arr[i];\n        }\n    }\n\n    new_arr[count] = 0;\n\n    free(arr);\n\n    return new_arr;\n}\n\nint main() {\n    int arr[] = {1, 2, 3, 4, 5, 6};\n    int size = sizeof(arr) / sizeof(arr[0]);\n\n    int* new_arr = removeOddNumbers(arr, size);\n\n    for (int i = 0; new_arr[i] != 0; i++) {\n        printf(\"%d \", new_arr[i]);\n    }\n\n    free(new_arr);\n\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a C function 'calculate_sum' which accepts an integer array and its size as parameters. This function should compute the sum of all elements in the array that are even numbers and return the result. Ensure to use the K&R brace style in your function definition and any loop or conditional blocks.",
+        "```c\n#include <stdio.h>\n\nint calculate_sum(int array[], int size) {\n    int sum = 0;\n    for (int i = 0; i < size; i++) {\n        if (array[i] % 2 == 0) {\n            sum += array[i];\n        }\n    }\n    return sum;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a JavaScript function named 'compactDiscs' that takes two parameters: an array of objects 'albums' where each object represents an album with properties 'title', 'artist', and 'year', and a number 'releaseYear'. The function should filter the array to include only albums released on or after 'releaseYear' and return a new array sorted alphabetically by the album's title. Ensure that the function uses Allman style for brace positioning in conditional blocks and loops.",
+        "```javascript\nfunction compactDiscs(albums, releaseYear) {\n  return albums\n    .filter(album => album.year >= releaseYear)\n    .sort((a, b) => a.title.localeCompare(b.title))\n    .map(album => ({ title: album.title, artist: album.artist, year: album.year }));\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java method addCustomerDiscount that takes two parameters: a HashMap called customerInfo containing customer ID as a key and a double representing their current discount rate, and a double called flatRate to be added to each customer's discount. The method should update the discount for each customer in the passed HashMap by adding the flatRate to the current discount rate, ensuring the sum doesn't exceed 100%. Apply the 1TBS brace style to all conditionals and loops.",
+        "```java\nimport java.util.HashMap;\nimport java.util.Map;\n\npublic class Main {\n    public static Map<String, Double> addCustomerDiscount(Map<String, Double> customerInfo, double flatRate) {\n        for (Map.Entry<String, Double> entry : customerInfo.entrySet()) {\n            double totalDiscount = entry.getValue() + flatRate;\n            if (totalDiscount <= 100) {\n                customerInfo.put(entry.getKey(), totalDiscount);\n            }\n        }\n        return customerInfo;\n    }\n\n    public static void main(String[] args) {\n        Map<String, Double> customerInfo = new HashMap<>();\n        customerInfo.put(\"C001\", 20.0);\n        customerInfo.put(\"C002\", 30.0);\n\n        double flatRate = 10.0;\n\n        customerInfo = addCustomerDiscount(customerInfo, flatRate);\n        System.out.println(customerInfo);\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function named sortAndDistinct that accepts a vector of integers as its parameter. This function should first sort the array in ascending order and then remove any duplicate integers. Return the processed vector. Ensure your function adheres to the Allman brace style for all blocks, loops, and conditionals.",
+        "```cpp\n#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <set>\n\nstd::vector<int> sortAndDistinct(const std::vector<int>& arr) {\n    std::vector<int> sortedArr = arr;\n    std::sort(sortedArr.begin(), sortedArr.end());\n\n    std::set<int> uniqueElements(sortedArr.begin(), sortedArr.end());\n    std::vector<int> distinctArr(uniqueElements.begin(), uniqueElements.end());\n\n    return distinctArr;\n}\n\nint main() {\n    std::vector<int> arr = {5, 2, 8, 2, 1, 4, 8, 9};\n    std::vector<int> result = sortAndDistinct(arr);\n\n    for (const auto& num : result) {\n        std::cout << num << \" \";\n    }\n\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function named `filter_by_suffix` that takes a `Vec<String>` and a `String` suffix as parameters. This function should filter out strings that do not end with the specified suffix and return a new vector containing the original elements in reverse order. The implementation should strictly adhere to the 1TBS brace block formatting.",
+        "```rust\nfn filter_by_suffix(s: Vec<String>, suffix: String) -> Vec<String> {\n    s.into_iter()\n        .filter(|x| x.ends_with(&suffix))\n        .rev()\n        .collect()\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function called merge_and_format that accepts two dictionaries, dict1 and dict2. The function should merge both dictionaries such that if they contain the same key, the corresponding values will be concatenated in a sorted order (non-case sensitive). Additionally, please ensure all dictionary keys are returned in lexicographical order, and follow K&R brace style strictly for all conditional statements.",
+        "```python\ndef merge_and_format(dict1, dict2):\n    # Convert all keys to lower case and store them in a set for efficient look up\n    keys = set(key.lower() for key in dict1.keys() | dict2.keys())\n\n    # Initialize an empty dictionary to store the merged result\n    merged_dict = {}\n\n    # Iterate over all keys and concatenate their values\n    for key in keys:\n        # Check if the key exists in both dictionaries\n        if key in dict1 and key in dict2:\n            # Concatenate the values in a sorted order\n            merged_dict[key] = sorted(dict1[key] + dict2[key])\n        elif key in dict1:\n            # If the key only exists in dict1, add it to the merged dictionary\n            merged_dict[key] = dict1[key]\n        else:\n            # If the key only exists in dict2, add it to the merged dictionary\n            merged_dict[key] = dict2[key]\n\n    # Sort the merged dictionary by keys\n    merged_dict = dict(sorted(merged_dict.items()))\n\n    return merged_dict\n```"
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java method named 'calculateDistance' within a class named 'GeometryCalculator'. This method should take two parameters: a Point object 'start' and a Point object 'end'. The method should return the Euclidean distance between these two points. Ensure that the formatting of braces follows the One True Brace Style (1TBS). Additionally, ensure that 'calculateDistance' is part of an appropriate interface named 'DistanceCalculator' which the 'GeometryCalculator' class implements.",
+        "```java\npublic interface DistanceCalculator {\n    double calculateDistance(Point start, Point end);\n}\n\npublic class Point {\n    private double x;\n    private double y;\n\n    public Point(double x, double y) {\n        this.x = x;\n        this.y = y;\n    }\n\n    public double getX() {\n        return x;\n    }\n\n    public double getY() {\n        return y;\n    }\n}\n\npublic class GeometryCalculator implements DistanceCalculator {\n    @Override\n    public double calculateDistance(Point start, Point end) {\n        double dx = start.getX() - end.getX();\n        double dy = start.getY() - end.getY();\n        return Math.sqrt(dx * dx + dy * dy);\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript function called computeStats that accepts an array of numerical data. The function should calculate and return an object containing the minimum, maximum, and average values of the array. All controls in the function, such as loops or conditionals, must use the K&R brace style to enforce consistency in code formatting.",
+        "```javascript\nfunction computeStats(data) {\n  var min = data[0];\n  var max = data[0];\n  var sum = 0;\n  var n = data.length;\n\n  {\n    for (var i = 1; i < n; i++) {\n      var x = data[i];\n      if (x < min) min = x;\n      if (x > max) max = x;\n      sum += x;\n    }\n  }\n\n  var avg = sum / n;\n\n  return {\n    min: min,\n    max: max,\n    avg: avg\n  };\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function called `calculate_statistics` that takes a vector of floating-point numbers representing data points as input. The function should calculate and return a struct containing the count of elements, the maximum value, and the average of the values in the vector. Ensure all blocks of code adhere to the Allman brace formatting style for clarity.",
+        "```rust\nstruct Statistics {\n    count: usize,\n    max_value: f64,\n    average: f64,\n}\n\nfn calculate_statistics(data: Vec<f64>) -> Statistics {\n    let count = data.len();\n    let max_value = *data.iter().max().unwrap_or(&0.0);\n    let average = data.iter().sum::<f64>() / count as f64;\n\n    Statistics {\n        count,\n        max_value,\n        average,\n    }\n}\n\nfn main() {\n    let data = vec![1.0, 2.0, 3.0, 4.0, 5.0];\n    let statistics = calculate_statistics(data);\n    println!(\"{:?}\", statistics);\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C function 'processRequests' that takes an integer array 'requests' and its size 'n' as parameters. The function should identify all even numbers in the array, double their value, and create a new array with these doubled values. The function should return the pointer to the new dynamically allocated array. Ensure to follow the 1TBS (One True Brace Style) formatting for all conditionals and loops within your code.",
+        "```c\n#include <stdio.h>\n#include <stdlib.h>\n\nint* processRequests(int requests[], int n) {\n    int* doubledRequests = (int*)malloc(n * sizeof(int));\n    int count = 0;\n    for (int i = 0; i < n; i++) {\n        if (requests[i] % 2 == 0) {\n            doubledRequests[count] = requests[i] * 2;\n            count++;\n        }\n    }\n    int* result = (int*)realloc(doubledRequests, count * sizeof(int));\n    for (int i = 0; i < count; i++) {\n        result[i] = doubledRequests[i];\n    }\n    return result;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `extract_relevant_data` that receives a list of dictionaries called `records`, where each dictionary represents a user record containing keys `username`, `email`, and `status`. The function should filter these records to include only those with a status value of 'active'. The result should be a new list where each dictionary is reduced to contain only the `username` and `email` keys. Implement the function using Allman brace style to ensure the visual clarity of blocks.",
+        "```python\ndef extract_relevant_data(records):\n    \"\"\"\n    This function filters a list of user records to include only those with a status of 'active'.\n    It then reduces each record to contain only the 'username' and 'email' keys.\n\n    Args:\n        records (list): A list of dictionaries where each dictionary represents a user record.\n                        Each record contains keys 'username', 'email', and 'status'.\n\n    Returns:\n        list: A new list of dictionaries containing only the 'username' and 'email' keys\n              from the records where the 'status' is 'active'.\n    \"\"\"\n    active_records = [record for record in records if record['status'] == 'active']\n    relevant_data = [{key: value for key, value in record.items() if key in ['username', 'email']} for record in active_records]\n    return relevant_data\n```"
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function named `calculateDiscount` that takes two parameters: a double `totalAmount` representing the total cost of items, and a double `discountPercentage` representing the discount rate. The function should compute the discounted price from the `totalAmount` by applying the `discountPercentage` and return the discounted price. The function must use the K&R brace style for all function definitions, loops, and conditional statements.",
+        "```cpp\n#include <iostream>\n\ndouble calculateDiscount(double totalAmount, double discountPercentage) {\n  double discountedPrice = totalAmount;\n  {\n    double discount = (discountPercentage / 100) * totalAmount;\n    {\n      discountedPrice -= discount;\n    }\n  }\n  return discountedPrice;\n}\n\nint main() {\n  double totalAmount = 100.0;\n  double discountPercentage = 20.0;\n  double discountedPrice = calculateDiscount(totalAmount, discountPercentage);\n  std::cout << \"Discounted Price: \" << discountedPrice << std::endl;\n  return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Rust function named `apply_discount` that takes two parameters: a mutable reference to a hash map (`item_prices: &mut HashMap<String, f64>`) containing item names and their corresponding prices, and a discount percentage (`discount_percentage: f64`). The function should apply the given discount to each item’s price and update the hash map in place. Implement the function using the Allman brace style for all function definitions, loops, and conditionals.",
+        "```rust\nuse std::collections::HashMap;\n\nfn apply_discount(item_prices: &mut HashMap<String, f64>, discount_percentage: f64) {\n    for item in item_prices.iter_mut() {\n        let price = item.1;\n        let discount = price * (discount_percentage / 100.0);\n        item.1 = price - discount;\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function called 'sortAndFilterVector' which accepts a vector of integers and an integer threshold. This function should remove elements that are below the threshold, sort the remaining elements in ascending order, and return the sorted vector. Ensure that your implementation follows the K&R brace style for defining all function bodies, loops, and conditionals.",
+        "```cpp\n#include <iostream>\n#include <vector>\n#include <algorithm>\n\nstd::vector<int> sortAndFilterVector(std::vector<int> vec, int threshold) {\n  std::vector<int> filteredVec;\n  for (int i : vec) {\n    if (i >= threshold) {\n      filteredVec.push_back(i);\n    }\n  }\n  std::sort(filteredVec.begin(), filteredVec.end());\n  return filteredVec;\n}\n\nint main() {\n  std::vector<int> vec = {5, 2, 9, 1, 7, 3};\n  int threshold = 5;\n  std::vector<int> result = sortAndFilterVector(vec, threshold);\n  for (int i : result) {\n    std::cout << i << \" \";\n  }\n  return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 33,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a function named exportFilteredData in JavaScript, which accepts an array of objects data and two filtering criteria keys key1 and key2 with their respective values value1 and value2. This function should filter out objects from the array that exactly match both the provided key-value pairs. Return the array of filtered objects in JSON format. Additionally, format your code blocks using the 1TBS (One True Brace Style), where braces open in the end of the statement line and related ‘else’ or ‘else if’ must be on the same line as the closing brace for the 'if' block.",
+        "```javascript\nfunction exportFilteredData(data, key1, value1, key2, value2) {\n  const filteredData = data.filter(obj => \n    obj[key1] === value1 && obj[key2] === value2\n  );\n  return JSON.stringify(filteredData, null, 4);\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C function named `calculateDiscounts` that takes two parameters: an array of float prices and an array of int percentages representing discount rates. The function should calculate the final prices after applying the corresponding discounts. The length of both arrays will be the same. The function should return a dynamically allocated array of float containing the discounted prices. Ensure that the function and any loops or conditionals in it follow the K&R brace style, as common in C programming.",
+        "```c\n#include <stdio.h>\n#include <stdlib.h>\n\nfloat* calculateDiscounts(float prices[], int percentages[], int n) {\n    float* discountedPrices = (float*)malloc(n * sizeof(float));\n\n    for (int i = 0; i < n; i++) {\n        if (percentages[i] == 0) {\n            discountedPrices[i] = prices[i];\n        } else {\n            discountedPrices[i] = prices[i] * (1 - percentages[i] / 100);\n        }\n    }\n\n    return discountedPrices;\n}\n\nint main() {\n    float prices[] = {100, 200, 300, 400, 500};\n    int percentages[] = {10, 20, 30, 40, 50};\n    int n = sizeof(prices) / sizeof(prices[0]);\n\n    float* discountedPrices = calculateDiscounts(prices, percentages, n);\n\n    for (int i = 0; i < n; i++) {\n        printf(\"Discounted price: %f\\n\", discountedPrices[i]);\n    }\n\n    free(discountedPrices);\n\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method called `processTransactions` that takes a `List<Transaction>` as input and filters out all transactions with a status of \"FAILED\". The method should then return a `List<Transaction>` containing only the successful transactions. Ensure that the method follows the 1TBS (One True Brace Style) for all conditional and loop constructions.",
+        "```java\nimport java.util.List;\nimport java.util.stream.Collectors;\n\npublic class Transaction {\n    private String id;\n    private String status;\n\n    public Transaction(String id, String status) {\n        this.id = id;\n        this.status = status;\n    }\n\n    public String getId() {\n        return id;\n    }\n\n    public String getStatus() {\n        return status;\n    }\n}\n\npublic class Main {\n    public static List<Transaction> processTransactions(List<Transaction> transactions) {\n        return transactions.stream()\n                .filter(transaction -> !transaction.getStatus().equals(\"FAILED\"))\n                .collect(Collectors.toList());\n    }\n\n    public static void main(String[] args) {\n        // Example usage:\n        List<Transaction> transactions = List.of(\n                new Transaction(\"1\", \"SUCCESS\"),\n                new Transaction(\"2\", \"FAILED\"),\n                new Transaction(\"3\", \"SUCCESS\")\n        );\n\n        List<Transaction> successfulTransactions = processTransactions(transactions);\n\n        successfulTransactions.forEach(transaction -> System.out.println(transaction.getId() + \": \" + transaction.getStatus()));\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Python function called `extract_min_max` that takes a list of integers as an argument and returns a tuple containing the minimum and maximum values from that list. Ensure the function definition and all control structures adhere to the Allman brace block formatting style.",
+        "```python\ndef extract_min_max(lst):\n    min_val = min(lst)\n    max_val = max(lst)\n    return min_val, max_val\n```"
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function named `computeStatistics` that takes a vector of integers representing test scores and returns a struct containing the maximum score, minimum score, and the average score as double precision. All blocks in the function should utilize 1TBS (One True Brace Style) formatting. Ensure proper use of STL algorithms where appropriate to demonstrate effective use of the C++ Standard Library.",
+        "```cpp\n#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <numeric>\n\nstruct ScoreStatistics {\n    double maxScore;\n    double minScore;\n    double averageScore;\n};\n\nScoreStatistics computeStatistics(const std::vector<int>& scores) {\n    if (scores.empty()) {\n        throw std::invalid_argument(\"Input vector is empty\");\n    }\n\n    const auto& maxScore = *std::max_element(scores.begin(), scores.end());\n    const auto& minScore = *std::min_element(scores.begin(), scores.end());\n    const auto& sum = std::accumulate(scores.begin(), scores.end(), 0);\n\n    const auto averageScore = static_cast<double>(sum) / scores.size();\n\n    return {maxScore, minScore, averageScore};\n}\n\nint main() {\n    try {\n        std::vector<int> scores = {90, 85, 95, 80, 92};\n        const auto stats = computeStatistics(scores);\n\n        std::cout << \"Maximum Score: \" << stats.maxScore << std::endl;\n        std::cout << \"Minimum Score: \" << stats.minScore << std::endl;\n        std::cout << \"Average Score: \" << stats.averageScore << std::endl;\n    } catch (const std::exception& e) {\n        std::cerr << \"Error: \" << e.what() << std::endl;\n    }\n\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method called `createEmployeeReport` that takes a `HashMap<String, Employee>` where the key is the department name and the Employee is an object holding information on employees. The method should process each department and generate a report listing the names and IDs of employees in ascending order of their ID. Ensure that the method fits the 'Kernighan and Ritchie style' (K&R) brace formatting for the entire method definition and all control constructs used within the method.",
+        "```java\nimport java.util.*;\n\npublic class EmployeeReport {\n    public static void createEmployeeReport(Map<String, Employee> departments) {\n        for (Map.Entry<String, Employee> entry : departments.entrySet()) {\n            System.out.println(\"Department: \" + entry.getKey());\n            List<Employee> employeeList = new ArrayList<>(entry.getValue().getEmployees());\n            Collections.sort(employeeList, Comparator.comparingInt(e -> e.getId()));\n            for (Employee employee : employeeList) {\n                System.out.println(\"Name: \" + employee.getName() + \", ID: \" + employee.getId());\n            }\n            System.out.println();\n        }\n    }\n\n    public static class Employee {\n        private String name;\n        private int id;\n        private Map<String, Employee> employees;\n\n        public Employee(String name, int id) {\n            this.name = name;\n            this.id = id;\n            this.employees = new HashMap<>();\n        }\n\n        public void addEmployee(Employee employee) {\n            this.employees.put(\"name\", employee);\n        }\n\n        public String getName() {\n            return name;\n        }\n\n        public int getId() {\n            return id;\n        }\n\n        public Map<String, Employee> getEmployees() {\n            return employees;\n        }\n    }\n\n    public static void main(String[] args) {\n        Map<String, Employee> departments = new HashMap<>();\n        departments.put(\"Sales\", new Employee(\"John Doe\", 1));\n        departments.get(\"Sales\").addEmployee(new Employee(\"Jane Smith\", 2));\n        departments.put(\"Marketing\", new Employee(\"Bob Johnson\", 3));\n        departments.get(\"Marketing\").addEmployee(new Employee(\"Alice Williams\", 4));\n\n        createEmployeeReport(departments);\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 39,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript function named `calculateDiscounts` that takes two parameters: an array of item prices and a discount percentage. The function should compute a new array where each item price is reduced by the given discount percentage and ensure that the function returns this new array. Ensure that you use Allman brace style for all function definitions, loops, and conditionals to clearly delineate code blocks.",
+        "```javascript\nfunction calculateDiscounts(prices, discount) {\n  let discountedPrices = [];\n  for (let price of prices) {\n    let discountedPrice = price - (price * discount / 100);\n    discountedPrices.push(discountedPrice);\n  }\n  return discountedPrices;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 40,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function named `calculate_discount` that takes two parameters: a f64 value `price` representing the original price of an item, and an i32 `day_of_week` representing the day of the week as an integer (1 for Monday through 7 for Sunday). The function should apply a 10% discount on weekends (Saturday and Sunday), and return the new price. Ensure the function uses the Allman brace and block formatting style.",
+        "```rust\nfn calculate_discount(price: f64, day_of_week: i32) -> f64 {\n    if day_of_week >= 1 && day_of_week <= 7 {\n        price * 0.9\n    } else {\n        price\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 41,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Python function named 'merge_and_filter' that takes two dictionary inputs: 'original_data' and 'additional_data'. The function should merge these dictionaries, but only include entries from 'additional_data' if the key does not exist in 'original_data'. It should then filter out entries where values are None or empty strings. Utilize the K&R brace style for blocks and function formatting.",
+        "```python\ndef merge_and_filter(original_data, additional_data):\n    \"\"\"\n    Merge two dictionaries and filter out entries with None or empty values.\n    \n    Args:\n        original_data (dict): The original dictionary.\n        additional_data (dict): The dictionary to add to the original data.\n    \n    Returns:\n        dict: The merged and filtered dictionary.\n    \"\"\"\n    # Merge the dictionaries, only adding entries from 'additional_data' that are not in 'original_data'\n    merged_data = {**original_data, **(additional_data if any(key not in original_data for key in additional_data) else {})}\n    \n    # Filter out entries with None or empty values\n    filtered_data = {key: value for key, value in merged_data.items() if value not in [None, \"\"]}\n    \n    return filtered_data\n```"
+      ]
+    ]
+  },
+  {
+    "id": 42,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C function named 'calculateTax' that takes two parameters: a float representing the price of an item, and a float representing the tax rate as a percentage (e.g., 5.5 for 5.5%). The function should compute the total price after tax and return it. Implement this function using the 1TBS (One True Brace Style) for all loops, conditionals, and function definitions to specify braces and block formatting rules.",
+        "```c\n#include <stdio.h>\n\nfloat calculateTax(float price, float taxRate) {\n    return price + (price * (taxRate / 100));\n}\n\nint main() {\n    float price = 100.0f;\n    float taxRate = 5.5f;\n    float totalPrice = calculateTax(price, taxRate);\n    printf(\"Total price after tax: %.2f\\n\", totalPrice);\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 43,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C function called `expandTabs` that takes a const char pointer `inputString` and an integer `tabSize`, and returns a new dynamically allocated string where all tab characters ('\\t') in `inputString` are replaced by spaces equivalent to `tabSize`. The block of code in the `expandTabs` function should be formatted using the Allman style.",
+        "```c\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nchar* expandTabs(const char* inputString, int tabSize) {\n    int length = strlen(inputString) + 1;\n    char* expandedString = malloc(length * sizeof(char));\n\n    for (int i = 0; inputString[i] != '\\0'; ++i) {\n        if (inputString[i] == '\\t') {\n            int numSpaces = tabSize * (inputString[i + 1] - '0');\n            for (int j = 0; j < numSpaces; ++j) {\n                expandedString[length - 1 - j] = ' ';\n            }\n            i += numSpaces - 1;\n        } else {\n            expandedString[length - 1 - i] = inputString[i];\n        }\n    }\n\n    return expandedString;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 44,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java function called sortByValueAndExport that takes a HashMap<Integer, String> named 'itemMap' and an integer 'threshold'. The function should sort the map's entries ascending by their integer keys if their values are numeric and larger than the 'threshold'. Then, it should write the filtered and sorted entries to a CSV file named 'filteredItems.csv' with the column headers 'Key,Value'. Follow the K&R brace style for the function definition and all control statements within the function.",
+        "```java\nimport java.io.FileWriter;\nimport java.io.IOException;\nimport java.io.PrintWriter;\nimport java.util.*;\n\npublic class Main {\n\n    public static void sortByValueAndExport(Map<Integer, String> itemMap, int threshold) {\n        // Sort the map entries\n        List<Map.Entry<Integer, String>> sortedEntries = new ArrayList<>(itemMap.entrySet());\n        sortedEntries.sort((o1, o2) -> {\n            int value1 = Integer.parseInt(o1.getValue());\n            int value2 = Integer.parseInt(o2.getValue());\n            if (value1 > threshold && value2 > threshold) {\n                return o1.getKey().compareTo(o2.getKey());\n            } else if (value1 > threshold) {\n                return -1;\n            } else if (value2 > threshold) {\n                return 1;\n            } else {\n                return o1.getValue().compareTo(o2.getValue());\n            }\n        });\n\n        // Write the filtered and sorted entries to a CSV file\n        try (PrintWriter writer = new PrintWriter(new FileWriter(\"filteredItems.csv\"))) {\n            writer.println(\"Key,Value\");\n            for (Map.Entry<Integer, String> entry : sortedEntries) {\n                if (Integer.parseInt(entry.getValue()) > threshold) {\n                    writer.println(entry.getKey() + \",\" + entry.getValue());\n                }\n            }\n        } catch (IOException e) {\n            System.err.println(\"Error writing to file: \" + e.getMessage());\n        }\n    }\n\n    public static void main(String[] args) {\n        Map<Integer, String> itemMap = new HashMap<>();\n        itemMap.put(3, \"10\");\n        itemMap.put(2, \"20\");\n        itemMap.put(1, \"30\");\n        itemMap.put(4, \"40\");\n        sortByValueAndExport(itemMap, 20);\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 45,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a JavaScript function, sortAndExtract, that incorporates two parameters: an array of objects 'items' where each object possesses properties 'category' and 'price', and a numerical value 'maxPrice'. The function should first filter the array to include only the items with a price less than or equal to 'maxPrice', then sort these filtered items by price in ascending order. Finally, it should return a list of categories for these sorted items, ensuring no category is listed more than once. Implement this using 1TBS brace style for all loops, conditionals, and function definitions.",
+        "```javascript\nfunction sortAndExtract(items, maxPrice) {\n    let filteredItems = items.filter(item => item.price <= maxPrice);\n    let sortedItems = filteredItems.sort((a, b) => a.price - b.price);\n    let categories = sortedItems.map(item => item.category).reduce((acc, curr) => {\n        if (!acc.includes(curr)) acc.push(curr);\n        return acc;\n    }, []);\n    return categories;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 46,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function named computeGrade that takes two parameters: a vector of integers representing scores and an integer threshold. The function should calculate the total score, and if the total exceeds the threshold, it should return 'A', otherwise 'B'. Ensure the function and all control structures, including loops and conditionals, adhere to K&R brace style.",
+        "```cpp\n#include <iostream>\n#include <vector>\n\nchar computeGrade(const std::vector<int>& scores, int threshold) {\n  int totalScore = 0;\n  for (int score : scores) {\n    totalScore += score;\n  }\n\n  return (totalScore > threshold) ? 'A' : 'B';\n}\n\nint main() {\n  std::vector<int> scores = {80, 70, 90, 85};\n  int threshold = 85;\n  std::cout << computeGrade(scores, threshold) << std::endl;\n  return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 47,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function called 'process_data' that accepts a dictionary 'data_dict' containing various business data and a list of keys 'keys_list'. The function should filter 'data_dict' using given 'keys_list', only keeping key-value pairs where the key is present in 'keys_list'. Return a new dictionary with proper Allman style formatting for any conditional or loop structures.",
+        "```python\ndef process_data(data_dict, keys_list):\n    filtered_dict = {key: data_dict[key] for key in keys_list if key in data_dict}\n    return filtered_dict\n```"
+      ]
+    ]
+  },
+  {
+    "id": 48,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function called `validate_user_input` that takes a string argument `input` representing user identifiers. The function should check if the `input` starts with a letter and contains only alphanumeric characters or underscores. Only if these conditions are met should it return `true`; otherwise, it should return `false`. Ensure the function uses the 1TBS brace formatting.",
+        "```rust\nfn validate_user_input(input: String) -> bool {\n    #[allow(unused)]\n    fn is_alphanumeric_or_underscore(c: char) -> bool {\n        c.is_alphanumeric() || c == '_'\n    }\n\n    input\n        .chars()\n        .all(|c| is_alphanumeric_or_underscore(c))\n        && input.chars().next().unwrap().is_alphabetic()\n}\n\nfn main() {\n    println!(\"{}\", validate_user_input(\"valid_user_id\".to_string()));  // prints: true\n    println!(\"{}\", validate_user_input(\"_valid_user_id\".to_string()));  // prints: true\n    println!(\"{}\", validate_user_input(\"1invalid_user_id\".to_string()));  // prints: false\n    println!(\"{}\", validate_user_input(\"invalid_user_id!\".to_string()));  // prints: false\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 49,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named `apply_discount` that takes a dictionary `prices` where each key represents a product name, and corresponding value represents its original price. The function should also accept a float `discount_percent`, representing the percentage discount to be applied to all products. Return a new dictionary with the updated prices after applying the discount. Ensure to follow Allman style brace formatting in your function and any loop or conditional code blocks.",
+        "```python\ndef apply_discount(prices, discount_percent):\n    \"\"\"\n    Applies a discount to all products in the given dictionary.\n\n    Args:\n        prices (dict): A dictionary where each key is a product name and each value is the original price.\n        discount_percent (float): The percentage discount to be applied to all products.\n\n    Returns:\n        dict: A new dictionary with the updated prices after applying the discount.\n    \"\"\"\n\n    # Initialize an empty dictionary to store the updated prices\n    updated_prices = {}\n\n    # Loop through each product in the prices dictionary\n    for product, price in prices.items():\n        # Calculate the discount amount by multiplying the price with the discount percentage\n        discount_amount = price * (discount_percent / 100)\n\n        # Calculate the updated price by subtracting the discount amount from the original price\n        updated_price = price - discount_amount\n\n        # Store the updated price in the updated_prices dictionary\n        updated_prices[product] = updated_price\n\n    # Return the updated_prices dictionary\n    return updated_prices\n```"
+      ]
+    ]
+  },
+  {
+    "id": 50,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function `filter_and_transform` that accepts a vector of tuples (Vec<(String, i32)>) called `items` and an integer `threshold`. The function should iterate over `items`, filtering to only include tuples where the second element (i32) exceeds the `threshold`, and return a new vector containing the transformed first elements (strings) to uppercase. The function should use K&R brace style for all conditional and looping structures.",
+        "```rust\nfn filter_and_transform(items: Vec<(String, i32)>, threshold: i32) -> Vec<String> {\n    let mut result = Vec::new();\n\n    {\n        for (item, value) in items {\n            if value > threshold {\n                result.push(item.to_uppercase());\n            }\n        }\n    }\n\n    result\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 51,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function named sortArray to organize an integer array into ascending order using the quicksort algorithm. Ensure all braces are formatted in the K&R style, where the opening brace is on the same line as the statement and the closing brace is on its own line.",
+        "```cpp\nvoid sortArray(int a[], int low, int high) {\n  if (low < high) {\n    int p = partition(a, low, high);\n    sortArray(a, low, p - 1);\n    sortArray(a, p + 1, high);\n  }\n}\n\nint partition(int a[], int low, int high) {\n  int pivot = a[high];\n  int i = (low - 1);\n  for (int j = low; j < high; j++) {\n    if (a[j] < pivot) {\n      i++;\n      swap(a[i], a[j]);\n    }\n  }\n  swap(a[i + 1], a[high]);\n  return (i + 1);\n}\n\nvoid swap(int &a, int &b) {\n  int temp = a;\n  a = b;\n  b = temp;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java implementation of the Floyd-Warshall algorithm to calculate the minimum distances among all vertex pairs in a graph. Ensure that the coding style adheres to Java's braces and block formatting rules, specifically using the K&R style, where braces open on the same line as the control statement.",
+        "```java\npublic class FloydWarshall {\n    public static void main(String[] args) {\n        int[][] graph = {\n                {0, 5, Integer.MAX_VALUE, 10},\n                {Integer.MAX_VALUE, 0, 3, Integer.MAX_VALUE},\n                {Integer.MAX_VALUE, Integer.MAX_VALUE, 0, 1},\n                {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 0}\n        };\n\n        int n = graph.length;\n        int[][] dist = new int[n][n];\n\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                dist[i][j] = graph[i][j];\n            }\n        }\n\n        for (int k = 0; k < n; k++) {\n            for (int i = 0; i < n; i++) {\n                for (int j = 0; j < n; j++) {\n                    dist[i][j] = Math.min(dist[i][j], dist[i][k] + dist[k][j]);\n                }\n            }\n        }\n\n        System.out.println(\"Minimum Distances:\");\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++) {\n                System.out.print(dist[i][j] + \" \");\n            }\n            System.out.println();\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java method named findCommonElements ensuring it follows the Allman style for braces, where each brace '{' and '}' begins on a new line. This method must accept two numerical arrays as parameters and return an array containing common elements from both.",
+        "```java\npublic class Main {\n    public static int[] findCommonElements(int[] nums1, int[] nums2) {\n        Set<Integer> set1 = new HashSet<>();\n        for (int num : nums1) {\n            set1.add(num);\n        }\n\n        Set<Integer> commonElements = new HashSet<>();\n        for (int num : nums2) {\n            if (set1.contains(num)) {\n                commonElements.add(num);\n            }\n        }\n\n        int[] result = new int[commonElements.size()];\n        int i = 0;\n        for (int num : commonElements) {\n            result[i++] = num;\n        }\n\n        return result;\n    }\n\n    public static void main(String[] args) {\n        int[] nums1 = {1, 2, 3, 4, 5};\n        int[] nums2 = {4, 5, 6, 7, 8};\n        int[] result = findCommonElements(nums1, nums2);\n        for (int num : result) {\n            System.out.print(num + \" \");\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 54,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust module named `file_processor` that includes a function named `process_files`. This function should accept an array of file paths and asynchronously process each file. Additionally, apply the Allman brace style where opening braces for functions and control structures are placed on a new line, improving code clarity.",
+        "```rust\n// file_processor.rs\n\nuse std::fs::File;\nuse std::io::{BufReader, BufRead};\nuse std::path::Path;\nuse std::thread;\nuse std::sync::{Arc, Mutex};\n\nfn process_files(file_paths: Vec<String>) {\n    for file_path in file_paths {\n        let file_path = Arc::new(Mutex::new(file_path));\n        thread::spawn(move || {\n            let file_path = file_path.lock().unwrap();\n            println!(\"Processing file: {}\", file_path.display());\n            // Your file processing code here\n        });\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 55,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a JavaScript function filterAndTransform that takes two parameters: an array of strings words and a string prefix. The function should filter the array to include only words that start with the given prefix and return a new array where each matching word is transformed to uppercase. Use K&R brace style for all loops, conditionals, and function definitions to specify braces and block formatting rules.",
+        "```javascript\nfunction filterAndTransform(words, prefix) {\n  let result = [];\n\n  { \n    for (let word of words) {\n      if (word.startsWith(prefix)) {\n        result.push(word.toUpperCase());\n      }\n    }\n  }\n\n  return result;\n}\n```"
+      ]
+    ]
+  }
+]

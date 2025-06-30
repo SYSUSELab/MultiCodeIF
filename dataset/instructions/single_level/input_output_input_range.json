@@ -1,0 +1,268 @@
+[
+    {
+        "id": 1,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Design a Python function named `fetch_stock_data` that accepts a single input parameter, a tuple, where the first element represents a stock symbol (string type) and the second element is the date (string in 'YYYY-MM-DD' format). This function should return the closing stock price of the given symbol on the specified date. Ensure the function can handle non-existent stock symbols by raising a custom `ValueError` with a meaningful error message. The function should also validate dates using regular expressions to ensure the input complies with the 'YYYY-MM-DD' format before processing. Handle edge cases such as empty string inputs and malformed data gracefully.",
+        "answer": "Python;fetch_stock_data;tuple;TypeList: (string, string)"
+    },
+    {
+        "id": 2,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a C++ function named `validateJSONFields` that accepts a `JSONObject` with a defined structure. The JSON object should contain exactly 3 keys: 'id' which must be an integer, 'status' which should be a boolean, and 'data' that is an array of strings. The function should check whether the JSON object adheres to this structure and validate the field types accordingly. Additionally, ensure that each string in the 'data' array does not exceed 50 characters in length. The function should return a boolean indicating whether the JSON object is valid or not.",
+        "answer": "Cpp;validateJSONFields;JSONObject;number of keys between 3 and 3 and specific fields must match types Integer, Boolean, Array of strings with each string length <= 50"
+    },
+    {
+        "id": 3,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a Rust function named `check_collision_status` which accepts a single Boolean input `object_moving`. The function should return `true` if `object_moving` is `true`, signifying a moving object is potentially at risk of collision. Otherwise, it should return `false`. This function should directly reflect the simple state of whether an object is considered for collision status checking based on its movement, applying a real-world scenario where motion predicates environmental interactions in automated systems, such as robotics or vehicle autopilot systems.",
+        "answer": "Rust;check_collision_status;Boolean;true or false based on object_moving"
+    },
+    {
+        "id": 4,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Design a Java method named `validateNumberList` that takes a single parameter: a List of integers. The method should verify that the size of the list is between 1 and 50, inclusive, and that each integer within the list ranges between 10 and 100, inclusive. If the list fails these specifications, the method should return false; otherwise, true. Note that empty lists should automatically lead to a false result.",
+        "answer": "java;validateNumberList;List;list size between 1 and 50, each element between 10 and 100"
+    },
+    {
+        "id": 5,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a Java method called 'validateIPv4Tuple' that accepts a single tuple input. The tuple should contain exactly four elements representing an IPv4 address (e.g. (192, 168, 1, 1)). Each element in the tuple should be an integer between 0 and 255 inclusive. The method should return true if the tuple correctly represents a valid IPv4 address, and false otherwise. Ensure that the method handles any non-integer values or tuples that do not meet the size and range criteria gracefully by returning false, without throwing exceptions.",
+        "answer": "java;validateIPv4Tuple;tuple;tuple size exactly 4 and each element integer between 0 and 255"
+    },
+    {
+        "id": 6,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Develop a Python function named `process_map_entries` that accepts a single Map (dictionary in Python) as input. This function should filter out any entries where the key does not match the regex pattern `^[a-zA-Z]+$` and the number of entries in the map should be between 5 and 20, inclusive. The function should process remaining valid entries by capitalizing all values (assuming they are strings). If any key has a non-string value, skip the capitalization for that entry. Ensure the function does not mutate the original map but instead returns a new processed map.",
+        "answer": "python;process_map_entries;map;number of entries between 5 and 20, keys must match regex ^[a-zA-Z]+$"
+    },
+    {
+        "id": 7,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a C++ function called 'mergeSortedListOfStrings' that accepts a single List parameter containing string elements. The function should return a new List with all elements sorted in ascending lexicographical order. The input list can have a minimum of 0 elements and a maximum of 100 elements. The function should gracefully handle empty lists and lists containing string elements of various cases without throwing exceptions.",
+        "answer": "Cpp;mergeSortedListOfStrings;List;length between 0 and 100"
+    },
+    {
+        "id": 8,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Develop a Rust function named `analyze_histogram` that accepts a Map where each key is a character (char) and the value is the frequency (usize) of that character in a document. Ensure the function only processes maps with 1 to 50 key-value pairs. The function should return a new Map where each key is a \"low\", \"medium\", or \"high\" based on frequency values: \"low\" for frequencies 1-10, \"medium\" for 11-100, and \"high\" for 101 and above. This returned Map will aggregate count of original keys falling into each category. Ensure the process handles edge sizes of map lengths correctly without throwing errors.",
+        "answer": "Rust;analyze_histogram;Map;number of key-value pairs between 1 and 50"
+    },
+    {
+        "id": 9,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Develop a Python function named count_even_odd_in_range that takes two integers, start and end as input parameters. The function should count and return the number of even and odd numbers between start and end, inclusive. The input integers should be in a valid range between 0 and 1000. Implement the function to properly handle scenarios where start is greater than end by returning (0, 0) indicating zero even and odd numbers in the invalid range.",
+        "answer": "python;count_even_odd_in_range;integer;integer value between 0 and 1000"
+    },
+    {
+        "id": 10,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "In Rust, implement a function named `calculate_secondary_budget` that accepts a single non-null parameter of type `BudgetDetails`. The `BudgetDetails` struct should include three fields: `primary_budget` as u32 representing the primary budget in dollars, `percentage_retained` as f32 representing the percentage (between 0 and 100 inclusive) of the primary budget to calculate the secondary budget, and `round_nearest_dollar` as a boolean specifying whether to round the final secondary budget to the nearest dollar. The function should calculate the secondary budget based on the specified percentage of the primary budget. If `round_nearest_dollar` is true, the output should round to the nearest whole number; otherwise, output the non-rounded floating number as f32. Ensure your implementation handles boundary conditions correctly and efficiently.",
+        "answer": "Rust;calculate_secondary_budget;Struct;primary_budget as u32; percentage_retained as f32 within 0 to 100; round_nearest_dollar as boolean"
+    },
+    {
+        "id": 11,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Develop a C++ function named `treeMirrorSwap` that accepts a root node of a binary tree (composed of nodes, each having integer values). The function should mirror the binary tree such that for every node, the left child becomes the right child and vice versa throughout the tree. The binary tree must have no more than 100 nodes and no less than 10 nodes. Additionally, ensure the implementation handles null tree inputs gracefully and efficiently, without modifying the empty tree.",
+        "answer": "Cpp;treeMirrorSwap;Tree;number of nodes between 10 and 100"
+    },
+    {
+        "id": 12,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a Java method named 'calculateArrayStats' that accepts a single tuple containing four integer elements. The method should compute the minimum, maximum, sum, and average of the elements in the tuple and return these statistics in a new tuple in the specified order. The method must ensure that it does not throw any exceptions even if the integers are at their boundary values. The numbers in the tuple can range from Integer.MIN_VALUE to Integer.MAX_VALUE.",
+        "answer": "java;calculateArrayStats;tuple;tuple size must be exactly 4"
+    },
+    {
+        "id": 13,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a Rust function named `validate_json_structure` that accepts a single `JSONObject` as input. The function must ensure that the JSON object contains at least 3 and no more than 8 keys. If the JSON object meets this requirement, the function should return `true`; otherwise, it should return `false`. The function must handle other data types gracefully and must not panic or crash if the input is not a `JSONObject`.",
+        "answer": "Rust;validate_json_structure;JSONObject;number of keys between 3 and 8"
+    },
+    {
+        "id": 14,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Develop a Python function named `calculate_rounded_area` that accepts one float parameter, `radius`, representing the radius of a circle. The function should calculate the area of the circle rounded to two decimal places. The radius must be a float number between 0.0 and 100.0. The function should handle edge cases such as the minimum and maximum values gracefully and ensure that the computation is not performed for invalid inputs like negative values, returning None in such cases.",
+        "answer": "Python;calculate_rounded_area;float;float value between 0.0 and 100.0 and precision must not exceed 2 DecimalPlaces"
+    },
+    {
+        "id": 15,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Design a C++ function named `countTreeDepth` that accepts a non-null binary tree as input and returns its maximum depth. The binary tree is defined by its root node which contains integer data, a pointer to the left child, and a pointer to the right child. Ensure that the function operates correctly for trees with depth ranging from 1 to 10. Handle edge cases where the tree is a single node gracefully.",
+        "answer": "Cpp;countTreeDepth;tree;tree depth between 1 and 10"
+    },
+    {
+        "id": 16,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Develop a Java method named `calculateTreeDepth` in a new class named `TreeProcessor`. The method takes a single parameter of a custom class `TreeNode` representing the root of a binary tree. Define the `TreeNode` class which should include an integer value and pointers to left and right children nodes. The method should return an integer representing the maximum depth of the tree. The class `TreeNode` and method `calculateTreeDepth` should be well-documented, handle null inputs gracefully by returning a depth of zero, and ensure no exceptions are thrown during execution.",
+        "answer": "java;calculateTreeDepth;tree;tree depth between 0 and 15"
+    },
+    {
+        "id": 17,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a Java method named `calculateTotalPages` that calculates total pages needed for given number of topics. This method accepts a non-null integer input, `topicsPerPage`, specifying how many topics can be covered on each page, and a non-null integer, `totalTopics`, representing total topics to be covered. If `topicsPerPage` is zero, the method should return zero without throwing an exception. Ensure the numbers for `topicsPerPage` and `totalTopics` are between 1 and 1000.",
+        "answer": "java;calculateTotalPages;integer;integer value between 1 and 1000"
+    },
+    {
+        "id": 18,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a Rust function named `frequency_sort` that accepts a single non-empty string with a maximum length of 100 characters. The function should output a new string where the characters are sorted based on their frequency in descending order. In case of a tie in frequency, characters should be ordered by their natural ascending order. The function should handle strings containing alphanumeric and special characters efficiently, without throwing exceptions.",
+        "answer": "Rust;frequency_sort;string;string length between 1 and 100"
+    },
+    {
+        "id": 19,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a C++ function named `normalizeURL` that takes a single `std::string` parameter representing a URL. The function should ensure that the protocol part of the URL (if provided) is converted to lowercase. If the URL has parameters, it should sort them alphabetically based on the parameter name. For URLs without a protocol, prepend 'http://'. The input string should be a valid URL containing alphanumeric characters and typical URL symbols like ':', '/', '?', '&', '=', and '-'. The function should handle up to 300 characters and not throw exceptions with incorrect formats but return the input as is.",
+        "answer": "Cpp;normalizeURL;std::string;string length up to 300 characters"
+    },
+    {
+        "id": 20,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Develop a Python function named `rotateMatrix` that takes a single parameter: a square matrix (nested list format where outer list is rows and inner lists are columns) with element values as integers. The matrix can be of any size from 2x2 up to 10x10. This function should rotate the matrix 90 degrees clockwise and return the rotated matrix. The function must handle matrices that include negative integers but ensure that the rotation preserves the data type and number of elements in each row and column. Furthermore, the feature should handle matrix rotation even if matrix elements are not strictly integers but any numeric type.",
+        "answer": "python;rotateMatrix;matrix;row count and column count between 2 and 10"
+    },
+    {
+        "id": 21,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a Rust function named `clamp_temperature` that accepts a floating-point number representing a temperature in Celsius. The function should ensure the temperature remains within the global climate agreement bounds of -10.0 to 50.0 degrees Celsius. If the input temperature is below -10.0, it should return -10.0; if it's above 50.0, it should return 50.0; otherwise, it should return the original temperature value. Ensure precision is maintained, and handle edge cases gracefully without panic.",
+        "answer": "Rust;clamp_temperature;Float;float value between -10.0 and 50.0"
+    },
+    {
+        "id": 22,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Design a Java method named `countConnectedComponents` that accepts a Graph object representing an undirected graph as input. The method should accurately determine and return the number of connected components within the graph. Ensure input graphs can have a number of vertices ranging from 1 to 100, and handle cases where the graph may contain no edges or self-loops. The implementation should correctly handle empty graphs gracefully without throwing exceptions.",
+        "answer": "java;countConnectedComponents;Graph;number of vertices between 1 and 100"
+    },
+    {
+        "id": 23,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Develop a Python function named `is_graph_cyclic` that determines whether a given directed graph contains any cycles. The graph should be represented as an adjacency list passed to the function. The function should return `True` if there is at least one cycle in the graph, otherwise `False`. Ensure your solution handles graphs of varying sizes convincingly, with vertex count exactly between 5 and 20, and edge count ranging from minimum 5 to a maximum of 40. The method should manage edge cases like empty graphs, single vertex with no edges, and fully connected graphs without causing runtime errors.",
+        "answer": "Python;is_graph_cyclic;Graph;number of vertices between 5 and 20, number of edges between 5 and 40"
+    },
+    {
+        "id": 24,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a C++ function named `formatPath` which accepts a single string parameter representing a file or directory path. The function should normalize the path by converting backslashes to forward slashes and removing any consecutive slashes, except the leading ones if the path is a network path (e.g., `\\\\server\\share`). The function is expected to handle paths up to 300 characters in length and can include non-alphabetical characters. Ensure proper handling of both empty and excessively long strings without throwing exceptions.",
+        "answer": "Cpp;formatPath;string;string length between 0 and 300"
+    },
+    {
+        "id": 25,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a Python function named `scaleMatrixValues` that takes a matrix of integers as its only argument. This matrix should have dimensions between 2x2 and 10x10, inclusive, and each cell value must be between -100 and 100 inclusive. The function should scale any positive cell value in the matrix by doubling it, and scale any negative cell value by halving it. Ensure correct input validation and provide reasonable outputs for the given constraints without throwing exceptions for incorrect input sizes or values.",
+        "answer": "python;scaleMatrixValues;matrix;matrix dimensions between 2x2 and 10x10, cell values between -100 and 100"
+    },
+    {
+        "id": 26,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a Rust function named `graph_edge_prune` that takes a mutable reference to a Graph data structure as its only parameter. This Graph should have vertices labeled with integers and the edges labeled with weights. The function should remove all edges that have weights lower than a predefined threshold, `threshold_weight`, set at 10. The Graph should support a maximum of 100 vertices and 200 edges. After pruning the edges, the function should return the modified Graph. Ensure the Graph does not become disconnected as a result of the edge removal unless a vertex becomes isolated.",
+        "answer": "Rust;graph_edge_prune;Graph;number of vertices between 1 and 100 and number of edges between 0 and 200"
+    },
+    {
+        "id": 27,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Design a C++ function named `validateKeys` that takes a `std::map<std::string, std::string>` object as input. The map's keys must strictly adhere to the following regular expression pattern: \"[A-Z]{3}\\d{2}\". This pattern expects keys to start with exactly three uppercase letters followed by exactly two digits. The function should return a boolean result indicating if all keys in the map comply with this pattern. Ensure the function handles an empty map gracefully, returning true in such cases.",
+        "answer": "Cpp;validateKeys;map;keys must match regex [A-Z]{3}\\d{2}"
+    },
+    {
+        "id": 28,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a Java method named `validateMatrix` that accepts a single non-null 2D integer matrix as input. Each element in the matrix should strictly be between 1 and 100, inclusive. The method should return a boolean indicating whether all values in the matrix conform to this range. The method should handle different dimensions of matrices gracefully without throwing exceptions and must efficiently anticipate varied matrix sizes potentially up to 100x100 elements.",
+        "answer": "java;validateMatrix;matrix;cell value between 1 and 100"
+    },
+    {
+        "id": 29,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a C++ function named `countLeafNodes` that takes a binary tree (via a pointer to its root node) as input and returns the count of its leaf nodes. A leaf node is defined as a node without any child nodes. The tree can contain between 1 and 50 nodes. Ensure your function handles trees with varying structures (e.g., balanced, left-heavy, and right-heavy) and that it efficiently counts leaf nodes using depth-first search principles without using additional data structures.",
+        "answer": "Cpp;countLeafNodes;Tree;number of nodes between 1 and 50"
+    },
+    {
+        "id": 30,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Develop a Java method named calculateDiscount that accepts a single price value of type Float. The price value should be a non-negative float ranging between 0.0 and 10000.0 inclusive. The method should calculate a discount price based on the given price. If the price is between 0.0 and 100.0, apply a 5% discount; between 100.1 and 500.0, apply a 10% discount; and for prices over 500.1 up to 10000.0, apply a 15% discount. Return the discounted price rounded to two decimal places. Additionally, handle edge cases such as the maximum boundary by ensuring calculations do not produce errors or incorrect results.",
+        "answer": "Java;calculateDiscount;Float;float value between 0.0 and 10000.0"
+    },
+    {
+        "id": 31,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a Python function named `countNonZeroMatrixElements` that accepts a single non-null matrix of integers as its input. The matrix should have dimensions that do not exceed 10x10. The function should count and return the number of non-zero elements in the given matrix. The function should handle matrices with dimensions from 1x1 up to 10x10, including various shapes (not strictly square matrices). Each element in the matrix should be processed efficiently to optimize performance.",
+        "answer": "Python;countNonZeroMatrixElements;Matrix;row count and column count between 1 and 10"
+    },
+    {
+        "id": 32,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Design a Rust function called `count_unique_keys` that accepts a single Map with String keys and integer values. The function should return the count of unique keys that have an associated value of zero. The Map must contain between 1 and 50 key-value pairs. The function should handle any Map within this range efficiently, without panicking or throwing errors.",
+        "answer": "Rust;count_unique_keys;Map;keys between 1 and 50"
+    },
+    {
+        "id": 33,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a C++ function named `mergeTuplePairs` that accepts a single tuple of pairs of integers of a fixed size '4'. The function should merge these pairs into a single resultant tuple by adding the first elements of each pair together and the second elements of each pair together. For example, given the input tuple ((a1, b1), (a2, b2), (a3, b3), (a4, b4)), the output should be a tuple (a1+a2+a3+a4, b1+b2+b3+b4). Ensure the function can handle all forms of integer input gracefully, including negative numbers, without throwing any exceptions.",
+        "answer": "Cpp;mergeTuplePairs;tuple;tuple size must be exactly 4"
+    },
+    {
+        "id": 34,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Develop a Python function named `checkGraphConnectivity` that takes a graph represented as an adjacency matrix. The function should determine if the graph is fully connected (i.e., there is a path between any two vertices). Assume the graph has vertices numbered from 0 to N-1 and contains between 3 and 20 vertices. The function should handle inputs gracefully, gracefully returning `False` if the input graph does not meet the specified conditions or is not properly formatted.",
+        "answer": "Python;checkGraphConnectivity;Graph;number of vertices between 3 and 20"
+    },
+    {
+        "id": 35,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a C++ function `process_vector` that takes a vector of integers as input and returns a string representing these integers concatenated together with commas. An example is converting the input vector [1, 2, 3] into the output string \"1,2,3\". Make certain that the input vector should only contain non-negative integers.",
+        "answer": "cpp;process_vector;vector<int>;input vector should only consist of non-negative integers"
+    },
+    {
+        "id": 36,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a Java method named 'swapCharPairs' that accepts a single string input, which has a length less than or equal to 100. The method should swap every two adjacent characters in the string. If the string's length is odd, the last character should remain unchanged.",
+        "answer": "java;swapCharPairs;String;the string input should not exceed 100 characters"
+    },
+    {
+        "id": 37,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Create a Java method named `isPrime` that accepts a single integer as input. This method should return a boolean value: `true` if the given integer is a prime number, and `false` otherwise. Ensure this integer input is non-negative and strictly less than `1000`.",
+        "answer": "java;isPrime;Integer;non-negative integer that is less than 1000"
+    },
+    {
+        "id": 38,
+        "category": "input_output",
+        "constraint": "input_range",
+        "prompt": "Can you devise a Python function `inclusive` that takes a list of unique integers as input, ensures all numbers are within the inclusive range of 1 to 100, sorts them in ascending order, and returns a list containing only the even numbers in the sorted order? Please ensure the input list does not contain any duplicate integers.",
+        "answer": "python;inclusive;list;must now consist solely of integers between 1 and 100"
+    }
+]

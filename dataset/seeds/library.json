@@ -1,0 +1,490 @@
+[
+    {
+        "name": "requests",
+        "category": "Networking",
+        "description": "Use the requests library to send GET requests to an API and parse JSON responses.",
+        "example": "Use the requests library to fetch https://api.example.com/data and extract the 'items' field.",
+        "language": "Python",
+        "id": 1
+    },
+    {
+        "name": "httpx",
+        "category": "Networking",
+        "description": "Use httpx's asynchronous client to make API calls.",
+        "example": "Use httpx.AsyncClient to asynchronously fetch a news API and parse headlines.",
+        "language": "Python",
+        "id": 2
+    },
+    {
+        "name": "pandas",
+        "category": "Data Processing",
+        "description": "Use pandas to read CSV files and perform data aggregation.",
+        "example": "Load the sales.csv file and compute total sales grouped by region.",
+        "language": "Python",
+        "id": 3
+    },
+    {
+        "name": "polars",
+        "category": "Data Processing",
+        "description": "Use polars to efficiently read and filter large datasets.",
+        "example": "Read a large CSV file with polars and select rows where price > 100.",
+        "language": "Python",
+        "id": 4
+    },
+    {
+        "name": "flask",
+        "category": "Web Development",
+        "description": "Use Flask to build a simple web service with a form.",
+        "example": "Create a web page with a form where users enter their name and receive a greeting.",
+        "language": "Python",
+        "id": 5
+    },
+    {
+        "name": "sanic",
+        "category": "Web Development",
+        "description": "Use Sanic to implement asynchronous web APIs.",
+        "example": "Build an asynchronous JSON API that returns the current server time.",
+        "language": "Python",
+        "id": 6
+    },
+    {
+        "name": "pydantic",
+        "category": "Serialization & Data Validation",
+        "description": "Use pydantic to define and validate data models.",
+        "example": "Create a User model and validate that input JSON matches the required schema.",
+        "language": "Python",
+        "id": 7
+    },
+    {
+        "name": "msgpack",
+        "category": "Serialization & Data Validation",
+        "description": "Use msgpack to serialize and deserialize data into binary format.",
+        "example": "Serialize a Python dictionary into bytes using msgpack and then deserialize it.",
+        "language": "Python",
+        "id": 8
+    },
+    {
+        "name": "scrapy",
+        "category": "Web Crawling",
+        "description": "Use Scrapy to build a web crawler to scrape website content.",
+        "example": "Crawl example.com and extract all article titles.",
+        "language": "Python",
+        "id": 9
+    },
+    {
+        "name": "selectolax",
+        "category": "Web Crawling",
+        "description": "Use selectolax to quickly parse HTML documents.",
+        "example": "Extract all hyperlink URLs from an HTML page using selectolax.",
+        "language": "Python",
+        "id": 10
+    },
+    {
+        "name": "click",
+        "category": "Command-line Tools",
+        "description": "Use click to create CLI tools with argument parsing.",
+        "example": "Build a CLI tool that accepts a --name argument and prints a greeting.",
+        "language": "Python",
+        "id": 11
+    },
+    {
+        "name": "typer",
+        "category": "Command-line Tools",
+        "description": "Use typer to build CLI apps with type hints.",
+        "example": "Create a CLI app that takes two integers and prints their sum.",
+        "language": "Python",
+        "id": 12
+    },
+    {
+        "name": "asyncio",
+        "category": "Concurrency & Async",
+        "description": "Use asyncio to run asynchronous tasks concurrently.",
+        "example": "Fetch multiple websites in parallel and print response times.",
+        "language": "Python",
+        "id": 13
+    },
+    {
+        "name": "trio",
+        "category": "Concurrency & Async",
+        "description": "Use trio to write structured asynchronous programs.",
+        "example": "Launch three async tasks in parallel with trio, each waiting a random number of seconds.",
+        "language": "Python",
+        "id": 14
+    },
+    {
+        "name": "axios",
+        "category": "Networking",
+        "description": "Use axios to make HTTP requests and handle JSON responses.",
+        "example": "Send a GET request to https://api.example.com/data using axios and extract the title field.",
+        "language": "JavaScript",
+        "id": 15
+    },
+    {
+        "name": "got",
+        "category": "Networking",
+        "description": "Use got as a lightweight and powerful alternative to axios for HTTP requests.",
+        "example": "Fetch JSON from a remote API using got and print selected fields.",
+        "language": "JavaScript",
+        "id": 16
+    },
+    {
+        "name": "express",
+        "category": "Web Development",
+        "description": "Use Express to build web APIs and serve HTTP endpoints.",
+        "example": "Create a simple Express server with a route that returns a JSON greeting.",
+        "language": "JavaScript",
+        "id": 17
+    },
+    {
+        "name": "koa",
+        "category": "Web Development",
+        "description": "Use Koa to build lightweight, async-first web servers.",
+        "example": "Create a Koa server that returns the current time in JSON format.",
+        "language": "JavaScript",
+        "id": 18
+    },
+    {
+        "name": "mongoose",
+        "category": "Database",
+        "description": "Use mongoose to interact with MongoDB using schema-based models.",
+        "example": "Define a User schema with mongoose and save a new user to MongoDB.",
+        "language": "JavaScript",
+        "id": 19
+    },
+    {
+        "name": "sequelize",
+        "category": "Database",
+        "description": "Use Sequelize to define SQL models and perform database operations.",
+        "example": "Define a Product model with Sequelize and query products priced over $100.",
+        "language": "JavaScript",
+        "id": 20
+    },
+    {
+        "name": "yup",
+        "category": "Validation",
+        "description": "Use yup to define and validate object schemas.",
+        "example": "Create a yup schema to validate user input with email and password fields.",
+        "language": "JavaScript",
+        "id": 21
+    },
+    {
+        "name": "zod",
+        "category": "Validation",
+        "description": "Use zod to declare and parse structured data with validation.",
+        "example": "Define a zod schema for a signup form and validate incoming payloads.",
+        "language": "JavaScript",
+        "id": 22
+    },
+    {
+        "name": "commander",
+        "category": "Command-line Tools",
+        "description": "Use commander to build CLI applications with argument support.",
+        "example": "Create a CLI tool with commander that takes a filename and prints it.",
+        "language": "JavaScript",
+        "id": 23
+    },
+    {
+        "name": "inquirer",
+        "category": "Command-line Tools",
+        "description": "Use inquirer to create interactive command-line interfaces.",
+        "example": "Build a CLI wizard that prompts the user to select a template and enter a name.",
+        "language": "JavaScript",
+        "id": 24
+    },
+    {
+        "name": "rxjs",
+        "category": "Reactive Programming",
+        "description": "Use RxJS to handle event streams and asynchronous data flows.",
+        "example": "Create an observable that emits values every second and logs them.",
+        "language": "JavaScript",
+        "id": 25
+    },
+    {
+        "name": "socket.io",
+        "category": "Realtime Communication",
+        "description": "Use socket.io to create a real-time chat server and client.",
+        "example": "Build a WebSocket server with socket.io that broadcasts messages to all clients.",
+        "language": "JavaScript",
+        "id": 26
+    },
+    {
+        "name": "axios",
+        "category": "Networking",
+        "description": "Use axios with typed responses for safe HTTP requests.",
+        "example": "Send a GET request to https://api.example.com/items and type the response as an array of Item.",
+        "language": "TypeScript",
+        "id": 27
+    },
+    {
+        "name": "zod",
+        "category": "Validation",
+        "description": "Use zod to validate and infer TypeScript types from schemas.",
+        "example": "Create a Zod schema for a user form and use it to infer the form's TypeScript type.",
+        "language": "TypeScript",
+        "id": 28
+    },
+    {
+        "name": "class-validator",
+        "category": "Validation",
+        "description": "Use class-validator to add validation decorators to TypeScript classes.",
+        "example": "Define a CreateUserDTO class with @IsEmail and @Length validators and validate an input object.",
+        "language": "TypeScript",
+        "id": 29
+    },
+    {
+        "name": "io-ts",
+        "category": "Validation",
+        "description": "Use io-ts to decode and validate external data while preserving static types.",
+        "example": "Define an io-ts codec for a BlogPost and parse JSON data from an API.",
+        "language": "TypeScript",
+        "id": 30
+    },
+    {
+        "name": "tsyringe",
+        "category": "Dependency Injection",
+        "description": "Use tsyringe to manage dependency injection with decorators.",
+        "example": "Use @injectable and @inject decorators to register and resolve service dependencies.",
+        "language": "TypeScript",
+        "id": 31
+    },
+    {
+        "name": "typedi",
+        "category": "Dependency Injection",
+        "description": "Use typedi for lightweight dependency injection in service-based architectures.",
+        "example": "Inject a LoggerService into a UserService using typedi and resolve it from the container.",
+        "language": "TypeScript",
+        "id": 32
+    },
+    {
+        "name": "type-graphql",
+        "category": "GraphQL",
+        "description": "Use type-graphql to build GraphQL APIs using classes and decorators.",
+        "example": "Define a GraphQL resolver with TypeScript decorators and schema auto-generation.",
+        "language": "TypeScript",
+        "id": 33
+    },
+    {
+        "name": "nestjs",
+        "category": "Backend Framework",
+        "description": "Use NestJS to build modular, scalable TypeScript server-side applications.",
+        "example": "Create a REST controller in NestJS that handles user registration with validation and dependency injection.",
+        "language": "TypeScript",
+        "id": 34
+    },
+    {
+        "name": "tsoa",
+        "category": "REST API",
+        "description": "Use tsoa to automatically generate OpenAPI docs from TypeScript decorators.",
+        "example": "Create a controller with tsoa and generate OpenAPI documentation from routes and models.",
+        "language": "TypeScript",
+        "id": 35
+    },
+    {
+        "name": "ts-pattern",
+        "category": "Pattern Matching",
+        "description": "Use ts-pattern to perform exhaustive pattern matching in a type-safe way.",
+        "example": "Match an API response variant with ts-pattern and handle all possible cases safely.",
+        "language": "TypeScript",
+        "id": 36
+    },
+    {
+        "name": "fp-ts",
+        "category": "Functional Programming",
+        "description": "Use fp-ts to write functional programs using Option, Either, and Task data types.",
+        "example": "Use Either to handle success/failure in parsing user input and chaining validation logic.",
+        "language": "TypeScript",
+        "id": 37
+    },
+    {
+        "name": "gin",
+        "category": "Web Framework",
+        "description": "Use Gin to build fast and lightweight HTTP web servers.",
+        "example": "Create a RESTful API with Gin that returns a list of users in JSON format.",
+        "language": "Go",
+        "id": 38
+    },
+    {
+        "name": "fiber",
+        "category": "Web Framework",
+        "description": "Use Fiber, an Express-inspired framework, to create fast web applications in Go.",
+        "example": "Build a simple web server with Fiber and implement a route to return current server time.",
+        "language": "Go",
+        "id": 39
+    },
+    {
+        "name": "gorilla/mux",
+        "category": "Routing",
+        "description": "Use Gorilla Mux for advanced HTTP routing in Go applications.",
+        "example": "Set up URL path parameters and handle different HTTP methods with Gorilla Mux.",
+        "language": "Go",
+        "id": 40
+    },
+    {
+        "name": "go-resty/resty",
+        "category": "HTTP Client",
+        "description": "Use Resty as a rich HTTP client for sending requests and handling responses.",
+        "example": "Send a POST request with JSON data and handle the response using Resty.",
+        "language": "Go",
+        "id": 41
+    },
+    {
+        "name": "go-chi/chi",
+        "category": "Router",
+        "description": "Use Chi for building REST APIs with a minimal and idiomatic router.",
+        "example": "Implement middleware and nested routes using Chi in a RESTful service.",
+        "language": "Go",
+        "id": 42
+    },
+    {
+        "name": "gorm",
+        "category": "ORM",
+        "description": "Use GORM to interact with relational databases through Go structs.",
+        "example": "Define a model struct and use GORM to perform CRUD operations on a PostgreSQL database.",
+        "language": "Go",
+        "id": 43
+    },
+    {
+        "name": "ent",
+        "category": "ORM / Schema Modeling",
+        "description": "Use Ent to generate type-safe, statically-typed Go code for database interactions.",
+        "example": "Define an Ent schema and use generated code to create and query users.",
+        "language": "Go",
+        "id": 44
+    },
+    {
+        "name": "cobra",
+        "category": "Command-line Tools",
+        "description": "Use Cobra to build powerful CLI applications with subcommands.",
+        "example": "Create a CLI app with Cobra that supports `init`, `build`, and `deploy` commands.",
+        "language": "Go",
+        "id": 45
+    },
+    {
+        "name": "urfave/cli",
+        "category": "Command-line Tools",
+        "description": "Use urfave/cli for quick CLI app creation with flags, arguments, and commands.",
+        "example": "Build a CLI tool with flags to process files and print results.",
+        "language": "Go",
+        "id": 46
+    },
+    {
+        "name": "go-co-op/gocron",
+        "category": "Task Scheduling",
+        "description": "Use gocron to schedule periodic jobs like cron in Go.",
+        "example": "Schedule a background task to run every 10 minutes using gocron.",
+        "language": "Go",
+        "id": 47
+    },
+    {
+        "name": "asynkron/protoactor-go",
+        "category": "Actor Model",
+        "description": "Use Proto.Actor to write concurrent and distributed actor-based systems in Go.",
+        "example": "Create a set of actors that communicate via messages and manage task state.",
+        "language": "Go",
+        "id": 48
+    },
+    {
+        "name": "go-kit/kit",
+        "category": "Microservices",
+        "description": "Use Go Kit to build distributed services with logging, transport, and metrics.",
+        "example": "Implement a microservice endpoint with transport and middleware using Go Kit.",
+        "language": "Go",
+        "id": 49
+    },
+    {
+        "name": "actix-web",
+        "category": "Web Framework",
+        "description": "Use Actix-web to build fast and secure web servers with the Actix actor system.",
+        "example": "Create a RESTful API with Actix-web that responds with a JSON list of products.",
+        "language": "Rust",
+        "id": 50
+    },
+    {
+        "name": "rocket",
+        "category": "Web Framework",
+        "description": "Use Rocket for easy-to-use, type-safe web frameworks in Rust with built-in security.",
+        "example": "Set up a simple web server with Rocket that returns a greeting message.",
+        "language": "Rust",
+        "id": 51
+    },
+    {
+        "name": "hyper",
+        "category": "HTTP Client / Server",
+        "description": "Use Hyper for low-level HTTP implementations in both client and server contexts.",
+        "example": "Build an HTTP server with Hyper that handles incoming GET requests.",
+        "language": "Rust",
+        "id": 52
+    },
+    {
+        "name": "reqwest",
+        "category": "HTTP Client",
+        "description": "Use Reqwest to send HTTP requests and handle responses in an easy, type-safe manner.",
+        "example": "Send an asynchronous GET request with Reqwest and parse the JSON response.",
+        "language": "Rust",
+        "id": 53
+    },
+    {
+        "name": "diesel",
+        "category": "ORM",
+        "description": "Use Diesel for safe, extensible ORM in Rust to interact with SQL databases.",
+        "example": "Define a schema with Diesel and perform CRUD operations on a PostgreSQL database.",
+        "language": "Rust",
+        "id": 54
+    },
+    {
+        "name": "sqlx",
+        "category": "Async SQL ORM",
+        "description": "Use SQLx for asynchronous SQL queries with compile-time checked queries.",
+        "example": "Perform asynchronous database operations with SQLx and handle results with futures.",
+        "language": "Rust",
+        "id": 55
+    },
+    {
+        "name": "tokio",
+        "category": "Async Runtime",
+        "description": "Use Tokio as an asynchronous runtime for building scalable applications.",
+        "example": "Create an async server using Tokio that handles requests concurrently.",
+        "language": "Rust",
+        "id": 56
+    },
+    {
+        "name": "async-std",
+        "category": "Async Runtime",
+        "description": "Use async-std for async programming in Rust with a focus on simplicity.",
+        "example": "Build an asynchronous TCP server using async-std and handle client connections.",
+        "language": "Rust",
+        "id": 57
+    },
+    {
+        "name": "serde",
+        "category": "Serialization/Deserialization",
+        "description": "Use Serde to serialize and deserialize Rust data structures efficiently.",
+        "example": "Serialize a struct to JSON and deserialize it back into Rust objects using Serde.",
+        "language": "Rust",
+        "id": 58
+    },
+    {
+        "name": "tide",
+        "category": "Web Framework",
+        "description": "Use Tide for simple, asynchronous web applications with a focus on ease of use.",
+        "example": "Create a basic HTTP server with Tide that handles POST requests with JSON bodies.",
+        "language": "Rust",
+        "id": 59
+    },
+    {
+        "name": "futures",
+        "category": "Async Programming",
+        "description": "Use Futures for handling asynchronous computations and combinators.",
+        "example": "Use the Futures library to chain multiple asynchronous operations together.",
+        "language": "Rust",
+        "id": 60
+    },
+    {
+        "name": "tokio-tungstenite",
+        "category": "WebSocket",
+        "description": "Use tokio-tungstenite to work with WebSocket connections in asynchronous Rust applications.",
+        "example": "Build an echo server that sends received WebSocket messages back to clients using tokio-tungstenite.",
+        "language": "Rust",
+        "id": 61
+    }
+]

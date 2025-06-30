@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Java application that utilizes the JUnit framework to implement and run unit tests for a simple calculator class. The calculator should support basic operations: addition, subtraction, multiplication, and division. Ensure that your tests cover both valid and invalid inputs, including edge cases, utilizing JUnit's assertion methods and annotations to structure and organize the tests.",
+        "answer": "java;junit;\nFramework Description: JUnit is the current generation of the JUnit testing framework, which provides a modern foundation for developer-side testing on the JVM. This includes focusing on Java 8 and above, as well as enabling many different styles of testing."
+    },
+    {
+        "id": 2,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a command-line application using the Cement framework in Python. The application should accept user input to perform basic arithmetic operations (addition, subtraction, multiplication, division). Implement command handlers for each operation, validate the inputs, and include error messages for invalid inputs. Ensure that the application logs the operation history to a file for future reference.",
+        "answer": "python;cement;\nFramework Description: Cement is an advanced Python application framework with a primary focus on the Command Line Interface (CLI). Its goal is to introduce a standard and full-featured platform for both simple and complex command-line applications and to support rapid development needs without sacrificing quality. Cement is very flexible and its use cases range from the simplicity of a microframework to the complexity of a large framework."
+    },
+    {
+        "id": 3,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a JavaScript application using the Whatsup framework that displays a list of user-specified items. The application should allow users to dynamically add or remove items from the list. Implement input validation to prevent adding empty items and include basic styling for better user experience. Additionally, ensure the application utilizes the reactivity system of Whatsup to update the list in real-time.",
+        "answer": "javascript;whatsup;\nFramework Description: Whatsup is a modern frontend framework with own reactivity system and JSX components based on pure functions and generators."
+    },
+    {
+        "id": 4,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Java application that utilizes the tinylog framework to implement a logging service. The service should provide a RESTful API with endpoints to log messages at different severity levels (info, debug, error). Ensure that each log entry is timestamped and formatted appropriately. Implement error handling to give informative responses when incorrect data is submitted or if the logging process encounters an issue.",
+        "answer": "java;tinylog;\nFramework Description: Lightweight logging framework with static logger class.\nLightweight logging framework can be used with Java, Kotlin, Scala and any other JVM language. tinylog is open source and runs anywhere Java is used: JVM, GraalVM and Android"
+    },
+    {
+        "id": 5,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Java application using the Elide framework to build a RESTful API service that allows users to manage products in an inventory system. The service must support CRUD operations for the product model, which includes fields for name, description, price, and stock quantity. Implement proper validation and error handling, and ensure that the API can return product metrics, such as the total stock available.",
+        "answer": "java;elide;\nFramework Description: Elide is a Java library that allows you to easily build GraphQL or JSON API web services driven by JPA-annotated models. Elide supports two API forms. \nCRUD (Create, Read, Update, Delete) API for reading and manipulating models. \nAnalytic API for aggregating metrics over zero or more model attributes. "
+    },
+    {
+        "id": 6,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Java application using gRPC that defines a service for managing a library system. Implement methods for adding, retrieving, and deleting books, ensuring that each method returns a confirmation or the requested book details as a response. Include proper error handling for cases like attempting to delete a non-existent book or retrieving a book with an invalid ID. Document the service with Protocol Buffers.",
+        "answer": "java;gRPC;\nFramework Description: gRPC is a modern open source high performance Remote Procedure Call (RPC) framework that can run in any environment. It can efficiently connect services in and across data centers with pluggable support for load balancing, tracing, health checking and authentication. It is also applicable in the last mile of distributed computing to connect devices, mobile applications and browsers to backend services."
+    },
+    {
+        "id": 7,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a C++ application that utilizes CppUTest for unit testing a simple calculator class. The calculator should support addition, subtraction, multiplication, and division operations. Implement at least three test cases for each operation, ensuring that edge cases such as division by zero and negative number operations are handled correctly. Include setup and teardown methods for creating a clean testing environment.",
+        "answer": "cpp;CppUTest;\nFramework Description: CppUTest is a C /C++ based unit xUnit test framework for unit testing and for test-driving your code. It is written in C++ but is used in C and C++ projects and frequently used in embedded systems but it works for any C/C++ project."
+    },
+    {
+        "id": 8,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Rust application using the Bevy game engine that initializes a simple window displaying a colored rectangle in the center. Implement systems that handle window events such as resizing and closing, ensuring that the application gracefully exits without errors. Additionally, include a mechanism to control the rectangle's color using keyboard inputs.",
+        "answer": "rust;Bevy;\nFramework Description: A refreshingly simple data-driven game engine built in Rust\nFree and Open Source Forever!"
+    },
+    {
+        "id": 9,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Vue.js application that implements a simple to-do list functionality. The app should allow users to add, remove, and mark tasks as complete. It should also utilize Vuex for state management, implement form validation for task input, and provide a visual indication of completed tasks. Ensure to include components for task input, task list, and task item.",
+        "answer": "javascript;vue.js;\nFramework Description: An approachable, performant and versatile framework for building web user interfaces."
+    },
+    {
+        "id": 10,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a RESTful API using Node.js and Express that allows users to manage a to-do list. Implement CRUD (Create, Read, Update, Delete) operations with appropriate endpoints, ensuring that all responses are in JSON format. Include input validation and error handling middleware to manage invalid requests and ensure data integrity.",
+        "answer": "javascript;express;\nFramework Description: Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications."
+    },
+    {
+        "id": 11,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Django web application that includes a RESTful API for managing a simple to-do list. The API should support the creation, retrieval, updating, and deletion of to-do items, with JSON as the data format for requests and responses. Ensure that proper authentication is implemented using Django's built-in user authentication system, and include error handling for invalid operations.",
+        "answer": "python;django;\nFramework Description: Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out."
+    },
+    {
+        "id": 12,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Rust web application using the Cot framework that sets up a server on port 8080. The application should provide a GET endpoint that responds with a list of items in JSON format, and a POST endpoint to add new items to the list. Incorporate proper error handling and input validation for the POST request data, ensuring that the application gracefully handles invalid input.",
+        "answer": "rust;cot;\nFramework Description: Cot It is an easy-to-use, modern and fast Rust web framework. If you have ever used Django, Cot is designed to feel very familiar to you; if you have never used it, Cot is also easy to learn. Cot is a powerful framework built on axum. "
+    },
+    {
+        "id": 13,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a RESTful API using Node.js and Express that manages a collection of books. The API should support CRUD operations (Create, Read, Update, Delete) through appropriate endpoints, validate incoming data with a JSON schema, and return appropriate response messages. Additionally, implement middleware for error handling and logging of request details, with responses formatted as JSON.",
+        "answer": "javascript;express;\nFramework Description: Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications."
+    },
+    {
+        "id": 14,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Java application that utilizes the tinylog framework for logging. The application should perform CRUD operations on a simple in-memory user store and use tinylog to log significant events such as user creation, retrieval, updates, and deletions. Ensure that logs include timestamps and log levels, and implement proper error handling to log any exceptions that occur during operations.",
+        "answer": "java;tinylog;\nFramework Description: Lightweight logging framework with static logger class.\nLightweight logging framework can be used with Java, Kotlin, Scala and any other JVM language. tinylog is open source and runs anywhere Java is used: JVM, GraalVM and Android"
+    },
+    {
+        "id": 15,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a RESTful API using the Cornice framework in Python that provides endpoints for managing a collection of books. Implement endpoints for creating, retrieving, updating, and deleting book records, including proper validation of input data. Ensure that all responses are in JSON format, and include detailed error handling for invalid requests.",
+        "answer": "python;cornice;\nFramework Description: A RESTful framework for Pyramid.\nCornice provides helpers to build and document RESTful web services using Pyramid, with good default behaviors. It follows the HTTP specification as much as possible in an automated way."
+    },
+    {
+        "id": 16,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Build a web application using the Cot framework in Rust that allows users to create, read, update, and delete (CRUD) notes. The application should feature a SQLite database for storage, include input validation, and return JSON responses for all operations. Implement error handling to manage database connection issues and input errors gracefully.",
+        "answer": "rust;cot;\nFramework Description: Cot It is an easy-to-use, modern and fast Rust web framework. If you have ever used Django, Cot is designed to feel very familiar to you; if you have never used it, Cot is also easy to learn. Cot is a powerful framework built on axum. "
+    },
+    {
+        "id": 17,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Django web application that implements a simple blog. This application should allow users to create, read, update, and delete blog posts. Ensure that each post has a title, content, and timestamp for when it was created. Implement authentication for users to only allow logged-in users to create or edit posts. Additionally, include a feature that displays the most recent posts on the homepage.",
+        "answer": "python;django;\nFramework Description: Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out."
+    },
+    {
+        "id": 18,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Java application using Elide that sets up a RESTful API based on JPA-annotated entity models. The application should provide endpoints for CRUD operations on these entities and implement an analytic API that aggregates data. Ensure proper error handling and implement basic authentication for the API access.",
+        "answer": "java;elide;\nFramework Description: Elide is a Java library that allows you to easily build GraphQL or JSON API web services driven by JPA-annotated models. Elide supports two API forms. \nCRUD (Create, Read, Update, Delete) API for reading and manipulating models. \nAnalytic API for aggregating metrics over zero or more model attributes. "
+    },
+    {
+        "id": 19,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Flask web application that serves as a RESTful API for managing a collection of books. Implement endpoints for creating, reading, updating, and deleting books. Ensure that each book has a title, author, and publication date. Use data validation and error handling to manage incorrect input formats, and respond with appropriate HTTP status codes. Additionally, apply logging middleware to track request details and maintain a structured log.",
+        "answer": "python;flask;\nFramework Description: Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around Werkzeug and Jinja, and has become one of the most popular Python web application frameworks."
+    },
+    {
+        "id": 20,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a web application using the Whatsup framework in JavaScript that retrieves a list of users from an API endpoint and displays it in a reactive manner. Incorporate components for user listing, apply proper state management, and ensure that the UI updates in response to data changes. Additionally, implement error handling for API calls and show a loading spinner while fetching data.",
+        "answer": "javascript;whatsup;\nFramework Description: Whatsup is a modern frontend framework with own reactivity system and JSX components based on pure functions and generators."
+    },
+    {
+        "id": 21,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Build a single-page application using Vue.js that fetches user data from a public API, displays a list of users with their details, and includes error handling for API calls. Implement a loading spinner while fetching data and ensure the application is responsive on mobile devices.",
+        "answer": "javascript;vue.js;\nFramework Description: An approachable, performant and versatile framework for building web user interfaces."
+    },
+    {
+        "id": 22,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a C++ application that utilizes the CGraph framework to implement a directed acyclic graph (DAG) for processing a series of tasks. The application should allow users to define the tasks and their dependencies, execute them in the correct order using the GPipeline scheduling feature, and output the results in a user-friendly format. Ensure that error handling is implemented for invalid dependencies and task configurations.",
+        "answer": "cpp;CGraph;\nFramework Description: CGraph, short for Color Graph, is a cross-platform DAG computing framework without any third-party dependencies. With the scheduling via GPipeline, the purpose of sequential and concurrent executing elements is realized."
+    },
+    {
+        "id": 23,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a C++ test suite using CppUTest to validate the functionality of a simple calculator class. The test suite should include cases for addition, subtraction, multiplication, and division, ensuring to handle division by zero errors appropriately. Include setup and teardown methods to initialize and clean resources for each test run.",
+        "answer": "cpp;CppUTest;\nFramework Description: CppUTest is a C /C++ based unit xUnit test framework for unit testing and for test-driving your code. It is written in C++ but is used in C and C++ projects and frequently used in embedded systems but it works for any C/C++ project."
+    },
+    {
+        "id": 24,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Java application that uses JUnit to define a series of unit tests for a calculator class. The tests should cover addition, subtraction, multiplication, and division operations, including edge cases such as dividing by zero. Ensure that the tests are well-structured and that assertions clearly demonstrate expected outcomes.",
+        "answer": "java;JUnit;\nFramework Description: JUnit is the current generation of the JUnit testing framework, which provides a modern foundation for developer-side testing on the JVM. This includes focusing on Java 8 and above, as well as enabling many different styles of testing."
+    },
+    {
+        "id": 25,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Java application that utilizes gRPC to implement a simple service for a library system. The service should provide methods to add a book, retrieve a book by its ID, and list all books in the library. Ensure that the server handles concurrent requests and implements appropriate error handling. Additionally, include logging for each request made to the service.",
+        "answer": "java;gRPC;\nFramework Description: gRPC is a modern open source high performance Remote Procedure Call (RPC) framework that can run in any environment. It can efficiently connect services in and across data centers with pluggable support for load balancing, tracing, health checking and authentication. It is also applicable in the last mile of distributed computing to connect devices, mobile applications and browsers to backend services."
+    },
+    {
+        "id": 26,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a simple game application using the Bevy framework in Rust. The application should initialize a window, manage basic input events for starting and quitting the game, and render a simple entity (like a colored square) on the screen. Implement an event loop that updates the game state and handles rendering.",
+        "answer": "rust;Bevy;\nFramework Description: A refreshingly simple data-driven game engine built in Rust\nFree and Open Source Forever!"
+    },
+    {
+        "id": 27,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a command-line application using the Cement framework in Python that accepts user input for a basic calculator. The application should handle operations such as addition, subtraction, multiplication, and division. Implement error handling to manage invalid inputs and provide feedback to the user. Ensure the application can be executed from the command line with different operation flags.",
+        "answer": "python;cement;\nFramework Description: Cement is an advanced Python application framework with a primary focus on the Command Line Interface (CLI). Its goal is to introduce a standard and full-featured platform for both simple and complex command-line applications and to support rapid development needs without sacrificing quality. Cement is very flexible and its use cases range from the simplicity of a microframework to the complexity of a large framework."
+    },
+    {
+        "id": 28,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a set of JUnit tests for a Java class that implements a basic calculator with methods for addition, subtraction, multiplication, and division. Ensure that the tests cover both typical cases and edge cases, such as dividing by zero, and utilize assertions to validate the expected outcomes.",
+        "answer": "java;JUnit;\nFramework Description: JUnit is the current generation of the JUnit testing framework, which provides a modern foundation for developer-side testing on the JVM. This includes focusing on Java 8 and above, as well as enabling many different styles of testing."
+    },
+    {
+        "id": 29,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Python web service using the Cornice framework that implements a RESTful API for managing a collection of books. The service should support CRUD operations (Create, Read, Update, Delete) and include detailed request validation, error handling, and response documentation. Additionally, implement logging for each request, including the method, endpoint, and timestamp.",
+        "answer": "python;cornice;\nFramework Description: A RESTful framework for Pyramid.\nCornice provides helpers to build and document RESTful web services using Pyramid, with good default behaviors. It follows the HTTP specification as much as possible in an automated way."
+    },
+    {
+        "id": 30,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Flask application that operates as an API for a simple task management system. It should listen on port 5000, support GET, POST, PUT, and DELETE HTTP methods to manage tasks, log incoming requests, and return appropriate JSON responses. Ensure to implement proper error handling and input validation for task data.",
+        "answer": "python;flask;\nFramework Description: Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around Werkzeug and Jinja, and has become one of the most popular Python web application frameworks."
+    },
+    {
+        "id": 31,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Python web application using the Flask framework to serve as a minimal file upload service. Implement an endpoint that allows users to upload files (e.g., images or documents), store them on the server with a unique name to prevent conflicts, and return a JSON response containing the file path and upload timestamp. Add a separate endpoint to list all uploaded files with metadata. Include basic error handling for unsupported file types and large file sizes.",
+        "answer": "python;flask;\nFramework Description: Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around Werkzeug and Jinja, and has become one of the most popular Python web application frameworks."
+    },
+    {
+        "id": 32,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Implement a Java-based application that processes a batch of user registration records from a CSV file. For each user, log the registration status (success or failure) with a timestamp using the Tinylog framework. The application should validate that required fields (name, email) are present, and log meaningful error messages if validation fails. Store logs in a file with daily rotation and include the log level and source method in each entry.",
+        "answer": "java;tinylog;\nFramework Description: Lightweight logging framework with static logger class.\nLightweight logging framework can be used with Java, Kotlin, Scala and any other JVM language. tinylog is open source and runs anywhere Java is used: JVM, GraalVM and Android"
+    },
+    {
+        "id": 33,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Design a Java-based microservice that uses gRPC to expose a user profile service. The service should support methods for creating, retrieving, and updating user profiles. Implement input validation and return meaningful gRPC status codes for errors such as invalid input or user not found. Ensure the service is scalable and includes basic server-side logging for each request.",
+        "answer": "java;gRPC;\nFramework Description: gRPC is a modern open source high performance Remote Procedure Call (RPC) framework that can run in any environment. It can efficiently connect services in and across data centers with pluggable support for load balancing, tracing, health checking and authentication. It is also applicable in the last mile of distributed computing to connect devices, mobile applications and browsers to backend services."
+    },
+    {
+        "id": 34,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a 2D game prototype using the Bevy engine in Rust where a player-controlled character can move around the screen using keyboard input. Implement basic collision detection with static obstacles and a simple health system that reduces health upon collision. The game should include a start screen and a game-over screen.",
+        "answer": "rust;Bevy;\nFramework Description: A refreshingly simple data-driven game engine built in Rust\nFree and Open Source Forever!"
+    },
+    {
+        "id": 35,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Build a frontend single-page application using Whatsup where users can view, add, and delete notes. The application should include reactive input components for note creation, a dynamic list of existing notes, and a confirmation dialog when deleting a note. Ensure the state updates correctly when interacting with the UI and components are structured using functional and generator-based patterns.",
+        "answer": "javascript;whatsup;\nFramework Description: Whatsup is a modern frontend framework with own reactivity system and JSX components based on pure functions and generators."
+    },
+    {
+        "id": 36,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a C++ module that manages a simple temperature sensor system with the ability to initialize a sensor, read the current temperature, and trigger an alert if the temperature exceeds a specified threshold. Write unit tests for each of the module's functions using CppUTest to verify correct initialization, threshold logic, and reading functionality, including edge cases such as maximum and minimum values.",
+        "answer": "cpp;CppUTest;\nFramework Description: CppUTest is a C /C++ based unit xUnit test framework for unit testing and for test-driving your code. It is written in C++ but is used in C and C++ projects and frequently used in embedded systems but it works for any C/C++ project."
+    },
+    {
+        "id": 37,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Develop a Python CLI application using the Cement framework that generates secure random passwords. The application should support command-line arguments for password length (12-64 chars), inclusion of numbers and special symbols, implement proper error handling for invalid inputs, log generation attempts with timestamps, and display formatted output with colorized success/error messages using Cement's output features.",
+        "answer": "python;cement;\nFramework Description: Cement is an advanced Python application framework with a primary focus on the Command Line Interface (CLI). Its goal is to introduce a standard and full-featured platform for both simple and complex command-line applications and to support rapid development needs without sacrificing quality. Cement is very flexible and its use cases range from the simplicity of a microframework to the complexity of a large framework."
+    },
+    {
+        "id": 38,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create an Express.js web server that implements rate limiting for API endpoints, serves static files from a 'public' directory, includes security headers using middleware, and provides a JSON API endpoint at '/metrics' that returns server uptime and memory usage. Configure the rate limiter to allow 100 requests per 15-minute window per IP, and implement proper CORS handling for cross-origin requests.",
+        "answer": "javascript;express;\nFramework Description: Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications."
+    },
+    {
+        "id": 39,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Develop a C++ application using the CGraph framework to create a parallel image processing pipeline. Implement three processing elements: ImageLoader (loads images from directory), ImageFilter (applies grayscale conversion), and ImageSaver (saves processed images). Configure the pipeline to process multiple images concurrently, enforce execution order dependencies between elements, measure and log each element's execution time, and implement error handling for missing files. Output final processing statistics in JSON format.",
+        "answer": "cpp;CGraph;\nFramework Description: CGraph, short for Color Graph, is a cross-platform DAG computing framework without any third-party dependencies. With the scheduling via GPipeline, the purpose of sequential and concurrent executing elements is realized."
+    },
+    {
+        "id": 40,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Java gRPC service for a real-time inventory management system that implements both unary and server streaming RPC methods. The service should handle product stock updates (unary), stream low-stock alerts (server streaming), and include client-side load balancing. Implement server-side health checking, deadline/timeout handling for client calls, and TLS-secured communication. Include metrics collection using Prometheus client library for tracking RPC call counts and durations, and provide a sample client implementation that demonstrates both RPC patterns.",
+        "answer": "java;grpc;\nFramework Description: gRPC is a modern open source high performance Remote Procedure Call (RPC) framework that can run in any environment. It can efficiently connect services in and across data centers with pluggable support for load balancing, tracing, health checking and authentication. It is also applicable in the last mile of distributed computing to connect devices, mobile applications and browsers to backend services."
+    },
+    {
+        "id": 41,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Develop a Whatsup.js application for a real-time social media feed that implements reactive state management and generator-based component rendering. Create three components: Feed (main container), Post (with dynamic like counter), and CommentSection. Implement lazy loading of posts using generators, real-time updates through websockets, reactive state propagation for likes/comments, and error boundaries for failed API calls. Use pure function components with JSX syntax and implement a custom hook for tracking user engagement metrics.",
+        "answer": "javascript;whatsup;\nFramework Description: Whatsup is a modern frontend framework with own reactivity system and JSX components based on pure functions and generators."
+    },
+    {
+        "id": 42,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Develop a Vue.js application for an interactive product configurator that includes dynamic form validation, real-time price calculation, and 3D preview visualization. Implement a multi-step wizard interface using Vue Router, manage complex state with Pinia, and create reusable components for color picker, material selection, and configuration summary. Integrate with a REST API for saving configurations, handle loading states with suspense, and implement error boundaries for failed API calls. Use Vue's reactivity system for live updates and provide accessibility features for all interactive elements.",
+        "answer": "javascript;vue.js;\nFramework Description: An approachable, performant and versatile framework for building web user interfaces."
+    },
+    {
+        "id": 43,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Develop a Cot web application for a job board platform implementing JWT authentication, job post management, and search functionality. Create endpoints for user registration/login, CRUD operations for job listings with employer role validation, and a search endpoint supporting location, salary range, and keyword filters. Implement async database operations using Cot's ORM, request validation middleware, role-based access control, and structured logging. Include rate limiting on authentication endpoints and error handling with proper HTTP status codes.",
+        "answer": "rust;cot;\nFramework Description: Cot It is an easy-to-use, modern and fast Rust web framework. If you have ever used Django, Cot is designed to feel very familiar to you; if you have never used it, Cot is also easy to learn. Cot is a powerful framework built on axum. "
+    },
+    {
+        "id": 44,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Develop a Python CLI application using Cement framework for system backup management. Implement subcommands to configure backup schedules (daily/weekly), perform encrypted directory synchronization, and generate backup reports. Include interactive configuration wizard, YAML configuration file handling, progress tracking with spinners, and email notifications for failed backups. Utilize Cement's plugin system for compression algorithms and implement audit logging with rotation. Ensure proper error handling for interrupted operations and storage quota checks.",
+        "answer": "python;cement;\nFramework Description: Cement is an advanced Python application framework with a primary focus on the Command Line Interface (CLI). Its goal is to introduce a standard and full-featured platform for both simple and complex command-line applications and to support rapid development needs without sacrificing quality. Cement is very flexible and its use cases range from the simplicity of a microframework to the complexity of a large framework."
+    },
+    {
+        "id": 45,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Develop a Bevy game application implementing a 2D space shooter with ECS architecture. Create player-controlled spaceship movement, projectile firing system, enemy AI spawning waves, and collision detection. Implement particle effects for explosions, health/score UI overlay, and sound management. Include save/load functionality for high scores, configurable difficulty levels through Bevy's plugin system, and animated sprite transitions for ship damage states. Handle window resize events and multiple game states (menu, playing, game over) using Bevy's state management.",
+        "answer": "rust;bevy;\nFramework Description: A refreshingly simple data-driven game engine built in Rust\nFree and Open Source Forever!"
+    },
+    {
+        "id": 46,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Java application using Elide framework to build a product catalog API supporting both CRUD operations and analytical queries. Implement JPA models for Product and Category entities with relationships, expose GraphQL endpoints for creating/querying products, and include aggregate analytics for price distributions across categories. Add role-based security (admin/user) for mutations, implement custom data validation rules, and configure pagination for large result sets. Handle JPA lazy loading through Elide's entity binding and provide error handling for constraint violations.",
+        "answer": "java;elide;\nFramework Description: Elide is a Java library that allows you to easily build GraphQL or JSON API web services driven by JPA-annotated models. Elide supports two API forms. \nCRUD (Create, Read, Update, Delete) API for reading and manipulating models. \nAnalytic API for aggregating metrics over zero or more model attributes. "
+    },
+    {
+        "id": 47,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Develop a C++ module for sensor data validation using CppUTest unit testing framework. Create test cases for boundary checks (valid/invalid ranges), data format validation, and checksum verification. Implement test doubles for hardware interfaces, parameterized tests for different sensor types, and memory leak detection. Include test setup/teardown methods, test grouping by functionality, and generate XML test reports compatible with CI systems. Validate both C and C++ interfaces with exception handling tests for C++ components.",
+        "answer": "cpp;CppUTest;\nFramework Description: CppUTest is a C /C++ based unit xUnit test framework for unit testing and for test-driving your code. It is written in C++ but is used in C and C++ projects and frequently used in embedded systems but it works for any C/C++ project."
+    },
+    {
+        "id": 48,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Build a Vue.js single-page application (SPA) for a task management dashboard. The app should support adding, editing, deleting, and filtering tasks by their status (e.g., To Do, In Progress, Done). Use Vue components to structure the interface, implement reactive data binding to reflect task updates instantly, and apply Vue directives for conditional rendering and list rendering. Ensure the UI is responsive and user interactions are handled efficiently.",
+        "answer": "javascript;vue.js;\nFramework Description: An approachable, performant and versatile framework for building web user interfaces."
+    },
+    {
+        "id": 49,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Develop a Flask web application for a document management system that supports user authentication, file upload/download, and metadata storage. Implement role-based access control (admin/user), PDF preview generation, and audit logging. Use SQLAlchemy for database operations, WTForms for validation, and Jinja templates for UI. Include CSRF protection, secure file storage handling, and error pages for forbidden access and file not found scenarios. Configure application using Flask's instance folder pattern and environment variables.",
+        "answer": "python;flask;\nFramework Description: Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around Werkzeug and Jinja, and has become one of the most popular Python web application frameworks."
+    },
+    {
+        "id": 50,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a Java application using Elide framework to build a hospital management API with patient records and appointment scheduling. Implement JPA entities for Patient, Doctor, and Appointment with temporal relationships, expose GraphQL endpoints for CRUD operations and aggregate analytics on appointment wait times. Include role-based access (admin/doctor/patient), custom validation for appointment conflicts, and historical data versioning. Configure sorting/filtering for patient queries and implement audit logging for sensitive data access through Elide's lifecycle hooks.",
+        "answer": "java;elide;\nFramework Description: Elide is a Java library that allows you to easily build GraphQL or JSON API web services driven by JPA-annotated models. Elide supports two API forms. \nCRUD (Create, Read, Update, Delete) API for reading and manipulating models. \nAnalytic API for aggregating metrics over zero or more model attributes. "
+    },
+    {
+        "id": 51,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Create a basic Node.js server using the Express framework, configured to monitor port 3000. Ensure the server responds to all incoming requests with the message 'Hello, World!'.",
+        "answer": "javascript;node.js express;\nFramework Description: Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications."
+    },
+    {
+        "id": 52,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Develop a route in an Express.js application that intentionally triggers a 404 error when a non-existent URL path is requested.",
+        "answer": "javascript;node.js express;\nFramework Description: Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications."
+    },
+    {
+        "id": 53,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Describe the process of building a basic REST API in Node.js using the Express framework that handles a GET request to fetch user information based on a user ID.",
+        "answer": "javascript;node.js express;\nFramework Description: Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications."
+    },
+    {
+        "id": 54,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "Set up a basic web server in Python using Flask, configured to monitor port 3000 and reply to all incoming requests with the message 'Hello, World!'.",
+        "answer": "python;flask;\nFramework Description: Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around Werkzeug and Jinja, and has become one of the most popular Python web application frameworks."
+    },
+    {
+        "id": 55,
+        "category": "syntax",
+        "constraint": "framework",
+        "prompt": "How can you develop a simple REST API using Python and the Django framework to handle a GET request that retrieves user data according to a provided user ID?",
+        "answer": "python;django;\nFramework Description: Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out."
+    }
+]

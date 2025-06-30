@@ -1,0 +1,497 @@
+[
+  {
+    "id": 1,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C# function that takes an input string representing a list of book titles separated by semicolons, splits this string into individual book titles using the string.Split method, and then returns an array containing these titles sorted alphabetically. Ensure the function handles null or empty input by returning an empty array.",
+        "public static string[] SortBookTitles(string input)\n{\n    if (string.IsNullOrEmpty(input))\n    {\n        return new string[0];\n    }\n\n    string[] titles = input.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);\n    Array.Sort(titles);\n    return titles;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C# function that manages a list of employee names. It should include functionality to dynamically add names to the list, and also remove a specified name using List.Remove method if it exists in the list. After a name is removed, the function should print the updated list to the console.",
+        "```csharp\nusing System;\nusing System.Collections.Generic;\n\nclass Program\n{\n    static void Main()\n    {\n        List<string> employeeNames = new List<string> { \"Alice\", \"Bob\", \"Charlie\" };\n\n        Console.WriteLine(\"Initial list:\");\n        PrintList(employeeNames);\n\n        // Add a name\n        employeeNames.Add(\"David\");\n        Console.WriteLine(\"\\nAfter adding David:\");\n        PrintList(employeeNames);\n\n        // Remove a name\n        string nameToRemove = \"Bob\";\n        if (employeeNames.Remove(nameToRemove))\n        {\n            Console.WriteLine(\"\\nAfter removing Bob:\");\n            PrintList(employeeNames);\n        }\n        else\n        {\n            Console.WriteLine(\"\\nBob was not found in the list.\");\n        }\n    }\n\n    static void PrintList(List<string> list)\n    {\n        Console.WriteLine(string.Join(\", \", list));\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a JavaScript function that efficiently retrieves certain object properties based on user-defined conditions. The function should use 'Object.values()' to extract the values from the provided object. Afterwards, it should apply a filter to select only values that meet specific criteria (e.g., numerical values greater than 10) and then log these filtered results to the console.",
+        "```javascript\nfunction filterObjectValues(obj, criteria) {\n    return Object.values(obj).filter(value => {\n        return typeof value === 'number' && value > 10;\n    });\n}\n\n// Example usage\nconst data = {\n    a: 5,\n    b: 15,\n    c: 20,\n    d: 'text',\n    e: 30\n};\n\nconst filtered = filterObjectValues(data, value => typeof value === 'number' && value > 10);\nconsole.log(filtered);\n```"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript function that accepts a string as input and returns the same string converted to uppercase using the JavaScript String.prototype.toUpperCase method. This function should additionally check if the provided string is empty and console log an error message if true, else it should log the uppercase string.",
+        "function convertToUppercase(str) {\n  if (str === '') {\n    console.error('Error: Empty string provided.');\n  } else {\n    console.log(str.toUpperCase());\n  }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function that processes a list of user names using iter.enumerate to add an index to each user name. The list should be provided to the function as a parameter. Use the functionality to transform the list into a vector of tuples where each tuple contains the index and the corresponding user name. The function should print each tuple to the console.",
+        "fn process_user_names(users: Vec<String>) {\n    for (index, user) in users.iter().enumerate() {\n        println!(\"({}, {})\", index, user);\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function that reads text from a user-defined file, converts the content entirely to uppercase using the str.upper function, and then writes this modified content to a new file. The function should handle exceptions for file not found or read/write errors gracefully, logging these exceptions.",
+        "def process_file(input_file, output_file):\n    try:\n        with open(input_file, 'r') as infile, open(output_file, 'w') as outfile:\n            content = infile.read()\n            outfile.write(content.upper())\n    except FileNotFoundError:\n        print(f\"Error: File {input_file} not found.\")\n    except IOError:\n        print(f\"Error: Could not read or write file {input_file} or {output_file}.\")\n    except Exception as e:\n        print(f\"Error: {str(e)}\")"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript function that iterates over an array of user objects using Array.prototype.forEach; the function should log user details only if they have verified their email (e.g., verifiedEmail === true). The function must gracefully handle any exceptions that might occur during the execution.",
+        "```javascript\nfunction logUserDetails(users) {\n  try {\n    users.forEach(user => {\n      if (user.verifiedEmail === true) {\n        console.log(`User ${user.name} has verified their email.`);\n      }\n    });\n  } catch (error) {\n    console.error(\"An error occurred while processing users:\", error);\n  }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function that utilizes pandas to preprocess a DataFrame by filling all missing values with the median of each column. Ensure the function is well-structured for easy integration into larger data cleaning processes, and provide an example usage of this function.",
+        "```python\nimport pandas as pd\n\ndef preprocess_dataframe(df):\n    # Fill missing values with median of each column\n    df.fillna(df.median(), inplace=True)\n    return df\n\n# Example usage\nif __name__ == \"__main__\":\n    # Sample DataFrame\n    data = {\n        'A': [1, 2, 3, 4, 5],\n        'B': [10, None, 30, None, 50],\n        'C': [100, 200, 300, 400, 500]\n    }\n    df = pd.DataFrame(data)\n    cleaned_df = preprocess_dataframe(df)\n    print(cleaned_df)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java function that integrates the Collections.max method to find the highest salary from a given list of Employee objects. The Employee class contains attributes for id, name, and salary. The function should dynamically take a list of Employee objects, determine the maximum salary using Collections.max, and return the Employee object with the highest salary.",
+        "public class Employee {\n    private int id;\n    private String name;\n    private double salary;\n\n    // Getters and setters\n    public int getId() { return id; }\n    public void setId(int id) { this.id = id; }\n    public String getName() { return name; }\n    public void setName(String name) { this.name = name; }\n    public double getSalary() { return salary; }\n    public void setSalary(double salary) { this.salary = salary; }\n}\n\npublic class EmployeeMaxSalary {\n\n    public static Employee findMaxSalary(Employee[] employees) {\n        return Collections.max(Arrays.asList(employees));\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Construct a Rust function to initialize a vector, append multiple elements based on an input list using Vec::push, and subsequently print the elements of the finalized vector to the console, ensuring error handling if any operation fails.",
+        "```rust\nfn initialize_and_print_vector(input_list: &[i32]) {\n    let mut vec: Vec<i32> = Vec::new();\n    \n    for &item in input_list {\n        match vec.push(item) {\n            Ok(_) => {},\n            Err(e) => eprintln!(\"Error appending element: {}\", e),\n        }\n    }\n    \n    println!(\"Final vector: {:?}\", vec);\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function that leverages std::to_string to convert a received integer into a string format. This function should handle exceptions where the integer cannot be converted and output an error message instead. The main purpose is to demonstrate correct handling of data type conversions and error management in a utility function.",
+        "#include <iostream>\n#include <string>\n#include <stdexcept>\n#include <sstream>\n\nstd::string convertToStdString(int value) {\n    std::ostringstream oss;\n    oss << value;\n    return oss.str();\n}\n\n// Utility function to handle conversion with error handling\nstd::string convertToStdStringWithErrorHandling(int value) {\n    std::ostringstream oss;\n    oss << value;\n    if (oss.fail()) {\n        throw std::invalid_argument(\"Invalid integer value\");\n    }\n    return oss.str();\n}"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust program that uses the 'iter.fold' method to process a list of sales figures (integer list) and calculate the total sales. Ensure that the data is first filtered to exclude any negative figures before summing, demonstrating the functional approach involving iterators and fold.",
+        "```rust\nfn main() {\n    let sales = vec![100, 200, -150, 300, 400];\n    let total = sales\n        .iter()\n        .filter(|x| **x >= 0)\n        .fold(0, |acc, &x| acc + x);\n    println!(\"Total sales: {}\", total);\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function to read user input which should be a string, append a predefined suffix to the input using the push_str method, and print the modified string to the console. Ensure to handle any potential errors during the input process.",
+        "```rust\nuse std::io;\n\nfn main() {\n    let mut input = String::new();\n    let mut suffix = \"suffix\";\n\n    // Read user input\n    if let Ok(input) = io::stdin().read_line(&mut input) {\n        // Append the suffix\n        input.push_str(suffix);\n\n        // Print the modified string\n        println!(\"Modified string: {}\", input);\n    } else {\n        eprintln!(\"Failed to read input\");\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a JavaScript function that utilizes async/await to make a server request to a specified endpoint, fetch user data, use Array.prototype.filter to only include users over 21 years old, and display these users in the console. Include error handling with a try/catch block.",
+        "async function fetchData() {\n  try {\n    const response = await fetch('https://api.example.com/users');\n    if (!response.ok) {\n      throw new Error(`HTTP error! status: ${response.status}`);\n    }\n    const userData = await response.json();\n    const usersOver21 = userData.filter(user => user.age > 21);\n    console.log(usersOver21);\n  } catch (error) {\n    console.error('Error fetching user data:', error.message);\n  }\n}\n\n// Call the function\nfetchData();"
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a JavaScript function that capitalizes the first letter of each word in a given string. This function should check if each word contains a specific substring using the `includes()` method. If the substring is found, the word should be entirely capitalized. The function should handle potential errors using a try/catch block and return the transformed string.",
+        "```javascript\nfunction capitalizeWordsWithSubstring(input) {\n  try {\n    const words = input.split(' ');\n    let result = '';\n    for (const word of words) {\n      if (word.includes('specificSubstring')) {\n        result += word.toUpperCase();\n      } else {\n        result += word.charAt(0).toUpperCase() + word.slice(1);\n      }\n    }\n    return result;\n  } catch (error) {\n    return 'Error occurred';\n  }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ program that reads a vector of integers from user input, utilizes the std::count from the STL algorithm library to count how many times a specific user-provided value appears in the vector, and outputs the result. Ensure proper error checking and input validation before performing operations.",
+        "#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <stdexcept>\n\nint main() {\n    int valueToCount;\n    std::cout << \"Enter the value to count: \";\n    std::cin >> valueToCount;\n\n    int inputSize;\n    std::cout << \"Enter the number of elements in the vector: \";\n    std::cin >> inputSize;\n\n    if (inputSize < 0) {\n        throw std::domain_error(\"Number of elements cannot be negative.\");\n    }\n\n    std::vector<int> vec;\n    std::cout << \"Enter \" << inputSize << \" integers: \";\n    for (int i = 0; i < inputSize; ++i) {\n        int num;\n        std::cin >> num;\n        vec.push_back(num);\n    }\n\n    if (vec.empty()) {\n        std::cout << \"Vector is empty. No elements to count.\\n\";\n        return 0;\n    }\n\n    int count = std::count(vec.begin(), vec.end(), valueToCount);\n    std::cout << \"The value \" << valueToCount << \" appears \" << count << \" times in the vector.\\n\";\n\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C# function that reads a text from a file, checks for the existence of a specific substring within that text using the 'Contains' method, and writes a log entry indicating whether the substring was found or not. The file path and substring should both be parameters of the function. Handle file reading errors using appropriate exception handling.",
+        "```csharp\nusing System;\nusing System.IO;\n\npublic class FileProcessor\n{\n    public void ProcessFile(string filePath, string substring)\n    {\n        try\n        {\n            using (var reader = new StreamReader(filePath))\n            {\n                string content = reader.ReadToEnd();\n                bool found = content.Contains(substring);\n                Console.WriteLine(found ? \"Substring found\" : \"Substring not found\");\n            }\n        }\n        catch (FileNotFoundException)\n        {\n            Console.WriteLine(\"File not found.\");\n        }\n        catch (IOException)\n        {\n            Console.WriteLine(\"I/O error occurred.\");\n        }\n        catch (Exception ex)\n        {\n            Console.WriteLine(\"An error occurred: \" + ex.Message);\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function to process text documents by extracting specific substrings. The function should take a string and two integer parameters indicating the start position and length of the substring. It should use `std::string::substr` to return the required substring. This function will be used in a larger system for text processing, where extracting specific data segments is frequently necessary.",
+        "#include <string>\n\nstd::string extractSubstring(const std::string& text, int start, int length) {\n    return text.substr(start, length);\n}"
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method that receives a list of employee objects and a specific employment status (e.g., \"active\"). The method should utilize the Collections.frequency function to count how many employees have the given employment status. The result must be printed to the console.",
+        "```java\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.Collections;\n\npublic class Employee {\n    private String name;\n    private String status;\n\n    public Employee(String name, String status) {\n        this.name = name;\n        this.status = status;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public String getStatus() {\n        return status;\n    }\n}\n\npublic class EmployeeProcessor {\n\n    public static void main(String[] args) {\n        List<Employee> employees = new ArrayList<>();\n        employees.add(new Employee(\"Alice\", \"active\"));\n        employees.add(new Employee(\"Bob\", \"inactive\"));\n        employees.add(new Employee(\"Charlie\", \"active\"));\n        employees.add(new Employee(\"David\", \"active\"));\n\n        String status = \"active\";\n        int count = Collections.frequency(employees, new Employee(\"Alice\", \"active\"));\n\n        System.out.println(\"Number of active employees: \" + count);\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Go function that takes a CSV formatted string as input, uses the `strings.Split` function to parse it into individual fields, and then prints each field on a new line. Ensure that your function is robust to handle different separators such as commas, semicolons, or spaces.",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n)\n\nfunc printCSVFields(csvString string) {\n\tfields := strings.Split(csvString, \",\")\n\tfor _, field := range fields {\n\t\tfmt.Println(field)\n\t}\n}\n\nfunc main() {\n\t// Example usage\n\tcsvString := \"Name,Age,City\\nAlice,30,New York\\nBob,25,Los Angeles\"\n\tprintCSVFields(csvString)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function that intakes a vector of integers, checks using the Vec::contains method whether a specified integer is present in the vector, and returns a boolean value based on this check. Ensure the function is well-documented and outlines the efficiency of the Vec::contains method.",
+        "```rust\n/// Checks if a specified integer is present in the given vector of integers.\n///\n/// # Arguments\n/// * `vec` - A vector of integers.\n/// * `target` - The integer to check for in the vector.\n///\n/// # Returns\n/// * `true` if the target is present in the vector, `false` otherwise.\n///\n/// # Efficiency\n/// The `Vec::contains` method has a time complexity of O(n), where n is the number of elements in the vector.\n/// This is because it scans the vector from the beginning to the end to check for the presence of the target.\nfn contains_integer(vec: Vec<i32>, target: i32) -> bool {\n    vec.contains(&target)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function that uses the collections.namedtuple to represent a 3D point in a geometric space named 'Point3D' with fields x, y, and z. The function should then accept a list of tuples representing coordinates, convert each to a Point3D, calculate the distance from the origin for each point, and print out the points ordered by their distance from the origin.",
+        "```python\nfrom collections import namedtuple\nimport math\n\nPoint3D = namedtuple('Point3D', ['x', 'y', 'z'])\n\ndef calculate_distances(points):\n    distances = []\n    for point in points:\n        dist = math.sqrt(point.x**2 + point.y**2 + point.z**2)\n        distances.append((dist, point))\n    distances.sort()\n    for dist, point in distances:\n        print(f\"Point: ({point.x}, {point.y}, {point.z}), Distance: {dist:.2f}\")\n```"
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ program to calculate the exponential decay in a chemical reaction over time using the std::pow function. The program should prompt the user to input the half-life of the chemical (in hours), the initial amount, and the time elapsed (in hours), and then display the remaining amount of the chemical using the formula: remaining_amount = initial_amount * std::pow(0.5, elapsed_time / half-life).",
+        "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nint main() {\n    double initial_amount, elapsed_time, half_life;\n    cout << \"Enter half-life (in hours): \";\n    cin >> half_life;\n    cout << \"Enter initial amount: \";\n    cin >> initial_amount;\n    cout << \"Enter elapsed time (in hours): \";\n    cin >> elapsed_time;\n\n    double remaining_amount = initial_amount * pow(0.5, elapsed_time / half_life);\n    cout << \"Remaining amount: \" << remaining_amount << endl;\n\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript function to parse a list of product objects from a supplied array, use JSON.stringify to convert each product data with a rating above 4.5 into a JSON string, and store these strings in a new array. Console log the resultant array.",
+        "```javascript\nfunction parseProducts(productsArray) {\n    const resultArray = [];\n    for (const product of productsArray) {\n        if (product.rating > 4.5) {\n            const jsonStr = JSON.stringify(product);\n            resultArray.push(jsonStr);\n        }\n    }\n    console.log(resultArray);\n    return resultArray;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java method that calculates the total number of integers in a list that are even. Use Java's Stream API to filter even numbers and the count function to return the final count. This method should be encapsulated in a public class named \"EvenCounter\" and should be implemented in a static method called \"countEvenNumbers\".",
+        "public class EvenCounter {\n    public static int countEvenNumbers(List<Integer> numbers) {\n        return numbers.stream()\n                     .filter(n -> n % 2 == 0)\n                     .count();\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript function that generates 10 unique random numbers between 0 and 100 using Math.random, sorts these numbers in ascending order, and then logs the sorted array to the console.",
+        "```javascript\nfunction generateAndSortRandomNumbers() {\n    const numbers = [];\n    while (numbers.length < 10) {\n        const num = Math.random() * 100;\n        if (!numbers.includes(num)) {\n            numbers.push(num);\n        }\n    }\n    numbers.sort((a, b) => a - b);\n    console.log(numbers);\n}\n\ngenerateAndSortRandomNumbers();\n```"
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Python function that leverages pandas to read a CSV file into a DataFrame, systematically fills any missing values in specific columns (e.g., \"Age\" and \"Salary\") with predefined values, utilizes DataFrame.fillna method, and finally prints the DataFrame.",
+        "import pandas as pd\n\ndef process_csv(file_path):\n    df = pd.read_csv(file_path)\n    df.fillna({'Age': 0, 'Salary': 0}, inplace=True)\n    print(df)"
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method that takes a list of string names, converts each name to uppercase using the String.toUpperCase method, and returns a new list containing the uppercase versions. Ensure proper error handling for null values in the list.",
+        "public static List<String> convertToUppercase(List<String> names) {\n    if (names == null) {\n        throw new IllegalArgumentException(\"List cannot be null\");\n    }\n    return names.stream()\n            .map(String::toUpperCase)\n            .collect(Collectors.toList());\n}"
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Go function that accepts two float64 parameters, base and exponent, and calculates the result by raising the base to the power of the exponent using the math.Pow function. Further, print the result to the console and handle any mathematical exceptions that may occur.",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tbase := 2.0\n\texponent := 3.0\n\n\tresult, err := math.Pow(base, exponent)\n\tif err != nil {\n\t\tfmt.Printf(\"Error: %v\\n\", err)\n\t} else {\n\t\tfmt.Printf(\"Result: %v\\n\", result)\n\t}\n}"
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C# function that takes an input list of integers, utilizes Math.Abs to convert all elements to their absolute values, and then prints each absolute value to the console.",
+        "```csharp\nusing System;\nusing System.Collections.Generic;\n\nclass Program\n{\n    static void Main()\n    {\n        List<int> numbers = new List<int> { -5, 3, -8, 0, 10 };\n        foreach (var num in numbers)\n        {\n            Console.WriteLine(Math.Abs(num));\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Go function that takes an array of numbers as input, uses the `len` function to determine the length of the array, and return this length. This function should handle situations where the input array is nil or empty by returning zero.",
+        "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc getArrayLength(arr []int) int {\n\treturn len(arr)\n}\n\nfunc main() {\n\tfmt.Println(getArrayLength([]int{}))   // Output: 0\n\tfmt.Println(getArrayLength([]int{1, 2})) // Output: 2\n\tfmt.Println(getArrayLength(nil))        // Output: 0\n}"
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Go function that reads a user inputted number from the console, computes its factorial using recursion, and finally prints the result using fmt.Println. Ensure to handle any errors that might occur during input or calculation.",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"errors\"\n)\n\nfunc factorial(n int) (int, error) {\n\tif n < 0 {\n\t\treturn 0, errors.New(\"factorial of negative number\")\n\t}\n\tif n == 0 {\n\t\treturn 1, nil\n\t}\n\tresult := n * factorial(n-1)\n\treturn result, nil\n}\n\nfunc main() {\n\tvar num int\n\tfmt.Print(\"Enter a number: \")\n\t_, err := fmt.Scanln(&num)\n\tif err != nil {\n\t\tfmt.Println(\"Error reading input:\", err)\n\t\treturn\n\t}\n\tfact, err := factorial(num)\n\tif err != nil {\n\t\tfmt.Println(\"Error computing factorial:\", err)\n\t\treturn\n\t}\n\tfmt.Println(\"Factorial of\", num, \"is\", fact)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 33,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C# method using the List.Contains function to check if a specified element exists within a predefined list of employee IDs. Log the result to the console indicating whether the employee ID is found.",
+        "using System;\nusing System.Collections.Generic;\n\nclass Program\n{\n    static void Main()\n    {\n        List<int> employeeIds = new List<int> { 101, 102, 103, 104, 105 };\n        int targetId = 103;\n\n        bool isFound = employeeIds.Contains(targetId);\n\n        Console.WriteLine($\"Employee ID {targetId} is found: {isFound}\");\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Go function that initializes multiple goroutines to simulate a concurrent traffic light system. Each goroutine represents a light direction (e.g., north-south, east-west). Use channels to synchronize light changes and ensure no two directions are green simultaneously. Log the state of each light change (e.g., \"North-South light turned Green\").",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n\t\"time\"\n)\n\nfunc main() {\n\t// Define the directions\n\tdirections := []string{\"North-South\", \"East-West\"}\n\n\t// Create a channel for synchronization\n\tlightChan := make(chan string)\n\n\t// Initialize the lights\n\tlights := make([]string, len(directions))\n\tfor i := range directions {\n\t\tlights[i] = \"Red\"\n\t}\n\n\t// Function to simulate a light change\n\tfunc() {\n\t\tfor {\n\t\t\t// Randomly change the light state\n\t\t\trand.Intn(2)\n\t\t\tfor i := range directions {\n\t\t\t\tif lights[i] == \"Red\" {\n\t\t\t\t\tlights[i] = \"Green\"\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t// Log the state\n\t\t\tfmt.Printf(\"Light %s turned %s\\n\", directions[0], lights[0])\n\t\t\ttime.Sleep(1 * time.Second)\n\t\t}\n\t}()\n\n\t// Start goroutines for each direction\n\tfor _, dir := range directions {\n\t\tgo func(dir string) {\n\t\t\tfor {\n\t\t\t\t// Randomly change the light state\n\t\t\t\trand.Intn(2)\n\t\t\t\tfor i := range directions {\n\t\t\t\t\tif lights[i] == \"Red\" {\n\t\t\t\t\t\tlights[i] = \"Green\"\n\t\t\t\t\t\tbreak\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\t// Log the state\n\t\t\t\tfmt.Printf(\"Light %s turned %s\\n\", dir, lights[dir])\n\t\t\t\ttime.Sleep(1 * time.Second)\n\t\t\t}\n\t\t}(dir)\n\t}\n}"
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function that accepts an iterable and uses the built-in `any` function to determine if any element in the iterable evaluates to `True`. The result should then be printed to the console. This function should be encapsulated in a try-except block to handle and print any potential TypeErrors which might occur if the input is not an iterable.",
+        "```python\ndef check_iterable(any_iterable):\n    try:\n        result = any(any_iterable)\n        print(result)\n    except TypeError:\n        print(\"Input is not an iterable\")\n```"
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python script that reads text content from a file, utilizes the str.find() method to search for a specific substring, and logs the first occurrence index if the substring exists. If the substring is not found, it should print an informative message to console.",
+        "with open('input.txt', 'r') as file:\n    content = file.read()\n    substring = input(\"Enter substring to search: \")\n    index = content.find(substring)\n    if index != -1:\n        print(f\"Substring found at index: {index}\")\n    else:\n        print(\"Substring not found in the content.\")"
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C# console application that prompts the user to enter a personalized greeting message. The program should then use the `File.WriteAllText` method to write this message to a new text file named \"Greetings.txt\". Ensure the application handles any potential IO exceptions.",
+        "```csharp\nusing System;\nusing System.IO;\n\nclass Program\n{\n    static void Main()\n    {\n        try\n        {\n            Console.Write(\"Enter a personalized greeting message: \");\n            string greeting = Console.ReadLine();\n\n            File.WriteAllText(\"Greetings.txt\", greeting);\n            Console.WriteLine(\"Greeting written to Greetings.txt\");\n        }\n        catch (Exception ex)\n        {\n            Console.WriteLine(\"An error occurred: \" + ex.Message);\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function that takes a floating-point number as input, utilizes the Rust standard library function `f64::sqrt` to compute the square root of this number if it is non-negative, and returns the result. The function should include error handling to return None when given a negative input.",
+        "```rust\nfn square_root(f: f64) -> Option<f64> {\n    if f >= 0.0 {\n        Some(f64::sqrt(f))\n    } else {\n        None\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 39,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C# method that uses async/await to asynchronously read data from a local file named 'data.json', deserialize the JSON content into an object, and then check if any user in the deserialized object has the attribute 'isAdmin' set to true. Print the result to the console using Console.WriteLine.",
+        "```csharp\nusing System;\nusing System.IO;\nusing System.Text;\nusing System.Threading.Tasks;\nusing Newtonsoft.Json;\n\npublic class User\n{\n    public string Name { get; set; }\n    public bool isAdmin { get; set; }\n}\n\npublic class Program\n{\n    public static async Task Main()\n    {\n        var file = \"data.json\";\n        var users = await ReadUsersFromFileAsync(file);\n        bool hasAdmin = false;\n\n        foreach (var user in users)\n        {\n            if (user.isAdmin)\n            {\n                hasAdmin = true;\n                break;\n            }\n        }\n\n        Console.WriteLine(hasAdmin ? \"There is an admin user.\" : \"No admin user found.\");\n    }\n\n    private static async Task<List<User>> ReadUsersFromFileAsync(string filePath)\n    {\n        if (!File.Exists(filePath))\n        {\n            throw new FileNotFoundException(\"File not found.\", filePath);\n        }\n\n        var json = File.ReadAllText(filePath);\n        var users = JsonConvert.DeserializeObject<List<User>>(json);\n        return users;\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 40,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust program that utilizes std::env::args to access command-line arguments. The program should iterate through the arguments, identify arguments that are numeric strings, convert them to integers, sum them, and print the total to the console. Handle any potential errors gracefully during the conversion or sum process.",
+        "```rust\nuse std::env;\nuse std::error::Error;\n\nfn main() -> Result<(), Box<dyn Error>> {\n    let args: Vec<String> = env::args().collect();\n    let mut sum: i32 = 0;\n\n    for arg in &args {\n        if let Ok(num) = arg.parse::<i32>() {\n            sum += num;\n        } else {\n            eprintln!(\"Error: Argument '{}' is not a numeric string.\", arg);\n        }\n    }\n\n    println!(\"Sum: {}\", sum);\n    Ok(())\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 41,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Write a Rust function that takes an integer array as input and returns a new array containing the absolute values of all the elements from the original array, making use of i32's abs method for transformation. The function should be named `map_to_absolute_values` and should handle both positive and negative integers, ensuring the returned array contains only positive values.",
+        "```rust\nfn map_to_absolute_values(arr: &[i32]) -> Vec<i32> {\n    arr.iter().map(|&x| x.abs()).collect()\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 42,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C# console application to read two integer inputs from the user, utilize the Math.Min function to determine the smaller of the two inputs, and display the result on the console. Include error handling to manage non-integer inputs and inform the user appropriately.",
+        "using System;\n\nclass Program\n{\n    static void Main()\n    {\n        try\n        {\n            Console.Write(\"Enter the first integer: \");\n            int num1 = int.Parse(Console.ReadLine());\n\n            Console.Write(\"Enter the second integer: \");\n            int num2 = int.Parse(Console.ReadLine());\n\n            int smaller = Math.Min(num1, num2);\n            Console.WriteLine($\"The smaller integer is: {smaller}\");\n        }\n        catch (FormatException)\n        {\n            Console.WriteLine(\"Error: Please enter valid integers.\");\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 43,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust program that utilizes the std::io::stdin().read_line function to read a line of user input, process the input string by converting it to uppercase, and then print the modified string to the console. Include error handling for potential failures during input reading.",
+        "```rust\nuse std::io::{stdin, Result};\n\nfn main() -> Result<()> {\n    let mut input = String::new();\n    let mut line = String::new();\n\n    // Read a line from the user\n    stdin().read_line(&mut line).unwrap();\n\n    // Convert to uppercase\n    let uppercase_line = line.to_uppercase();\n\n    // Print the modified string\n    println!(\"{}{}\", uppercase_line, \"\");\n\n    Ok(())\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 44,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C# console application that reads a specified JSON file from the local filesystem, deserializes the JSON into an object, modifies a value based on user input, and then saves the updated JSON back to the file using File.WriteAllText. Include error handling to manage potential exceptions during file operations or JSON processing.",
+        "using System;\nusing System.IO;\nusing System.Text;\nusing Newtonsoft.Json;\n\nnamespace JsonModificationApp\n{\n    class Program\n    {\n        static void Main(string[] args)\n        {\n            try\n            {\n                string filePath = @\"C:\\path\\to\\your\\json\\file.json\"; // Update with actual file path\n\n                // Read JSON file\n                string json = File.ReadAllText(filePath);\n\n                // Deserialize JSON to object\n                var obj = JsonConvert.DeserializeObject(json);\n\n                // Modify a value based on user input\n                Console.Write(\"Enter the key to modify (e.g., 'name'): \");\n                string key = Console.ReadLine();\n\n                Console.Write(\"Enter the new value: \");\n                string newValue = Console.ReadLine();\n\n                // Update the object\n                if (obj is Dictionary<string, object> dict)\n                {\n                    dict[key] = newValue;\n                }\n\n                // Save the updated JSON back to the file\n                File.WriteAllText(filePath, JsonConvert.SerializeObject(obj, Formatting.Indented));\n\n                Console.WriteLine(\"JSON file updated successfully.\");\n            }\n            catch (Exception ex)\n            {\n                Console.WriteLine($\"An error occurred: {ex.Message}\");\n            }\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 45,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Go application that implements a `go` function to initiate multiple concurrent goroutines. Each goroutine should send an HTTP GET request to a configurable URL. Collect responses from each goroutine, and compile them into a single data structure to log the total number of successful responses and any encountered errors concurrently.",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"sync\"\n\t\"time\"\n)\n\nfunc main() {\n\t// Configurable URL\n\turl := \"https://example.com\"\n\n\t// Number of concurrent goroutines\n\tnumGoroutines := 5\n\n\t// Create a channel to collect results\n\tresultsChan := make(chan struct{}, numGoroutines)\n\n\t// Create a sync.Mutex for thread safety\n\tmutex := &sync.Mutex{}\n\n\t// Function to send HTTP GET request and collect results\n\tsendRequest := func(i int) {\n\t\t// Start a new goroutine\n\t\tgo func() {\n\t\t\t// Send HTTP GET request\n\t\t\tresp, err := http.Get(url)\n\t\t\tif err != nil {\n\t\t\t\t// Log error\n\t\t\t\tmutex.Lock()\n\t\t\t\tdefer mutex.Unlock()\n\t\t\t\tfmt.Printf(\"Error sending request %d: %v\\n\", i, err)\n\t\t\t\treturn\n\t\t\t}\n\t\t\t// Check if response is successful\n\t\t\tif resp.StatusCode != http.StatusOK {\n\t\t\t\t// Log error\n\t\t\t\tmutex.Lock()\n\t\t\t\tdefer mutex.Unlock()\n\t\t\t\tfmt.Printf(\"Request %d failed with status %d\\n\", i, resp.StatusCode)\n\t\t\t\treturn\n\t\t\t}\n\t\t\t// Log success\n\t\t\tmutex.Lock()\n\t\t\tdefer mutex.Unlock()\n\t\t\tfmt.Printf(\"Request %d succeeded\\n\", i)\n\t\t\t// Add to results channel\n\t\t\tresultsChan <- struct{}{}\n\t\t}()\n\t}\n\n\t// Start all goroutines\n\tfor i := 0; i < numGoroutines; i++ {\n\t\tsendRequest(i)\n\t}\n\n\t// Wait for all goroutines to complete\n\tfor i := 0; i < numGoroutines; i++ {\n\t\t<-resultsChan\n\t}\n\n\t// Log total successful responses\n\tmutex.Lock()\n\tdefer mutex.Unlock()\n\tfmt.Printf(\"Total successful responses: %d\\n\", len(resultsChan))\n}"
+      ]
+    ]
+  },
+  {
+    "id": 46,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python script to load a CSV file into a pandas DataFrame, remove all rows that contain missing values using the dropna method, and then print the cleaned DataFrame. Include error handling to manage I/O error if the file does not exist or is unreadable.",
+        "import pandas as pd\n\ntry:\n    df = pd.read_csv('input.csv')\n    df_cleaned = df.dropna()\n    print(df_cleaned)\nexcept FileNotFoundError:\n    print(\"Error: File not found.\")\nexcept pd.errors.ParserError:\n    print(\"Error: File is unreadable.\")\nexcept Exception as e:\n    print(f\"Error: {str(e)}\")"
+      ]
+    ]
+  },
+  {
+    "id": 47,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C# function in an ASP.NET Core web API that handles HTTP POST requests to asynchronously store user data in a database. Use the await keyword to ensure the database operation completes before sending a success response to the client. Implement exception handling to return an appropriate error message on failure.",
+        "using System;\nusing System.Threading.Tasks;\nusing Microsoft.AspNetCore.Mvc;\nusing Microsoft.EntityFrameworkCore;\n\npublic class UserController : ControllerBase\n{\n    private readonly YourDbContext _context;\n\n    public UserController(YourDbContext context)\n    {\n        _context = context;\n    }\n\n    [HttpPost]\n    public async Task<IActionResult> StoreUserData([FromBody] User user)\n    {\n        try\n    {\n        // Validate user data\n        if (user == null || string.IsNullOrEmpty(user.Name))\n        {\n            return BadRequest(\"User data is required.\");\n        }\n\n        // Save user to database\n        _context.Users.Add(user);\n        await _context.SaveChangesAsync();\n\n        return Ok(\"User data stored successfully.\");\n    }\n    catch (Exception ex)\n    {\n        // Log error\n        // For simplicity, return a generic error message\n        return StatusCode(500, $\"An error occurred: {ex.Message}\");\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 48,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript function to process an array of user objects each with a 'name' attribute. The function should convert all names to lowercase using `String.prototype.toLowerCase` and then sort the names in alphabetical order. The sorted names should then be printed out to the console.",
+        "```javascript\nfunction processNames(users) {\n  const lowercasedNames = users.map(user => user.name.toLowerCase());\n  const sortedNames = lowercasedNames.sort();\n  console.log(sortedNames);\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 49,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a function in C# that instantiates a List of integers, dynamically populates it with numbers from 1 to a specified maximum value, uses the List.Count property to determine the number of elements in the list, and returns this count. Ensure the function is well-structured, demonstrating appropriate use of list handling in C#.",
+        "```csharp\nusing System;\nusing System.Collections.Generic;\n\npublic class Program\n{\n    public static int CountNumbers(int maxVal)\n    {\n        List<int> numberList = new List<int>();\n        for (int i = 1; i <= maxVal; i++)\n        {\n            numberList.Add(i);\n        }\n        return numberList.Count;\n    }\n\n    public static void Main()\n    {\n        int max = 10;\n        int count = CountNumbers(max);\n        Console.WriteLine($\"Number of elements: {count}\");\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 50,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function to define a 'Student' namedtuple with the fields 'name', 'age', and 'grade'. Populate this namedtuple with data provided from a list of dictionaries having keys corresponding to the namedtuple fields. The function should filter these entries to include only students with a grade over 70, returning a list of qualifying Student namedtuples.",
+        "```python\nfrom collections import namedtuple\n\n# Define the Student namedtuple\nStudent = namedtuple('Student', ['name', 'age', 'grade'])\n\ndef process_students(student_list):\n    # Filter students with grade over 70\n    filtered_students = [student for student in student_list if student.grade > 70]\n    return filtered_students\n```"
+      ]
+    ]
+  },
+  {
+    "id": 51,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a JavaScript function that retrieves data from a specified URL using the Fetch API and outputs it to the console.",
+        "function fetchDataFromURL(url) {\n  fetch(url)\n    .then(response => {\n      if (!response.ok) {\n        throw new Error(`HTTP error! Status: ${response.status}`);\n      }\n      return response.json();\n    })\n    .then(data => {\n      console.log(data);\n    })\n    .catch(error => {\n      console.error('Error fetching data:', error);\n    });\n}"
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust command-line tool that parses arguments and executes system commands based on user input, ensuring the use of the std::iter::Iterator::map function for processing argument lists.",
+        "use std::env;\nuse std::iter::Iterator;\n\nfn main() {\n    // Parse command-line arguments\n    let args: Vec<String> = env::args().collect();\n\n    // Check if at least one argument is provided\n    if args.len() < 1 {\n        eprintln!(\"Please provide at least one argument.\");\n        return;\n    }\n\n    // Process arguments using map\n    let processed_args: Vec<String> = args.iter().map(|s| s.to_string()).collect();\n\n    // Example: Execute a system command\n    let command = &processed_args[0];\n    let output = std::process::Command::new(command)\n        .args(&processed_args[1..])\n        .output()\n        .expect(\"Failed to execute command\");\n\n    // Print the output\n    let output_str = String::from_utf8(output.stdout).unwrap_or_default();\n    println!(\"Output: {}\", output_str);\n}"
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a JavaScript function that retrieves data from a specified URL using async/await, handles possible errors gracefully, and outputs the fetched JSON data to the console. The function must use the filter() method to process the retrieved data before logging it.",
+        "async function fetchDataFromUrl(url) {\n  try {\n    const response = await fetch(url);\n    if (!response.ok) {\n      throw new Error(`HTTP error! Status: ${response.status}`);\n    }\n    const data = await response.json();\n    return data;\n  } catch (error) {\n    console.error(\"Error fetching data:\", error);\n    return null;\n  }\n}\n\n// Example usage\nconst url = \"https://jsonplaceholder.typicode.com/posts\";\nconst data = fetchDataFromUrl(url);\nif (data) {\n  console.log(\"Fetched data:\", data);\n  console.log(\"Filtered data:\", data.filter(item => item.userId === 1));\n}"
+      ]
+    ]
+  },
+  {
+    "id": 54,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a function in Go that computes the sum of an array of numbers concurrently. Divide the array into segments, process each segment in a separate goroutine, and aggregate the results using channels. You must use the sync.WaitGroup to synchronize goroutines and ensure all computations complete before returning the final sum.",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"sync\"\n)\n\nfunc concurrentSum(numbers []int, wg *sync.WaitGroup) {\n\tdefer wg.Done()\n\tsum := 0\n\tfor _, num := range numbers {\n\t\tsum += num\n\t}\n\tfmt.Println(\"Sum:\", sum)\n}\n\nfunc main() {\n\tnumbers := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}\n\tvar wg sync.WaitGroup\n\tch := make(chan int, len(numbers))\n\n\tfor i := 0; i < len(numbers); i++ {\n\t\twg.Add(1)\n\t\tgo concurrentSum(numbers, &wg)\n\t\tch <- numbers[i]\n\t}\n\n\twg.Wait()\n\tclose(ch)\n\tfmt.Println(\"Final sum:\", <-ch)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 55,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a component that accepts a user’s input in a form and displays it on the page when the user clicks a button. Ensure that the input is processed using JavaScript’s map() function before being displayed.",
+        "```html\n<!DOCTYPE html>\n<html>\n<head>\n    <title>Input Component</title>\n</head>\n<body>\n    <input type=\"text\" id=\"userInput\" placeholder=\"Enter text\">\n    <button onclick=\"displayInput()\">Display</button>\n    <div id=\"output\"></div>\n\n    <script>\n        function displayInput() {\n            const input = document.getElementById('userInput').value;\n            const output = document.getElementById('output');\n            const processed = input.split('').map(char => char.toUpperCase()).join('');\n            output.textContent = processed;\n        }\n    </script>\n</body>\n</html>\n```"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "framework": "cement",
+        "language": "Python",
+        "features": "Cement is an advanced Python application framework with a primary focus on the Command Line Interface (CLI). Its goal is to introduce a standard and full-featured platform for both simple and complex command-line applications and to support rapid development needs without sacrificing quality. Cement is very flexible and its use cases range from the simplicity of a microframework to the complexity of a large framework."
+    },
+    {
+        "id": 2,
+        "framework": "cornice",
+        "language": "Python",
+        "features": "A RESTful framework for Pyramid.\nCornice provides helpers to build and document RESTful web services using Pyramid, with good default behaviors. It follows the HTTP specification as much as possible in an automated way."
+    },
+    {
+        "id": 3,
+        "framework": "django",
+        "language": "Python",
+        "features": "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out."
+    },
+    {
+        "id": 4,
+        "framework": "flask",
+        "language": "Python",
+        "features": "Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around Werkzeug and Jinja, and has become one of the most popular Python web application frameworks."
+    },
+    {
+        "id": 5,
+        "framework": "tinylog",
+        "language": "Java",
+        "features": "Lightweight logging framework with static logger class.\nLightweight logging framework can be used with Java, Kotlin, Scala and any other JVM language. tinylog is open source and runs anywhere Java is used: JVM, GraalVM and Android"
+    },
+    {
+        "id": 6,
+        "framework": "elide",
+        "language": "Java",
+        "features": "Elide is a Java library that allows you to easily build GraphQL or JSON API web services driven by JPA-annotated models. Elide supports two API forms. \nCRUD (Create, Read, Update, Delete) API for reading and manipulating models. \nAnalytic API for aggregating metrics over zero or more model attributes. "
+    },
+    {
+        "id": 7,
+        "framework": "gRPC",
+        "language": "Java",
+        "features": "gRPC is a modern open source high performance Remote Procedure Call (RPC) framework that can run in any environment. It can efficiently connect services in and across data centers with pluggable support for load balancing, tracing, health checking and authentication. It is also applicable in the last mile of distributed computing to connect devices, mobile applications and browsers to backend services."
+    },
+    {
+        "id": 8,
+        "framework": "JUnit",
+        "language": "Java",
+        "features": "JUnit is the current generation of the JUnit testing framework, which provides a modern foundation for developer-side testing on the JVM. This includes focusing on Java 8 and above, as well as enabling many different styles of testing."
+    },
+    {
+        "id": 9,
+        "framework": "cot",
+        "language": "Rust",
+        "features": "Cot It is an easy-to-use, modern and fast Rust web framework. If you have ever used Django, Cot is designed to feel very familiar to you; if you have never used it, Cot is also easy to learn. Cot is a powerful framework built on axum. "
+    },
+    {
+        "id": 10,
+        "framework": "Bevy",
+        "language": "Rust",
+        "features": "A refreshingly simple data-driven game engine built in Rust\nFree and Open Source Forever!"
+    },
+    {
+        "id": 11,
+        "framework": "whatsup",
+        "language": "JavaScript",
+        "features": "Whatsup is a modern frontend framework with own reactivity system and JSX components based on pure functions and generators."
+    },
+    {
+        "id": 12,
+        "framework": "express",
+        "language": "JavaScript",
+        "features": "Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications."
+    },
+    {
+        "id": 13,
+        "framework": "vue.js",
+        "language": "JavaScript",
+        "features": "An approachable, performant and versatile framework for building web user interfaces."
+    },
+    {
+        "id": 14,
+        "framework": "CGraph",
+        "language": "C++",
+        "features": "CGraph, short for Color Graph, is a cross-platform DAG computing framework without any third-party dependencies. With the scheduling via GPipeline, the purpose of sequential and concurrent executing elements is realized."
+    },
+    {
+        "id": 15,
+        "framework": "CppUTest",
+        "language": "C++",
+        "features": "CppUTest is a C /C++ based unit xUnit test framework for unit testing and for test-driving your code. It is written in C++ but is used in C and C++ projects and frequently used in embedded systems but it works for any C/C++ project."
+    }
+]

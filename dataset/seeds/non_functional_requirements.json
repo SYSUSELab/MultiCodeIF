@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Performance",
+        "feature": "#### ✅ Explanation:\n\nPerformance requirements define the speed, efficiency, or resource usage of the system. Common metrics include response time, throughput, and concurrent handling capacity.\n\n#### ✅ Scenario:\n\nA web page should load within 2 seconds.\n\n#### ❌ Bad Code (No caching, expensive recalculation):\n\n```python\ndef get_heavy_result():\n    data = [x ** 2 for x in range(10**6)]\n    return sum(data)\n```\n\n#### ✅ Good Code (Uses caching to improve performance):\n\n```python\nfrom functools import lru_cache\n\n@lru_cache()\ndef get_heavy_result():\n    data = [x ** 2 for x in range(10**6)]\n    return sum(data)\n```\n\n------"
+    },
+    {
+        "id": 2,
+        "name": "Maintainability",
+        "feature": "#### ✅ Explanation:\n\nMaintainability means the system is easy to understand, modify, and extend. Good modularity and readability are key.\n\n#### ✅ Scenario:\n\nCode should be easy for teammates to read and update.\n\n#### ❌ Bad Code (Mixed concerns, hard to maintain):\n\n```python\ndef handle():\n    name = input(\"Name: \")\n    with open(\"users.txt\", \"a\") as f:\n        f.write(name + \"\n\")\n    print(\"Saved.\")\n```\n\n#### ✅ Good Code (Separation of concerns, readable):\n\n```python\ndef get_user_input():\n    return input(\"Name: \")\n\ndef save_user(name):\n    with open(\"users.txt\", \"a\") as f:\n        f.write(name + \"\n\")\n\ndef handle():\n    name = get_user_input()\n    save_user(name)\n```\n\n------"
+    },
+    {
+        "id": 3,
+        "name": "Security",
+        "feature": "#### ✅ Explanation:\n\nSecurity requirements ensure the system protects data, prevents unauthorized access, and defends against attacks like SQL injection or XSS.\n\n#### ✅ Scenario:\n\nPasswords must be securely stored, not in plain text.\n\n#### ❌ Bad Code (Vulnerable to SQL injection and plain-text password):\n\n```python\ndef login(user, pwd):\n    query = f\"SELECT * FROM users WHERE username='{user}' AND password='{pwd}'\"\n    db.execute(query)\n```\n\n#### ✅ Good Code (Uses parameterized query and password hashing):\n\n```python\nimport bcrypt\n\ndef login(user, pwd):\n    query = \"SELECT * FROM users WHERE username = %s\"\n    result = db.execute(query, (user,))\n    if result and bcrypt.checkpw(pwd.encode(), result[\"hashed_pwd\"]):\n        return \"Login successful\"\n```\n\n------"
+    },
+    {
+        "id": 4,
+        "name": "Testability",
+        "feature": "#### ✅ Explanation:\n\nTestability refers to how easily the system can be tested. Good testability means clear interfaces, decoupled logic, and mockable dependencies.\n\n#### ✅ Scenario:\n\nA mailing function should be testable without a real SMTP server.\n\n#### ❌ Bad Code (Hard to mock external resources):\n\n```python\ndef send_email():\n    smtp = connect_to_smtp(\"smtp.real.com\")\n    smtp.send(\"to@example.com\", \"Hello\")\n```\n\n#### ✅ Good Code (Supports mocking and testing):\n\n```python\ndef send_email(smtp_client):\n    smtp_client.send(\"to@example.com\", \"Hello\")\n\nclass MockSMTP:\n    def send(self, to, msg):\n        print(f\"Mock send: {to} -> {msg}\")\n```\n\n------"
+    },
+    {
+        "id": 5,
+        "name": "Reliability",
+        "feature": "#### ✅ Explanation:\n\nReliable systems continue functioning correctly even in the face of errors or failures. They handle exceptions and log appropriately.\n\n#### ✅ Scenario:\n\nSystem shouldn't crash when encountering an error like division by zero.\n\n#### ❌ Bad Code (Crashes on error):\n\n```python\ndef process():\n    return 1 / 0\n```\n\n#### ✅ Good Code (Handles exception and logs the error):\n\n```python\nimport logging\n\ndef process():\n    try:\n        return 1 / 0\n    except ZeroDivisionError:\n        logging.error(\"Division by zero error\", exc_info=True)\n        return None\n```\n\n------"
+    },
+    {
+        "id": 6,
+        "name": "Scalability",
+        "feature": "#### ✅ Explanation:\n\nScalability ensures the system can handle increased load or easily accommodate new features.\n\n#### ✅ Scenario:\n\nAdding a new user role shouldn't require rewriting large portions of code.\n\n#### ❌ Bad Code (Hardcoded logic, not extensible):\n\n```python\nif role == \"admin\":\n    do_admin_task()\nelif role == \"guest\":\n    do_guest_task()\n```\n\n#### ✅ Good Code (Extensible via handler dictionary):\n\n```python\nrole_handlers = {\n    \"admin\": do_admin_task,\n    \"guest\": do_guest_task,\n    \"vip\": do_vip_task\n}\n\nhandler = role_handlers.get(role, handle_default)\nhandler()\n```\n\n------"
+    },
+    {
+        "id": 7,
+        "name": "Usability",
+        "feature": "#### ✅ Explanation:\n\nUsability ensures the system is easy to use and interact with. It should provide clear instructions and error messages.\n\n#### ✅ Scenario:\n\nA CLI tool should handle invalid inputs gracefully.\n\n#### ❌ Bad Code (No input validation):\n\n```python\nage = int(input(\"Enter age: \"))  # Crashes on non-integer input\n```\n\n#### ✅ Good Code (Validates input, gives helpful feedback):\n\n```python\ntry:\n    age = int(input(\"Enter age: \"))\nexcept ValueError:\n    print(\"Please enter a valid number!\")\n```"
+    }
+]

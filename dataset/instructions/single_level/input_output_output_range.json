@@ -1,0 +1,268 @@
+[
+    {
+        "id": 1,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a C++ function that accepts a vector of product prices (doubles), applies a discount rate given as a separate parameter (double) to each product's price, and returns a new vector with the discounted prices. All values in the returned vector should be double data types, rounded to two decimal places.",
+        "answer": "Cpp;Float;Precision to 2 digits"
+    },
+    {
+        "id": 2,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Python function that takes a list of dictionaries where each dictionary contains information about a product including \"id\" (integer), \"name\" (string), and \"prices\" (list of floats, representing the price history of the product). The function should calculate the average price for each product and return a list of tuples. Each tuple should contain the product's id and the average price, rounded to two decimal places. Ensuring all returned prices are floating-point numbers.",
+        "answer": "Python;List;Float;Precision to 2 digits"
+    },
+    {
+        "id": 3,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Rust function that reads a CSV containing three columns (id: integer, name: string, scores: string of comma-separated integers). The function should then calculate and return the average score for each row in the form of a tuple (id, name, average_score). Average scores must be floats rounded to one decimal place. Ensure that the output is a list of tuples, each representing one row of the CSV, preserving their original order.",
+        "answer": "Rust;Tuple;Each element value in [0.0, 100.0], Tuple size fixed at 3"
+    },
+    {
+        "id": 4,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Design a Java function that reads a JSON file containing data about organizational teams. Each entry in the JSON represents a team with \"teamName\" (string) and \"members\" (array of member IDs as integers). The function should construct a Tree where each node represents a team detailed with the team name and the number of members. The root node should be a general node named \"Organization\". The tree must be restricted such that no branch can have more than 3 child nodes and each node other than \"Organization\" must not exceed a depth of three levels deep.",
+        "answer": "Java;Tree;Maximum depth 3, Maximum number of children per node 3"
+    },
+    {
+        "id": 5,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Python function that reads from a given CSV file containing a series of boolean values under the column \"status\". The function should evaluate the overall status by checking if all the entries in this column are True. The result should be a single boolean output indicating whether all values are True or not.",
+        "answer": "python;Boolean;Must be true"
+    },
+    {
+        "id": 6,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Java method that takes as input a JSON file containing a list of objects, each representing a city with properties \"cityName\" (string) and \"distances\" (list of integers representing distances to other cities). The method should construct a graph data structure where each city becomes a node, and edges between nodes represent the distances. The output should be a graph where edges have weights within the range [10,100] and each node (city) has a unique ID ranging from 0 to 49.",
+        "answer": "Java;Graph;Edge weights in [10, 100], Node IDs in [0, 49]"
+    },
+    {
+        "id": 7,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a C++ function to analyze a given vector of integers where each element represents the number of steps taken by a user on a particular day. The function should return a set containing only the unique total numbers of steps taken in periods of three consecutive days. The results should exclude any period where the sum exceeds 1000 steps and include only periods where the sum is at least 200 steps.",
+        "answer": "Cpp;Set;Element value in [200, 1000]"
+    },
+    {
+        "id": 8,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Rust function named `format_content_upper` which processes an input string, ensuring that each character in the string becomes uppercase. The output string should comply with the restriction that it only contains uppercase alphabetical characters. No numbers, special characters, or spaces are allowed in the resulting string. Implement error handling to return an error if the input contains any disallowed characters.",
+        "answer": "Rust;String;Character set restriction <ABCDEFGHIJKLMNOPQRSTUVWXYZ>"
+    },
+    {
+        "id": 9,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Java class with a method to analyze a structured log file in JSON format. Each log entry includes \"timestamp\" (formatted as \"yyyy-MM-dd HH:mm:ss\"), \"severity\" (possible values: \"info\", \"warning\", \"error\"), and \"message\" (string). The method should categorize logs into three lists based on severity and provide a Struct output containing these lists. Each list should be encapsulated as a field in the Struct with the field name corresponding to the severity type.",
+        "answer": "Java;Struct;Number of fields fixed at 3"
+    },
+    {
+        "id": 10,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a C++ function that reads from a file containing a list of product prices (as integers). This function should compute the discount prices applying a 10% markdown on each product price, ensuring the resulting discounted prices are stored in a list of integers. The function should generate a new file containing this list of discounted prices, where each discounted price does not exceed 1000.",
+        "answer": "Cpp;List;Element value in [0, 1000]"
+    },
+    {
+        "id": 11,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Python function that takes a list of tuples, with each tuple containing a product name (string) and its price (float). The function should compute the average price of all products and return a single tuple containing a string message (\"Average Price\") and the computed average price, rounded to two decimal places.",
+        "answer": "python;Tuple;Tuple size fixed at 2;Each element value in [None, [0.00, None]]"
+    },
+    {
+        "id": 12,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Rust function that manages inventory data provided in a JSON format, where each object contains \"item_id\" (string) and \"quantities\" (list of integers representing stock in different warehouses). The function should calculate the total quantity of each item across all warehouses and output the data as a JSON with \"item_id\" and \"total_quantity\". Ensure that the final output consists of integer data types representing precise total quantities.",
+        "answer": "Rust;Float;Precision to 0 digits"
+    },
+    {
+        "id": 13,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Construct a C++ function that takes a matrix of integers as input, normalizes the matrix by ensuring all elements are within the range of 0 to 100 inclusive. The function should adjust any value less than 0 to 0 and any value greater than 100 to 100. After normalization, output the adjusted matrix dimensions which should maintain the same dimensions as the input matrix.",
+        "answer": "Cpp;Matrix;Element value in [0, 100], Matrix dimensions [<Rows> x <Cols>]"
+    },
+    {
+        "id": 14,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Rust function named `filter_unique_temperatures` that accepts a vector of integer temperatures and returns a set of temperatures. The function should filter out temperatures that are outside the acceptable range of 0°C to 100°C, inclusive. The returned set should include only unique temperatures that fall within this specified range.",
+        "answer": "Rust;Set;Element value in [0, 100]"
+    },
+    {
+        "id": 15,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Python script that reads a JSON file containing a hierarchical tree structure where each node has \"id\" (integer) and \"children\" (list of child node ids). The script should ensure that no node appears as a child in more than one parent, and the output should return a report in JSON format with each node's id and a boolean attribute \"has_unique_parent\" indicating if the node complies with the unique parent condition. Ensure that the result explicitly lists each node only once and that the id values range between 1 and 100, with no node having more than 3 children.",
+        "answer": "Python;Tree;Node value in [1, 100], Maximum number of children per node 3"
+    },
+    {
+        "id": 16,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Java function to interpret a JSON file containing weather information, with each entry representing daily data in the format of a dictionary containing \"date\" (string in format yyyy-mm-dd) and \"temperature\" (integer). The function should calculate the highest temperature recorded and generate an output indicating this maximum temperature. The function must ensure that the calculated value precisely defines the highest single-day temperature from the provided dataset.",
+        "answer": "Java;Integer;Value in [-273, 60]"
+    },
+    {
+        "id": 17,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Python function that extracts text content from a given HTML file and checks if all href links within the <a> tags are formatted correctly (starting with \"http://\" or \"https://\"). The function should return a boolean value: True if all links are correctly formatted, and False otherwise.",
+        "answer": "python;Boolean;Must be true"
+    },
+    {
+        "id": 18,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Rust function to analyze a large dataset of products, where each product is represented as a map with keys \"id\" (string), \"name\" (string), and \"price\" (float). The function should return a new map where each entry's key is a product ID and its value is a boolean indicating whether the price is between $10.00 and $50.00. Ensure that the resulting map contains at least 100 entries and no individual key exceeds 20 characters in length.",
+        "answer": "Rust;Map;Key length in [1, 20], Value in [10.0, 50.0], Total number of key-value pairs in [100, <MaxSize>]"
+    },
+    {
+        "id": 19,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a C++ function that processes a vector of Employee structs where each struct contains a name (string) and an array of salaries (vector of integers). The function should construct a Tree where each node represents an employee, the node value is the maximum salary of that employee, and the tree's structure represents their hierarchical relationship defined in a separate input vector of pairs (manager, employee). Ensure that the tree has a maximum depth of 3 and no node has more than 2 children.",
+        "answer": "Cpp;Tree;Node value in [<MinValue>, <MaxValue>], Maximum depth 3, Maximum number of children per node 2"
+    },
+    {
+        "id": 20,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Java method that verifies user-submitted form data by checking if all fields satisfy the provided conditions. This method should accept a Map&lt;String, String&gt; where each entry represents a form field's name and its value. This function should return true if all field values are non-null, non-empty, and contain only alphanumeric characters. If any field fails these checks, the method should return false.",
+        "answer": "Java;Boolean;Must be true"
+    },
+    {
+        "id": 21,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Java method that accepts an ArrayList of HashMap objects, each representing a product's attributes with keys \"productId\" (integer) and \"quantity\" (integer). The method should calculate the total inventory value assuming the same price per product, provided as an additional integer parameter to the method. The output should be the total inventory value as an integer which must be within the closed range [0, 10000].",
+        "answer": "Java;Integer;Value in [0, 10000]"
+    },
+    {
+        "id": 22,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Python function to extract and aggregate sales information from a JSON file containing a list of transactions. Each transaction is represented as a dictionary with fields \"product_id\" (string), \"quantity\" (integer), and \"sale_date\" (string in ISO format). The function should output a JSON string summarizing total sales for each product over all the transactions, formatted as a dictionary where keys are \"product_id\" and values are the total quantity. The output JSON string must ensure each total is represented as an integer.",
+        "answer": "python;String;Character set restriction <numeric values, curly braces, double quotes, colon, comma>"
+    },
+    {
+        "id": 23,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a C++ function named 'processUserInfo' that takes the path to a JSON file as input. This JSON file contains an array of objects, each representing user data with fields 'userID' (integer) and 'lastLogin' (string in ISO8601 timestamp format). The function reads the file, filters out users whose last login date is from the year 2020, and constructs a new JSON object with these filtered users. The output JSON object must include exactly 'userID' and 'lastLogin' fields for each user and be formatted properly in a structured key-value pair format.",
+        "answer": "Cpp;JSONObject;Field value constraints"
+    },
+    {
+        "id": 24,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Rust function that generates a multiplication table matrix for a given integer 'n'. The matrix should be 'n x n' in dimension where the element at position (i, j) contains the product of (i + 1) and (j + 1). Ensure the matrix clearly represents the multiplication values for integers ranging from 1 to 'n'.",
+        "answer": "Rust;Matrix;Matrix dimensions [<n> x <n>]"
+    },
+    {
+        "id": 25,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Python function that reads an input CSV file containing columns \"employee_id\" (integer) and \"hours_worked\" (integer for each day of the week). The function should sum the hours worked for each employee per week and generate a set of unique total hours worked across all employees. The set should then be returned by the function.",
+        "answer": "Python;Set;Set size in [1, 50]"
+    },
+    {
+        "id": 26,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Rust function to analyze a given set of data representing a network of roads between cities, where each road has an associated 'weight' reflecting its traffic congestion. The input is a JSON file comprising a list of edges between nodes (cities), each with fields 'from' (integer city ID), 'to' (integer city ID), and 'weight' (integer traffic value). The function should generate a graph data structure and output the graph such that node IDs range from [1, 100] and edge weights vary from [1, 50]. Ensure the total number of edges does not exceed 200 as an additional constraint to prevent too complex graph instances.",
+        "answer": "Rust;Graph;Node IDs in [1, 100]; Edge weights in [1, 50]; Maximum number of edges 200"
+    },
+    {
+        "id": 27,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Java function that processes an input JSON file containing details of various products, each represented by a dictionary with attributes \"productID\" (string) and \"sales\" (list of integers representing monthly sales). The function should compute the total sales per product and generate an output in the form of a list of dictionaries, where each dictionary contains the \"productID\" and its corresponding \"totalSales\". The resulting list should be sorted in descending order based on \"totalSales\". Additional constraint: each \"totalSales\" value in the list should not exceed 5000.",
+        "answer": "Java;List;Element value in [0, 5000]"
+    },
+    {
+        "id": 28,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a C++ function that validates if all entry elements in a given boolean array are set to true. The function should return a boolean value, where true indicates that all elements in the array are true, and false indicates that at least one element is false.",
+        "answer": "Cpp;Boolean;Must be true"
+    },
+    {
+        "id": 29,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Java function that reads a list of employees' data from a file in JSON format. Each employee is represented as an object with \"id\" (integer) and \"salary\" (integer). The function should compute a graph where each node represents an employee, and an edge exists between nodes if the absolute difference in their salaries is less than 5000. The output should be a graph representation where each node has an ID, and each edge is labeled with the difference in salary. Restrictions: Node IDs should be within [100, 999], and the graph should contain a maximum of 50 edges.",
+        "answer": "Java;Graph;Node IDs in [100, 999]; Maximum number of edges 50"
+    },
+    {
+        "id": 30,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Design a function in C++ that reads a CSV file containing employee data with columns \"EmployeeID\" (integer) and \"HoursWorked\" (integer). The function should compute the total hours worked for each employee and return the results in a tuple. Each tuple element represents an individual employee's total, ordered by EmployeeID. Ensure the tuple is fixed in size according to the number of unique Employee IDs in the CSV input, and each tuple value falls between [0, 160], assuming standard working hours constraints.",
+        "answer": "Cpp;Tuple;Tuple size fixed at <Unique Employee IDs Size>, Each element value in [0, 160]"
+    },
+    {
+        "id": 31,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Python function to analyze log data from a JSON file that contains usage details like \"userid\" (string), \"session_time\" (in seconds, integer), and \"actions\" (list of strings depicting the activities). The function should return a JSON object summarizing the average session time and the total number of actions per user. Round the session time averages to the nearest whole number and list total actions. The output JSON should strictly adhere to having only integer values for session time and actions count.",
+        "answer": "python;JSONObject;The output JSON should strictly adhere to having only integer values for session time and actions count."
+    },
+    {
+        "id": 32,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Design a Rust function that constructs a tree data structure from a list of tuples, where each tuple consists of a node ID (integer) and its parent node ID (integer). The root node ID will always be specified as 0, indicating the top of the tree. The function should ensure that the tree does not exceed a maximum depth of 3 levels and that no parent node has more than 2 children. Return the tree as the output.",
+        "answer": "Rust;Tree;Maximum depth 3, Maximum number of children per node 2"
+    },
+    {
+        "id": 33,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Rust function that processes an input collection of numeric timestamps (Vec<i64>) and identifies all unique timestamps within a range of the last hour from the current time, defined as Unix timestamp. The function should return a set of these timestamps. Ensure the set reflects precise constraints where the set size should not exceed 10 unique elements.",
+        "answer": "Rust;Set;Set size in [1, 10]"
+    },
+    {
+        "id": 34,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Can you develop a Python function that takes a JSON object containing a list of users, each described by a dictionary with keys such as id, name, and age, and outputs a new JSON object that categorizes the users by age? Make sure the age you output is between 20 and 60.",
+        "answer": "Python;Integer;within the range of 20 to 60"
+    },
+    {
+        "id": 35,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Develop a Python function to process a JSON file input, where the file is structured as a list of dictionaries. Each dictionary represents a student with attributes \"name\" (string) and \"grades\" (list of integers). The function calculates the average grade for each student and generates a new JSON file with each student's name alongside their average grade. Ensure that the output JSON file contains only floating-point numbers rounded to two decimal places for each average grade.",
+        "answer": "Python;JSONObject;the output file should contain average grades formatted as floating-point numbers and rounded to two decimal places"
+    },
+    {
+        "id": 36,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Java method that accepts a multi-line string as input, where each line represents a mathematical expression (e.g., \"2 + 3\", \"5 * 4\"). The method should evaluate each expression and return a list of integer results in the same order, ensuring that each output value is a non-negative integer.",
+        "answer": "Java;Integer;that the outputs must be non-negative integers"
+    },
+    {
+        "id": 37,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Develop a Python function named `validate_email(email)` that determines if a given string can be categorized as a the valid email address in a standard format like 'user@domain.com'.Evaluate the email format primarily based on the presence and correctness of the \"@\" symbol and the domain extensions. The function must return a boolean value: `True` if the email adheres to the valid format, and `False` if not. Additionally, the function should only return `True` for strings that not only follow the proper structure but are also limited to 254 characters or fewer, based on typical email length restrictions.",
+        "answer": "Python;Boolean;only return `True` or `False`"
+    },
+    {
+        "id": 38,
+        "category": "input_output",
+        "constraint": "output_range",
+        "prompt": "Create a Python function named `longest_common_prefix(strs)` that identifies the longest common prefix among an array of strings. For example, if 'strs' holds [\"flower\", \"flow\", \"flight\"], the function should return the string \"fl\". Additionally, specify your output expectation in the following manner: if no common prefix is found among the input strings, the function must return an empty string \"\".",
+        "answer": "Python;String;return an empty string (\"\") if no common prefix is found"
+    }
+]

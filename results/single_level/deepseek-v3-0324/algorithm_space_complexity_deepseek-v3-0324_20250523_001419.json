@@ -1,0 +1,497 @@
+[
+  {
+    "id": 1,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a C++ function `bubbleSort(vector<int>& arr)` which sorts a given vector of integers using the bubble sort algorithm. The function should not use additional memory proportional to the input size, ensuring a space complexity of O(1).",
+        "```cpp\n#include <vector>\nusing namespace std;\n\nvoid bubbleSort(vector<int>& arr) {\n    int n = arr.size();\n    for (int i = 0; i < n - 1; ++i) {\n        for (int j = 0; j < n - i - 1; ++j) {\n            if (arr[j] > arr[j + 1]) {\n                swap(arr[j], arr[j + 1]);\n            }\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function `find_path_in_maze(maze: Vec<Vec<i32>>, start: (usize, usize), end: (usize, usize))` that searches for a path from `start` to `end` in a provided 2D maze using the A* search algorithm. The maze is represented as a grid of integers where 1 indicates walls which are impassable and 0 indicates open paths which can be traversed. The function should return an optional vector of tuples indicating the path from the start to the end point if a path exists. Use a heuristic function based on Manhattan distance, and ensure your solution has a space complexity of O(n).",
+        "```rust\nuse std::collections::{BinaryHeap, HashSet};\nuse std::cmp::Ordering;\n\n#[derive(Eq, PartialEq, Clone, Debug)]\nstruct Node {\n    position: (usize, usize),\n    g: usize,\n    h: usize,\n    parent: Option<(usize, usize)>,\n}\n\nimpl Ord for Node {\n    fn cmp(&self, other: &Self) -> Ordering {\n        (other.g + other.h).cmp(&(self.g + self.h))\n    }\n}\n\nimpl PartialOrd for Node {\n    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {\n        Some(self.cmp(other))\n    }\n}\n\nfn manhattan_distance(a: (usize, usize), b: (usize, usize)) -> usize {\n    ((a.0 as isize - b.0 as isize).abs() + (a.1 as isize - b.1 as isize).abs()) as usize\n}\n\nfn find_path_in_maze(maze: Vec<Vec<i32>>, start: (usize, usize), end: (usize, usize)) -> Option<Vec<(usize, usize)>> {\n    let rows = maze.len();\n    if rows == 0 {\n        return None;\n    }\n    let cols = maze[0].len();\n    if cols == 0 {\n        return None;\n    }\n\n    let mut open_set = BinaryHeap::new();\n    let mut closed_set = HashSet::new();\n    let mut path = Vec::new();\n\n    open_set.push(Node {\n        position: start,\n        g: 0,\n        h: manhattan_distance(start, end),\n        parent: None,\n    });\n\n    while let Some(current_node) = open_set.pop() {\n        if current_node.position == end {\n            let mut current = current_node.position;\n            path.push(current);\n            while let Some(parent) = current_node.parent {\n                path.push(parent);\n                current = parent;\n            }\n            path.reverse();\n            return Some(path);\n        }\n\n        closed_set.insert(current_node.position);\n\n        for (dx, dy) in &[(0, 1), (1, 0), (0, -1), (-1, 0)] {\n            let x = current_node.position.0 as isize + dx;\n            let y = current_node.position.1 as isize + dy;\n\n            if x >= 0 && x < rows as isize && y >= 0 && y < cols as isize {\n                let new_pos = (x as usize, y as usize);\n                if maze[new_pos.0][new_pos.1] == 1 || closed_set.contains(&new_pos) {\n                    continue;\n                }\n\n                let g = current_node.g + 1;\n                let h = manhattan_distance(new_pos, end);\n                let mut found_in_open = false;\n\n                for node in open_set.iter() {\n                    if node.position == new_pos && node.g <= g {\n                        found_in_open = true;\n                        break;\n                    }\n                }\n\n                if !found_in_open {\n                    open_set.push(Node {\n                        position: new_pos,\n                        g,\n                        h,\n                        parent: Some(current_node.position),\n                    });\n                }\n            }\n        }\n    }\n\n    None\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a C function `perfect_hash(char* tokens[], int len)` that generates a perfect hash function for a given array of unique strings `tokens` which consists of `len` elements. The function should create and return a perfect hash function where each string is uniquely mapped to an integer, ensuring no collisions. The task must achieve a space complexity of O(1).",
+        "```c\n#include <stdlib.h>\n#include <string.h>\n\ntypedef unsigned int (*HashFunc)(const char*);\n\nunsigned int perfect_hash(const char* str, char** tokens, int len, int* indices) {\n    for (int i = 0; i < len; i++) {\n        if (strcmp(str, tokens[i]) == 0) {\n            return indices[i];\n        }\n    }\n    return -1; // Not found (should not happen for valid input)\n}\n\nHashFunc perfect_hash_builder(char* tokens[], int len) {\n    int* indices = (int*)malloc(len * sizeof(int));\n    for (int i = 0; i < len; i++) {\n        indices[i] = i;\n    }\n    \n    HashFunc hash_func = (HashFunc)perfect_hash;\n    return hash_func;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java method `public boolean containsDuplicate(TreeNode root)` that checks a B-Tree for duplicate values. The function should take the root node of the B-Tree as input and return True if any duplicate values are found and False if all values are unique. Ensure that your solution has a space complexity of O(n) as you may need to store visited nodes.",
+        "```java\nimport java.util.HashSet;\nimport java.util.Set;\n\npublic class Solution {\n    public boolean containsDuplicate(TreeNode root) {\n        Set<Integer> visited = new HashSet<>();\n        return containsDuplicateHelper(root, visited);\n    }\n\n    private boolean containsDuplicateHelper(TreeNode node, Set<Integer> visited) {\n        if (node == null) {\n            return false;\n        }\n        if (visited.contains(node.val)) {\n            return true;\n        }\n        visited.add(node.val);\n        return containsDuplicateHelper(node.left, visited) || containsDuplicateHelper(node.right, visited);\n    }\n}\n\nclass TreeNode {\n    int val;\n    TreeNode left;\n    TreeNode right;\n    TreeNode() {}\n    TreeNode(int val) { this.val = val; }\n    TreeNode(int val, TreeNode left, TreeNode right) {\n        this.val = val;\n        this.left = left;\n        this.right = right;\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a JavaScript function `quickSort(arr)` that sorts an array using the Quicksort algorithm. The function should take an array of integers as input and return a new sorted array. Ensure that your solution has a space complexity of O(log n), meaning the amount of additional memory used should grow logarithmically with the input size.",
+        "```javascript\nfunction quickSort(arr) {\n    if (arr.length <= 1) {\n        return arr.slice();\n    }\n\n    const pivot = arr[Math.floor(Math.random() * arr.length)];\n    const left = [];\n    const right = [];\n    const equal = [];\n\n    for (const num of arr) {\n        if (num < pivot) {\n            left.push(num);\n        } else if (num > pivot) {\n            right.push(num);\n        } else {\n            equal.push(num);\n        }\n    }\n\n    return [...quickSort(left), ...equal, ...quickSort(right)];\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function `ensure_unique_elements(stack)` that checks if all elements in a given stack are unique. The function should take a stack (implemented as a list in Python) as input and return True if all elements are unique, and False if any duplicates are present. Your solution should operate with a time complexity of O(n) to optimize performance.",
+        "```python\ndef ensure_unique_elements(stack):\n    seen = set()\n    for element in stack:\n        if element in seen:\n            return False\n        seen.add(element)\n    return True\n```"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C function `unique_chars_in_string(char* s)` that determines if all characters in a given string are unique without using any additional data structures like set or list. Implement this using a bit manipulation approach. The function should return `True` if all characters are unique and `False` otherwise. Ensure the space complexity of your implementation is O(1).",
+        "```c\n#include <stdbool.h>\n\nbool unique_chars_in_string(char* s) {\n    int checker = 0;\n    for (int i = 0; s[i] != '\\0'; i++) {\n        int val = s[i] - 'a';\n        if ((checker & (1 << val)) > 0) {\n            return false;\n        }\n        checker |= (1 << val);\n    }\n    return true;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method `checkForBalance` that takes the root node of a red-black tree as a parameter and verifies if the tree maintains the balance properties of a red-black tree. The method should return true if all properties are maintained, indicating the tree is balanced, and false otherwise. Constraints: Your solution must achieve a space complexity of O(1); the tree nodes should not store additional data.",
+        "```java\npublic boolean checkForBalance(Node root) {\n    if (root == null) return true;\n    if (!isBlack(root)) return false;\n    return checkRBProperties(root) != -1;\n}\n\nprivate int checkRBProperties(Node node) {\n    if (node == null) return 1;\n    \n    int leftBlackHeight = checkRBProperties(node.left);\n    int rightBlackHeight = checkRBProperties(node.right);\n    \n    if (leftBlackHeight == -1 || rightBlackHeight == -1) return -1;\n    if (leftBlackHeight != rightBlackHeight) return -1;\n    \n    if (!isBlack(node)) {\n        if (!isBlack(node.left) || !isBlack(node.right)) return -1;\n        return leftBlackHeight;\n    }\n    \n    return leftBlackHeight + 1;\n}\n\nprivate boolean isBlack(Node node) {\n    return node == null || node.color == Color.BLACK;\n}\n\nenum Color { RED, BLACK }\n\nclass Node {\n    int data;\n    Node left, right;\n    Color color;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Rust function `intersect_check(a: &[i32], b: &[i32]) -> bool` that uses a hash table to determine if two integer arrays have any intersecting elements. The function should return `true` if there are common elements between the two arrays and `false` otherwise. Ensure that your solution has a space complexity of O(n), where n is the size of the largest input array.",
+        "```rust\nuse std::collections::HashSet;\n\nfn intersect_check(a: &[i32], b: &[i32]) -> bool {\n    let set: HashSet<_> = a.iter().collect();\n    b.iter().any(|&x| set.contains(&x))\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function `radixSort(vector<int>& arr)` that sorts a given list of integers using the Radix Sort algorithm. The function should not utilize additional data structures that increase the space complexity beyond O(1). Ensure the implementation handles various sizes of integer values efficiently.",
+        "```cpp\n#include <vector>\n#include <algorithm>\n\nusing namespace std;\n\nint getMax(vector<int>& arr) {\n    return *max_element(arr.begin(), arr.end());\n}\n\nvoid countingSort(vector<int>& arr, int exp) {\n    vector<int> output(arr.size());\n    int count[10] = {0};\n\n    for (int i = 0; i < arr.size(); i++)\n        count[(arr[i] / exp) % 10]++;\n\n    for (int i = 1; i < 10; i++)\n        count[i] += count[i - 1];\n\n    for (int i = arr.size() - 1; i >= 0; i--) {\n        output[count[(arr[i] / exp) % 10] - 1] = arr[i];\n        count[(arr[i] / exp) % 10]--;\n    }\n\n    for (int i = 0; i < arr.size(); i++)\n        arr[i] = output[i];\n}\n\nvoid radixSort(vector<int>& arr) {\n    if (arr.empty()) return;\n\n    int max_val = getMax(arr);\n\n    for (int exp = 1; max_val / exp > 0; exp *= 10)\n        countingSort(arr, exp);\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript function `calculateStringHash(s, base, mod)` that computes the hash of a given string 's' using a universal hashing technique. The method should use the polynomial rolling hash function approach where the hash value is computed as: sum(s[i] * base^(length-i-1) % mod) for each character 's[i]' in the string. Ensure that the function's space complexity remains constant, O(1), regardless of the input string size.",
+        "```javascript\nfunction calculateStringHash(s, base, mod) {\n    let hash = 0;\n    let power = 1;\n    for (let i = s.length - 1; i >= 0; i--) {\n        hash = (hash + s.charCodeAt(i) * power) % mod;\n        power = (power * base) % mod;\n    }\n    return hash;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function `min_operations(n)` that computes the minimum number of operations required to reduce `n` to 1. An operation is defined as either subtracting one from the number or dividing the number by any of its prime factors. Ensure that your solution optimally utilizes the Push–Relabel algorithm for efficiency and has a space complexity of O(1).",
+        "```python\nimport math\n\ndef min_operations(n):\n    if n == 1:\n        return 0\n    if n == 2:\n        return 1\n    if n % 2 == 0:\n        return 1 + min_operations(n // 2)\n    min_prime = None\n    for i in range(3, int(math.sqrt(n)) + 1, 2):\n        if n % i == 0:\n            min_prime = i\n            break\n    if min_prime is not None:\n        return 1 + min(min_operations(n - 1), min_operations(n // min_prime))\n    return 1 + min_operations(n - 1)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design and implement a Java function called `checkEmailMembership` which uses a Bloom Filter to efficiently check if an email address is potentially already registered in the system. The function should have a space complexity of O(1), focusing on avoiding additional space consumption that grows with the size of the dataset.",
+        "```java\nimport java.util.BitSet;\nimport java.security.MessageDigest;\nimport java.security.NoSuchAlgorithmException;\n\npublic class BloomFilter {\n    private final BitSet bitSet;\n    private final int size;\n    private final MessageDigest[] hashFunctions;\n\n    public BloomFilter(int size, int numHashFunctions) throws NoSuchAlgorithmException {\n        this.bitSet = new BitSet(size);\n        this.size = size;\n        this.hashFunctions = new MessageDigest[numHashFunctions];\n        for (int i = 0; i < numHashFunctions; i++) {\n            hashFunctions[i] = MessageDigest.getInstance(\"SHA-256\");\n        }\n    }\n\n    public void add(String email) {\n        for (int i = 0; i < hashFunctions.length; i++) {\n            byte[] hash = hashFunctions[i].digest(email.getBytes());\n            int index = Math.abs(new String(hash).hashCode()) % size;\n            bitSet.set(index, true);\n        }\n    }\n\n    public boolean checkEmailMembership(String email) {\n        for (int i = 0; i < hashFunctions.length; i++) {\n            byte[] hash = hashFunctions[i].digest(email.getBytes());\n            int index = Math.abs(new String(hash).hashCode()) % size;\n            if (!bitSet.get(index)) {\n                return false;\n            }\n        }\n        return true;\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function `int count_unique_elements(vector<int>& data)` that counts the number of unique elements in a vector using the hash by multiplication method. The function should not use extra space proportional to the size of the input vector, hence should be designed with a space complexity of O(1).",
+        "```cpp\n#include <vector>\n#include <algorithm>\n\nint count_unique_elements(std::vector<int>& data) {\n    if (data.empty()) return 0;\n    \n    std::sort(data.begin(), data.end());\n    int count = 1;\n    for (size_t i = 1; i < data.size(); ++i) {\n        if (data[i] != data[i-1]) {\n            ++count;\n        }\n    }\n    return count;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function `minimize_distance(values: Vec<i32>) -> i32` that finds the minimum possible distance between any two consecutive elements after sorting a vector of integers. The function should take a vector of integers (`values`) as an input and return the minimum distance as an integer. Implement the function such that it utilizes a Fibonacci Heap for efficiency during sorting, ensuring its average case time complexity optimizes sorting time.",
+        "```rust\nuse std::collections::BinaryHeap;\nuse std::cmp::Reverse;\n\nfn minimize_distance(values: Vec<i32>) -> i32 {\n    if values.len() < 2 {\n        return 0;\n    }\n\n    let mut heap = BinaryHeap::new();\n    for num in values {\n        heap.push(Reverse(num));\n    }\n\n    let mut prev = match heap.pop() {\n        Some(Reverse(num)) => num,\n        None => return 0,\n    };\n    let mut min_distance = i32::MAX;\n\n    while let Some(Reverse(current)) = heap.pop() {\n        let distance = current - prev;\n        if distance < min_distance {\n            min_distance = distance;\n        }\n        prev = current;\n    }\n\n    min_distance\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a JavaScript function `findCentroids(dataPoints, k)` that employs the K-Means clustering algorithm to find `k` centroids from the given array of data points in a 2D plane. The function should return an array of these centroids. Each data point and centroid is represented as an object {x: valueX, y: valueY}. Ensure the solution adheres to a space complexity of O(k), meaning it should use only a small additional amount of memory relative to the number of centroids.",
+        "```javascript\nfunction findCentroids(dataPoints, k) {\n    if (dataPoints.length === 0 || k <= 0) return [];\n    \n    // Initialize centroids randomly\n    let centroids = [];\n    for (let i = 0; i < k; i++) {\n        const randomIndex = Math.floor(Math.random() * dataPoints.length);\n        centroids.push({ ...dataPoints[randomIndex] });\n    }\n    \n    let clusters = new Array(k).fill().map(() => []);\n    let changed;\n    \n    do {\n        changed = false;\n        \n        // Clear clusters\n        clusters = new Array(k).fill().map(() => []);\n        \n        // Assign each point to the nearest centroid\n        for (const point of dataPoints) {\n            let minDist = Infinity;\n            let clusterIndex = 0;\n            \n            for (let i = 0; i < k; i++) {\n                const dist = Math.sqrt(\n                    Math.pow(point.x - centroids[i].x, 2) + \n                    Math.pow(point.y - centroids[i].y, 2)\n                );\n                \n                if (dist < minDist) {\n                    minDist = dist;\n                    clusterIndex = i;\n                }\n            }\n            \n            clusters[clusterIndex].push(point);\n        }\n        \n        // Update centroids\n        for (let i = 0; i < k; i++) {\n            if (clusters[i].length === 0) continue;\n            \n            const sum = clusters[i].reduce((acc, point) => {\n                acc.x += point.x;\n                acc.y += point.y;\n                return acc;\n            }, { x: 0, y: 0 });\n            \n            const newX = sum.x / clusters[i].length;\n            const newY = sum.y / clusters[i].length;\n            \n            if (centroids[i].x !== newX || centroids[i].y !== newY) {\n                centroids[i] = { x: newX, y: newY };\n                changed = true;\n            }\n        }\n    } while (changed);\n    \n    return centroids;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a function in C named `dfs_count_islands` that takes a 2D array grid representing a map, where '1' represents land and '0' represents water. The function should return the count of distinct islands using depth-first search (DFS) strategy. The function implementation must ensure that it does not use additional space beyond a constant amount, independent of the size of the input grid.",
+        "```c\nvoid dfs(char** grid, int gridSize, int* gridColSize, int i, int j) {\n    if (i < 0 || i >= gridSize || j < 0 || j >= gridColSize[i] || grid[i][j] != '1') {\n        return;\n    }\n    grid[i][j] = '0';\n    dfs(grid, gridSize, gridColSize, i + 1, j);\n    dfs(grid, gridSize, gridColSize, i - 1, j);\n    dfs(grid, gridSize, gridColSize, i, j + 1);\n    dfs(grid, gridSize, gridColSize, i, j - 1);\n}\n\nint dfs_count_islands(char** grid, int gridSize, int* gridColSize) {\n    int count = 0;\n    for (int i = 0; i < gridSize; i++) {\n        for (int j = 0; j < gridColSize[i]; j++) {\n            if (grid[i][j] == '1') {\n                dfs(grid, gridSize, gridColSize, i, j);\n                count++;\n            }\n        }\n    }\n    return count;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function `merge_k_sorted_lists(lists)` that merges k sorted singly linked lists into a single sorted linked list. Each list node has an integer value and a reference to the next node. The final merged list must be returned as the head of the new linked list. Ensure that your solution implements a priority queue to efficiently merge these lists with a time complexity of O(n log k), where n is the total number of nodes across all lists and k is the number of linked lists.",
+        "```python\nimport heapq\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef merge_k_sorted_lists(lists):\n    min_heap = []\n    dummy = ListNode()\n    current = dummy\n    \n    for i, node in enumerate(lists):\n        if node:\n            heapq.heappush(min_heap, (node.val, i, node))\n    \n    while min_heap:\n        val, i, node = heapq.heappop(min_heap)\n        current.next = node\n        current = current.next\n        if node.next:\n            heapq.heappush(min_heap, (node.next.val, i, node.next))\n    \n    return dummy.next\n```"
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a JavaScript function `encodeBase64(data)` that takes a string input `data` and returns its Base64 encoded string. Ensure the function handles typical characters found in URLs or MIME types. Additionally, validate that the memory usage during the encoding process does not exceed O(1) space complexity.",
+        "```javascript\nfunction encodeBase64(data) {\n    return btoa(encodeURIComponent(data).replace(/%([0-9A-F]{2})/g, function(match, p1) {\n        return String.fromCharCode('0x' + p1);\n    }));\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function `skip_list_contains` that checks for the presence of a specific element in a skip list. The function should accept the head pointer of the skip list and the target value as parameters. Implement the function ensuring that the space complexity remains at O(1), which implies no use of extra space dependent on the input size of the skip list.",
+        "```cpp\nstruct SkipListNode {\n    int value;\n    SkipListNode** forward;\n};\n\nbool skip_list_contains(SkipListNode* head, int target) {\n    SkipListNode* current = head;\n    int level = sizeof(head->forward) / sizeof(head->forward[0]) - 1;\n    for (int i = level; i >= 0; --i) {\n        while (current->forward[i] != nullptr && current->forward[i]->value < target) {\n            current = current->forward[i];\n        }\n    }\n    current = current->forward[0];\n    return current != nullptr && current->value == target;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function `find_all_scc(graph: &Vec<Vec<usize>>) -> Vec<Vec<usize>>` that identifies all the strongly connected components (SCCs) in a directed graph. The graph is provided as an adjacency list, where the graph[i] contains a list of nodes that node i can reach. The function should return a vector of vectors, each inner vector representing a single component containing nodes that are mutually reachable. Ensure your solution achieves an optimal time complexity of O(n + m), where n is the number of vertices and m is the number of edges in the graph.",
+        "```rust\nfn find_all_scc(graph: &Vec<Vec<usize>>) -> Vec<Vec<usize>> {\n    let n = graph.len();\n    let mut visited = vec![false; n];\n    let mut order = Vec::new();\n    \n    // First pass to record the finishing order\n    for i in 0..n {\n        if !visited[i] {\n            dfs(i, graph, &mut visited, &mut order);\n        }\n    }\n    \n    // Reverse the graph\n    let mut reversed_graph = vec![Vec::new(); n];\n    for (u, neighbors) in graph.iter().enumerate() {\n        for &v in neighbors {\n            reversed_graph[v].push(u);\n        }\n    }\n    \n    // Second pass on reversed graph in reverse order\n    let mut visited = vec![false; n];\n    let mut components = Vec::new();\n    \n    for &u in order.iter().rev() {\n        if !visited[u] {\n            let mut component = Vec::new();\n            dfs(u, &reversed_graph, &mut visited, &mut component);\n            components.push(component);\n        }\n    }\n    \n    components\n}\n\nfn dfs(u: usize, graph: &Vec<Vec<usize>>, visited: &mut Vec<bool>, order: &mut Vec<usize>) {\n    visited[u] = true;\n    for &v in &graph[u] {\n        if !visited[v] {\n            dfs(v, graph, visited, order);\n        }\n    }\n    order.push(u);\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function `count_islands(grid)` that computes the number of distinct islands in a given 2D grid. An island is formed by connecting adjacent (up, down, left, right) blocks of '1's and is surrounded by '0's or the boundary of the grid. The function should accept a 2D array representing the grid and return the number of islands. Ensure that your solution has a space complexity of O(1), meaning it should operate without additional space proportional to the size of the input grid.",
+        "```python\ndef count_islands(grid):\n    if not grid:\n        return 0\n    \n    rows = len(grid)\n    cols = len(grid[0])\n    count = 0\n    \n    for i in range(rows):\n        for j in range(cols):\n            if grid[i][j] == '1':\n                count += 1\n                stack = [(i, j)]\n                while stack:\n                    x, y = stack.pop()\n                    if x < 0 or x >= rows or y < 0 or y >= cols or grid[x][y] != '1':\n                        continue\n                    grid[x][y] = '0'\n                    stack.append((x + 1, y))\n                    stack.append((x - 1, y))\n                    stack.append((x, y + 1))\n                    stack.append((x, y - 1))\n    \n    return count\n```"
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C function `interval_insert(root, interval)` for an interval tree that inserts a new interval. The function should handle overlap properly by merging intervals when necessary. Ensure that the function operates with a time complexity of O(log n).",
+        "```c\n#include <stdlib.h>\n\ntypedef struct Interval {\n    int low;\n    int high;\n} Interval;\n\ntypedef struct ITNode {\n    Interval *interval;\n    int max;\n    struct ITNode *left, *right;\n} ITNode;\n\nITNode* newNode(Interval interval) {\n    ITNode* temp = (ITNode*)malloc(sizeof(ITNode));\n    temp->interval = (Interval*)malloc(sizeof(Interval));\n    temp->interval->low = interval.low;\n    temp->interval->high = interval.high;\n    temp->max = interval.high;\n    temp->left = temp->right = NULL;\n    return temp;\n}\n\nITNode* insert(ITNode* root, Interval interval) {\n    if (root == NULL)\n        return newNode(interval);\n\n    int l = root->interval->low;\n\n    if (interval.low < l)\n        root->left = insert(root->left, interval);\n    else\n        root->right = insert(root->right, interval);\n\n    if (root->max < interval.high)\n        root->max = interval.high;\n\n    return root;\n}\n\nvoid mergeIntervals(Interval *a, Interval b) {\n    if (b.low < a->low) a->low = b.low;\n    if (b.high > a->high) a->high = b.high;\n}\n\nITNode* overlapSearch(ITNode* root, Interval interval) {\n    if (root == NULL) return NULL;\n\n    if (root->interval->low <= interval.high && interval.low <= root->interval->high)\n        return root;\n\n    if (root->left != NULL && root->left->max >= interval.low)\n        return overlapSearch(root->left, interval);\n\n    return overlapSearch(root->right, interval);\n}\n\nITNode* deleteNode(ITNode* root, Interval interval) {\n    if (root == NULL) return NULL;\n\n    if (interval.low < root->interval->low)\n        root->left = deleteNode(root->left, interval);\n    else if (interval.low > root->interval->low)\n        root->right = deleteNode(root->right, interval);\n    else {\n        if (root->left == NULL) {\n            ITNode* temp = root->right;\n            free(root->interval);\n            free(root);\n            return temp;\n        } else if (root->right == NULL) {\n            ITNode* temp = root->left;\n            free(root->interval);\n            free(root);\n            return temp;\n        }\n\n        ITNode* temp = root->right;\n        while (temp->left != NULL)\n            temp = temp->left;\n\n        root->interval->low = temp->interval->low;\n        root->interval->high = temp->interval->high;\n        root->right = deleteNode(root->right, *temp->interval);\n    }\n    return root;\n}\n\nvoid updateMax(ITNode* root) {\n    if (root == NULL) return;\n\n    updateMax(root->left);\n    updateMax(root->right);\n\n    root->max = root->interval->high;\n    if (root->left != NULL && root->left->max > root->max)\n        root->max = root->left->max;\n    if (root->right != NULL && root->right->max > root->max)\n        root->max = root->right->max;\n}\n\nITNode* interval_insert(ITNode* root, Interval interval) {\n    ITNode* overlap = overlapSearch(root, interval);\n    while (overlap != NULL) {\n        mergeIntervals(overlap->interval, interval);\n        interval = *(overlap->interval);\n        root = deleteNode(root, interval);\n        overlap = overlapSearch(root, interval);\n    }\n    root = insert(root, interval);\n    updateMax(root);\n    return root;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java function named `findNegativeCycleInGraph` that uses the Bellman-Ford algorithm to determine if a given weighted directed graph contains a negative weight cycle that is reachable from a source vertex. The function should accept an adjacency list (as an array of lists of integer pairs) representing the graph, and an integer representing the source vertex. It should return a boolean value, true if there is a reachable negative weight cycle, and false otherwise. Ensure that the space complexity of your solution is O(n), where n is the number of vertices in the graph.",
+        "```java\nimport java.util.Arrays;\nimport java.util.List;\n\npublic class NegativeCycleFinder {\n    public static boolean findNegativeCycleInGraph(List<int[]>[] graph, int source) {\n        int n = graph.length;\n        int[] dist = new int[n];\n        Arrays.fill(dist, Integer.MAX_VALUE);\n        dist[source] = 0;\n\n        // Relax all edges |V| - 1 times\n        for (int i = 0; i < n - 1; i++) {\n            for (int u = 0; u < n; u++) {\n                if (dist[u] == Integer.MAX_VALUE) continue;\n                for (int[] edge : graph[u]) {\n                    int v = edge[0];\n                    int weight = edge[1];\n                    if (dist[u] + weight < dist[v]) {\n                        dist[v] = dist[u] + weight;\n                    }\n                }\n            }\n        }\n\n        // Check for negative-weight cycles\n        for (int u = 0; u < n; u++) {\n            if (dist[u] == Integer.MAX_VALUE) continue;\n            for (int[] edge : graph[u]) {\n                int v = edge[0];\n                int weight = edge[1];\n                if (dist[u] + weight < dist[v]) {\n                    return true;\n                }\n            }\n        }\n\n        return false;\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a JavaScript function `processTasks(taskQueue)` that manages tasks in a queue. The function takes in an array `taskQueue` representing a queue of tasks. It should process each task sequentially and remove it from the queue without using additional data structures. Ensure that your solution has a space complexity of O(1).",
+        "```javascript\nfunction processTasks(taskQueue) {\n    while (taskQueue.length > 0) {\n        const task = taskQueue.shift();\n        task();\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function `max_subarray_sum(nums: Vec<i32>) -> i32` that calculates the maximum sum of any contiguous subarray within a given vector of integers. The function should implement the Kadane's algorithm to solve the problem effectively and ensure that the solution has a time complexity of O(n), where n is the number of elements in the input vector.",
+        "```rust\nfn max_subarray_sum(nums: Vec<i32>) -> i32 {\n    let mut max_current = nums[0];\n    let mut max_global = nums[0];\n    \n    for &num in nums.iter().skip(1) {\n        max_current = num.max(max_current + num);\n        max_global = max_global.max(max_current);\n    }\n    \n    max_global\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a C++ function `bool isPrime(int n)` that determines whether a given integer `n` is a prime number using the trial division method. This function should efficiently iterate through potential divisors while ensuring the function does only a limited number of operations relative to `n`, aiming for space complexity O(1).",
+        "```cpp\nbool isPrime(int n) {\n    if (n <= 1) return false;\n    if (n <= 3) return true;\n    if (n % 2 == 0 || n % 3 == 0) return false;\n    for (int i = 5; i * i <= n; i += 6) {\n        if (n % i == 0 || n % (i + 2) == 0) return false;\n    }\n    return true;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function `custom_insertion_sort(arr)` that sorts an input list `arr` using the insertion sort algorithm. The function should be designed considering the space complexity of O(1) to ensure in-place sorting without additional memory based on the length of the input list.",
+        "```python\ndef custom_insertion_sort(arr):\n    for i in range(1, len(arr)):\n        key = arr[i]\n        j = i - 1\n        while j >= 0 and key < arr[j]:\n            arr[j + 1] = arr[j]\n            j -= 1\n        arr[j + 1] = key\n```"
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method named `findLongestRepeatedSubstring` which utilizes a Suffix Array to find the longest repeated substring in a given text. The method should take a single string argument as input and return the longest repeated substring. If there are no repeated substrings, it should return an empty string. The implementation should operate with a space complexity of O(n), where n is the length of the input string.",
+        "```java\nimport java.util.Arrays;\n\npublic class LongestRepeatedSubstring {\n    public static String findLongestRepeatedSubstring(String text) {\n        if (text == null || text.length() == 0) {\n            return \"\";\n        }\n\n        int n = text.length();\n        int[] suffixArray = buildSuffixArray(text);\n        int[] lcp = buildLCPArray(text, suffixArray);\n\n        int maxLength = 0;\n        int startIndex = -1;\n\n        for (int i = 0; i < n - 1; i++) {\n            if (lcp[i] > maxLength) {\n                maxLength = lcp[i];\n                startIndex = suffixArray[i];\n            }\n        }\n\n        return maxLength > 0 ? text.substring(startIndex, startIndex + maxLength) : \"\";\n    }\n\n    private static int[] buildSuffixArray(String text) {\n        int n = text.length();\n        Suffix[] suffixes = new Suffix[n];\n\n        for (int i = 0; i < n; i++) {\n            suffixes[i] = new Suffix(i, text.charAt(i) - 'a', (i + 1 < n) ? text.charAt(i + 1) - 'a' : -1);\n        }\n\n        Arrays.sort(suffixes);\n\n        int[] ind = new int[n];\n        for (int k = 4; k < 2 * n; k *= 2) {\n            int rank = 0;\n            int prevRank = suffixes[0].rank[0];\n            suffixes[0].rank[0] = rank;\n            ind[suffixes[0].index] = 0;\n\n            for (int i = 1; i < n; i++) {\n                if (suffixes[i].rank[0] == prevRank && suffixes[i].rank[1] == suffixes[i - 1].rank[1]) {\n                    prevRank = suffixes[i].rank[0];\n                    suffixes[i].rank[0] = rank;\n                } else {\n                    prevRank = suffixes[i].rank[0];\n                    suffixes[i].rank[0] = ++rank;\n                }\n                ind[suffixes[i].index] = i;\n            }\n\n            for (int i = 0; i < n; i++) {\n                int nextIndex = suffixes[i].index + k / 2;\n                suffixes[i].rank[1] = (nextIndex < n) ? suffixes[ind[nextIndex]].rank[0] : -1;\n            }\n\n            Arrays.sort(suffixes);\n        }\n\n        int[] suffixArray = new int[n];\n        for (int i = 0; i < n; i++) {\n            suffixArray[i] = suffixes[i].index;\n        }\n\n        return suffixArray;\n    }\n\n    private static int[] buildLCPArray(String text, int[] suffixArray) {\n        int n = suffixArray.length;\n        int[] lcp = new int[n];\n        int[] invSuffix = new int[n];\n\n        for (int i = 0; i < n; i++) {\n            invSuffix[suffixArray[i]] = i;\n        }\n\n        int k = 0;\n        for (int i = 0; i < n; i++) {\n            if (invSuffix[i] == n - 1) {\n                k = 0;\n                continue;\n            }\n\n            int j = suffixArray[invSuffix[i] + 1];\n            while (i + k < n && j + k < n && text.charAt(i + k) == text.charAt(j + k)) {\n                k++;\n            }\n\n            lcp[invSuffix[i]] = k;\n            if (k > 0) {\n                k--;\n            }\n        }\n\n        return lcp;\n    }\n\n    static class Suffix implements Comparable<Suffix> {\n        int index;\n        int[] rank = new int[2];\n\n        public Suffix(int index, int rank0, int rank1) {\n            this.index = index;\n            this.rank[0] = rank0;\n            this.rank[1] = rank1;\n        }\n\n        @Override\n        public int compareTo(Suffix other) {\n            return (this.rank[0] == other.rank[0]) ? Integer.compare(this.rank[1], other.rank[1])\n                    : Integer.compare(this.rank[0], other.rank[0]);\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a C function `shortest_path(graph, source)` using Dijkstra's algorithm to find the shortest path from the source node to all other nodes in a directed graph. The function should accept a graph represented as an adjacency list and a source node. It should return an array of distances from the source node. Ensure that your solution uses a priority queue to achieve a space complexity of O(V), where V is the number of vertices in the graph.",
+        "```c\n#include <stdio.h>\n#include <stdlib.h>\n#include <limits.h>\n\ntypedef struct Node {\n    int vertex;\n    int weight;\n    struct Node* next;\n} Node;\n\ntypedef struct Graph {\n    int numVertices;\n    Node** adjLists;\n} Graph;\n\ntypedef struct HeapNode {\n    int vertex;\n    int distance;\n} HeapNode;\n\ntypedef struct MinHeap {\n    int size;\n    int capacity;\n    int *pos;\n    HeapNode **array;\n} MinHeap;\n\nNode* createNode(int vertex, int weight) {\n    Node* newNode = (Node*)malloc(sizeof(Node));\n    newNode->vertex = vertex;\n    newNode->weight = weight;\n    newNode->next = NULL;\n    return newNode;\n}\n\nGraph* createGraph(int vertices) {\n    Graph* graph = (Graph*)malloc(sizeof(Graph));\n    graph->numVertices = vertices;\n    graph->adjLists = (Node**)malloc(vertices * sizeof(Node*));\n    for (int i = 0; i < vertices; i++) {\n        graph->adjLists[i] = NULL;\n    }\n    return graph;\n}\n\nvoid addEdge(Graph* graph, int src, int dest, int weight) {\n    Node* newNode = createNode(dest, weight);\n    newNode->next = graph->adjLists[src];\n    graph->adjLists[src] = newNode;\n}\n\nHeapNode* newHeapNode(int vertex, int distance) {\n    HeapNode* node = (HeapNode*)malloc(sizeof(HeapNode));\n    node->vertex = vertex;\n    node->distance = distance;\n    return node;\n}\n\nMinHeap* createMinHeap(int capacity) {\n    MinHeap* heap = (MinHeap*)malloc(sizeof(MinHeap));\n    heap->pos = (int*)malloc(capacity * sizeof(int));\n    heap->size = 0;\n    heap->capacity = capacity;\n    heap->array = (HeapNode**)malloc(capacity * sizeof(HeapNode*));\n    return heap;\n}\n\nvoid swapHeapNodes(HeapNode** a, HeapNode** b) {\n    HeapNode* temp = *a;\n    *a = *b;\n    *b = temp;\n}\n\nvoid minHeapify(MinHeap* heap, int idx) {\n    int smallest = idx;\n    int left = 2 * idx + 1;\n    int right = 2 * idx + 2;\n\n    if (left < heap->size && heap->array[left]->distance < heap->array[smallest]->distance) {\n        smallest = left;\n    }\n\n    if (right < heap->size && heap->array[right]->distance < heap->array[smallest]->distance) {\n        smallest = right;\n    }\n\n    if (smallest != idx) {\n        HeapNode* smallestNode = heap->array[smallest];\n        HeapNode* idxNode = heap->array[idx];\n\n        heap->pos[smallestNode->vertex] = idx;\n        heap->pos[idxNode->vertex] = smallest;\n\n        swapHeapNodes(&heap->array[smallest], &heap->array[idx]);\n        minHeapify(heap, smallest);\n    }\n}\n\nHeapNode* extractMin(MinHeap* heap) {\n    if (heap->size == 0) {\n        return NULL;\n    }\n\n    HeapNode* root = heap->array[0];\n    HeapNode* lastNode = heap->array[heap->size - 1];\n    heap->array[0] = lastNode;\n\n    heap->pos[root->vertex] = heap->size - 1;\n    heap->pos[lastNode->vertex] = 0;\n\n    heap->size--;\n    minHeapify(heap, 0);\n\n    return root;\n}\n\nvoid decreaseKey(MinHeap* heap, int vertex, int distance) {\n    int i = heap->pos[vertex];\n    heap->array[i]->distance = distance;\n\n    while (i && heap->array[i]->distance < heap->array[(i - 1) / 2]->distance) {\n        heap->pos[heap->array[i]->vertex] = (i - 1) / 2;\n        heap->pos[heap->array[(i - 1) / 2]->vertex] = i;\n        swapHeapNodes(&heap->array[i], &heap->array[(i - 1) / 2]);\n        i = (i - 1) / 2;\n    }\n}\n\nint isInHeap(MinHeap* heap, int vertex) {\n    return heap->pos[vertex] < heap->size;\n}\n\nint* shortest_path(Graph* graph, int source) {\n    int V = graph->numVertices;\n    int* distances = (int*)malloc(V * sizeof(int));\n    MinHeap* heap = createMinHeap(V);\n\n    for (int v = 0; v < V; v++) {\n        distances[v] = INT_MAX;\n        heap->array[v] = newHeapNode(v, distances[v]);\n        heap->pos[v] = v;\n    }\n\n    heap->array[source] = newHeapNode(source, distances[source]);\n    heap->pos[source] = source;\n    distances[source] = 0;\n    decreaseKey(heap, source, distances[source]);\n\n    heap->size = V;\n\n    while (heap->size > 0) {\n        HeapNode* heapNode = extractMin(heap);\n        int u = heapNode->vertex;\n\n        Node* adjNode = graph->adjLists[u];\n        while (adjNode != NULL) {\n            int v = adjNode->vertex;\n            int weight = adjNode->weight;\n\n            if (isInHeap(heap, v) && distances[u] != INT_MAX && distances[u] + weight < distances[v]) {\n                distances[v] = distances[u] + weight;\n                decreaseKey(heap, v, distances[v]);\n            }\n            adjNode = adjNode->next;\n        }\n    }\n\n    free(heap->pos);\n    free(heap->array);\n    free(heap);\n\n    return distances;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function `longest_repeated_substring(s)` that finds the longest repeated substring in a given string `s` using a suffix tree. The function should return the longest repeated substring if it exists, otherwise, it should return an empty string.",
+        "```cpp\n#include <string>\n#include <vector>\n#include <algorithm>\n\nusing namespace std;\n\nclass SuffixTreeNode {\npublic:\n    int start;\n    int* end;\n    SuffixTreeNode* children[256];\n    SuffixTreeNode* suffixLink;\n    int suffixIndex;\n\n    SuffixTreeNode(int start, int* end, SuffixTreeNode* link) : start(start), end(end), suffixLink(link), suffixIndex(-1) {\n        fill_n(children, 256, nullptr);\n    }\n};\n\nclass SuffixTree {\nprivate:\n    string input;\n    SuffixTreeNode* root;\n    SuffixTreeNode* lastNewNode;\n    SuffixTreeNode* activeNode;\n    int activeEdge;\n    int activeLength;\n    int remainingSuffixCount;\n    int leafEnd;\n    int* rootEnd;\n    int* splitEnd;\n    int size;\n\n    SuffixTreeNode* newNode(int start, int* end) {\n        SuffixTreeNode* node = new SuffixTreeNode(start, end, root);\n        return node;\n    }\n\n    int edgeLength(SuffixTreeNode* node) {\n        return *(node->end) - node->start + 1;\n    }\n\n    bool walkDown(SuffixTreeNode* node) {\n        if (activeLength >= edgeLength(node)) {\n            activeEdge += edgeLength(node);\n            activeLength -= edgeLength(node);\n            activeNode = node;\n            return true;\n        }\n        return false;\n    }\n\n    void extendSuffixTree(int pos) {\n        leafEnd = pos;\n        remainingSuffixCount++;\n        lastNewNode = nullptr;\n\n        while (remainingSuffixCount > 0) {\n            if (activeLength == 0) {\n                activeEdge = pos;\n            }\n\n            if (activeNode->children[input[activeEdge]] == nullptr) {\n                activeNode->children[input[activeEdge]] = newNode(pos, &leafEnd);\n\n                if (lastNewNode != nullptr) {\n                    lastNewNode->suffixLink = activeNode;\n                    lastNewNode = nullptr;\n                }\n            } else {\n                SuffixTreeNode* next = activeNode->children[input[activeEdge]];\n                if (walkDown(next)) {\n                    continue;\n                }\n\n                if (input[next->start + activeLength] == input[pos]) {\n                    if (lastNewNode != nullptr && activeNode != root) {\n                        lastNewNode->suffixLink = activeNode;\n                        lastNewNode = nullptr;\n                    }\n                    activeLength++;\n                    break;\n                }\n\n                splitEnd = new int;\n                *splitEnd = next->start + activeLength - 1;\n\n                SuffixTreeNode* split = newNode(next->start, splitEnd);\n                activeNode->children[input[activeEdge]] = split;\n\n                split->children[input[pos]] = newNode(pos, &leafEnd);\n                next->start += activeLength;\n                split->children[input[next->start]] = next;\n\n                if (lastNewNode != nullptr) {\n                    lastNewNode->suffixLink = split;\n                }\n\n                lastNewNode = split;\n            }\n\n            remainingSuffixCount--;\n\n            if (activeNode == root && activeLength > 0) {\n                activeLength--;\n                activeEdge = pos - remainingSuffixCount + 1;\n            } else if (activeNode != root) {\n                activeNode = activeNode->suffixLink;\n            }\n        }\n    }\n\n    void setSuffixIndexByDFS(SuffixTreeNode* node, int labelHeight) {\n        if (node == nullptr) return;\n\n        bool isLeaf = true;\n        for (int i = 0; i < 256; i++) {\n            if (node->children[i] != nullptr) {\n                isLeaf = false;\n                setSuffixIndexByDFS(node->children[i], labelHeight + edgeLength(node->children[i]));\n            }\n        }\n\n        if (isLeaf) {\n            node->suffixIndex = size - labelHeight;\n        }\n    }\n\n    void buildSuffixTree() {\n        size = input.size();\n        rootEnd = new int;\n        *rootEnd = -1;\n\n        root = newNode(-1, rootEnd);\n        activeNode = root;\n        activeEdge = -1;\n        activeLength = 0;\n        remainingSuffixCount = 0;\n        leafEnd = -1;\n\n        for (int i = 0; i < size; i++) {\n            extendSuffixTree(i);\n        }\n\n        setSuffixIndexByDFS(root, 0);\n    }\n\n    void findLongestRepeatedSubstring(SuffixTreeNode* node, int labelHeight, int& maxHeight, int& substringStartIndex) {\n        if (node == nullptr) return;\n\n        if (node->suffixIndex == -1) {\n            for (int i = 0; i < 256; i++) {\n                if (node->children[i] != nullptr) {\n                    findLongestRepeatedSubstring(node->children[i], labelHeight + edgeLength(node->children[i]), maxHeight, substringStartIndex);\n                }\n            }\n        }\n\n        if (node->suffixIndex == -1 && labelHeight > maxHeight) {\n            maxHeight = labelHeight;\n            substringStartIndex = *(node->end) - maxHeight + 1;\n        }\n    }\n\npublic:\n    SuffixTree(string s) : input(s) {\n        input += '$';\n        buildSuffixTree();\n    }\n\n    string getLongestRepeatedSubstring() {\n        int maxHeight = 0;\n        int substringStartIndex = 0;\n        findLongestRepeatedSubstring(root, 0, maxHeight, substringStartIndex);\n\n        if (maxHeight == 0) {\n            return \"\";\n        } else {\n            return input.substr(substringStartIndex, maxHeight);\n        }\n    }\n};\n\nstring longest_repeated_substring(string s) {\n    if (s.empty()) return \"\";\n    SuffixTree st(s);\n    return st.getLongestRepeatedSubstring();\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C function `substring_search` that efficiently finds a substring within a given string using the Knuth–Morris–Pratt (KMP) algorithm. The function should accept two strings, `text` and `pattern`, and return the starting index of the first occurrence of `pattern` in `text`. If the pattern is not found, it should return -1. Ensure that your solution achieves a space complexity of O(m), where m is the length of the pattern.",
+        "```c\n#include <stdlib.h>\n#include <string.h>\n\nvoid computeLPSArray(const char *pattern, int m, int *lps) {\n    int len = 0;\n    lps[0] = 0;\n    int i = 1;\n    while (i < m) {\n        if (pattern[i] == pattern[len]) {\n            len++;\n            lps[i] = len;\n            i++;\n        } else {\n            if (len != 0) {\n                len = lps[len - 1];\n            } else {\n                lps[i] = 0;\n                i++;\n            }\n        }\n    }\n}\n\nint substring_search(const char *text, const char *pattern) {\n    int n = strlen(text);\n    int m = strlen(pattern);\n    if (m == 0) return 0;\n    if (n < m) return -1;\n\n    int *lps = (int *)malloc(m * sizeof(int));\n    if (!lps) return -1;\n\n    computeLPSArray(pattern, m, lps);\n\n    int i = 0;\n    int j = 0;\n    while (i < n) {\n        if (pattern[j] == text[i]) {\n            i++;\n            j++;\n        }\n        if (j == m) {\n            free(lps);\n            return i - j;\n        } else if (i < n && pattern[j] != text[i]) {\n            if (j != 0) {\n                j = lps[j - 1];\n            } else {\n                i++;\n            }\n        }\n    }\n    free(lps);\n    return -1;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 33,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function `find_middle_node(doubly_head)` that retrieves the middle node's value from a non-empty doubly linked list efficiently. It should be assumed that you do not know the size of the list beforehand. The solution should have a time complexity of O(n/2), as you need to ensure your algorithm is optimized for performance in large datasets.",
+        "```python\ndef find_middle_node(doubly_head):\n    slow = doubly_head\n    fast = doubly_head\n    \n    while fast is not None and fast.next is not None:\n        slow = slow.next\n        fast = fast.next.next\n    \n    return slow.value\n```"
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a JavaScript function `findLCA(node1, node2)` that computes the Lowest Common Ancestor (LCA) of two nodes in a binary tree using the Binary Lifting technique. The function should accept two arguments, `node1` and `node2`, which are the nodes for which the LCA is to be found. The binary tree and additional supporting data structures needed for binary lifting should already be initialized and globally accessible in your implementation. Ensure that the space complexity of your solution is O(1), implying no extra space is used apart from the input size and globally declared structures.",
+        "```javascript\nfunction findLCA(node1, node2) {\n    if (node1.depth < node2.depth) {\n        [node1, node2] = [node2, node1];\n    }\n\n    let diff = node1.depth - node2.depth;\n    for (let i = 0; i < LOG; i++) {\n        if ((diff >> i) & 1) {\n            node1 = node1.up[i];\n        }\n    }\n\n    if (node1 === node2) {\n        return node1;\n    }\n\n    for (let i = LOG - 1; i >= 0; i--) {\n        if (node1.up[i] !== node2.up[i]) {\n            node1 = node1.up[i];\n            node2 = node2.up[i];\n        }\n    }\n\n    return node1.up[0];\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method `compressData(String input)` that uses Huffman Coding for data compression. The method should take a string as input and return a compressed string. Ensure that your implementation maintains a space complexity of O(n) to effectively handle scalability in real-world applications. Demonstrate understanding of Huffman Coding principles through efficient data structures and operations.",
+        "```java\nimport java.util.*;\nimport java.util.Map.Entry;\n\npublic class HuffmanCompression {\n    private static class HuffmanNode implements Comparable<HuffmanNode> {\n        char character;\n        int frequency;\n        HuffmanNode left, right;\n\n        HuffmanNode(char character, int frequency) {\n            this.character = character;\n            this.frequency = frequency;\n        }\n\n        HuffmanNode(char character, int frequency, HuffmanNode left, HuffmanNode right) {\n            this.character = character;\n            this.frequency = frequency;\n            this.left = left;\n            this.right = right;\n        }\n\n        boolean isLeaf() {\n            return left == null && right == null;\n        }\n\n        @Override\n        public int compareTo(HuffmanNode other) {\n            return this.frequency - other.frequency;\n        }\n    }\n\n    public static String compressData(String input) {\n        if (input == null || input.isEmpty()) return \"\";\n\n        // Calculate frequency of each character\n        Map<Character, Integer> frequencyMap = new HashMap<>();\n        for (char c : input.toCharArray()) {\n            frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);\n        }\n\n        // Build Huffman Tree\n        HuffmanNode root = buildHuffmanTree(frequencyMap);\n\n        // Generate Huffman Codes\n        Map<Character, String> huffmanCodes = new HashMap<>();\n        generateCodes(root, \"\", huffmanCodes);\n\n        // Encode the input string\n        StringBuilder compressed = new StringBuilder();\n        for (char c : input.toCharArray()) {\n            compressed.append(huffmanCodes.get(c));\n        }\n\n        // Serialize Huffman Tree and compressed data for reconstruction\n        StringBuilder serializedTree = new StringBuilder();\n        serializeTree(root, serializedTree);\n        String treeString = serializedTree.toString();\n\n        return treeString + \"|\" + compressed.toString();\n    }\n\n    private static HuffmanNode buildHuffmanTree(Map<Character, Integer> frequencyMap) {\n        PriorityQueue<HuffmanNode> pq = new PriorityQueue<>();\n        for (Entry<Character, Integer> entry : frequencyMap.entrySet()) {\n            pq.add(new HuffmanNode(entry.getKey(), entry.getValue()));\n        }\n\n        while (pq.size() > 1) {\n            HuffmanNode left = pq.poll();\n            HuffmanNode right = pq.poll();\n            HuffmanNode parent = new HuffmanNode('\\0', left.frequency + right.frequency, left, right);\n            pq.add(parent);\n        }\n\n        return pq.poll();\n    }\n\n    private static void generateCodes(HuffmanNode node, String code, Map<Character, String> huffmanCodes) {\n        if (node == null) return;\n        if (node.isLeaf()) {\n            huffmanCodes.put(node.character, code.isEmpty() ? \"0\" : code);\n            return;\n        }\n        generateCodes(node.left, code + \"0\", huffmanCodes);\n        generateCodes(node.right, code + \"1\", huffmanCodes);\n    }\n\n    private static void serializeTree(HuffmanNode node, StringBuilder sb) {\n        if (node == null) return;\n        if (node.isLeaf()) {\n            sb.append('1');\n            sb.append(node.character);\n            return;\n        }\n        sb.append('0');\n        serializeTree(node.left, sb);\n        serializeTree(node.right, sb);\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function `calculate_sha1_digest(input: &str) -> String` that computes the SHA-1 hash of a given string input. Ensure that your solution adheres strictly to the SHA-1 algorithm specifications. The function should be designed with a memory usage not dependent on the size of the input data, achieving a space complexity of O(1).",
+        "```rust\nuse sha1::{Sha1, Digest};\n\nfn calculate_sha1_digest(input: &str) -> String {\n    let mut hasher = Sha1::new();\n    hasher.update(input.as_bytes());\n    let result = hasher.finalize();\n    format!(\"{:x}\", result)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function `calculate_fnv1a_hash(input_string)` that computes the FNV-1a hash of a given string. The function should input a string and output an integer representing the hash value. The solution must prioritize minimizing the space complexity. Consider using bitwise operations and ensure that the computational space complexity remains O(1).",
+        "```python\ndef calculate_fnv1a_hash(input_string):\n    hash_value = 0x811c9dc5\n    for char in input_string:\n        hash_value ^= ord(char)\n        hash_value = (hash_value * 0x01000193) & 0xFFFFFFFF\n    return hash_value\n```"
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function `merge_sort_list` that sorts a singly linked list using the merge sort algorithm. The function should handle generic data types and return the head of the sorted linked list. Ensure that the space complexity of your implementation is O(n), where n is the number of elements in the linked list.",
+        "```rust\nuse std::mem;\n\ntype Link<T> = Option<Box<Node<T>>>;\n\nstruct Node<T> {\n    data: T,\n    next: Link<T>,\n}\n\nimpl<T> Node<T> {\n    fn new(data: T) -> Self {\n        Node { data, next: None }\n    }\n}\n\nfn merge_sort_list<T: PartialOrd + Clone>(head: Link<T>) -> Link<T> {\n    if head.is_none() || head.as_ref().unwrap().next.is_none() {\n        return head;\n    }\n\n    let (left, right) = split_list(head);\n    let left_sorted = merge_sort_list(left);\n    let right_sorted = merge_sort_list(right);\n    merge(left_sorted, right_sorted)\n}\n\nfn split_list<T>(mut head: Link<T>) -> (Link<T>, Link<T>) {\n    let mut fast = head.as_ref().map(|node| &node.next).unwrap_or(&None);\n    let mut slow = &mut head;\n\n    while fast.is_some() {\n        fast = fast.as_ref().map(|node| &node.next).unwrap_or(&None);\n        if fast.is_some() {\n            fast = fast.as_ref().map(|node| &node.next).unwrap_or(&None);\n            slow = &mut slow.as_mut().unwrap().next;\n        }\n    }\n\n    let right = slow.as_mut().unwrap().next.take();\n    (head, right)\n}\n\nfn merge<T: PartialOrd>(left: Link<T>, right: Link<T>) -> Link<T> {\n    match (left, right) {\n        (None, right) => right,\n        (left, None) => left,\n        (Some(mut left_node), Some(mut right_node)) => {\n            if left_node.data <= right_node.data {\n                left_node.next = merge(left_node.next.take(), Some(right_node));\n                Some(left_node)\n            } else {\n                right_node.next = merge(Some(left_node), right_node.next.take());\n                Some(right_node)\n            }\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 39,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a JavaScript function `selectionSortArray(arr)` that sorts an array of integers using the selection sort algorithm. The function should directly mutate the original array. Ensure that your solution has a space complexity of O(1), meaning it should use minimal additional memory beyond the input data.",
+        "```javascript\nfunction selectionSortArray(arr) {\n    for (let i = 0; i < arr.length - 1; i++) {\n        let minIndex = i;\n        for (let j = i + 1; j < arr.length; j++) {\n            if (arr[j] < arr[minIndex]) {\n                minIndex = j;\n            }\n        }\n        if (minIndex !== i) {\n            [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];\n        }\n    }\n    return arr;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 40,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Java method `findMinimumSpanningTree(int[][] graph)` that accepts an adjacency matrix 'graph' representing weights of edges between vertices of a graph, and calculates the minimum spanning tree using Kruskal's algorithm. The function should return an integer value representing the total weight of the minimum spanning tree. Ensure that your solution has a space complexity of O(n^2), matching the spatial complexity typical for adjacency matrix representations.",
+        "```java\nimport java.util.Arrays;\n\nclass Edge implements Comparable<Edge> {\n    int src, dest, weight;\n\n    public int compareTo(Edge compareEdge) {\n        return this.weight - compareEdge.weight;\n    }\n}\n\npublic class Main {\n    static int[] parent;\n    static int[] rank;\n\n    static int find(int i) {\n        if (parent[i] != i)\n            parent[i] = find(parent[i]);\n        return parent[i];\n    }\n\n    static void union(int x, int y) {\n        int xRoot = find(x);\n        int yRoot = find(y);\n\n        if (rank[xRoot] < rank[yRoot])\n            parent[xRoot] = yRoot;\n        else if (rank[xRoot] > rank[yRoot])\n            parent[yRoot] = xRoot;\n        else {\n            parent[yRoot] = xRoot;\n            rank[xRoot]++;\n        }\n    }\n\n    public static int findMinimumSpanningTree(int[][] graph) {\n        int V = graph.length;\n        Edge[] edges = new Edge[V * V];\n        int edgeCount = 0;\n\n        for (int i = 0; i < V; i++) {\n            for (int j = i + 1; j < V; j++) {\n                if (graph[i][j] != 0) {\n                    Edge edge = new Edge();\n                    edge.src = i;\n                    edge.dest = j;\n                    edge.weight = graph[i][j];\n                    edges[edgeCount++] = edge;\n                }\n            }\n        }\n\n        edges = Arrays.copyOf(edges, edgeCount);\n        Arrays.sort(edges);\n\n        parent = new int[V];\n        rank = new int[V];\n\n        for (int i = 0; i < V; i++) {\n            parent[i] = i;\n            rank[i] = 0;\n        }\n\n        int mstWeight = 0;\n        int e = 0;\n        int i = 0;\n\n        while (e < V - 1 && i < edgeCount) {\n            Edge nextEdge = edges[i++];\n            int x = find(nextEdge.src);\n            int y = find(nextEdge.dest);\n\n            if (x != y) {\n                mstWeight += nextEdge.weight;\n                union(x, y);\n                e++;\n            }\n        }\n\n        return mstWeight;\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 41,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C function `is_balanced_bst(TreeNode *root)` that checks if a binary search tree (BST) is balanced. A balanced BST is defined as one where the height of the two subtrees of any node never differ by more than one. The function should return `true` if the BST is balanced and `false` otherwise. Ensure that your solution maintains a space complexity of O(log n), as it should ideally use space proportional to the tree's height for the recursion stack.",
+        "```c\n#include <stdbool.h>\n#include <stdlib.h>\n\ntypedef struct TreeNode {\n    int val;\n    struct TreeNode *left;\n    struct TreeNode *right;\n} TreeNode;\n\nint height(TreeNode *root) {\n    if (root == NULL) {\n        return 0;\n    }\n    int left_height = height(root->left);\n    int right_height = height(root->right);\n    return (left_height > right_height ? left_height : right_height) + 1;\n}\n\nbool is_balanced_bst(TreeNode *root) {\n    if (root == NULL) {\n        return true;\n    }\n    int left_height = height(root->left);\n    int right_height = height(root->right);\n    if (abs(left_height - right_height) > 1) {\n        return false;\n    }\n    return is_balanced_bst(root->left) && is_balanced_bst(root->right);\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 42,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function `string_hash_compression(const string& str)` that applies Java's string hash code formula to compress a string into an integer hash code. The hash code for the string is computed as: `s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]`, where `s[i]` represents the i-th character of the string, and `n` is the length of the string. Aim to write the function so that its space complexity remains constant, regardless of the string length.",
+        "```cpp\nint string_hash_compression(const std::string& str) {\n    int hash = 0;\n    for (char c : str) {\n        hash = 31 * hash + c;\n    }\n    return hash;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 43,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java method `isBalancedAvlTree(AvlTreeNode root)` that checks if an AVL tree is balanced by examining all nodes. An AVL tree is balanced if for any two leaf nodes, the difference in their depths is at most one. The solution should have an algorithmic complexity of O(n) where n is the number of nodes in the tree.",
+        "```java\nclass AvlTreeNode {\n    int val;\n    AvlTreeNode left;\n    AvlTreeNode right;\n    AvlTreeNode(int x) { val = x; }\n}\n\npublic class AvlTreeBalanceChecker {\n    public static boolean isBalancedAvlTree(AvlTreeNode root) {\n        return checkBalance(root) != -1;\n    }\n\n    private static int checkBalance(AvlTreeNode node) {\n        if (node == null) {\n            return 0;\n        }\n\n        int leftHeight = checkBalance(node.left);\n        if (leftHeight == -1) {\n            return -1;\n        }\n\n        int rightHeight = checkBalance(node.right);\n        if (rightHeight == -1) {\n            return -1;\n        }\n\n        if (Math.abs(leftHeight - rightHeight) > 1) {\n            return -1;\n        }\n\n        return Math.max(leftHeight, rightHeight) + 1;\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 44,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function `find_kth_smallest(heap, k)` that uses a binary heap to find the k-th smallest element in the heap without modifying the original heap structure. The solution should adhere to a time complexity of O(k), ensuring efficient retrieval of the element.",
+        "```python\nimport heapq\n\ndef find_kth_smallest(heap, k):\n    if not heap or k <= 0 or k > len(heap):\n        return None\n    min_heap = heap.copy()\n    heapq.heapify(min_heap)\n    for _ in range(k - 1):\n        heapq.heappop(min_heap)\n    return heapq.heappop(min_heap)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 45,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C function `find_max_flow(graph, source, sink)` that computes the maximum flow from a source node to a sink node in a given flow network using the Edmonds-Karp algorithm. The function should take a representation of a graph (as an adjacency matrix), along with source and sink node indices, and return the maximum flow value. Ensure that the function is efficient with a space complexity of O(n^2) due to the adjacency matrix size.",
+        "```c\n#include <limits.h>\n#include <stdbool.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\n#define MAX_NODES 100\n\nint find_max_flow(int graph[MAX_NODES][MAX_NODES], int source, int sink, int n) {\n    int residual[MAX_NODES][MAX_NODES];\n    int parent[MAX_NODES];\n    int max_flow = 0;\n\n    // Initialize residual graph\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            residual[i][j] = graph[i][j];\n        }\n    }\n\n    while (true) {\n        memset(parent, -1, sizeof(parent));\n        int queue[MAX_NODES];\n        int front = 0, rear = 0;\n        queue[rear++] = source;\n        parent[source] = source;\n\n        // BFS to find augmenting path\n        while (front < rear) {\n            int u = queue[front++];\n            for (int v = 0; v < n; v++) {\n                if (parent[v] == -1 && residual[u][v] > 0) {\n                    parent[v] = u;\n                    queue[rear++] = v;\n                    if (v == sink) {\n                        break;\n                    }\n                }\n            }\n            if (parent[sink] != -1) {\n                break;\n            }\n        }\n\n        if (parent[sink] == -1) {\n            break; // No more augmenting paths\n        }\n\n        // Find minimum residual capacity of the path\n        int path_flow = INT_MAX;\n        for (int v = sink; v != source; v = parent[v]) {\n            int u = parent[v];\n            if (residual[u][v] < path_flow) {\n                path_flow = residual[u][v];\n            }\n        }\n\n        // Update residual capacities\n        for (int v = sink; v != source; v = parent[v]) {\n            int u = parent[v];\n            residual[u][v] -= path_flow;\n            residual[v][u] += path_flow;\n        }\n\n        max_flow += path_flow;\n    }\n\n    return max_flow;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 46,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function `bool isAnagram(string s, string t)` that checks whether two strings `s` and `t` are anagrams of each other. The function should utilize the SimHash algorithm to compute the hash values of both strings and compare them to determine if the strings are anagrams. Ensure the space complexity of this function is maintained at O(1).",
+        "```cpp\n#include <string>\n#include <algorithm>\n\nusing namespace std;\n\nbool isAnagram(string s, string t) {\n    if (s.length() != t.length()) {\n        return false;\n    }\n    \n    sort(s.begin(), s.end());\n    sort(t.begin(), t.end());\n    \n    return s == t;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 47,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function `is_prime_miller_rabin(num: u64) -> bool` that utilizes the Miller-Rabin primality test to determine if a given number `num` is prime. The function should be efficiently implemented with an expected time complexity of O(log n). Ensure proper usage of Rust's language features for optimal performance.",
+        "```rust\nuse rand::Rng;\n\nfn is_prime_miller_rabin(num: u64) -> bool {\n    if num <= 1 {\n        return false;\n    }\n    if num <= 3 {\n        return true;\n    }\n    if num % 2 == 0 {\n        return false;\n    }\n\n    let mut d = num - 1;\n    let mut s = 0;\n    while d % 2 == 0 {\n        d /= 2;\n        s += 1;\n    }\n\n    let k = 5; // Number of iterations (higher = more accurate)\n    let mut rng = rand::thread_rng();\n\n    for _ in 0..k {\n        let a = rng.gen_range(2..num - 1);\n        let mut x = mod_exp(a, d, num);\n        if x == 1 || x == num - 1 {\n            continue;\n        }\n\n        let mut found = false;\n        for __ in 0..s - 1 {\n            x = mod_exp(x, 2, num);\n            if x == num - 1 {\n                found = true;\n                break;\n            }\n        }\n        if !found {\n            return false;\n        }\n    }\n    true\n}\n\nfn mod_exp(mut base: u64, mut exp: u64, modulus: u64) -> u64 {\n    if modulus == 1 {\n        return 0;\n    }\n    let mut result = 1;\n    base %= modulus;\n    while exp > 0 {\n        if exp % 2 == 1 {\n            result = (result * base) % modulus;\n        }\n        exp >>= 1;\n        base = (base * base) % modulus;\n    }\n    result\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 48,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript function `isPalindrome(str)` that checks whether a given string is a palindrome. A palindrome reads the same backward as forward, disregarding spaces, punctuation and case sensitivity. The function must have optimal space complexity of O(1), ensuring that it does not use extra space proportional to the input size.",
+        "```javascript\nfunction isPalindrome(str) {\n    let left = 0;\n    let right = str.length - 1;\n    while (left < right) {\n        while (left < right && !/[a-zA-Z0-9]/.test(str[left])) left++;\n        while (left < right && !/[a-zA-Z0-9]/.test(str[right])) right--;\n        if (str[left].toLowerCase() !== str[right].toLowerCase()) return false;\n        left++;\n        right--;\n    }\n    return true;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 49,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function called `shuffle_array(arr)` that receives an array of integers `arr` and shuffles its elements uniformly at random. The function should return the shuffled array without using any extra space for copying the original array, thus achieving a space complexity of O(1).",
+        "```python\nimport random\n\ndef shuffle_array(arr):\n    for i in range(len(arr)-1, 0, -1):\n        j = random.randint(0, i)\n        arr[i], arr[j] = arr[j], arr[i]\n    return arr\n```"
+      ]
+    ]
+  },
+  {
+    "id": 50,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Rust function `union_find()` that performs union and find operations to manage and compute connected components in a graph using the disjoint-set (union-find) data structure. The function should efficiently handle union and find operations by applying path compression and union by rank. Ensure the space complexity of your solution respects the constraint O(n), where 'n' is the number of elements in the disjoint-set.",
+        "```rust\nstruct UnionFind {\n    parent: Vec<usize>,\n    rank: Vec<usize>,\n}\n\nimpl UnionFind {\n    fn new(size: usize) -> Self {\n        UnionFind {\n            parent: (0..size).collect(),\n            rank: vec![0; size],\n        }\n    }\n\n    fn find(&mut self, x: usize) -> usize {\n        if self.parent[x] != x {\n            self.parent[x] = self.find(self.parent[x]);\n        }\n        self.parent[x]\n    }\n\n    fn union(&mut self, x: usize, y: usize) {\n        let x_root = self.find(x);\n        let y_root = self.find(y);\n\n        if x_root == y_root {\n            return;\n        }\n\n        if self.rank[x_root] < self.rank[y_root] {\n            self.parent[x_root] = y_root;\n        } else if self.rank[x_root] > self.rank[y_root] {\n            self.parent[y_root] = x_root;\n        } else {\n            self.parent[y_root] = x_root;\n            self.rank[x_root] += 1;\n        }\n    }\n}\n\nfn union_find() -> UnionFind {\n    UnionFind::new(0)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 51,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python program that inputs two lists of hobbies, such as [\"reading\", \"swimming\", \"music\"] and [\"music\", \"travel\", \"reading\"], and computes the intersection to identify common hobbies. Ensure that the solution has a space complexity not exceeding O(n). Display the shared hobbies in a well-formatted list.",
+        "```python\ndef find_common_hobbies(list1, list2):\n    set1 = set(list1)\n    set2 = set(list2)\n    common_hobbies = set1.intersection(set2)\n    return list(common_hobbies)\n\nhobbies1 = [\"reading\", \"swimming\", \"music\"]\nhobbies2 = [\"music\", \"travel\", \"reading\"]\nshared_hobbies = find_common_hobbies(hobbies1, hobbies2)\n\nprint(\"Shared hobbies:\", shared_hobbies)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Python function `has_cycle(head)` that detects if a singly linked list has a cycle. The function should take the head node of the linked list as input and return True if a cycle is detected and False otherwise. Ensure that your solution has a space complexity of O(1), meaning it should not consume additional space proportional to the size of the input linked list.",
+        "```python\ndef has_cycle(head):\n    if not head:\n        return False\n    \n    slow = head\n    fast = head.next\n    \n    while slow != fast:\n        if not fast or not fast.next:\n            return False\n        slow = slow.next\n        fast = fast.next.next\n    \n    return True\n```"
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function named factorial(int n) that computes the factorial of a non-negative integer n. The function should return 1 if n equals 0 and handle negative inputs by displaying an appropriate error message. Ensure that the space complexity of your implementation is O(1), indicating that the function must operate with constant additional space regardless of the input size.",
+        "```cpp\n#include <iostream>\n\nint factorial(int n) {\n    if (n < 0) {\n        std::cerr << \"Error: Factorial of a negative number is undefined.\" << std::endl;\n        return -1;\n    }\n    int result = 1;\n    for (int i = 1; i <= n; ++i) {\n        result *= i;\n    }\n    return result;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 54,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: In C++, write a function to sort an array of integers in descending order using a merge sort algorithm, which is a divide and conquer approach. The function must accept an array of integers as input and output a new, sorted array. Ensure that the space complexity of the sorting algorithm does not exceed O(n).",
+        "```cpp\n#include <vector>\n#include <algorithm>\n\nusing namespace std;\n\nvoid merge(vector<int>& arr, int left, int mid, int right) {\n    vector<int> temp(right - left + 1);\n    int i = left, j = mid + 1, k = 0;\n\n    while (i <= mid && j <= right) {\n        if (arr[i] >= arr[j]) {\n            temp[k++] = arr[i++];\n        } else {\n            temp[k++] = arr[j++];\n        }\n    }\n\n    while (i <= mid) {\n        temp[k++] = arr[i++];\n    }\n\n    while (j <= right) {\n        temp[k++] = arr[j++];\n    }\n\n    for (int idx = 0; idx < k; ++idx) {\n        arr[left + idx] = temp[idx];\n    }\n}\n\nvoid mergeSort(vector<int>& arr, int left, int right) {\n    if (left < right) {\n        int mid = left + (right - left) / 2;\n        mergeSort(arr, left, mid);\n        mergeSort(arr, mid + 1, right);\n        merge(arr, left, mid, right);\n    }\n}\n\nvector<int> sortDescending(vector<int> arr) {\n    mergeSort(arr, 0, arr.size() - 1);\n    return arr;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 55,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function that reverses a singly linked list and returns the head of the reversed list. This function must be implemented such that the space complexity does not exceed O(1).",
+        "```cpp\nstruct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int x) : val(x), next(nullptr) {}\n};\n\nListNode* reverseList(ListNode* head) {\n    ListNode* prev = nullptr;\n    ListNode* curr = head;\n    ListNode* next = nullptr;\n    \n    while (curr != nullptr) {\n        next = curr->next;\n        curr->next = prev;\n        prev = curr;\n        curr = next;\n    }\n    \n    return prev;\n}\n```"
+      ]
+    ]
+  }
+]

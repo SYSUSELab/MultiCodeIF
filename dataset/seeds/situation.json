@@ -1,0 +1,50 @@
+[
+    {
+        "id": "beginner_learning",
+        "en": "Beginner Learning Context",
+        "description_en": "Designed for users new to programming, focusing on basic syntax and logic structures, with simple and clear tasks.",
+        "task_en": "Write a Python function that takes a list of integers and returns a new list containing the squares of all even numbers."
+    },
+    {
+        "id": "class_assignment",
+        "en": "Classroom or Assignment Context",
+        "description_en": "Targets educational objectives, requiring code to follow specific rules, emphasizing correctness and readability, disallowing unintroduced content.",
+        "task_en": "Implement a `Student` class in Java with fields for name, student ID, and score. Provide a constructor, getter methods, and a `printInfo` method to display the student’s information."
+    },
+    {
+        "id": "coding_interview",
+        "en": "Coding Interview or Competition",
+        "description_en": "Strict input/output formats and complexity constraints, focusing on algorithm and data structure proficiency.",
+        "task_en": "Implement a function that takes an array of integers and a target value, and returns whether any two numbers sum up to the target. The time complexity must be O(n)."
+    },
+    {
+        "id": "enterprise_development",
+        "en": "Enterprise Development Context",
+        "description_en": "Simulates enterprise-level development tasks, emphasizing modularity, scalability, standard compliance, and security.",
+        "task_en": "You are building an order management system. Use Flask to implement a POST endpoint `/orders` to create an order containing customer name, product ID, and quantity. Save the data to an SQLite database."
+    },
+    {
+        "id": "open_source_contribution",
+        "en": "Open Source Contribution",
+        "description_en": "Requires adherence to community conventions and project structures, involving tasks like bug fixing or feature implementation.",
+        "task_en": "You are fixing a bug in an open-source blogging platform. Modify the `getSummary` function in `ArticleService.ts` to correctly handle article content that includes HTML tags and return a plain-text summary."
+    },
+    {
+        "id": "api_development",
+        "en": "API Development or Integration",
+        "description_en": "Building or integrating backend APIs, involving request bodies, status codes, validation, and response structure design.",
+        "task_en": "Use Express.js to implement a user registration endpoint `/api/register` that validates the email and password fields in the request body. On success, return HTTP 201 and the user information."
+    },
+    {
+        "id": "data_analysis",
+        "en": "Data Analysis or Scientific Computing",
+        "description_en": "Processes structured data for analysis and visualization, often using libraries like pandas and numpy.",
+        "task_en": "Use the pandas library in Python to read a file named `sales.csv` and compute the total sales per region. Output the results in descending order."
+    },
+    {
+        "id": "web_development",
+        "en": "Web Frontend or Full-Stack Development",
+        "description_en": "Builds interactive web or full-stack applications, involving UI/UX design, component structure, and backend integration.",
+        "task_en": "Build a login page component using React with email and password input fields. On submission, call the `onLogin(email, password)` function. Ensure the form includes basic frontend validation."
+    }
+]

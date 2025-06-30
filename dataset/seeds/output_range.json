@@ -1,0 +1,121 @@
+[
+    {
+        "id": 1,
+        "data_structure": "List",
+        "range": [
+            "Element value in [<MinValue>, <MaxValue>]",
+            "Length in [<MinLength>, <MaxLength>]"
+        ],
+        "feature": "Ordered elements; constraints can apply to element values or list length separately or together."
+    },
+    {
+        "id": 2,
+        "data_structure": "Set",
+        "range": [
+            "Element value in [<MinValue>, <MaxValue>]",
+            "Set size in [<MinSize>, <MaxSize>]"
+        ],
+        "feature": "Unique unordered elements; can constrain element values or total set size."
+    },
+    {
+        "id": 3,
+        "data_structure": "Map",
+        "range": [
+            "Key length in [<MinKeyLength>, <MaxKeyLength>]",
+            "Value in [<MinValue>, <MaxValue>]",
+            "Total number of key-value pairs in [<MinSize>, <MaxSize>]"
+        ],
+        "feature": "Associative pairs; keys and values can be constrained separately."
+    },
+    {
+        "id": 4,
+        "data_structure": "Tuple",
+        "range": [
+            "Each element value in [<MinValue>, <MaxValue>]",
+            "Tuple size fixed at <Size>"
+        ],
+        "feature": "Fixed-size, ordered heterogeneous collection; element-wise constraints possible."
+    },
+    {
+        "id": 5,
+        "data_structure": "Matrix",
+        "range": [
+            "Element value in [<MinValue>, <MaxValue>]",
+            "Matrix dimensions [<Rows> x <Cols>]"
+        ],
+        "feature": "Two-dimensional array; constrain either element values or dimensions or both."
+    },
+    {
+        "id": 6,
+        "data_structure": "Tree",
+        "range": [
+            "Node value in [<MinValue>, <MaxValue>]",
+            "Maximum depth <MaxDepth>",
+            "Maximum number of children per node <MaxChildren>"
+        ],
+        "feature": "Hierarchical nodes; value, depth, and branching factor can be constrained separately."
+    },
+    {
+        "id": 7,
+        "data_structure": "Graph",
+        "range": [
+            "Node IDs in [<MinId>, <MaxId>]",
+            "Edge weights in [<MinWeight>, <MaxWeight>]",
+            "Maximum number of edges <MaxEdges>"
+        ],
+        "feature": "Nodes and edges; constraints may apply to node IDs, edge weights, or graph size."
+    },
+    {
+        "id": 8,
+        "data_structure": "Struct",
+        "range": [
+            "Field-specific value ranges",
+            "Number of fields fixed at <FieldCount>"
+        ],
+        "feature": "Composite fields; individual fields may have their own value constraints."
+    },
+    {
+        "id": 9,
+        "data_structure": "String",
+        "range": [
+            "Character set restriction <AllowedCharacters>",
+            "String length in [<MinLength>, <MaxLength>]"
+        ],
+        "feature": "Character sequences; constraints on character content and/or string length."
+    },
+    {
+        "id": 10,
+        "data_structure": "JSONObject",
+        "range": [
+            "Field value constraints",
+            "Number of fields in [<MinFields>, <MaxFields>]"
+        ],
+        "feature": "Structured key-value format; field value types and object size can be constrained."
+    },
+    {
+        "id": 11,
+        "data_structure": "Boolean",
+        "range": [
+            "Must be true",
+            "Must be false"
+        ],
+        "feature": "Binary output; can force fixed true/false result."
+    },
+    {
+        "id": 12,
+        "data_structure": "Integer",
+        "range": [
+            "Value in [<MinValue>, <MaxValue>]"
+        ],
+        "feature": "Discrete numeric value within a bounded range."
+    },
+    {
+        "id": 13,
+        "data_structure": "Float",
+        "range": [
+            "Value in [<MinValue>, <MaxValue>]",
+            "Precision to <DecimalPlaces> digits"
+        ],
+        "feature": "Continuous numeric output; constraints on value range and decimal precision."
+    }
+]

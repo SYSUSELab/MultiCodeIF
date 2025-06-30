@@ -1,0 +1,569 @@
+[
+  {
+    "id": 1,
+    "response": [
+      [
+        "Could you create a Python3 function to reverse the sequence of words in a given sentence?",
+        "def reverse_words(sentence):\n    return ' '.join(sentence.split()[::-1])"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "response": [
+      [
+        "What method would you use to calculate the maximum length of a common subsequence shared by two specified strings, ensuring the solution utilizes the standard library functions in Python 3?",
+        "import difflib\n\ndef max_common_subsequence_length(str1, str2):\n    matcher = difflib.SequenceMatcher(None, str1, str2)\n    return sum(len(block[2]) for block in matcher.get_matching_blocks())\n\n# Example usage\nlength = max_common_subsequence_length(\"abcde\", \"ace\")"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "response": [
+      [
+        "Describe how you would construct a JavaScript function to set a particular string as the content of an HTML element identified by its id, ensuring your implementation remains compatible with ES6 standards.",
+        "const setContentById = (id, content) => {\n  const element = document.getElementById(id);\n  if (element) {\n    element.textContent = content;\n  }\n};"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: language_type: javascript.\n## previous code\nconst numbers = [1, 2, 3, 4, 5];\nconst squaredNumbers = numbers.map(num => num ** 2);\nconsole.log(squaredNumbers);\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a JavaScript code example that utilizes the map function to apply the squaring operation to each item in a numerical array. Ensure the code is compatible with the ECMAScript 6 standard.",
+        "```javascript\nconst numbers = [1, 2, 3, 4, 5];\nconst squaredNumbers = numbers.map(num => Math.pow(num, 2));\nconsole.log(squaredNumbers);\n```"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "response": [
+      [
+        "How would you write a Python3 function to get the list of square numbers from 1 to N.",
+        "def get_squares(N):\n    return [i**2 for i in range(1, N+1)]"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: language_type: python.\n## previous code\nnumbers = [1, 2, 3, 4, 5]\ncubed_numbers = [x**3 for x in numbers]\nprint(cubed_numbers)\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Python code example that utilizes a list comprehension to apply the cubing operation to each element in a numerical list.",
+        "```python\nnumbers = [1, 2, 3, 4, 5]\ncubed_numbers = [x**3 for x in numbers]\nprint(cubed_numbers)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "response": [
+      [
+        "Develop a Java program implementing a for-loop to double every number in an integer array and print the modified array.",
+        "public class DoubleArray {\n    public static void main(String[] args) {\n        int[] numbers = {1, 2, 3, 4, 5};\n        \n        for (int i = 0; i < numbers.length; i++) {\n            numbers[i] *= 2;\n        }\n        \n        for (int num : numbers) {\n            System.out.print(num + \" \");\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "response": [
+      [
+        "Construct a C++ function employing std::transform to convert all negative values to positive in a vector of doubles.",
+        "#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <cmath>\n\nvoid convertToPositive(std::vector<double>& vec) {\n    std::transform(vec.begin(), vec.end(), vec.begin(), [](double x) { return std::fabs(x); });\n}\n\nint main() {\n    std::vector<double> values = {-3.5, 2.1, -6.7, 4.0, -1.2};\n    convertToPositive(values);\n\n    for (double val : values) {\n        std::cout << val << \" \";\n    }\n\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: language_type: haskell.\n## previous code\nabsoluteValues :: [Float] -> [Float]\nabsoluteValues = map abs\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nDesign a Haskell script using map function to calculate absolute values of elements in a list of floating-point numbers.",
+        "```haskell\nabsoluteValues :: [Float] -> [Float]\nabsoluteValues = map (\\x -> if x < 0 then -x else x)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "response": [
+      [
+        "Implement a Prolog predicate using recursion to increment each element in a list of integers by 3 and return the modified list.",
+        "increment_by_three([], []).\nincrement_by_three([H|T], [H3|T3]) :-\n    H3 is H + 3,\n    increment_by_three(T, T3)."
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "response": [
+      [
+        "Write a Rust function leveraging iterators to filter out odd numbers and square the remaining elements in a Vec<i32>.",
+        "fn process_numbers(numbers: Vec<i32>) -> Vec<i32> {\n    numbers.into_iter()\n        .filter(|&x| x % 2 == 0)\n        .map(|x| x * x)\n        .collect()\n}"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "response": [
+      [
+        "Create a Lua script utilizing anonymous functions with table traversal to reverse all string elements in a table and convert them to uppercase.",
+        "local inputTable = {\"hello\", \"world\", \"lua\", \"script\"}\nlocal resultTable = {}\n\ntable.foreach(inputTable, function(_, value)\n    table.insert(resultTable, string.upper(value:reverse()))\nend)\n\nfor _, v in ipairs(resultTable) do\n    print(v)\nend"
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: language_type: julia.\n## previous code\n# Define a Float64 array\narray = Float64[0.1, 0.5, 1.0, -0.5, -1.0]\n\n# Compute the hyperbolic tangent values using element-wise broadcasting\ntanh_values = tanh.(array)\n\nprintln(tanh_values)\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nDevelop a Julia program using element-wise broadcasting to compute hyperbolic tangent values for each entry in a Float64 array.",
+        "```julia\n# Define a Float64 array\narray = Float64[0.1, 0.5, 1.0, -0.5, -1.0]\n\n# Compute the hyperbolic tangent values using element-wise broadcasting\ntanh_values = tanh.(array)\n\nprintln(tanh_values)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "response": [
+      [
+        "Design a CoffeeScript snippet with arrow functions to generate SHA-256 hashes for each string in an array asynchronously.",
+        "crypto = require 'crypto'\n\nhashStrings = (strings) ->\n  Promise.all strings.map (str) ->\n    new Promise (resolve) ->\n      hash = crypto.createHash('sha256').update(str).digest('hex')\n      resolve hash\n\nstrings = [\"string1\", \"string2\", \"string3\"]\nhashStrings(strings).then (hashes) -> console.log hashes"
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "response": [
+      [
+        "Develop a Rust code snippet that employs the iter().map() method to compute the cube of each element in a floating-point vector, preserving the original data type in the output collection.",
+        "fn main() {\n    let numbers: Vec<f32> = vec![1.0, 2.0, 3.0, 4.0];\n    let cubes: Vec<f32> = numbers.iter().map(|&x| x.powf(3.0)).collect();\n    println!(\"{:?}\", cubes);\n}"
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "response": [
+      [
+        "Write a Haskell function that leverages the map higher-order function to convert a list of strings to uppercase using the Data.Char library, maintaining list structure and element ordering.",
+        "import Data.Char (toUpper)\n\ntoUppercaseList :: [String] -> [String]\ntoUppercaseList = map (map toUpper)"
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "response": [
+      [
+        "Implement a Prolog predicate using maplist/3 to calculate the factorial of each number in a list of integers, returning the results in a new list.",
+        "factorial(0, 1).\nfactorial(N, F) :-\n    N > 0,\n    N1 is N - 1,\n    factorial(N1, F1),\n    F is N * F1.\n\nfactorial_list(InList, OutList) :-\n    maplist(factorial, InList, OutList)."
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "response": [
+      [
+        "Develop a Java program that reads a list of names from the console and sorts them in alphabetical order before printing the sorted list.",
+        "import java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.Scanner;\n\npublic class NameSorter {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        ArrayList<String> names = new ArrayList<>();\n\n        System.out.println(\"Enter names (type 'done' to finish):\");\n        while (true) {\n            String input = scanner.nextLine();\n            if (input.equalsIgnoreCase(\"done\")) break;\n            names.add(input);\n        }\n\n        Collections.sort(names);\n\n        System.out.println(\"Sorted names:\");\n        for (String name : names) {\n            System.out.println(name);\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "response": [
+      [
+        "Develop a Java code example that implements a multi-threaded matrix multiplication. The program should generate two random matrices, compute their product using multiple threads, and display the resulting matrix. The solution must include proper synchronization to handle potential concurrency issues.",
+        "import java.util.Random;\nimport java.util.concurrent.ExecutorService;\nimport java.util.concurrent.Executors;\n\npublic class MultithreadedMatrixMultiplication {\n    private static final int ROWS = 3;\n    private static final int COLS = 3;\n    private static final int THREAD_COUNT = 4;\n\n    public static void main(String[] args) {\n        int[][] matrixA = generateMatrix(ROWS, COLS);\n        int[][] matrixB = generateMatrix(COLS, ROWS);\n        int[][] result = new int[ROWS][ROWS];\n        ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);\n\n        for (int i = 0; i < ROWS; i++) {\n            for (int j = 0; j < ROWS; j++) {\n                final int row = i;\n                final int col = j;\n                executor.execute(() -> computeCell(matrixA, matrixB, result, row, col));\n            }\n        }\n        executor.shutdown();\n        while (!executor.isTerminated()) {\n            // Wait for threads to finish\n        }\n        displayMatrix(result);\n    }\n\n    private static int[][] generateMatrix(int rows, int cols) {\n        Random random = new Random();\n        int[][] matrix = new int[rows][cols];\n        for (int i = 0; i < rows; i++) {\n            for (int j = 0; j < cols; j++) {\n                matrix[i][j] = random.nextInt(10);\n            }\n        }\n        return matrix;\n    }\n\n    private static synchronized void computeCell(int[][] matrixA, int[][] matrixB, int[][] result, int row, int col) {\n        result[row][col] = 0;\n        for (int k = 0; k < matrixB.length; k++) {\n            result[row][col] += matrixA[row][k] * matrixB[k][col];\n        }\n    }\n\n    private static void displayMatrix(int[][] matrix) {\n        for (int[] row : matrix) {\n            for (int value : row) {\n                System.out.print(value + \" \");\n            }\n            System.out.println();\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "response": [
+      [
+        "Develop a Python script that reads a CSV file containing sales data (with columns \"Region\", \"Product\", and \"Sales\"), calculates the total sales for each region, and writes the aggregated results into a new CSV file. The script must include proper error handling for file operations and data conversion.",
+        "import csv\n\ndef calculate_total_sales(input_file, output_file):\n    try:\n        sales_data = {}\n        with open(input_file, mode='r') as infile:\n            reader = csv.DictReader(infile)\n            for row in reader:\n                region = row['Region']\n                sales = float(row['Sales'])\n                if region in sales_data:\n                    sales_data[region] += sales\n                else:\n                    sales_data[region] = sales\n    except FileNotFoundError:\n        print(\"Error: The input file was not found.\")\n        return\n    except KeyError as e:\n        print(f\"Error: Missing expected column - {e}\")\n        return\n    except ValueError as e:\n        print(f\"Error: Data conversion error - {e}\")\n        return\n\n    try:\n        with open(output_file, mode='w', newline='') as outfile:\n            writer = csv.writer(outfile)\n            writer.writerow(['Region', 'Total Sales'])\n            for region, total_sales in sales_data.items():\n                writer.writerow([region, total_sales])\n    except IOError:\n        print(\"Error: Could not write to output file.\")\n\n# Example usage:\n# calculate_total_sales('sales_data.csv', 'aggregated_sales.csv')"
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "response": [
+      [
+        "Design a Rust library function named \"parse_log\" that takes a file path to a log file, reads the file, and extracts all unique IP addresses found in the logs. The function should return a sorted vector of IP addresses (as strings) wrapped in a Result type to gracefully handle file I/O errors.",
+        "use std::collections::HashSet;\nuse std::fs::File;\nuse std::io::{self, BufRead};\nuse std::path::Path;\n\npub fn parse_log(file_path: &str) -> Result<Vec<String>, io::Error> {\n    let file = File::open(file_path)?;\n    let reader = io::BufReader::new(file);\n    let mut ip_set = HashSet::new();\n\n    for line in reader.lines() {\n        let line = line?;\n        for word in line.split_whitespace() {\n            if word.parse::<std::net::IpAddr>().is_ok() {\n                ip_set.insert(word.to_string());\n            }\n        }\n    }\n\n    let mut ip_list: Vec<String> = ip_set.into_iter().collect();\n    ip_list.sort();\n    Ok(ip_list)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "response": [
+      [
+        "Implement a Java program that connects to a PostgreSQL database, retrieves all records from an \"employees\" table, and prints the results to the console.",
+        "import java.sql.Connection;\nimport java.sql.DriverManager;\nimport java.sql.ResultSet;\nimport java.sql.Statement;\n\npublic class Main {\n    public static void main(String[] args) {\n        String url = \"jdbc:postgresql://localhost:5432/your_database\";\n        String user = \"your_username\";\n        String password = \"your_password\";\n        \n        try {\n            Connection connection = DriverManager.getConnection(url, user, password);\n            Statement statement = connection.createStatement();\n            String query = \"SELECT * FROM employees\";\n            ResultSet resultSet = statement.executeQuery(query);\n            \n            while (resultSet.next()) {\n                System.out.println(\"ID: \" + resultSet.getInt(\"id\") + \", Name: \" + resultSet.getString(\"name\"));\n            }\n            \n            resultSet.close();\n            statement.close();\n            connection.close();\n        } catch (Exception e) {\n            e.printStackTrace();\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "response": [
+      [
+        "Create a Prolog program implementing depth-first search to find all paths between two nodes in a directed graph represented by edge facts.",
+        "% Directed graph represented by edge facts\nedge(a, b).\nedge(a, c).\nedge(b, d).\nedge(c, d).\nedge(c, e).\nedge(d, f).\nedge(e, f).\n\n% Depth-first search to find all paths between two nodes\npath(X, Y, Path) :-\n    dfs(X, Y, [X], Path).\n\ndfs(X, X, Visited, Path) :-\n    reverse(Visited, Path).\n\ndfs(X, Y, Visited, Path) :-\n    edge(X, Z),\n    \\+ member(Z, Visited),\n    dfs(Z, Y, [Z|Visited], Path)."
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "response": [
+      [
+        "Write a Python script that connects to a SQLite database, creates a table for storing user profiles (with fields: id, name, and email), inserts at least three sample records, and queries the table to display all records.",
+        "import sqlite3\n\n# Connect to the SQLite database (or create it if it doesn't exist)\nconn = sqlite3.connect('user_profiles.db')\n\n# Create a cursor object\ncur = conn.cursor()\n\n# Create a table for storing user profiles\ncur.execute('''\nCREATE TABLE IF NOT EXISTS profiles (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    name TEXT NOT NULL,\n    email TEXT NOT NULL\n)\n''')\n\n# Insert sample records\ncur.execute(\"INSERT INTO profiles (name, email) VALUES ('Alice', 'alice@example.com')\")\ncur.execute(\"INSERT INTO profiles (name, email) VALUES ('Bob', 'bob@example.com')\")\ncur.execute(\"INSERT INTO profiles (name, email) VALUES ('Charlie', 'charlie@example.com')\")\n\n# Commit the changes\nconn.commit()\n\n# Query the table to display all records\ncur.execute(\"SELECT * FROM profiles\")\nrecords = cur.fetchall()\n\n# Display all records\nfor record in records:\n    print(record)\n\n# Close the connection\nconn.close()"
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "response": [
+      [
+        "Develop a Python script that sends a GET request to a public API endpoint (e.g., \"https://jsonplaceholder.typicode.com/posts\"), retrieves the JSON data containing a list of posts, and prints the title of the post with the highest id. The script should include proper error handling for HTTP errors and exceptions.",
+        "import requests\n\ntry:\n    response = requests.get(\"https://jsonplaceholder.typicode.com/posts\")\n    response.raise_for_status()  # Raise HTTPError for bad responses\n    posts = response.json()\n    if posts:\n        highest_id_post = max(posts, key=lambda post: post['id'])\n        print(highest_id_post['title'])\n    else:\n        print(\"No posts found.\")\nexcept requests.exceptions.RequestException as e:\n    print(f\"An error occurred: {e}\")"
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "response": [
+      [
+        "Develop a Rust program that reads a text file from disk, processes its content to count the occurrence of each unique word (ignoring case and punctuation), and then displays the top five most frequently occurring words along with their counts. The program should handle errors gracefully (e.g., file not found).",
+        "use std::collections::HashMap;\nuse std::fs::File;\nuse std::io::{self, BufRead, BufReader};\nuse std::path::Path;\n\nfn main() {\n    let file_path = \"input.txt\";\n\n    if let Err(e) = process_file(file_path) {\n        eprintln!(\"Error: {}\", e);\n    }\n}\n\nfn process_file(file_path: &str) -> Result<(), Box<dyn std::error::Error>> {\n    let path = Path::new(file_path);\n    let file = File::open(&path).map_err(|_| \"File not found\")?;\n    let reader = BufReader::new(file);\n\n    let mut word_counts = HashMap::new();\n\n    for line in reader.lines() {\n        let line = line?;\n        for word in line.split_whitespace() {\n            let word = word\n                .to_lowercase()\n                .chars()\n                .filter(|c| c.is_alphanumeric())\n                .collect::<String>();\n            if !word.is_empty() {\n                *word_counts.entry(word).or_insert(0) += 1;\n            }\n        }\n    }\n\n    let mut word_count_vec: Vec<_> = word_counts.into_iter().collect();\n    word_count_vec.sort_by(|a, b| b.1.cmp(&a.1));\n\n    println!(\"Top 5 most frequent words:\");\n    for (word, count) in word_count_vec.into_iter().take(5) {\n        println!(\"{}: {}\", word, count);\n    }\n\n    Ok(())\n}"
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "response": [
+      [
+        "Implement a C++ program that reads a list of integers from a text file, sorts them in descending order using a custom comparator, and writes the sorted integers to a new file. The program should handle file I/O errors gracefully.",
+        "#include <iostream>\n#include <fstream>\n#include <vector>\n#include <algorithm>\n\nint main() {\n    std::ifstream inputFile(\"input.txt\");\n    if (!inputFile) {\n        std::cerr << \"Error: Cannot open input file.\\n\";\n        return 1;\n    }\n\n    std::vector<int> numbers;\n    int number;\n    while (inputFile >> number) {\n        numbers.push_back(number);\n    }\n    inputFile.close();\n\n    std::sort(numbers.begin(), numbers.end(), [](int a, int b) { return a > b; });\n\n    std::ofstream outputFile(\"output.txt\");\n    if (!outputFile) {\n        std::cerr << \"Error: Cannot open output file.\\n\";\n        return 1;\n    }\n\n    for (int num : numbers) {\n        outputFile << num << \"\\n\";\n    }\n    outputFile.close();\n\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "response": [
+      [
+        "Write a Lua script using coroutines with proper error handling and synchronization primitives to concurrently simulate sensor data aggregation from three different sources (temperature, pressure, motion) with randomized delay intervals (100-2000ms), implementing data validation, timeout handling, and graceful coroutine termination.",
+        "local function random_delay()\n    return math.random(100, 2000) / 1000\nend\n\nlocal function validate_data(sensor, data)\n    if sensor == \"temperature\" then\n        return data >= -50 and data <= 50\n    elseif sensor == \"pressure\" then\n        return data >= 900 and data <= 1100\n    elseif sensor == \"motion\" then\n        return data >= 0 and data <= 100\n    end\n    return false\nend\n\nlocal function sensor_reader(sensor, aggregator, timeout)\n    return coroutine.create(function()\n        while true do\n            local delay = random_delay()\n            if delay > timeout then\n                error(sensor .. \" sensor timed out\")\n            end\n            os.execute(\"sleep \" .. delay)\n            local data = math.random(-100, 2000) -- Randomized data for simulation\n            if validate_data(sensor, data) then\n                aggregator(sensor, data)\n            else\n                print(sensor .. \" sensor produced invalid data: \" .. data)\n            end\n        end\n    end)\nend\n\nlocal function aggregator(sensor, data)\n    print(\"Aggregated \" .. sensor .. \" data: \" .. data)\nend\n\nlocal function manager()\n    local timeout = 2 -- Timeout in seconds\n    local sensors = {\n        sensor_reader(\"temperature\", aggregator, timeout),\n        sensor_reader(\"pressure\", aggregator, timeout),\n        sensor_reader(\"motion\", aggregator, timeout)\n    }\n\n    while true do\n        for _, co in ipairs(sensors) do\n            local status, err = coroutine.resume(co)\n            if not status then\n                print(\"Error: \" .. err)\n                return\n            end\n        end\n    end\nend\n\nmath.randomseed(os.time())\nmanager()"
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "response": [
+      [
+        "Create a CoffeeScript decorator using Node.js crypto module that memoizes function results in LRU cache with size constraints, implementing SHA-256 hashed argument signatures with JSON serialization/deserialization, circular reference handling, and cache invalidation based on TTL (time-to-live) and manual flush capabilities.",
+        "crypto = require 'crypto'\nLRU = require 'lru-cache'\n\nmemoize = (ttl, cacheSize) ->\n  cache = new LRU max: cacheSize, maxAge: ttl\n  \n  hashArgs = (args) ->\n    try\n      json = JSON.stringify args, (key, value) ->\n        if typeof value is 'object' and value isnt null\n          if '_seen' of this then this._seen.push value\n          value\n        else value\n        , []\n      crypto.createHash('sha256').update(json).digest('hex')\n    catch error\n      throw new Error('Failed to hash arguments')\n  \n  (target, name, descriptor) ->\n    originalFn = descriptor.value\n    descriptor.value = ->\n      key = hashArgs(arguments)\n      if cache.has key\n        cache.get key\n      else\n        result = originalFn.apply this, arguments\n        cache.set key, result\n        result\n    \n    descriptor.value.flushCache = ->\n      cache.reset()\n    \n    descriptor.value\n  \nmodule.exports = memoize"
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "response": [
+      [
+        "Develop a Haskell type-safe state transition system using monad transformers (StateT/ReaderT/ExceptT) with formal model checking to model secure ATM transaction workflows including PIN verification, transaction logging, withdrawal limits, balance integrity checks, and rollback capabilities, with algebraic data types enforcing valid state transitions and QuickCheck property tests.",
+        "{-# LANGUAGE GADTs #-}\n{-# LANGUAGE FlexibleContexts #-}\n\nmodule SecureATM where\n\nimport Control.Monad.State\nimport Control.Monad.Reader\nimport Control.Monad.Except\nimport Test.QuickCheck\n\n-- Define algebraic data types\ndata ATMState\n  = Idle\n  | AwaitingPIN\n  | Authenticated\n  | TransactionInProgress\n  deriving (Eq, Show)\n\ndata ATMError\n  = InvalidPIN\n  | WithdrawalLimitExceeded\n  | InsufficientFunds\n  | InvalidOperation\n  deriving (Eq, Show)\n\ndata ATMLog = ATMLog\n  { logMessage :: String\n  } deriving (Eq, Show)\n\ndata ATMConfig = ATMConfig\n  { maxWithdrawalLimit :: Int\n  } deriving (Show)\n\ndata ATMEnv = ATMEnv\n  { envConfig :: ATMConfig\n  , envUserBalance :: Int\n  } deriving (Show)\n\n-- Type-safe state transition system\ntype ATMWorkflow a =\n  ReaderT ATMEnv (StateT (ATMState, [ATMLog]) (Except ATMError)) a\n\n-- PIN verification\nverifyPIN :: String -> ATMWorkflow ()\nverifyPIN \"1234\" = do\n  (state, logs) <- get\n  case state of\n    Idle -> put (Authenticated, logs ++ [ATMLog \"PIN verified\"])\n    _    -> throwError InvalidOperation\nverifyPIN _ = throwError InvalidPIN\n\n-- Withdrawal\nwithdraw :: Int -> ATMWorkflow ()\nwithdraw amount = do\n  (state, logs) <- get\n  ATMEnv {envConfig = ATMConfig {maxWithdrawalLimit}, envUserBalance} <- ask\n  when (state /= Authenticated) $ throwError InvalidOperation\n  when (amount > maxWithdrawalLimit) $ throwError WithdrawalLimitExceeded\n  when (amount > envUserBalance) $ throwError InsufficientFunds\n  put (TransactionInProgress, logs ++ [ATMLog $ \"Withdrew $\" ++ show amount])\n  modifyEnv (\\env -> env {envUserBalance = envUserBalance - amount})\n  put (Authenticated, logs)\n\n-- Rollback\nrollback :: ATMWorkflow ()\nrollback = do\n  (state, logs) <- get\n  when (state /= TransactionInProgress) $ throwError InvalidOperation\n  put (Authenticated, logs ++ [ATMLog \"Transaction rolled back\"])\n\n-- Utility Helpers\nmodifyEnv :: (ATMEnv -> ATMEnv) -> ATMWorkflow ()\nmodifyEnv f = do\n  env <- ask\n  local f (return ())\n\n-- QuickCheck Properties\nprop_validPIN :: String -> Bool\nprop_validPIN pin = runExcept (evalStateT (runReaderT (verifyPIN pin) defaultEnv) initialState) == (if pin == \"1234\" then Right () else Left InvalidPIN)\n  where\n    defaultEnv = ATMEnv (ATMConfig 500) 1000\n    initialState = (Idle, [])\n\nprop_withdrawLimits :: Int -> Bool\nprop_withdrawLimits amount = case res of\n  Right _  -> amount <= 500 && amount <= 1000\n  Left err -> err == WithdrawalLimitExceeded || err == InsufficientFunds\n  where\n    defaultEnv = ATMEnv (ATMConfig 500) 1000\n    initialState = (Authenticated, [])\n    res = runExcept (evalStateT (runReaderT (withdraw amount) defaultEnv) initialState)"
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "response": [
+      [
+        "Create a Java code example that reads an input text file named \"products.txt\", where each line contains a product name and its price separated by a comma. The program should filter out products priced below $20, sort the remaining products by price in descending order, and print the sorted list to the console.",
+        "import java.io.*;\nimport java.util.*;\nimport java.util.stream.Collectors;\n\npublic class ProductFilter {\n    public static void main(String[] args) {\n        List<Product> products = new ArrayList<>();\n        \n        try (BufferedReader br = new BufferedReader(new FileReader(\"products.txt\"))) {\n            String line;\n            while ((line = br.readLine()) != null) {\n                String[] parts = line.split(\",\");\n                String name = parts[0].trim();\n                double price = Double.parseDouble(parts[1].trim());\n                if (price >= 20) {\n                    products.add(new Product(name, price));\n                }\n            }\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n        \n        products.sort((p1, p2) -> Double.compare(p2.getPrice(), p1.getPrice()));\n        \n        for (Product product : products) {\n            System.out.println(product.getName() + \", \" + product.getPrice());\n        }\n    }\n}\n\nclass Product {\n    private String name;\n    private double price;\n\n    public Product(String name, double price) {\n        this.name = name;\n        this.price = price;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public double getPrice() {\n        return price;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "response": [
+      [
+        "Develop a Java program that utilizes multithreading to compute the sum of an integer array. The program should divide the array into multiple segments, calculate the sum of each segment concurrently using threads, and then combine the results to display the total sum.",
+        "import java.util.concurrent.atomic.AtomicInteger;\n\npublic class ArraySumWithThreads {\n    public static void main(String[] args) {\n        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};\n        int numThreads = 4;\n\n        AtomicInteger totalSum = new AtomicInteger(0);\n        int segmentSize = (int) Math.ceil((double) array.length / numThreads);\n        Thread[] threads = new Thread[numThreads];\n\n        for (int i = 0; i < numThreads; i++) {\n            int start = i * segmentSize;\n            int end = Math.min(start + segmentSize, array.length);\n\n            threads[i] = new Thread(() -> {\n                int localSum = 0;\n                for (int j = start; j < end; j++) {\n                    localSum += array[j];\n                }\n                totalSum.addAndGet(localSum);\n            });\n            threads[i].start();\n        }\n\n        for (Thread thread : threads) {\n            try {\n                thread.join();\n            } catch (InterruptedException e) {\n                e.printStackTrace();\n            }\n        }\n\n        System.out.println(\"Total Sum: \" + totalSum.get());\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 33,
+    "response": [
+      [
+        "Implement a C++ program that reads a text file containing a list of product names and their prices, calculates the total cost, and outputs the result to the console. Ensure the program handles file input errors gracefully.",
+        "#include <iostream>\n#include <fstream>\n#include <string>\n\nint main() {\n    std::ifstream file(\"products.txt\");\n    if (!file) {\n        std::cerr << \"Error opening file!\" << std::endl;\n        return 1;\n    }\n\n    std::string productName;\n    double price, totalCost = 0.0;\n\n    while (file >> productName >> price) {\n        totalCost += price;\n    }\n\n    if (file.bad()) {\n        std::cerr << \"Error reading file!\" << std::endl;\n        return 1;\n    }\n\n    std::cout << \"Total cost: \" << totalCost << std::endl;\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "response": [
+      [
+        "Create a Haskell program that defines a binary tree data structure. Implement functions to insert nodes, search for a specific value, and traverse the tree in an in-order manner. The program should then allow the user to interactively build a tree by inserting nodes and perform a search for a given value.",
+        "import Data.Maybe (isJust, fromJust)\n\ndata Tree a = Empty | Node a (Tree a) (Tree a) deriving Show\n\ninsert :: (Ord a) => a -> Tree a -> Tree a\ninsert x Empty = Node x Empty Empty\ninsert x (Node a left right)\n    | x == a = Node x left right\n    | x < a = Node a (insert x left) right\n    | x > a = Node a left (insert x right)\n\nsearch :: (Ord a) => a -> Tree a -> Bool\nsearch _ Empty = False\nsearch x (Node a left right)\n    | x == a = True\n    | x < a = search x left\n    | x > a = search x right\n\ninOrder :: Tree a -> [a]\ninOrder Empty = []\ninOrder (Node a left right) = inOrder left ++ [a] ++ inOrder right\n\nmain :: IO ()\nmain = do\n    let loop tree = do\n            putStrLn \"Enter a number to insert, or type 'search <number>' to search the tree:\"\n            input <- getLine\n            let command = words input\n            if null command\n                then loop tree\n                else case head command of\n                    \"search\" -> do\n                        let x = read (command !! 1) :: Int\n                        putStrLn $ if search x tree then \"Found\" else \"Not Found\"\n                        loop tree\n                    _ -> do\n                        let x = read (head command) :: Int\n                        let newTree = insert x tree\n                        putStrLn $ \"In-order traversal: \" ++ show (inOrder newTree)\n                        loop newTree\n    loop Empty"
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "response": [
+      [
+        "Write a Rust program that implements a simple multi-threaded web server. The server should handle HTTP GET requests and return a static \"Hello, World!\" message. Use Rust's async/await functionality for handling multiple concurrent requests efficiently.",
+        "use tokio::net::TcpListener;\nuse tokio::io::{AsyncReadExt, AsyncWriteExt};\nuse std::sync::Arc;\n\n#[tokio::main]\nasync fn main() -> Result<(), Box<dyn std::error::Error>> {\n    let listener = TcpListener::bind(\"127.0.0.1:8080\").await?;\n    println!(\"Server running on 127.0.0.1:8080\");\n\n    loop {\n        let (mut socket, _) = listener.accept().await?;\n        tokio::spawn(async move {\n            let mut buffer = [0; 1024];\n            let _ = socket.read(&mut buffer).await;\n\n            let response = \"HTTP/1.1 200 OK\\r\\nContent-Length: 13\\r\\n\\r\\nHello, World!\";\n            let _ = socket.write_all(response.as_bytes()).await;\n            let _ = socket.flush().await;\n        });\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "response": [
+      [
+        "Create a Haskell program that implements a simple functional calculator. The calculator should support basic operations like addition, subtraction, multiplication, and division. It should take input from the user as a string and output the result of the operation.",
+        "import Text.Read (readMaybe)\nimport Data.List (intercalate)\n\nmain :: IO ()\nmain = do\n    putStrLn \"Enter a calculation (e.g., \\\"3 + 4\\\", \\\"10 / 2\\\"):\"\n    input <- getLine\n    case parseCalculation input of\n        Just result -> putStrLn $ \"Result: \" ++ show result\n        Nothing     -> putStrLn \"Invalid input. Please use the format: number operator number.\"\n\nparseCalculation :: String -> Maybe Double\nparseCalculation input = case words input of\n    [x, op, y] -> do\n        num1 <- readMaybe x :: Maybe Double\n        num2 <- readMaybe y :: Maybe Double\n        calculate op num1 num2\n    _          -> Nothing\n\ncalculate :: String -> Double -> Double -> Maybe Double\ncalculate \"+\" x y = Just (x + y)\ncalculate \"-\" x y = Just (x - y)\ncalculate \"*\" x y = Just (x * y)\ncalculate \"/\" x y = if y /= 0 then Just (x / y) else Nothing\ncalculate _   _ _ = Nothing"
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "response": [
+      [
+        "Create a Prolog program that defines a family tree, including parent-child relationships. Implement a rule to check if one person is an ancestor of another. Provide sample queries to test this rule.",
+        "% Facts: parent relationships in the family.\nparent(john, mary).\nparent(mary, susan).\nparent(susan, tom).\nparent(james, lily).\nparent(lily, susan).\nparent(mark, john).\n\n% Rule: X is an ancestor of Y if X is a parent of Y, or if X is a parent of Z and Z is an ancestor of Y.\nancestor(X, Y) :- parent(X, Y).\nancestor(X, Y) :- parent(X, Z), ancestor(Z, Y).\n\n% Sample queries:\n% ?- ancestor(john, tom).\n% ?- ancestor(mark, tom).\n% ?- ancestor(james, mary)."
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "response": [
+      [
+        "Create a Lua script that fetches data from an API endpoint using the HTTP GET method and prints the response. Ensure proper error handling for request failures.",
+        "local http = require(\"socket.http\")\nlocal ltn12 = require(\"ltn12\")\n\nlocal function fetchData(endpoint)\n    local response = {}\n    local res, code, headers, status = http.request{\n        url = endpoint,\n        sink = ltn12.sink.table(response)\n    }\n\n    if not res then\n        print(\"Error fetching data: \" .. tostring(code))\n        return\n    end\n\n    print(\"Response Code: \" .. tostring(code))\n    print(\"Response: \" .. table.concat(response))\nend\n\nlocal apiEndpoint = \"http://example.com/api\"\nfetchData(apiEndpoint)"
+      ]
+    ]
+  },
+  {
+    "id": 39,
+    "response": [
+      [
+        "Create a Rust iterator chain that uses map to safely parse a vector of string slices into integers, handling parse errors by converting them to -1 and logging \"Invalid input\" via closure-captured logger.",
+        "use std::sync::Mutex;\n\nfn main() {\n    let logger = Mutex::new(vec![]); // Example logger as a vector of strings\n    \n    let input = vec![\"42\", \"abc\", \"7\"];\n    \n    let parsed: Vec<i32> = input\n        .into_iter()\n        .map(|s| {\n            s.parse::<i32>().unwrap_or_else(|_| {\n                logger.lock().unwrap().push(\"Invalid input\".to_string());\n                -1\n            })\n        })\n        .collect();\n\n    // Example: Print results\n    println!(\"{:?}\", parsed); // Outputs: [42, -1, 7]\n    println!(\"{:?}\", logger.lock().unwrap()); // Outputs: [\"Invalid input\"]\n}"
+      ]
+    ]
+  },
+  {
+    "id": 40,
+    "response": [
+      [
+        "Implement a Haskell lazy infinite list using map that generates triangular numbers with memoization, then extract the first 20 elements strictly.",
+        "triangularNumbers :: [Int]\ntriangularNumbers = map (\\n -> n * (n + 1) `div` 2) [1..]\n\nfirst20Triangular :: [Int]\nfirst20Triangular = take 20 triangularNumbers"
+      ]
+    ]
+  },
+  {
+    "id": 41,
+    "response": [
+      [
+        "Build a Prolog meta-predicate using maplist/2 that recursively checks if all elements in a nested list structure are prime numbers (depth-first traversal).",
+        ":- use_module(library(lists)).\n\nis_prime(2).\nis_prime(N) :-\n    N > 2,\n    N mod 2 =\\= 0,\n    \\+ has_factor(N, 3).\n\nhas_factor(N, F) :-\n    N mod F =:= 0.\nhas_factor(N, F) :-\n    F * F < N,\n    F2 is F + 2,\n    has_factor(N, F2).\n\nnested_primes([]).\nnested_primes([H|T]) :-\n    (   is_list(H)\n    ->  nested_primes(H)\n    ;   is_prime(H)\n    ),\n    nested_primes(T).\n\nmaplist_nested_primes(Meta) :-\n    maplist(nested_primes, Meta)."
+      ]
+    ]
+  },
+  {
+    "id": 42,
+    "response": [
+      [
+        "Design a Julia parallel @distributed map pipeline that processes 10,000 DNA sequences simultaneously to count GC-content percentages across 4 CPU cores.",
+        "using Distributed\n\naddprocs(4)\n\n@everywhere function gc_content(seq)\n    gc_count = count(c -> c == 'G' || c == 'C', seq)\n    return gc_count / length(seq) * 100\nend\n\nDNA_sequences = [rand(['A', 'T', 'C', 'G'], 100) for _ in 1:10000]\n\ngc_contents = @distributed (append!) for seq in DNA_sequences\n    gc_content(seq)\nend"
+      ]
+    ]
+  },
+  {
+    "id": 43,
+    "response": [
+      [
+        "Write CoffeeScript code using chained map operations to transform jQuery-selected DOM elements into React component props while preserving event delegation.",
+        "$elements = $('.some-selector')\n\nprops = $elements.map (i, el) ->\n  $(el).data()\n.map (i, data) ->\n  React.createElement 'SomeComponent', data"
+      ]
+    ]
+  },
+  {
+    "id": 44,
+    "response": [
+      [
+        "Implement a Lua coroutine scheduler that uses a map-like function to asynchronously fetch and process multiple URLs, storing results in a table with error handling.",
+        "local http = require(\"socket.http\")\n\nfunction fetch_url(url)\n    return coroutine.create(function()\n        local response, err = http.request(url)\n        if not response then\n            coroutine.yield(false, err)\n        else\n            coroutine.yield(true, response)\n        end\n    end)\nend\n\nfunction coroutine_scheduler(urls)\n    local results = {}\n    local coroutines = {}\n\n    for _, url in ipairs(urls) do\n        table.insert(coroutines, fetch_url(url))\n    end\n\n    while #coroutines > 0 do\n        for i = #coroutines, 1, -1 do\n            local co = coroutines[i]\n            local success, result, err = coroutine.resume(co)\n            \n            if coroutine.status(co) == \"dead\" then\n                if success then\n                    results[urls[i]] = result\n                else\n                    results[urls[i]] = \"Error: \" .. err\n                end\n                table.remove(coroutines, i)\n            end\n        end\n    end\n\n    return results\nend\n\nlocal urls = {\"http://example.com\", \"http://invalid-url.com\"}\nlocal results = coroutine_scheduler(urls)\n\nfor url, result in pairs(results) do\n    print(url, result)\nend"
+      ]
+    ]
+  },
+  {
+    "id": 45,
+    "response": [
+      [
+        "Create a C++ template metaprogramming solution using std::transform and constexpr to generate CRC32 checksums for fixed-size arrays at compile-time.",
+        "#include <array>\n#include <cstdint>\n#include <cstddef>\n\nconstexpr uint32_t crc32_table[256] = []{\n    constexpr uint32_t polynomial = 0xEDB88320;\n    std::array<uint32_t, 256> table{};\n    for (size_t i = 0; i < 256; ++i) {\n        uint32_t crc = i;\n        for (size_t j = 0; j < 8; ++j) {\n            crc = (crc >> 1) ^ (polynomial * (crc & 1));\n        }\n        table[i] = crc;\n    }\n    return table;\n}();\n\nconstexpr uint32_t crc32_impl(const char* data, size_t size, uint32_t crc = 0xFFFFFFFF) {\n    for (size_t i = 0; i < size; ++i) {\n        crc = (crc >> 8) ^ crc32_table[(crc ^ static_cast<uint8_t>(data[i])) & 0xFF];\n    }\n    return crc ^ 0xFFFFFFFF;\n}\n\ntemplate <size_t N>\nconstexpr uint32_t crc32(const std::array<char, N>& arr) {\n    return crc32_impl(arr.data(), N);\n}\n\n// Example usage\nconstexpr auto data = std::to_array(\"Hello, world!\");\nconstexpr uint32_t checksum = crc32(data);"
+      ]
+    ]
+  },
+  {
+    "id": 46,
+    "response": [
+      [
+        "Develop a Java parallel stream pipeline with map operations to analyze 1 million sensor readings, detecting anomalies using thread-safe atomic counters.",
+        "import java.util.List;\nimport java.util.concurrent.atomic.AtomicInteger;\nimport java.util.stream.Collectors;\nimport java.util.stream.IntStream;\n\npublic class SensorAnalysis {\n    public static void main(String[] args) {\n        List<Integer> sensorReadings = IntStream.range(0, 1_000_000).boxed().collect(Collectors.toList());\n        AtomicInteger anomalyCounter = new AtomicInteger(0);\n\n        sensorReadings.parallelStream()\n            .map(reading -> {\n                // Detect anomaly logic (e.g., reading > threshold)\n                if (Math.random() < 0.001) { // Random anomaly example\n                    anomalyCounter.incrementAndGet();\n                }\n                return reading;\n            }).collect(Collectors.toList());\n\n        System.out.println(\"Number of anomalies detected: \" + anomalyCounter.get());\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 47,
+    "response": [
+      [
+        "Build a Haskell type-safe ETL pipeline using functor maps to transform JSON ASTs into SQL queries with compile-time schema validation.",
+        "{-# LANGUAGE DeriveGeneric #-}\n{-# LANGUAGE OverloadedStrings #-}\n\nimport Data.Aeson\nimport GHC.Generics\nimport Data.Text (Text)\nimport qualified Data.HashMap.Strict as HM\nimport Data.Functor.Identity\n\n-- Define JSON AST\ndata JsonAST = JsonValue Value | JsonObject (HM.HashMap Text JsonAST) deriving (Generic, Show)\n\ninstance FromJSON JsonAST where\n  parseJSON v = JsonValue <$> parseJSON v\n\n-- Define SQL query\nnewtype SqlQuery = SqlQuery Text deriving (Show)\n\n-- Define a schema with compile-time validation\ndata SchemaField = SchemaField Text Text deriving (Show)\ndata Schema = Schema [SchemaField] deriving (Show)\n\n-- Functor map over JsonAST\ninstance Functor JsonAST where\n  fmap f (JsonValue v) = case f (Identity v) of Identity v' -> JsonValue v'\n  fmap f (JsonObject obj) = JsonObject $ HM.map (fmap f) obj\n\n-- Compile-time schema validation\nvalidateSchema :: Schema -> JsonAST -> Either String ()\nvalidateSchema (Schema fields) (JsonObject obj) = mapM_ validateField fields\n  where\n    validateField (SchemaField key _) =\n      case HM.lookup key obj of\n        Nothing -> Left $ \"Field \" ++ show key ++ \" missing in JSON\"\n        Just _  -> Right ()\nvalidateSchema _ _ = Left \"Invalid JSON structure for schema\"\n\n-- Transformation function\ntransformToSQL :: Schema -> JsonAST -> Either String SqlQuery\ntransformToSQL schema jsonAst = do\n  validateSchema schema jsonAst\n  return $ SqlQuery \"SELECT * FROM table\"\n\n-- Example usage\nexampleJson :: JsonAST\nexampleJson = JsonObject $ HM.fromList [(\"name\", JsonValue (String \"Haskell\"))]\n\nschema :: Schema\nschema = Schema [SchemaField \"name\" \"STRING\"]\n\nmain :: IO ()\nmain = case transformToSQL schema exampleJson of\n  Left err -> putStrLn $ \"Error: \" ++ err\n  Right sql -> print sql"
+      ]
+    ]
+  },
+  {
+    "id": 48,
+    "response": [
+      [
+        "Design a Prolog constraint solver using maplist/2 that generates valid chemical compound formulas adhering to valence rules across nested molecular structures.",
+        ":- use_module(library(clpfd)).\n\nvalid_formula(Atoms) :-\n    maplist(valid_atom, Atoms).\n\nvalid_atom(atom(Element, Valence, Bonds)) :-\n    element_valence(Element, Valence),\n    sum_list(Bonds, Sum),\n    Sum #=< Valence.\n\nelement_valence(h, 1).\nelement_valence(o, 2).\nelement_valence(c, 4). \nelement_valence(n, 3).\n\ncompound_formula(Compounds) :-\n    maplist(valid_formula, Compounds)."
+      ]
+    ]
+  },
+  {
+    "id": 49,
+    "response": [
+      [
+        "Create a Julia GPU-accelerated map kernel using CUDA.jl to compute Mandelbrot set visualizations in parallel across 10,000×10,000 pixel grids.",
+        "using CUDA\n\nfunction mandelbrot_kernel(image, width, height, max_iter)\n    i = threadIdx().x + (blockIdx().x - 1) * blockDim().x\n    j = threadIdx().y + (blockIdx().y - 1) * blockDim().y\n\n    if i <= width && j <= height\n        x0 = (i - 1) * 3.5 / width - 2.5\n        y0 = (j - 1) * 2.0 / height - 1.0\n        x, y = 0.0f0, 0.0f0\n        iter = 0\n\n        while x * x + y * y <= 4.0f0 && iter < max_iter\n            x_new = x * x - y * y + x0\n            y = 2.0f0 * x * y + y0\n            x = x_new\n            iter += 1\n        end\n\n        image[j, i] = iter\n    end\nend\n\nfunction compute_mandelbrot(width, height, max_iter)\n    image = CUDA.fill(UInt8(0), height, width)\n    threads = (16, 16)\n    blocks = (cld(width, threads[1]), cld(height, threads[2]))\n\n    @cuda threads=threads blocks=blocks mandelbrot_kernel(image, width, height, max_iter)\n\n    return Array(image)\nend\n\nwidth, height = 10_000, 10_000\nmax_iter = 256\nmandelbrot_image = compute_mandelbrot(width, height, max_iter)"
+      ]
+    ]
+  },
+  {
+    "id": 50,
+    "response": [
+      [
+        "Write CoffeeScript code using nested map operations to transform GraphQL response data into Vue 3 reactive objects with computed property caching.",
+        "{ reactive, computed } = require 'vue'\n\ntransformData = (graphqlData) ->\n  reactiveItems = graphqlData.map (item) ->\n    reactive(\n      id: item.id\n      title: item.title\n      details: computed(() -> item.details.toUpperCase())\n    )\n\n  reactiveItems.map (reactiveItem) ->\n    reactive reactiveItem\n\ngraphqlResponse = [\n  { id: 1, title: 'Item 1', details: 'info1' }\n  { id: 2, title: 'Item 2', details: 'info2' }\n]\n\nvueReactiveObjects = transformData(graphqlResponse)"
+      ]
+    ]
+  },
+  {
+    "id": 51,
+    "response": [
+      [
+        "Implement a Rust async task manager using map on futures::stream to process IoT device telemetry with backpressure control and tokio runtime.",
+        "use tokio::stream::StreamExt;\nuse futures::stream;\nuse tokio::runtime::Runtime;\n\n#[tokio::main]\nasync fn main() {\n    let telemetry_data = vec![\n        \"device1: temperature: 20\",\n        \"device2: humidity: 30\",\n        \"device3: pressure: 1013\",\n    ];\n\n    let task_stream = stream::iter(telemetry_data)\n        .map(|data| async move {\n            // Simulate processing of telemetry data\n            println!(\"Processing: {}\", data);\n            // Assume some processing delay\n            tokio::time::sleep(tokio::time::Duration::from_millis(100)).await;\n        });\n    \n    task_stream.buffer_unordered(2).for_each(|_| async {}).await;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "response": [
+      [
+        "Build a Node.js Express middleware using array mapping to dynamically inject React hydration state into SSR templates while sanitizing XSS vulnerabilities.",
+        "const express = require('express');\nconst sanitizeHtml = require('sanitize-html');\n\nconst reactHydrationMiddleware = (req, res, next) => {\n  const reactState = req.reactState || {};\n\n  const sanitizedState = Object.keys(reactState).reduce((acc, key) => {\n    acc[key] = Array.isArray(reactState[key])\n      ? reactState[key].map(item => sanitizeHtml(item))\n      : sanitizeHtml(reactState[key]);\n    return acc;\n  }, {});\n\n  res.locals.reactHydration = sanitizedState;\n  next();\n};\n\nmodule.exports = reactHydrationMiddleware;"
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "response": [
+      [
+        "Create a Python PySpark UDF using map on RDDs to process real-time geospatial trajectories with haversine distance calculations across distributed clusters.",
+        "from pyspark import SparkContext\nimport math\n\ndef haversine(lat1, lon1, lat2, lon2):\n    R = 6371  # Earth radius in kilometers\n    phi1, phi2 = math.radians(lat1), math.radians(lat2)\n    delta_phi = math.radians(lat2 - lat1)\n    delta_lambda = math.radians(lon2 - lon1)\n    a = math.sin(delta_phi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(delta_lambda / 2) ** 2\n    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))\n    return R * c\n\nsc = SparkContext(\"local\", \"GeospatialTrajectories\")\n\ndef process_trajectories(rdd):\n    return rdd.map(lambda coords: haversine(coords[0], coords[1], coords[2], coords[3]))\n\n# Example usage\ngeospatial_data = [\n    (40.748817, -73.985428, 34.052235, -118.243683),  # Example coordinates\n    (51.507351, -0.127758, 48.856613, 2.352222)\n]\ngeo_rdd = sc.parallelize(geospatial_data)\nresult_rdd = process_trajectories(geo_rdd)\nprint(result_rdd.collect())\n\nsc.stop()"
+      ]
+    ]
+  },
+  {
+    "id": 54,
+    "response": [
+      [
+        "Create a Python generator pipeline using map and itertools to process real-time sensor data streams, implementing exponential smoothing with stateful lambda closures.",
+        "import itertools\n\ndef exponential_smoothing(alpha):\n    state = None\n    def smoothing(closing_price):\n        nonlocal state\n        if state is None:\n            state = closing_price\n        else:\n            state = alpha * closing_price + (1 - alpha) * state\n        return state\n    return smoothing\n\n# Simulate a real-time sensor data stream\nsensor_data_stream = iter([20, 21, 19, 18, 22, 23])\n\n# Create the smoothing function with a chosen alpha, for example 0.1\nsmoothing_function = exponential_smoothing(0.1)\n\n# Create the generator pipeline using itertools and map\nsmoothed_data_stream = map(smoothing_function, sensor_data_stream)\n\n# Collect and print the processed data\nfor smoothed_data in smoothed_data_stream:\n    print(smoothed_data)"
+      ]
+    ]
+  },
+  {
+    "id": 55,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: language_type: javascript.\n## previous code\n// Import the WebAssembly binary (simulated here as an ArrayBuffer)\nconst wasmBinary = new Uint8Array([\n  // WebAssembly binary data would go here\n]);\n\n// Initialize WebAssembly module with the binary data\nconst setupWebAssembly = async () => {\n  try {\n    const wasmModule = await WebAssembly.compile(wasmBinary.buffer);\n    const wasmInstance = await WebAssembly.instantiate(wasmModule);\n\n    // Obtain exports from the WebAssembly module\n    const { fractalCalculation } = wasmInstance.exports;\n\n    // Create and initialize a Float32Array\n    const typedArray = new Float32Array([/* initial fractal data */]);\n\n    // Perform fractal calculations using TypedArray.map\n    const result = typedArray.map(value => {\n      // Use WebAssembly fractal calculation for each element\n      // Ensure fractalCalculation is SIMD-optimized by design\n      return fractalCalculation(value);\n    });\n\n    console.log(result);\n  } catch (error) {\n    console.error('Error setting up WebAssembly:', error);\n  }\n};\n\nsetupWebAssembly();\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nBuild a JavaScript WebAssembly module that uses TypedArray.map to parallelize fractal calculations with SIMD instructions in the browser main thread.",
+        "```javascript\n// Import the WebAssembly binary (simulated here as an ArrayBuffer)\nconst wasmBinary = new Uint8Array([\n  // WebAssembly binary data would go here\n]);\n\n// Initialize WebAssembly module with the binary data\nconst setupWebAssembly = async () => {\n  try {\n    const { instance } = await WebAssembly.instantiate(wasmBinary.buffer, {\n      env: {\n        // Import any necessary functions to be used in the WebAssembly module\n        // Ensure any SIMD-related imports are correctly defined if necessary\n      },\n    });\n\n    const { fractalCalculation } = instance.exports;\n\n    // Check if SIMD is supported\n    if (!('SIMD' in window)) {\n      console.error(\"SIMD is not supported in this environment.\");\n      return;\n    }\n\n    // Create and initialize a Float32Array\n    const typedArray = new Float32Array([/* initial fractal data */]);\n\n    // Perform fractal calculations using TypedArray.map\n    // Assuming fractalCalculation is SIMD-compatible\n    const result = typedArray.map(value => {\n      // Use WebAssembly fractal calculation for each element\n      return fractalCalculation(value);\n    });\n\n    console.log(result);\n  } catch (error) {\n    console.error('Error setting up WebAssembly:', error);\n  }\n};\n\nsetupWebAssembly();\n```"
+      ]
+    ]
+  },
+  {
+    "id": 56,
+    "response": [
+      [
+        "Develop a Java annotation processor using map operations on AST elements to automatically generate gRPC service stubs during compilation.",
+        "import javax.annotation.processing.*;\nimport javax.lang.model.SourceVersion;\nimport javax.lang.model.element.Element;\nimport javax.lang.model.element.ElementKind;\nimport javax.lang.model.element.TypeElement;\nimport javax.lang.model.util.Elements;\nimport javax.tools.Diagnostic;\nimport java.util.Set;\n\n@SupportedAnnotationTypes(\"*\")\n@SupportedSourceVersion(SourceVersion.RELEASE_8)\npublic class GrpcServiceStubProcessor extends AbstractProcessor {\n    private Elements elementUtils;\n\n    @Override\n    public synchronized void init(ProcessingEnvironment processingEnv) {\n        super.init(processingEnv);\n        elementUtils = processingEnv.getElementUtils();\n    }\n\n    @Override\n    public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {\n        roundEnv.getRootElements()\n                .stream()\n                .filter(element -> element.getKind() == ElementKind.CLASS)\n                .forEach(element -> generateGrpcStub(element));\n        return true;\n    }\n\n    private void generateGrpcStub(Element element) {\n        String className = elementUtils.getBinaryName((TypeElement) element).toString();\n        processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, \"Generating gRPC stub for: \" + className);\n        // Generate the gRPC service stubs here using the element information\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 57,
+    "response": [
+      [
+        "Implement a Python async map-reduce system using aiohttp and asyncio.BoundedSemaphore to crawl 500 URLs/sec with rate limiting and DOM sanitization.",
+        "import aiohttp\nimport asyncio\nfrom bs4 import BeautifulSoup\nfrom asyncio import BoundedSemaphore\n\nRATE_LIMIT = 500  # URLs per second\nsemaphore = BoundedSemaphore(RATE_LIMIT)\n\nasync def fetch(session, url):\n    async with semaphore:\n        async with session.get(url) as response:\n            html = await response.text()\n            return sanitize_dom(html)\n\ndef sanitize_dom(html):\n    soup = BeautifulSoup(html, \"html.parser\")\n    for script in soup([\"script\", \"style\"]):\n        script.decompose()\n    return soup.get_text()\n\nasync def async_map_reduce(urls):\n    async with aiohttp.ClientSession() as session:\n        tasks = [fetch(session, url) for url in urls]\n        results = await asyncio.gather(*tasks)\n        return results\n\n# Input URLs\nurls = [\"http://example.com\"] * 5000  # Repeat example URLs\n\n# Run the map-reduce system\nasync def main():\n    sanitized_results = await async_map_reduce(urls)\n    print(f\"Processed {len(sanitized_results)} pages.\")\n    \nasyncio.run(main())"
+      ]
+    ]
+  },
+  {
+    "id": 58,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: language_type: javascript.\n## previous code\nimport React, { useRef } from 'react';\nimport { Animated } from 'react-native';\nimport Svg, { Path } from 'react-native-svg';\nimport { PanResponder } from 'react-native';\n\nconst paths = [\n  \"M10 80 Q 95 10 180 80 T 350 80\",\n  \"M10 50 Q 95 95 180 50 T 350 50\",\n  // Additional paths for other orientations\n];\n\nconst MorphingPaths = () => {\n  const animatedValue = useRef(new Animated.Value(0)).current;\n  const panResponder = useRef(\n    PanResponder.create({\n      onStartShouldSetPanResponder: () => true,\n      onPanResponderMove: (_, gestureState) => {\n        animatedValue.setValue(gestureState.dx);\n      },\n      onPanResponderRelease: () => {\n        Animated.spring(animatedValue, {\n          toValue: 0,\n          useNativeDriver: false,\n        }).start();\n      },\n    })\n  ).current;\n\n  const interpolatedPaths = paths.map((originalPath) => {\n    return animatedValue.interpolate({\n      inputRange: [0, 100],\n      outputRange: [originalPath, originalPath] // Adjust as per morphing logic\n    });\n  });\n\n  return (\n    <Animated.View {...panResponder.panHandlers}>\n      <Svg height=\"100\" width=\"400\">\n        {interpolatedPaths.map((d, index) => (\n          <AnimatedPath\n            key={index}\n            animatedValue={animatedValue}\n            interpolatedPath={d}\n            stroke=\"black\"\n            fill=\"none\"\n            strokeWidth=\"3\"\n          />\n        ))}\n      </Svg>\n    </Animated.View>\n  );\n};\n\nconst AnimatedPath = ({ animatedValue, interpolatedPath, ...props }) => (\n  <Path {...props} d={interpolatedPath} />\n);\n\nexport default MorphingPaths;\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a React Native animation driver using Array.map to synchronize SVG morphing paths across multiple device orientations with gesture handlers.",
+        "```javascript\nimport React, { useRef, useState } from 'react';\nimport { View, Animated, PanResponder } from 'react-native';\nimport Svg, { Path } from 'react-native-svg';\n\nconst paths = [\n  \"M10 80 Q 95 10 180 80 T 350 80\",\n  \"M10 50 Q 95 95 180 50 T 350 50\",\n  // Additional paths for other orientations\n];\n\nconst MorphingPaths = () => {\n  const animatedValue = useRef(new Animated.Value(0)).current;\n  const [currentPathIndex, setCurrentPathIndex] = useState(0);\n\n  const panResponder = useRef(\n    PanResponder.create({\n      onStartShouldSetPanResponder: () => true,\n      onPanResponderMove: (_, gestureState) => {\n        animatedValue.setValue(gestureState.dx);\n      },\n      onPanResponderRelease: () => {\n        Animated.spring(animatedValue, {\n          toValue: 0,\n          useNativeDriver: false,\n        }).start(() => {\n          // Switch paths on release\n          setCurrentPathIndex((prevIndex) => (prevIndex + 1) % paths.length);\n        });\n      },\n    })\n  ).current;\n\n  const interpolatePath = animatedValue.interpolate({\n    inputRange: [0, 100],\n    outputRange: [paths[currentPathIndex], paths[(currentPathIndex + 1) % paths.length]],\n  });\n\n  return (\n    <Animated.View {...panResponder.panHandlers}>\n      <Svg height=\"100\" width=\"400\">\n        <Path\n          d={interpolatePath}\n          stroke=\"black\"\n          fill=\"none\"\n          strokeWidth=\"3\"\n        />\n      </Svg>\n    </Animated.View>\n  );\n};\n\nexport default MorphingPaths;\n```"
+      ]
+    ]
+  },
+  {
+    "id": 59,
+    "response": [
+      [
+        "Design a Java Spring Cloud Function that applies map transformations to Kafka records for GDPR data pseudonymization in real-time event streams.",
+        "package com.example;\n\nimport org.springframework.cloud.function.context.FunctionCatalog;\nimport org.springframework.context.annotation.Bean;\nimport org.springframework.messaging.Message;\nimport org.springframework.messaging.support.MessageBuilder;\nimport org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\n\nimport java.util.UUID;\nimport java.util.function.Function;\n\n@SpringBootApplication\npublic class GdprPseudonymizationApplication {\n\n    public static void main(String[] args) {\n        SpringApplication.run(GdprPseudonymizationApplication.class, args);\n    }\n\n    @Bean\n    public Function<Message<?>, Message<?>> gdprPseudonymizer() {\n        return kafkaRecord -> MessageBuilder.withPayload(pseudonymizeData(kafkaRecord.getPayload())).build();\n    }\n\n    private Object pseudonymizeData(Object payload) {\n        if (payload instanceof String) {\n            return UUID.randomUUID().toString();\n        }\n        // Handle other data types if necessary.\n        return payload;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 60,
+    "response": [
+      [
+        "Build a Python computer vision pipeline using functools.map with thread pools to process 4K video frames in batches of 16 with OpenCV CUDA acceleration.",
+        "import cv2\nimport functools\nfrom concurrent.futures import ThreadPoolExecutor\n\n# Initialize CUDA video capture\nvideo_capture = cv2.VideoCapture('video.mp4')\nvideo_capture.set(cv2.CAP_PROP_FRAME_WIDTH, 3840)\nvideo_capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 2160)\n\ndef process_frame(frame):\n    # Use OpenCV CUDA operations to process the frame\n    gpu_frame = cv2.cuda_GpuMat()\n    gpu_frame.upload(frame)\n    processed_frame = cv2.cuda.cvtColor(gpu_frame, cv2.COLOR_BGR2GRAY)\n    return processed_frame.download()\n\ndef process_batch(frames):\n    return list(functools.map(process_frame, frames))\n\nwith ThreadPoolExecutor() as executor:\n    while True:\n        frames = []\n\n        # Read frames in batches of 16\n        for _ in range(16):\n            ret, frame = video_capture.read()\n            if not ret:\n                break\n            frames.append(frame)\n\n        if not frames:\n            break\n\n        # Process batch using ThreadPoolExecutor\n        processed_batch = executor.submit(process_batch, frames).result()\n\n# Release the video capture\nvideo_capture.release()"
+      ]
+    ]
+  },
+  {
+    "id": 61,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: language_type: javascript.\n## previous code\nconst { WebGL2RenderingContext } = require('headless-gl');\nconst napi = require('napi');\n\nfunction createShader(gl, source, type) {\n    const shader = gl.createShader(type);\n    gl.shaderSource(shader, source);\n    gl.compileShader(shader);\n\n    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {\n        const error = gl.getShaderInfoLog(shader);\n        throw new Error(`Error during shader compilation: ${error}`);\n    }\n\n    return shader;\n}\n\nfunction setupShaderProgram(gl) {\n    const vertexShaderSource = `\n        #version 300 es\n        in vec4 aPosition;\n        void main() {\n            gl_Position = aPosition;\n        }\n    `;\n\n    const fragmentShaderSource = `\n        #version 300 es\n        precision highp float;\n        uniform sampler2D uInput;\n        out vec4 fragColor;\n\n        void main() {\n            vec2 uv = gl_FragCoord.xy / vec2(textureSize(uInput, 0));\n            fragColor = texture(uInput, uv);\n            // Additional quantum simulation logic here\n        }\n    `;\n\n    const vertexShader = createShader(gl, vertexShaderSource, gl.VERTEX_SHADER);\n    const fragmentShader = createShader(gl, fragmentShaderSource, gl.FRAGMENT_SHADER);\n\n    const program = gl.createProgram();\n    gl.attachShader(program, vertexShader);\n    gl.attachShader(program, fragmentShader);\n    gl.linkProgram(program);\n\n    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {\n        const error = gl.getProgramInfoLog(program);\n        throw new Error(`Error during program linking: ${error}`);\n    }\n\n    gl.deleteShader(vertexShader);\n    gl.deleteShader(fragmentShader);\n\n    return program;\n}\n\nfunction mapParallelizedQuantumCircuit(inputArray) {\n    if (!(inputArray instanceof Float32Array)) {\n        throw new TypeError('Input must be a Float32Array');\n    }\n\n    const width = Math.sqrt(inputArray.length);\n    const height = width;\n    const gl = new WebGL2RenderingContext(width, height, { preserveDrawingBuffer: true });\n\n    const program = setupShaderProgram(gl);\n    gl.useProgram(program);\n\n    const inputTexture = gl.createTexture();\n    gl.bindTexture(gl.TEXTURE_2D, inputTexture);\n    gl.texImage2D(gl.TEXTURE_2D, 0, gl.R32F, width, height, 0, gl.RED, gl.FLOAT, inputArray);\n    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);\n    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);\n\n    const outputBuffer = new Float32Array(inputArray.length);\n    const framebuffer = gl.createFramebuffer();\n    gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);\n    \n    for (let i = 0; i < inputArray.length; i++) {\n        outputBuffer[i] = inputArray[i]; // Use or modify inputArray values\n    }\n    \n    return outputBuffer;\n}\n\nnapi.registerModule(exports, {\n    mapParallelizedQuantumCircuit\n});\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nDevelop a Node.js V8 extension using N-API and TypedArray.map to accelerate quantum circuit simulations through WebGL shader parallelization.",
+        "```javascript\nconst { WebGL2RenderingContext } = require('headless-gl');\nconst napi = require('napi');\n\nfunction createShader(gl, source, type) {\n    const shader = gl.createShader(type);\n    gl.shaderSource(shader, source);\n    gl.compileShader(shader);\n\n    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {\n        const error = gl.getShaderInfoLog(shader);\n        throw new Error(`Error during shader compilation: ${error}`);\n    }\n\n    return shader;\n}\n\nfunction setupShaderProgram(gl) {\n    const vertexShaderSource = `\n        #version 300 es\n        in vec4 aPosition;\n        void main() {\n            gl_Position = aPosition;\n        }\n    `;\n\n    const fragmentShaderSource = `\n        #version 300 es\n        precision highp float;\n        uniform sampler2D uInput;\n        out vec4 fragColor;\n\n        void main() {\n            vec2 uv = gl_FragCoord.xy / vec2(textureSize(uInput, 0));\n            fragColor = texture(uInput, uv);\n            // Additional quantum simulation logic could go here\n        }\n    `;\n\n    const vertexShader = createShader(gl, vertexShaderSource, gl.VERTEX_SHADER);\n    const fragmentShader = createShader(gl, fragmentShaderSource, gl.FRAGMENT_SHADER);\n\n    const program = gl.createProgram();\n    gl.attachShader(program, vertexShader);\n    gl.attachShader(program, fragmentShader);\n    gl.linkProgram(program);\n\n    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {\n        const error = gl.getProgramInfoLog(program);\n        throw new Error(`Error during program linking: ${error}`);\n    }\n\n    gl.deleteShader(vertexShader);\n    gl.deleteShader(fragmentShader);\n\n    return program;\n}\n\nfunction mapParallelizedQuantumCircuit(inputArray) {\n    if (!(inputArray instanceof Float32Array)) {\n        throw new TypeError('Input must be a Float32Array');\n    }\n\n    const width = Math.sqrt(inputArray.length);\n    const height = width;\n    const gl = new WebGL2RenderingContext(width, height, { preserveDrawingBuffer: true });\n\n    const program = setupShaderProgram(gl);\n    gl.useProgram(program);\n\n    const inputTexture = gl.createTexture();\n    gl.bindTexture(gl.TEXTURE_2D, inputTexture);\n    gl.texImage2D(gl.TEXTURE_2D, 0, gl.R32F, width, height, 0, gl.RED, gl.FLOAT, inputArray);\n    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);\n    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);\n\n    const outputBuffer = new Float32Array(inputArray.length);\n\n    gl.bindFramebuffer(gl.FRAMEBUFFER, null);\n\n    // Acquire data from WebGL context\n    gl.readPixels(0, 0, width, height, gl.RED, gl.FLOAT, outputBuffer);\n\n    return outputBuffer;\n}\n\nnapi.registerModule(exports, {\n    mapParallelizedQuantumCircuit\n});\n```"
+      ]
+    ]
+  },
+  {
+    "id": 62,
+    "response": [
+      [
+        "Create a Java GraalVM polyglot service that maps JSONata queries across MongoDB change streams using reactive streams backpressure mechanisms.",
+        "import com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.ibm.jsonata4java.expressions.Expressions;\nimport com.mongodb.reactivestreams.client.*;\nimport org.bson.Document;\nimport org.reactivestreams.Subscriber;\nimport org.reactivestreams.Subscription;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class PolyglotService {\n    private static final MongoClient mongoClient = MongoClients.create(\"mongodb://localhost:27017\");\n    private static final GraalVMContext graalVMContext = GraalVMContext.newBuilder().allowAllAccess(true).build();\n    private static final ObjectMapper objectMapper = new ObjectMapper();\n\n    public static void main(String[] args) {\n        MongoCollection<Document> collection = mongoClient.getDatabase(\"mydb\").getCollection(\"mycollection\");\n        \n        collection.watch().subscribe(new Subscriber<ChangeStreamDocument<Document>>() {\n            private Subscription subscription;\n\n            @Override\n            public void onSubscribe(Subscription s) {\n                this.subscription = s;\n                s.request(1);\n            }\n\n            @Override\n            public void onNext(ChangeStreamDocument<Document> change) {\n                try {\n                    Document fullDocument = change.getFullDocument();\n                    JsonNode jsonNode = objectMapper.readTree(fullDocument.toJson());\n                    String query = new String(Files.readAllBytes(Paths.get(\"query.jsonata\")), \"UTF-8\");\n                    var jsonataExpression = graalVMContext.eval(\"jsonata\", query);\n                    var result = jsonataExpression.execute(jsonNode.toString());\n                    System.out.println(\"Query Result: \" + result);\n                } catch (Exception e) {\n                    e.printStackTrace();\n                } finally {\n                    subscription.request(1);\n                }\n            }\n\n            @Override\n            public void onError(Throwable t) {\n                t.printStackTrace();\n            }\n\n            @Override\n            public void onComplete() {\n                System.out.println(\"Change stream completed\");\n            }\n        });\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 63,
+    "response": [
+      [
+        "Implement a Python JAX-powered map function using jit and vmap to parallelize neural network inference across TPU slices with automatic batch padding.",
+        "import jax\nimport jax.numpy as jnp\nfrom jax import random, jit, vmap\nfrom jax.experimental import maps\n\n@jit\ndef neural_network_inference(params, x):\n    # Define your neural network inference here\n    # Example: simple linear layer\n    w, b = params\n    return jnp.dot(x, w) + b\n\n@maps.xmap(in_axes=(['batch', ...], ['params', ...]), out_axes=['batch', ...])\ndef batched_inference(params, x):\n    return vmap(neural_network_inference, in_axes=(None, 0))(params, x)\n\n# Example usage\nparams = (random.normal(random.PRNGKey(0), (10, 10)), random.normal(random.PRNGKey(1), (10,)))\nx = jnp.ones((64, 10))  # Example input\nbatch_padded_output = batched_inference(params, x)"
+      ]
+    ]
+  }
+]

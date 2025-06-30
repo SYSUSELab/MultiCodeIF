@@ -1,0 +1,497 @@
+[
+  {
+    "id": 1,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust module named `greeter` with a function `greet_user(name: &str) -> String`. This function should return a custom greeting message formatted as \"Hello, {name}!\". Ensure that the Rust code adheres to a style guideline where it uses 4-space indentation and spaces around operators and after commas for enhanced readability and consistency.",
+        "```rust\nmod greeter {\n    pub fn greet_user(name: &str) -> String {\n        format!(\"Hello, {}!\", name)\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ class named `Account` that encapsulates basic banking operations. The class should have private data members for the account holder's `name` (string), `balance` (double), and an `account_number` (integer). Include a constructor to initialize these values, and provide public member functions for operations: `deposit(double amount)`, `withdraw(double amount)`, and `getBalance()` which returns the current balance. Each function should implement proper checks for valid transactions (e.g., no negative balance). Follow C++ conventions: use tab indentation, do not put spaces around operators or after commas, and ensure method definitions are separated by clear line breaks for readability.",
+        "```cpp\nclass Account {\nprivate:\n\tstd::string name;\n\tdouble balance;\n\tint account_number;\n\npublic:\n\tAccount(std::string n, double b, int a) : name(n), balance(b), account_number(a) {}\n\n\tvoid deposit(double amount) {\n\t\tif (amount > 0) {\n\t\t\tbalance += amount;\n\t\t}\n\t}\n\n\tvoid withdraw(double amount) {\n\t\tif (amount > 0 && balance >= amount) {\n\t\t\tbalance -= amount;\n\t\t}\n\t}\n\n\tdouble getBalance() {\n\t\treturn balance;\n\t}\n};\n```"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ class named `OrderManager` to handle manufacturing orders. It should store order details in private member variables (orderID, quantity, and productCode) and include a constructor to initialize these properties. Provide public getter methods for each of these properties and a method named `displayOrderDetails` that prints order information in the format \"Order ID: [orderID], Quantity: [quantity], Product Code: [productCode]\". Follow the Rustfmt Default style guide which includes using 4-space indentation and spaces after commas and around operators to ensure code readability.",
+        "```cpp\nclass OrderManager {\nprivate:\n    int orderID;\n    int quantity;\n    std::string productCode;\n\npublic:\n    OrderManager(int id, int qty, std::string code) {\n        orderID = id;\n        quantity = qty;\n        productCode = code;\n    }\n\n    int getOrderID() {\n        return orderID;\n    }\n\n    int getQuantity() {\n        return quantity;\n    }\n\n    std::string getProductCode() {\n        return productCode;\n    }\n\n    void displayOrderDetails() {\n        std::cout << \"Order ID: \" << orderID << \", Quantity: \" << quantity << \", Product Code: \" << productCode << std::endl;\n    }\n};\n```"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ program that simulates a basic file management system where you can create files with specific sizes. Each file should have a unique identifier and the program should allow operations such as creating, deleting, and listing all files with their sizes. Define appropriate data structures and methods like createFile, deleteFile, and listFiles. Ensure consistent use of tab indentation throughout the code, and maintain spacing after commas and around operators in accordance with C++ best practices.",
+        "```cpp\n#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\n\nusing namespace std;\n\nstruct File {\n    int id;\n    string name;\n    int size;\n};\n\nclass FileManager {\nprivate:\n    vector<File> files;\n    int nextId;\n\npublic:\n    FileManager() : nextId(1) {}\n\n    void createFile(const string& name, int size) {\n        File newFile;\n        newFile.id = nextId++;\n        newFile.name = name;\n        newFile.size = size;\n        files.push_back(newFile);\n        cout << \"File created with ID: \" << newFile.id << endl;\n    }\n\n    void deleteFile(int id) {\n        auto it = find_if(files.begin(), files.end(), [id](const File& file) {\n            return file.id == id;\n        });\n\n        if (it != files.end()) {\n            files.erase(it);\n            cout << \"File with ID \" << id << \" deleted.\" << endl;\n        } else {\n            cout << \"File with ID \" << id << \" not found.\" << endl;\n        }\n    }\n\n    void listFiles() {\n        if (files.empty()) {\n            cout << \"No files found.\" << endl;\n            return;\n        }\n\n        cout << \"Files:\" << endl;\n        for (const auto& file : files) {\n            cout << \"ID: \" << file.id << \", Name: \" << file.name << \", Size: \" << file.size << \" KB\" << endl;\n        }\n    }\n};\n\nint main() {\n    FileManager fm;\n    int choice;\n    string name;\n    int size, id;\n\n    while (true) {\n        cout << \"\\nFile Management System\\n\";\n        cout << \"1. Create File\\n\";\n        cout << \"2. Delete File\\n\";\n        cout << \"3. List Files\\n\";\n        cout << \"4. Exit\\n\";\n        cout << \"Enter your choice: \";\n        cin >> choice;\n\n        switch (choice) {\n            case 1:\n                cout << \"Enter file name: \";\n                cin >> name;\n                cout << \"Enter file size (KB): \";\n                cin >> size;\n                fm.createFile(name, size);\n                break;\n            case 2:\n                cout << \"Enter file ID to delete: \";\n                cin >> id;\n                fm.deleteFile(id);\n                break;\n            case 3:\n                fm.listFiles();\n                break;\n            case 4:\n                return 0;\n            default:\n                cout << \"Invalid choice. Try again.\" << endl;\n        }\n    }\n\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a C++ class called BookTracker, which includes two private members: bookName of string type and totalPages of integer type. The class should have a constructor to initialize these fields, a destructor, and appropriate getter methods for both members. Include a method printBookDetails that beautifully formats and prints out the book details. Ensure that all class member functions and the main function follow a specific indentation style with 4-space indentation and do not have spaces around operators or after commas for consistency throughout the code.",
+        "```cpp\n#include <iostream>\n#include <string>\nusing namespace std;\n\nclass BookTracker {\nprivate:\n    string bookName;\n    int totalPages;\npublic:\n    BookTracker(string name,int pages):bookName(name),totalPages(pages){}\n    ~BookTracker(){}\n    string getBookName(){return bookName;}\n    int getTotalPages(){return totalPages;}\n    void printBookDetails(){\n        cout<<\"Book Name: \"<<bookName<<endl;\n        cout<<\"Total Pages: \"<<totalPages<<endl;\n    }\n};\n\nint main(){\n    BookTracker book(\"Sample Book\",200);\n    book.printBookDetails();\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust struct called `BookTracker` with private fields including `title` (String), `author` (String), and `copies_sold` (u64). Write methods to get and set each of these fields. Ensure the use of idiomatic Rust conventions such as using `snake_case` for variable and method names, and adhere to the Google Rust Style by employing 2-space indentation and avoiding spaces around operators and after commas.",
+        "```rust\nstruct BookTracker {\n  title: String,\n  author: String,\n  copies_sold: u64,\n}\n\nimpl BookTracker {\n  pub fn new(title: String, author: String, copies_sold: u64) -> Self {\n    BookTracker {\n      title,\n      author,\n      copies_sold,\n    }\n  }\n\n  pub fn title(&self) -> &str {\n    &self.title\n  }\n\n  pub fn set_title(&mut self, title: String) {\n    self.title = title;\n  }\n\n  pub fn author(&self) -> &str {\n    &self.author\n  }\n\n  pub fn set_author(&mut self, author: String) {\n    self.author = author;\n  }\n\n  pub fn copies_sold(&self) -> u64 {\n    self.copies_sold\n  }\n\n  pub fn set_copies_sold(&mut self, copies_sold: u64) {\n    self.copies_sold = copies_sold;\n  }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java class named `TransactionProcessor` that includes three primary methods: `validateTransaction`, `processTransaction`, and `logTransactionResult`. Each method should accept details relevant to financial transactions. The `validateTransaction` method should verify the transaction details (e.g., amount, sender, recipient) and return true or false based on criteria such as non-negative amount and valid accounts. The `processTransaction` method should execute the transaction if validated and return a success flag. The `logTransactionResult` method should log the outcome. Use a structured approach to handle exceptions and ensure all methods follow Java conventions with proper use of `this`, four spaces for indentation, and clear code commenting for maintainability.",
+        "```java\npublic class TransactionProcessor {\n    /**\n     * Validates the transaction details.\n     * @param amount The transaction amount (must be non-negative).\n     * @param sender The sender's account identifier.\n     * @param recipient The recipient's account identifier.\n     * @return true if the transaction is valid, false otherwise.\n     */\n    public boolean validateTransaction(double amount, String sender, String recipient) {\n        if (amount < 0) {\n            return false;\n        }\n        if (sender == null || sender.isEmpty()) {\n            return false;\n        }\n        if (recipient == null || recipient.isEmpty()) {\n            return false;\n        }\n        return true;\n    }\n\n    /**\n     * Processes the transaction if validation passes.\n     * @param amount The transaction amount.\n     * @param sender The sender's account identifier.\n     * @param recipient The recipient's account identifier.\n     * @return true if the transaction was processed successfully, false otherwise.\n     */\n    public boolean processTransaction(double amount, String sender, String recipient) {\n        if (!this.validateTransaction(amount, sender, recipient)) {\n            return false;\n        }\n        // Simulate transaction processing logic (e.g., updating balances)\n        try {\n            // Placeholder for actual transaction processing\n            return true;\n        } catch (Exception e) {\n            return false;\n        }\n    }\n\n    /**\n     * Logs the transaction outcome.\n     * @param transactionId The unique identifier for the transaction.\n     * @param success Flag indicating whether the transaction succeeded.\n     */\n    public void logTransactionResult(String transactionId, boolean success) {\n        if (success) {\n            System.out.println(\"Transaction \" + transactionId + \" succeeded.\");\n        } else {\n            System.out.println(\"Transaction \" + transactionId + \" failed.\");\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C function named 'multiply_matrices' that takes two two-dimensional arrays (matrix1 and matrix2) and their corresponding dimensions as inputs, performs matrix multiplication, and returns the result in a new matrix. The function should handle cases where the number of columns in the first matrix does not match the number of rows in the second matrix by returning NULL. Use a consistent coding style with a 2-space indentation and no spaces around commas and operators for increased readability and maintainability.",
+        "```c\n#include <stdlib.h>\n\nint** multiply_matrices(int** matrix1,int rows1,int cols1,int** matrix2,int rows2,int cols2) {\n  if (cols1 != rows2) {\n    return NULL;\n  }\n  \n  int** result = (int**)malloc(rows1 * sizeof(int*));\n  for (int i = 0; i < rows1; i++) {\n    result[i] = (int*)malloc(cols2 * sizeof(int));\n  }\n  \n  for (int i = 0; i < rows1; i++) {\n    for (int j = 0; j < cols2; j++) {\n      result[i][j] = 0;\n      for (int k = 0; k < cols1; k++) {\n        result[i][j] += matrix1[i][k] * matrix2[k][j];\n      }\n    }\n  }\n  \n  return result;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python class called `InventoryManager` that includes methods for adding, removing, and listing products. Each product in the inventory should be represented as a dictionary with keys for `product_id`, `name`, and `quantity`. Use proper exception handling to ensure that adding and removing operations do not allow negative quantity values. The methods should include clear docstrings explaining their functionality. Follow the Python PEP 8 style guide closely, using four spaces for indentation, and ensure that there is adequate spacing around operators and between methods for readability.",
+        "```python\nclass InventoryManager:\n    \"\"\"A class to manage inventory operations including adding, removing, and listing products.\"\"\"\n\n    def __init__(self):\n        \"\"\"Initialize the inventory as an empty list.\"\"\"\n        self.inventory = []\n\n    def add_product(self, product_id, name, quantity):\n        \"\"\"\n        Add a product to the inventory.\n\n        Args:\n            product_id (str): Unique identifier for the product.\n            name (str): Name of the product.\n            quantity (int): Quantity of the product to add.\n\n        Raises:\n            ValueError: If quantity is negative.\n        \"\"\"\n        if quantity < 0:\n            raise ValueError(\"Quantity cannot be negative.\")\n        product = {\n            \"product_id\": product_id,\n            \"name\": name,\n            \"quantity\": quantity\n        }\n        self.inventory.append(product)\n\n    def remove_product(self, product_id, quantity):\n        \"\"\"\n        Remove a specified quantity of a product from the inventory.\n\n        Args:\n            product_id (str): Unique identifier of the product to remove.\n            quantity (int): Quantity of the product to remove.\n\n        Raises:\n            ValueError: If quantity is negative or exceeds available quantity.\n            KeyError: If product_id is not found in inventory.\n        \"\"\"\n        if quantity < 0:\n            raise ValueError(\"Quantity cannot be negative.\")\n\n        for product in self.inventory:\n            if product[\"product_id\"] == product_id:\n                if product[\"quantity\"] < quantity:\n                    raise ValueError(\"Insufficient quantity to remove.\")\n                product[\"quantity\"] -= quantity\n                if product[\"quantity\"] == 0:\n                    self.inventory.remove(product)\n                return\n\n        raise KeyError(\"Product not found in inventory.\")\n\n    def list_products(self):\n        \"\"\"\n        List all products in the inventory.\n\n        Returns:\n            list: A list of dictionaries representing all products.\n        \"\"\"\n        return self.inventory\n```"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript class named Library that should include a constructor, four private attributes (name, location, books, and members), and methods for adding books, registering members, and a method to display all books. The methods should transparently use the private fields by encapsulating business logic within the methods itself. Additionally, implement proper usage of ES6 syntax, particularly template literals in methods displaying information. Maintain a clean coding style with 4 spaces for indentation and no spaces around operators or immediately after commas, ensuring high clarity and readability.",
+        "```javascript\nclass Library {\n    #name;\n    #location;\n    #books;\n    #members;\n\n    constructor(name, location) {\n        this.#name = name;\n        this.#location = location;\n        this.#books = [];\n        this.#members = [];\n    }\n\n    addBook(book) {\n        this.#books.push(book);\n    }\n\n    registerMember(member) {\n        this.#members.push(member);\n    }\n\n    displayAllBooks() {\n        console.log(`Books available in ${this.#name}:`);\n        this.#books.forEach(book => {\n            console.log(`- ${book}`);\n        });\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a function in Go named `CalculateDiscount` that receives a product's original price and the discount rate as floating point numbers. This function should compute the discounted price and return it. Ensure the calculations are performed with proper precision and return type handling. The Go code should strictly adhere to a tab indentation throughout and maintain clear whitespace practices, such as spaces after commas and around operators. Implement proper error handling to address possible negative values in input parameters.",
+        "```go\npackage main\n\nimport (\n\t\"errors\"\n\t\"fmt\"\n)\n\nfunc CalculateDiscount(originalPrice, discountRate float64) (float64, error) {\n\tif originalPrice < 0 || discountRate < 0 {\n\t\treturn 0, errors.New(\"input parameters cannot be negative\")\n\t}\n\n\tdiscountedPrice := originalPrice * (1 - discountRate/100)\n\treturn discountedPrice, nil\n}\n\nfunc main() {\n\tprice, err := CalculateDiscount(100.0, 20.0)\n\tif err != nil {\n\t\tfmt.Println(\"Error:\", err)\n\t\treturn\n\t}\n\tfmt.Println(\"Discounted price:\", price)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named 'merge_dicts' that takes any number of dictionary arguments and merges them into a single dictionary. The merging should prioritize the latest argument in case of key collisions. Your function should be robust against receiving no arguments, returning an empty dictionary in such cases. Ensure adherence to the PEP8 style guide, with clear indentation using four spaces and appropriate spaces around operators and after commas to maintain consistent, readable code.",
+        "```python\ndef merge_dicts(*dict_args):\n    merged_dict = {}\n    for dictionary in dict_args:\n        merged_dict.update(dictionary)\n    return merged_dict\n```"
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Go function named CalculateInterest that computes the simple interest given principal, rate, and time. It should return a float64 representing the interest amount. Also, define a struct named InterestParams with three float64 fields: principal, rate, and time. Maintain a clear and consistent code style that uses two spaces for indentation and no spacing around operators or commas. Properly comment your code to enhance readability and explain your logic.",
+        "```go\npackage main\n\n// InterestParams holds the parameters needed to calculate simple interest\ntype InterestParams struct {\n  principal float64\n  rate      float64\n  time      float64\n}\n\n// CalculateInterest computes simple interest using the formula:\n// interest = (principal * rate * time) / 100\n// It takes an InterestParams struct as input and returns the interest as float64\nfunc CalculateInterest(params InterestParams) float64 {\n  return (params.principal * params.rate * params.time) / 100\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a logging configuration function in Go, named `ConfigureLogger`, which initializes a logger based on given threshold levels such as \"DEBUG\", \"INFO\", \"WARN\", \"ERROR\". The function should accept a threshold level and configure the logger to only log messages that meet or exceed this level. Use consistent coding style adhering to Google Java Style with 2-space indentation and no space around operators and after commas. Make sure to handle string case insensitivity for the input levels and return an appropriate error message if the input is invalid.",
+        "```go\npackage main\n\nimport (\n  \"errors\"\n  \"log\"\n  \"os\"\n  \"strings\"\n)\n\nfunc ConfigureLogger(threshold string) error {\n  level := strings.ToUpper(threshold)\n  var logLevel int\n  switch level {\n  case \"DEBUG\":\n    logLevel = 0\n  case \"INFO\":\n    logLevel = 1\n  case \"WARN\":\n    logLevel = 2\n  case \"ERROR\":\n    logLevel = 3\n  default:\n    return errors.New(\"invalid log level: \"+threshold)\n  }\n\n  log.SetFlags(log.Ldate|log.Ltime|log.Lshortfile)\n  log.SetOutput(os.Stderr)\n  log.SetPrefix(\"[\"+level+\"] \")\n\n  return nil\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Go package that implements a custom logging system. Include a function 'LogMessage' that takes a message string and a severity level (e.g., \"INFO\", \"WARN\", \"ERROR\") as parameters. The function should print messages to the console following a structured format: \"[SEVERITY] message\". Ensure the code follows Go's convention of using a tab for indentation and avoids spaces around operators or after commas. This custom logging function should also ensure any conditional message formatting is handled neatly within the logical branching blocks of the code. Remember to keep the code very concise and readable.",
+        "```go\npackage logger\n\nimport \"fmt\"\n\nfunc LogMessage(severity string, message string) {\n\tswitch severity {\n\tcase \"INFO\", \"WARN\", \"ERROR\":\n\t\tfmt.Printf(\"[%s] %s\\n\", severity, message)\n\tdefault:\n\t\tfmt.Printf(\"[UNKNOWN] %s\\n\", message)\n\t}\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function named `CalculateDiscount` which takes two parameters: `originalPrice` of type float64 and `discountPercentage` of type float64. The function should calculate the final price after applying the given discount percentage and return this value rounded to two decimal places. Ensure the function follows Go standard conventions including a comment describing its purpose, proper use of camelCase in naming, and adherence to GoFmt formatting guidelines which specify a tab indentation.",
+        "```go\n// CalculateDiscount calculates the final price after applying the given discount percentage\n// to the original price and returns the result rounded to two decimal places.\nfunc CalculateDiscount(originalPrice float64, discountPercentage float64) float64 {\n\tdiscountAmount := originalPrice * (discountPercentage / 100)\n\tfinalPrice := originalPrice - discountAmount\n\treturn math.Round(finalPrice*100) / 100\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go package named 'calculator' that contains a function 'Add' which takes two integer arguments (x and y) and returns their sum. The function should also include a detailed comment that explains its purpose and parameters. Ensure that the code adheres to Go conventions: use 2-space indentation and no spaces around operators or after commas for better readability. The code should be organized and clear, with proper naming standards for variables and functions.",
+        "```go\npackage calculator\n\n// Add takes two integers, x and y, and returns their sum.\n// Parameters:\n//   x - the first integer to add\n//   y - the second integer to add\n// Returns:\n//   the sum of x and y\nfunc Add(x, y int) int {\n  return x + y\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C function named `calculate_checksum` where it takes an array of unsigned integers and its size as parameters. The function should compute the checksum by summing all the elements of the array and then taking modulo 256 of the result. Make sure the function definition includes proper type declarations and follows C programming conventions. Indent the code by using four spaces per level and exclude spaces around operators and after commas in function arguments to maintain readability and consistency as per the specified style.",
+        "```c\nunsigned int calculate_checksum(unsigned int array[], unsigned int size) {\n    unsigned int sum = 0;\n    for(unsigned int i=0; i<size; i++) {\n        sum += array[i];\n    }\n    return sum%256;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function named \"string_compression\" that takes a single string argument and returns a new string where sequences of the same character are replaced by that character followed by the count of repeated characters. For instance, the string \"aabcccccaaa\" would be compressed to \"a2b1c5a3\". If the compressed string would not be shorter than the original string, return the original string. Ensure that the function logic is clearly structured, and adhere to the Google Rust Style guide which specifies 2-space indentation and no space around operators.",
+        "```rust\nfn string_compression(s: &str) -> String {\n  if s.is_empty() {\n    return s.to_string();\n  }\n\n  let mut compressed = String::new();\n  let mut chars = s.chars();\n  let mut current_char = chars.next().unwrap();\n  let mut count = 1;\n\n  for c in chars {\n    if c == current_char {\n      count += 1;\n    } else {\n      compressed.push(current_char);\n      compressed.push_str(&count.to_string());\n      current_char = c;\n      count = 1;\n    }\n  }\n\n  compressed.push(current_char);\n  compressed.push_str(&count.to_string());\n\n  if compressed.len() < s.len() {\n    compressed\n  } else {\n    s.to_string()\n  }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a URL shortening service in Go, featuring a struct named `URLShortener` with methods for storing and retrieving URLs. It should include fields `originalURL` and `shortURL` in the struct, and a map to link short URLs to their original counterparts. Implement two methods: `StoreURL`, which generates a short URL and stores the mapping, and `RetrieveURL`, which takes a short URL and returns the original URL. The methods must demonstrate error handling for cases such as invalid URL inputs or accessing non-existent keys. Maintain consistent coding style with 2-space indentation and proper spacing around operators using the Prettier Default conventions.",
+        "```go\npackage main\n\nimport (\n  \"errors\"\n  \"math/rand\"\n  \"net/url\"\n  \"strings\"\n  \"time\"\n)\n\ntype URLShortener struct {\n  originalURL string\n  shortURL    string\n  urlMap      map[string]string\n}\n\nfunc NewURLShortener() *URLShortener {\n  return &URLShortener{\n    urlMap: make(map[string]string),\n  }\n}\n\nfunc (us *URLShortener) StoreURL(originalURL string) (string, error) {\n  if _, err := url.ParseRequestURI(originalURL); err != nil {\n    return \"\", errors.New(\"invalid URL\")\n  }\n\n  shortURL := generateShortURL()\n  us.urlMap[shortURL] = originalURL\n  return shortURL, nil\n}\n\nfunc (us *URLShortener) RetrieveURL(shortURL string) (string, error) {\n  originalURL, exists := us.urlMap[shortURL]\n  if !exists {\n    return \"\", errors.New(\"short URL not found\")\n  }\n  return originalURL, nil\n}\n\nfunc generateShortURL() string {\n  const chars = \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\"\n  const length = 6\n\n  rand.Seed(time.Now().UnixNano())\n  var sb strings.Builder\n\n  for i := 0; i < length; i++ {\n    sb.WriteByte(chars[rand.Intn(len(chars))])\n  }\n\n  return sb.String()\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function named `calculate_discount` that takes a price (float) and a percentage discount (integer) as parameters. The function should compute the discounted price, ensuring that the discount does not lead to negative pricing. The function should print the result using Rust's println! macro. Maintain Rust's coding style with tab indentation and no spacing around operators or commas, focusing on proper syntax, clarity, and formatting.",
+        "```rust\nfn calculate_discount(price: f64, discount: i32) {\n\tlet discounted_price = price - (price * (discount as f64 / 100.0));\n\tlet final_price = if discounted_price < 0.0 { 0.0 } else { discounted_price };\n\tprintln!(\"{}\", final_price);\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python class named `DatasetUploader` that manages uploading datasets to cloud storage. The class should have methods for authentication, data processing before upload (e.g., filtering sensitive information), uploading files, and logging the upload process to a file. Incorporate exception handling to manage errors related to network issues, access permissions, and file not found. Use a consistent coding style by adhering to PEP 8 guidelines, including four spaces for indentation and proper spacing around operators and after commas to enhance readability and maintainability.",
+        "```python\nimport logging\nfrom typing import List, Dict, Optional\n\n\nclass DatasetUploader:\n    \"\"\"\n    A class to manage uploading datasets to cloud storage with authentication,\n    data processing, and logging capabilities.\n    \"\"\"\n\n    def __init__(self, credentials: Dict[str, str], log_file: str = \"upload_log.txt\"):\n        \"\"\"\n        Initialize the DatasetUploader with credentials and a log file path.\n\n        Args:\n            credentials: A dictionary containing authentication credentials.\n            log_file: Path to the log file. Defaults to \"upload_log.txt\".\n        \"\"\"\n        self.credentials = credentials\n        self.log_file = log_file\n        self._setup_logging()\n\n    def _setup_logging(self) -> None:\n        \"\"\"Configure logging to write to both console and the specified log file.\"\"\"\n        logging.basicConfig(\n            level=logging.INFO,\n            format=\"%(asctime)s - %(levelname)s - %(message)s\",\n            handlers=[\n                logging.FileHandler(self.log_file),\n                logging.StreamHandler()\n            ]\n        )\n\n    def authenticate(self) -> bool:\n        \"\"\"\n        Authenticate with cloud storage using provided credentials.\n\n        Returns:\n            bool: True if authentication is successful, False otherwise.\n        \"\"\"\n        try:\n            # Placeholder for authentication logic\n            logging.info(\"Authentication successful.\")\n            return True\n        except Exception as e:\n            logging.error(f\"Authentication failed: {e}\")\n            return False\n\n    def process_data(self, data: List[Dict[str, str]]) -> List[Dict[str, str]]:\n        \"\"\"\n        Process data before upload by filtering sensitive information.\n\n        Args:\n            data: List of dictionaries representing the dataset.\n\n        Returns:\n            List[Dict[str, str]]: Processed data with sensitive fields removed.\n        \"\"\"\n        sensitive_fields = [\"password\", \"ssn\", \"credit_card\"]\n        processed_data = [\n            {k: v for k, v in record.items() if k not in sensitive_fields}\n            for record in data\n        ]\n        logging.info(\"Data processed successfully.\")\n        return processed_data\n\n    def upload_file(self, file_path: str, destination: str) -> bool:\n        \"\"\"\n        Upload a file to the specified cloud storage destination.\n\n        Args:\n            file_path: Path to the file to upload.\n            destination: Target path in cloud storage.\n\n        Returns:\n            bool: True if upload is successful, False otherwise.\n        \"\"\"\n        try:\n            # Placeholder for upload logic\n            if not self._file_exists(file_path):\n                raise FileNotFoundError(f\"File not found: {file_path}\")\n\n            logging.info(f\"File {file_path} uploaded to {destination} successfully.\")\n            return True\n        except FileNotFoundError as e:\n            logging.error(f\"Upload failed - {e}\")\n            return False\n        except PermissionError as e:\n            logging.error(f\"Upload failed - insufficient permissions: {e}\")\n            return False\n        except Exception as e:\n            logging.error(f\"Upload failed - network or other error: {e}\")\n            return False\n\n    def _file_exists(self, file_path: str) -> bool:\n        \"\"\"\n        Check if a file exists at the given path.\n\n        Args:\n            file_path: Path to the file.\n\n        Returns:\n            bool: True if file exists, False otherwise.\n        \"\"\"\n        # Placeholder for file existence check\n        return True\n```"
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ class named `FileProcessor` with a constructor, two private attributes (`filename` and `fileSize`), and respective getter and setter methods. Incorporate methods `openFile` and `closeFile` to manage file operations. Ensure that the code uses tab character for indentation and includes spaces after commas and around operators to follow the C++ coding conventions. Make sure the methods are clearly separated by blank lines to ensure code readability and maintainability.",
+        "```cpp\n#include <string>\n\nclass FileProcessor {\nprivate:\n\tstd::string filename;\n\tint fileSize;\n\npublic:\n\tFileProcessor(std::string name, int size) : filename(name), fileSize(size) {}\n\n\tstd::string getFilename() const {\n\t\treturn filename;\n\t}\n\n\tvoid setFilename(std::string name) {\n\t\tfilename = name;\n\t}\n\n\tint getFileSize() const {\n\t\treturn fileSize;\n\t}\n\n\tvoid setFileSize(int size) {\n\t\tfileSize = size;\n\t}\n\n\tvoid openFile() {\n\t\t// Implementation for opening the file\n\t}\n\n\tvoid closeFile() {\n\t\t// Implementation for closing the file\n\t}\n};\n```"
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Go function named `ProcessTransaction` that takes three parameters: `amount` (float64), `currency` (string), and `isCredit` (bool). This function should return a formatted string indicating the transaction type (Credit or Debit) and the transaction amount with the currency. Follow Go's convention of using tabs for indentation and ensure there is spacing around operators and after commas. Your function should display clarity, simplicity, and compliance with Go's idiomatic practices such as proper variable naming and concise function declaration.",
+        "```go\nfunc ProcessTransaction(amount float64, currency string, isCredit bool) string {\n\tvar transactionType string\n\tif isCredit {\n\t\ttransactionType = \"Credit\"\n\t} else {\n\t\ttransactionType = \"Debit\"\n\t}\n\treturn fmt.Sprintf(\"%s: %.2f %s\", transactionType, amount, currency)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Java class called `InventoryManager` that includes methods to add, remove, and fetch item details from a private HashMap. The class should provide three main functionalities: add an item with a unique identifier and details, remove an item by its unique identifier, and retrieve item details using the item's identifier. The code should use proper exception handling to deal with cases where an item does not exist, handle synchronous access to modify inventory items, and use generics for typesafety with items. Format the code to have a clean structure with four spaces per indent, ensuring readability.",
+        "```java\nimport java.util.HashMap;\nimport java.util.Map;\n\npublic class InventoryManager<T> {\n    private final Map<String, T> inventory = new HashMap<>();\n\n    public synchronized void addItem(String itemId, T itemDetails) {\n        if (itemId == null || itemDetails == null) {\n            throw new IllegalArgumentException(\"Item ID and details cannot be null\");\n        }\n        inventory.put(itemId, itemDetails);\n    }\n\n    public synchronized void removeItem(String itemId) {\n        if (!inventory.containsKey(itemId)) {\n            throw new IllegalArgumentException(\"Item with ID \" + itemId + \" does not exist\");\n        }\n        inventory.remove(itemId);\n    }\n\n    public synchronized T getItemDetails(String itemId) {\n        if (!inventory.containsKey(itemId)) {\n            throw new IllegalArgumentException(\"Item with ID \" + itemId + \" does not exist\");\n        }\n        return inventory.get(itemId);\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named `calculate_discount` that accepts a dictionary representing the items purchased in a shop where each key is the item name and each value is another dictionary containing the price of the item and the quantity purchased. The function should calculate and return the total amount after applying a 10% discount on the total purchase value. Use clear error handling to manage scenarios when data is not correctly passed. Write the function following the PEP8 styling conventions including proper use of indentations and spaces.",
+        "```python\ndef calculate_discount(items):\n    try:\n        total = 0\n        for item in items.values():\n            if not isinstance(item, dict):\n                raise ValueError(\"Invalid item data\")\n            if 'price' not in item or 'quantity' not in item:\n                raise ValueError(\"Missing 'price' or 'quantity' in item data\")\n            if not isinstance(item['price'], (int, float)) or not isinstance(item['quantity'], int):\n                raise ValueError(\"Invalid 'price' or 'quantity' type\")\n            if item['price'] < 0 or item['quantity'] < 0:\n                raise ValueError(\"Negative 'price' or 'quantity' not allowed\")\n            total += item['price'] * item['quantity']\n        return total * 0.9\n    except (ValueError, AttributeError) as e:\n        print(f\"Error: {e}\")\n        return None\n```"
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function named `calculate_discount` that accepts two parameters: `original_price` of type f64 and a `discount_percentage` of type f64. The function should calculate the final price after applying the discount. Ensure the function adheres to proper Rust formatting conventions including Rustfmt default settings. The function should include informative comments explaining the purpose and the logic of the function, consistent naming conventions, and proper use of spaces as required by the Rustfmt default rules.",
+        "```rust\n/// Calculates the final price after applying a discount to the original price.\n///\n/// # Arguments\n///\n/// * `original_price` - The original price before discount (f64).\n/// * `discount_percentage` - The discount percentage to apply (f64).\n///\n/// # Returns\n///\n/// The final price after applying the discount (f64).\n///\n/// # Example\n///\n/// ```\n/// let final_price = calculate_discount(100.0, 20.0);\n/// assert_eq!(final_price, 80.0);\n/// ```\nfn calculate_discount(original_price: f64, discount_percentage: f64) -> f64 {\n    // Calculate the discount amount by multiplying the original price by the discount percentage.\n    let discount_amount = original_price * (discount_percentage / 100.0);\n\n    // Subtract the discount amount from the original price to get the final price.\n    original_price - discount_amount\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript function named calculateDiscount that takes two parameters: originalPrice and discountPercentage. The function should calculate the final price after applying the specified percentage discount to the original price. Include error handling to verify if the inputs are numeric and throw a TypeError if they are not. The code should adhere to the Prettier Default standards with 2-space indentation and consistent spaces around operators. Ensure that the function is documented with comments explaining the functionality.",
+        "```javascript\nfunction calculateDiscount(originalPrice, discountPercentage) {\n  // Check if inputs are numeric\n  if (typeof originalPrice !== 'number' || typeof discountPercentage !== 'number') {\n    throw new TypeError('Both originalPrice and discountPercentage must be numbers');\n  }\n\n  // Calculate final price after discount\n  const finalPrice = originalPrice - (originalPrice * (discountPercentage / 100));\n\n  return finalPrice;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Java class named ShoppingCart that manages items in a customer's online shopping cart. The class should include an ArrayList to store the names of the items. Implement methods to add an item, remove an item by name, and calculate the total number of items in the cart. Additionally, include a method to display all items in the cart. Embrace the Google Java Style for your code with 2-space indentation and no space around operators and after commas. Ensure that your code is clear and maintainable with appropriate method spacing.",
+        "```java\nimport java.util.ArrayList;\n\npublic class ShoppingCart {\n  private ArrayList<String> items;\n\n  public ShoppingCart() {\n    items = new ArrayList<>();\n  }\n\n  public void addItem(String item) {\n    items.add(item);\n  }\n\n  public void removeItem(String item) {\n    items.remove(item);\n  }\n\n  public int getTotalItems() {\n    return items.size();\n  }\n\n  public void displayItems() {\n    for (String item : items) {\n      System.out.println(item);\n    }\n  }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function named `process_transaction` that accepts two parameters (`transactions` as a list of dictionaries, and `currency` as a string). This function should filter out transactions that occur in the specified currency and compute the total amount. Use exception handling to manage transactions with missing 'amount' or 'currency' keys. Implement clear and consistent error messages. Follow Python coding conventions with 4-space indentation and no spaces around operators or commas in the list.",
+        "```python\ndef process_transaction(transactions, currency):\n    total_amount = 0\n    filtered_transactions = []\n    \n    for transaction in transactions:\n        try:\n            if transaction['currency'] == currency:\n                filtered_transactions.append(transaction)\n                total_amount += transaction['amount']\n        except KeyError as e:\n            if str(e) == \"'amount'\":\n                print(f\"Error: Missing 'amount' key in transaction {transaction}\")\n            elif str(e) == \"'currency'\":\n                print(f\"Error: Missing 'currency' key in transaction {transaction}\")\n    \n    return total_amount\n```"
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python class named WeatherStation that simulates the behavior of a weather measuring station. It should include the following private attributes: location, temperature, and humidity. Incorporate methods to set and retrieve these attributes, and ensure parameter validation in setter methods (e.g., temperature and humidity should be numerical). Additionally, include a method 'display_status' that prints a formatted string summarizing the weather conditions at the location. The Python code should strictly implement tab indentation and avoid spaces around operators and after commas in parameter lists or collection literals.",
+        "```python\nclass WeatherStation:\n\tdef __init__(self,location,temperature,humidity):\n\t\tself.__location=location\n\t\tself.__temperature=temperature\n\t\tself.__humidity=humidity\n\t\n\tdef set_location(self,location):\n\t\tself.__location=location\n\t\n\tdef set_temperature(self,temperature):\n\t\tif isinstance(temperature,(int,float)):\n\t\t\tself.__temperature=temperature\n\t\telse:\n\t\t\traise ValueError(\"Temperature must be numerical\")\n\t\n\tdef set_humidity(self,humidity):\n\t\tif isinstance(humidity,(int,float)):\n\t\t\tself.__humidity=humidity\n\t\telse:\n\t\t\traise ValueError(\"Humidity must be numerical\")\n\t\n\tdef get_location(self):\n\t\treturn self.__location\n\t\n\tdef get_temperature(self):\n\t\treturn self.__temperature\n\t\n\tdef get_humidity(self):\n\t\treturn self.__humidity\n\t\n\tdef display_status(self):\n\t\tprint(f\"Weather at {self.__location}: Temperature={self.__temperature}, Humidity={self.__humidity}\")\n```"
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java class named 'InventoryManager' which encapsulates operations to add, remove, and update items in an inventory system. The class should have a private HashMap to store item names and their quantities. Include public methods for each operation named addItem(String itemName, int quantity), removeItem(String itemName), and updateItem(String itemName, int quantity) that modify the internal HashMap accordingly. Error handling should be implemented to manage scenarios such as trying to remove a non-existent item or updating with invalid quantities. Consistent coding practices should be maintained with two spaces for indentation, no spaces around operators or after commas in method signatures.",
+        "```java\nimport java.util.HashMap;\n\npublic class InventoryManager {\n  private HashMap<String, Integer> inventory;\n\n  public InventoryManager() {\n    inventory = new HashMap<>();\n  }\n\n  public void addItem(String itemName, int quantity) {\n    if (quantity <= 0) {\n      throw new IllegalArgumentException(\"Quantity must be positive\");\n    }\n    inventory.put(itemName, inventory.getOrDefault(itemName, 0) + quantity);\n  }\n\n  public void removeItem(String itemName) {\n    if (!inventory.containsKey(itemName)) {\n      throw new IllegalArgumentException(\"Item does not exist in inventory\");\n    }\n    inventory.remove(itemName);\n  }\n\n  public void updateItem(String itemName, int quantity) {\n    if (quantity < 0) {\n      throw new IllegalArgumentException(\"Quantity cannot be negative\");\n    }\n    if (!inventory.containsKey(itemName)) {\n      throw new IllegalArgumentException(\"Item does not exist in inventory\");\n    }\n    inventory.put(itemName, quantity);\n  }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 33,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C function named `calculate_discount` that takes two arguments: the original price (a float) and the discount rate (an integer percentage). Ensure that the function returns the final price after applying the discount. The calculations should be verbose and clear, with temporary variables to hold intermediate results. The code should follow C programming conventions including 4-space indentation, spaces around operators and after commas, and proper use of parentheses to ensure clarity in mathematical expressions. Include comments to explain each step and decision in the code execution.",
+        "```c\nfloat calculate_discount(float original_price, int discount_rate) {\n    // Convert the discount rate from percentage to decimal for calculation\n    float discount_decimal = (float)discount_rate / 100.0f;\n\n    // Calculate the discount amount by multiplying original price with the decimal rate\n    float discount_amount = original_price * discount_decimal;\n\n    // Subtract the discount amount from the original price to get the final price\n    float final_price = original_price - discount_amount;\n\n    // Return the final price after applying the discount\n    return final_price;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python module with a class named 'FinancialReport' that consists of a constructor, three private attributes (`total_sales`, `expenses`, and `net_income`) and a method `calculate_net_income` to compute net income from total sales minus expenses. Include detail in documentation strings for each method and the constructor. Follow PEP 8 style: specifically, use four spaces for indentation and ensure adherence to spacing norms such as one space on either side of assignment or comparison operators. Include informative comments within your code.",
+        "```python\nclass FinancialReport:\n    \"\"\"\n    A class to represent a financial report with sales, expenses, and net income.\n\n    Attributes:\n        _total_sales (float): Total sales amount (private).\n        _expenses (float): Total expenses amount (private).\n        _net_income (float): Net income amount (private).\n    \"\"\"\n\n    def __init__(self, total_sales, expenses):\n        \"\"\"\n        Constructor for FinancialReport class.\n\n        Args:\n            total_sales (float): Total sales amount.\n            expenses (float): Total expenses amount.\n        \"\"\"\n        # Initialize private attributes with provided values\n        self._total_sales = total_sales\n        self._expenses = expenses\n        self._net_income = 0.0\n\n    def calculate_net_income(self):\n        \"\"\"\n        Calculate net income by subtracting expenses from total sales.\n\n        Returns:\n            float: The computed net income.\n        \"\"\"\n        # Compute net income and update the private attribute\n        self._net_income = self._total_sales - self._expenses\n        return self._net_income\n```"
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ class named TransactionProcessor that handles financial transactions. The class should have a constructor, private attributes for user ID, transaction ID, and transaction amount. Include public member functions to validate and process transactions, ensuring proper error handling and transaction validation. Utilize C++ STL (Standard Template Library) appropriately within the class methods. Ensure consistent coding style based on the Rustfmt standard, including 4-space indentation and appropriate spacing around operators and after commas for clarity and maintainability.",
+        "```cpp\n#include <string>\n#include <stdexcept>\n#include <unordered_set>\n\nclass TransactionProcessor {\nprivate:\n    std::string user_id;\n    std::string transaction_id;\n    double transaction_amount;\n    std::unordered_set<std::string> processed_transactions;\n\npublic:\n    TransactionProcessor(const std::string& user_id, const std::string& transaction_id, double amount)\n        : user_id(user_id), transaction_id(transaction_id), transaction_amount(amount) {\n        if (user_id.empty()) {\n            throw std::invalid_argument(\"User ID cannot be empty\");\n        }\n        if (transaction_id.empty()) {\n            throw std::invalid_argument(\"Transaction ID cannot be empty\");\n        }\n        if (amount <= 0.0) {\n            throw std::invalid_argument(\"Transaction amount must be positive\");\n        }\n    }\n\n    bool validate_transaction() const {\n        if (transaction_amount > 10000.0) {\n            return false;\n        }\n        return true;\n    }\n\n    bool process_transaction() {\n        if (!validate_transaction()) {\n            return false;\n        }\n        if (processed_transactions.find(transaction_id) != processed_transactions.end()) {\n            return false;\n        }\n        processed_transactions.insert(transaction_id);\n        return true;\n    }\n\n    std::string get_user_id() const {\n        return user_id;\n    }\n\n    std::string get_transaction_id() const {\n        return transaction_id;\n    }\n\n    double get_transaction_amount() const {\n        return transaction_amount;\n    }\n};\n```"
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ class called `Vehicle` that includes a constructor, three private attributes (`model`, `year`, and `maxSpeed`), and corresponding public getter and setter methods for these attributes. Implement an instance method `vehicleInfo` that returns a string containing a detailed description (including all attributes) of the Vehicle object formatted in a structured manner. Ensure correct usage of pointer `this` to access instance variables. The coding style must strictly adhere to the Prettier Default convention: 2-space indentation and consistent spaces around operators and after commas.",
+        "```cpp\n#include <string>\n\nclass Vehicle {\nprivate:\n  std::string model;\n  int year;\n  int maxSpeed;\n\npublic:\n  Vehicle(std::string model, int year, int maxSpeed) {\n    this->model = model;\n    this->year = year;\n    this->maxSpeed = maxSpeed;\n  }\n\n  std::string getModel() {\n    return this->model;\n  }\n\n  void setModel(std::string model) {\n    this->model = model;\n  }\n\n  int getYear() {\n    return this->year;\n  }\n\n  void setYear(int year) {\n    this->year = year;\n  }\n\n  int getMaxSpeed() {\n    return this->maxSpeed;\n  }\n\n  void setMaxSpeed(int maxSpeed) {\n    this->maxSpeed = maxSpeed;\n  }\n\n  std::string vehicleInfo() {\n    return \"Model: \" + this->model + \", Year: \" + std::to_string(this->year) + \n           \", Max Speed: \" + std::to_string(this->maxSpeed) + \" km/h\";\n  }\n};\n```"
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust module named `calculator` that includes a struct `Calculator` with two fields: `value1` and `value2`. The struct should have methods `add`, `subtract`, `multiply`, and `divide` returning results of type f64. Implement error handling to manage division by zero and panic in such cases. Ensure the code is formatted with tab indentation and lacks spaces around operators or after commas to maintain a clear, concise syntax as per the Rust convention.",
+        "```rust\nmod calculator {\n\tpub struct Calculator {\n\t\tvalue1: f64,\n\t\tvalue2: f64,\n\t}\n\n\timpl Calculator {\n\t\tpub fn new(value1: f64, value2: f64) -> Self {\n\t\t\tCalculator { value1, value2 }\n\t\t}\n\n\t\tpub fn add(&self) -> f64 {\n\t\t\tself.value1 + self.value2\n\t\t}\n\n\t\tpub fn subtract(&self) -> f64 {\n\t\t\tself.value1 - self.value2\n\t\t}\n\n\t\tpub fn multiply(&self) -> f64 {\n\t\t\tself.value1 * self.value2\n\t\t}\n\n\t\tpub fn divide(&self) -> f64 {\n\t\t\tif self.value2 == 0.0 {\n\t\t\t\tpanic!(\"Division by zero!\");\n\t\t\t}\n\t\t\tself.value1 / self.value2\n\t\t}\n\t}\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a JavaScript function named `calculateDiscount` that takes two parameters - `originalPrice` and `discountPercentage`. The function should return the new price after applying the discount. Ensure the function strictly follows the 2-space indentation rule without any spaces around operators or after commas. Include clear spacing and line breaks to separate logic blocks within the function for readability.",
+        "```javascript\nfunction calculateDiscount(originalPrice, discountPercentage) {\n  if (originalPrice <= 0 || discountPercentage < 0) {\n    return 0;\n  }\n\n  const discountAmount = originalPrice * (discountPercentage / 100);\n  const newPrice = originalPrice - discountAmount;\n\n  return newPrice;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 39,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a C function called calculate_discount that takes two arguments: original_price of type double, and discount_percentage of type int. This function should calculate the final price after applying the discount and return it as a double. Ensure proper use of C language conventions, including 4-space indentation, no spaces around operators or after commas, and appropriate spacing for readability within blocks and statements.",
+        "```c\ndouble calculate_discount(double original_price, int discount_percentage) {\n    double discount_amount = original_price * discount_percentage / 100;\n    double final_price = original_price - discount_amount;\n    return final_price;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 40,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Go function named `RecordTemperature` that takes in a float64 temperature value and writes this value to a file named 'temperature_log.txt'. The file should append new entries, each on a new line, without overwriting the previous content. Ensure the function uses proper error handling to manage file access issues. Follow code readability and maintainability practices specific to Go, such as using tab indentation, spaces after commas and around operators, and providing comments for sections of code that handle file operations.",
+        "```go\npackage main\n\nimport (\n\t\"os\"\n\t\"fmt\"\n)\n\n// RecordTemperature appends the given temperature value to the 'temperature_log.txt' file.\n// Each entry is written on a new line. Proper error handling is implemented for file operations.\nfunc RecordTemperature(temp float64) error {\n\t// Open the file with append mode, create it if it doesn't exist, and set write permissions\n\tfile, err := os.OpenFile(\"temperature_log.txt\", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"error opening file: %v\", err)\n\t}\n\tdefer file.Close()\n\n\t// Write the temperature value to the file followed by a newline\n\t_, err = fmt.Fprintf(file, \"%f\\n\", temp)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"error writing to file: %v\", err)\n\t}\n\n\treturn nil\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 41,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust module named `config_loader` with a function `load_configuration` which takes a file path as a string and returns a Result of a hash map containing key-value pairs of the configuration settings. Utilize proper error handling in case the file cannot be read or parsed. Adhere to the Google Rust Style, using 2-space indentation and no space around operators or after commas, while also closely following the conventions for readability such as clear naming, code comments, and segmenting code appropriately.",
+        "```rust\nmod config_loader {\n  use std::collections::HashMap;\n  use std::fs;\n  use std::io;\n\n  /// Loads configuration from a file and returns a HashMap of key-value pairs.\n  ///\n  /// # Arguments\n  /// * `file_path` - Path to the configuration file.\n  ///\n  /// # Returns\n  /// * `Result<HashMap<String, String>, io::Error>` - Parsed configuration or an error.\n  pub fn load_configuration(file_path: &str) -> io::Result<HashMap<String, String>> {\n    let file_contents = fs::read_to_string(file_path)?;\n    let mut config_map = HashMap::new();\n\n    for line in file_contents.lines() {\n      let trimmed_line = line.trim();\n      if trimmed_line.is_empty() || trimmed_line.starts_with('#') {\n        continue;\n      }\n\n      let parts: Vec<&str> = trimmed_line.split('=').map(|s| s.trim()).collect();\n      if parts.len() != 2 {\n        return Err(io::Error::new(\n          io::ErrorKind::InvalidData,\n          \"Invalid configuration format\",\n        ));\n      }\n\n      config_map.insert(parts[0].to_string(), parts[1].to_string());\n    }\n\n    Ok(config_map)\n  }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 42,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a C++ class named `WeatherStation` containing private attributes: `stationId` (string), `temperature` (double), and `humidity` (double). Include a constructor that initializes these attributes, getter and setter methods for each attribute, and a `reportConditions` method which returns a formatted string showing the current weather conditions. Adhere to the following coding conventions: use tab indentation for structuring code blocks and ensure proper spacing around operators and after commas for readability. The class should demonstrate clear separation of methods for easier maintenance.",
+        "```cpp\nclass WeatherStation {\n\tprivate:\n\t\tstring stationId;\n\t\tdouble temperature;\n\t\tdouble humidity;\n\n\tpublic:\n\t\tWeatherStation(string id, double temp, double hum) {\n\t\t\tstationId = id;\n\t\t\ttemperature = temp;\n\t\t\thumidity = hum;\n\t\t}\n\n\t\tstring getStationId() {\n\t\t\treturn stationId;\n\t\t}\n\n\t\tvoid setStationId(string id) {\n\t\t\tstationId = id;\n\t\t}\n\n\t\tdouble getTemperature() {\n\t\t\treturn temperature;\n\t\t}\n\n\t\tvoid setTemperature(double temp) {\n\t\t\ttemperature = temp;\n\t\t}\n\n\t\tdouble getHumidity() {\n\t\t\treturn humidity;\n\t\t}\n\n\t\tvoid setHumidity(double hum) {\n\t\t\thumidity = hum;\n\t\t}\n\n\t\tstring reportConditions() {\n\t\t\treturn \"Station ID: \" + stationId + \", Temperature: \" + to_string(temperature) + \", Humidity: \" + to_string(humidity);\n\t\t}\n};\n```"
+      ]
+    ]
+  },
+  {
+    "id": 43,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go package named \"calculator\" that includes a function `Add(mul1, mul2 int) int` which calculates and returns the sum of two integers. Ensure the function's implementation uses four-space indentation with spaces around operators and after commas to follow code styling guidelines. Include comments within the code to explain each functionality step and ensure the code readability and maintainability.",
+        "```go\npackage calculator\n\n// Add takes two integers as input and returns their sum.\n// The function follows proper code styling guidelines with spaces around operators and after commas.\nfunc Add(mul1, mul2 int) int {\n    // Calculate the sum of the two integers\n    sum := mul1 + mul2\n    \n    // Return the computed sum\n    return sum\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 44,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a JavaScript function named `calculateDiscount` that calculates the total price after applying a discount percentage. The function should accept two parameters: `originalPrice` and `discountPercentage`. It should return the calculated price, formatted to two decimal places. Ensure proper syntax with concise variable names and correct use of comparison operators. The JavaScript function should follow a consistent coding style: use tab indentation, no spacing around operators and keywords, and appropriate line breaks between logical sections within the function.",
+        "```javascript\nfunction calculateDiscount(originalPrice, discountPercentage) {\n\tconst discountAmount = originalPrice * (discountPercentage / 100);\n\tconst finalPrice = originalPrice - discountAmount;\n\treturn finalPrice.toFixed(2);\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 45,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java class named `ProductCatalog` with a constructor, two private attributes (`productName` and `productPrice`), and methods to get and set each attribute. Include override methods for equals and hashCode to ensure product objects can be used effectively within collections like HashMap and HashSet. The code should adhere to Java conventions including using two spaces for indentation and omitting spaces around operators and after commas. Clear method segregation should be followed to ensure readability.",
+        "```java\npublic class ProductCatalog {\n  private String productName;\n  private double productPrice;\n\n  public ProductCatalog(String productName, double productPrice) {\n    this.productName = productName;\n    this.productPrice = productPrice;\n  }\n\n  public String getProductName() {\n    return productName;\n  }\n\n  public void setProductName(String productName) {\n    this.productName = productName;\n  }\n\n  public double getProductPrice() {\n    return productPrice;\n  }\n\n  public void setProductPrice(double productPrice) {\n    this.productPrice = productPrice;\n  }\n\n  @Override\n  public boolean equals(Object o) {\n    if (this == o) return true;\n    if (o == null || getClass() != o.getClass()) return false;\n    ProductCatalog that = (ProductCatalog) o;\n    return Double.compare(that.productPrice, productPrice) == 0 &&\n        productName.equals(that.productName);\n  }\n\n  @Override\n  public int hashCode() {\n    return java.util.Objects.hash(productName, productPrice);\n  }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 46,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ class called 'DataLogger' with a constructor, private attributes for log ID (int), log description (string), and total records (int). Include appropriate getter and setter methods for accessing and updating these private attributes. Additionally, define a method 'displayLogInfo()' that prints a formatted message showing the attributes. Follow a C++ specific coding style: consistently use a 4-space indentation, and no spaces around operators or after commas in the parameter list to ensure clarity and maintainability.",
+        "```cpp\nclass DataLogger {\nprivate:\n    int logID;\n    std::string logDescription;\n    int totalRecords;\n\npublic:\n    DataLogger(int id, const std::string& desc, int records)\n        : logID(id), logDescription(desc), totalRecords(records) {}\n\n    int getLogID() const {\n        return logID;\n    }\n\n    void setLogID(int id) {\n        logID = id;\n    }\n\n    const std::string& getLogDescription() const {\n        return logDescription;\n    }\n\n    void setLogDescription(const std::string& desc) {\n        logDescription = desc;\n    }\n\n    int getTotalRecords() const {\n        return totalRecords;\n    }\n\n    void setTotalRecords(int records) {\n        totalRecords = records;\n    }\n\n    void displayLogInfo() const {\n        std::cout << \"Log ID: \" << logID << \"\\n\"\n                  << \"Description: \" << logDescription << \"\\n\"\n                  << \"Total Records: \" << totalRecords << std::endl;\n    }\n};\n```"
+      ]
+    ]
+  },
+  {
+    "id": 47,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Java class called DatabaseManager to handle database operations such as connecting to the database, executing a query, and closing the database connection. The class should have methods like `connect()`, `executeQuery(String query)`, and `close()`. Each method should have proper error handling to manage SQLExceptions and ensure resource deallocation using `finally` blocks for closing the connection. Maintain code clarity and ensure four spaces are used for indentation, with proper spacing around the keywords.",
+        "```java\nimport java.sql.Connection;\nimport java.sql.DriverManager;\nimport java.sql.ResultSet;\nimport java.sql.SQLException;\nimport java.sql.Statement;\n\npublic class DatabaseManager {\n    private Connection connection;\n\n    public void connect() {\n        try {\n            connection = DriverManager.getConnection(\"jdbc:mysql://localhost:3306/mydb\", \"user\", \"password\");\n        } catch (SQLException e) {\n            System.err.println(\"Error connecting to database: \" + e.getMessage());\n        }\n    }\n\n    public ResultSet executeQuery(String query) {\n        Statement statement = null;\n        ResultSet resultSet = null;\n        try {\n            statement = connection.createStatement();\n            resultSet = statement.executeQuery(query);\n            return resultSet;\n        } catch (SQLException e) {\n            System.err.println(\"Error executing query: \" + e.getMessage());\n            return null;\n        } finally {\n            try {\n                if (statement != null) {\n                    statement.close();\n                }\n            } catch (SQLException e) {\n                System.err.println(\"Error closing statement: \" + e.getMessage());\n            }\n        }\n    }\n\n    public void close() {\n        try {\n            if (connection != null) {\n                connection.close();\n            }\n        } catch (SQLException e) {\n            System.err.println(\"Error closing connection: \" + e.getMessage());\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 48,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Go function named \"ProcessTransaction\" that takes two parameters: a float64 amount and a string currency type (e.g., \"USD\", \"EUR\"). The function should calculate the conversion of the provided amount to a target currency (\"JPY\") based on predefined rates (e.g., USD to JPY = 114.39, EUR to JPY = 128.66). Implement error handling to manage cases where the currency type provided is not supported. Ensure the code follows the Prettier Default style guide with 2-space indentation and consistent spaces around operators and commas for readability and maintainability.",
+        "```go\npackage main\n\nimport (\n  \"errors\"\n  \"fmt\"\n)\n\nfunc ProcessTransaction(amount float64, currency string) (float64, error) {\n  rates := map[string]float64{\n    \"USD\": 114.39,\n    \"EUR\": 128.66,\n  }\n\n  rate, ok := rates[currency]\n  if !ok {\n    return 0, errors.New(\"unsupported currency type\")\n  }\n\n  return amount * rate, nil\n}\n\nfunc main() {\n  result, err := ProcessTransaction(100.0, \"USD\")\n  if err != nil {\n    fmt.Println(\"Error:\", err)\n    return\n  }\n  fmt.Println(\"Converted amount:\", result)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 49,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Go function named `CalculateDiscount` which takes the original price (float64) and a discount percentage (float64) as parameters. The function should return the new price after applying the discount, using proper floating-point arithmetic to ensure accuracy. Incorporate error checking to ensure the discount percentage is between 0 and 100 (inclusive), raising an error if not. Utilize the Go standard practice of using tabs for indentation, and ensure there is no spacing around operators or after commas.",
+        "```go\npackage main\n\nimport (\n\t\"errors\"\n)\n\nfunc CalculateDiscount(originalPrice, discountPercentage float64) (float64, error) {\n\tif discountPercentage < 0 || discountPercentage > 100 {\n\t\treturn 0, errors.New(\"discount percentage must be between 0 and 100\")\n\t}\n\tdiscountAmount := originalPrice * (discountPercentage / 100)\n\tnewPrice := originalPrice - discountAmount\n\treturn newPrice, nil\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 50,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ class named 'Transaction' that encapsulates financial transactions. The class should include a constructor, and private attributes for transactionId (type int), amount (type double), and description (type std::string). Include public member functions to get and set these attributes. Overload the output stream operator (<<) to provide a clean formatted output of the transaction details. Adhere to the \"Prettier Default\" code style, which includes using a 2-space indentation and consistent spacing around operators and after commas for better readability.",
+        "```cpp\n#include <iostream>\n#include <string>\n\nclass Transaction {\nprivate:\n  int transactionId;\n  double amount;\n  std::string description;\n\npublic:\n  Transaction(int id, double amt, const std::string& desc)\n    : transactionId(id), amount(amt), description(desc) {}\n\n  int getTransactionId() const {\n    return transactionId;\n  }\n\n  void setTransactionId(int id) {\n    transactionId = id;\n  }\n\n  double getAmount() const {\n    return amount;\n  }\n\n  void setAmount(double amt) {\n    amount = amt;\n  }\n\n  std::string getDescription() const {\n    return description;\n  }\n\n  void setDescription(const std::string& desc) {\n    description = desc;\n  }\n\n  friend std::ostream& operator<<(std::ostream& os, const Transaction& trans) {\n    os << \"Transaction ID: \" << trans.transactionId << \"\\n\"\n       << \"Amount: \" << trans.amount << \"\\n\"\n       << \"Description: \" << trans.description << \"\\n\";\n    return os;\n  }\n};\n```"
+      ]
+    ]
+  },
+  {
+    "id": 51,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Kotlin class named ShoppingCart that includes a list to hold item objects. Implement methods within the ShoppingCart class: one called addItem to insert an item to the cart, and another named calculateTotalPrice to sum up and return the total price of the items. Additionally, meticulously format your code using 2-space indentation for organizing blocks and proper spacing around operators and keywords.",
+        "```kotlin\nclass ShoppingCart {\n  private val items = mutableListOf<Item>()\n\n  fun addItem(item: Item) {\n    items.add(item)\n  }\n\n  fun calculateTotalPrice(): Double {\n    return items.sumOf { it.price }\n  }\n}\n\nclass Item(val price: Double)\n```"
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a C++ class called MatrixMultiplier that includes a method named MultiplyMatrices, which takes two 2D arrays as parameters to compute their product and returns the resulting matrix. Ensure the method uses clear, consistent indentations (4 spaces per indentation level) to enhance code readability and maintainability.",
+        "```cpp\nclass MatrixMultiplier {\npublic:\n    static int** MultiplyMatrices(int** matrix1, int** matrix2, int rows1, int cols1, int rows2, int cols2) {\n        if (cols1 != rows2) {\n            return nullptr;\n        }\n\n        int** result = new int*[rows1];\n        for (int i = 0; i < rows1; i++) {\n            result[i] = new int[cols2];\n        }\n\n        for (int i = 0; i < rows1; i++) {\n            for (int j = 0; j < cols2; j++) {\n                result[i][j] = 0;\n                for (int k = 0; k < cols1; k++) {\n                    result[i][j] += matrix1[i][k] * matrix2[k][j];\n                }\n            }\n        }\n\n        return result;\n    }\n};\n```"
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a basic Java class named Employee, which includes a constructor, three private attributes (name, age, and salary), and corresponding getter and setter functions. Additionally, maintain consistent indentation and spacing throughout your code: use a consistent four spaces for indentation and proper spacing around operators and keywords to enhance readability.",
+        "```java\npublic class Employee {\n    private String name;\n    private int age;\n    private double salary;\n\n    public Employee(String name, int age, double salary) {\n        this.name = name;\n        this.age = age;\n        this.salary = salary;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public int getAge() {\n        return age;\n    }\n\n    public void setAge(int age) {\n        this.age = age;\n    }\n\n    public double getSalary() {\n        return salary;\n    }\n\n    public void setSalary(double salary) {\n        this.salary = salary;\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 54,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function named `matrix_product` that accepts two parameters: `matrix1` and `matrix2`, which are two-dimensional vectors representing matrices. The function should calculate and return their matrix product. Additionally, adhere to Rust's indentation and spacing guidelines such as using 4 spaces for indentation and appropriate spacing around operators.",
+        "```rust\nfn matrix_product(matrix1: Vec<Vec<f64>>, matrix2: Vec<Vec<f64>>) -> Vec<Vec<f64>> {\n    let rows1 = matrix1.len();\n    let cols1 = matrix1[0].len();\n    let rows2 = matrix2.len();\n    let cols2 = matrix2[0].len();\n\n    assert_eq!(cols1, rows2, \"Matrix dimensions do not match for multiplication\");\n\n    let mut result = vec![vec![0.0; cols2]; rows1];\n\n    for i in 0..rows1 {\n        for j in 0..cols2 {\n            for k in 0..cols1 {\n                result[i][j] += matrix1[i][k] * matrix2[k][j];\n            }\n        }\n    }\n\n    result\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 55,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function named `mergeSortedLists` that takes two sorted lists, `list1` and `list2`, as parameters and returns a combined sorted list. This function should efficiently handle scenarios where either or both input lists may be empty, and it should effectively manage duplicates within each list. Moreover, maintain proper indentation using four spaces for each level of nesting to organize the code logically and improve its readability.",
+        "```python\ndef mergeSortedLists(list1, list2):\n    merged_list = []\n    i = j = 0\n    \n    while i < len(list1) and j < len(list2):\n        if list1[i] < list2[j]:\n            merged_list.append(list1[i])\n            i += 1\n        else:\n            merged_list.append(list2[j])\n            j += 1\n    \n    while i < len(list1):\n        merged_list.append(list1[i])\n        i += 1\n    \n    while j < len(list2):\n        merged_list.append(list2[j])\n        j += 1\n    \n    return merged_list\n```"
+      ]
+    ]
+  }
+]

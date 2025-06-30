@@ -1,0 +1,408 @@
+[
+    {
+        "id": 1,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Python 3.8 script that automates the process of image resizing for a multitude of image formats (JPEG, PNG, GIF). The script should allow batch processing from a directory, resizing images to predetermined dimensions, and saving them in a separate output directory without altering the original images. Use Python's `PIL` library and support efficient handling of large batches of images through multiprocessing. Ensure that the script also verifies the integrity of files before and after processing to confirm successful resizing.",
+        "answer": "python;3.8"
+    },
+    {
+        "id": 2,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust 1.87.0 CLI application that monitors specified directories for file changes and synchronizes any changes to a backup directory in real-time. The application should employ `notify` to watch for changes and `tokio` for asynchronous file operations. It must use `std::fs` for file handling and ensure operations respect file permissions. Additional features include logging significant events and providing rollback options for synchronization actions.",
+        "answer": "rust;1.87.0"
+    },
+    {
+        "id": 3,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust-based command-line tool using version 1.74.0 that monitors real-time changes in a specified directory and automatically organizes the modified files into subdirectories based on their extension. The tool should leverage the fs::watch functionality from the standard library for tracking changes and utilize multi-threading to process multiple file changes concurrently without blocking the main thread. Ensure each file is moved only once and the directory structure is consistently updated.",
+        "answer": "rust;1.74.0"
+    },
+    {
+        "id": 4,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Develop a Python 3.13 program that monitors system memory and CPU usage stats, alerting via email when usage exceeds pre-defined thresholds. The system should securely store user credentials for email notifications using the new symmetric encryption mechanism provided in Python 3.13 and the `secrets` module. Ensure proper handling of multi-threading to obtain real-time performance data and log all alerts for auditing purposes.",
+        "answer": "python;3.13"
+    },
+    {
+        "id": 5,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust application version 1.86.0 that manages stock inventories from various stores, using asynchronous programming. The application should read inventory data from a provided JSON file and handle updates for stock quantities in parallel via user inputs. Utilize the `tokio` runtime for efficient asynchronous behaviour and ensure the data consistency using Rust's `Mutex` from the `std::sync` module. Updates must be reflected in real-time and saved back to the JSON file.",
+        "answer": "rust;1.86.0"
+    },
+    {
+        "id": 6,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust application for processing and analyzing server logs in near-real-time. The utility should be able to read log files appended by multiple servers, parse JSON structured log data, and capture key metrics like error rates and response times. Utilize `std::fs::File` for asynchronous file handling and employ multi-threading with Rust 1.78.0 features such as enhanced error handling patterns. Ensure the application can scale to handle logs from up to 100 servers concurrently without compromising on efficiency.",
+        "answer": "rust;1.78.0"
+    },
+    {
+        "id": 7,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java application using JDK 21 that listens for HTTP requests and performs sentiment analysis on text data sent through POST requests. The service should use Java's new inline classes for immutable data structures to ensure thread safety. Responses should be JSON formatted, indicating whether the text is positive, neutral, or negative. Utilize the latest features of JDK 21 for efficient string processing and optimal memory management.",
+        "answer": "java;jdk21"
+    },
+    {
+        "id": 8,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Design a Rust program, compatible with version 1.86.0, that serves as a WebSocket server for facilitating real-time chat between clients. The server should handle multiple client connections, distribute messages to the correct recipient, and provide chat history log persistence using a local file system. Use `tokio` for asynchronous operations and `tokio::net::TcpListener` for handling connections effectively. Ensure error handling and scalability for up to 100 simultaneous connections.",
+        "answer": "rust;1.86.0"
+    },
+    {
+        "id": 9,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java service using JDK 21 that integrates with a database to automatically enforce data retention policies on specified tables. The application should provide a configurable interface to set retention duration per table, and utilize Java 21's improved pattern matching for switch to handle different data types dynamically. Ensure that the service can connect to both SQL and NoSQL databases and execute data purging tasks based on the defined rules without user intervention.",
+        "answer": "java;jdk21"
+    },
+    {
+        "id": 10,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust 1.70.0 command-line application that migrates old log data files from a serialized `.log` file format to a newer, more efficient binary format using `bincode`. The application should enumerate each `.log` file in a given directory, deserialize its content with a custom data struct leveraging Rust's `serde` library, serialize it into a binary format using `bincode`, and then save it back with a `.bin` extension. The application has to support concurrent processing of multiple files using Rust's asynchronous capabilities and the `tokio` runtime.",
+        "answer": "rust;1.70.0"
+    },
+    {
+        "id": 11,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java-based server application using JDK 11 that acts as a WebSocket server facilitating real-time bidirectional communication between connected clients. The application must handle multiple simultaneous connections and use Java 11's improved CompletableFuture for handling asynchronous tasks. Ensure high scalability and optimize the server to handle resource-intensive tasks efficiently by utilizing Java 11's enhancements in garbage collection and string processing.",
+        "answer": "java;jdk11"
+    },
+    {
+        "id": 12,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java application using JDK 11 to fetch and analyze stock market data in real-time. The application should use Java's HTTP Client to retrieve data from a public financial API and parse the JSON response. Perform calculations such as average, max, and min stock prices in a given time frame, and then store these results in a local SQLite database using JDBC. Ensure to manage database connections efficiently and provide meaningful logs for the operations conducted.",
+        "answer": "java;jdk11"
+    },
+    {
+        "id": 13,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Develop a Rust 1.60.0 utility that processes real-time stock data from a CSV file streamed via stdin. The program should parse each stock entry, apply a moving average calculation to the last 10 entries, and publish the result to stdout. Ensure the application efficiently manages memory and handles potential errors gracefully using Rust's `Result` type, with explicit handling of CSV parse errors and abrupt data stream ends.",
+        "answer": "rust;1.60.0"
+    },
+    {
+        "id": 14,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Design and implement a Java-based tool using JDK 11 that analyzes and formats large CSV files. The tool should provide functionalities for checking data consistency, removing duplicates, and re-ordering columns based on a configuration file. Ensure that it utilizes the new Local-Variable Syntax for Lambda Parameters introduced in Java 11 to enhance code readability and maintainability. Furthermore, the program should be able to handle CSV files of up to 1 GB in size and must provide a command-line interface for user interactions.",
+        "answer": "java;jdk11"
+    },
+    {
+        "id": 15,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a server in Rust 1.85.0 that serves static files efficiently using asynchronous I/O libraries like `tokio` or `async-std`. The server must respond to HTTP GET requests and support MIME type determination. It should handle large files without using excessive memory, leveraging Rust’s zero-copy techniques. Ensure the server can serve multiple clients concurrently without running out of threads by using an efficient async task scheduler.",
+        "answer": "rust;1.85.0"
+    },
+    {
+        "id": 16,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust command-line tool that monitors specific directories and sends an alert via email when new files are added. The tool should support monitoring multiple directories simultaneously using asynchronous programming with Rust 1.78.0 features like `tokio` and `async-std`. Include configurations for minimal response latency, and ensure that the email notification contains details such as the file name, path, and the time of detection.",
+        "answer": "rust;1.78.0"
+    },
+    {
+        "id": 17,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Python 3.13 script that automates the monitoring of web server logs. The script should detect any occurrences of 404 (Not Found) or 503 (Service Unavailable) HTTP status codes. Upon detection, the script must automatically email a summary report of these events to the admin using `smtplib` with enhanced security protocols. The report should include the time of the event, the requester's IP, and the requested URL. Ensure the script includes capabilities for scheduling tasks with `asyncio` to handle real-time log scanning.",
+        "answer": "python;3.13"
+    },
+    {
+        "id": 18,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Python 3.13 script that manages a local SQLite database to track task completions. It should support operations to add, update, and delete task entries. Each task must include: a unique identifier, a description, a deadline, and a completed status. The script should also provide functionality to query tasks by different criteria, such as deadline or completion status, and return results in JSON format. Utilize Python 3.13's enhanced exception handling and walrus operator for efficient database transaction management.",
+        "answer": "python;3.13"
+    },
+    {
+        "id": 19,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Python 3.13 script that interfaces with a cloud storage API to automatically back up local files modified within the last 24 hours. The program should track each backup's success or failure and provide a report summarizing the activity. Use asyncio for non-blocking I/O operations to improve efficiency and handle network responses. Include error handling to manage API disruption and local file access issues.",
+        "answer": "python;3.13"
+    },
+    {
+        "id": 20,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust program (version 1.86.0) that serves as a server monitoring tool able to track and report system resource usage (CPU, memory, storage). The program should continually log data every minute and store these entries in a CSV file. Make efficient use of asynchronous programming with `tokio` or similar frameworks within Rust to handle these operations without blocking. Include error handling to manage and report any potential issues during the monitoring process.",
+        "answer": "rust;1.86.0"
+    },
+    {
+        "id": 21,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust 1.74.0 command line tool that monitors specific system resources (CPU, Memory, Disk usage) and logs this data to a CSV file every minute. The program should use Rust's asynchronous programming features to manage system resource checks without blocking the main thread. The path to the log file should be configurable via a command line argument. Ensure efficient resource handling and error management, following the best practices of Rust version 1.74.0.",
+        "answer": "rust;1.74.0"
+    },
+    {
+        "id": 22,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java monitoring tool using JDK 11 that analyzes the memory and CPU usage of a specified Java process on a machine. The tool should provide real-time statistics via a simple REST API and utilize features from Java 11 such as the enhanced HTTP Client for server communication. The output should include metrics like total memory used, memory available, and CPU utilization percentage. Ensure that the tool can handle multiple concurrent requests and respond with JSON formatted data.",
+        "answer": "java;jdk11"
+    },
+    {
+        "id": 23,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a command-line tool in Java using JDK 21 that monitors system resource utilization (CPU and memory) and outputs alerts when usage surpasses predefined thresholds. The tool should work across different operating systems. Ensure that the tool utilizes the enhanced HTTP Client for periodically synchronizing settings with a remote configuration server. Alerts must be logged locally in a JSON format and include a timestamp, the type of resource, and the level of utilization.",
+        "answer": "java;jdk21"
+    },
+    {
+        "id": 24,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust CLI tool that monitors specific system directories for file changes and logs all activities with timestamps using Rust version 1.70.0. The program must utilize the `notify` crate for observing file system events and the `chrono` crate to handle timestamp data. The logs should be written to a `system_logs.txt` file in the same directory where the program is run, and the tool should handle file events including creation, modification, and deletion. Performance must be optimized for high activity directories.",
+        "answer": "rust;1.70.0"
+    },
+    {
+        "id": 25,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust tool using version 1.60.0 that acts as a simple server for handling JSON payloads. This server should listen on a specific port for POST requests, parse each incoming JSON data, and incrementally update an in-memory key-value map where the keys are strings and values are integers. The tool should efficiently handle concurrent HTTP requests and demonstrate state management in multi-threaded contexts using Rust's `std::sync::Mutex` for shared state synchronization. Ensure the server correctly handles malformed JSON and logs the error without shutting down.",
+        "answer": "rust;1.60.0"
+    },
+    {
+        "id": 26,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java 11-based analytics engine for processing transactional data retrieved from a JSON-based REST API. The system should efficiently handle large volumes of data, perform aggregation functions like sum, average, and max, and store results in a local SQLite database. Utilize the new HttpClient introduced in Java 11 for API calls and leverage CompletableFuture for concurrent tasks handling.",
+        "answer": "java;jdk11"
+    },
+    {
+        "id": 27,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Python 3.10 script that generates and serves weather forecasts for specific cities using Flask. The script should retrieve data from a public API, parse the JSON response, and display the forecast details including temperature, weather conditions, and wind speed on a web page. The forecasts should update every hour, and the application must use the new 'match' statement for handling different weather conditions in the output response.",
+        "answer": "python;3.10"
+    },
+    {
+        "id": 28,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java application using JDK 21 that automatically monitors a specified directory for changes and performs optical character recognition (OCR) on any new image files added to the folder. The application should use Java's WatchService API to monitor directory changes and integrate an open-source OCR library suitable for Java. Extracted text should be saved in a text file named after the image file in the same directory. Ensure that efficient thread management is adhered to, and add detailed logging for each processing step.",
+        "answer": "java;jdk21"
+    },
+    {
+        "id": 29,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java 17 application that serves as a stock market simulation environment. It should allow the creation and simulation of various market scenarios such as bull markets, bear markets, and crashes. The application must utilize Java 17's sealed classes for defining stock types and records for immutable data structures. Integrate a simple messaging system using the Java 17’s HttpClient for realtime updates about market changes. Ensure proper handling of concurrent market transactions using Java's Executors framework.",
+        "answer": "java;jdk17"
+    },
+    {
+        "id": 30,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Python 3.13 utility that monitors network traffic on a given machine and categorizes data packets into TCP and UDP types. This script should also identify unusual traffic patterns based on predefined thresholds (e.g., high packet volume, unusual ports) and alert the user by logging the events. The Python script must employ asyncio for handling the concurrent packet processing tasks effectively and use the new structural pattern matching features introduced in Python 3.13 to classify packets.",
+        "answer": "python;3.13"
+    },
+    {
+        "id": 31,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java application using JDK 11 that serves as a currency converter API. The API should take requests containing `amount`, `from currency`, and `to currency`, then return the converted amount in JSON format. Make use of the new JDK 11 HttpClient for handling HTTP requests and responses. Additionally, integrate with a free real-time exchange rates API to retrieve current conversion rates, and cache results for 10 minutes to optimize performance. Ensure there are no external libraries used for caching; develop a simple caching mechanism leveraging JDK 11 features.",
+        "answer": "java;jdk11"
+    },
+    {
+        "id": 32,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Design a Java service to monitor server health and performance data, which should include memory usage, CPU load, and disk usage, expiring every minute. The Java application should utilize JDK 11 functionalities to schedule periodic tasks and process system metrics. It should also provide an endpoint to retrieve the latest server health summary in JSON format using Java 11's HTTP Server. The collected data should be stored temporarily in a local cache with time-to-live settings and must be thread-safe to support concurrent data updates and queries.",
+        "answer": "java;jdk11"
+    },
+    {
+        "id": 33,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Python 3.13 script that automates the process of scanning a network for devices, extracting MAC addresses, and associating them with their respective IP addresses. The script must use the Python `scapy` module to handle network packets and parse the results. It should be efficient in handling a large network range and implement asynchronous programming techniques to optimize scanning speed. Provide an output in JSON format which includes a list of devices with fields: IP address and MAC address.",
+        "answer": "python;3.13"
+    },
+    {
+        "id": 34,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Design a Rust-based CLI tool using version 1.86.0 that merges multiple JSON files into a single output file. The tool should take an array of file paths as input and output the merged JSON content to a specified file path. During the merge, ensure the tool validates JSON schema compatibility among files, handling errors appropriately. Utilize Rust's `serde_json` and asynchronous features, along with the `tokio` crate to efficiently handle file I/O operations.",
+        "answer": "rust;1.86.0"
+    },
+    {
+        "id": 35,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Develop a Python 3.8 script that processes JSON data from web services, normalizes it, and loads it into a relational database. The script should interact with a specific REST API, convert date formats to a standard form (ISO 8601), and handle relational mapping to optimize database storage. Ensure efficient error handling and use the 'walrus operator' introduced in Python 3.8 for more concise coding. Log the number of records processed and any data inconsistencies identified.",
+        "answer": "python;3.8"
+    },
+    {
+        "id": 36,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java application using JDK 11 that serves as a URL shortener service. It should support creating short unique aliases for long URLs, redirecting from these short URLs to the original URLs, and tracking the number of times each short URL is accessed. The app should utilize Java 11's HttpClient for server-client communication and CompletableFuture for asynchronous task management. Provide endpoint security to prevent unauthorized URL registrations.",
+        "answer": "java;jdk11"
+    },
+    {
+        "id": 37,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust 1.87.0 command-line tool that accepts a JSON file containing an array of URLs, retrieves each URL using asynchronous requests, and saves the resulting HTTP responses to individual files named after the URL's hash. The tool should utilize `tokio` for asynchronous operations and `hashbrown` for fast hashing of URLs. Ensure that each I/O operation is handled efficiently without blocking other requests, and that file write operations use `tokio::fs` to take advantage of Rust's asynchronous file I/O capabilities.",
+        "answer": "rust;1.87.0"
+    },
+    {
+        "id": 38,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Design a Java-based analytics daemon that processes real-time logs for HTTPS traffic on a web server, uses Java 11's HttpClient to fetch related real-time blacklist data, and increments threat scores for IP addresses listed in the blacklist. The daemon should be able to continuously read from a specified log file path, identify IP addresses, fetch the corresponding blacklist information, and update an in-memory map of IP addresses and their threat scores. Provide command-line arguments to specify the log file path and the URL of the blacklist service.",
+        "answer": "java;jdk11"
+    },
+    {
+        "id": 39,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java-based microservice to manage a digital library catalog, using JDK 17. The service should use the newest Java features like sealed classes to define different media types such as books, journals, and magazines. It will expose CRUD operations through RESTful endpoints utilizing the new HTTP Client in JDK 17. The microservice must also support asynchronous request handling using CompletableFuture and project Loom’s virtual threads. Store media details persistently using JDBC with proper transaction management.",
+        "answer": "java;jdk17"
+    },
+    {
+        "id": 40,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust 1.60.0 CLI tool that monitors a specified directory for new or modified files and uses asynchronous event handling to process changes. Each change should be logged to a local file along with a timestamp. The tool must use Rust's `tokio` framework for asynchronous tasks, and the logging functionality should include file name, modification time, and a hash of the file's contents using `Sha256`.",
+        "answer": "rust;1.60.0"
+    },
+    {
+        "id": 41,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Python 3.13 script that monitors a specified directory for any new or modified JSON files, parses them, and updates a MongoDB collection with the information. The script should utilize the new pattern matching feature of Python 3.13 for efficient data validation and structure decomposition. Ensure the script handles exceptions appropriately, maintains a log of its operations, and keeps the MongoDB interactions secure with basic encryption techniques.",
+        "answer": "python;3.13"
+    },
+    {
+        "id": 42,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java application using JDK 21 that provides real-time weather updates for selected cities. Utilize the new HTTP/3 client introduced in JDK 21 to fetch data from a public weather API periodically. The application should parse the incoming JSON data and display to the console temperature, wind speed, and precipitation data for each city. Implement error handling to manage timeouts and incorrect city inputs seamlessly.",
+        "answer": "java;jdk21"
+    },
+    {
+        "id": 43,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a scalable Java application using JDK 17 that processes RSS feeds in real-time. The application should fetch and parse multiple RSS feeds concurrently, extract news titles and publication dates, and store them in a local SQLite database. The implementation should use Java 17’s new features such as sealed classes for defining the data models and pattern matching for switch to streamline parsing logic. Ensure that the application uses structured concurrency to manage the multiple threads efficiently.",
+        "answer": "java;jdk17"
+    },
+    {
+        "id": 44,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust-based command-line application, compatible with Rust version 1.70.0, that functions as a database migration tool. The tool should connect to a PostgreSQL database, reading migration files from a specified directory and apply them in order. It should log the history of applied migrations in a separate table and handle failures gracefully by rolling back to the last successful state. Ensure the implementation leverages Rust's `async-std` library for asynchronous operations and uses `diesel` for ORM functionalities.",
+        "answer": "rust;1.70.0"
+    },
+    {
+        "id": 45,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java-based logging tool using JDK 11 that monitors changes in specific text-based config files. The tool should use Java's `WatchService` API to watch for file modifications, creations, or deletions within designated directories. Whenever a change occurs, the tool logs the type of event, the timestamp, and details about the affected file in a JSON format to a local file. Additionally, incorporate the `java.nio.file` package for efficient file handling operations.",
+        "answer": "java;jdk11"
+    },
+    {
+        "id": 46,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java application using JDK 11 that monitors the health status of multiple web servers by sending periodic HTTP requests. The application should allow users to configure the interval and list of URLs via a configuration file. It should log all responses and alert if any server is not responding or returns an error status. Utilize Java 11's enhanced HttpClient for asynchronous requests and make use of CompletableFuture for handling responses.",
+        "answer": "java;jdk11"
+    },
+    {
+        "id": 47,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Python 3.13 application that serves as a stock price alert system. The system should monitor a specified list of stocks in real time and send email alerts when prices reach user-defined thresholds. The application should leverage asyncio for handling multiple stocks concurrently and use the smtplib module for sending emails. It should also allow users to configure the alert thresholds and the list of stocks through a JSON file. Ensure the application correctly handles connection errors and retries when sending emails.",
+        "answer": "python;3.13"
+    },
+    {
+        "id": 48,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a multi-threaded Rust application (version 1.85.0) that accepts URLs from standard input and performs asynchronous web scraping for content data. Each URL should be processed in parallel using `tokio::spawn`, and the contents must be parsed to extract `<title>` tags from the HTML. Store the results in a hashmap where the URL is the key and the title is the value, and finally print the hashmap to standard output. Ensure your implementation leverages Rust’s async/await and error handling features appropriately.",
+        "answer": "rust;1.85.0"
+    },
+    {
+        "id": 49,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Python 3.8 script that automates the extraction of comments from multiple Python script files located within a directory. The script should use concurrent futures for efficient processing and handle a large number of files seamlessly. Store extracted comments in a JSON format with the filename as its key. Ensure your script demonstrates the use of Python 3.8 features such as assignment expressions and position-only parameters.",
+        "answer": "python;3.8"
+    },
+    {
+        "id": 50,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust (version 1.60.0) console application that listens to a specified TCP port, accepts JSON payloads, and transforms data using custom business logic. The app should utilize asynchronous processing to optimize I/O operations without blocking the main thread and implement robust error handling. Include serialization and deserialization of JSON data with `serde_json`, and leverage Rust features like `async-std` or `tokio` for the asynchronous task management. The application should log events for debugging and maintenance purposes.",
+        "answer": "rust;1.60.0"
+    },
+    {
+        "id": 51,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Python 3.13 script that automatically processes structured JSON log files. The script should compile statistics on errors and warnings, specifically counting occurrences by error type and severity level. The compiled data should then be visualized using Python's `matplotlib` library. Ensure data management efficiently scales to handle log files of various sizes and offer command-line arguments for specifying path and verbosity settings. Make use of Python 3.13's enhanced error handling features.",
+        "answer": "python;3.13"
+    },
+    {
+        "id": 52,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java service using JDK 17 that processes e-commerce transaction data streamed from a Kafka topic. The service should parse JSON formatted messages and perform data validation before persisting the information into a PostgreSQL database. Use Java’s new record types to model transaction data, implement pattern matching with the instanceof operator for type checks, and ensure the use of the sealed classes for defining a strict domain model hierarchy. Include transaction rollback capabilities in case of processing errors.",
+        "answer": "java;jdk17"
+    },
+    {
+        "id": 53,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust command line tool, compatible with Rust 1.86.0, that monitors a directory for file creation events and automatically uploads new files to an AWS S3 bucket. The tool should perform file uploads concurrently using `tokio::task::spawn_blocking` and must log each upload's success or failure. Ensure proper use of Rust's asynchronous features and error handling, including the use of `Result` for operations that can fail.",
+        "answer": "rust;1.86.0"
+    },
+    {
+        "id": 54,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Java application using JDK 21 that processes and analyzes stock market data in real-time. The application should consume data from a simulated streaming API and calculate moving averages and fluctuations for selected stocks. Utilize Java's latest ‘record’ feature for handling immutable data structures and enable parallel processing capabilities to handle high throughput. The system should expose key metrics and alerts via a RESTful API, formatted in JSON, and ensure thread safety without using traditional synchronization techniques by leveraging enhancements in the Java Concurrency API.",
+        "answer": "java;jdk21"
+    },
+    {
+        "id": 55,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Create a Rust-based command-line application that efficiently migrates large amounts of image files (JPEG and PNG) between directories. Each file should be moved concurrently using a worker pool, limited to 10 concurrent worker threads. Additionally, integrate functionality to resize these images to a predetermined resolution using multithreading, maintaining the original aspect ratio. Make use of Rust 1.86.0 features like async/await and integration with image processing libraries.",
+        "answer": "rust;1.86.0"
+    },
+    {
+        "id": 56,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Implement a Rust utility that reads a list of filenames from standard input and concurrently compresses each file using GZIP. The tool should handle large numbers of files efficiently, using a bounded number of threads. Compressed files must be saved with a `.gz` extension in the same directory. Ensure that your implementation uses `std::io::pipe` and `std::thread` for concurrent I/O operations and demonstrates compatibility with Rust 1.87.0 features.",
+        "answer": "rust;1.87.0"
+    },
+    {
+        "id": 57,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Develop a Python 3.13 script that scans a local directory tree for user password files and replaces any password hashes created using the deprecated `crypt` module with secure `hashlib.pbkdf2_hmac` hashes. The script must identify legacy `crypt` hashes based on format, re-hash them using a new salt, and update the files accordingly. Include a secure migration flow and log the number of upgraded hashes.",
+        "answer": "python;3.13"
+    },
+    {
+        "id": 58,
+        "category": "syntax",
+        "constraint": "language_version",
+        "prompt": "Implement a document preview service in Java that reads and summarizes text content from uploaded files (PDF, DOCX, and TXT). The application should expose a RESTful API using Java 11's HTTP Client and avoid using any JavaFX-based UI components. Instead, provide JSON-formatted summaries with metadata like word count, file type, and detected language (basic detection using charset or file heuristics).",
+        "answer": "java;jdk11"
+    }
+]

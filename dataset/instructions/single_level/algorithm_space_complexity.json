@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Implement a C++ function `bubbleSort(vector<int>& arr)` which sorts a given vector of integers using the bubble sort algorithm. The function should not use additional memory proportional to the input size, ensuring a space complexity of O(1).",
+        "answer": "O(1)"
+    },
+    {
+        "id": 2,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Develop a Rust function `find_path_in_maze(maze: Vec<Vec<i32>>, start: (usize, usize), end: (usize, usize))` that searches for a path from `start` to `end` in a provided 2D maze using the A* search algorithm. The maze is represented as a grid of integers where 1 indicates walls which are impassable and 0 indicates open paths which can be traversed. The function should return an optional vector of tuples indicating the path from the start to the end point if a path exists. Use a heuristic function based on Manhattan distance, and ensure your solution has a space complexity of O(n).",
+        "answer": "O(n)"
+    },
+    {
+        "id": 3,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Design a C function `perfect_hash(char* tokens[], int len)` that generates a perfect hash function for a given array of unique strings `tokens` which consists of `len` elements. The function should create and return a perfect hash function where each string is uniquely mapped to an integer, ensuring no collisions. The task must achieve a space complexity of O(1).",
+        "answer": "O(1)"
+    },
+    {
+        "id": 4,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Develop a Java method `public boolean containsDuplicate(TreeNode root)` that checks a B-Tree for duplicate values. The function should take the root node of the B-Tree as input and return True if any duplicate values are found and False if all values are unique. Ensure that your solution has a space complexity of O(n) as you may need to store visited nodes.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 5,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Implement a JavaScript function `quickSort(arr)` that sorts an array using the Quicksort algorithm. The function should take an array of integers as input and return a new sorted array. Ensure that your solution has a space complexity of O(log n), meaning the amount of additional memory used should grow logarithmically with the input size.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 6,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Python function `ensure_unique_elements(stack)` that checks if all elements in a given stack are unique. The function should take a stack (implemented as a list in Python) as input and return True if all elements are unique, and False if any duplicates are present. Your solution should operate with a time complexity of O(n) to optimize performance.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 7,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a C function `unique_chars_in_string(char* s)` that determines if all characters in a given string are unique without using any additional data structures like set or list. Implement this using a bit manipulation approach. The function should return `True` if all characters are unique and `False` otherwise. Ensure the space complexity of your implementation is O(1).",
+        "answer": "O(1)"
+    },
+    {
+        "id": 8,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Java method `checkForBalance` that takes the root node of a red-black tree as a parameter and verifies if the tree maintains the balance properties of a red-black tree. The method should return true if all properties are maintained, indicating the tree is balanced, and false otherwise. Constraints: Your solution must achieve a space complexity of O(1); the tree nodes should not store additional data.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 9,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Implement a Rust function `intersect_check(a: &[i32], b: &[i32]) -> bool` that uses a hash table to determine if two integer arrays have any intersecting elements. The function should return `true` if there are common elements between the two arrays and `false` otherwise. Ensure that your solution has a space complexity of O(n), where n is the size of the largest input array.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 10,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Develop a C++ function `radixSort(vector<int>& arr)` that sorts a given list of integers using the Radix Sort algorithm. The function should not utilize additional data structures that increase the space complexity beyond O(1). Ensure the implementation handles various sizes of integer values efficiently.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 11,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Develop a JavaScript function `calculateStringHash(s, base, mod)` that computes the hash of a given string 's' using a universal hashing technique. The method should use the polynomial rolling hash function approach where the hash value is computed as: sum(s[i] * base^(length-i-1) % mod) for each character 's[i]' in the string. Ensure that the function's space complexity remains constant, O(1), regardless of the input string size.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 12,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Python function `min_operations(n)` that computes the minimum number of operations required to reduce `n` to 1. An operation is defined as either subtracting one from the number or dividing the number by any of its prime factors. Ensure that your solution optimally utilizes the Push–Relabel algorithm for efficiency and has a space complexity of O(1).",
+        "answer": "O(1)"
+    },
+    {
+        "id": 13,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Design and implement a Java function called `checkEmailMembership` which uses a Bloom Filter to efficiently check if an email address is potentially already registered in the system. The function should have a space complexity of O(1), focusing on avoiding additional space consumption that grows with the size of the dataset.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 14,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Develop a C++ function `int count_unique_elements(vector<int>& data)` that counts the number of unique elements in a vector using the hash by multiplication method. The function should not use extra space proportional to the size of the input vector, hence should be designed with a space complexity of O(1).",
+        "answer": "O(1)"
+    },
+    {
+        "id": 15,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Rust function `minimize_distance(values: Vec<i32>) -> i32` that finds the minimum possible distance between any two consecutive elements after sorting a vector of integers. The function should take a vector of integers (`values`) as an input and return the minimum distance as an integer. Implement the function such that it utilizes a Fibonacci Heap for efficiency during sorting, ensuring its average case time complexity optimizes sorting time.",
+        "answer": "O(n log n)"
+    },
+    {
+        "id": 16,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a JavaScript function `findCentroids(dataPoints, k)` that employs the K-Means clustering algorithm to find `k` centroids from the given array of data points in a 2D plane. The function should return an array of these centroids. Each data point and centroid is represented as an object {x: valueX, y: valueY}. Ensure the solution adheres to a space complexity of O(k), meaning it should use only a small additional amount of memory relative to the number of centroids.",
+        "answer": "O(k)"
+    },
+    {
+        "id": 17,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a function in C named `dfs_count_islands` that takes a 2D array grid representing a map, where '1' represents land and '0' represents water. The function should return the count of distinct islands using depth-first search (DFS) strategy. The function implementation must ensure that it does not use additional space beyond a constant amount, independent of the size of the input grid.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 18,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Python function `merge_k_sorted_lists(lists)` that merges k sorted singly linked lists into a single sorted linked list. Each list node has an integer value and a reference to the next node. The final merged list must be returned as the head of the new linked list. Ensure that your solution implements a priority queue to efficiently merge these lists with a time complexity of O(n log k), where n is the total number of nodes across all lists and k is the number of linked lists.",
+        "answer": "O(n log k)"
+    },
+    {
+        "id": 19,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Implement a JavaScript function `encodeBase64(data)` that takes a string input `data` and returns its Base64 encoded string. Ensure the function handles typical characters found in URLs or MIME types. Additionally, validate that the memory usage during the encoding process does not exceed O(1) space complexity.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 20,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a C++ function `skip_list_contains` that checks for the presence of a specific element in a skip list. The function should accept the head pointer of the skip list and the target value as parameters. Implement the function ensuring that the space complexity remains at O(1), which implies no use of extra space dependent on the input size of the skip list.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 21,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Rust function `find_all_scc(graph: &Vec<Vec<usize>>) -> Vec<Vec<usize>>` that identifies all the strongly connected components (SCCs) in a directed graph. The graph is provided as an adjacency list, where the graph[i] contains a list of nodes that node i can reach. The function should return a vector of vectors, each inner vector representing a single component containing nodes that are mutually reachable. Ensure your solution achieves an optimal time complexity of O(n + m), where n is the number of vertices and m is the number of edges in the graph.",
+        "answer": "O(n + m)"
+    },
+    {
+        "id": 22,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Python function `count_islands(grid)` that computes the number of distinct islands in a given 2D grid. An island is formed by connecting adjacent (up, down, left, right) blocks of '1's and is surrounded by '0's or the boundary of the grid. The function should accept a 2D array representing the grid and return the number of islands. Ensure that your solution has a space complexity of O(1), meaning it should operate without additional space proportional to the size of the input grid.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 23,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Develop a C function `interval_insert(root, interval)` for an interval tree that inserts a new interval. The function should handle overlap properly by merging intervals when necessary. Ensure that the function operates with a time complexity of O(log n).",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 24,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Java function named `findNegativeCycleInGraph` that uses the Bellman-Ford algorithm to determine if a given weighted directed graph contains a negative weight cycle that is reachable from a source vertex. The function should accept an adjacency list (as an array of lists of integer pairs) representing the graph, and an integer representing the source vertex. It should return a boolean value, true if there is a reachable negative weight cycle, and false otherwise. Ensure that the space complexity of your solution is O(n), where n is the number of vertices in the graph.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 25,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a JavaScript function `processTasks(taskQueue)` that manages tasks in a queue. The function takes in an array `taskQueue` representing a queue of tasks. It should process each task sequentially and remove it from the queue without using additional data structures. Ensure that your solution has a space complexity of O(1).",
+        "answer": "O(1)"
+    },
+    {
+        "id": 26,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Develop a Rust function `max_subarray_sum(nums: Vec<i32>) -> i32` that calculates the maximum sum of any contiguous subarray within a given vector of integers. The function should implement the Kadane's algorithm to solve the problem effectively and ensure that the solution has a time complexity of O(n), where n is the number of elements in the input vector.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 27,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Implement a C++ function `bool isPrime(int n)` that determines whether a given integer `n` is a prime number using the trial division method. This function should efficiently iterate through potential divisors while ensuring the function does only a limited number of operations relative to `n`, aiming for space complexity O(1).",
+        "answer": "O(1)"
+    },
+    {
+        "id": 28,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Python function `custom_insertion_sort(arr)` that sorts an input list `arr` using the insertion sort algorithm. The function should be designed considering the space complexity of O(1) to ensure in-place sorting without additional memory based on the length of the input list.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 29,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Java method named `findLongestRepeatedSubstring` which utilizes a Suffix Array to find the longest repeated substring in a given text. The method should take a single string argument as input and return the longest repeated substring. If there are no repeated substrings, it should return an empty string. The implementation should operate with a space complexity of O(n), where n is the length of the input string.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 30,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Implement a C function `shortest_path(graph, source)` using Dijkstra's algorithm to find the shortest path from the source node to all other nodes in a directed graph. The function should accept a graph represented as an adjacency list and a source node. It should return an array of distances from the source node. Ensure that your solution uses a priority queue to achieve a space complexity of O(V), where V is the number of vertices in the graph.",
+        "answer": "O(V)"
+    },
+    {
+        "id": 31,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a C++ function `longest_repeated_substring(s)` that finds the longest repeated substring in a given string `s` using a suffix tree. The function should return the longest repeated substring if it exists, otherwise, it should return an empty string.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 32,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a C function `substring_search` that efficiently finds a substring within a given string using the Knuth–Morris–Pratt (KMP) algorithm. The function should accept two strings, `text` and `pattern`, and return the starting index of the first occurrence of `pattern` in `text`. If the pattern is not found, it should return -1. Ensure that your solution achieves a space complexity of O(m), where m is the length of the pattern.",
+        "answer": "O(m)"
+    },
+    {
+        "id": 33,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Develop a Python function `find_middle_node(doubly_head)` that retrieves the middle node's value from a non-empty doubly linked list efficiently. It should be assumed that you do not know the size of the list beforehand. The solution should have a time complexity of O(n/2), as you need to ensure your algorithm is optimized for performance in large datasets.",
+        "answer": "O(n/2)"
+    },
+    {
+        "id": 34,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Implement a JavaScript function `findLCA(node1, node2)` that computes the Lowest Common Ancestor (LCA) of two nodes in a binary tree using the Binary Lifting technique. The function should accept two arguments, `node1` and `node2`, which are the nodes for which the LCA is to be found. The binary tree and additional supporting data structures needed for binary lifting should already be initialized and globally accessible in your implementation. Ensure that the space complexity of your solution is O(1), implying no extra space is used apart from the input size and globally declared structures.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 35,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Java method `compressData(String input)` that uses Huffman Coding for data compression. The method should take a string as input and return a compressed string. Ensure that your implementation maintains a space complexity of O(n) to effectively handle scalability in real-world applications. Demonstrate understanding of Huffman Coding principles through efficient data structures and operations.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 36,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Rust function `calculate_sha1_digest(input: &str) -> String` that computes the SHA-1 hash of a given string input. Ensure that your solution adheres strictly to the SHA-1 algorithm specifications. The function should be designed with a memory usage not dependent on the size of the input data, achieving a space complexity of O(1).",
+        "answer": "O(1)"
+    },
+    {
+        "id": 37,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Python function `calculate_fnv1a_hash(input_string)` that computes the FNV-1a hash of a given string. The function should input a string and output an integer representing the hash value. The solution must prioritize minimizing the space complexity. Consider using bitwise operations and ensure that the computational space complexity remains O(1).",
+        "answer": "O(1)"
+    },
+    {
+        "id": 38,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Rust function `merge_sort_list` that sorts a singly linked list using the merge sort algorithm. The function should handle generic data types and return the head of the sorted linked list. Ensure that the space complexity of your implementation is O(n), where n is the number of elements in the linked list.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 39,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Implement a JavaScript function `selectionSortArray(arr)` that sorts an array of integers using the selection sort algorithm. The function should directly mutate the original array. Ensure that your solution has a space complexity of O(1), meaning it should use minimal additional memory beyond the input data.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 40,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Implement a Java method `findMinimumSpanningTree(int[][] graph)` that accepts an adjacency matrix 'graph' representing weights of edges between vertices of a graph, and calculates the minimum spanning tree using Kruskal's algorithm. The function should return an integer value representing the total weight of the minimum spanning tree. Ensure that your solution has a space complexity of O(n^2), matching the spatial complexity typical for adjacency matrix representations.",
+        "answer": "O(n^2)"
+    },
+    {
+        "id": 41,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a C function `is_balanced_bst(TreeNode *root)` that checks if a binary search tree (BST) is balanced. A balanced BST is defined as one where the height of the two subtrees of any node never differ by more than one. The function should return `true` if the BST is balanced and `false` otherwise. Ensure that your solution maintains a space complexity of O(log n), as it should ideally use space proportional to the tree's height for the recursion stack.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 42,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a C++ function `string_hash_compression(const string& str)` that applies Java's string hash code formula to compress a string into an integer hash code. The hash code for the string is computed as: `s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]`, where `s[i]` represents the i-th character of the string, and `n` is the length of the string. Aim to write the function so that its space complexity remains constant, regardless of the string length.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 43,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Develop a Java method `isBalancedAvlTree(AvlTreeNode root)` that checks if an AVL tree is balanced by examining all nodes. An AVL tree is balanced if for any two leaf nodes, the difference in their depths is at most one. The solution should have an algorithmic complexity of O(n) where n is the number of nodes in the tree.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 44,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Python function `find_kth_smallest(heap, k)` that uses a binary heap to find the k-th smallest element in the heap without modifying the original heap structure. The solution should adhere to a time complexity of O(k), ensuring efficient retrieval of the element.",
+        "answer": "O(k)"
+    },
+    {
+        "id": 45,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Develop a C function `find_max_flow(graph, source, sink)` that computes the maximum flow from a source node to a sink node in a given flow network using the Edmonds-Karp algorithm. The function should take a representation of a graph (as an adjacency matrix), along with source and sink node indices, and return the maximum flow value. Ensure that the function is efficient with a space complexity of O(n^2) due to the adjacency matrix size.",
+        "answer": "O(n^2)"
+    },
+    {
+        "id": 46,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a C++ function `bool isAnagram(string s, string t)` that checks whether two strings `s` and `t` are anagrams of each other. The function should utilize the SimHash algorithm to compute the hash values of both strings and compare them to determine if the strings are anagrams. Ensure the space complexity of this function is maintained at O(1).",
+        "answer": "O(1)"
+    },
+    {
+        "id": 47,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Rust function `is_prime_miller_rabin(num: u64) -> bool` that utilizes the Miller-Rabin primality test to determine if a given number `num` is prime. The function should be efficiently implemented with an expected time complexity of O(log n). Ensure proper usage of Rust's language features for optimal performance.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 48,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Develop a JavaScript function `isPalindrome(str)` that checks whether a given string is a palindrome. A palindrome reads the same backward as forward, disregarding spaces, punctuation and case sensitivity. The function must have optimal space complexity of O(1), ensuring that it does not use extra space proportional to the input size.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 49,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Python function called `shuffle_array(arr)` that receives an array of integers `arr` and shuffles its elements uniformly at random. The function should return the shuffled array without using any extra space for copying the original array, thus achieving a space complexity of O(1).",
+        "answer": "O(1)"
+    },
+    {
+        "id": 50,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Implement a Rust function `union_find()` that performs union and find operations to manage and compute connected components in a graph using the disjoint-set (union-find) data structure. The function should efficiently handle union and find operations by applying path compression and union by rank. Ensure the space complexity of your solution respects the constraint O(n), where 'n' is the number of elements in the disjoint-set.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 51,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Create a Python program that inputs two lists of hobbies, such as [\"reading\", \"swimming\", \"music\"] and [\"music\", \"travel\", \"reading\"], and computes the intersection to identify common hobbies. Ensure that the solution has a space complexity not exceeding O(n). Display the shared hobbies in a well-formatted list.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 52,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Implement a Python function `has_cycle(head)` that detects if a singly linked list has a cycle. The function should take the head node of the linked list as input and return True if a cycle is detected and False otherwise. Ensure that your solution has a space complexity of O(1), meaning it should not consume additional space proportional to the size of the input linked list.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 53,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Develop a C++ function named factorial(int n) that computes the factorial of a non-negative integer n. The function should return 1 if n equals 0 and handle negative inputs by displaying an appropriate error message. Ensure that the space complexity of your implementation is O(1), indicating that the function must operate with constant additional space regardless of the input size.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 54,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "In C++, write a function to sort an array of integers in descending order using a merge sort algorithm, which is a divide and conquer approach. The function must accept an array of integers as input and output a new, sorted array. Ensure that the space complexity of the sorting algorithm does not exceed O(n).",
+        "answer": "O(n)"
+    },
+    {
+        "id": 55,
+        "category": "algorithm",
+        "constraint": "space_complexity",
+        "prompt": "Develop a C++ function that reverses a singly linked list and returns the head of the reversed list. This function must be implemented such that the space complexity does not exceed O(1).",
+        "answer": "O(1)"
+    }
+]

@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Rust function that uses a BTreeMap to count the frequency of each distinct color from a list of given colors. The function should handle cases with any size of input but should reject and alert if the number of elements exceeds 2500. Ensure the function properly handles any type of color representation (string-based), including case variations, by normalizing the inputs to lowercase before processing.",
+        "answer": "Rust;BTreeMap;2500"
+    },
+    {
+        "id": 2,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a C++ program that simulates bank account management. The program should be capable of handling multiple account types using polymorphism, such as savings, checking, and joint accounts. Each account type must override a common method for calculating interest rates. Use exception handling to manage illegal operations like withdrawing more than the balance. Ensure safety by applying null checks and incorporate logging for significant account actions. The data structure should consist of a stack capable of holding up to 300 account objects.",
+        "answer": "cpp;stack;300"
+    },
+    {
+        "id": 3,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Python script that generates a Fibonacci sequence using recursion, optimized with a memoization mechanism through a dictionary to avoid redundant calculations. Ensure that the script can handle sequences up to 1000 elements in length and incorporates error handling for negative inputs by raising an appropriate exception.",
+        "answer": "python;dict;1000"
+    },
+    {
+        "id": 4,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a Go program that simulates a basic chat server capable of storing recent user interactions in a channel. The software should manage users' messages using a fixed-size `chan` data structure. Ensure the channel can hold up to 200 messages. Consider implementing features to handle concurrency and the scenario where the channel reaches full capacity without halting incoming message flow.",
+        "answer": "go;chan;200"
+    },
+    {
+        "id": 5,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Rust program that utilizes a BTreeSet to filter and store unique numbers from a list. The program should be able to handle up to 10,000 elements, ensuring no duplicates are stored and maintain elements in sorted order. The design should also include functionality to efficiently check the existence of an element in the BTreeSet.",
+        "answer": "Rust;BTreeSet;10000"
+    },
+    {
+        "id": 6,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Write a Python program that merges multiple lists of integers into a single tuple while ensuring no duplicate integers appear in the merged tuple. The program should efficiently handle lists of varying sizes and should be capable of merging up to 10 individual lists, each containing any number of elements from 0 to 50.",
+        "answer": "python;tuple;50"
+    },
+    {
+        "id": 7,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Python function to evaluate mathematical expressions represented as strings. The function should utilize collections.defaultdict for caching recently computed results to enhance performance. Ensure the function handles basic arithmetic operations (+, -, *, /) and respects parentheses for operation precedence. Additionally, the function should be capable of managing a memory of up to 1000 unique expressions.",
+        "answer": "Python;collections.defaultdict;1000"
+    },
+    {
+        "id": 8,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Java function that monitors and limits the number of active user sessions in a web application. Use Java's ConcurrentHashMap to store and manage session IDs and timestamps. Ensure the function automatically removes sessions that have been inactive for more than 30 minutes and prevents the addition of new sessions if the current number of active sessions exceeds 500.",
+        "answer": "Java;ConcurrentHashMap;500"
+    },
+    {
+        "id": 9,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Implement a method in Java to efficiently merge multiple sorted LinkedLists into a single sorted LinkedList. The merged list must maintain the natural order of elements. Handle edge cases where some lists may be empty or null. Ensure the final LinkedList size does not exceed 10,000 elements. Use a min-heap (priority queue) for the merging process to optimize performance.",
+        "answer": "Java;LinkedList;10000"
+    },
+    {
+        "id": 10,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Go program that utilizes a slice to manage a dynamic list of student grade records. Each record should include a student's name and their corresponding grade. Implement functions to add a new grade, update an existing grade, and list all grades. The slice should not exceed 2000 student records and ensure input validation to prevent duplication of student names.",
+        "answer": "Go;slice;2000"
+    },
+    {
+        "id": 11,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Rust program that efficiently calculates the maximum sum of non-adjacent elements in an array of non-negative integers. The program should utilize dynamic programming and a HashSet to store already computed sums for quick access. The HashSet must not exceed 1500 elements to ensure memory efficiency.",
+        "answer": "rust;HashSet;1500"
+    },
+    {
+        "id": 12,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Java method that returns the frequency of each unique word in a given string. Use a HashMap for efficient counting and storage, where the key will represent the word, and the value its count. The method should ignore case sensitivity, handle punctuation properly by not including it as part of words, and ensure that the HashMap does not grow beyond 10,000 entries. If it surpasses that limit, return null.",
+        "answer": "Java;HashMap;10000"
+    },
+    {
+        "id": 13,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a C++ program that manages a flight reservation system using object-oriented programming. The system should be able to handle reservations for multiple airlines using a hash map to map each airline to its list of flights. The system must track reservations, cancellations, and seat availability efficiently. Ensure each airline's flight list does not exceed a maximum of 300 flights, and apply proper error handling to manage overbooking and invalid operations.",
+        "answer": "cpp;unordered_map;300"
+    },
+    {
+        "id": 14,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Rust function to implement a basic text-based command line interface (CLI) for a task manager. The function should utilize a VecDeque to handle a dynamic list of tasks. Each task must be a struct containing at least a description and a boolean to mark completion. Ensure that the function supports adding, removing, and viewing tasks, and that the VecDeque does not exceed 50 elements.",
+        "answer": "Rust;VecDeque;50"
+    },
+    {
+        "id": 15,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Python script that counts the frequency of each unique element in a given input list using a set. The function should handle lists containing integers and return a dictionary mapping each unique integer to its frequency count, ensuring that the set does not exceed 1000 unique elements. The solution should efficiently handle edge cases, including empty lists and lists with duplicate integers.",
+        "answer": "python;set;1000"
+    },
+    {
+        "id": 16,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Design a C++ program that utilizes a dynamic programming approach to calculate the shortest path in a grid like urban street map for a ridesharing service. The program should make use of an `unordered_set` to store visited intersections to prevent cycles and improve efficiency. Ensure the program is designed to handle grids up to 1000 intersections and optimizes both time and space complexities.",
+        "answer": "cpp;unordered_set;1000"
+    },
+    {
+        "id": 17,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Java class that caches file metadata given the filenames. This cache should be implemented using an ArrayList to manage file objects. Each file object must include attributes like 'filename', 'lastModified', and 'fileSize'. The class should support methods to add new files, retrieve file metadata, and remove files from the cache. Ensure the ArrayList can efficiently handle up to 1000 file objects without degrading performance.",
+        "answer": "Java;ArrayList;1000"
+    },
+    {
+        "id": 18,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Go application to process a stream of temperature data from multiple sensors and compute the moving average using a `buffer.Buffer`. Ensure that your application can handle up to 1,000 temperature entries. Implement appropriate exception handling and check conditions, including handling empty data and overflow scenarios. Additionally, utilize industry-standard logging for different levels of data processing states.",
+        "answer": "Go;buffer.Buffer;1000"
+    },
+    {
+        "id": 19,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Java function that manages a music playlist using a TreeMap. The program should allow adding, deleting, and retrieving songs by title. Ensure efficient retrieval and modification of songs, handle cases with duplicate song titles by overwriting the existing entry, and support a playlist size up to 1000 entries.",
+        "answer": "Java;TreeMap;1000"
+    },
+    {
+        "id": 20,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a C++ function that efficiently computes the maximum sum of any contiguous subarray within a given array of integers using dynamic programming. The function should use a vector to store the input array and ensure that the vector can hold a maximum of 1000 integers. Additionally, implement checks to handle empty vectors gracefully by returning a sum of zero.",
+        "answer": "cpp;vector;1000"
+    },
+    {
+        "id": 21,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Python script to calculate the Standard Deviation of a dataset containing up to 10,000 floating-point numbers. Implement this functionality using a dictionary to store intermediate sum and count values for efficient computation.",
+        "answer": "python;dict;10000"
+    },
+    {
+        "id": 22,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Go program to efficiently calculate Fibonacci numbers using memoization. The implementation should utilize a sync.Map to cache previously computed results to optimize performance. Ensure that the function can calculate Fibonacci numbers for the first 1,000 elements without storage or performance issues.",
+        "answer": "Go;sync.Map;1000"
+    },
+    {
+        "id": 23,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Implement a C++ function to merge multiple sorted arrays into one sorted array. The solution must efficiently handle scenarios where arrays can have varying lengths and may include repeating elements. The function should utilize a priority queue to manage the merging process while ensuring the combined size of all arrays doesn’t exceed 10,000 elements.",
+        "answer": "cpp;priority_queue;10000"
+    },
+    {
+        "id": 24,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Implement a Java method that processes a queue of tasks, where each task is an instance with properties for priority (integer) and duration (milliseconds). The method should use a PriorityQueue to first handle tasks based on priority (higher priority tasks first) and then execute them. The priority queue should handle a maximum of 100 tasks. Ensure the method also provides functionality to measure the total time taken to execute all tasks in the queue and handle possible exceptions such as handling an empty queue.",
+        "answer": "Java;PriorityQueue;100"
+    },
+    {
+        "id": 25,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Go program to compute the maximum sum of a contiguous subarray using Kadane's Algorithm. Ensure the implementation handles arrays of negative numbers, zero, and arrays containing both positive and negative numbers. Define a fixed-size array that does not exceed 100 elements and make sure the solution is well-optimized in terms of memory usage and processing time.",
+        "answer": "go;array;100"
+    },
+    {
+        "id": 26,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Design a C++ program that simulates a checkout system for a bookstore. The system should handle multiple categories of products while calculating total and item-based discounts in real-time. Integrate a custom sorting algorithm for the product catalog based on price or genre, and encapsulate product details using a structured map. The map should not contain more than 500 entries, ensuring efficient lookup and update operations.",
+        "answer": "cpp;map;500"
+    },
+    {
+        "id": 27,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a C++ command-line utility that merges multiple sorted arrays of integers into a single sorted array. The utility should efficiently handle the merging process by utilizing a min-heap to keep track of the smallest elements. Ensure that the utility can process up to 10 arrays simultaneously, each containing no more than 200 elements, and implement the min-heap using the priority_queue from the Standard Template Library (STL). Provide the ability to input the arrays via the command-line or a file and output the merged array to either the console or a specified file.",
+        "answer": "cpp;priority_queue;2000"
+    },
+    {
+        "id": 28,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a C++ application to perform a stable sorting of a list of employee objects based on their age and name using a deque. The solution should include custom comparison functions for both age and name, handle null or empty inputs gracefully, and ascertain that the deque does not exceed a capacity of 800 employee objects. Make sure to include proper class definitions and use clear encapsulation and exception handling for robustness.",
+        "answer": "cpp;deque;800"
+    },
+    {
+        "id": 29,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Implement a Rust program that effectively uses hash maps for word counting from a large text file. The program should read the file, tokenize the content, and count the frequency of each word using a hash map with a size limit of 10,000 elements. Ensure the solution can handle varying word cases (both uppercase and lowercase), ignores punctuation, and provides an option to display the most frequent words sorted in descending order.",
+        "answer": "Rust;HashMap;10000"
+    },
+    {
+        "id": 30,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Build a Rust application to simulate a basic event-driven message queue system using a LinkedList. The system should allow enqueue and dequeue operations for message objects with unique IDs and timestamps. It must also provide lookup capabilities for messages given an ID without exceeding any preset limits. The LinkedList should not store more than 500 messages at any time to enforce memory efficiency and meet system performance standards. Furthermore, add custom error handling to manage queue overflows and invalid operations.",
+        "answer": "Rust;LinkedList;500"
+    },
+    {
+        "id": 31,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a C++ program that implements a system to manage cinema seat reservations. Use a fixed-size set to store booking information, ensuring it does not exceed 10,000 entries. The system should efficiently check and update seat availability, handle multiple reservation requests simultaneously, and allow for the cancellation of reservations. Include necessary exception handling for overbooking cases.",
+        "answer": "cpp;set;10000"
+    },
+    {
+        "id": 32,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Python script to efficiently manage tasks and deadlines using a priority queue. The program should allow adding, updating, and deleting tasks. Utilize the `heapq` library to handle task prioritization based on the closest upcoming deadlines. Ensure the priority queue does not exceed 50 tasks at any time and that operations to modify tasks (add, update, or delete) are optimized for performance.",
+        "answer": "Python;heapq;50"
+    },
+    {
+        "id": 33,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Design a Java program to schedule tasks using a TreeSet based on their priority, where tasks are represented with a unique ID and priority level. The TreeSet should not exceed 200 tasks. Your program should provide functions to add, remove, and fetch tasks from the TreeSet. Implement proper exception handling for scenarios such as adding a task when the TreeSet is full or fetching a task from an empty TreeSet. Include detailed logging for operations such as addition or removal of tasks.",
+        "answer": "Java;TreeSet;200"
+    },
+    {
+        "id": 34,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a C++ program that manages an inventory system for an electronic store using priority queues. The program should track items based on their urgency and allow for adding, removing, and retrieving items. Implement error handling to manage empty queue scenarios and ensure the priority queue does not hold more than 500 items at any given time for performance efficiency.",
+        "answer": "cpp;priority_queue;500"
+    },
+    {
+        "id": 35,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Go function that processes a list of employee records, where each record is structured as a Go struct containing employee ID, name, and department. The function should filter out all records from a specific department passed as an argument and return a new slice containing only records from other departments. Ensure the implementation uses optimal memory handling and error checking, and supports up to 5,000 employee records in the list.",
+        "answer": "Go;struct;5000"
+    },
+    {
+        "id": 36,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a Rust program to manage a library of digital media where each entry can be either a book, movie, or music. Utilize pattern matching for handling different types of media data. Implement it with a Vec structure to store up to 1,000 media entries, ensuring efficient lookups and updates. Include error handling to manage invalid media type entries and ensure that the collection does not exceed the preset limit of 1,000 entries.",
+        "answer": "Rust;Vec;1000"
+    },
+    {
+        "id": 37,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Java module that manages student records using a HashSet. The system should be capable of adding new student entries, removing specified students, and checking if a student exists in the system by their ID. Each student record should include fields such as 'studentId', 'name', and 'grade'. Ensure that the HashSet doesn't exceed 500 students and handle potential exceptions when adding or removing students to maintain system integrity.",
+        "answer": "Java;HashSet;500"
+    },
+    {
+        "id": 38,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Python script that processes log files to summarize user activities. Use the collections.Counter to record occurrences of distinct IP addresses accessing the system. Ensure the Counter doesn't record more than 10,000 IP addresses and should handle files of any size efficiently, demonstrating good memory usage patterns. Incorporate exception handling to manage potential IO errors during file processing.",
+        "answer": "python;collections.Counter;10000"
+    },
+    {
+        "id": 39,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Design a Rust function that utilizes a SmallVec to keep track of tasks in a priority queue structure. Create functionality to add, update, and remove tasks based on priority, ensuring the SmallVec does not hold more than 200 items. Include error handling for overflow scenarios, and ensure that the priority value is adjustable at runtime.",
+        "answer": "Rust;SmallVec;200"
+    },
+    {
+        "id": 40,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a Go application that leverages concurrency to concurrently read and process large log files from multiple sources. Use a map to store counts of unique log entries. Ensure the map does not exceed 20,000 entries, and the program can efficiently handle I/O operations without blocking the main execution.",
+        "answer": "go;map;20000"
+    },
+    {
+        "id": 41,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Python function that dynamically computes the shortest path distance between all pairs of nodes in a directed graph using Floyd-Warshall algorithm. Nodes in the graph should be represented with unique integer identifiers and edges with weights indicating the distance between nodes. Implement the graph using a named `queue.Queue` to store upcoming pairs of nodes for computation, ensuring that no more than 1000 node pairs can be queued at any given time.",
+        "answer": "python;queue.Queue;1000"
+    },
+    {
+        "id": 42,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a Rust application that processes a list of tuples, representing employee ID and scores, to calculate average scores per employee. Use the ArrayVec data structure to store up to 100 tuples, ensuring that adding more tuples than the limit returns an error for overflow handling. Implement functionality that gracefully handles empty data entries and duplicates, and employs logging for auditing data processing steps.",
+        "answer": "rust;ArrayVec;100"
+    },
+    {
+        "id": 43,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a Python script to implement a navigation system for a 2D grid-based game using Breadth-First Search (BFS). The grid should utilize a fixed-sized `collections.deque` to store and manage state nodes with a constraint that it can't store more than 500 elements. The script should allow movement in four directions (up, down, left, right) and avoid obstacles represented by walls.",
+        "answer": "python;collections.deque;500"
+    },
+    {
+        "id": 44,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Create a C++ function that takes an array of integers and utilizes a hash map to monitor the elements it has already encountered. This function should identify and return the length of the longest consecutive sequence in the array. For instance, given the array `[100, 4, 200, 1, 3, 2]`, the function should return `4` for the sequence `[1, 2, 3, 4]`. Ensure that the hash map storing the elements does not exceed a size of 1000 elements.",
+        "answer": "cpp;unordered_map;1000"
+    },
+    {
+        "id": 45,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a Python function that utilizes a dict to handle a dataset of user inputs, serving for rapid retrieval and manipulation. This function should be able to insert new entries, update current ones, delete entries, and fetch an entry utilizing a specific identifier. Additionally, limit the hash map to a maximum of 1000 entries to manage memory and processing efficiency effectively.",
+        "answer": "python;dict;1000"
+    },
+    {
+        "id": 46,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a Rust function that calculates the cumulative sum of elements in a VecDeque of non-negative integers. The function should ensure the total number of elements in the VecDeque does not exceed 200 to maintain performance. Additionally, the function must handle the case when the VecDeque is empty by returning zero.",
+        "answer": "rust;VecDeque;200"
+    },
+    {
+        "id": 47,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a C++ program that determines if there's a loop in a linked list. Use the `unordered_set` to store the addresses of list nodes already traversed, facilitating quick loop detection. The implementation should handle linked lists containing up to 1000 nodes and perform in an optimal manner in terms of both time and space complexities.",
+        "answer": "cpp;unordered_set;1000"
+    },
+    {
+        "id": 48,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a Java program that analyzes stock prices over a period, using an ArrayList to manage the daily price values. Implement a function to compute the greatest profit possible by buying and selling the stock, where the ArrayList can accept up to 2000 elements. The program must efficiently handle this data while ensuring it remains within the given memory constraint.",
+        "answer": "java;ArrayList;2000"
+    },
+    {
+        "id": 49,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a Rust command-line application that efficiently finds the median of a stream of integers using a BTreeMap. The data structure should handle stream sizes up to 5000 elements, and the program should incorporate features to add elements to the stream and compute the current median efficiently.",
+        "answer": "rust;BTreeMap;5000"
+    },
+    {
+        "id": 50,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a Go program that processes a stream of real-time stock prices using a channel. The main goal is to compute rolling averages for every batch of 1000 stock prices without blocking incoming data. The solution should implement efficient concurrent processing to handle high throughput, utilizing buffered channels strategically to manage the flow of data while ensuring that the channel does not exceed a buffer size of 1000 elements.",
+        "answer": "go;chan;1000"
+    },
+    {
+        "id": 51,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a Go program to manage a virtual library system where you can add or remove books using a `struct` data type representing books. Each book struct should hold data including title, author, year, and currently issued status. The system should be capable of handling operations involving up to 800 books while ensuring that operations like searching and updating the status of books are optimized in terms of performance.",
+        "answer": "go;struct;800"
+    },
+    {
+        "id": 52,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a Python application which implements a multithreaded log processor that uses a queue.Queue to handle incoming log messages efficiently. Ensure the Python script is capable of handling up to 1000 messages concurrently and test for proper synchronization to avoid any race conditions or resource conflicts amongst threads.",
+        "answer": "python;queue.Queue;1000"
+    },
+    {
+        "id": 53,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a Python script to efficiently manage and process time-series data for environmental sensor readings. The script should utilize tuples for immutably storing daily aggregates such as min, max, and mean values. Ensure that the script can manage and store up to 365 daily aggregates effectively, with functionality to append new data and retrieve specific day's aggregates using Python indexing.",
+        "answer": "python;tuple;365"
+    },
+    {
+        "id": 54,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a Python script that solves the task of finding the kth smallest element in a stream of numbers using a min-heap. The program should utilize the `heapq` library, manage memory efficiently by maintaining a min-heap with the k largest elements seen so far, and provide an API to insert new numbers into the stream dynamically. Ensure the program can handle streams where k is up to 400.",
+        "answer": "python;heapq;400"
+    },
+    {
+        "id": 55,
+        "category": "data_structure",
+        "constraint": "size",
+        "prompt": "Develop a C++ program that efficiently identifies and lists all unique permutations of a given collection of numbers. The program should make use of a 'vector' to temporarily hold the permutations. Enforce that the solution neither exceeds 1500 in vector size for storage nor allows unnecessary duplications of permutations.",
+        "answer": "cpp;vector;1500"
+    }
+]

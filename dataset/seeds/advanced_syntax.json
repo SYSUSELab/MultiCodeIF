@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "language": "javascript",
+        "advanced_syntax": "async\/await asynchronous processing",
+        "features": "async\/await in JavaScript is a syntax sugar for handling asynchronous operations, based on Promise implementation",
+        "example": "async function fetchData() {\n try {\n const res = await fetch('url');\n const data = await res.json();\n console.log(data);\n } catch (err) {\n console.error(err);\n }\n}"
+    },
+    {
+        "id": 2,
+        "language": "javascript",
+        "advanced_syntax": "Spread Operator",
+        "features": "The... operator in JavaScript can expand arrays or objects, often used to merge, copy or pass parameters.",
+        "example": "\/\/ Merge arrays\nconst arr1 = [1, 2];\nconst arr2 = [3, ...arr1]; \/\/ [3, 1, 2]\n\n\/\/ Copy object\nconst obj = { a: 1 };\nconst objCopy = { ...obj }; \/\/ { a: 1 }\n\n\/\/ Function parameter passing\nconst nums = [1, 2, 3];\nMath.max(...nums); \/\/ Equivalent to Math.max(1, 2, 3)"
+    },
+    {
+        "id": 3,
+        "language": "javascript",
+        "advanced_syntax": "Arrow Functions",
+        "features": "Arrow functions in Javascript => Provide more concise function syntax and automatically bind this to the lexical scope. ",
+        "example": "\/\/ Single parameter implicit return\nconst square = x => x * x;\n\n\/\/ Multiple parameters explicit return\nconst sum = (a, b) => { return a + b; };\n\n\/\/ Binding lexical this\nconst timer = {\n seconds: 0,\n start() {\n setInterval(() => {\n this.seconds++; \/\/ Correct access to this\n }, 1000);\n }\n};"
+    },
+    {
+        "id": 4,
+        "language": "python",
+        "advanced_syntax": "Generator and yield",
+        "features": "Python's generator can generate data step by step through yield instead of returning the entire collection at once, thereby improving efficiency. ",
+        "example": "def count():\n n = 0\n while True:\n yield n\n n += 1\n\ncounter = count()\nprint(next(counter)) # 0\nprint(next(counter)) # 1"
+    },
+    {
+        "id": 5,
+        "language": "python",
+        "advanced_syntax": "List Comprehension",
+        "features": "Python's list comprehension uses concise syntax to quickly generate lists, supporting conditional filtering and nesting",
+        "example": "squares = [x**2 for x in range(10) if x % 2 == 0]\n# [0, 4, 16, 36, 64]"
+    },
+    {
+        "id": 6,
+        "language": "python",
+        "advanced_syntax": "Dictionary Comprehension",
+        "features": "Similar to list comprehension, but generates a dictionary.",
+        "example": "square_dict = {x: x**2 for x in range(3)} \n# {0: 0, 1: 1, 2: 4}"
+    },
+    {
+        "id": 7,
+        "language": "python",
+        "advanced_syntax": "Set Comprehension",
+        "features": "Concise syntax for generating sets, automatic deduplication",
+        "example": "unique_chars = {char for char in 'abracadabra'} \n# {'a', 'b', 'r', 'c', 'd'}"
+    },
+    {
+        "id": 8,
+        "language": "go",
+        "advanced_syntax": "defer statement (delayed execution)",
+        "features": "Go's defer statement is used to perform some operations before the function returns, such as releasing resources. ",
+        "example": "package main\n\nimport \"fmt\"\n\nfunc main() {\n defer fmt.Println(\"This will be printed last.\")\n fmt.Println(\"Hello, Go!\")\n}"
+    },
+    {
+        "id": 9,
+        "language": "go",
+        "advanced_syntax": "Goroutine and Channel",
+        "features": "Goroutine is a lightweight thread in the Go language, managed by the Go runtime, and is more efficient than system threads. Channel is a communication mechanism between goroutines for safely transferring data. ",
+        "example": "func fibonacci(n int, c chan int) {\n x, y := 0, 1\n for i := 0; i < n; i++ {\n c <- x\n x, y = y, x+y\n }\n close(c)\n}\n\nfunc main() {\n c := make(chan int, 10)\n go fibonacci(cap(c), c)\n for i := range c {\n fmt.Println(i)\n }\n}"
+    },
+    {
+        "id": 10,
+        "language": "kotlin",
+        "advanced_syntax": "Lambda Expression",
+        "features": "Lambda expression is a concise way to represent functions in Kotlin, which allows you to pass functions as values. Lambda is a core part of Kotlin's functional programming features. ",
+        "example": "fun calculate(a: Int, b: Int, operation: (Int, Int) -> Int): Int {\n return operation(a, b)\n}\n\nval result = calculate(4, 5) { x, y -> x * y } \/\/ Output 20"
+    },
+    {
+        "id": 11,
+        "language": "kotlin",
+        "advanced_syntax": "when expression",
+        "features": "when is a powerful conditional expression in Kotlin, similar to the switch statement in other languages, but more powerful and flexible. ",
+        "example": "when (x) {\n in 1..10 -> print(\"x is in the range\")\n in validNumbers -> print(\"x is valid\")\n !in 10..20 -> print(\"x is outside the range\")\n else -> print(\"none of the above\")\n}"
+    },
+    {
+        "id": 12,
+        "language": "rust",
+        "advanced_syntax": "Pattern matching (match expression)",
+        "features": "Powerful pattern matching in Rust, which can deconstruct enumerations, tuples and other types to ensure that all cases are handled. ",
+        "example": "enum Coin {\n Penny,\n Nickel,\n Dime,\n Quarter(UsState),\n}\n\nfn value_in_cents(coin: Coin) -> u8 {\n match coin {\n Coin::Penny => 1,\n Coin::Nickel => 5,\n Coin::Dime => 10,\n Coin::Quarter(state) => {\n println!(\"State quarter from {:?}!\", state);\n 25\n },\n }\n}"
+    },
+    {
+        "id": 13,
+        "language": "rust",
+        "advanced_syntax": "if let syntax sugar",
+        "features": "Simplify match expressions that only care about one pattern and avoid lengthy code",
+        "example": "let some_value = Some(3);\n\/\/ instead of match some_value { Some(x) => println!(\"{}\", x), _ => () }\nif let Some(x) = some_value {\n println!(\"x = {}\", x); \/\/ x = 3\n}"
+    },
+    {
+        "id": 14,
+        "language": "rust",
+        "advanced_syntax": "Closures",
+        "features": "Closures are a type of function in Rust that can be used toAnonymous functions that capture their environment. They are similar to lambda expressions or anonymous functions in other languages, but with more power. ",
+        "example": "let add_one = |x| x + 1; \/\/ Type inference\nprintln!(\"{}\", add_one(5)); \/\/ 6\n\nlet list = vec![1, 2, 3];\nlet only_evens: Vec<_> = list.into_iter().filter(|&x| x % 2 == 0).collect();"
+    }
+]

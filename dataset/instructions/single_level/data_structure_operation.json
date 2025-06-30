@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a function in Rust that utilizes a BinaryHeap to manage a real-time event logging system for an online gaming platform. This system should efficiently track and retrieve the highest-scoring game sessions using 'push' for adding new scores and 'pop' for removing the highest score when required. Additionally, this implementation must ensure data remains accessible in descending score order to allow quick leaderboard updates.",
+        "answer": "rust;BinaryHeap;['push','pop']"
+    },
+    {
+        "id": 2,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Java method to handle real-time messaging in a distributed system using a `Queue` for buffering the messages. The method should implement a strategy to prioritize message delivery based on urgency. To effectively sequence the messages, use 'offer' to add new messages and 'poll' to retrieve the most urgent message for processing. This queue operation must ensure that message handling remains efficient and reliable in high-volume environments.",
+        "answer": "java;Queue;['offer','poll']"
+    },
+    {
+        "id": 3,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Rust function that provides a unique tag management system for a blogging platform by using a HashSet for storing and managing tags. Each blog post needs to be associated with a unique set of tags to help categorize content effectively. The function should support adding new tags and checking if a tag already exists using the operations 'insert' and 'contains'. Ensure an optimized and efficient tagging system to facilitate searching and organizing blog posts.",
+        "answer": "rust;HashSet;['insert','contains']"
+    },
+    {
+        "id": 4,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Go function to maintain a real-time monitoring system for a classroom where student attendance can be dynamically updated. Utilize a slice to store student names and asynchronously update this list using 'append' operation to add new students and 'copy' operation to copy this list for report generation at a given time. This function should also be able to retrieve the total count of students currently present.",
+        "answer": "go;slice;['append','copy']"
+    },
+    {
+        "id": 5,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Python function for an e-commerce platform to manage user cart items with a list. The function should allow adding new items to the cart and removing specific items by name. Ensure operations on the list are executed using only 'append' to add items and 'remove' to delete them. The function should handle errors gracefully if an attempt to remove an item not in the cart occurs, returning a boolean value to indicate successful addition or removal.",
+        "answer": "python;list;['append','remove']"
+    },
+    {
+        "id": 6,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a Rust function to manage a simple document tracking system using a Vec for storing document histories. Each document can have multiple versions due to edits over time. The function should allow adding a new version of a document to the Vec using either 'push' or 'insert'. It should also ensure that each version is uniquely identified by its creation timestamp. Implement error handling to prevent insertion of documents with duplicate timestamps.",
+        "answer": "rust;Vec;['push','insert']"
+    },
+    {
+        "id": 7,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Rust function that manages a music playlist using a LinkedList. The function should add new songs to the end of the list and allow removing the oldest song from the front. This function helps maintain a dynamic and continuously updated playlist where users can add current favorites while the oldest entries are automatically archived. Ensure the use of the LinkedList exclusively with basic operations like push_back() for adding and pop_front() for removing entries.",
+        "answer": "rust;LinkedList;['push_back','pop_front']"
+    },
+    {
+        "id": 8,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a Go function that manages a restaurant reservation system using a map to record reservations. Each reservation entry should have a customer's name as a key and a list of reservation details (such as date and table number) as the value. The function must ensure that no double bookings occur on the same date for the same table. Implement deletion of entries from the reservation map when a customer cancels their reservation, using the 'delete' operation explicitly.",
+        "answer": "go;map;['delete']"
+    },
+    {
+        "id": 9,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Go function that manages inventory control for an ecommerce platform using a slice to track available product stocks. The function should allow adding new stocks for products and updating existing stock levels by appending to the slice. Use the 'copy' and 'append' operations to manage the slice effectively, ensuring any updates preserve the integrity of the inventory data, while avoiding use of map data structures and advanced slice techniques such as slicing or direct indexing mutations.",
+        "answer": "go;slice;['copy','append']"
+    },
+    {
+        "id": 10,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a C++ function that manages a social media user's tagging history using a set. Each tag represents a connection to a specific event or person. The function should allow adding new tags for a user and removing tags selectively. The operations should use 'insert' to add tags and 'erase' to remove tags, and evaluate the scalability of these operations for large sets.",
+        "answer": "cpp;set;['insert','erase']"
+    },
+    {
+        "id": 11,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Go function that manages a simple in-memory logging system where logs are stored in a map with timestamps as keys. The function should allow insertion of log entries and deletion of old log entries based on timestamp criteria. Use the map data structure and employ only the 'assign' operation for adding new logs and the 'delete' operation for removing logs that are older than a specified timestamp.",
+        "answer": "go;map;['assign','delete']"
+    },
+    {
+        "id": 12,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a function in C++ using a stack to evaluate postfix mathematical expressions. The function should handle basic operations like addition (+), subtraction (-), multiplication (*), and division (/) between integers. Ensure to utilize push() and pop() operations to manage the stack's state throughout the calculation process. Include error handling to manage division by zero and invalid symbols, returning an error message in such cases.",
+        "answer": "cpp;stack;['push','pop']"
+    },
+    {
+        "id": 13,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Rust function to manage inventory for a retail store, utilizing a HashMap for tracking stock. The function takes a product identifier and quantity as inputs. It should handle adding new stock items or updating existing items with 'insert' or explicitly remove items using 'remove' based on their quantity reaching zero. Ensure that all manipulations to the HashMap use only these specified operations.",
+        "answer": "rust;hashmap;['insert','remove']"
+    },
+    {
+        "id": 14,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a Java class that simulates a browser history using a stack data structure. The class should offer methods to navigate to a new page, return to the previous page, and display the current page without using backtracking. Ensure that the navigation methods are implemented using 'push' to add a new page and 'pop' to go back to the previous page.",
+        "answer": "java;Stack;['push','pop']"
+    },
+    {
+        "id": 15,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Python function that initializes and manages student scores using a list. The function should allow adding a sequence of new scores and inserting individual scores at specified positions. All scores should be retained in a single list and the operations should be restricted exclusively to using 'extend' for adding sequences of scores and 'insert' for adding individual scores at specific positions.",
+        "answer": "python;list;['extend','insert']"
+    },
+    {
+        "id": 16,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a Java function that acts as a scheduling system for a university examination hall using a PriorityQueue. The system should ensure that examinations with earlier dates are processed first. The function must exclusively utilize 'offer' to add new exams, and 'poll' to retrieve and remove the earliest exam from the queue. The function will manage examination schedules dynamically and handle edge cases where the queue is empty.",
+        "answer": "java;priorityqueue;['offer','poll']"
+    },
+    {
+        "id": 17,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a Java function that utilizes a HashSet to manage an electronic store's inventory system. The function should allow the store to add new products and remove sold-out items efficiently. Additionally, ensure that the HashSet is operated only with 'add' and 'remove' methods to adapt to real-time inventory updates without using methods like clear() or contains().",
+        "answer": "java;HashSet;['add','remove']"
+    },
+    {
+        "id": 18,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Rust function to simulate elevator scheduling. Use a Vec to maintain a record of floor requests sorted chronologically. The function should be capable of adding new floor requests and retrieving the next request to be attended in a FIFO manner. Ensure that the floor requests are managed using only the 'push' and 'pop' operations to maintain simplicity and align with the Rust vector manipulation methods.",
+        "answer": "rust;Vec;['push','pop']"
+    },
+    {
+        "id": 19,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Python function using an OrderedDict to manage a cache system that maintains the order of user access. The function should handle cache eviction by removing the least recently used item when the cache becomes full and needs to make space for new items. The eviction should be executed using the 'popitem' operation and updating the cache with 'move_to_end' operation to mark items as most recently used when accessed.",
+        "answer": "python;OrderedDict;['move_to_end','popitem']"
+    },
+    {
+        "id": 20,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Java function to handle a booking system where events are tracked using an ArrayList. The function should be capable of adding new event details and removing cancelled events from the ArrayList. Ensure the function includes checks to prevent adding duplicate entries for the same event and handles removals safely even if the event isn't in the list initially.",
+        "answer": "java;arraylist;['add','remove']"
+    },
+    {
+        "id": 21,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Java function to manage an online meeting platform using a Vector to track the agenda items. This function should allow the addition or removal of agenda items according to user requests. It must incorporate the use of the Vector’s add() and remove() methods explicitly to modify agenda items list. The updates in the list should reflect in real-time across the platform, ensuring any changes are immediately visible to all users.",
+        "answer": "java;Vector;['add', 'remove']"
+    },
+    {
+        "id": 22,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a C++ function to handle the scheduling of events in a conference using a `std::map` where the key is the timeslot (in the format \"HH:MM\") and the value are the event names. The function should be able to add new events at specified times using the 'insert' operation and remove events using the 'erase' operation. This should accommodate changes in the schedule without using complex map utilities like `emplace` or `find`.",
+        "answer": "cpp;map;['insert','erase']"
+    },
+    {
+        "id": 23,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Python function to analyze the frequency of words in a document using the Counter class from the collections module. The function should take a string input representing the text of the document, break it into words, and use the Counter to update counts based on the words in the document. It must update the existing word counts if any input is processed a second time. Furthermore, include functionality to subtract counts of specific words that are deemed non-essential or common, using a separate list of such words provided as an argument.",
+        "answer": "python;Counter;['update','subtract']"
+    },
+    {
+        "id": 24,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a C++ function that manipulates a list to manage a real-time task queue where tasks can be added or removed from the front only. This function should add tasks using the push_back operation and remove the most imminent task using the pop_front operation, adhering strictly to the use of these operations. This task management system will help in scenarios where tasks are processed in the order they are received. Ensure thorough error handling to deal with empty list scenarios before attempting a pop operation.",
+        "answer": "cpp;list;['push_back','pop_front']"
+    },
+    {
+        "id": 25,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a C++ function to manage a ticketing system where tickets are processed in the order they are received. Utilize a queue to handle the ticket requests. The function should be able to add a new ticket request using the `push` operation and process an existing ticket using the `pop` operation. Ensure the implementation strictly uses these operations without employing auxiliary methods or advanced queue functionalities.",
+        "answer": "cpp;queue;['push','pop']"
+    },
+    {
+        "id": 26,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a C++ function to manage a queue-based help desk ticket system. In this system, new tickets are generated and enqueued when a customer requests support, and processed or dequeued by support representatives in the order they were received. Implement the queue using STL's queue library, utilizing 'emplace' to add new tickets and 'pop' to remove tickets after they are handled. The function should also be able to provide the total number of tickets currently waiting to be processed.",
+        "answer": "cpp;queue;['emplace','pop']"
+    },
+    {
+        "id": 27,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Implement a Python function designed for event registration in a system. Utilize a dictionary to manage attendees and their registration statuses. The function should enable checking if an attendee is already registered using 'get', and allow for safely withdrawing an attendee from the system using 'pop'. Document the attendees' activities in a manner that tracks the use of these operations, adhering to the specified operations without employing alternative dictionary methods like update() or del.",
+        "answer": "python;dict;['get','pop']"
+    },
+    {
+        "id": 28,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Implement a Python function to simulate a queue management system for a customer service center, using the deque data structure. The function should manage customer tickets by adding new customer IDs to the queue with 'append()' and manage service requests by processing the first customer in line using 'popleft()'. Provide error handling for cases when the queue is empty.",
+        "answer": "python;deque;['append','popleft']"
+    },
+    {
+        "id": 29,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a Java function that manages a playlist for a music streaming application using a LinkedList. This function should allow the manipulation of tracks by adding them to the start of the playlist and removing the first track. Ensure the entire functionality revolves around these basic operations: addFirst and removeFirst among the LinkedList operations. This will simulate a stack-based approach to a user's playlist where the most recently added track is played first.",
+        "answer": "java;LinkedList;['addfirst','removefirst']"
+    },
+    {
+        "id": 30,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a C++ function that simulates a basic document processing queue. Implement this using a deque to manage the order of document processing tasks. The function should be capable of adding tasks to the end of the queue and removing them from the front as they are processed. Ensure that operations are exclusively using 'push_back' to add tasks and 'pop_front' to remove tasks from the deque. This setup should give an emulation of a first-in-first-out (FIFO) process for handling tasks.",
+        "answer": "cpp;deque;['push_back','pop_front']"
+    },
+    {
+        "id": 31,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Rust function to manage queries on a customer support platform using a VecDeque for maintaining a record of customer queries. The function should handle inserting new queries and processing the oldest query in a FIFO manner. Operations like 'push_back' to add new queries and 'pop_front' to remove the oldest query must be exclusively used for performing these tasks. Ensure the function can add a query, check if the queue is empty, and process the oldest query.",
+        "answer": "rust;VecDeque;['push_back','pop_front']"
+    },
+    {
+        "id": 32,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Python function to handle an online classroom seating arrangement using a priority queue. The function should allow the seating of students based on their grade level using heapq, enabling orderly entry and exit from the classroom. Implement this functionality using heapq's heappush for adding students and heappop for removing students as they enter or leave the classroom.",
+        "answer": "python;heapq;['heappush','heappop']"
+    },
+    {
+        "id": 33,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a C++ function to manage an upcoming conference using a priority_queue to sequence speakers based on their rating score. The function should allow adding new speakers to the schedule and retrieving the next highest-rated speaker when it's their turn to speak. Use only the operations 'push' for adding speakers and 'pop' to remove the speaker with the highest rating from the queue. Implement error handling to deal with empty queue scenarios, ensuring the function returns an appropriate message or action.",
+        "answer": "cpp;priority_queue;['push','pop']"
+    },
+    {
+        "id": 34,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Rust function that manages a social event attendee tracking system using a HashSet. The function should allow adding or removing attendees using their unique IDs. It must support operations to check whether an attendee is already registered or has unchecked out. Use only the `insert` and `remove` methods to manage the HashSet to ensure real-time updates on attendee status.",
+        "answer": "rust;HashSet;['insert','remove']"
+    },
+    {
+        "id": 35,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Go function to maintain a queue system for an online ticket booking scenario. This system should utilize a list to queue user requests and manage them in a First-In-First-Out (FIFO) manner. The function should allow the addition of user IDs to the queue using specific operations ‘pushback’ for new requests and ‘pushfront’ for priority requests. Additionally, ensure that the main operations involved, pushback and pushfront, are used to handle the requests in the queue correctly.",
+        "answer": "go;list;['pushfront','pushback']"
+    },
+    {
+        "id": 36,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Rust function to manage an inventory system using a BTreeSet to keep track of product IDs. The function should allow adding and removing items to and from the inventory. It must utilize only the 'insert' and 'remove' operations of BTreeSet to modify the set contents. This function should also handle errors gracefully by returning a custom error message if the operation cannot be executed (e.g., attempting to remove an item that doesn't exist).",
+        "answer": "rust;BTreeSet;['insert', 'remove']"
+    },
+    {
+        "id": 37,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Java function that serves as a simple inventory system for a retail store using a HashMap to track product quantities. The function should allow adding new products and updating existing product quantities using the 'put' operation. Additionally, the function must be able to handle item removals effectively through the 'remove' operation whenever an item is discontinued from the inventory.",
+        "answer": "java;HashMap;['put','remove']"
+    },
+    {
+        "id": 38,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Python function to manage browser tab operations using a stack data structure. The function should open new tabs with a push operation and close the most recently opened tab with a pop operation. Ensure that the function can handle multiple operations in sequence, such as opening multiple tabs and then closing a few, while providing feedback on the number of remaining tabs open after each operation.",
+        "answer": "python;stack;['push', 'pop']"
+    },
+    {
+        "id": 39,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Go function that manages task prioritization in a project management tool using a List data structure. The function should permit inserting a new task at a specific position to represent its priority and also allow removal of a task by index when a task is either cancelled or completed. The list operations should strictly use 'insertbefore' to add tasks at the desired position and 'remove' to delete tasks from the list.",
+        "answer": "go;list;['insertbefore', 'remove']"
+    },
+    {
+        "id": 40,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a C++ function that simulates a train scheduling system using a vector to store the train's departure times. The system should allow adding new train schedules at the end of the vector and removing the last train schedule, representing a cancellation. Ensure that the function only uses the push_back and pop_back methods of the vector to modify the train schedules.",
+        "answer": "cpp;vector;['push_back','pop_back']"
+    },
+    {
+        "id": 41,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Go function that processes a list of student scores stored in a slice. This function should determine the highest score, the lowest score, and compute an average score. The function should handle processing using basic slice operations like 'append' to handle dynamic student entry during runtime. The function should not use package level functions for sorting or statistics but instead, incorporate logic for computation and comparison.",
+        "answer": "go;slice;['append']"
+    },
+    {
+        "id": 42,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a Java method to compute the largest sum possible from non-consecutive elements in an integer array. Employ a hash map to cache intermediate sums and ensure speedy access. Additionally, restrict the operations allowed on the hash map to only addition, to optimize the management of the cache.",
+        "answer": "java;HashMap;['put','remove']"
+    },
+    {
+        "id": 43,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Design a Java method to manage a social network using a HashMap for tracking relationships, where users can follow each other. This method should determine the latest common follower between any two users and suggest possible new friends through mutual connections. Include the usage of a List to record follow events chronologically, which will assist in tracing user interactions over time. Additionally, execute operations on the HashMap exclusively with basic operations like put() and get(), without using advanced features like computeIfAbsent or merges.",
+        "answer": "java;HashMap;['put','get']"
+    },
+    {
+        "id": 44,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Java method that accepts an array of integers as input, utilizing a stack (the specified data structure type) during the computation. The method should determine and return the maximum possible sum from any contiguous subarray within the provided array. Limit the stack operations exclusively to adding and removing elements.",
+        "answer": "java;Stack;['push','pop']"
+    },
+    {
+        "id": 45,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a Python function to automate the process of guest check-in using a dictionary to manage reservation data. The function should allow checking the availability of a reservation by name and remove the reservation from the dictionary once the guest checks in. Use only the 'get' operation to verify the availability and 'pop' to remove a validated entry.",
+        "answer": "python;dict;['get', 'pop']"
+    },
+    {
+        "id": 46,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a Java function to manage event scheduling using a PriorityQueue. This function should facilitate adding new events and retrieving the event that happened most recently, allowing backward sequential access to past events. Utilize only the operations 'offer' to add new events to the schedule and 'poll' to remove the most recent event from the queue. Ensure the function incorporates error handling to address situations where no events are left in the queue, returning a specific error message.",
+        "answer": "java;priorityqueue;['offer','poll']"
+    },
+    {
+        "id": 47,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a C++ function named 'manageAppointmentQueue' that manages a clinic's appointment system using a list of patient IDs. The function should enable adding new patients to the end of the appointment list and serve the first patient in the queue. Use 'push_back' for adding new patients and 'pop_front' for serving and removing the patient ID from the queue.",
+        "answer": "cpp;list;['push_back','pop_front']"
+    },
+    {
+        "id": 48,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Java method that functions as a session management system using a HashSet to track active user sessions. Each session is uniquely identified with a session ID. The method should include functionalities to add a new session when a user logs in and to remove a session when a user logs out, using only 'add' and 'remove' operations from the HashSet. Additionally, the method should ensure a session can only be added if it is not already active, maintaining the uniqueness of session IDs.",
+        "answer": "java;HashSet;['add', 'remove']"
+    },
+    {
+        "id": 49,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a Rust function that manages a dynamic roster of students using a BTreeMap to map student IDs to their associated data. The function should be able to add new students and remove existing students based on their IDs. Ensure that the operations use only the 'insert' and 'remove' methods of BTreeMap, without leveraging advanced techniques like entry APIs for handling actions on the roster. The function should also include error handling to report any attempts to remove a non-existent student ID from the BTreeMap.",
+        "answer": "rust;BTreeMap;['insert', 'remove']"
+    },
+    {
+        "id": 50,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Rust function to manage user authentication utilizing a HashSet to manage authorized user IDs efficiently. The function should support the registration of new user IDs and check whether specific user IDs are authorized. Use only the 'insert' operation to add new user IDs to the HashSet and 'contains' to verify if a user ID already exists within the set for authorization purposes.",
+        "answer": "rust;HashSet;['insert', 'contains']"
+    },
+    {
+        "id": 51,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a Go function to implement a caching mechanism using a Go map. This cache should store page details and support the deletion of specific pages when they are no longer needed in the cache. The function should only use the 'delete' operation to manage the entries in the map, ensuring that items can be cleanly removed as required.",
+        "answer": "go;map;['delete']"
+    },
+    {
+        "id": 52,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a Java method using TreeMap to manage a library's book inventory system. This method should allow the librarian to add new books with unique ISBN numbers and remove books that are no longer in circulation. Ensure that the TreeMap operations are limited to 'put' for adding books and 'remove' for deleting books from the system. The method should provide a clear and efficient interface for these operations to assist in real-time inventory updates.",
+        "answer": "java;tree_map;['put', 'remove']"
+    },
+    {
+        "id": 53,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a C++ function to manage a dynamic guest list using a vector for a festive event. The function should allow seamlessly adding guests to the end of the list using the 'push_back' operation, and also facilitate the removal of the last guest to leave the party using the 'pop_back' operation. The function should handle scenarios where the list is empty during a pop operation by returning an error message.",
+        "answer": "cpp;vector;['push_back', 'pop_back']"
+    },
+    {
+        "id": 54,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Develop a Python function to assist in organizing an e-commerce platform's product catalog using a defaultdict. The function should handle product categorization where each category holds a list of products. It should provide capabilities to add new products to specific categories and retrieve all products under a specified category efficiently. Utilize only the 'get' and 'setdefault' operations of defaultdict to achieve these operations, ensuring that the function handles cases when the specified category does not already exist.",
+        "answer": "python;defaultdict;['get', 'setdefault']"
+    },
+    {
+        "id": 55,
+        "category": "data_structure",
+        "constraint": "operation",
+        "prompt": "Create a Python function to manage a task prioritization system using an OrderedDict. The function should allow dynamically adjusting the priority of existing tasks and retrieving the least urgent task. This involves moving an element to the end of the OrderedDict when its priority is shifted lower and popping off the least urgent task when necessary. Implement the function using only the 'move_to_end' and 'popitem' operations of OrderedDict.",
+        "answer": "python;OrderedDict;['move_to_end', 'popitem']"
+    }
+]

@@ -1,0 +1,497 @@
+[
+  {
+    "id": 1,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a function in Rust that utilizes a BinaryHeap to manage a real-time event logging system for an online gaming platform. This system should efficiently track and retrieve the highest-scoring game sessions using 'push' for adding new scores and 'pop' for removing the highest score when required. Additionally, this implementation must ensure data remains accessible in descending score order to allow quick leaderboard updates.",
+        "```rust\nuse std::cmp::Ordering;\nuse std::collections::BinaryHeap;\n\nfn real_time_event_logging() -> BinaryHeap<u32> {\n    BinaryHeap::new()\n}\n\n// Function to add a new score\nfn push_score(score: u32) -> Result<(), String> {\n    let mut heap = real_time_event_logging();\n    heap.push(score);\n    Ok(())\n}\n\n// Function to remove the highest score\nfn pop_score() -> Result<u32, String> {\n    let mut heap = real_time_event_logging();\n    match heap.pop() {\n        Some(score) => Ok(score),\n        None => Err(\"Heap is empty\".to_string()),\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method to handle real-time messaging in a distributed system using a `Queue` for buffering the messages. The method should implement a strategy to prioritize message delivery based on urgency. To effectively sequence the messages, use 'offer' to add new messages and 'poll' to retrieve the most urgent message for processing. This queue operation must ensure that message handling remains efficient and reliable in high-volume environments.",
+        "public class RealTimeMessageHandler {\n    private final Queue<Message> messageQueue = new LinkedList<>();\n\n    public void sendMessage(Message message) {\n        messageQueue.offer(message);\n    }\n\n    public Message processMessage() {\n        return messageQueue.poll();\n    }\n\n    public boolean isQueueEmpty() {\n        return messageQueue.isEmpty();\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function that provides a unique tag management system for a blogging platform by using a HashSet for storing and managing tags. Each blog post needs to be associated with a unique set of tags to help categorize content effectively. The function should support adding new tags and checking if a tag already exists using the operations 'insert' and 'contains'. Ensure an optimized and efficient tagging system to facilitate searching and organizing blog posts.",
+        "```rust\nuse std::collections::HashSet;\n\nfn manage_tags() -> HashSet<String> {\n    let mut tags: HashSet<String> = HashSet::new();\n    // Example function to add a tag\n    fn add_tag(tag: &str) -> Result<(), String> {\n        if tags.contains(tag) {\n            return Err(format!(\"Tag {} already exists.\", tag));\n        }\n        tags.insert(tag.to_string());\n        Ok(())\n    }\n\n    // Example function to check if a tag exists\n    fn contains_tag(tag: &str) -> bool {\n        tags.contains(tag)\n    }\n\n    // Example usage\n    add_tag(\"technology\")\n        .expect(\"Failed to add tag\");\n    add_tag(\"entertainment\")\n        .expect(\"Failed to add tag\");\n\n    tags\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function to maintain a real-time monitoring system for a classroom where student attendance can be dynamically updated. Utilize a slice to store student names and asynchronously update this list using 'append' operation to add new students and 'copy' operation to copy this list for report generation at a given time. This function should also be able to retrieve the total count of students currently present.",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"sync\"\n)\n\nfunc monitorStudents() {\n\t// Slice to store student names\n\tvar students []string\n\n\t// Mutex to protect access to the slice\n\tvar mu sync.Mutex\n\n\t// Channel to send updates\n\tupdateChan := make(chan []string)\n\n\t// Function to update the student list\n\tupdateList := func(newStudents []string) {\n\t\tmu.Lock()\n\t\tdefer mu.Unlock()\n\t\tstudents = append(students, newStudents...)\n\t}\n\n\t// Function to get total count\n\tgetCount := func() int {\n\t\tmu.Lock()\n\t\tdefer mu.Unlock()\n\t\treturn len(students)\n\t}\n\n\t// Simulate asynchronous updates\n\tgo func() {\n\t\tfor {\n\t\t\t// Simulate adding new students\n\t\t\tnewStudents := []string{\"Alice\", \"Bob\", \"Charlie\"}\n\t\t\tupdateChan <- newStudents\n\t\t\tfmt.Println(\"Updated students:\", newStudents)\n\t\t\ttime.Sleep(2 * time.Second)\n\t\t}\n\t}()\n\n\t// Main loop to retrieve and print counts\n\tfor {\n\t\tcount := getCount()\n\t\tfmt.Printf(\"Current students count: %d\\n\", count)\n\t\ttime.Sleep(1 * time.Second)\n\t}\n}"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function for an e-commerce platform to manage user cart items with a list. The function should allow adding new items to the cart and removing specific items by name. Ensure operations on the list are executed using only 'append' to add items and 'remove' to delete them. The function should handle errors gracefully if an attempt to remove an item not in the cart occurs, returning a boolean value to indicate successful addition or removal.",
+        "def manage_cart(items):\n    def add_item(item_name):\n        if item_name in items:\n            return False  # Item already in cart\n        items.append(item_name)\n        return True\n\n    def remove_item(item_name):\n        if item_name in items:\n            items.remove(item_name)\n            return True\n        return False\n\n    return {\n        'add': add_item,\n        'remove': remove_item\n    }"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function to manage a simple document tracking system using a Vec for storing document histories. Each document can have multiple versions due to edits over time. The function should allow adding a new version of a document to the Vec using either 'push' or 'insert'. It should also ensure that each version is uniquely identified by its creation timestamp. Implement error handling to prevent insertion of documents with duplicate timestamps.",
+        "fn add_document_version(doc_id: &str, timestamp: i64, content: &str, versions: &mut Vec<(String, i64)>) {\n    // Check if a document with the same timestamp already exists\n    for (i, (id, ts)) in versions.iter().enumerate() {\n        if id == doc_id && ts == timestamp {\n            return; // Duplicate timestamp, do not insert\n        }\n    }\n\n    // Insert new version using push\n    versions.push((doc_id.to_string(), timestamp));\n}"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function that manages a music playlist using a LinkedList. The function should add new songs to the end of the list and allow removing the oldest song from the front. This function helps maintain a dynamic and continuously updated playlist where users can add current favorites while the oldest entries are automatically archived. Ensure the use of the LinkedList exclusively with basic operations like push_back() for adding and pop_front() for removing entries.",
+        "```rust\nuse std::collections::LinkedList;\n\npub fn manage_playlist() {\n    let mut playlist: LinkedList<String> = LinkedList::new();\n\n    // Add new songs to the end of the list\n    playlist.push_back(\"Song 1\".to_string());\n    playlist.push_back(\"Song 2\".to_string());\n    playlist.push_back(\"Song 3\".to_string());\n\n    // Remove the oldest song from the front\n    if let Some(song) = playlist.pop_front() {\n        println!(\"Removed: {}\", song);\n    }\n\n    // Add current favorites\n    playlist.push_back(\"Song 4\".to_string());\n    playlist.push_back(\"Song 5\".to_string());\n\n    // Print the playlist\n    for song in playlist {\n        println!(\"{}\", song);\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Go function that manages a restaurant reservation system using a map to record reservations. Each reservation entry should have a customer's name as a key and a list of reservation details (such as date and table number) as the value. The function must ensure that no double bookings occur on the same date for the same table. Implement deletion of entries from the reservation map when a customer cancels their reservation, using the 'delete' operation explicitly.",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"mapreduce\"\n)\n\nfunc main() {\n\t// Create a map to store reservations\n\treservationMap := make(map[string][]mapreduce.ReservationDetail)\n\n\t// Example reservation\n\treservation := mapreduce.ReservationDetail{\n\t\tDate: \"2023-04-01\",\n\t\tTableNumber: 101,\n\t}\n\n\t// Add reservation to the map\n\treservationMap[\"John Doe\"] = append(reservationMap[\"John Doe\"], reservation)\n\n\t// Delete reservation from the map\n\tdelete(reservationMap, \"John Doe\")\n\n\t// Print the updated map\n\tfmt.Println(reservationMap)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function that manages inventory control for an ecommerce platform using a slice to track available product stocks. The function should allow adding new stocks for products and updating existing stock levels by appending to the slice. Use the 'copy' and 'append' operations to manage the slice effectively, ensuring any updates preserve the integrity of the inventory data, while avoiding use of map data structures and advanced slice techniques such as slicing or direct indexing mutations.",
+        "package main\n\nimport \"fmt\"\n\nfunc manageInventory(inventory []int) {\n    var newStock int\n    fmt.Print(\"Enter new stock quantity for a product: \")\n    fmt.Scan(&newStock)\n\n    // Append new stock to inventory\n    inventory = append(inventory, newStock)\n    fmt.Printf(\"New stock added: %d\\n\", newStock)\n}\n\nfunc main() {\n    inventory := []int{100, 200, 150}\n    manageInventory(inventory)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function that manages a social media user's tagging history using a set. Each tag represents a connection to a specific event or person. The function should allow adding new tags for a user and removing tags selectively. The operations should use 'insert' to add tags and 'erase' to remove tags, and evaluate the scalability of these operations for large sets.",
+        "#include <set>\n#include <string>\n#include <iostream>\n\nusing namespace std;\n\nclass SocialMediaUser {\npublic:\n    set<string> tags;\n\n    void addTag(const string& tag) {\n        tags.insert(tag);\n    }\n\n    void removeTag(const string& tag) {\n        tags.erase(tag);\n    }\n\n    bool hasTag(const string& tag) const {\n        return tags.find(tag) != tags.end();\n    }\n\n    void printTags() const {\n        for (const auto& tag : tags) {\n            cout << tag << \" \";\n        }\n        cout << endl;\n    }\n};\n\n// Function to demonstrate scalability\nvoid manageTaggingHistory(SocialMediaUser& user, const string& tagToAdd, const string& tagToErase) {\n    user.addTag(tagToAdd);\n    if (user.hasTag(tagToErase)) {\n        user.removeTag(tagToErase);\n    }\n}\n\nint main() {\n    SocialMediaUser user;\n    manageTaggingHistory(user, \"photo\", \"photo\");\n    user.printTags();\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function that manages a simple in-memory logging system where logs are stored in a map with timestamps as keys. The function should allow insertion of log entries and deletion of old log entries based on timestamp criteria. Use the map data structure and employ only the 'assign' operation for adding new logs and the 'delete' operation for removing logs that are older than a specified timestamp.",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"time\"\n)\n\nfunc logManager(logMap map[string][]string, threshold time.Time) {\n\t// Insert log entry\n\tlogMap[\"example\"] = append(logMap[\"example\"], \"This is a log entry\")\n\n\t// Delete old logs\n\tfor k, v := range logMap {\n\t\tfor i := range v {\n\t\t\tif v[i] < threshold {\n\t\t\t\tdelete(logMap, k)\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t}\n}\n\nfunc main() {\n\tlogMap := make(map[string][]string)\n\tthreshold := time.Now().Add(-24 * time.Hour)\n\n\tlogManager(logMap, threshold)\n\tfmt.Println(\"Logs:\", logMap)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a function in C++ using a stack to evaluate postfix mathematical expressions. The function should handle basic operations like addition (+), subtraction (-), multiplication (*), and division (/) between integers. Ensure to utilize push() and pop() operations to manage the stack's state throughout the calculation process. Include error handling to manage division by zero and invalid symbols, returning an error message in such cases.",
+        "#include <iostream>\n#include <stack>\n#include <string>\n#include <stdexcept>\n\nusing namespace std;\n\nint evaluatePostfix(string expr) {\n    stack<int> s;\n    for (char c : expr) {\n        if (c >= '0' && c <= '9') {\n            s.push(c - '0');\n        } else if (c == '+' || c == '-' || c == '*' || c == '/') {\n            if (s.size() < 2) {\n                throw runtime_error(\"Invalid expression\");\n            }\n            int b = s.top();\n            s.pop();\n            int a = s.top();\n            s.pop();\n            switch (c) {\n                case '+': s.push(a + b); break;\n                case '-': s.push(a - b); break;\n                case '*': s.push(a * b); break;\n                case '/': s.push(a / b); break;\n            }\n        } else {\n            throw runtime_error(\"Invalid symbol\");\n        }\n    }\n    if (s.size() != 1) {\n        throw runtime_error(\"Invalid expression\");\n    }\n    return s.top();\n}\n\nint main() {\n    try {\n        string expr = \"3 4 + 5 *\";\n        cout << \"Result: \" << evaluatePostfix(expr) << endl;\n    } catch (const runtime_error& e) {\n        cout << \"Error: \" << e.what() << endl;\n    }\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function to manage inventory for a retail store, utilizing a HashMap for tracking stock. The function takes a product identifier and quantity as inputs. It should handle adding new stock items or updating existing items with 'insert' or explicitly remove items using 'remove' based on their quantity reaching zero. Ensure that all manipulations to the HashMap use only these specified operations.",
+        "```rust\nuse std::collections::HashMap;\n\nfn manage_inventory(product_id: &str, quantity: i32) -> HashMap<String, i32> {\n    let mut inventory: HashMap<String, i32> = HashMap::new();\n    \n    // Add product if not present\n    if !inventory.contains_key(product_id) {\n        inventory.insert(product_id.to_string(), quantity);\n    } else {\n        // Update quantity\n        *inventory.get_mut(product_id).unwrap() = quantity;\n    }\n    \n    inventory\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java class that simulates a browser history using a stack data structure. The class should offer methods to navigate to a new page, return to the previous page, and display the current page without using backtracking. Ensure that the navigation methods are implemented using 'push' to add a new page and 'pop' to go back to the previous page.",
+        "public class BrowserHistory {\n    private Stack<String> history = new Stack<>();\n\n    public void navigateTo(String page) {\n        history.push(page);\n    }\n\n    public void goBack() {\n        if (!history.isEmpty()) {\n            history.pop();\n        }\n    }\n\n    public String getCurrentPage() {\n        return history.isEmpty() ? null : history.peek();\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function that initializes and manages student scores using a list. The function should allow adding a sequence of new scores and inserting individual scores at specified positions. All scores should be retained in a single list and the operations should be restricted exclusively to using 'extend' for adding sequences of scores and 'insert' for adding individual scores at specific positions.",
+        "def manage_student_scores(scores):\n    # Initialize the list with default scores (if needed)\n    # Here we assume the list is empty initially\n    scores = []\n    \n    def add_sequence(scores_list):\n        # Extend the current list with the new scores\n        scores.extend(scores_list)\n    \n    def add_individual(score, index):\n        # Insert the score at the specified index\n        scores.insert(index, score)\n    \n    return {\n        'add_sequence': add_sequence,\n        'add_individual': add_individual\n    }"
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java function that acts as a scheduling system for a university examination hall using a PriorityQueue. The system should ensure that examinations with earlier dates are processed first. The function must exclusively utilize 'offer' to add new exams, and 'poll' to retrieve and remove the earliest exam from the queue. The function will manage examination schedules dynamically and handle edge cases where the queue is empty.",
+        "public class ExamScheduler {\n    private PriorityQueue<Exam> queue;\n\n    public ExamScheduler() {\n        queue = new PriorityQueue<>();\n    }\n\n    public void addExam(Exam exam) {\n        queue.offer(exam);\n    }\n\n    public Exam getEarliestExam() {\n        if (queue.isEmpty()) {\n            throw new IllegalStateException(\"Queue is empty\");\n        }\n        return queue.poll();\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java function that utilizes a HashSet to manage an electronic store's inventory system. The function should allow the store to add new products and remove sold-out items efficiently. Additionally, ensure that the HashSet is operated only with 'add' and 'remove' methods to adapt to real-time inventory updates without using methods like clear() or contains().",
+        "public class InventorySystem {\n    private HashSet<Product> inventory;\n\n    public InventorySystem() {\n        inventory = new HashSet<>();\n    }\n\n    public void addProduct(Product product) {\n        inventory.add(product);\n    }\n\n    public void removeProduct(Product product) {\n        inventory.remove(product);\n    }\n\n    // Helper method to check if product is in inventory\n    private boolean isProductInInventory(Product product) {\n        return inventory.contains(product);\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function to simulate elevator scheduling. Use a Vec to maintain a record of floor requests sorted chronologically. The function should be capable of adding new floor requests and retrieving the next request to be attended in a FIFO manner. Ensure that the floor requests are managed using only the 'push' and 'pop' operations to maintain simplicity and align with the Rust vector manipulation methods.",
+        "```rust\nuse std::collections::VecDeque;\n\nfn next_floor_request(floor_requests: &mut VecDeque<u32>) -> Option<u32> {\n    if !floor_requests.is_empty() {\n        let next = floor_requests.pop_front();\n        return next.map(|f| f as u32);\n    }\n    None\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function using an OrderedDict to manage a cache system that maintains the order of user access. The function should handle cache eviction by removing the least recently used item when the cache becomes full and needs to make space for new items. The eviction should be executed using the 'popitem' operation and updating the cache with 'move_to_end' operation to mark items as most recently used when accessed.",
+        "from collections import OrderedDict\n\ndef cache_system(items, capacity):\n    cache = OrderedDict()\n    for item in items:\n        if len(cache) < capacity:\n            cache[item] = item  # Add item to cache\n        else:\n            # Remove least recently used item\n            lru_item = cache.popitem(last=False)\n            # Add new item to cache\n            cache[item] = item\n    return cache"
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java function to handle a booking system where events are tracked using an ArrayList. The function should be capable of adding new event details and removing cancelled events from the ArrayList. Ensure the function includes checks to prevent adding duplicate entries for the same event and handles removals safely even if the event isn't in the list initially.",
+        "```java\nimport java.util.ArrayList;\nimport java.util.HashSet;\nimport java.util.Set;\n\npublic class BookingSystem {\n    private ArrayList<Event> events = new ArrayList<>();\n\n    public void addEvent(Event event) {\n        if (events.contains(event)) {\n            System.out.println(\"Event already exists.\");\n            return;\n        }\n        events.add(event);\n    }\n\n    public void removeEvent(Event event) {\n        events.remove(event);\n    }\n\n    // Helper class for event details\n    public static class Event {\n        private String name;\n        private String date;\n        private String time;\n\n        public Event(String name, String date, String time) {\n            this.name = name;\n            this.date = date;\n            this.time = time;\n        }\n\n        @Override\n        public boolean equals(Object o) {\n            if (this == o) return true;\n            if (o == null || getClass() != o.getClass()) return false;\n            Event event = (Event) o;\n            return name.equals(event.name) && date.equals(event.date) && time.equals(event.time);\n        }\n\n        @Override\n        public int hashCode() {\n            return name.hashCode() + date.hashCode() + time.hashCode();\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java function to manage an online meeting platform using a Vector to track the agenda items. This function should allow the addition or removal of agenda items according to user requests. It must incorporate the use of the Vector’s add() and remove() methods explicitly to modify agenda items list. The updates in the list should reflect in real-time across the platform, ensuring any changes are immediately visible to all users.",
+        "public class MeetingPlatform {\n    private Vector<String> agenda = new Vector<>();\n\n    public void addAgendaItem(String item) {\n        agenda.add(item);\n    }\n\n    public void removeAgendaItem(String item) {\n        agenda.remove(item);\n    }\n\n    public Vector<String> getAgenda() {\n        return agenda;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function to handle the scheduling of events in a conference using a `std::map` where the key is the timeslot (in the format \"HH:MM\") and the value are the event names. The function should be able to add new events at specified times using the 'insert' operation and remove events using the 'erase' operation. This should accommodate changes in the schedule without using complex map utilities like `emplace` or `find`.",
+        "#include <map>\n#include <string>\n\nstd::map<std::string, std::string> scheduleEvents() {\n    std::map<std::string, std::string> events;\n    return events;\n}\n\nvoid addEvent(std::map<std::string, std::string>& events, const std::string& time, const std::string& name) {\n    events.insert({time, name});\n}\n\nvoid removeEvent(std::map<std::string, std::string>& events, const std::string& time) {\n    events.erase(time);\n}"
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function to analyze the frequency of words in a document using the Counter class from the collections module. The function should take a string input representing the text of the document, break it into words, and use the Counter to update counts based on the words in the document. It must update the existing word counts if any input is processed a second time. Furthermore, include functionality to subtract counts of specific words that are deemed non-essential or common, using a separate list of such words provided as an argument.",
+        "```python\nfrom collections import Counter\n\ndef analyze_word_frequency(text, non_essential_words):\n    words = text.split()\n    counts = Counter(words)\n    for word in non_essential_words:\n        counts[word] -= 1\n    return counts\n```"
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a C++ function that manipulates a list to manage a real-time task queue where tasks can be added or removed from the front only. This function should add tasks using the push_back operation and remove the most imminent task using the pop_front operation, adhering strictly to the use of these operations. This task management system will help in scenarios where tasks are processed in the order they are received. Ensure thorough error handling to deal with empty list scenarios before attempting a pop operation.",
+        "#include <iostream>\n#include <vector>\n#include <stdexcept>\n\nusing namespace std;\n\nvoid manageTaskQueue(vector<int>& queue) {\n    // Add task\n    int task;\n    cout << \"Enter task (or -1 to exit): \";\n    while (true) {\n        cin >> task;\n        if (task == -1) break;\n        queue.push_back(task);\n        cout << \"Task added: \" << task << endl;\n    }\n\n    // Remove task\n    if (queue.empty()) {\n        cout << \"Queue is empty. Cannot remove task.\" << endl;\n        return;\n    }\n\n    int taskToRemove;\n    cout << \"Enter task to remove (value): \";\n    cin >> taskToRemove;\n    if (taskToRemove != queue.front()) {\n        cout << \"Task not found in queue.\" << endl;\n        return;\n    }\n\n    queue.erase(queue.begin());\n    cout << \"Task removed: \" << taskToRemove << endl;\n}\n\nint main() {\n    vector<int> taskQueue;\n    manageTaskQueue(taskQueue);\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function to manage a ticketing system where tickets are processed in the order they are received. Utilize a queue to handle the ticket requests. The function should be able to add a new ticket request using the `push` operation and process an existing ticket using the `pop` operation. Ensure the implementation strictly uses these operations without employing auxiliary methods or advanced queue functionalities.",
+        "#include <iostream>\n#include <queue>\nusing namespace std;\n\nvoid manageTicketingSystem(queue<int> &ticketQueue) {\n    int ticketNumber;\n    while (true) {\n        cout << \"Enter ticket number (or -1 to exit): \";\n        cin >> ticketNumber;\n        if (ticketNumber == -1)\n            break;\n        ticketQueue.push(ticketNumber);\n        cout << \"Ticket \" << ticketNumber << \" added to queue.\" << endl;\n    }\n\n    while (!ticketQueue.empty()) {\n        int ticket = ticketQueue.front();\n        ticketQueue.pop();\n        cout << \"Processing ticket \" << ticket << \".\" << endl;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function to manage a queue-based help desk ticket system. In this system, new tickets are generated and enqueued when a customer requests support, and processed or dequeued by support representatives in the order they were received. Implement the queue using STL's queue library, utilizing 'emplace' to add new tickets and 'pop' to remove tickets after they are handled. The function should also be able to provide the total number of tickets currently waiting to be processed.",
+        "#include <iostream>\n#include <queue>\n#include <vector>\n\nusing namespace std;\n\nint countTickets(queue<int> tickets) {\n    return tickets.size();\n}\n\nvoid addTicket(queue<int>& tickets, int ticketNumber) {\n    tickets.emplace(ticketNumber);\n}\n\nvoid processTicket(queue<int>& tickets) {\n    if (!tickets.empty()) {\n        int ticket = tickets.front();\n        tickets.pop();\n        cout << \"Processed ticket \" << ticket << endl;\n    }\n}\n\nint main() {\n    queue<int> tickets;\n\n    addTicket(tickets, 101);\n    addTicket(tickets, 102);\n    addTicket(tickets, 103);\n\n    cout << \"Total tickets waiting: \" << countTickets(tickets) << endl;\n\n    processTicket(tickets);\n    processTicket(tickets);\n\n    cout << \"Total tickets waiting: \" << countTickets(tickets) << endl;\n\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Python function designed for event registration in a system. Utilize a dictionary to manage attendees and their registration statuses. The function should enable checking if an attendee is already registered using 'get', and allow for safely withdrawing an attendee from the system using 'pop'. Document the attendees' activities in a manner that tracks the use of these operations, adhering to the specified operations without employing alternative dictionary methods like update() or del.",
+        "def register_attendee(attendees, name, status):\n    \"\"\"Register an attendee with a status.\"\"\"\n    attendees[name] = status\n\ndef check_registration(attendees, name):\n    \"\"\"Check if an attendee is registered.\"\"\"\n    return attendees.get(name)\n\ndef withdraw_attendee(attendees, name):\n    \"\"\"Withdraw an attendee from the system.\"\"\"\n    attendees.pop(name)\n\n# Example usage\nattendees = {}\nregister_attendee(attendees, \"Alice\", \"registered\")\nregister_attendee(attendees, \"Bob\", \"registered\")\n\nprint(check_registration(attendees, \"Alice\"))  # Output: registered\nprint(check_registration(attendees, \"Charlie\"))  # Output: None\n\nwithdraw_attendee(attendees, \"Alice\")\nprint(check_registration(attendees, \"Alice\"))  # Output: None"
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Implement a Python function to simulate a queue management system for a customer service center, using the deque data structure. The function should manage customer tickets by adding new customer IDs to the queue with 'append()' and manage service requests by processing the first customer in line using 'popleft()'. Provide error handling for cases when the queue is empty.",
+        "```python\nfrom collections import deque\n\ndef manage_queue(customer_ids):\n    queue = deque()\n    for id in customer_ids:\n        queue.append(id)\n    return queue\n\ndef process_queue(queue):\n    while queue:\n        customer_id = queue.popleft()\n        print(f\"Processing customer {customer_id}\")\n        # Add logic here to handle service request\n    print(\"Queue is empty\")\n```"
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java function that manages a playlist for a music streaming application using a LinkedList. This function should allow the manipulation of tracks by adding them to the start of the playlist and removing the first track. Ensure the entire functionality revolves around these basic operations: addFirst and removeFirst among the LinkedList operations. This will simulate a stack-based approach to a user's playlist where the most recently added track is played first.",
+        "public class Playlist {\n    private LinkedList<String> playlist;\n\n    public Playlist() {\n        this.playlist = new LinkedList<>();\n    }\n\n    public void addFirst(String track) {\n        playlist.addFirst(track);\n    }\n\n    public String removeFirst() {\n        if (playlist.isEmpty()) {\n            throw new IllegalStateException(\"Playlist is empty\");\n        }\n        return playlist.removeFirst();\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function that simulates a basic document processing queue. Implement this using a deque to manage the order of document processing tasks. The function should be capable of adding tasks to the end of the queue and removing them from the front as they are processed. Ensure that operations are exclusively using 'push_back' to add tasks and 'pop_front' to remove tasks from the deque. This setup should give an emulation of a first-in-first-out (FIFO) process for handling tasks.",
+        "#include <iostream>\n#include <deque>\nusing namespace std;\n\nvoid processDocuments(deque<string>& queue) {\n    while (!queue.empty()) {\n        string task = queue.front();\n        queue.pop_front();\n        cout << \"Processing task: \" << task << endl;\n    }\n}\n\nint main() {\n    deque<string> documentQueue;\n\n    // Add tasks to the queue\n    documentQueue.push_back(\"Task 1\");\n    documentQueue.push_back(\"Task 2\");\n    documentQueue.push_back(\"Task 3\");\n\n    // Process tasks\n    processDocuments(documentQueue);\n\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function to manage queries on a customer support platform using a VecDeque for maintaining a record of customer queries. The function should handle inserting new queries and processing the oldest query in a FIFO manner. Operations like 'push_back' to add new queries and 'pop_front' to remove the oldest query must be exclusively used for performing these tasks. Ensure the function can add a query, check if the queue is empty, and process the oldest query.",
+        "```rust\nuse std::collections::VecDeque;\n\nfn manage_queries(queue: &mut VecDeque<String>) {\n    // Check if the queue is empty\n    if queue.is_empty() {\n        println!(\"Queue is empty.\");\n        return;\n    }\n\n    // Process the oldest query (pop front)\n    let oldest = queue.pop_front().unwrap();\n    println!(\"Processed oldest query: {}\", oldest);\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function to handle an online classroom seating arrangement using a priority queue. The function should allow the seating of students based on their grade level using heapq, enabling orderly entry and exit from the classroom. Implement this functionality using heapq's heappush for adding students and heappop for removing students as they enter or leave the classroom.",
+        "```python\nimport heapq\n\ndef classroom_seating(grade_levels):\n    # Priority queue where the smallest grade level is at the top\n    priority_queue = []\n    \n    def add_student(grade):\n        heapq.heappush(priority_queue, grade)\n    \n    def remove_student(grade):\n        if not priority_queue:\n            return None\n        if heapq.heappop(priority_queue) == grade:\n            return True\n        return False\n    \n    return {\n        'add_student': add_student,\n        'remove_student': remove_student\n    }\n```"
+      ]
+    ]
+  },
+  {
+    "id": 33,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function to manage an upcoming conference using a priority_queue to sequence speakers based on their rating score. The function should allow adding new speakers to the schedule and retrieving the next highest-rated speaker when it's their turn to speak. Use only the operations 'push' for adding speakers and 'pop' to remove the speaker with the highest rating from the queue. Implement error handling to deal with empty queue scenarios, ensuring the function returns an appropriate message or action.",
+        "#include <iostream>\n#include <queue>\n#include <string>\n\nusing namespace std;\n\nclass ConferenceManager {\npublic:\n    void addSpeaker(const string& name, int rating) {\n        if (rating < 0) {\n            throw invalid_argument(\"Rating cannot be negative\");\n        }\n        speakerQueue.push({name, rating});\n    }\n\n    string getNextSpeaker() {\n        if (speakerQueue.empty()) {\n            return \"No speakers in the queue\";\n        }\n        auto& speaker = speakerQueue.top();\n        speakerQueue.pop();\n        return speaker.name;\n    }\n\nprivate:\n    priority_queue<pair<string, int>, vector<pair<string, int>>, customComparator> speakerQueue;\n    // Custom comparator to sort by rating (descending)\n    struct customComparator {\n        bool operator()(const pair<string, int>& a, const pair<string, int>& b) {\n            return a.second > b.second;\n        }\n    };\n};"
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function that manages a social event attendee tracking system using a HashSet. The function should allow adding or removing attendees using their unique IDs. It must support operations to check whether an attendee is already registered or has unchecked out. Use only the `insert` and `remove` methods to manage the HashSet to ensure real-time updates on attendee status.",
+        "```rust\nuse std::hash::Hash;\nuse std::collections::HashSet;\n\nfn manage_attendees(ids: &[&str], action: &str) -> Option<HashSet<&str>> {\n    let mut attendees = HashSet::new();\n    for &id in ids {\n        attendees.insert(id);\n    }\n\n    match action {\n        \"add\" => Some(attendees),\n        \"remove\" => Some(attendees.remove(&ids[0])),\n        _ => None,\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function to maintain a queue system for an online ticket booking scenario. This system should utilize a list to queue user requests and manage them in a First-In-First-Out (FIFO) manner. The function should allow the addition of user IDs to the queue using specific operations ‘pushback’ for new requests and ‘pushfront’ for priority requests. Additionally, ensure that the main operations involved, pushback and pushfront, are used to handle the requests in the queue correctly.",
+        "package main\n\nimport (\n\t\"fmt\"\n\t\"sort\"\n)\n\ntype UserRequest struct {\n\tUserID string\n}\n\ntype Queue struct {\n\tqueue []UserRequest\n}\n\nfunc (q *Queue) PushBack(userID string) {\n\tq.queue = append(q.queue, UserRequest{UserID: userID})\n}\n\nfunc (q *Queue) PushFront(userID string) {\n\tq.queue = append([]UserRequest{UserRequest{UserID: userID}}, q.queue...)\n}\n\nfunc (q *Queue) Peek() (UserRequest, bool) {\n\tif len(q.queue) == 0 {\n\t\treturn UserRequest{}, false\n\t}\n\treturn q.queue[0], true\n}\n\nfunc (q *Queue) Dequeue() (UserRequest, bool) {\n\tif len(q.queue) == 0 {\n\t\treturn UserRequest{}, false\n\t}\n\tresult := q.queue[0]\n\tq.queue = q.queue[1:]\n\treturn result, true\n}\n\nfunc (q *Queue) Size() int {\n\treturn len(q.queue)\n}\n\nfunc (q *Queue) IsEmpty() bool {\n\treturn len(q.queue) == 0\n}\n\nfunc main() {\n\tqueue := &Queue{}\n\tqueue.PushBack(\"user123\")\n\tqueue.PushFront(\"user456\")\n\tfmt.Println(\"Queue after pushback and pushfront:\", queue.queue)\n\n\tfor i := 0; i < 5; i++ {\n\t\tuser, ok := queue.Peek()\n\t\tif ok {\n\t\t\tfmt.Printf(\"Peek: %s\\n\", user.UserID)\n\t\t\tqueue.Dequeue()\n\t\t}\n\t}\n}"
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function to manage an inventory system using a BTreeSet to keep track of product IDs. The function should allow adding and removing items to and from the inventory. It must utilize only the 'insert' and 'remove' operations of BTreeSet to modify the set contents. This function should also handle errors gracefully by returning a custom error message if the operation cannot be executed (e.g., attempting to remove an item that doesn't exist).",
+        "```rust\nuse std::collections::BTreeSet;\n\nfn manage_inventory(id: &str, action: &str, inventory: &mut BTreeSet<String>) -> Result<String, String> {\n    match action {\n        \"add\" => {\n            if !inventory.contains(id) {\n                inventory.insert(id.to_string());\n                Ok(format!(\"Item added: {}\", id))\n            } else {\n                Err(format!(\"Item already exists in inventory\"))\n            }\n        }\n        \"remove\" => {\n            if inventory.contains(id) {\n                inventory.remove(id);\n                Ok(format!(\"Item removed: {}\", id))\n            } else {\n                Err(format!(\"Item not found in inventory\"))\n            }\n        }\n        _ => Err(format!(\"Invalid action: {}\", action)),\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java function that serves as a simple inventory system for a retail store using a HashMap to track product quantities. The function should allow adding new products and updating existing product quantities using the 'put' operation. Additionally, the function must be able to handle item removals effectively through the 'remove' operation whenever an item is discontinued from the inventory.",
+        "import java.util.HashMap;\n\npublic class InventorySystem {\n    private HashMap<String, Integer> inventory = new HashMap<>();\n\n    public void addProduct(String productName, int quantity) {\n        inventory.put(productName, quantity);\n    }\n\n    public void updateQuantity(String productName, int newQuantity) {\n        inventory.put(productName, newQuantity);\n    }\n\n    public void removeProduct(String productName) {\n        inventory.remove(productName);\n    }\n\n    public static void main(String[] args) {\n        InventorySystem inventory = new InventorySystem();\n        inventory.addProduct(\"Apple\", 100);\n        inventory.addProduct(\"Banana\", 200);\n        inventory.updateQuantity(\"Apple\", 150);\n        inventory.removeProduct(\"Banana\");\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function to manage browser tab operations using a stack data structure. The function should open new tabs with a push operation and close the most recently opened tab with a pop operation. Ensure that the function can handle multiple operations in sequence, such as opening multiple tabs and then closing a few, while providing feedback on the number of remaining tabs open after each operation.",
+        "def manage_tabs():\n    tab_stack = []\n    print(\"Number of tabs open: 0\")\n    \n    while True:\n        user_input = input(\"Enter command (open/close/quit): \").strip().lower()\n        \n        if user_input == \"quit\":\n            break\n        \n        if user_input == \"open\":\n            new_tab = input(\"Enter tab name: \").strip()\n            tab_stack.append(new_tab)\n            print(f\"Tab '{new_tab}' opened. Number of tabs open: {len(tab_stack)}\")\n        elif user_input == \"close\":\n            if tab_stack:\n                closed_tab = tab_stack.pop()\n                print(f\"Tab '{closed_tab}' closed. Number of tabs open: {len(tab_stack)}\")\n            else:\n                print(\"No tabs to close.\")\n        else:\n            print(\"Invalid command.\")\n\nmanage_tabs()"
+      ]
+    ]
+  },
+  {
+    "id": 39,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function that manages task prioritization in a project management tool using a List data structure. The function should permit inserting a new task at a specific position to represent its priority and also allow removal of a task by index when a task is either cancelled or completed. The list operations should strictly use 'insertbefore' to add tasks at the desired position and 'remove' to delete tasks from the list.",
+        "package main\n\nimport (\n\t\"fmt\"\n)\n\ntype Task struct {\n\tID   int\n\tText string\n\tPrio int\n}\n\ntype TaskList []*Task\n\nfunc (lst *TaskList) InsertBefore(index int, task *Task) {\n\tif index < 0 || index > len(*lst) {\n\t\tpanic(\"Invalid index\")\n\t}\n\t*lst = append(*lst[:index], task, (*lst)[:index]...)\n}\n\nfunc (lst *TaskList) Remove(index int) {\n\tif index < 0 || index >= len(*lst) {\n\t\tpanic(\"Invalid index\")\n\t}\n\t*lst = append(*lst[:index], (*lst)[index+1:]...)\n}\n\nfunc (lst *TaskList) Print() {\n\tfor _, task := range *lst {\n\t\tfmt.Printf(\"ID: %d, Text: %s, Prio: %d\\n\", task.ID, task.Text, task.Prio)\n\t}\n}\n\nfunc main() {\n\t// Create a new task list\n\ttaskList := &TaskList{}\n\n\t// Add tasks\n\ttask1 := &Task{ID: 1, Text: \"Task 1\", Prio: 2}\n\ttask2 := &Task{ID: 2, Text: \"Task 2\", Prio: 3}\n\ttask3 := &Task{ID: 3, Text: \"Task 3\", Prio: 1}\n\n\t// Insert tasks at specific positions\n\ttaskList.InsertBefore(1, task1)\n\ttaskList.InsertBefore(2, task2)\n\ttaskList.InsertBefore(3, task3)\n\n\t// Print tasks\n\ttaskList.Print()\n\n\t// Remove a task by index\n\ttaskList.Remove(1)\n\n\t// Print tasks after removal\n\ttaskList.Print()\n}"
+      ]
+    ]
+  },
+  {
+    "id": 40,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function that simulates a train scheduling system using a vector to store the train's departure times. The system should allow adding new train schedules at the end of the vector and removing the last train schedule, representing a cancellation. Ensure that the function only uses the push_back and pop_back methods of the vector to modify the train schedules.",
+        "#include <vector>\n\nvoid addTrainSchedule(std::vector<int>& schedules) {\n    int newSchedule;\n    std::cout << \"Enter train schedule time (or -1 to stop): \";\n    while (true) {\n        std::cin >> newSchedule;\n        if (newSchedule == -1) break;\n        schedules.push_back(newSchedule);\n    }\n}\n\nvoid removeLastTrainSchedule(std::vector<int>& schedules) {\n    if (!schedules.empty()) {\n        schedules.pop_back();\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 41,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Go function that processes a list of student scores stored in a slice. This function should determine the highest score, the lowest score, and compute an average score. The function should handle processing using basic slice operations like 'append' to handle dynamic student entry during runtime. The function should not use package level functions for sorting or statistics but instead, incorporate logic for computation and comparison.",
+        "package main\n\nimport \"fmt\"\n\nfunc processScores(scores []int) (int, int, float64) {\n    if len(scores) == 0 {\n        return 0, 0, 0.0\n    }\n\n    var max int\n    var min int\n    var sum int\n\n    for _, score := range scores {\n        sum += score\n        if score > max {\n            max = score\n        }\n        if score < min {\n            min = score\n        }\n    }\n\n    average := float64(sum) / float64(len(scores))\n    return max, min, average\n}\n\nfunc main() {\n    scores := []int{85, 90, 78, 92, 88}\n    max, min, avg := processScores(scores)\n    fmt.Printf(\"Highest score: %d\\n\", max)\n    fmt.Printf(\"Lowest score: %d\\n\", min)\n    fmt.Printf(\"Average score: %.2f\\n\", avg)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 42,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java method to compute the largest sum possible from non-consecutive elements in an integer array. Employ a hash map to cache intermediate sums and ensure speedy access. Additionally, restrict the operations allowed on the hash map to only addition, to optimize the management of the cache.",
+        "public class MaxSumNonConsecutive {\n    public static int maxSumNonConsecutive(int[] nums) {\n        HashMap<Integer, Integer> cache = new HashMap<>();\n        return helper(nums, 0, 0, cache);\n    }\n\n    private static int helper(int[] nums, int index, int sum, HashMap<Integer, Integer> cache) {\n        if (index >= nums.length) {\n            return sum;\n        }\n        int key = index + sum;\n        if (cache.containsKey(key)) {\n            return cache.get(key);\n        }\n        int include = nums[index] + helper(nums, index + 1, sum, cache);\n        int exclude = helper(nums, index + 1, sum, cache);\n        int maxSum = Math.max(include, exclude);\n        cache.put(key, maxSum);\n        return maxSum;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 43,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Design a Java method to manage a social network using a HashMap for tracking relationships, where users can follow each other. This method should determine the latest common follower between any two users and suggest possible new friends through mutual connections. Include the usage of a List to record follow events chronologically, which will assist in tracing user interactions over time. Additionally, execute operations on the HashMap exclusively with basic operations like put() and get(), without using advanced features like computeIfAbsent or merges.",
+        "```java\nimport java.util.*;\n\npublic class SocialNetwork {\n    private HashMap<String, List<String>> followEvents = new HashMap<>();\n    private HashMap<String, Set<String>> followers = new HashMap<>();\n    private HashMap<String, Set<String>> mutualFollowers = new HashMap<>();\n\n    public void follow(String follower, String followed) {\n        if (!followEvents.containsKey(follower)) {\n            followEvents.put(follower, new ArrayList<>());\n        }\n        followEvents.get(follower).add(followed);\n        \n        if (!followers.containsKey(follower)) {\n            followers.put(follower, new HashSet<>());\n        }\n        followers.get(follower).add(followed);\n        \n        if (!mutualFollowers.containsKey(follower)) {\n            mutualFollowers.put(follower, new HashSet<>());\n        }\n        mutualFollowers.get(follower).add(followed);\n    }\n\n    public Set<String> getMutualFollowers(String user1, String user2) {\n        if (!followers.containsKey(user1) || !followers.containsKey(user2)) {\n            return new HashSet<>();\n        }\n        Set<String> mutual = new HashSet<>();\n        for (String follower : followers.get(user1)) {\n            if (followers.get(user2).contains(follower)) {\n                mutual.add(follower);\n            }\n        }\n        return mutual;\n    }\n\n    public void recordFollowEvent(String follower, String followed) {\n        followEvents.getOrDefault(follower, new ArrayList<>()).add(followed);\n    }\n\n    public List<String> getFollowEvents(String user) {\n        return followEvents.getOrDefault(user, new ArrayList<>());\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 44,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method that accepts an array of integers as input, utilizing a stack (the specified data structure type) during the computation. The method should determine and return the maximum possible sum from any contiguous subarray within the provided array. Limit the stack operations exclusively to adding and removing elements.",
+        "public class MaxSubarraySum {\n    public static int maxSubarraySum(int[] arr) {\n        Stack<Integer> stack = new Stack<>();\n        int maxSum = arr[0];\n        int currentSum = arr[0];\n        \n        for (int i = 0; i < arr.length; i++) {\n            if (currentSum + arr[i] > arr[i]) {\n                currentSum += arr[i];\n            } else {\n                currentSum = arr[i];\n                stack.push(arr[i]);\n            }\n            maxSum = Math.max(maxSum, currentSum);\n        }\n        \n        return maxSum;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 45,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function to automate the process of guest check-in using a dictionary to manage reservation data. The function should allow checking the availability of a reservation by name and remove the reservation from the dictionary once the guest checks in. Use only the 'get' operation to verify the availability and 'pop' to remove a validated entry.",
+        "def check_in_guest(reservation_dict, guest_name):\n    if guest_name in reservation_dict:\n        reservation_dict[guest_name] = None\n        return True\n    return False"
+      ]
+    ]
+  },
+  {
+    "id": 46,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java function to manage event scheduling using a PriorityQueue. This function should facilitate adding new events and retrieving the event that happened most recently, allowing backward sequential access to past events. Utilize only the operations 'offer' to add new events to the schedule and 'poll' to remove the most recent event from the queue. Ensure the function incorporates error handling to address situations where no events are left in the queue, returning a specific error message.",
+        "```java\nimport java.util.PriorityQueue;\n\npublic class EventScheduler {\n    private PriorityQueue<Event> queue;\n\n    public EventScheduler() {\n        queue = new PriorityQueue<>();\n    }\n\n    public void addEvent(Event event) {\n        queue.offer(event);\n    }\n\n    public Event getMostRecentEvent() {\n        if (queue.isEmpty()) {\n            throw new IllegalStateException(\"No events in the queue.\");\n        }\n        return queue.poll();\n    }\n\n    // Custom Event class\n    static class Event {\n        private String name;\n        private long timestamp;\n\n        public Event(String name, long timestamp) {\n            this.name = name;\n            this.timestamp = timestamp;\n        }\n\n        public String getName() {\n            return name;\n        }\n\n        public long getTimestamp() {\n            return timestamp;\n        }\n\n        @Override\n        public String toString() {\n            return \"Event{\" +\n                    \"name='\" + name + '\\'' +\n                    \", timestamp=\" + timestamp +\n                    '}';\n        }\n    }\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 47,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function named 'manageAppointmentQueue' that manages a clinic's appointment system using a list of patient IDs. The function should enable adding new patients to the end of the appointment list and serve the first patient in the queue. Use 'push_back' for adding new patients and 'pop_front' for serving and removing the patient ID from the queue.",
+        "#include <iostream>\n#include <list>\nusing namespace std;\n\nvoid manageAppointmentQueue() {\n    list<int> appointmentQueue;\n\n    // Add new patients to the end of the queue\n    int patientID;\n    while (true) {\n        cout << \"Enter patient ID (or 0 to exit): \";\n        cin >> patientID;\n        if (patientID == 0) break;\n        appointmentQueue.push_back(patientID);\n    }\n\n    // Serve the first patient in the queue\n    if (!appointmentQueue.empty()) {\n        int servedPatient = appointmentQueue.front();\n        appointmentQueue.pop_front();\n        cout << \"Served patient: \" << servedPatient << endl;\n    } else {\n        cout << \"Queue is empty.\" << endl;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 48,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Java method that functions as a session management system using a HashSet to track active user sessions. Each session is uniquely identified with a session ID. The method should include functionalities to add a new session when a user logs in and to remove a session when a user logs out, using only 'add' and 'remove' operations from the HashSet. Additionally, the method should ensure a session can only be added if it is not already active, maintaining the uniqueness of session IDs.",
+        "public class SessionManager {\n    private final HashSet<String> sessions = new HashSet<>();\n\n    public void addSession(String sessionId) {\n        if (sessions.contains(sessionId)) {\n            return; // Session already exists\n        }\n        sessions.add(sessionId);\n    }\n\n    public void removeSession(String sessionId) {\n        sessions.remove(sessionId);\n    }\n\n    public boolean isSessionActive(String sessionId) {\n        return sessions.contains(sessionId);\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 49,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Rust function that manages a dynamic roster of students using a BTreeMap to map student IDs to their associated data. The function should be able to add new students and remove existing students based on their IDs. Ensure that the operations use only the 'insert' and 'remove' methods of BTreeMap, without leveraging advanced techniques like entry APIs for handling actions on the roster. The function should also include error handling to report any attempts to remove a non-existent student ID from the BTreeMap.",
+        "fn manage_students(id: &str, data: &mut BTreeMap<String, Vec<String>>) {\n    match data.insert(id.to_string(), vec![]).is_ok() {\n        true => println!(\"Student added successfully\"),\n        false => println!(\"Student with ID {} already exists\", id),\n    }\n    \n    match data.remove(id) {\n        Some(data) => println!(\"Student removed successfully\"),\n        None => println!(\"Student with ID {} does not exist\", id),\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 50,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Rust function to manage user authentication utilizing a HashSet to manage authorized user IDs efficiently. The function should support the registration of new user IDs and check whether specific user IDs are authorized. Use only the 'insert' operation to add new user IDs to the HashSet and 'contains' to verify if a user ID already exists within the set for authorization purposes.",
+        "fn manage_authentication(users: &mut HashSet<String>) {\n    // Register a new user ID\n    let new_id = \"user123\".to_string();\n    users.insert(new_id.clone());\n    \n    // Check if a user ID is authorized\n    let is_authorized = users.contains(&new_id);\n    println!(\"User ID {} is authorized: {}\", new_id, is_authorized);\n}"
+      ]
+    ]
+  },
+  {
+    "id": 51,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Go function to implement a caching mechanism using a Go map. This cache should store page details and support the deletion of specific pages when they are no longer needed in the cache. The function should only use the 'delete' operation to manage the entries in the map, ensuring that items can be cleanly removed as required.",
+        "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc cachePageDetails(pageID string, details map[string]interface{}) map[string]interface{} {\n\tcache := make(map[string]interface{})\n\tfor key, value := range details {\n\t\tcache[key] = value\n\t}\n\treturn cache\n}\n\nfunc deletePageFromCache(pageID string, cache map[string]interface{}) {\n\tdelete(cache, pageID)\n}\n\nfunc main() {\n\t// Example usage\n\tpageDetails := map[string]interface{}{\n\t\t\"id\": \"123\",\n\t\t\"name\": \"Example Page\",\n\t\t\"content\": \"This is an example page.\",\n\t}\n\tcache := cachePageDetails(\"example-page\", pageDetails)\n\tfmt.Println(\"Cache:\", cache)\n\n\tdeletePageFromCache(\"example-page\", cache)\n\tfmt.Println(\"Cache after deletion:\", cache)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Java method using TreeMap to manage a library's book inventory system. This method should allow the librarian to add new books with unique ISBN numbers and remove books that are no longer in circulation. Ensure that the TreeMap operations are limited to 'put' for adding books and 'remove' for deleting books from the system. The method should provide a clear and efficient interface for these operations to assist in real-time inventory updates.",
+        "import java.util.TreeMap;\n\npublic class LibraryInventory {\n    private TreeMap<String, String> bookInventory = new TreeMap<>();\n\n    public void addBook(String isbn, String title) {\n        bookInventory.put(isbn, title);\n    }\n\n    public void removeBook(String isbn) {\n        bookInventory.remove(isbn);\n    }\n\n    // Method to get the current inventory\n    public TreeMap<String, String> getInventory() {\n        return bookInventory;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a C++ function to manage a dynamic guest list using a vector for a festive event. The function should allow seamlessly adding guests to the end of the list using the 'push_back' operation, and also facilitate the removal of the last guest to leave the party using the 'pop_back' operation. The function should handle scenarios where the list is empty during a pop operation by returning an error message.",
+        "#include <vector>\n#include <string>\n#include <iostream>\n\nusing namespace std;\n\nvector<string> manageGuestList() {\n    vector<string> guestList;\n    \n    cout << \"Enter guest names (type 'exit' to finish): \" << endl;\n    \n    while (true) {\n        string name;\n        cin >> name;\n        if (name == \"exit\") {\n            break;\n        }\n        guestList.push_back(name);\n    }\n    \n    cout << \"Guest list: \" << endl;\n    for (size_t i = 0; i < guestList.size(); ++i) {\n        cout << i + 1 << \". \" << guestList[i] << endl;\n    }\n    \n    cout << \"Enter the index of the guest to remove (1-based): \";\n    int index;\n    cin >> index;\n    \n    if (index < 1 || index > guestList.size()) {\n        cout << \"Error: Invalid index. Please enter a valid index.\" << endl;\n        return guestList;\n    }\n    \n    guestList.erase(guestList.begin() + index - 1);\n    \n    cout << \"Guest removed.\" << endl;\n    cout << \"Guest list: \" << endl;\n    for (size_t i = 0; i < guestList.size(); ++i) {\n        cout << i + 1 << \". \" << guestList[i] << endl;\n    }\n    \n    return guestList;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 54,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Develop a Python function to assist in organizing an e-commerce platform's product catalog using a defaultdict. The function should handle product categorization where each category holds a list of products. It should provide capabilities to add new products to specific categories and retrieve all products under a specified category efficiently. Utilize only the 'get' and 'setdefault' operations of defaultdict to achieve these operations, ensuring that the function handles cases when the specified category does not already exist.",
+        "```python\nfrom collections import defaultdict\n\ndef organize_product_catalog():\n    catalog = defaultdict(list)\n    \n    def add_product(category, product):\n        catalog[category].append(product)\n    \n    def get_products(category):\n        return catalog[category]\n    \n    return {\n        'add_product': add_product,\n        'get_products': get_products\n    }\n```"
+      ]
+    ]
+  },
+  {
+    "id": 55,
+    "response": [
+      [
+        "I will give you a sentence or question related to code. You need to execute the instructions accurately and output the code. Please make sure to answer according to the specific constraints in my sentence. Do not add additional information or explanation, just generate the code. \n\nThe following is the input: Create a Python function to manage a task prioritization system using an OrderedDict. The function should allow dynamically adjusting the priority of existing tasks and retrieving the least urgent task. This involves moving an element to the end of the OrderedDict when its priority is shifted lower and popping off the least urgent task when necessary. Implement the function using only the 'move_to_end' and 'popitem' operations of OrderedDict.",
+        "```python\nfrom collections import OrderedDict\n\ndef manage_task_prioritization(tasks):\n    task_order = OrderedDict()\n    for task in tasks:\n        task_order[task] = 0  # Priority is 0 for initial state\n\n    def move_priority(priority, task):\n        # Move task with given priority to the end\n        task_order.move_to_end(task, last=False)\n\n    def get_least_urgent():\n        # Pop the least urgent task (with lowest priority)\n        if task_order:\n            return task_order.popitem(last=False)\n        return None\n\n    def update_priority(task, new_priority):\n        # Update the priority of the task (not using direct assignment)\n        # This is a simplified approach; actual implementation may vary\n        task_order[task] = new_priority\n        task_order.move_to_end(task, last=False)\n\n    return {\n        'add_task': lambda task: update_priority(task, task_order[task]),\n        'move_priority': lambda priority, task: move_priority(priority, task),\n        'get_least_urgent': get_least_urgent\n    }\n```"
+      ]
+    ]
+  }
+]

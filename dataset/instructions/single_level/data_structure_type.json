@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Java function named `queryUnprocessedTransfers` to manage financial transactions in a banking system. The function should read a list of transactions and return a TreeSet containing IDs of transactions that have not been processed yet, leveraging the unique properties of Sets for efficient look-up and deduplication.",
+        "answer": "Java;TreeSet"
+    },
+    {
+        "id": 2,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Cpp function that finds and counts unique words in a given string using a unordered_set. This function should preprocess the string to normalize case sensitivity and remove punctuation before insertion into the Set. Output the count of unique words and a breakdown of each word with its occurrence.",
+        "answer": "Cpp;unordered_set"
+    },
+    {
+        "id": 3,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Rust function called `serve_customers` that simulates a customer service system where customers are handled in the order they arrive. The function should utilize a VecDeque data structure to manage incoming customer requests and process them using enqueue and dequeue operations. Moreover, incorporate functionalities to calculate and display the average wait time based on the number of customers processed.",
+        "answer": "Rust;VecDeque"
+    },
+    {
+        "id": 4,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Java function named `processEmergencyAlerts` that simulates a real-time monitoring system for emergency alerts. The function should manage a stream of alert events represented by their severity levels and timestamps. Use a PriorityQueue to prioritize the processing of alerts based on their severity—with the most critical alerts processed first. Additionally, implement functionality to process and display alerts sequentially based on this priority, and provide the capability to add new alerts dynamically.",
+        "answer": "Java;PriorityQueue"
+    },
+    {
+        "id": 5,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Cpp function named `loadHighScores` that retrieves a list of high scores from a game and stores them in a vector. The function should also provide functionality to sort these scores in descending order and permit the dynamic addition of new scores. Additionally, implement a feature to search for a specific score and return if it exists in the high scores list.",
+        "answer": "Cpp;vector"
+    },
+    {
+        "id": 6,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Develop a Go function named `streamStockQuotes` that handles real-time stock quotes streamed via multiple goroutines. Each goroutine represents a different stock ticker and sends stock price updates to a main goroutine through a Go channel. The main goroutine should accumulate and average the stock prices received for each ticker and print out the average prices regularly. Ensure to handle the synchronization of data efficiently to maintain accurate calculations.",
+        "answer": "Go;chan"
+    },
+    {
+        "id": 7,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Rust function named `track_inventory_changes` that analyzes changes in inventory levels for various products. The function should maintain a BTreeMap to store product IDs as keys and their respective inventory changes (expressed as integers) as values. The function should allow adding new inventory logs, updating existing ones, and should be able to clearly report the aggregated changes for each product in a sorted manner based on the product IDs.",
+        "answer": "Rust;BTreeMap"
+    },
+    {
+        "id": 8,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Cpp function named `detectDuplicateErrors` designed to analyze an array of error codes from a software system. The function should return an unordered_set containing only unique error codes that have repeatedly occurred. Additionally, provide functionality to count the number of unique duplicates and report this number.",
+        "answer": "Cpp;unordered_set"
+    },
+    {
+        "id": 9,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Java function named `manageVipGuestList` for an exclusive event management application. The function should efficiently handle the guest list by adding or removing VIP guest IDs using a LinkedList. Based on the order of input, the function should return the current list of VIP guest IDs and allow checking if a specific ID is present in the list, leveraging a LinkedList's capabilities of fast insertions and deletions at any position.",
+        "answer": "Java;LinkedList"
+    },
+    {
+        "id": 10,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Rust function called `track_unique_visitors` that manages a log of website visitors. The function should read a list of visitor IDs and use a BTreeSet to store only unique IDs in sorted order. The function must also provide a method to display the total number of unique visitors.",
+        "answer": "Rust;BTreeSet"
+    },
+    {
+        "id": 11,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Python function called `merge_intervals` that takes a list of tuples, each representing an interval with a start and an end, and merges all overlapping intervals. The function should return a new list of tuples with the merged intervals sorted by their start values to manage scheduling scenarios efficiently using the list data structure.",
+        "answer": "Python;list"
+    },
+    {
+        "id": 12,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Java method named `filterStudentsByGrade` which takes a list of student objects and a grade threshold. The method should return an ArrayList containing the names of students whose grades are above the specified threshold. Ensure the method leverages the properties of the ArrayList for efficient element access and size modification.",
+        "answer": "Java;ArrayList"
+    },
+    {
+        "id": 13,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Python function named `manageEmergencyQueue` that simulates the prioritization of emergency medical cases. The function should employ a `collections.deque` to manage incoming patient records. The entries should include patient IDs and severity scores. Entries must be processed in a way that the highest severity cases receive attention first, using efficient insertion and deletion operations provided by the deque structure. Additionally, the function should provide the ability to reevaluate and rearrange the priorities of cases still within the queue.",
+        "answer": "Python;collections.deque"
+    },
+    {
+        "id": 14,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Rust function named `filter_duplicate_emails` that processes a list of email addresses. The function should efficiently identify and return only unique email addresses using a HashSet. Ensure the output preserves the order of the first occurrences of each email.",
+        "answer": "Rust;HashSet"
+    },
+    {
+        "id": 15,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Develop a Rust function called `manage_playback_queue` which simulates a playlist management system for a media player. The function should interact with tracks using a LinkedList structure to allow efficient track insertions, deletions, and playback reset. The function should include operations to add tracks to the list, remove specific tracks, skip to the next or previous track, and reset the playback to the first track in the list.",
+        "answer": "Rust;LinkedList"
+    },
+    {
+        "id": 16,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Java function named `safeIncrementCount` that manages concurrent updates to a frequency map of student responses in a multi-threaded environment. The function should accept a list of student responses and update a ConcurrentHashMap where the keys represent different response IDs and the values represent their count. Ensure that updates to the map are thread-safe and efficient, reflecting the real-time calculation of response frequencies.",
+        "answer": "Java;ConcurrentHashMap"
+    },
+    {
+        "id": 17,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Python function named `intersect_events` that takes two lists of event IDs as input and returns a set containing the intersection of these two lists. The function should efficiently find common IDs using set operations to aid in identifying shared events between two different sources.",
+        "answer": "Python;set"
+    },
+    {
+        "id": 18,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Python function called `track_inventory_changes` that observes changes in product inventory in a retail management system. The function should receive a list of product updates, where each update includes a product ID and the change in quantity (positive or negative). The function needs to maintain a record of net changes per product using a dictionary for efficient key-value operations and return the final state of all products' quantities after all updates.",
+        "answer": "Python;dict"
+    },
+    {
+        "id": 19,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Design a Rust function named `manage_email_queue` that facilitates an email scheduling system. The function should use a VecDeque data structure to queue email tasks and allow for processing them in the order they were scheduled. Additionally, integrate functionality to periodically shuffle the queue for prioritizing urgent emails and ensure precise log details for each processed email, including timestamps.",
+        "answer": "Rust;VecDeque"
+    },
+    {
+        "id": 20,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Rust function named `combine_small_data_streams` that takes multiple small data streams as input and combines them into a single stream, managing interim results with a SmallVec for efficient inline storage. This function should handle the merging process dynamically, allocating additional memory only when the capacity of the inline storage is exceeded.",
+        "answer": "Rust;SmallVec"
+    },
+    {
+        "id": 21,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Go function called `logEvents` that processes event data streamed from an application. The function should use a buffer.Buffer to accumulate and parse event messages efficiently. Implement functionality to batch and flush the buffer periodically or when it surpasses a specific size limit, ensuring optimized resource usage during high-volume event logging.",
+        "answer": "Go;buffer.Buffer"
+    },
+    {
+        "id": 22,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a C++ function called `mergeMeetingTimes` that takes a list of meeting time intervals (each represented as a pair of start and end times) and returns the merged list of time intervals if necessary. The function should leverage a priority_queue to sort intervals by start time and help with efficient merging of overlapping intervals.",
+        "answer": "Cpp;priority_queue"
+    },
+    {
+        "id": 23,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Python function called `categorize_logs_by_event` that processes a list of log entries where each entry contains a timestamp and an event type. The function should use the `collections.defaultdict` to categorize and count the occurrences of each event type, thus simplifying the aggregation and aiding in efficient event type look-ups. The function should return the defaultdict containing each event type as a key and its count as the associated value.",
+        "answer": "Python;collections.defaultdict"
+    },
+    {
+        "id": 24,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Go function named `trackInventoryStatus` that manages product stock levels in a warehouse system. The function should accept updates to product quantities and store these updates in a map, using product IDs as keys. The map should facilitate quick lookup and update of stock levels, allowing the user to add, remove, or modify entries efficiently.",
+        "answer": "Go;map"
+    },
+    {
+        "id": 25,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Cpp function named `filterUniqueEmails` that receives a list of email strings and returns a set containing only unique emails. The function should preprocess each email by converting all characters to lowercase and normalizing dots before the \"@\" symbol. Use a set to ensure that all emails are unique and returned in a sorted manner.",
+        "answer": "Cpp;set"
+    },
+    {
+        "id": 26,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a C++ function named `sortLogsByTimestamp` that manages logging data in a real-time system. The function should read a stream of log entries characterized by timestamps, and efficiently reorder them in ascending chronological order using a deque data structure. Incorporate functionalities for handling duplicate timestamps by merging log contents.",
+        "answer": "Cpp;deque"
+    },
+    {
+        "id": 27,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Develop a Rust function named `manage_inventory` that handles inventory stock adjustments based on incoming product orders and returns. The function should utilize a Vec to store product IDs and their respective stock quantities. It should also allow updating the inventory dynamically with additions and deductions as transactions occur, and provide a report showing the final inventory status.",
+        "answer": "Rust;Vec"
+    },
+    {
+        "id": 28,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Python function called `manage_print_queue` to efficiently manage print jobs in a corporate setting. This function should use the `queue.Queue` data structure to handle incoming print tasks in the order they are submitted. The function should cater to multiple printer requests by ensuring that tasks are processed using first-in-first-out (FIFO) methodology, preserving continuity and fairness in task processing. Additionally, implement a feature to display the queue status and the number of tasks left at any given moment.",
+        "answer": "Python;queue.Queue"
+    },
+    {
+        "id": 29,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Cpp function named `batchProcessTasks` which processes a list of pending tasks in a system. The function should take a list of task IDs and statuses, and update the list to mark completed tasks. It should utilize a `list` data structure for efficient insertions and deletions based on updates from concurrent system processes.",
+        "answer": "Cpp;list"
+    },
+    {
+        "id": 30,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Java function named `filterEmailAddresses` designed to remove duplicate email addresses from a list of strings. The function should return a HashSet containing only the unique email addresses extracted from the input list, which is vital for email campaigns where duplicates can lead to increased costs and lower engagement rates.",
+        "answer": "Java;HashSet"
+    },
+    {
+        "id": 31,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Java method called `categorizePdfVersions` that organizes a list of PDF files by their version numbers. The function should receive a list of PDF metadata objects and returns a TreeMap where the keys are the PDF version numbers (e.g., 1.4, 1.7) and the values are lists of PDF file names with the respective versions. This structure should be used to ensure the PDF files are sorted by version numbers.",
+        "answer": "Java;TreeMap"
+    },
+    {
+        "id": 32,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Java function named `filterHighPriorityEmails` that takes a list of email objects and returns a TreeSet containing only the unique email IDs of those marked with a high priority. Make sure the returned TreeSet is sorted based on the email ID.",
+        "answer": "Java;TreeSet"
+    },
+    {
+        "id": 33,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Python function named `compare_string_sequences` that evaluates two sequences of strings. The function should take two tuples containing strings, compare them element-by-element, and provide a detailed report as a dictionary. The report should contain the total number of matches found, the total mismatches, and a list of places where the sequences differ. This will be useful in data validation scenarios where ordered and immutable data needs careful comparison.",
+        "answer": "Python;tuple"
+    },
+    {
+        "id": 34,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Design a C++ function named `categorizeStudentGrades` to organize student grades from a list of student ID and grade pairs. The function should utilize an unordered_map to categorize grades based on predefined range tiers (e.g., A, B, C, etc.) and return the updated map reflecting these categories. Each entry in the returned map should list student IDs associated with each grade range, considering efficient look-up and insertion characteristics of the unordered_map.",
+        "answer": "Cpp;unordered_map"
+    },
+    {
+        "id": 35,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "In a logistics management system, create a Python function called `schedule_deliveries` which determines the next delivery to process based on priority. The function should accept a list of tuples, with each tuple containing a delivery ID and its priority. Utilize the heapq data structure to maintain an efficient priority queue, ensuring higher priority deliveries are processed first. The function should return the delivery ID of the next delivery to process.",
+        "answer": "Python;heapq"
+    },
+    {
+        "id": 36,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Python function named `count_vehicle_types` that processes a list of vehicles represented by strings, such as [\"car\", \"truck\", \"bicycle\", \"car\", \"motorcycle\", \"bicycle\"]. The function should use the collections.Counter to tally and return a dictionary reflecting the count of each type of vehicle.",
+        "answer": "Python;collections.Counter"
+    },
+    {
+        "id": 37,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Go function named `rotateArray` that takes an array of integers and an integer `k`, and rotates the elements of the array to the right by `k` positions. The function should handle cases where `k` is greater than the array length by using modulo operation. The result must be stored back in the original array passed as an argument, utilizing the characteristics of Go's fixed-size arrays.",
+        "answer": "Go;array"
+    },
+    {
+        "id": 38,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Rust function named `manage_student_grades` that efficiently handles and updates a list of student grades. Use the ArrayVec data structure to store up to a specified number of grade entries. Include features such as adding a new grade, updating an existing grade, and deleting a grade based on student ID. Ensure that the function also can compute the average of all grades stored in the ArrayVec.",
+        "answer": "Rust;ArrayVec"
+    },
+    {
+        "id": 39,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Cpp function named `validateBrackets` that uses a stack to determine if a string of brackets is balanced. The function should correctly match pairs of open and closed brackets ('{', '}', '(', ')', '[', ']'). For each type of bracket, the function should utilize a stack to push open brackets and pop them when a matching closed bracket is encountered. The function should return true if all brackets are balanced and false otherwise.",
+        "answer": "Cpp;stack"
+    },
+    {
+        "id": 40,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Go function called `cacheResourceStatus` which monitors the status of various online resources in a highly concurrent environment. The function should store and retrieve resource status using a `sync.Map` data structure to handle concurrent accesses. Ensure the function also provides a method to fetch the total number of distinct resources being monitored.",
+        "answer": "Go;sync.Map"
+    },
+    {
+        "id": 41,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Java function named `detectAnagramOccurrences` that scans through an article text and identifies potential anagram occurrences of a given set of words. The function should return a HashMap where the keys are the provided words and the values are the number of occurrences as anagrams in the text. To achieve efficiency, leverage HashMaps for counting and look-up operations and ensure proper normalization of words for accurate anagram identification.",
+        "answer": "Java;HashMap"
+    },
+    {
+        "id": 42,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Cpp function named `organizeSurveyData` designed to manage and retrieve statistical survey data. The function should accept a list of responses where each response contains a participant's ID and their numerical rating. Use a Cpp map to store these responses, ensuring each participant's ID is unique and the ratings are sorted by the ID. Moreover, the function should enable querying and updating the rating for any specific participant.",
+        "answer": "Cpp;map"
+    },
+    {
+        "id": 43,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Go function named `filterPositiveNumbers` that takes a list of integers and returns a slice containing only the positive numbers from the original list. This function requires processing the list efficiently using appending and slicing operations to build up the final result based on runtime evaluations.",
+        "answer": "Go;slice"
+    },
+    {
+        "id": 44,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Rust function named `analyze_feedback` which processes customer feedback from an online shop. The function should compile a HashMap containing the frequency of each unique word found in the feedback text. It must handle cases of different capitalization uniformly and ignore punctuation. This would aid in sentiment analysis by providing insights on commonly used terms.",
+        "answer": "Rust;HashMap"
+    },
+    {
+        "id": 45,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Go function named `manageEmployeeRecords` designed to organize and update employee information within a company's HR system. The function should utilize a struct data type to encapsulate different employee details such as name, ID, position, and salary. Additionally, implement functionalities to add, update, and retrieve employee records efficiently based on their IDs.",
+        "answer": "Go;struct"
+    },
+    {
+        "id": 46,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Cpp function named `computeRollingAverages` that takes an array of daily temperatures and calculates the rolling average over a specified window size. The function should return a new array containing these averages. Ensure that the computed averages cater for boundaries (beginning and end of the list) where the window does not fully fit. This task requires understanding of array manipulation and boundary condition handling.",
+        "answer": "Cpp;array"
+    },
+    {
+        "id": 47,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Java method called `mergeContactLists` that consolidates multiple contact lists into a single sorted list of unique contacts. The method should take a Collection of LinkedLists, each representing an individual contact list, and return a new LinkedList without duplicates, where contacts are sorted alphabetically by their names. Ensure efficient manipulation of list elements for both insertion and retrieval.",
+        "answer": "Java;LinkedList"
+    },
+    {
+        "id": 48,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Go function named `processLogFile` that manages log file entries for a network system. The function should use a buffer.Buffer to read and write logs efficiently. This function should also implement features to search for specific error patterns within the buffer and count their occurrences, returning a detailed report of the found errors and their frequency.",
+        "answer": "Go;buffer.Buffer"
+    },
+    {
+        "id": 49,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Java method called `consolidateInventory` which takes a list of Product objects, each containing a product ID and quantity. The method should aggregate the quantities by product ID using an ArrayList. Return a new ArrayList containing the consolidated Product objects ensuring that each product ID appears only once with its total quantity.",
+        "answer": "Java;ArrayList"
+    },
+    {
+        "id": 50,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Develop a Rust function named `detect_cycle_in_graph` that detects and returns whether a cyclic loop exists in a directed graph. This function should utilize a HashSet to keep track of visited nodes during the Depth-First Search (DFS) traversal to efficiently handle node checks for repeated visits.",
+        "answer": "Rust;HashSet"
+    },
+    {
+        "id": 51,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Java function named `categorizeStudentScores` that processes a list of student exam scores and categories them into performance tiers. The function should utilize a HashMap to store score ranges as keys and the list of student names in those score ranges as values. This will help in quickly retrieving and updating student lists for each performance tier.",
+        "answer": "Java;HashMap"
+    },
+    {
+        "id": 52,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Java method named `organizeMeetings` that schedules and manages meetings based on their urgency. The method should read a list of meetings where each meeting has an urgency level, and using a PriorityQueue, it should process the meetings in order of their urgency from highest to lowest. This way, the most urgent meetings are handled first. The method should return an ArrayList of processed meetings in the order they were handled.",
+        "answer": "Java;PriorityQueue"
+    },
+    {
+        "id": 53,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Cpp function called `analyzeStudentPerformance` designed to assess academic trends across multiple courses. The function receives an array of structures where each structure represents a student's details including their grades across various subjects. It should compute the overall average grade per course and output the result for quick reference. Ensure to utilize a fixed-size array to manage this computation, due to its straightforward access and performance advantages.",
+        "answer": "Cpp;array"
+    },
+    {
+        "id": 54,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Develop a Cpp function named `deduplicateEmailAddresses` that takes a vector of email addresses and returns a final list of unique email addresses, discarding any duplicates. The function should utilize an `unordered_set` to ensure efficient uniqueness checks. Also, display the count of email addresses that were removed due to duplication.",
+        "answer": "Cpp;unordered_set"
+    },
+    {
+        "id": 55,
+        "category": "data_structure",
+        "constraint": "type",
+        "prompt": "Create a Python function named `track_online_orders` which records and updates order statuses for an e-commerce platform. The function should accept orders in the format of tuples (order_id, status), updating an existing dictionary that serves as the order tracking system. Ensure that the function can handle insertion of new orders and update statuses of existing orders efficiently using dictionary operations.",
+        "answer": "Python;dict"
+    }
+]

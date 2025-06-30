@@ -1,0 +1,450 @@
+[
+    {
+        "id": 1,
+        "language": "python",
+        "data_structure": "stack",
+        "operations": [
+            "push",
+            "pop"
+        ]
+    },
+    {
+        "id": 2,
+        "language": "java",
+        "data_structure": "queue",
+        "operations": [
+            "offer",
+            "poll"
+        ]
+    },
+    {
+        "id": 3,
+        "language": "cpp",
+        "data_structure": "vector",
+        "operations": [
+            "push_back",
+            "pop_back"
+        ]
+    },
+    {
+        "id": 4,
+        "language": "rust",
+        "data_structure": "hashmap",
+        "operations": [
+            "insert",
+            "remove"
+        ]
+    },
+    {
+        "id": 5,
+        "language": "go",
+        "data_structure": "slice",
+        "operations": [
+            "append"
+        ]
+    },
+    {
+        "id": 6,
+        "language": "python",
+        "data_structure": "dict",
+        "operations": [
+            "get",
+            "pop"
+        ]
+    },
+    {
+        "id": 7,
+        "language": "java",
+        "data_structure": "stack",
+        "operations": [
+            "push",
+            "pop"
+        ]
+    },
+    {
+        "id": 8,
+        "language": "cpp",
+        "data_structure": "map",
+        "operations": [
+            "insert",
+            "erase"
+        ]
+    },
+    {
+        "id": 9,
+        "language": "rust",
+        "data_structure": "vec",
+        "operations": [
+            "push",
+            "pop"
+        ]
+    },
+    {
+        "id": 10,
+        "language": "go",
+        "data_structure": "map",
+        "operations": [
+            "delete"
+        ]
+    },
+    {
+        "id": 11,
+        "language": "python",
+        "data_structure": "set",
+        "operations": [
+            "add",
+            "remove"
+        ]
+    },
+    {
+        "id": 12,
+        "language": "java",
+        "data_structure": "priorityqueue",
+        "operations": [
+            "offer",
+            "poll"
+        ]
+    },
+    {
+        "id": 13,
+        "language": "cpp",
+        "data_structure": "stack",
+        "operations": [
+            "push",
+            "pop"
+        ]
+    },
+    {
+        "id": 14,
+        "language": "rust",
+        "data_structure": "hashset",
+        "operations": [
+            "insert",
+            "remove"
+        ]
+    },
+    {
+        "id": 15,
+        "language": "go",
+        "data_structure": "channel",
+        "operations": [
+            "send",
+            "receive"
+        ]
+    },
+    {
+        "id": 16,
+        "language": "python",
+        "data_structure": "list",
+        "operations": [
+            "append",
+            "remove"
+        ]
+    },
+    {
+        "id": 17,
+        "language": "java",
+        "data_structure": "linkedlist",
+        "operations": [
+            "add",
+            "remove"
+        ]
+    },
+    {
+        "id": 18,
+        "language": "cpp",
+        "data_structure": "queue",
+        "operations": [
+            "push",
+            "pop"
+        ]
+    },
+    {
+        "id": 19,
+        "language": "rust",
+        "data_structure": "vecdeque",
+        "operations": [
+            "push_back",
+            "pop_front"
+        ]
+    },
+    {
+        "id": 20,
+        "language": "go",
+        "data_structure": "list",
+        "operations": [
+            "pushfront",
+            "pushback"
+        ]
+    },
+    {
+        "id": 21,
+        "language": "python",
+        "data_structure": "deque",
+        "operations": [
+            "append",
+            "popleft"
+        ]
+    },
+    {
+        "id": 22,
+        "language": "java",
+        "data_structure": "arraylist",
+        "operations": [
+            "add",
+            "remove"
+        ]
+    },
+    {
+        "id": 23,
+        "language": "cpp",
+        "data_structure": "deque",
+        "operations": [
+            "push_back",
+            "pop_front"
+        ]
+    },
+    {
+        "id": 24,
+        "language": "rust",
+        "data_structure": "binaryheap",
+        "operations": [
+            "push",
+            "pop"
+        ]
+    },
+    {
+        "id": 25,
+        "language": "go",
+        "data_structure": "heap",
+        "operations": [
+            "push",
+            "pop"
+        ]
+    },
+    {
+        "id": 26,
+        "language": "python",
+        "data_structure": "heapq",
+        "operations": [
+            "heappush",
+            "heappop"
+        ]
+    },
+    {
+        "id": 27,
+        "language": "java",
+        "data_structure": "hashmap",
+        "operations": [
+            "put",
+            "remove"
+        ]
+    },
+    {
+        "id": 28,
+        "language": "cpp",
+        "data_structure": "unordered_map",
+        "operations": [
+            "insert",
+            "erase"
+        ]
+    },
+    {
+        "id": 29,
+        "language": "rust",
+        "data_structure": "btree_map",
+        "operations": [
+            "insert",
+            "remove"
+        ]
+    },
+    {
+        "id": 30,
+        "language": "go",
+        "data_structure": "slice",
+        "operations": [
+            "copy",
+            "append"
+        ]
+    },
+    {
+        "id": 31,
+        "language": "python",
+        "data_structure": "defaultdict",
+        "operations": [
+            "get",
+            "setdefault"
+        ]
+    },
+    {
+        "id": 32,
+        "language": "java",
+        "data_structure": "tree_map",
+        "operations": [
+            "put",
+            "remove"
+        ]
+    },
+    {
+        "id": 33,
+        "language": "cpp",
+        "data_structure": "priority_queue",
+        "operations": [
+            "push",
+            "pop"
+        ]
+    },
+    {
+        "id": 34,
+        "language": "rust",
+        "data_structure": "linkedlist",
+        "operations": [
+            "push_back",
+            "pop_front"
+        ]
+    },
+    {
+        "id": 35,
+        "language": "go",
+        "data_structure": "map",
+        "operations": [
+            "assign",
+            "delete"
+        ]
+    },
+    {
+        "id": 36,
+        "language": "python",
+        "data_structure": "OrderedDict",
+        "operations": [
+            "move_to_end",
+            "popitem"
+        ]
+    },
+    {
+        "id": 37,
+        "language": "java",
+        "data_structure": "vector",
+        "operations": [
+            "add",
+            "remove"
+        ]
+    },
+    {
+        "id": 38,
+        "language": "cpp",
+        "data_structure": "list",
+        "operations": [
+            "push_back",
+            "pop_front"
+        ]
+    },
+    {
+        "id": 39,
+        "language": "rust",
+        "data_structure": "vec",
+        "operations": [
+            "push",
+            "insert"
+        ]
+    },
+    {
+        "id": 40,
+        "language": "go",
+        "data_structure": "slice",
+        "operations": [
+            "append",
+            "copy"
+        ]
+    },
+    {
+        "id": 41,
+        "language": "python",
+        "data_structure": "Counter",
+        "operations": [
+            "update",
+            "subtract"
+        ]
+    },
+    {
+        "id": 42,
+        "language": "java",
+        "data_structure": "linkedlist",
+        "operations": [
+            "addfirst",
+            "removefirst"
+        ]
+    },
+    {
+        "id": 43,
+        "language": "cpp",
+        "data_structure": "set",
+        "operations": [
+            "insert",
+            "erase"
+        ]
+    },
+    {
+        "id": 44,
+        "language": "rust",
+        "data_structure": "hashset",
+        "operations": [
+            "insert",
+            "contains"
+        ]
+    },
+    {
+        "id": 45,
+        "language": "go",
+        "data_structure": "map",
+        "operations": [
+            "lookup",
+            "delete"
+        ]
+    },
+    {
+        "id": 46,
+        "language": "python",
+        "data_structure": "list",
+        "operations": [
+            "extend",
+            "insert"
+        ]
+    },
+    {
+        "id": 47,
+        "language": "java",
+        "data_structure": "hashset",
+        "operations": [
+            "add",
+            "remove"
+        ]
+    },
+    {
+        "id": 48,
+        "language": "cpp",
+        "data_structure": "queue",
+        "operations": [
+            "emplace",
+            "pop"
+        ]
+    },
+    {
+        "id": 49,
+        "language": "rust",
+        "data_structure": "btree_set",
+        "operations": [
+            "insert",
+            "remove"
+        ]
+    },
+    {
+        "id": 50,
+        "language": "go",
+        "data_structure": "list",
+        "operations": [
+            "insertbefore",
+            "remove"
+        ]
+    }
+]

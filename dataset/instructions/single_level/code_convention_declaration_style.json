@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a Python library to assist with the management of networking sessions. It should support the following functionalities:\n1. `create_session(timeout)`: Establishes a new network session with a configurable timeout.\n2. `close_session(session_id)`: Terminates a session given its unique session identifier.\n3. `modify_session(session_id, new_timeout)`: Updates the timeout for an existing session using its identifier.\n4. `get_session_status(session_id)`: Returns the status ('active' or 'closed') of a session.\nAll functions should handle errors relating to nonexistent sessions with appropriate error messages. Variables and functions must be explicitly declared with clear types via annotations (e.g., `def create_session(timeout: int) -> session_id)` and should have descriptive names. Ensure that the code does not use any type inference such as 'auto' in its implementations.",
+        "answer": "python;- **Declaration Style Type** : disallowTypeInference\n- **Explanation** : Type inference keywords like 'var' or 'auto' are disallowed.\n - **For Example** :\n```\n// Not allowed:\n// var count = 10;\n\n// Allowed:\nint count = 10;\n```"
+    },
+    {
+        "id": 2,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Java application to simulate a basic smart home system that controls lighting in different rooms. Your program should allow the following operations:\n\n1. `turnOn(room)`: Activate the lights in a specified room.\n2. `turnOff(room)`: Deactivate the lights in a specified room.\n3. `adjustBrightness(room, level)`: Set the brightness of the lights to a specific level in a particular room.\n4. `checkStatus(room)`: Returns the current status (On/Off) and brightness level of the lights in a specified room.\n\nThe application should store its configuration data and command history using constants declared at the beginning of the class. Ensure that all constants such as default brightness levels and room names are grouped together at the top of your code file. Choose descriptive variable names and strictly adhere to explicit type declarations. For error handling, provide meaningful messages when rooms are entered incorrectly or control commands fail.",
+        "answer": "Java;- **Declaration Style Type** : constantAtTop\n- **Explanation** : All constants must be declared collectively at the top of the file.\n - **For Example** :\n```\nconst int MAX_USERS = 100;\nconst string APP_NAME = \"MyApp\";\n\nint main() {\n    // Use constants here\n}\n```"
+    },
+    {
+        "id": 3,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a C++ program that simulates a hardware store inventory system. The system should implement the following functionalities:\n\n1. `ADD item_name quantity price`: Adds an inventory item with the specified name, quantity, and unit price.\n2. `REMOVE item_name`: Deletes an item from the inventory using the item's name.\n3. `UPDATE item_name new_quantity new_price`: Updates the quantity and price of an existing inventory item.\n4. `DISPLAY`: Lists all items currently in inventory, showing their name, quantity, and price.\n\nYour code should include a class `HardwareStore` with members properly organized as public methods for the actions, protected members for utility functions (if required), and private members for the inventory data. Ensure that all members are declared at the beginning of the class definition, following the order: public, protected, then private. Use explicit type declarations for all data members and variables, such as `int numItems = 0;` or `double price = 0.0;`. Handle errors gracefully, showing messages when attempting to remove or update non-existing items.",
+        "answer": "cpp;- **Declaration Style Type** : orderedClassMembers\n- **Explanation** : Class members must be ordered as public → protected → private.\n - **For Example** :\n```\nclass User {\npublic:\n    string getName();\nprotected:\n    void loadData();\nprivate:\n    int id;\n};\n```"
+    },
+    {
+        "id": 4,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a JavaScript function called `processChartData` which handles the transformation of raw data into a structured format suitable for rendering charts. The function should accept an array of objects, each representing a data point with properties 'timestamp' and 'value'. The function must group these data points into buckets based on the hour of their timestamp, summarise these by calculating the average 'value' for each bucket, and return the result as an object where keys are the hour segments, and values are the average of the 'value' properties.\n\nEach variable and constant definition must be declared separately at the beginning of blocks or functions, and inline variable declarations within expressions (such as in conditionals or loops) should be explicitly avoided. Use CamelCase for naming all variables and ensure descriptive identifiers are utilized for readability.",
+        "answer": "JavaScript;- **Declaration Style Type** : noInlineDeclaration\n- **Explanation** : Inline variable declarations within expressions are not allowed.\n - **For Example** :\n```\n// Not allowed:\n// if (int x = getValue()) {...}\n\n// Allowed:\nint x = getValue();\nif (x) {\n    // ...\n}\n```"
+    },
+    {
+        "id": 5,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Rust program that simulates a basic user authentication process. The system should be capable of handling the following functionalities:\n\n1. `register_user(username: String, password: String)`: Registers a new user by storing their username and password.\n2. `login_user(username: String, password: String) -> String`: Allows a user to log in by validating their username and password against stored credentials. It returns \"Success\" if credentials are valid and \"Failure\" otherwise.\n3. `update_password(username: String, old_password: String, new_password: String) -> String`: Updates the password for a specific user after verifying the old password. Returns \"Updated\" if successful or \"Invalid\" if old password is incorrect.\n4. `delete_user(username: String) -> String`: Deletes a user's information. Returns \"Deleted\" if user exists or \"User not found\" if the user does not exist.\n\nInclude proper error handling for scenarios where the username is not found or incorrect credentials are provided. Ensure that all function parameters, return types, and variables are declared with explicit type annotations.",
+        "answer": "Rust;- **Declaration Style Type** : explicitTypeAnnotation\n- **Explanation** : All variables, function parameters, and return values must have explicit type annotations.\n - **For Example** :\n```\nint add(int a, int b) {\n    int result = a + b;\n    return result;\n}\n```"
+    },
+    {
+        "id": 6,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Write a Python program that acts as a simple time tracker for projects. The application should allow users to perform the following actions:\n\n1. `ADD_PROJECT project_name`: Registers a new project with the specified name.\n2. `START_TIME project_name time`: Records the start time, in 24-hour format (HH:MM), for a designated project.\n3. `STOP_TIME project_name time`: Notes the stop time, also in 24-hour format, for the project.\n4. `REPORT project_name`: Generates and prints the total number of hours and minutes spent on a given project, calculated from saved start and stop times.\n\nStructure the program with all variable and function declarations at the top of their respective blocks or modules. The program should also handle edge cases like non-existent projects being queried or times being recorded and report appropriate errors.",
+        "answer": "python;- **Declaration Style Type** : topLevelVariableDeclaration\n- **Explanation** : All variables must be declared at the top of a function or module.\n - **For Example** :\n```\nvoid process() {\n    int total = 0;\n    int count = 0;\n    // ... logic using total and count\n}\n```"
+    },
+    {
+        "id": 7,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a JavaScript function named `manageTemperatureRecords` that acts as a controller for temperature readings in a weather monitoring system. This function should support various commands as methods:\n\n1. `addRecord(location, temperature)`: Adds a new temperature record for a specified location.\n2. `getAverage(location)`: Calculates and returns the average temperature recorded for a specified location.\n3. `removeRecord(location, date)`: Deletes a specific temperature record identified by location and date.\n4. `updateRecord(location, date, newTemperature)`: Updates the temperature record for a specific date and location.\n\nThe function should ensure proper error handling, returning appropriate error messages if:\n- The location does not exist when trying to get average, remove, or update a record.\n- No records are available to calculate an average.\n\nEnsure that variable and function naming are descriptive and maintain explicit declarations for all constants and variables (e.g., `const totalEntries = 0;`).",
+        "answer": "JavaScript;- **Declaration Style Type** : descriptiveNames\n- **Explanation** : The code convention of using descriptive and explicit naming for variables and functions\n - **For Example** :\n```\nself.access_order.insert(0, key)\n    self.access_order.remove(key)\n```"
+    },
+    {
+        "id": 8,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Python script to simulate a simple login system for a website. The system should maintain a list of user credentials (username and password) and provide the following functionalities:\n\n1. `register(username, password)`: Adds a new user with username and password to the system. Prompt an appropriate message if the user already exists.\n2. `login(username, password)`: Authenticates a user based on username and password. Prompt an error if the username does not exist or if the password does not match.\n3. `remove_user(username)`: Deletes a user's credentials from the system. Notify an error if the username does not exist.\n\nEnsure that all constants representing messages or status codes (e.g., `USER_ALREADY_EXISTS`, `LOGIN_SUCCESSFUL`) are declared at the top of the script. Use clear and descriptive variable and function names, and make sure to explicitly type all variables and constants.",
+        "answer": "python;- **Declaration Style Type** : constantAtTop\n- **Explanation** : All constants must be declared collectively at the top of the file.\n - **For Example** :\n```\nconst int MAX_USERS = 100;\nconst string APP_NAME = \"MyApp\";\n\nint main() {\n    // Use constants here\n}\n```"
+    },
+    {
+        "id": 9,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Python script to manage a dynamic list of attendees for an event. The script should provide functionalities:\n1. `add_attendee(name)`: Adds a new attendee by name to the list of attendees.\n2. `remove_attendee(name)`: Removes an attendee from the list based on the provided name.\n3. `list_attendees()`: Displays the list of all current attendees.\nAdditionally, ensure to handle errors gracefully when trying to remove an attendee who isn't in the list.\n\nIn your function definitions, make sure to declare all variables at the top of each function, following the 'topLevelVariableDeclaration' style, as per the constraint. Include appropriate error handling and clear variable names to keep the logic transparent.",
+        "answer": "python;- **Declaration Style Type** : topLevelVariableDeclaration\n- **Explanation** : All variables must be declared at the top of a function or module.\n - **For Example** :\n```\nvoid process() {\n    int total = 0;\n    int count = 0;\n    // ... logic using total and count\n}\n```"
+    },
+    {
+        "id": 10,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Rust program that simulates a simplified version of a file management system with the following operations and class structure:\n\n1. `create_file(path, content)`: Creates a new file at the specified path with given content.\n2. `read_file(path)`: Retrieves the content of a file at a specified path, returning an error message if the file does not exist.\n3. `update_file(path, new_content)`: Updates the content of an existing file at the specified path, returning an error message if the file does not exist.\n4. `delete_file(path)`: Deletes a file at the specified path, returning an error message if the file does not exist.\n\nEnsure that the class members in your code follow the order: public → protected → private. Functions that interact with the file system should be public, utility or helper functions should be protected, and any internal state variables should be private.",
+        "answer": "rust;- **Declaration Style Type** : orderedClassMembers\n- **Explanation** : Class members must be ordered as public → protected → private.\n - **For Example** :\n```\nclass User {\npublic:\n    string getName();\nprotected:\n    void loadData();\nprivate:\n    int id;\n};\n```"
+    },
+    {
+        "id": 11,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a console application in the C programming language which simulates a basic process-based task manager. The program should support the following commands:\n1. `ADD name priority`: Adds a process with a given name and priority to the task manager.\n2. `KILL name`: Terminates a process by its name.\n3. `KILL_PRIORITY priority`: Terminates all processes with the given priority.\n4. `LIST`: Displays all current processes sorted by priority.\n\nThe application should maintain a linked list structure to store the process records. Validate that all variable and function declarations adhere to the provided declaration style where no inline declarations are allowed. Each variable should be declared and initialized before use in a separate statement, ensuring no variables are declared within control or loop expressions.",
+        "answer": "c;- **Declaration Style Type** : noInlineDeclaration\n- **Explanation** : Inline variable declarations within expressions are not allowed.\n - **For Example** :\n```\n// Not allowed:\n// if (int x = getValue()) {...}\n\n// Allowed:\nint x = getValue();\nif (x) {\n    // ...\n}\n```"
+    },
+    {
+        "id": 12,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Java application that serves as a basic calculator with a graphical user interface (GUI). The calculator should support basic operations: addition, subtraction, multiplication, and division. These operations should be facilitated through methods like add(), subtract(), multiply(), and divide() receiving integers or doubles and returning the results. The GUI should be built using the Swing library, with buttons for each operation and input fields for user entries. Employ descriptive and explicit naming conventions for all GUI components and mathematical functions. Ensure thread safety when performing operations.",
+        "answer": "Java;- **Declaration Style Type** : descriptiveNames\n- **Explanation** : The code convention of using descriptive and explicit naming for variables and functions\n - **For Example** :\n```\nself.access_order.insert(0, key)\n    self.access_order.remove(key)\n```"
+    },
+    {
+        "id": 13,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Rust program to manage events in a community center. The system should support the following functionalities:\n\n1. `add_event(name: String, date: String)`: Adds a new event with the specified name and date.\n2. `remove_event(name: String)`: Removes an event by its name.\n3. `get_event(name: String) -> Option<String>`: Retrieves the date of an event by its name, returning `None` if the event does not exist.\n4. `list_events() -> Vec<String>`: Returns a list of all event names currently registered.\n\nMake sure all functions utilize proper type annotations for variables, parameters, and return values. Additionally, include error handling to return appropriate error messages if attempts are made to interact with non-existent events. Each function must be meticulously documented with comments that clearly describe the functionality.",
+        "answer": "rust;- **Declaration Style Type** : explicitTypeAnnotation\n- **Explanation** : All variables, function parameters, and return values must have explicit type annotations.\n - **For Example** :\n```\nint add(int a, int b) {\n    int result = a + b;\n    return result;\n}\n```"
+    },
+    {
+        "id": 14,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a JavaScript-based function called `manageTodos` which encapsulates tasks within a to-do application. The function should facilitate multiple operations based on supplied commands and arguments:\n\n1. `add task_description`: Adds a new task with the given description.\n2. `complete task_id`: Marks the specified task as completed. Returns an error message if the task_id does not exist.\n3. `delete task_id`: Deletes a specific task using its unique task_id. Provides an error notification if the task_id is incorrect.\n4. `list`: Lists all tasks, showing their task_id, description, and state (completed or not).\n\nTasks should be stored in an array of objects, each containing properties such as `task_id`, `description`, and `completed`. Ensure explicit type declarations in all variable, constant, and function definitions for strict adherence to the prohibition of type inference keywords. Utilize clear descriptive variable names that enhance code readability.",
+        "answer": "javascript;- **Declaration Style Type** : disallowTypeInference\n- **Explanation** : Type inference keywords like 'var' or 'auto' are disallowed.\n - **For Example** :\n```\n// Not allowed:\n// var count = 10;\n\n// Allowed:\nint count = 10;\n```"
+    },
+    {
+        "id": 15,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a C++ function that manages subscription settings for users in an application. The function should accept the following parameters using a struct named `SubscriptionOptions`:\n1. `user_id` which is required.\n2. `subscribed_to_newsletter` with a default value of `true`.\n3. `subscription_date` with a default value of the current date-time.\n\nThis function, `adjust_subscription`, should update the subscription details such as toggling the user's subscription status and updating the subscription date. Ensure explicit declaration of types, like `int user_id = 100;`, and disallow type inference with keywords like 'auto'. Place key constants and variable declarations at the top of the function. Utilize mutexes to ensure thread safety when modifying subscription data.",
+        "answer": "cpp;- **Declaration Style Type** : disallowTypeInference\n- **Explanation** : Type inference keywords like 'var' or 'auto' are disallowed.\n - **For Example** :\n```\n// Not allowed:\n// var count = 10;\n\n// Allowed:\nint count = 10;\n```"
+    },
+    {
+        "id": 16,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Java program that simulates a basic traffic light system. The system should include the following capabilities:\n\n1. `changeLight(String color)`: This function should change the current light to the specified color, which could be \"Green\", \"Red\", or \"Yellow\".\n2. `getCurrentLight()`: This function returns the current color of the traffic light.\n3. `addDelay(int seconds)`: Incorporates a delay for the current light before it can change to the next one.\n4. `nextLight()`: Automatically determine and update the traffic light to the next color in a typical traffic light sequence.\n\nThe program must ensure all constants like light timings (seconds for each light color) and initial light color are declared at the top of the class. Ensure to use explanatory variable names and maintain encapsulation with proper use of public and private access modifiers. All method implementations should strictly follow object-oriented principles.",
+        "answer": "Java;- **Declaration Style Type** : constantAtTop\n- **Explanation** : All constants must be declared collectively at the top of the file.\n - **For Example** :\n```\nconst int MAX_USERS = 100;\nconst string APP_NAME = \"MyApp\";\n\nint main() {\n    // Use constants here\n}\n```"
+    },
+    {
+        "id": 17,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a C program where you compose a function to manage user settings in a software application. This function must support the following commands:\n1. `SET setting_name setting_value`: Saves or updates the setting value identified by the setting_name.\n2. `GET setting_name`: Retrieves the value for a specified setting.\n3. `RESET setting_name`: Resets the setting to its default value.\n4. `LIST_ALL`: Lists all the settings with their current values.\nEnsure all variable and function declarations are outlined explicitly at the start of their respective scopes, adhering strictly to the 'noInlineDeclaration' style. During any attempt to GET or RESET a nonexistent setting, your function should return an appropriate error message.",
+        "answer": "c;- **Declaration Style Type** : noInlineDeclaration\n- **Explanation** : Inline variable declarations within expressions are not allowed.\n - **For Example** :\n```\n// Not allowed:\n// if (int x = getValue()) {...}\n\n// Allowed:\nint x = getValue();\nif (x) {\n    // ...\n}\n```"
+    },
+    {
+        "id": 18,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a Python script that manipulates a simple text-based address book. The address book should store information through the following capabilities:\n\n1. `ADD name phone_number`: Should enable adding a new contact with a name and phone number.\n2. `SEARCH name`: This should return the phone number associated with a given name.\n3. `REMOVE name`: This command should delete the contact details associated with the specified name.\n4. `UPDATE name new_phone_number`: Allows the modification of an existing contact’s phone number to a new one.\n\nImplement this in a function at the top of your script, declare all necessary variables (like dictionary for storage) and ensure that the main operations (add, search, remove, update) handle exceptions such as trying to remove a non-existent contact, or updating a contact that isn't in the book. Use description and specific types in your variable declarations (e.g., `dict contacts = {}`).",
+        "answer": "python;- **Declaration Style Type** : topLevelVariableDeclaration\n- **Explanation** : All variables must be declared at the top of a function or module.\n - **For Example** :\n```\nvoid process() {\n    int total = 0;\n    int count = 0;\n    // ... logic using total and count\n}\n```"
+    },
+    {
+        "id": 19,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Design a C program to simulate a basic task scheduling system for an operating system. Your code should provide the following functionalities:\n\n1. `ADD_TASK task_name duration`: Adds a new task to the system with a specified duration.\n2. `START_TASK task_name`: Initiates the task by its name.\n3. `CHECK_TASK task_name`: Checks the status of a specified task to see if it's running, waiting, or completed.\n4. `CANCEL_TASK task_name`: Cancels a task that is either running or waiting.\n\nEnsure your code handles concurrent tasks without error using mutex locks. Each function should be clearly defined at the top of your sections, and variables should be explicitly declared with descriptive names, such as `int task_count = 0;` Include error handling to manage scenarios where operations are attempted on tasks that do not exist.",
+        "answer": "c;- **Declaration Style Type** : descriptiveNames\n- **Explanation** : The code convention of using descriptive and explicit naming for variables and functions\n - **For Example** :\n```\nself.access_order.insert(0, key)\n    self.access_order.remove(key)\n```"
+    },
+    {
+        "id": 20,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a C++ class named `FileManager` that is designed to manage file operations for a text file. The class should offer the following functionalities:\n\n1. `openFile(string fileName)`: Opens a specified file by name.\n2. `writeFile(string data)`: Writes data to the opened file.\n3. `readFile()`: Reads the contents of the file and returns it as a string.\n4. `closeFile()`: Closes the currently opened file.\n\nEnsure that all member functions are declared in the order of public, protected, and then private in your class declaration. Utilize descriptive variable names such as `fileStream` for file handling and strictly adhere to explicit type declarations. The class should handle basic error checking, including verifying the existence of a file before trying to open it, and provide appropriate error messages if operations fail.",
+        "answer": "cpp;- **Declaration Style Type** : orderedClassMembers\n- **Explanation** : Class members must be ordered as public → protected → private.\n - **For Example** :\n```\nclass User {\npublic:\n    string getName();\nprotected:\n    void loadData();\nprivate:\n    int id;\n};\n```"
+    },
+    {
+        "id": 21,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Python function named `schedule_appointment` that manages appointment bookings for a medical clinic. The system should encompass the following functionalities:\n\n1. `book_appointment(date: str, time: str, doctor_id: int) -> bool`: Records an appointment for a specific date, time, and doctor. Returns `True` if the booking is successful, `False` if the slot is already booked.\n2. `cancel_appointment(appointment_id: int) -> bool`: Cancels an existing appointment based on its ID. Returns `True` if the cancellation is successful, `False` if no such appointment exists.\n3. `reschedule_appointment(appointment_id: int, new_date: str, new_time: str) -> bool`: Changes the date and time for an existing appointment. Returns `True` if successful, `False` if the new slot conflicts with another booking or the appointment ID does not exist.\n\nEnsure all function definitions include explicit type annotations for parameters and return types, and use descriptive variable names to enhance code readability and maintainability.",
+        "answer": "python;- **Declaration Style Type** : explicitTypeAnnotation\n- **Explanation** : All variables, function parameters, and return values must have explicit type annotations.\n - **For Example** :\n```\nint add(int a, int b) {\n    int result = a + b;\n    return result;\n}\n```"
+    },
+    {
+        "id": 22,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Rust program that implements a basic command-line calculator. The calculator should support the following operations:\n\n1. `ADD num1 num2`: Returns the sum of two integers.\n2. `SUBTRACT num1 num2`: Returns the result of subtracting the second integer from the first.\n3. `MULTIPLY num1 num2`: Returns the product of two integers.\n4. `DIVIDE num1 num2`: Returns the division result of the first integer by the second, and outputs an error message if division by zero occurs.\n\nEnsure that all variables, function parameters, and return values have explicit type annotations in your implementation. Each function should start with a clear declaration of all local variables and parameters being used. Error handling for division by zero should be implemented through standard Rust error handling mechanisms. Moreover, input parsing and interaction should be handled efficiently, ensuring robustness.",
+        "answer": "rust;- **Declaration Style Type** : explicitTypeAnnotation\n- **Explanation** : All variables, function parameters, and return values must have explicit type annotations.\n - **For Example** :\n```\nint add(int a, int b) {\n    int result = a + b;\n    return result;\n}\n```"
+    },
+    {
+        "id": 23,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a JavaScript function named `manageShoppingCart` that handles basic operations for an in-memory shopping cart. This function should enable the following operations using commands:\n\n1. `addProduct(productId, quantity)`: Adds a product with a specified quantity to the shopping cart.\n2. `removeProduct(productId)`: Removes a product identified by its productId from the shopping cart.\n3. `updateProduct(productId, quantity)`: Updates the quantity of a specific product in the shopping cart.\n4. `getProduct(productId)`: Retrieves the quantity of a product in the shopping cart by productId.\n\nThe operations should not use inline variable declarations within expressions to adhere to the 'noInlineDeclaration' style. For example, all variables should be declared at the beginning of the function or block. Include error handling that returns a message if an invalid productId is accessed in `removeProduct`, `updateProduct`, and `getProduct`. Ensure each command and function is well-documented with comments explaining their purpose and parameters.",
+        "answer": "JavaScript;- **Declaration Style Type** : noInlineDeclaration\n- **Explanation** : Inline variable declarations within expressions are not allowed.\n - **For Example** :\n```\n// Not allowed:\n// if (int x = getValue()) {...}\n\n// Allowed:\nint x = getValue();\nif (x) {\n    // ...\n}\n```"
+    },
+    {
+        "id": 24,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Java class called `EmailManager` that manages a list of user email subscriptions. The class should offer methods to perform the following operations:\n\n1. `subscribe(String emailAddress)`: Adds a new email address to the subscription list.\n2. `unsubscribe(String emailAddress)`: Removes the email address from the subscription list if it exists.\n3. `listSubscriptions()`: Returns an ArrayList of all subscribed email addresses.\n4. `isSubscribed(String emailAddress)`: Checks whether an email address is already subscribed.\n\nEnsure that all member variables are declared at the top of the class and utilize java.util.ArrayList for list management. The methods should handle edge cases like subscribing an already subscribed email or unsubscribing from an email that isn’t subscribed, returning appropriate responses or exceptions in such scenarios.",
+        "answer": "java;- **Declaration Style Type** : topLevelVariableDeclaration\n- **Explanation** : All variables must be declared at the top of a function or module.\n - **For Example** :\n```\nvoid process() {\n    int total = 0;\n    int count = 0;\n    // ... logic using total and count\n}\n```"
+    },
+    {
+        "id": 25,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Design a JavaScript function named `manageCart` that will handle the operations for an online shopping cart. The function should support the following functionalities:\n\n1. `addItem(itemName, quantity)`: Adds an item along with its quantity to the cart. If the item already exists, it should update the quantity.\n2. `removeItem(itemName)`: Removes an item from the cart.\n3. `updateItem(itemName, quantity)`: Updates the quantity of a specific item already present in the shopping cart.\n4. `listItems()`: Returns a list of all items with their quantities in the cart.\n\nEnsure that each variable and function uses explicit type declarations using the keyword 'let' or 'const', avoiding the use of 'var'. Define all variables and constants at the beginning of their respective functions or the script, and use descriptive names to ensure code clarity.",
+        "answer": "js;- **Declaration Style Type** : disallowTypeInference\n- **Explanation** : Type inference keywords like 'var' or 'auto' are disallowed.\n - **For Example** :\n```\n// Not allowed:\n// var count = 10;\n\n// Allowed:\nint count = 10;\n```"
+    },
+    {
+        "id": 26,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Design a Java program that models a basic inventory management system for an electronics store. The program should have the following functionalities:\n\n1.  `addProduct(String name, int quantity)`: Adds a product with a specified name and quantity to the inventory. If the product already exists, it updates the existing quantity.\n2.  `removeProduct(String name)`: Removes a product by name from the inventory.\n3.  `getProductQuantity(String name)`: Returns the current quantity of a specific product. If the product doesn't exist, it should return `0`.\n4.  `updateProductQuantity(String name, int newQuantity)`: Updates the quantity of a specified product. If the product does not exist, it should do nothing.\n\nThe application must declare constants used for error messages or maximum allowable products at the top of the program file. Ensure all constants and variable declarations are placed at the beginning and use explicit and descriptive variable names for clarity.",
+        "answer": "java;- **Declaration Style Type** : constantAtTop\n- **Explanation** : All constants must be declared collectively at the top of the file.\n - **For Example** :\n```\nconst int MAX_USERS = 100;\nconst string APP_NAME = \"MyApp\";\n\nint main() {\n    // Use constants here\n}\n```"
+    },
+    {
+        "id": 27,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a C client-server application using sockets which communicates in a client-server model to fetch system statistics. The client program should send a request to the server for the following statistics:\n\n1. `CPU_USAGE`: Returns the current CPU utilization percentage.\n2. `MEMORY_USAGE`: Returns the current memory usage percentage.\n3. `DISK_USAGE`: Returns the current disk usage percentage.\n\nThe server should parse each command and send the respective system statistic back to the client. Implement the client-server communication using TCP sockets. Ensure the members in your server and client classes are accurately declared and follow an order of: public methods, protected methods, then private attributes. This will ensure the clarity and maintenance of the code. For each class, clearly declare your variables and strictly adhere to explicit type declarations.",
+        "answer": "c;- **Declaration Style Type** : orderedClassMembers\n- **Explanation** : Class members must be ordered as public → protected → private.\n - **For Example** :\n```\nclass User {\npublic:\n    string getName();\nprotected:\n    void loadData();\nprivate:\n    int id;\n};\n```"
+    },
+    {
+        "id": 28,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Rust function that implements a simple session timer mechanism for user authentication. The function should perform the following operations:\n\n1. `start_session(user_id: String)`: Starts a new session by storing the current time as the session start time for a given user ID.\n2. `check_session(user_id: String, session_duration: u32) -> bool`: Checks if the session for the given user ID is still valid based on the provided session duration in minutes. It should return true if the current time is within the session_duration since start time, otherwise false.\n3. `end_session(user_id: String)`: Ends the user's session by removing any stored start time.\n\nEnsure that all variable and function names are descriptive and relevant. Use strict type declarations for all variables and function parameters. The code should maintain readability and manage time efficiently using Rust's standard library features.",
+        "answer": "rust;- **Declaration Style Type** : descriptiveNames\n- **Explanation** : The code convention of using descriptive and explicit naming for variables and functions\n - **For Example** :\n```\nself.access_order.insert(0, key)\n    self.access_order.remove(key)\n```"
+    },
+    {
+        "id": 29,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Python script that acts as a REST API client for a mock weather forecasting service. The script must perform the following tasks:\n\n1. `GET /weather/current/{city}`: Retrieve current weather conditions for a specified city.\n2. `POST /weather/alerts`: Send a JSON payload to register weather alerts for cities that include parameters such as city name, alert type, and threshold temperatures.\n3. `PUT /weather/update/{city}`: Update weather conditions for a specific city, accepting parameters like temperature, humidity, and wind speed.\n4. `DELETE /weather/alerts/{city}`: Remove configured weather alerts for a specific city.\n\nYour implementation should use proper exception handling for HTTP request errors and check the status codes of responses. Ensure that all functions and HTTP methods are clearly named according to their purpose, and use explicit variable types for clarity and maintainability in the code.",
+        "answer": "python;- **Declaration Style Type** : descriptiveNames\n- **Explanation** : The code convention of using descriptive and explicit naming for variables and functions\n - **For Example** :\n```\nself.access_order.insert(0, key)\n    self.access_order.remove(key)\n```"
+    },
+    {
+        "id": 30,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Python script that simulates a basic expense tracker application. The program should allow users to perform the following operations:\n\n1. `add_expense(name, amount)`: Adds an expense under a specific name with a designated amount, updating the total expenses.\n2. `remove_expense(name)`: Removes an expense by its name.\n3. `get_expense(name)`: Retrieves the expense amount using the given name.\n4. `total_expenses()`: Returns the sum of all recorded expenses.\n\nEnsure that all constants like `MAX_EXPENSES`, which defines the maximum number of expenses, are declared directly at the top of the script. The expense tracker should handle errors gracefully when trying to perform operations on non-existent expenses. All functions must include clear and descriptive variable naming and adopt explicit type annotations for parameters.",
+        "answer": "python;- **Declaration Style Type** : constantAtTop\n- **Explanation** : All constants must be declared collectively at the top of the file.\n - **For Example** :\n```\nconst int MAX_USERS = 100;\nconst string APP_NAME = \"MyApp\";\n\nint main() {\n    // Use constants here\n}\n```"
+    },
+    {
+        "id": 31,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a JavaScript function, `computeStats(data)`, where `data` is an array of integers representing user scores. The function should calculate and return the following:\n\n1. The highest score (`max`): The maximum value in the array.\n2. The lowest score (`min`): The minimum value in the array.\n3. The average score (`average`): The arithmetic mean of all the scores.\n\nImplement this functionality ensuring all integer declarations use explicit types and avoid using JavaScript type inference (i.e., no use of `var`). Use detailed and descriptive variable names for clarity.",
+        "answer": "javascript;- **Declaration Style Type** : disallowTypeInference\n- **Explanation** : Type inference keywords like 'var' or 'auto' are disallowed.\n - **For Example** :\n```\n// Not allowed:\n// var count = 10;\n\n// Allowed:\nint count = 10;\n```"
+    },
+    {
+        "id": 32,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Design and implement a Python class named `VehicleRegistry` that manages vehicle information for a transportation department. The class should be structured in such a way that members are ordered from public to private, which includes the following functions and attributes:\n\n1. `register_vehicle(license_plate, vehicle_type)`: Public method to add a vehicle with its license plate and type.\n2. `find_vehicle(license_plate)`: Public method to retrieve vehicle type by its license plate.\n3. `_update_vehicle_record(license_plate, vehicle_type)`: Protected method to update vehicle type details internally.\n4. `__database`: Private attribute which is a dictionary to store vehicle records where the key is the license plate and the value is the vehicle type.\n\nEnsure that all class members are explicitly declared and initialized (e.g., `self.__database = {}`) at the beginning of their declaration blocks. Correct handling of error messages should be implemented if a vehicle is not found during search operations.",
+        "answer": "python;- **Declaration Style Type** : orderedClassMembers\n- **Explanation** : Class members must be ordered as public → protected → private.\n - **For Example** :\n```\nclass User {\npublic:\n    string getName();\nprotected:\n    void loadData();\nprivate:\n    int id;\n};\n```"
+    },
+    {
+        "id": 33,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a C++ program that simulates a basic music playlist editor. The application should allow users to perform the following commands:\n\n1. `ADD song_name`: Insert a song into the playlist.\n2. `REMOVE song_name`: Deletes a specific song from the playlist.\n3. `PLAY`: Plays the current song and moves on to the next song in the playlist.\n4. `LIST`: Displays the names of all songs in the playlist.\n\nEnsure your implementation makes use of standard library containers such as `std::vector` or `std::list`, and controls access to these containers with synchronization mechanisms like `std::mutex` to manage concurrent modifications. Each function and variable should have clear and explicit type declarations, following best practices in code structure and organization. Provide appropriate error feedback for actions like attempting to remove a song that isn't in the playlist.",
+        "answer": "cpp;- **Declaration Style Type** : explicitTypeAnnotation\n- **Explanation** : All variables, function parameters, and return values must have explicit type annotations.\n - **For Example** :\n```\nint add(int a, int b) {\n    int result = a + b;\n    return result;\n}\n```"
+    },
+    {
+        "id": 34,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a Rust function that simulates basic energy consumption calculations for different household appliances. The function should accept inputs for the power rating (in watts) and usage duration (in hours) for up to five appliances, storing these details in a struct named `ApplianceUsage`. Implement the following function:\n\n1. `calculate_total_energy(appliances: Vec<ApplianceUsage>)`: Computes and returns the total energy consumed by all provided appliances. The energy for each appliance is calculated as `(power in watts * duration in hours)`.\n\nAll variables, including vector and struct definitions, should be declared at the top of the function or module. The function needs to accurately handle any input sizes up to the specified limit and return the result as a kilowatt-hour (kWh). Ensure that the naming of all variables and function parameters is clear and descriptive.",
+        "answer": "rust;- **Declaration Style Type** : topLevelVariableDeclaration\n- **Explanation** : All variables must be declared at the top of a function or module.\n - **For Example** :\n```\nvoid process() {\n    int total = 0;\n    int count = 0;\n    // ... logic using total and count\n}\n```"
+    },
+    {
+        "id": 35,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Java function named `processPayments` that takes input as a list of transaction amounts and a transaction fee rate. The function will return a new list where each amount is reduced by applying the fee. The operations within the function should avoid inline variable declarations. Ensure each major operation, such as loops, condition checking, or arithmetic operations use their own line for variable declarations and logic expressions.\n\nExample usage:\n- Input: List of amounts = [100, 200, 300], Fee rate = 0.1\n- Output: Should return the list after fee deduction = [90, 180, 270]",
+        "answer": "java;- **Declaration Style Type** : noInlineDeclaration\n- **Explanation** : Inline variable declarations within expressions are not allowed.\n - **For Example** :\n```\n// Not allowed:\n// if (int x = getValue()) {...}\n\n// Allowed:\nint x = getValue();\nif (x) {\n    // ...\n}\n```"
+    },
+    {
+        "id": 36,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a function in C that simulates a basic command line calculator for integers. The function should be able to process the following operations provided as input:\n\n1. `ADD x y`: Adds two integers x and y.\n2. `SUBTRACT x y`: Subtracts the integer y from x.\n3. `MULTIPLY x y`: Multiplies two integers x and y.\n4. `DIVIDE x y`: Divides integer x by y, ensuring to handle division by zero with a suitable error message.\n\nThe implementation should declare all constants used (such as operation codes and error messages) at the top of your C file. All parameters for mathematical operations must be fetched from input and the results should be printed directly in the function. Ensure that there's a mechanism to exit the program gracefully upon user request or when an end-of-input marker (like EOF) is detected.\n\nUse descriptive variable naming conventions ensuring clear differentiation between operands and operational commands.",
+        "answer": "c;- **Declaration Style Type** : constantAtTop\n- **Explanation** : All constants must be declared collectively at the top of the file.\n - **For Example** :\n```\nconst int MAX_USERS = 100;\nconst string APP_NAME = \"MyApp\";\n\nint main() {\n    // Use constants here\n}\n```;descriptiveNames"
+    },
+    {
+        "id": 37,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a Python module that manages user sessions within a web application. The module should include the following functions:\n\n1. `create_session(user_id, expires_in)`: Initializes a session for a given user that is automatically expired after the specified duration (in seconds).\n2. `get_session(user_id)`: Retrieves the active session details for the specified user.\n3. `delete_session(user_id)`: Terminates the active session for the specified user.\n4. `extend_session(user_id, additional_time)`: Extends the existing session expiration by the additional time specified (in seconds).\n\nAll functions must explicitly define variable and parameter types, and avoid using type inference keywords. Implement error handling that responds with a suitable message if a session does not exist or has expired when accessed or deleted. Ensure clarity by using descriptive names for all variables and no shorthand in declarations.",
+        "answer": "python;- **Declaration Style Type** : disallowTypeInference\n- **Explanation** : Type inference keywords like 'var' or 'auto' are disallowed.\n - **For Example** :\n```\n// Not allowed:\n// var count = 10;\n\n// Allowed:\nint count = 10;\n```"
+    },
+    {
+        "id": 38,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a Rust application that functions as a basic chat server supporting multiple client connections. The server should handle the following commands:\n  \n1. `JOIN username`: Enables a user to join the chat.\n2. `LEAVE`: Allows the current user to leave the chat.\n3. `MESSAGE text`: Sends a message to all connected users.\n4. `LIST`: Lists all currently connected users.\n\nImplement thread-safe data handling to manage user connections and messages using appropriate synchronization constructs like `Mutex` and `Arc` in Rust. Ensure that the application properly manages drop connections and sends a user-friendly notification to all users when someone joins or leaves the chat. Variables and function declarations should be clear and descriptive, strictly adhering to explicit type declarations.",
+        "answer": "Rust;- **Declaration Style Type** : descriptiveNames\n- **Explanation** : The code convention of using descriptive and explicit naming for variables and functions\n - **For Example** :\n```\nself.access_order.insert(0, key)\n    self.access_order.remove(key)\n```"
+    },
+    {
+        "id": 39,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a JavaScript utility that manages user preferences in a web application. This utility should provide functionalities to:\n\n1. `addPreference(user, preference)`: Adds or updates a user's preference.\n2. `getPreference(user)`: Retrieves the current preference of a user.\n3. `removePreference(user)`: Deletes the preference setting of a specified user.\n\nEnsure all user data manipulations are handled within predefined, stateful objects implementing best practices in functional programming. Variables and all relevant declarations should be positioned at the top of their respective functions or the module, in compliance with the provided constraints. Aim to make the code modular, reusable, and maintainable, with clear naming conventions for better readability.",
+        "answer": "JavaScript;- **Declaration Style Type** : topLevelVariableDeclaration\n- **Explanation** : All variables must be declared at the top of a function or module.\n - **For Example** :\n```\nvoid process() {\n    int total = 0;\n    int count = 0;\n    // ... logic using total and count\n}\n```"
+    },
+    {
+        "id": 40,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Design a Java program that calculates the nutritional information based on user input describing their food intake. The program should allow the user to input multiple food items and specify quantities. Create methods to do the following:\n\n1. `addFood(String foodName, double calories, double carbs, double protein, double fats)`: Adds a food item along with its nutritional values to a list.\n2. `totalNutrition()`: Computes and returns the total accumulated nutritional values (calories, carbs, protein, and fats) from all food items added.\n\nIn your code, make sure to declare all variables at the top of method bodies and avoid inline variable declarations within expressions. Use descriptive variable names and ensure explicit type declarations for all variables. Implement error handling to manage cases where invalid nutritional values are entered (e.g., negative numbers).",
+        "answer": "java;- **Declaration Style Type** : noInlineDeclaration\n- **Explanation** : Inline variable declarations within expressions are not allowed.\n - **For Example** :\n```\n// Not allowed:\n// if (int x = getValue()) {...}\n\n// Allowed:\nint x = getValue();\nif (x) {\n    // ...\n}\n```"
+    },
+    {
+        "id": 41,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a C program that simulates a simple banking system to handle customer accounts. The application should support the following functionalities:\n\n1. `createAccount(int customerId, double initialBalance)`: Registers a new account with a unique customerId and an initial balance.\n2. `deposit(int customerId, double amount)`: Allows depositing a specified amount into the account linked with the customerId.\n3. `withdraw(int customerId, double amount)`: Facilitates withdrawal from the account, ensuring it does not result in a negative balance.\n4. `getBalance(int customerId)`: Returns the current balance of the specified customer's account.\n5. `closeAccount(int customerId)`: Removes the customer's account from the system.\n\nAll functions must strictly use explicit type annotations for variables, parameters, and return types. Implement error handling to provide meaningful messages if an operation fails, such as `customerId` not found or insufficient balance. Structure your code into clear blocks with data declarations at the beginning and ensure all identifiers are meaningfully named.",
+        "answer": "c;- **Declaration Style Type** : explicitTypeAnnotation\n- **Explanation** : All variables, function parameters, and return values must have explicit type annotations.\n - **For Example** :\n```\nint add(int a, int b) {\n    int result = a + b;\n    return result;\n}\n```"
+    },
+    {
+        "id": 42,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Python script that simulates a basic voting system for a community election. The system should allow:\n\n1. `REGISTER voter_id`: Registers a new voter by their unique id.\n2. `UNREGISTER voter_id`: Unregisters an existing voter by their id.\n3. `VOTE voter_id candidate_name`: Registers a vote for a candidate if the voter_id is registered.\n4. `RESULTS`: Displays current vote counts for each candidate.\n\nEnsure that the Python functions for registering, unregistering, and voting include default parameters and use keyword arguments where possible. The votes count should be maintained in a dictionary. Function arguments should be type hinted, and to handle anyone trying to vote or unregister a non-existent voter, the system should return a clear error message.",
+        "answer": "python;- **Declaration Style Type** : descriptiveNames\n- **Explanation** : The code convention of using descriptive and explicit naming for variables and functions\n - **For Example** :\n```\nself.access_order.insert(0, key)\n    self.access_order.remove(key)\n```"
+    },
+    {
+        "id": 43,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Design a Rust console application that records and manages student attendance. Requirements include the following functionalities:\n\n1. `ADD student_name`: Adds a new student to the attendance list.\n2. `REMOVE student_name`: Deletes an existing student from the attendance list.\n3. `CHECK_IN student_name`: Marks the student as present for the day.\n4. `REPORT`: Prints a list of all students along with their attendance status.\n\nIn your implementation, declare all necessary constants such as maximum number of students allowed at the top of your Rust file. Handle errors effectively, providing feedback when trying to add a student beyond the maximum limit or removing/checking in a non-existent student. Structured error handling and informative messages are essential for robustness.",
+        "answer": "rust;- **Declaration Style Type** : constantAtTop\n- **Explanation** : All constants must be declared collectively at the top of the file.\n - **For Example** :\n```\nconst int MAX_USERS = 100;\nconst string APP_NAME = \"MyApp\";\n\nint main() {\n    // Use constants here\n}\n```"
+    },
+    {
+        "id": 44,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Design a C program to implement a basic process management scheduler that handles tasks with different priorities. The system should be able to perform the following operations:\n\n1. `ADD_TASK task_id priority`: Inserts a task with a unique ID and a specified priority level into the scheduler.\n2. `REMOVE_TASK task_id`: Deletes a task from the scheduler by its ID.\n3. `CHANGE_PRIORITY task_id new_priority`: Modifies the priority of an existing task.\n4. `FETCH_NEXT_TASK`: Retrieves and removes the task with the highest priority from the scheduler.\n\nYour implementation should include error checking to ensure task IDs are unique when adding new tasks and handle cases where a task ID does not exist for `REMOVE_TASK` or `CHANGE_PRIORITY`. All functions and variables should use clear, descriptive names, and the code should strictly conform to C standards with explicit type declarations.",
+        "answer": "c;- **Declaration Style Type** : descriptiveNames\n- **Explanation** : The code convention of using descriptive and explicit naming for variables and functions\n - **For Example** :\n```\nself.access_order.insert(0, key)\n    self.access_order.remove(key)\n```"
+    },
+    {
+        "id": 45,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a JavaScript function that calculates time spans between specified events and formats the results for display. The function should accept two timestamps as inputs (startTimeStamp, endTimeStamp) and perform the following operations:\n\n1. Validate that both timestamps are valid and that the endTimeStamp is not earlier than the startTimeStamp.\n2. Calculate the difference in years, months, days, hours, minutes, and seconds between the two timestamps.\n3. If either timestamp is invalid or if endTimeStamp is earlier than the startTimeStamp, the function should throw a custom error with a descriptive message.\n\nThe function must declare all variables at the beginning of blocks and use explicit constant declarations for fixed values (e.g., `const secondsPerMinute = 60;`). Ensure that the error messages are descriptive, aiding in quick debugging and understanding of the issue.",
+        "answer": "javascript;- **Declaration Style Type** : noInlineDeclaration\n- **Explanation** : Inline variable declarations within expressions are not allowed.\n - **For Example** :\n```\n// Not allowed:\n// if (int x = getValue()) {...}\n\n// Allowed:\nint x = getValue();\nif (x) {\n    // ...\n}\n```"
+    },
+    {
+        "id": 46,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a C++ program that simulates a simple flight reservation system. The system should be capable of:\n\n1. `BOOK flightID passengerName`: Registers a passenger under a specified flight.\n2. `CANCEL flightID passengerName`: Cancels the booking for a given passenger and flight.\n3. `FLIGHT_LIST`: Displays all scheduled flights and the number of passengers booked on each.\n4. `PASSENGER_LIST flightID`: Lists all passengers registered for a specific flight.\n\nThe program should maintain an organized structure of classes with members ordered as public, protected, then private, in line with good software design principles. All functions interacting with flight data must ensure data integrity and handle potential errors gracefully, providing informative output. Use clear and descriptive names for variables and functions, and ensure types are explicitly stated, such as `int totalFlights = 0;`.",
+        "answer": "cpp;- **Declaration Style Type** : orderedClassMembers\n- **Explanation** : Class members must be ordered as public → protected → private.\n - **For Example** :\n```\nclass User {\npublic:\n    string getName();\nprotected:\n    void loadData();\nprivate:\n    int id;\n};\n```"
+    },
+    {
+        "id": 47,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Java application that models a simple parking garage system. The system should manage vehicle entry and departure while tracking the number of available parking spaces. Implement the following functionalities in your application:\n\n1. `parkVehicle(String licensePlate)`: Register a vehicle's entry based on its license plate. If the parking is full, the system should return a message indicating that no spots are available.\n2. `departVehicle(String licensePlate)`: Record the departure of a vehicle, freeing up a parking space.\n3. `countAvailableSpaces()`: Returns the current number of available parking spaces in the garage.\n\nEnsure all variables (e.g., `int totalSpaces = 100;`) and functions are explicitly declared with types, avoiding the use of type inference keywords such as 'var'. Utilize descriptive naming conventions for variables and methods. Handle exceptions appropriately, particularly for scenarios where operations cannot be completed (like trying to depart a vehicle that isn't parked).",
+        "answer": "Java;- **Declaration Style Type** : disallowTypeInference\n- **Explanation** : Type inference keywords like 'var' or 'auto' are disallowed.\n - **For Example** :\n```\n// Not allowed:\n// var count = 10;\n\n// Allowed:\nint count = 10;\n```"
+    },
+    {
+        "id": 48,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Python module to analyze portfolio risk for different investment strategies. The module should include functions to:\n1. `compute_volatility(price_data)`: Computes the volatility of the provided list of price data points.\n2. `evaluate_risk(profile, financial_products)`: Assesses the risk level based on a portfolio profile and a list of financial products.\n\nAll variables and data structures such as lists and dictionaries must be declared at the beginning of each function. Ensure that all variable names are self-explanatory, and type annotations are used for all function parameters and return types. The code should gracefully handle and return appropriate error messages for any empty or invalid inputs.",
+        "answer": "python;- **Declaration Style Type** : topLevelVariableDeclaration\n- **Explanation** : All variables must be declared at the top of a function or module.\n - **For Example** :\n```\nvoid process() {\n    int total = 0;\n    int count = 0;\n    // ... logic using total and count\n}\n```"
+    },
+    {
+        "id": 49,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Java-based backend server that manages user profiles. Your system must provide CRUD functionalities through a REST API which allows:\n\n1. `CREATE /profiles`: Accepts JSON containing `username`, `email`, and `age`, and then adds a new user profile to your in-memory store.\n2. `READ /profile/{username}`: Retrieves a user profile based on the given username. If the profile does not exist, it should return an HTTP 404 status.\n3. `UPDATE /profile/{username}`: Accepts JSON with fields that can be updated (`email`, `age`). It updates the profile if it exists, otherwise it returns HTTP 404.\n4. `DELETE /profile/{username}`: Deletes a user profile if it exists, returning an HTTP 204 status if successful, otherwise HTTP 404 if the user cannot be found.\n\nImplement this using Java, making sure each function, parameter, and variable has an explicit type declaration. Use appropriate annotations like `@PathVariable` for path variables and `@RequestBody` for handling incoming data. Respond with proper HTTP status codes via ResponseEntity.",
+        "answer": "java;- **Declaration Style Type** : explicitTypeAnnotation\n- **Explanation** : All variables, function parameters, and return values must have explicit type annotations.\n - **For Example** :\n```\nint add(int a, int b) {\n    int result = a + b;\n    return result;\n}\n```"
+    },
+    {
+        "id": 50,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Python function named `validate_credentials` that accepts three parameters: `username`, `password`, and `minimum_length`. This function must check the validity of credentials based on the following criteria:\n\n1. `username` should not be empty and must be at most 20 characters long.\n2. `password` must have at least `minimum_length` characters.\n3. Both `username` and `password` should only contain alphanumeric characters.\n\nReturn a boolean value `True` if all criteria are met, otherwise return `False`. Declare all constants at the start of the function, and use clear, descriptive variable names. Make sure all variables are explicitly typed, e.g., `min_length: int`.",
+        "answer": "python;- **Declaration Style Type** : constantAtTop\n- **Explanation** : All constants must be declared collectively at the top of the file.\n - **For Example** :\n```\nconst int MAX_USERS = 100;\nconst string APP_NAME = \"MyApp\";\n\nint main() {\n    // Use constants here\n}\n```"
+    },
+    {
+        "id": 51,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Design a C++ function to construct a fundamental stack using a singly linked list. This function should provide `push`, `pop`, and `peek` functions to manipulate the stack. Additionally, include a `size` function to report the number of items in the stack and an `isEmpty` function to check if the stack is devoid of elements. Follow the style: clearly define all variables, constants, and functions at the beginning of each block, use descriptive names, and adhere strictly to C++ type specification norms in your declarations.",
+        "answer": "cpp;- **Declaration Style Type** : descriptiveNames\n- **Explanation** : The code convention of using descriptive and explicit naming for variables and functions\n - **For Example** :\n```\nself.access_order.insert(0, key)\n    self.access_order.remove(key)\n```"
+    },
+    {
+        "id": 52,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a Go function designed to receive an array of integers and produce a map where each unique integer is associated with its count of occurrences in the array. This function should manage arrays with repeated integers and empty arrays, aiming for a time complexity of O(n). Adhere to the Declaration Style convention by defining all variables and functions clearly at the beginning of blocks, using expressive names, and ensuring variables are explicitly typed.",
+        "answer": "go;- **Declaration Style Type** : topLevelVariableDeclaration\n- **Explanation** : All variables must be declared at the top of a function or module.\n - **For Example** :\n```\nvoid process() {\n    int total = 0;\n    int count = 0;\n    // ... logic using total and count\n}\n```"
+    },
+    {
+        "id": 53,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a JavaScript function that implements rate limiting using the Token Bucket method. This function should regulate the frequency of API calls over a defined time period, for instance, allowing no more than 100 calls per minute. It ought to return `true` for allowed requests and `false` for ones that exceed the limit, with the count resetting after each interval. Ensure all variables, constants, and the main function are explicitly declared at the beginning of their respective blocks. Use expressive and descriptive names. For instance, use `maxCallsPerMinute` for the rate limit constant.",
+        "answer": "javascript;- **Declaration Style Type** : descriptiveNames\n- **Explanation** : The code convention of using descriptive and explicit naming for variables and functions\n - **For Example** :\n```\nself.access_order.insert(0, key)\n    self.access_order.remove(key)\n```"
+    },
+    {
+        "id": 54,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Develop a Python class named `Cache` which implements basic caching features. This class should include methods: `add_item(key, value)` to add a new item, `get_item(key)` to fetch an item's value, and `remove_item(key)` to delete an item, along with a `clear_cache()` method to eliminate all entries in the cache. The `Cache` class should ensure a maximum number of items; when this limit is reached, the least recently used item should be automatically discarded. Proper error handling must be in place for accessing a non-existent item and adding new items when the cache is full. Additionally, adhere to the code convention of using descriptive and explicit naming for variables and functions.",
+        "answer": "python;- **Declaration Style Type** : descriptiveNames\n- **Explanation** : The code convention of using descriptive and explicit naming for variables and functions\n - **For Example** :\n```\nself.access_order.insert(0, key)\n    self.access_order.remove(key)\n```"
+    },
+    {
+        "id": 55,
+        "category": "code_convention",
+        "constraint": "declaration_style",
+        "prompt": "Create a C++ program that implements a simplistic in-memory database using a key-value storage model. The system should provide the following commands:\n\n1. `SET key value`: Maps a given value to a provided key.\n2. `GET key`: Fetches the associated value for a specified key.\n3. `DELETE key`: Removes a specific key-value pairing.\n4. `UPDATE key value`: Alters the value attached to a pre-existing key.\n\nIn your code, integrate synchronization mechanisms like `std::mutex` to ensure thread safety during concurrent operations. The application must also return a suitable error message if a key is not found during the `GET` or `DELETE` operations. All variable, constant declarations, and function definitions should be clearly structured at the beginning of blocks. Utilize descriptive names for variables and strictly adhere to explicit type declarations (e.g., `int count = 0;`).",
+        "answer": "cpp;- **Declaration Style Type** : descriptiveNames\n- **Explanation** : The code convention of using descriptive and explicit naming for variables and functions\n - **For Example** :\n```\nself.access_order.insert(0, key)\n    self.access_order.remove(key)\n```"
+    }
+]

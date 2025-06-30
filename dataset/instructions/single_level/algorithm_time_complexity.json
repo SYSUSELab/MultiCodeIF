@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Design a Python module that allows efficient searching within a large inventory of products by SKU. The module should support rapid updates and deletions to accommodate a frequently changing dataset. Implement an O(log n) search mechanism to ensure speedy lookups. Ensure input validation for SKU formats and handle cases of duplicate SKUs and nonexistent inventory entries gracefully.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 2,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Implement a C program that simulates a ticket booking system for a movie theater. The system should keep track of available seats using a queue data structure, ensure efficient allocation and deallocation of seats as tickets are booked, and handle any overbooking attempts gracefully. Optimize the solution to operate within a queue-based approach and validate that the algorithm efficiently manages seat allocations with a time complexity goal of O(n).",
+        "answer": "O(n)"
+    },
+    {
+        "id": 3,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a Rust program that implements an array shuffle algorithm with O(n) time complexity. The program should be capable of handling arrays of varying sizes and types, ensuring that the shuffling operation is random and uniform. Additionally, include comprehensive error handling to address invalid input cases, such as empty arrays or unsupported data types.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 4,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a C++ program that manages a large collection of log entries recorded by an online portal, each with a timestamp and an event. Implement a system that allows efficient querying of the logs within a specified timestamp range using an O(log n) searching technique. Ensure the solution handles potential duplicate timestamps and provides an option to dynamically update the log database.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 5,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a Java program that implements an efficient algorithm for finding the Lowest Common Ancestor (LCA) of two nodes in a large hierarchical organization structure. Utilize a Binary Lifting technique to ensure O(log n) time complexity during query operations. The program should accurately identify the LCA even in the presence of structural changes or dynamic updates in the hierarchy.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 6,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Design a C++ application that takes a large collection of documents and constructs an inverted index to enable efficient keyword search. The algorithm should have an O(n log n) time complexity, support dynamically loading documents from various formats, and be robust against malformed inputs or missing metadata.",
+        "answer": "O(n log n)"
+    },
+    {
+        "id": 7,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a Rust program to implement a prime number test using the Miller-Rabin's method. The program should process a list of numbers dynamically read from a file, validate the input format, and handle potential issues like very large numbers. Ensure the program has an efficient and scalable approach, maintaining a time complexity of O(log n) for the test operation.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 8,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Write a Java program that leverages hash tables to manage a dynamic inventory system for a warehouse. Implement features for adding, removing, and finding items based on unique identifiers, ensuring O(1) average time complexity for these operations. Incorporate data persistence by saving the inventory state to a file and loading it back efficiently.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 9,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Develop a C++ application that utilizes a suffix tree data structure to efficiently handle the querying and processing of a large text document. The application should provide functionality to find all occurrences of a substring in O(m + z) time, where m is the length of the substring and z is the number of occurrences. Ensure the program handles large input sizes gracefully and incorporates error handling for invalid or empty queries.",
+        "answer": "O(m + z)"
+    },
+    {
+        "id": 10,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a Python script that reads from a large dataset of customer transaction records and calculates the top three most frequent customer IDs. Ensure the solution runs in O(n log n) time by leveraging appropriate data structures for counting and sorting. The script should handle cases with ties in frequency and include performance optimizations for processing large-scale data.",
+        "answer": "O(n log n)"
+    },
+    {
+        "id": 11,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a C program that reads data from multiple sensor devices, each providing a stream of temperature readings. The program should accumulate data and calculate the median temperature in real-time using an O(log n) algorithm. Ensure that the program handles sensor connection interruptions gracefully, logs errors, and supports adding new sensors dynamically during execution.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 12,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a JavaScript application that analyzes a large list of words to find the longest common subsequence between two given words. Ensure the implementation handles input validation and can cope with high-volume datasets with a time complexity of O(n log n). Include error handling for invalid inputs such as non-string entries or empty datasets.",
+        "answer": "O(n log n)"
+    },
+    {
+        "id": 13,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a JavaScript function that determines if a given string is a palindrome, ensuring the solution utilizes an O(n) time complexity algorithm. The function should account for non-alphanumeric characters, ignore case sensitivity, and handle large input strings efficiently.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 14,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a C++ application that manages a library's book catalog, allowing users to search for books by their titles using a binary search algorithm for efficient retrieval. The application should support adding, removing, and listing books, ensure input validity and handle multiple editions of the same title properly. The algorithm should operate with a time complexity of O(log n).",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 15,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a Python script that processes a large list of email addresses to identify and flag duplicates. The algorithm should run with a time complexity of O(n log n), ensuring efficiency with input size scalability. Include input validation to handle empty lists and malformed email addresses, as well as a mechanism to load email addresses from a CSV file.",
+        "answer": "O(n log n)"
+    },
+    {
+        "id": 16,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a C program that efficiently processes a real-time stream of temperature data from multiple sensors and calculates the moving average temperature over the last 10 minutes. Ensure the solution employs an O(n) time complexity algorithm for handling continuous data updates, and implements error checking and correction mechanisms for sensor data glitches.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 17,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Implement a JavaScript application that uses a B-Tree to manage a dynamic catalog of book titles and authors, allowing efficient insertion, search, and deletion operations. The application should ensure that the B-Tree maintains balance and provides O(log n) search operations. Include the functionality to load data from JSON files, validate input formats, and handle scenarios like duplicate titles or author entries.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 18,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a C++ application that analyzes a large dataset of user activity logs and determines the top-k most active users in the system. Ensure the solution uses an O(n log n) algorithm, includes efficient memory management, supports real-time data updates, and gracefully handles potential data corruption during I/O operations.",
+        "answer": "O(n log n)"
+    },
+    {
+        "id": 19,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a Rust program that solves the 8-Queen Problem using a backtracking algorithm. Ensure the solution explores permutations with a time complexity of O(2^n), where n is the number of queens. Implement input validation for board dimensions, allowing user customization, and handle scenarios where solutions do not exist.",
+        "answer": "O(2^n)"
+    },
+    {
+        "id": 20,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a Python program that generates a minimum spanning tree for a network of connected cities using Kruskal's algorithm. The program should accept city coordinates and distances from a file, validate input data, and efficiently handle scenarios with disconnected cities and duplicate distance entries, ensuring the final tree includes all the connected components.",
+        "answer": "O(n log n)"
+    },
+    {
+        "id": 21,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a Rust program that processes a collection of user search queries and builds a prefix tree (Trie) for autocomplete functionality. The program should dynamically update the Trie with new entries and efficiently return suggestions for incomplete queries. Ensure robust error handling for invalid input and consider scenarios with overlapping query prefixes and updates with high frequency queries.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 22,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a JavaScript function that utilizes a Suffix Tree data structure to efficiently search for the longest repeated substring within a given string. Implement file-based input handling, ensuring robust error management, including situations with empty strings or special characters.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 23,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a Java application to manage a playlist of songs using a double linked list. The application should allow users to add, remove, and rearrange songs in the playlist. Implement efficient search functionality to find songs by title, ensuring a time complexity of O(n). Include input validation and address edge cases like duplicate song titles or an empty playlist.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 24,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a C++ program to solve the 8-Queen Problem using backtracking. Implement efficient handling of constraints to ensure that no two queens threaten each other. Optimize the solution to utilize O(n^2) algorithm complexity and include comprehensive error handling for invalid board configurations.",
+        "answer": "O(n^2)"
+    },
+    {
+        "id": 25,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Write a Java program that implements a Shell sort algorithm to sort a large list of employee salaries efficiently. Ensure the program includes methods for reading input from a CSV file, validating salary data to be positive integers, and handling potential errors gracefully. Test the implementation with varying gap sequences to optimize the sorting process.",
+        "answer": "O(n^2)"
+    },
+    {
+        "id": 26,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Implement a JavaScript module to manage a browser-based tab history using a doubly linked list. The module should support navigating forward and backward between tabs, opening new tabs (which clears forward history), and closing the current tab with proper pointer updates. Optimize each operation for efficient performance and avoid using built-in array functions for history navigation. Include error handling for boundary conditions such as trying to move forward when at the latest tab.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 27,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Write a C++ program that reads a list of student records from a file, each containing a name and GPA. Implement a selection sort algorithm to sort the students in descending order based on GPA. The program should handle invalid input lines gracefully and support sorting up to 10,000 records. Ensure the implementation avoids use of any standard sort functions and includes proper modular design.",
+        "answer": "O(n^2)"
+    },
+    {
+        "id": 28,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Design a JavaScript module for a browser-based dictionary application that stores and retrieves definitions for a large number of user-defined words with constant-time lookup. Implement a perfect hash function to optimize search performance and prevent collisions. The module should support adding, deleting, and querying words, and handle edge cases such as duplicate insertions and undefined lookups.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 29,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Implement a Java program that manages a live leaderboard for an online multiplayer game. The system must support inserting player scores, deleting players, and efficiently retrieving the k-th highest score in real-time. Ensure that all operations maintain a balanced structure for optimal performance. Your solution must use an algorithm based on dynamic order statistics to guarantee efficiency even with frequent updates.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 30,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a C++ application to manage a real-time stock price tracker. The system must support dynamic insertions, deletions, and quick lookups of stock prices, as well as retrieve a sorted list of stocks by price. Implement the underlying data structure using a skip list to ensure all operations (insert, delete, search, and ordered traversal) achieve logarithmic time complexity.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 31,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Design a Rust application that simulates a real-time task scheduler for a drone fleet management system. Each task has a dynamic priority based on urgency and resource availability. The scheduler must insert new tasks, update priorities, and fetch the highest-priority task in optimal time. Implement the task management using a list-based priority queue that guarantees logarithmic performance for insertion and removal operations.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 32,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Implement a Java service that securely transmits user-uploaded documents over a network by first encoding them using Base64. The service should accept files through an API endpoint, convert the file content to Base64 format efficiently, and return the encoded string in the response. Optimize the Base64 encoding process to handle large files while maintaining a time complexity of O(n).",
+        "answer": "O(n)"
+    },
+    {
+        "id": 33,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Develop a JavaScript module to manage a leaderboard system that supports dynamic user score updates and ranked retrieval. Use an AVL tree to maintain a balanced score structure, enabling fast insertion and rank queries. Ensure the implementation supports up to 10,000 users and keeps operations within O(log n) time for both updates and lookups.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 34,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Develop a Python program that implements a linear congruential generator (LCG) for pseudo-random number generation. The program should allow the user to specify the seed, modulus, multiplier, and increment values, and efficiently generate a sequence of random numbers. Ensure that the sequence follows the mathematical properties of LCG and supports both small and large ranges of numbers.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 35,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Develop a C++ program that implements an order book system for stock trading, utilizing a self-balancing tree structure to maintain sorted limit orders. The system must efficiently process insertions and price-level queries while maintaining O(log n) complexity for core operations. Include functionality to validate order inputs and handle duplicate price levels.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 36,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Develop a Rust program implementing an autocomplete system using a prefix tree (Trie) structure to efficiently store and retrieve dictionary words. The system must achieve O(k) time complexity for both insertions and prefix searches (where k = word length), load words dynamically from a text file, and provide functionality to return all words with a given prefix. Include validation for UTF-8 character input and handle edge cases like empty inputs or overlapping prefixes.",
+        "answer": "O(k)"
+    },
+    {
+        "id": 37,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Develop a C program that efficiently checks prime numbers using trial division method, processing input values from a text file. Implement O(√n) complexity verification, include input validation for positive integers, and handle edge cases like even numbers and values ≤ 2. The solution must dynamically load numbers from a file and output primality results with memory-efficient number processing.",
+        "answer": "O(√n)"
+    },
+    {
+        "id": 38,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a Rust program that efficiently manages a task list using a doubly linked list to allow quick insertion, removal, and retrieval of tasks based on priority. Include concurrency support for simultaneous task management across multiple threads, ensuring thread safety and data integrity. The implementation should handle large numbers of tasks without degradation in performance.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 39,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a Java application that manages a large set of customer orders and provides the ability to quickly determine the existence of specific order IDs using a space-efficient approach. Implement the solution using a Bit-Set data structure to optimize memory usage, and ensure the application can handle high-throughput order insertions and queries effectively.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 40,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a C++ program that sorts a list of employee records based on their performance score using an O(n^2) insertion sort algorithm. Ensure the program can handle dynamic input of employee data, validate entries, and properly manage cases of employees with identical scores.",
+        "answer": "O(n^2)"
+    },
+    {
+        "id": 41,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Design a Python application to handle a large list of customer records efficiently. Implement a feature that utilizes the FNV-1a string hash algorithm to quickly check for duplicates in customer emails, ensuring an optimal balance between speed and memory usage. Additionally, incorporate robust error handling to manage invalid email formats and support batch processing of records.",
+        "answer": "O(n)"
+    },
+    {
+        "id": 42,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a C++ application that manages a dynamic leaderboard for an online gaming platform. The program should support real-time score updates for players and efficiently sort the leaderboard to reflect changes. Implement an O(log n) algorithm for score updates and ensure that the leaderboard can handle a large number of players, including automatically resolving ties by using player IDs.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 43,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Implement a Python application to simulate a priority queue using a binary heap data structure. The application should support operations like insertion, deletion, and retrieval of the smallest item. To ensure performance efficiency, process a large batch of tasks with an overall time complexity of O(n log n). Include mechanisms for duplicate tasks handling and input validation.",
+        "answer": "O(n log n)"
+    },
+    {
+        "id": 44,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a C program that takes as input a sequence of text documents and algorithmically finds the largest common subsequence across all documents. Ensure the program efficiently processes large datasets with a time complexity of O(n^2), includes mechanisms for handling erroneous input files, and supports dynamic document additions during runtime.",
+        "answer": "O(n^2)"
+    },
+    {
+        "id": 45,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a C program that simulates a network router managing data packets with different priority levels. Implement efficient packet scheduling using a priority-based queue to ensure high-priority packets are processed first. The program must be able to handle dynamic packet arrival and prioritize them using an O(log n) algorithm. Include logging for debugging and input validation for packet data.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 46,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Implement a Rust program that solves the 8-Queen Problem using a backtracking algorithm. Ensure the solution efficiently finds all possible configurations, with the algorithm's time complexity being O(n!)(considering n = 8). Provide features for visualizing the board's layout and handling input constraints like custom board sizes, provided they maintain the square shape requirement.",
+        "answer": "O(n!)"
+    },
+    {
+        "id": 47,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a JavaScript function that simulates a traffic navigation system for a metropolitan area. The function should accept a graph of intersections as nodes and roads as weighted edges, and determine the shortest path between two specified intersections using Dijkstra's algorithm. Ensure the function can handle graphs with varying densities and includes error handling for invalid inputs or unreachable destinations.",
+        "answer": "O(V^2)"
+    },
+    {
+        "id": 48,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Develop a Java program implementing a configuration manager using a minimal perfect hash function to store and retrieve application settings from a properties file. The system must achieve O(1) time complexity for key lookups, generate collision-free hash mappings during initialization, and handle dynamic reloading of configuration data. Include validation for key-value format integrity, implement duplicate key resolution strategies, and optimize memory usage for large property sets.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 49,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Develop a C++ program that efficiently solves the 8-Queens problem using backtracking with O(1) time complexity for fixed board size. The solution must load initial queen positions from a JSON file, validate chessboard boundaries, output all valid configurations, and handle edge cases including invalid inputs and partially pre-placed queens that maintain non-attacking constraints.",
+        "answer": "O(1)"
+    },
+    {
+        "id": 50,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Develop a C++ program that implements a priority queue using a binary heap. The program should support the insertion of elements, removal of the minimum element, and retrieval of the minimum element in O(log n) time complexity. Ensure that the program handles edge cases such as underflow and supports dynamic memory management for scalability.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 51,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Write a JavaScript function sortByKey(arr, key) that takes an array of objects and a key as input, and returns a new array sorted by the values of the specified key in ascending order. Ensure that the sorting algorithm used has a time complexity of no worse than O(n log n).",
+        "answer": "O(n log n)"
+    },
+    {
+        "id": 52,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Implement a Python function binary_search(arr, target) that carries out a binary search on a sorted list of integers via a divide and conquer approach, ensuring the process adheres to a time complexity of O(log n). The function should return the index of the target if located, or -1 if the target is absent.",
+        "answer": "O(log n)"
+    },
+    {
+        "id": 53,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Create a C++ program that takes a list of coffee shop locations using their coordinates (x, y) and identifies the coffee shop nearest to a given user location, also specified by coordinates. Use an algorithm, which must operate with a time complexity of O(n log n), to determine the closest coffee shop effectively.",
+        "answer": "O(n log n)"
+    },
+    {
+        "id": 54,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Develop a Java method that calculates the largest sum of any contiguous subarray from a provided array of integers. Each subarray should only contain successive elements from the array. Ensure that the method executes with a time complexity of O(n).",
+        "answer": "O(n)"
+    },
+    {
+        "id": 55,
+        "category": "algorithm",
+        "constraint": "time_complexity",
+        "prompt": "Develop a C++ application that orchestrates a road trip itinerary encompassing multiple city stops. Provided with a list depicting cities along with the intercity distances, devise the optimal path that tours each city exactly once and returns to the origination city. The solution must be designed to achieve a time complexity of O(n^2 * 2^n). This constraint ensures efficiency in solving the Traveling Salesman Problem involving multiple cities.",
+        "answer": "O(n^2 * 2^n)"
+    }
+]

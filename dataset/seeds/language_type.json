@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "language_type": "Python"
+    },
+    {
+        "id": 2,
+        "language_type": "JavaScript"
+    },
+    {
+        "id": 3,
+        "language_type": "Java"
+    },
+    {
+        "id": 4,
+        "language_type": "C++"
+    },
+    {
+        "id": 5,
+        "language_type": "Rust"
+    },
+    {
+        "id": 6,
+        "language_type": "Lua"
+    },
+    {
+        "id": 7,
+        "language_type": "CoffeeScript"
+    },
+    {
+        "id": 8,
+        "language_type": "Prolog"
+    },
+    {
+        "id": 9,
+        "language_type": "Julia"
+    },
+    {
+        "id": 10,
+        "language_type": "Haskell"
+    }
+]

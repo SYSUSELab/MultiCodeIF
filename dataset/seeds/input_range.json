@@ -1,0 +1,212 @@
+[
+    {
+        "id": 1,
+        "data_structure": "List",
+        "range": "length between <MinLength> and <MaxLength>",
+        "feature": "Restrict the number of elements in the list"
+    },
+    {
+        "id": 2,
+        "data_structure": "List",
+        "range": "each element between <MinValue> and <MaxValue>",
+        "feature": "Restrict the value range of each element in the list"
+    },
+    {
+        "id": 3,
+        "data_structure": "Set",
+        "range": "number of unique elements between <MinCount> and <MaxCount>",
+        "feature": "Restrict the number of unique elements in the set"
+    },
+    {
+        "id": 4,
+        "data_structure": "Set",
+        "range": "elements must be within <AllowedValuesList>",
+        "feature": "Restrict set elements to specific allowed values"
+    },
+    {
+        "id": 5,
+        "data_structure": "Map",
+        "range": "number of key-value pairs between <MinSize> and <MaxSize>",
+        "feature": "Restrict the number of key-value pairs in the map"
+    },
+    {
+        "id": 6,
+        "data_structure": "Map",
+        "range": "keys must match regex <KeyPattern>",
+        "feature": "Restrict the format of keys in the map"
+    },
+    {
+        "id": 7,
+        "data_structure": "Tuple",
+        "range": "tuple size must be exactly <TupleSize>",
+        "feature": "Restrict the number of elements in the tuple"
+    },
+    {
+        "id": 8,
+        "data_structure": "Tuple",
+        "range": "each field type must match <TypeList>",
+        "feature": "Restrict the type of each field in the tuple"
+    },
+    {
+        "id": 9,
+        "data_structure": "Matrix",
+        "range": "row count and column count between <MinSize> and <MaxSize>",
+        "feature": "Restrict the number of rows and columns in the matrix"
+    },
+    {
+        "id": 10,
+        "data_structure": "Matrix",
+        "range": "each cell value between <MinValue> and <MaxValue>",
+        "feature": "Restrict the value range of each cell in the matrix"
+    },
+    {
+        "id": 11,
+        "data_structure": "Tree",
+        "range": "tree depth between <MinDepth> and <MaxDepth>",
+        "feature": "Restrict the depth of the tree"
+    },
+    {
+        "id": 12,
+        "data_structure": "Tree",
+        "range": "number of nodes between <MinNodes> and <MaxNodes>",
+        "feature": "Restrict the total number of nodes in the tree"
+    },
+    {
+        "id": 13,
+        "data_structure": "Graph",
+        "range": "number of vertices between <MinVertices> and <MaxVertices>",
+        "feature": "Restrict the number of vertices in the graph"
+    },
+    {
+        "id": 14,
+        "data_structure": "Graph",
+        "range": "number of edges between <MinEdges> and <MaxEdges>",
+        "feature": "Restrict the number of edges in the graph"
+    },
+    {
+        "id": 15,
+        "data_structure": "Struct",
+        "range": "specific fields must satisfy <FieldConstraints>",
+        "feature": "Restrict value ranges for specific fields in the struct"
+    },
+    {
+        "id": 16,
+        "data_structure": "Struct",
+        "range": "number of non-null fields between <MinFields> and <MaxFields>",
+        "feature": "Restrict the number of non-null fields in the struct"
+    },
+    {
+        "id": 17,
+        "data_structure": "String",
+        "range": "string length between <MinLength> and <MaxLength>",
+        "feature": "Restrict the length of the string"
+    },
+    {
+        "id": 18,
+        "data_structure": "String",
+        "range": "characters must match regex <Pattern>",
+        "feature": "Restrict the character content of the string"
+    },
+    {
+        "id": 19,
+        "data_structure": "JSONObject",
+        "range": "number of keys between <MinKeys> and <MaxKeys>",
+        "feature": "Restrict the number of keys in the JSON object"
+    },
+    {
+        "id": 20,
+        "data_structure": "JSONObject",
+        "range": "specific fields must exist and match type <FieldTypeConstraints>",
+        "feature": "Require specific fields to exist and match type constraints in the JSON object"
+    },
+    {
+        "id": 21,
+        "data_structure": "Boolean",
+        "range": "must be true or false depending on <Condition>",
+        "feature": "Restrict the boolean value based on a condition"
+    },
+    {
+        "id": 22,
+        "data_structure": "Integer",
+        "range": "integer value between <MinValue> and <MaxValue>",
+        "feature": "Restrict the value range of an integer"
+    },
+    {
+        "id": 23,
+        "data_structure": "Float",
+        "range": "float value between <MinValue> and <MaxValue>",
+        "feature": "Restrict the value range of a float"
+    },
+    {
+        "id": 24,
+        "data_structure": "List",
+        "range": "length between <MinLength> and <MaxLength> and each element between <MinValue> and <MaxValue>",
+        "feature": "Restrict both list size and element value range"
+    },
+    {
+        "id": 25,
+        "data_structure": "Set",
+        "range": "number of elements between <MinCount> and <MaxCount> and elements must be from <AllowedValuesList>",
+        "feature": "Restrict both set size and allowed values"
+    },
+    {
+        "id": 26,
+        "data_structure": "Map",
+        "range": "number of entries between <MinSize> and <MaxSize> and keys must match regex <KeyPattern>",
+        "feature": "Restrict both map size and key format"
+    },
+    {
+        "id": 27,
+        "data_structure": "Tuple",
+        "range": "tuple size must be exactly <TupleSize> and each element type must match <TypeList>",
+        "feature": "Restrict tuple size and element types"
+    },
+    {
+        "id": 28,
+        "data_structure": "Matrix",
+        "range": "row and column counts between <MinSize> and <MaxSize> and each cell value between <MinValue> and <MaxValue>",
+        "feature": "Restrict matrix dimensions and cell value range"
+    },
+    {
+        "id": 29,
+        "data_structure": "Tree",
+        "range": "tree depth between <MinDepth> and <MaxDepth> and number of children per node between <MinChildren> and <MaxChildren>",
+        "feature": "Restrict both tree depth and branching factor"
+    },
+    {
+        "id": 30,
+        "data_structure": "Graph",
+        "range": "number of vertices between <MinVertices> and <MaxVertices> and number of edges between <MinEdges> and <MaxEdges>",
+        "feature": "Restrict both graph size and edge count"
+    },
+    {
+        "id": 31,
+        "data_structure": "Struct",
+        "range": "specific fields must exist and field values must satisfy <FieldValueConstraints>",
+        "feature": "Require specific fields and restrict their values"
+    },
+    {
+        "id": 32,
+        "data_structure": "String",
+        "range": "string length between <MinLength> and <MaxLength> and content must match regex <Pattern>",
+        "feature": "Restrict both string length and character content"
+    },
+    {
+        "id": 33,
+        "data_structure": "JSONObject",
+        "range": "number of keys between <MinKeys> and <MaxKeys> and specific fields must match type <FieldTypeConstraints>",
+        "feature": "Restrict JSON object size and field type requirements"
+    },
+    {
+        "id": 34,
+        "data_structure": "Integer",
+        "range": "integer value between <MinValue> and <MaxValue> and must satisfy <AdditionalCondition>",
+        "feature": "Restrict integer value range and additional conditions like divisibility"
+    },
+    {
+        "id": 35,
+        "data_structure": "Float",
+        "range": "float value between <MinValue> and <MaxValue> and precision must not exceed <DecimalPlaces>",
+        "feature": "Restrict float range and decimal precision"
+    }
+]

@@ -1,0 +1,497 @@
+[
+  {
+    "id": 1,
+    "response": [
+      [
+        "Create a Java function named `queryUnprocessedTransfers` to manage financial transactions in a banking system. The function should read a list of transactions and return a TreeSet containing IDs of transactions that have not been processed yet, leveraging the unique properties of Sets for efficient look-up and deduplication.",
+        "import java.util.List;\nimport java.util.Set;\nimport java.util.TreeSet;\n\npublic class BankingSystem {\n\n    public TreeSet<String> queryUnprocessedTransfers(List<Transaction> transactions) {\n        TreeSet<String> unprocessedTransactionIds = new TreeSet<>();\n        for (Transaction transaction : transactions) {\n            if (!transaction.isProcessed()) {\n                unprocessedTransactionIds.add(transaction.getId());\n            }\n        }\n        return unprocessedTransactionIds;\n    }\n\n    class Transaction {\n        private String id;\n        private boolean processed;\n\n        public Transaction(String id, boolean processed) {\n            this.id = id;\n            this.processed = processed;\n        }\n\n        public String getId() {\n            return id;\n        }\n        \n        public boolean isProcessed() {\n            return processed;\n        }\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "response": [
+      [
+        "Create a Cpp function that finds and counts unique words in a given string using a unordered_set. This function should preprocess the string to normalize case sensitivity and remove punctuation before insertion into the Set. Output the count of unique words and a breakdown of each word with its occurrence.",
+        "#include <iostream>\n#include <string>\n#include <unordered_set>\n#include <unordered_map>\n#include <sstream>\n#include <cctype>\n\nvoid countUniqueWords(const std::string& input) {\n    std::unordered_set<std::string> uniqueWords;\n    std::unordered_map<std::string, int> wordOccurrences;\n    std::string preprocessedString;\n    std::string word;\n\n    // Preprocessing: Normalize case and remove punctuation\n    for (char ch : input) {\n        if (std::isalpha(ch) || std::isspace(ch)) {\n            preprocessedString += std::tolower(ch);\n        }\n    }\n\n    std::istringstream stream(preprocessedString);\n    while (stream >> word) {\n        uniqueWords.insert(word);\n        wordOccurrences[word]++;\n    }\n\n    // Output results\n    std::cout << \"Unique word count: \" << uniqueWords.size() << std::endl;\n    for (const auto& entry : wordOccurrences) {\n        std::cout << entry.first << \": \" << entry.second << std::endl;\n    }\n}\n\nint main() {\n    std::string input = \"Hello, world! Hello, C++ world. Programming is fun.\";\n    countUniqueWords(input);\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "response": [
+      [
+        "Create a Rust function called `serve_customers` that simulates a customer service system where customers are handled in the order they arrive. The function should utilize a VecDeque data structure to manage incoming customer requests and process them using enqueue and dequeue operations. Moreover, incorporate functionalities to calculate and display the average wait time based on the number of customers processed.",
+        "use std::collections::VecDeque;\n\nfn serve_customers(customer_requests: VecDeque<u32>) {\n    let mut queue = customer_requests;\n    let mut total_wait_time = 0;\n    let mut processed_customers = 0;\n\n    while let Some(wait_time) = queue.pop_front() {\n        total_wait_time += wait_time;\n        processed_customers += 1;\n        println!(\"Processed customer with wait time: {}\", wait_time);\n    }\n\n    if processed_customers > 0 {\n        let average_wait_time = total_wait_time as f32 / processed_customers as f32;\n        println!(\"Average wait time: {:.2}\", average_wait_time);\n    } else {\n        println!(\"No customers to process.\");\n    }\n}\n\nfn main() {\n    let customer_requests = VecDeque::from(vec![10, 5, 20, 15]);\n    serve_customers(customer_requests);\n}"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "response": [
+      [
+        "Create a Java function named `processEmergencyAlerts` that simulates a real-time monitoring system for emergency alerts. The function should manage a stream of alert events represented by their severity levels and timestamps. Use a PriorityQueue to prioritize the processing of alerts based on their severity—with the most critical alerts processed first. Additionally, implement functionality to process and display alerts sequentially based on this priority, and provide the capability to add new alerts dynamically.",
+        "import java.util.PriorityQueue;\nimport java.util.Comparator;\n\nclass EmergencyAlert {\n    int severity;\n    String timestamp;\n\n    public EmergencyAlert(int severity, String timestamp) {\n        this.severity = severity;\n        this.timestamp = timestamp;\n    }\n\n    @Override\n    public String toString() {\n        return \"Severity: \" + severity + \", Timestamp: \" + timestamp;\n    }\n}\n\npublic class EmergencyAlertSystem {\n\n    private PriorityQueue<EmergencyAlert> alertQueue;\n\n    public EmergencyAlertSystem() {\n        alertQueue = new PriorityQueue<>(Comparator.comparingInt((EmergencyAlert alert) -> -alert.severity));\n    }\n\n    public void addAlert(int severity, String timestamp) {\n        alertQueue.offer(new EmergencyAlert(severity, timestamp));\n    }\n\n    public void processEmergencyAlerts() {\n        while (!alertQueue.isEmpty()) {\n            EmergencyAlert alert = alertQueue.poll();\n            displayAlert(alert);\n        }\n    }\n\n    private void displayAlert(EmergencyAlert alert) {\n        System.out.println(\"Processing Alert: \" + alert);\n    }\n\n    public static void main(String[] args) {\n        EmergencyAlertSystem system = new EmergencyAlertSystem();\n        system.addAlert(5, \"2023-01-01T08:00:00\");\n        system.addAlert(3, \"2023-01-01T09:00:00\");\n        system.addAlert(7, \"2023-01-01T07:00:00\");\n\n        system.processEmergencyAlerts();\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "response": [
+      [
+        "Create a Cpp function named `loadHighScores` that retrieves a list of high scores from a game and stores them in a vector. The function should also provide functionality to sort these scores in descending order and permit the dynamic addition of new scores. Additionally, implement a feature to search for a specific score and return if it exists in the high scores list.",
+        "#include <vector>\n#include <algorithm>\n#include <iostream>\n\nclass HighScores {\nprivate:\n    std::vector<int> scores;\n\npublic:\n    void loadHighScores(const std::vector<int>& newScores) {\n        scores = newScores;\n        sortScoresDescending();\n    }\n\n    void addScore(int score) {\n        scores.push_back(score);\n        sortScoresDescending();\n    }\n\n    bool searchScore(int score) const {\n        return std::find(scores.begin(), scores.end(), score) != scores.end();\n    }\n\n    const std::vector<int>& getScores() const {\n        return scores;\n    }\n\nprivate:\n    void sortScoresDescending() {\n        std::sort(scores.begin(), scores.end(), std::greater<int>());\n    }\n};"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: type: Go;chan.\n## previous code\npackage main\n\nimport (\n\t\"fmt\"\n\t\"sync\"\n\t\"time\"\n)\n\ntype StockQuote struct {\n\tTicker string\n\tPrice  float64\n}\n\nfunc stockTicker(ticker string, prices []float64, ch chan<- StockQuote) {\n\tfor _, price := range prices {\n\t\tch <- StockQuote{Ticker: ticker, Price: price}\n\t\ttime.Sleep(500 * time.Millisecond)\n\t}\n}\n\nfunc streamStockQuotes() {\n\tquotes := make(chan StockQuote)\n\ttickers := map[string][]float64{\n\t\t\"GOOGL\": {2800.00, 2812.35, 2815.22, 2800.52},\n\t\t\"AAPL\":  {150.45, 151.25, 151.75, 152.00},\n\t\t\"AMZN\":  {3400.12, 3405.75, 3410.25, 3408.75},\n\t}\n\n\tvar wg sync.WaitGroup\n\twg.Add(len(tickers))\n\tfor ticker, prices := range tickers {\n\t\tgo func(ticker string, prices []float64) {\n\t\t\tdefer wg.Done()\n\t\t\tstockTicker(ticker, prices, quotes)\n\t\t}(ticker, prices)\n\t}\n\n\tgo func() {\n\t\twg.Wait()\n\t\tclose(quotes)\n\t}()\n\n\ttickerData := make(map[string][]float64)\n\tvar mu sync.Mutex\n\n\tfor quote := range quotes {\n\t\tmu.Lock()\n\t\ttickerData[quote.Ticker] = append(tickerData[quote.Ticker], quote.Price)\n\t\tmu.Unlock()\n\n\t\tgo func(quote StockQuote) {\n\t\t\tmu.Lock()\n\t\t\tdefer mu.Unlock()\n\t\t\tvar sum float64\n\t\t\tfor _, price := range tickerData[quote.Ticker] {\n\t\t\t\tsum += price\n\t\t\t}\n\t\t\taverage := sum / float64(len(tickerData[quote.Ticker]))\n\t\t\tfmt.Printf(\"Average price for %s: %.2f\\n\", quote.Ticker, average)\n\t\t}(quote)\n\t}\n}\n\nfunc main() {\n\tstreamStockQuotes()\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nDevelop a Go function named `streamStockQuotes` that handles real-time stock quotes streamed via multiple goroutines. Each goroutine represents a different stock ticker and sends stock price updates to a main goroutine through a Go channel. The main goroutine should accumulate and average the stock prices received for each ticker and print out the average prices regularly. Ensure to handle the synchronization of data efficiently to maintain accurate calculations.",
+        "```go\npackage main\n\nimport (\n\t\"fmt\"\n\t\"sync\"\n\t\"time\"\n)\n\ntype StockQuote struct {\n\tTicker string\n\tPrice  float64\n}\n\nfunc stockTicker(ticker string, prices []float64, ch chan<- StockQuote) {\n\tfor _, price := range prices {\n\t\tch <- StockQuote{Ticker: ticker, Price: price}\n\t\ttime.Sleep(500 * time.Millisecond)\n\t}\n}\n\nfunc streamStockQuotes() {\n\tquotes := make(chan StockQuote)\n\ttickers := map[string][]float64{\n\t\t\"GOOGL\": {2800.00, 2812.35, 2815.22, 2800.52},\n\t\t\"AAPL\":  {150.45, 151.25, 151.75, 152.00},\n\t\t\"AMZN\":  {3400.12, 3405.75, 3410.25, 3408.75},\n\t}\n\n\tvar wg sync.WaitGroup\n\twg.Add(len(tickers))\n\tfor ticker, prices := range tickers {\n\t\tgo func(ticker string, prices []float64) {\n\t\t\tdefer wg.Done()\n\t\t\tstockTicker(ticker, prices, quotes)\n\t\t}(ticker, prices)\n\t}\n\n\t// Goroutine to close the channel once all stockTicker goroutines are done.\n\tgo func() {\n\t\twg.Wait()\n\t\tclose(quotes)\n\t}()\n\n\ttickerData := make(map[string][]float64)\n\tvar mu sync.Mutex\n\n\t// Main goroutine to handle incoming stock quotes.\n\tfor quote := range quotes {\n\t\tmu.Lock()\n\t\ttickerData[quote.Ticker] = append(tickerData[quote.Ticker], quote.Price)\n\t\tmu.Unlock()\n\n\t\tgo func(ticker string) {\n\t\t\tmu.Lock()\n\t\t\tdefer mu.Unlock()\n\t\t\tvar sum float64\n\t\t\tfor _, price := range tickerData[ticker] {\n\t\t\t\tsum += price\n\t\t\t}\n\t\t\taverage := sum / float64(len(tickerData[ticker]))\n\t\t\tfmt.Printf(\"Average price for %s: %.2f\\n\", ticker, average)\n\t\t}(quote.Ticker)\n\t}\n}\n\nfunc main() {\n\tstreamStockQuotes()\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 7,
+    "response": [
+      [
+        "Create a Rust function named `track_inventory_changes` that analyzes changes in inventory levels for various products. The function should maintain a BTreeMap to store product IDs as keys and their respective inventory changes (expressed as integers) as values. The function should allow adding new inventory logs, updating existing ones, and should be able to clearly report the aggregated changes for each product in a sorted manner based on the product IDs.",
+        "use std::collections::BTreeMap;\n\nfn track_inventory_changes() -> BTreeMap<u32, i32> {\n    let mut inventory_changes = BTreeMap::new();\n\n    fn add_inventory_log(inventory_changes: &mut BTreeMap<u32, i32>, product_id: u32, change: i32) {\n        inventory_changes.entry(product_id).and_modify(|e| *e += change).or_insert(change);\n    }\n\n    fn report_changes(inventory_changes: &BTreeMap<u32, i32>) {\n        for (product_id, change) in inventory_changes.iter() {\n            println!(\"Product ID: {}, Inventory Change: {}\", product_id, change);\n        }\n    }\n\n    add_inventory_log(&mut inventory_changes, 101, 5);\n    add_inventory_log(&mut inventory_changes, 202, -3);\n    add_inventory_log(&mut inventory_changes, 101, 2);\n\n    report_changes(&inventory_changes);\n\n    inventory_changes\n}"
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "response": [
+      [
+        "Create a Cpp function named `detectDuplicateErrors` designed to analyze an array of error codes from a software system. The function should return an unordered_set containing only unique error codes that have repeatedly occurred. Additionally, provide functionality to count the number of unique duplicates and report this number.",
+        "#include <unordered_set>\n#include <unordered_map>\n#include <vector>\n\nstd::pair<std::unordered_set<int>, int> detectDuplicateErrors(const std::vector<int>& errorCodes) {\n    std::unordered_map<int, int> errorCount;\n    std::unordered_set<int> duplicateErrors;\n\n    for (int code : errorCodes) {\n        errorCount[code]++;\n        if (errorCount[code] == 2) {\n            duplicateErrors.insert(code);\n        }\n    }\n\n    return {duplicateErrors, static_cast<int>(duplicateErrors.size())};\n}"
+      ]
+    ]
+  },
+  {
+    "id": 9,
+    "response": [
+      [
+        "Create a Java function named `manageVipGuestList` for an exclusive event management application. The function should efficiently handle the guest list by adding or removing VIP guest IDs using a LinkedList. Based on the order of input, the function should return the current list of VIP guest IDs and allow checking if a specific ID is present in the list, leveraging a LinkedList's capabilities of fast insertions and deletions at any position.",
+        "import java.util.LinkedList;\n\npublic class EventManager {\n    private LinkedList<Integer> vipGuestList = new LinkedList<>();\n\n    public LinkedList<Integer> manageVipGuestList(String action, Integer guestId) {\n        switch (action.toLowerCase()) {\n            case \"add\":\n                vipGuestList.add(guestId);\n                break;\n            case \"remove\":\n                vipGuestList.remove(guestId);\n                break;\n            case \"contains\":\n                System.out.println(vipGuestList.contains(guestId));\n                break;\n            default:\n                throw new IllegalArgumentException(\"Invalid action\");\n        }\n        return vipGuestList;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "response": [
+      [
+        "Create a Rust function called `track_unique_visitors` that manages a log of website visitors. The function should read a list of visitor IDs and use a BTreeSet to store only unique IDs in sorted order. The function must also provide a method to display the total number of unique visitors.",
+        "use std::collections::BTreeSet;\n\nfn track_unique_visitors(visitor_ids: Vec<u32>) -> (usize, BTreeSet<u32>) {\n    let mut unique_visitors = BTreeSet::new();\n\n    for id in visitor_ids {\n        unique_visitors.insert(id);\n    }\n\n    (unique_visitors.len(), unique_visitors)\n}"
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "response": [
+      [
+        "Create a Python function called `merge_intervals` that takes a list of tuples, each representing an interval with a start and an end, and merges all overlapping intervals. The function should return a new list of tuples with the merged intervals sorted by their start values to manage scheduling scenarios efficiently using the list data structure.",
+        "def merge_intervals(intervals):\n    if not intervals:\n        return []\n    \n    intervals.sort(key=lambda x: x[0])\n    merged = [list(intervals[0])]\n    \n    for current in intervals[1:]:\n        previous = merged[-1]\n        if current[0] <= previous[1]:\n            previous[1] = max(previous[1], current[1])\n        else:\n            merged.append(list(current))\n    \n    return [tuple(interval) for interval in merged]"
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "response": [
+      [
+        "Create a Java method named `filterStudentsByGrade` which takes a list of student objects and a grade threshold. The method should return an ArrayList containing the names of students whose grades are above the specified threshold. Ensure the method leverages the properties of the ArrayList for efficient element access and size modification.",
+        "import java.util.ArrayList;\nimport java.util.List;\n\nclass Student {\n    String name;\n    int grade;\n\n    public Student(String name, int grade) {\n        this.name = name;\n        this.grade = grade;\n    }\n}\n\npublic class StudentFilter {\n\n    public static ArrayList<String> filterStudentsByGrade(List<Student> students, int gradeThreshold) {\n        ArrayList<String> filteredNames = new ArrayList<>();\n        for (Student student : students) {\n            if (student.grade > gradeThreshold) {\n                filteredNames.add(student.name);\n            }\n        }\n        return filteredNames;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "response": [
+      [
+        "Create a Python function named `manageEmergencyQueue` that simulates the prioritization of emergency medical cases. The function should employ a `collections.deque` to manage incoming patient records. The entries should include patient IDs and severity scores. Entries must be processed in a way that the highest severity cases receive attention first, using efficient insertion and deletion operations provided by the deque structure. Additionally, the function should provide the ability to reevaluate and rearrange the priorities of cases still within the queue.",
+        "from collections import deque\n\ndef manageEmergencyQueue():\n    queue = deque()\n    \n    def add_patient(patient_id, severity):\n        queue.append((patient_id, severity))\n        queue = deque(sorted(queue, key=lambda x: x[1], reverse=True))\n    \n    def process_next_patient():\n        if queue:\n            return queue.popleft()\n        return None\n    \n    def reevaluate_priorities():\n        queue = deque(sorted(queue, key=lambda x: x[1], reverse=True))\n        \n    return add_patient, process_next_patient, reevaluate_priorities"
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "response": [
+      [
+        "Create a Rust function named `filter_duplicate_emails` that processes a list of email addresses. The function should efficiently identify and return only unique email addresses using a HashSet. Ensure the output preserves the order of the first occurrences of each email.",
+        "use std::collections::HashSet;\n\nfn filter_duplicate_emails(emails: Vec<String>) -> Vec<String> {\n    let mut seen: HashSet<String> = HashSet::new();\n    emails.into_iter()\n          .filter(|email| seen.insert(email.clone()))\n          .collect()\n}"
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "response": [
+      [
+        "Develop a Rust function called `manage_playback_queue` which simulates a playlist management system for a media player. The function should interact with tracks using a LinkedList structure to allow efficient track insertions, deletions, and playback reset. The function should include operations to add tracks to the list, remove specific tracks, skip to the next or previous track, and reset the playback to the first track in the list.",
+        "```rust\nuse std::collections::LinkedList;\n\npub struct PlaybackQueue {\n    tracks: LinkedList<String>,\n    current_track: Option<*mut String>,\n}\n\nimpl PlaybackQueue {\n    pub fn new() -> Self {\n        PlaybackQueue {\n            tracks: LinkedList::new(),\n            current_track: None,\n        }\n    }\n\n    pub fn add_track(&mut self, track: String) {\n        self.tracks.push_back(track);\n        if self.current_track.is_none() {\n            self.reset_to_first();\n        }\n    }\n\n    pub fn remove_track(&mut self, track: &str) -> bool {\n        if let Some(pos) = self.tracks.iter_mut().position(|t| t == track) {\n            let mut iter = self.tracks remove[index_remove()]     }\n 偷偷情况下 tracks skip"
+      ]
+    ]
+  },
+  {
+    "id": 16,
+    "response": [
+      [
+        "Create a Java function named `safeIncrementCount` that manages concurrent updates to a frequency map of student responses in a multi-threaded environment. The function should accept a list of student responses and update a ConcurrentHashMap where the keys represent different response IDs and the values represent their count. Ensure that updates to the map are thread-safe and efficient, reflecting the real-time calculation of response frequencies.",
+        "import java.util.List;\nimport java.util.concurrent.ConcurrentHashMap;\n\npublic class ResponseCounter {\n    private final ConcurrentHashMap<String, Integer> frequencyMap = new ConcurrentHashMap<>();\n\n    public void safeIncrementCount(List<String> studentResponses) {\n        studentResponses.forEach(response -> \n            frequencyMap.merge(response, 1, Integer::sum)\n        );\n    }\n\n    public ConcurrentHashMap<String, Integer> getFrequencyMap() {\n        return frequencyMap;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "response": [
+      [
+        "Create a Python function named `intersect_events` that takes two lists of event IDs as input and returns a set containing the intersection of these two lists. The function should efficiently find common IDs using set operations to aid in identifying shared events between two different sources.",
+        "def intersect_events(list1, list2):\n    return set(list1).intersection(list2)"
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: type: Python;dict.\n## previous code\ndef track_inventory_changes(updates):\n    inventory = {}\n    for update in updates:\n        product_id, quantity_change = update['product_id'], update['quantity_change']\n        if product_id in inventory:\n            inventory[product_id] += quantity_change\n        else:\n            inventory[product_id] = quantity_change\n    return inventory\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Python function called `track_inventory_changes` that observes changes in product inventory in a retail management system. The function should receive a list of product updates, where each update includes a product ID and the change in quantity (positive or negative). The function needs to maintain a record of net changes per product using a dictionary for efficient key-value operations and return the final state of all products' quantities after all updates.",
+        "```python\ndef track_inventory_changes(updates):\n    inventory = {}\n    for update in updates:\n        product_id, quantity_change = update['product_id'], update['quantity_change']\n        inventory[product_id] = inventory.get(product_id, 0) + quantity_change\n    return inventory\n```"
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "response": [
+      [
+        "Design a Rust function named `manage_email_queue` that facilitates an email scheduling system. The function should use a VecDeque data structure to queue email tasks and allow for processing them in the order they were scheduled. Additionally, integrate functionality to periodically shuffle the queue for prioritizing urgent emails and ensure precise log details for each processed email, including timestamps.",
+        "use std::collections::VecDeque;\nuse rand::seq::SliceRandom;\nuse chrono::prelude::*;\nuse log::{info, LevelFilter};\n\nstruct EmailTask {\n    email: String,\n    timestamp: DateTime<Utc>,\n    urgent: bool,\n}\n\nfn manage_email_queue() {\n    let mut email_queue: VecDeque<EmailTask> = VecDeque::new();\n\n    // Simulating adding tasks to the queue\n    email_queue.push_back(EmailTask {\n        email: \"example1@example.com\".to_string(),\n        timestamp: Utc::now(),\n        urgent: false,\n    });\n    email_queue.push_back(EmailTask {\n        email: \"urgent@example.com\".to_string(),\n        timestamp: Utc::now(),\n        urgent: true,\n    });\n\n    // Shuffling the queue to prioritize urgent emails\n    let mut email_vec: Vec<EmailTask> = email_queue.into();\n    email_vec.sort_by(|a, b| b.urgent.cmp(&a.urgent));\n    email_vec.shuffle(&mut rand::thread_rng());\n    email_queue = VecDeque::from(email_vec);\n\n    // Processing email tasks\n    while let Some(task) = email_queue.pop_front() {\n        let log_message = format!(\n            \"Processing email: {} at {}. Urgent: {}\",\n            task.email,\n            task.timestamp,\n            task.urgent\n        );\n        info!(\"{}\", log_message);\n    }\n}\n\nfn main() {\n    log::set_max_level(LevelFilter::Info);\n    manage_email_queue();\n}"
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "response": [
+      [
+        "Create a Rust function named `combine_small_data_streams` that takes multiple small data streams as input and combines them into a single stream, managing interim results with a SmallVec for efficient inline storage. This function should handle the merging process dynamically, allocating additional memory only when the capacity of the inline storage is exceeded.",
+        "use smallvec::SmallVec;\n\nfn combine_small_data_streams<T: Clone>(streams: Vec<Vec<T>>) -> Vec<T> {\n    let mut combined: SmallVec<[T; 64]> = SmallVec::new();\n    for stream in streams {\n        for item in stream {\n            combined.push(item);\n        }\n    }\n    combined.into_vec()\n}"
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: type: Go;buffer.Buffer.\n## previous code\npackage main\n\nimport (\n\t\"bytes\"\n\t\"fmt\"\n\t\"sync\"\n\t\"time\"\n)\n\nconst (\n\tmaxBufferSize = 1024 // Maximum buffer size in bytes\n\tflushInterval = 5    // Interval in seconds to flush the buffer\n)\n\ntype EventProcessor struct {\n\tbuffer    *bytes.Buffer\n\tmutex     sync.Mutex\n\tflushFunc func(data string) // Function to handle flush logic\n}\n\nfunc NewEventProcessor(flushFunc func(data string)) *EventProcessor {\n\treturn &EventProcessor{\n\t\tbuffer:    new(bytes.Buffer),\n\t\tflushFunc: flushFunc,\n\t}\n}\n\nfunc (ep *EventProcessor) logEvents(event string) {\n\tep.mutex.Lock()\n\tdefer ep.mutex.Unlock()\n\n\tep.buffer.WriteString(event + \"\\n\")\n\n\tif ep.buffer.Len() >= maxBufferSize {\n\t\tep.flushBuffer()\n\t}\n}\n\nfunc (ep *EventProcessor) flushBuffer() {\n\tif ep.buffer.Len() == 0 {\n\t\treturn\n\t}\n\n\tep.flushFunc(ep.buffer.String())\n\tep.buffer.Reset()\n}\n\nfunc (ep *EventProcessor) startPeriodicFlush() {\n\tticker := time.NewTicker(flushInterval * time.Second)\n\tdefer ticker.Stop()\n\n\tfor range ticker.C {\n\t\tep.mutex.Lock()\n\t\tep.flushBuffer()\n\t\tep.mutex.Unlock()\n\t}\n}\n\nfunc main() {\n\teventProcessor := NewEventProcessor(func(data string) {\n\t\t// Simulate processing the batched data\n\t\tfmt.Println(\"Flushing buffer:\")\n\t\tfmt.Print(data)\n\t})\n\n\tgo eventProcessor.startPeriodicFlush()\n\n\t// Simulate logging events\n\tfor i := 0; i < 1000; i++ {\n\t\teventProcessor.logEvents(fmt.Sprintf(\"Event %d\", i+1))\n\t\ttime.Sleep(10 * time.Millisecond)\n\t}\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Go function called `logEvents` that processes event data streamed from an application. The function should use a buffer.Buffer to accumulate and parse event messages efficiently. Implement functionality to batch and flush the buffer periodically or when it surpasses a specific size limit, ensuring optimized resource usage during high-volume event logging.",
+        "```go\npackage main\n\nimport (\n\t\"bytes\"\n\t\"fmt\"\n\t\"sync\"\n\t\"time\"\n)\n\nconst (\n\tmaxBufferSize = 1024 // Maximum buffer size in bytes\n\tflushInterval = 5    // Interval in seconds to flush the buffer\n)\n\ntype EventProcessor struct {\n\tbuffer    *bytes.Buffer\n\tmutex     sync.Mutex\n\tflushFunc func(data string) // Function to handle flush logic\n}\n\nfunc NewEventProcessor(flushFunc func(data string)) *EventProcessor {\n\treturn &EventProcessor{\n\t\tbuffer:    new(bytes.Buffer),\n\t\tflushFunc: flushFunc,\n\t}\n}\n\nfunc (ep *EventProcessor) LogEvents(event string) {\n\tep.mutex.Lock()\n\tdefer ep.mutex.Unlock()\n\n\tep.buffer.WriteString(event + \"\\n\")\n\n\tif ep.buffer.Len() >= maxBufferSize {\n\t\tep.flushBuffer()\n\t}\n}\n\nfunc (ep *EventProcessor) flushBuffer() {\n\tif ep.buffer.Len() == 0 {\n\t\treturn\n\t}\n\n\tep.flushFunc(ep.buffer.String())\n\tep.buffer.Reset()\n}\n\nfunc (ep *EventProcessor) StartPeriodicFlush() {\n\tticker := time.NewTicker(flushInterval * time.Second)\n\tdefer ticker.Stop()\n\n\tfor range ticker.C {\n\t\tep.mutex.Lock()\n\t\tep.flushBuffer()\n\t\tep.mutex.Unlock()\n\t}\n}\n\nfunc main() {\n\teventProcessor := NewEventProcessor(func(data string) {\n\t\t// Simulate processing the batched data\n\t\tfmt.Println(\"Flushing buffer:\")\n\t\tfmt.Print(data)\n\t})\n\n\tgo eventProcessor.StartPeriodicFlush()\n\n\t// Simulate logging events\n\tfor i := 0; i < 1000; i++ {\n\t\teventProcessor.LogEvents(fmt.Sprintf(\"Event %d\", i+1))\n\t\ttime.Sleep(10 * time.Millisecond)\n\t}\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "response": [
+      [
+        "Create a C++ function called `mergeMeetingTimes` that takes a list of meeting time intervals (each represented as a pair of start and end times) and returns the merged list of time intervals if necessary. The function should leverage a priority_queue to sort intervals by start time and help with efficient merging of overlapping intervals.",
+        "#include <vector>\n#include <queue>\n#include <utility>\n\nusing namespace std;\n\nvector<pair<int, int>> mergeMeetingTimes(vector<pair<int, int>> intervals) {\n    if (intervals.empty()) return {};\n\n    auto cmp = [](const pair<int, int>& a, const pair<int, int>& b) {\n        return a.first > b.first;\n    };\n\n    priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> pq(cmp);\n\n    for (const auto& interval : intervals) {\n        pq.push(interval);\n    }\n\n    vector<pair<int, int>> merged;\n    auto current = pq.top();\n    pq.pop();\n\n    while (!pq.empty()) {\n        auto next = pq.top();\n        pq.pop();\n\n        if (current.second >= next.first) {\n            current.second = max(current.second, next.second);\n        } else {\n            merged.push_back(current);\n            current = next;\n        }\n    }\n\n    merged.push_back(current);\n    return merged;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "response": [
+      [
+        "Create a Python function called `categorize_logs_by_event` that processes a list of log entries where each entry contains a timestamp and an event type. The function should use the `collections.defaultdict` to categorize and count the occurrences of each event type, thus simplifying the aggregation and aiding in efficient event type look-ups. The function should return the defaultdict containing each event type as a key and its count as the associated value.",
+        "from collections import defaultdict\n\ndef categorize_logs_by_event(log_entries):\n    event_count = defaultdict(int)\n    for entry in log_entries:\n        event_type = entry['event_type']\n        event_count[event_type] += 1\n    return event_count"
+      ]
+    ]
+  },
+  {
+    "id": 24,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: type: Go;map.\n## previous code\npackage main\n\nimport \"fmt\"\n\ntype InventoryManager struct {\n\tinventory map[string]int\n}\n\nfunc trackInventoryStatus() *InventoryManager {\n\treturn &InventoryManager{\n\t\tinventory: make(map[string]int),\n\t}\n}\n\nfunc (im *InventoryManager) updateInventory(productID string, quantity int) {\n\tif _, exists := im.inventory[productID]; exists {\n\t\tim.inventory[productID] += quantity\n\t\tif im.inventory[productID] < 0 {\n\t\t\tim.inventory[productID] = 0\n\t\t}\n\t} else {\n\t\tif quantity > 0 {\n\t\t\tim.inventory[productID] = quantity\n\t\t}\n\t}\n}\n\nfunc (im *InventoryManager) getInventory() map[string]int {\n\treturn im.inventory\n}\n\nfunc main() {\n\tmanager := trackInventoryStatus()\n\n\tmanager.updateInventory(\"prod1\", 100)\n\tmanager.updateInventory(\"prod2\", 200)\n\tmanager.updateInventory(\"prod1\", -50)  // Reduce quantity by 50\n\tmanager.updateInventory(\"prod3\", 0)    // Should not add prod3 as quantity is 0\n\tmanager.updateInventory(\"prod2\", -250) // Attempt to reduce below 0, should set to 0\n\n\tfmt.Println(manager.getInventory())\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Go function named `trackInventoryStatus` that manages product stock levels in a warehouse system. The function should accept updates to product quantities and store these updates in a map, using product IDs as keys. The map should facilitate quick lookup and update of stock levels, allowing the user to add, remove, or modify entries efficiently.",
+        "```go\npackage main\n\nimport \"fmt\"\n\n// InventoryManager keeps track of stock levels using a map.\ntype InventoryManager struct {\n\tinventory map[string]int\n}\n\n// trackInventoryStatus initializes the inventory map for tracking.\nfunc trackInventoryStatus() *InventoryManager {\n\treturn &InventoryManager{\n\t\tinventory: make(map[string]int),\n\t}\n}\n\n// updateInventory changes the stock level for a given productID.\nfunc (im *InventoryManager) updateInventory(productID string, quantity int) {\n\tim.inventory[productID] += quantity\n\tif im.inventory[productID] < 0 {\n\t\tim.inventory[productID] = 0\n\t}\n}\n\n// getInventory fetches the current state of the inventory.\nfunc (im *InventoryManager) getInventory() map[string]int {\n\treturn im.inventory\n}\n\nfunc main() {\n\tmanager := trackInventoryStatus()\n\tmanager.updateInventory(\"prod1\", 100)\n\tmanager.updateInventory(\"prod2\", 200)\n\tmanager.updateInventory(\"prod1\", -50)  // Reduce quantity by 50\n\tmanager.updateInventory(\"prod3\", 0)    // prod3 should be added with 0 quantity\n\tmanager.updateInventory(\"prod2\", -250) // Attempt to reduce below 0, should set to 0\n\n\tfmt.Println(manager.getInventory())\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "response": [
+      [
+        "Create a Cpp function named `filterUniqueEmails` that receives a list of email strings and returns a set containing only unique emails. The function should preprocess each email by converting all characters to lowercase and normalizing dots before the \"@\" symbol. Use a set to ensure that all emails are unique and returned in a sorted manner.",
+        "#include <string>\n#include <vector>\n#include <set>\n#include <algorithm>\n\nstd::set<std::string> filterUniqueEmails(const std::vector<std::string>& emails) {\n    std::set<std::string> uniqueEmails;\n    for (const auto& email : emails) {\n        auto atPos = email.find('@');\n        std::string localPart = email.substr(0, atPos);\n        std::string domainPart = email.substr(atPos);\n\n        // Convert to lowercase and normalize dots before '@'\n        std::string processedEmail;\n        std::transform(localPart.begin(), localPart.end(), localPart.begin(), ::tolower);\n        for (char ch : localPart) {\n            if (ch != '.') {\n                processedEmail += ch;\n            }\n        }\n        processedEmail += domainPart;\n\n        uniqueEmails.insert(processedEmail);\n    }\n    return uniqueEmails;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 26,
+    "response": [
+      [
+        "Create a C++ function named `sortLogsByTimestamp` that manages logging data in a real-time system. The function should read a stream of log entries characterized by timestamps, and efficiently reorder them in ascending chronological order using a deque data structure. Incorporate functionalities for handling duplicate timestamps by merging log contents.",
+        "#include <iostream>\n#include <deque>\n#include <string>\n#include <map>\n#include <algorithm>\n\nstruct LogEntry {\n    std::string timestamp;\n    std::string content;\n};\n\nvoid sortLogsByTimestamp(std::deque<LogEntry>& logs) {\n    std::map<std::string, std::string> mergedLogs;\n    \n    // Merge logs with duplicate timestamps\n    for (const auto& log : logs) {\n        if (mergedLogs.find(log.timestamp) != mergedLogs.end()) {\n            mergedLogs[log.timestamp] += \" | \" + log.content;\n        } else {\n            mergedLogs[log.timestamp] = log.content;\n        }\n    }\n\n    // Clear and reorder the deque\n    logs.clear();\n    for (const auto& [timestamp, content] : mergedLogs) {\n        logs.push_back({timestamp, content});\n    }\n\n    // Sort logs by timestamp\n    std::sort(logs.begin(), logs.end(), [](const LogEntry& a, const LogEntry& b) {\n        return a.timestamp < b.timestamp;\n    });\n}"
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "response": [
+      [
+        "Develop a Rust function named `manage_inventory` that handles inventory stock adjustments based on incoming product orders and returns. The function should utilize a Vec to store product IDs and their respective stock quantities. It should also allow updating the inventory dynamically with additions and deductions as transactions occur, and provide a report showing the final inventory status.",
+        "use std::collections::HashMap;\n\nfn manage_inventory(transactions: Vec<(i32, i32)>) -> HashMap<i32, i32> {\n    let mut inventory: HashMap<i32, i32> = HashMap::new();\n\n    for (product_id, quantity_change) in transactions {\n        let entry = inventory.entry(product_id).or_insert(0);\n        *entry += quantity_change;\n    }\n\n    inventory\n}\n\nfn main() {\n    let transactions = vec![\n        (101, 5),  // Add 5 units of product 101\n        (102, 3),  // Add 3 units of product 102\n        (101, -2), // Deduct 2 units of product 101\n        (103, 6),  // Add 6 units of product 103\n    ];\n\n    let final_inventory = manage_inventory(transactions);\n\n    println!(\"Final Inventory:\");\n    for (product_id, quantity) in final_inventory {\n        println!(\"Product ID: {}, Stock: {}\", product_id, quantity);\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "response": [
+      [
+        "Create a Python function called `manage_print_queue` to efficiently manage print jobs in a corporate setting. This function should use the `queue.Queue` data structure to handle incoming print tasks in the order they are submitted. The function should cater to multiple printer requests by ensuring that tasks are processed using first-in-first-out (FIFO) methodology, preserving continuity and fairness in task processing. Additionally, implement a feature to display the queue status and the number of tasks left at any given moment.",
+        "import queue\n\ndef manage_print_queue():\n    print_queue = queue.Queue()\n\n    def add_task(task):\n        print_queue.put(task)\n        print(f\"Task '{task}' added to the queue.\")\n\n    def process_task():\n        if not print_queue.empty():\n            task = print_queue.get()\n            print(f\"Processing task: {task}\")\n        else:\n            print(\"No tasks in the queue to process.\")\n\n    def display_queue_status():\n        size = print_queue.qsize()\n        print(f\"Queue status: {size} task(s) remaining.\")\n\n    return add_task, process_task, display_queue_status\n\n# Usage\nadd_task, process_task, display_queue_status = manage_print_queue()\nadd_task(\"Print Report\")\nadd_task(\"Print Invoice\")\ndisplay_queue_status()\nprocess_task()\ndisplay_queue_status()"
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "response": [
+      [
+        "Create a Cpp function named `batchProcessTasks` which processes a list of pending tasks in a system. The function should take a list of task IDs and statuses, and update the list to mark completed tasks. It should utilize a `list` data structure for efficient insertions and deletions based on updates from concurrent system processes.",
+        "#include <list>\n#include <utility>\n\nvoid batchProcessTasks(std::list<std::pair<int, std::string>>& tasks) {\n    for (auto it = tasks.begin(); it != tasks.end(); ) {\n        if (it->second == \"pending\") {\n            it->second = \"completed\";\n        }\n        it = (it->second == \"completed\") ? tasks.erase(it) : ++it;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 30,
+    "response": [
+      [
+        "Create a Java function named `filterEmailAddresses` designed to remove duplicate email addresses from a list of strings. The function should return a HashSet containing only the unique email addresses extracted from the input list, which is vital for email campaigns where duplicates can lead to increased costs and lower engagement rates.",
+        "import java.util.HashSet;\nimport java.util.List;\n\npublic class EmailFilter {\n    public static HashSet<String> filterEmailAddresses(List<String> emailList) {\n        return new HashSet<>(emailList);\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "response": [
+      [
+        "Create a Java method called `categorizePdfVersions` that organizes a list of PDF files by their version numbers. The function should receive a list of PDF metadata objects and returns a TreeMap where the keys are the PDF version numbers (e.g., 1.4, 1.7) and the values are lists of PDF file names with the respective versions. This structure should be used to ensure the PDF files are sorted by version numbers.",
+        "import java.util.*;\n\nclass PdfMetadata {\n    private String fileName;\n    private String version;\n\n    public PdfMetadata(String fileName, String version) {\n        this.fileName = fileName;\n        this.version = version;\n    }\n\n    public String getFileName() {\n        return fileName;\n    }\n\n    public String getVersion() {\n        return version;\n    }\n}\n\npublic class PdfOrganizer {\n\n    public TreeMap<String, List<String>> categorizePdfVersions(List<PdfMetadata> pdfList) {\n        TreeMap<String, List<String>> versionMap = new TreeMap<>();\n\n        for (PdfMetadata pdf : pdfList) {\n            String version = pdf.getVersion();\n            versionMap.putIfAbsent(version, new ArrayList<>());\n            versionMap.get(version).add(pdf.getFileName());\n        }\n\n        return versionMap;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "response": [
+      [
+        "Create a Java function named `filterHighPriorityEmails` that takes a list of email objects and returns a TreeSet containing only the unique email IDs of those marked with a high priority. Make sure the returned TreeSet is sorted based on the email ID.",
+        "import java.util.List;\nimport java.util.TreeSet;\n\npublic class EmailUtils {\n    public static TreeSet<String> filterHighPriorityEmails(List<Email> emails) {\n        TreeSet<String> highPriorityEmailIds = new TreeSet<>();\n        for (Email email : emails) {\n            if (email.isHighPriority()) {\n                highPriorityEmailIds.add(email.getId());\n            }\n        }\n        return highPriorityEmailIds;\n    }\n}\n\nclass Email {\n    private String id;\n    private boolean highPriority;\n\n    public Email(String id, boolean highPriority) {\n        this.id = id;\n        this.highPriority = highPriority;\n    }\n\n    public String getId() {\n        return id;\n    }\n\n    public boolean isHighPriority() {\n        return highPriority;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 33,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: type: Python;tuple.\n## previous code\ndef compare_string_sequences(seq1: tuple, seq2: tuple) -> dict:\n    report = {\n        \"matches\": 0,\n        \"mismatches\": 0,\n        \"differences\": []\n    }\n    \n    # Determine the length of the shorter sequence to avoid index errors\n    min_length = min(len(seq1), len(seq2))\n    \n    for i in range(min_length):\n        if seq1[i] == seq2[i]:\n            report[\"matches\"] += 1\n        else:\n            report[\"mismatches\"] += 1\n            report[\"differences\"].append({\"index\": i, \"seq1_value\": seq1[i], \"seq2_value\": seq2[i]})\n    \n    # Account for elements in the longer sequence if the lengths are different\n    length_diff = abs(len(seq1) - len(seq2))\n    report[\"mismatches\"] += length_diff\n    \n    for i in range(min_length, len(seq1)):\n        report[\"differences\"].append({\"index\": i, \"seq1_value\": seq1[i], \"seq2_value\": None})\n    for i in range(min_length, len(seq2)):\n        report[\"differences\"].append({\"index\": i, \"seq1_value\": None, \"seq2_value\": seq2[i]})\n    \n    return report\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Python function named `compare_string_sequences` that evaluates two sequences of strings. The function should take two tuples containing strings, compare them element-by-element, and provide a detailed report as a dictionary. The report should contain the total number of matches found, the total mismatches, and a list of places where the sequences differ. This will be useful in data validation scenarios where ordered and immutable data needs careful comparison.",
+        "```python\ndef compare_string_sequences(seq1: tuple, seq2: tuple) -> dict:\n    report = {\n        \"matches\": 0,\n        \"mismatches\": 0,\n        \"differences\": []\n    }\n    \n    # Determine the length of the shorter sequence to avoid index errors\n    min_length = min(len(seq1), len(seq2))\n    \n    for i in range(min_length):\n        if seq1[i] == seq2[i]:\n            report[\"matches\"] += 1\n        else:\n            report[\"mismatches\"] += 1\n            report[\"differences\"].append({\"index\": i, \"seq1_value\": seq1[i], \"seq2_value\": seq2[i]})\n    \n    # Account for elements in the longer sequence if the lengths are different\n    if len(seq1) > len(seq2):\n        for i in range(min_length, len(seq1)):\n            report[\"mismatches\"] += 1\n            report[\"differences\"].append({\"index\": i, \"seq1_value\": seq1[i], \"seq2_value\": None})\n    elif len(seq2) > len(seq1):\n        for i in range(min_length, len(seq2)):\n            report[\"mismatches\"] += 1\n            report[\"differences\"].append({\"index\": i, \"seq1_value\": None, \"seq2_value\": seq2[i]})\n    \n    return report\n```"
+      ]
+    ]
+  },
+  {
+    "id": 34,
+    "response": [
+      [
+        "Design a C++ function named `categorizeStudentGrades` to organize student grades from a list of student ID and grade pairs. The function should utilize an unordered_map to categorize grades based on predefined range tiers (e.g., A, B, C, etc.) and return the updated map reflecting these categories. Each entry in the returned map should list student IDs associated with each grade range, considering efficient look-up and insertion characteristics of the unordered_map.",
+        "#include <unordered_map>\n#include <vector>\n#include <string>\n\nstd::unordered_map<std::string, std::vector<int>> categorizeStudentGrades(const std::vector<std::pair<int, int>>& studentGrades) {\n    std::unordered_map<std::string, std::vector<int>> categorizedGrades;\n\n    for (const auto& pair : studentGrades) {\n        int studentID = pair.first;\n        int grade = pair.second;\n\n        if (grade >= 90) {\n            categorizedGrades[\"A\"].push_back(studentID);\n        } else if (grade >= 80) {\n            categorizedGrades[\"B\"].push_back(studentID);\n        } else if (grade >= 70) {\n            categorizedGrades[\"C\"].push_back(studentID);\n        } else if (grade >= 60) {\n            categorizedGrades[\"D\"].push_back(studentID);\n        } else {\n            categorizedGrades[\"F\"].push_back(studentID);\n        }\n    }\n\n    return categorizedGrades;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: type: Python;heapq.\n## previous code\nimport heapq\n\ndef schedule_deliveries(deliveries):\n    # Invert priorities for min-heap behavior with max-priorities\n    priority_queue = [(-priority, delivery_id) for delivery_id, priority in deliveries]\n    heapq.heapify(priority_queue)\n    _, next_delivery_id = heapq.heappop(priority_queue)\n    return next_delivery_id\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nIn a logistics management system, create a Python function called `schedule_deliveries` which determines the next delivery to process based on priority. The function should accept a list of tuples, with each tuple containing a delivery ID and its priority. Utilize the heapq data structure to maintain an efficient priority queue, ensuring higher priority deliveries are processed first. The function should return the delivery ID of the next delivery to process.",
+        "```python\nimport heapq\n\ndef schedule_deliveries(deliveries):\n    # Transform into heap, using negative priorities for max-heap behavior\n    priority_queue = [(-priority, delivery_id) for delivery_id, priority in deliveries]\n    heapq.heapify(priority_queue)\n    \n    # Retrieve the ID of the delivery with the highest priority\n    _, next_delivery_id = heapq.heappop(priority_queue)\n    return next_delivery_id\n```"
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "response": [
+      [
+        "Create a Python function named `count_vehicle_types` that processes a list of vehicles represented by strings, such as [\"car\", \"truck\", \"bicycle\", \"car\", \"motorcycle\", \"bicycle\"]. The function should use the collections.Counter to tally and return a dictionary reflecting the count of each type of vehicle.",
+        "from collections import Counter\n\ndef count_vehicle_types(vehicle_list):\n    return dict(Counter(vehicle_list))"
+      ]
+    ]
+  },
+  {
+    "id": 37,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: type: Go;array.\n## previous code\npackage main\n\nimport \"fmt\"\n\nfunc rotateArray(arr *[5]int, k int) {\n\tn := len(arr)\n\tk = k % n\n\n\tif k == 0 {\n\t\treturn\n\t}\n\n\ttemp := make([]int, k)\n\tcopy(temp, arr[n-k:])\n\tcopy(arr[k:], arr[:n-k])\n\tcopy(arr[:k], temp)\n}\n\nfunc main() {\n\tarr := [5]int{1, 2, 3, 4, 5}\n\trotateArray(&arr, 3)\n\tfmt.Println(arr) // Output: [3 4 5 1 2]\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Go function named `rotateArray` that takes an array of integers and an integer `k`, and rotates the elements of the array to the right by `k` positions. The function should handle cases where `k` is greater than the array length by using modulo operation. The result must be stored back in the original array passed as an argument, utilizing the characteristics of Go's fixed-size arrays.",
+        "```go\npackage main\n\nimport \"fmt\"\n\nfunc rotateArray(arr *[5]int, k int) {\n\tn := len(arr)\n\tk = k % n\n\n\tif k == 0 {\n\t\treturn\n\t}\n\n\treverse(arr[:])\n\treverse(arr[:k])\n\treverse(arr[k:])\n}\n\nfunc reverse(arr []int) {\n\tfor i, j := 0, len(arr)-1; i < j; i, j = i+1, j-1 {\n\t\tarr[i], arr[j] = arr[j], arr[i]\n\t}\n}\n\nfunc main() {\n\tarr := [5]int{1, 2, 3, 4, 5}\n\trotateArray(&arr, 3)\n\tfmt.Println(arr) // Output: [3 4 5 1 2]\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "response": [
+      [
+        "Create a Rust function named `manage_student_grades` that efficiently handles and updates a list of student grades. Use the ArrayVec data structure to store up to a specified number of grade entries. Include features such as adding a new grade, updating an existing grade, and deleting a grade based on student ID. Ensure that the function also can compute the average of all grades stored in the ArrayVec.",
+        "use arrayvec::ArrayVec;\n\n#[derive(Clone)]\nstruct StudentGrade {\n    student_id: u32,\n    grade: f32,\n}\n\nstruct GradeManager {\n    grades: ArrayVec<StudentGrade, 100>, // Maximum of 100 grade entries\n}\n\nimpl GradeManager {\n    fn new() -> Self {\n        Self {\n            grades: ArrayVec::new(),\n        }\n    }\n\n    fn add_grade(&mut self, student_id: u32, grade: f32) {\n        if self.grades.len() < self.grades.capacity() {\n            self.grades.push(StudentGrade { student_id, grade });\n        }\n    }\n\n    fn update_grade(&mut self, student_id: u32, new_grade: f32) {\n        if let Some(student_grade) = self.grades.iter_mut().find(|g| g.student_id == student_id) {\n            student_grade.grade = new_grade;\n        }\n    }\n\n    fn delete_grade(&mut self, student_id: u32) {\n        if let Some(pos) = self.grades.iter().position(|g| g.student_id == student_id) {\n            self.grades.remove(pos);\n        }\n    }\n\n    fn compute_average(&self) -> Option<f32> {\n        if self.grades.is_empty() {\n            None\n        } else {\n            Some(self.grades.iter().map(|g| g.grade).sum::<f32>() / self.grades.len() as f32)\n        }\n    }\n}\n\nfn manage_student_grades() {\n    let mut manager = GradeManager::new();\n\n    manager.add_grade(1, 85.0);\n    manager.add_grade(2, 90.0);\n    manager.update_grade(1, 88.0);\n    manager.delete_grade(2);\n\n    if let Some(average) = manager.compute_average() {\n        println!(\"Average grade: {}\", average);\n    } else {\n        println!(\"No grades available.\");\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 39,
+    "response": [
+      [
+        "Create a Cpp function named `validateBrackets` that uses a stack to determine if a string of brackets is balanced. The function should correctly match pairs of open and closed brackets ('{', '}', '(', ')', '[', ']'). For each type of bracket, the function should utilize a stack to push open brackets and pop them when a matching closed bracket is encountered. The function should return true if all brackets are balanced and false otherwise.",
+        "#include <stack>\n#include <string>\n\nbool validateBrackets(const std::string& str) {\n    std::stack<char> bracketStack;\n    for (char ch : str) {\n        if (ch == '{' || ch == '(' || ch == '[') {\n            bracketStack.push(ch);\n        } else if (ch == '}' || ch == ')' || ch == ']') {\n            if (bracketStack.empty()) {\n                return false;\n            }\n            char top = bracketStack.top();\n            bracketStack.pop();\n            if ((ch == '}' && top != '{') || (ch == ')' && top != '(') || (ch == ']' && top != '[')) {\n                return false;\n            }\n        }\n    }\n    return bracketStack.empty();\n}"
+      ]
+    ]
+  },
+  {
+    "id": 40,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: type: Go;sync.Map.\n## previous code\npackage main\n\nimport (\n\t\"fmt\"\n\t\"sync\"\n)\n\ntype ResourceStatusCache struct {\n\tstatusMap *sync.Map\n}\n\nfunc NewResourceStatusCache() *ResourceStatusCache {\n\treturn &ResourceStatusCache{\n\t\tstatusMap: &sync.Map{},\n\t}\n}\n\nfunc (r *ResourceStatusCache) CacheResourceStatus(resource string, status interface{}) {\n\tr.statusMap.Store(resource, status)\n}\n\nfunc (r *ResourceStatusCache) GetResourceStatus(resource string) (interface{}, bool) {\n\treturn r.statusMap.Load(resource)\n}\n\nfunc (r *ResourceStatusCache) GetTotalResources() int {\n\tcount := 0\n\tr.statusMap.Range(func(key, value interface{}) bool {\n\t\tcount++\n\t\treturn true\n\t})\n\treturn count\n}\n\nfunc main() {\n\tcache := NewResourceStatusCache()\n\tcache.CacheResourceStatus(\"Resource1\", \"Online\")\n\tcache.CacheResourceStatus(\"Resource2\", \"Offline\")\n\n\tstatus, exists := cache.GetResourceStatus(\"Resource1\")\n\tif exists {\n\t\tfmt.Println(\"Resource1 status:\", status)\n\t}\n\n\tfmt.Println(\"Total resources being monitored:\", cache.GetTotalResources())\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Go function called `cacheResourceStatus` which monitors the status of various online resources in a highly concurrent environment. The function should store and retrieve resource status using a `sync.Map` data structure to handle concurrent accesses. Ensure the function also provides a method to fetch the total number of distinct resources being monitored.",
+        "```go\npackage main\n\nimport (\n\t\"fmt\"\n\t\"sync\"\n)\n\ntype ResourceStatusCache struct {\n\tstatusMap sync.Map\n}\n\nfunc (r *ResourceStatusCache) cacheResourceStatus(resource string, status interface{}) {\n\tr.statusMap.Store(resource, status)\n}\n\nfunc (r *ResourceStatusCache) GetResourceStatus(resource string) (interface{}, bool) {\n\treturn r.statusMap.Load(resource)\n}\n\nfunc (r *ResourceStatusCache) GetTotalResources() int {\n\tcount := 0\n\tr.statusMap.Range(func(key, value interface{}) bool {\n\t\tcount++\n\t\treturn true\n\t})\n\treturn count\n}\n\nfunc main() {\n\tcache := ResourceStatusCache{}\n\tcache.cacheResourceStatus(\"Resource1\", \"Online\")\n\tcache.cacheResourceStatus(\"Resource2\", \"Offline\")\n\n\tstatus, exists := cache.GetResourceStatus(\"Resource1\")\n\tif exists {\n\t\tfmt.Println(\"Resource1 status:\", status)\n\t}\n\n\tfmt.Println(\"Total resources being monitored:\", cache.GetTotalResources())\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 41,
+    "response": [
+      [
+        "Create a Java function named `detectAnagramOccurrences` that scans through an article text and identifies potential anagram occurrences of a given set of words. The function should return a HashMap where the keys are the provided words and the values are the number of occurrences as anagrams in the text. To achieve efficiency, leverage HashMaps for counting and look-up operations and ensure proper normalization of words for accurate anagram identification.",
+        "import java.util.HashMap;\n\npublic class AnagramDetector {\n\n    public static HashMap<String, Integer> detectAnagramOccurrences(String text, String[] words) {\n        HashMap<String, Integer> result = new HashMap<>();\n        HashMap<String, String> sortedWordMap = new HashMap<>();\n\n        for (String word : words) {\n            String sorted = sortWord(word);\n            sortedWordMap.put(sorted, word);\n            result.put(word, 0);\n        }\n\n        String[] textWords = text.split(\"\\\\W+\");\n        for (String textWord : textWords) {\n            String sortedTextWord = sortWord(textWord.toLowerCase());\n            if (sortedWordMap.containsKey(sortedTextWord)) {\n                String originalWord = sortedWordMap.get(sortedTextWord);\n                result.put(originalWord, result.get(originalWord) + 1);\n            }\n        }\n\n        return result;\n    }\n\n    private static String sortWord(String word) {\n        char[] chars = word.toLowerCase().toCharArray();\n        java.util.Arrays.sort(chars);\n        return new String(chars);\n    }\n\n}"
+      ]
+    ]
+  },
+  {
+    "id": 42,
+    "response": [
+      [
+        "Create a Cpp function named `organizeSurveyData` designed to manage and retrieve statistical survey data. The function should accept a list of responses where each response contains a participant's ID and their numerical rating. Use a Cpp map to store these responses, ensuring each participant's ID is unique and the ratings are sorted by the ID. Moreover, the function should enable querying and updating the rating for any specific participant.",
+        "#include <map>\n#include <string>\n\nclass SurveyManager {\nprivate:\n    std::map<int, int> surveyData;\n\npublic:\n    void addResponse(int participantID, int rating) {\n        surveyData[participantID] = rating;\n    }\n\n    int getRating(int participantID) {\n        if (surveyData.find(participantID) != surveyData.end()) {\n            return surveyData[participantID];\n        }\n        return -1; // Return -1 if participant ID is not found\n    }\n\n    void updateRating(int participantID, int newRating) {\n        if (surveyData.find(participantID) != surveyData.end()) {\n            surveyData[participantID] = newRating;\n        }\n    }\n\n    void organizeSurveyData(const std::map<int, int>& responses) {\n        surveyData = responses;\n    }\n};"
+      ]
+    ]
+  },
+  {
+    "id": 43,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: type: Go;slice.\n## previous code\npackage main\n\nfunc filterPositiveNumbers(numbers []int) []int {\n\tvar positives []int\n\tfor _, num := range numbers {\n\t\tif num > 0 {\n\t\t\tpositives = append(positives, num)\n\t\t}\n\t}\n\treturn positives\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Go function named `filterPositiveNumbers` that takes a list of integers and returns a slice containing only the positive numbers from the original list. This function requires processing the list efficiently using appending and slicing operations to build up the final result based on runtime evaluations.",
+        "```go\npackage main\n\nfunc filterPositiveNumbers(numbers []int) []int {\n\tpositives := []int{}\n\tfor _, num := range numbers {\n\t\tif num > 0 {\n\t\t\tpositives = append(positives, num)\n\t\t}\n\t}\n\treturn positives\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 44,
+    "response": [
+      [
+        "Create a Rust function named `analyze_feedback` which processes customer feedback from an online shop. The function should compile a HashMap containing the frequency of each unique word found in the feedback text. It must handle cases of different capitalization uniformly and ignore punctuation. This would aid in sentiment analysis by providing insights on commonly used terms.",
+        "use std::collections::HashMap;\n\nfn analyze_feedback(feedback: &str) -> HashMap<String, usize> {\n    let mut word_count: HashMap<String, usize> = HashMap::new();\n    let feedback = feedback.to_lowercase();\n    let feedback = feedback\n        .chars()\n        .filter(|c| c.is_alphanumeric() || c.is_whitespace())\n        .collect::<String>();\n    let words = feedback.split_whitespace();\n\n    for word in words {\n        *word_count.entry(word.to_string()).or_insert(0) += 1;\n    }\n\n    word_count\n}"
+      ]
+    ]
+  },
+  {
+    "id": 45,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: type: Go;struct.\n## previous code\npackage main\n\nimport (\n\t\"fmt\"\n)\n\ntype Employee struct {\n\tID       int\n\tName     string\n\tPosition string\n\tSalary   float64\n}\n\ntype HRSystem struct {\n\trecords map[int]Employee\n}\n\nfunc newHRSystem() *HRSystem {\n\treturn &HRSystem{records: make(map[int]Employee)}\n}\n\nfunc (hr *HRSystem) AddEmployee(employee Employee) {\n\thr.records[employee.ID] = employee\n}\n\nfunc (hr *HRSystem) UpdateEmployee(id int, updated Employee) {\n\tif _, exists := hr.records[id]; exists {\n\t\thr.records[id] = updated\n\t} else {\n\t\tfmt.Println(\"Error: Employee with the given ID does not exist.\")\n\t}\n}\n\nfunc (hr *HRSystem) GetEmployee(id int) (*Employee, bool) {\n\tif emp, exists := hr.records[id]; exists {\n\t\treturn &emp, true\n\t}\n\treturn nil, false\n}\n\nfunc manageEmployeeRecords() {\n\thrSystem := newHRSystem()\n\n\t// Adding employees\n\thrSystem.AddEmployee(Employee{ID: 1, Name: \"Alice\", Position: \"Developer\", Salary: 70000})\n\thrSystem.AddEmployee(Employee{ID: 2, Name: \"Bob\", Position: \"Manager\", Salary: 90000})\n\n\t// Updating an employee\n\thrSystem.UpdateEmployee(1, Employee{ID: 1, Name: \"Alice\", Position: \"Senior Developer\", Salary: 80000})\n\n\t// Retrieving an employee\n\tif employee, exists := hrSystem.GetEmployee(1); exists {\n\t\tfmt.Printf(\"Employee Info: %+v\\n\", *employee)\n\t} else {\n\t\tfmt.Println(\"Employee not found.\")\n\t}\n}\n\nfunc main() {\n\tmanageEmployeeRecords()\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Go function named `manageEmployeeRecords` designed to organize and update employee information within a company's HR system. The function should utilize a struct data type to encapsulate different employee details such as name, ID, position, and salary. Additionally, implement functionalities to add, update, and retrieve employee records efficiently based on their IDs.",
+        "```go\npackage main\n\nimport (\n\t\"fmt\"\n)\n\ntype Employee struct {\n\tID       int\n\tName     string\n\tPosition string\n\tSalary   float64\n}\n\ntype HRSystem struct {\n\trecords []Employee\n}\n\nfunc newHRSystem() *HRSystem {\n\treturn &HRSystem{records: []Employee{}}\n}\n\nfunc (hr *HRSystem) AddEmployee(employee Employee) {\n\thr.records = append(hr.records, employee)\n}\n\nfunc (hr *HRSystem) UpdateEmployee(id int, updated Employee) {\n\tfor i, emp := range hr.records {\n\t\tif emp.ID == id {\n\t\t\thr.records[i] = updated\n\t\t\treturn\n\t\t}\n\t}\n\tfmt.Println(\"Error: Employee with the given ID does not exist.\")\n}\n\nfunc (hr *HRSystem) GetEmployee(id int) (*Employee, bool) {\n\tfor _, emp := range hr.records {\n\t\tif emp.ID == id {\n\t\t\treturn &emp, true\n\t\t}\n\t}\n\treturn nil, false\n}\n\nfunc manageEmployeeRecords() {\n\thrSystem := newHRSystem()\n\n\t// Adding employees\n\thrSystem.AddEmployee(Employee{ID: 1, Name: \"Alice\", Position: \"Developer\", Salary: 70000})\n\thrSystem.AddEmployee(Employee{ID: 2, Name: \"Bob\", Position: \"Manager\", Salary: 90000})\n\n\t// Updating an employee\n\thrSystem.UpdateEmployee(1, Employee{ID: 1, Name: \"Alice\", Position: \"Senior Developer\", Salary: 80000})\n\n\t// Retrieving an employee\n\tif employee, exists := hrSystem.GetEmployee(1); exists {\n\t\tfmt.Printf(\"Employee Info: %+v\\n\", *employee)\n\t} else {\n\t\tfmt.Println(\"Employee not found.\")\n\t}\n}\n\nfunc main() {\n\tmanageEmployeeRecords()\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 46,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: type: Cpp;array.\n## previous code\n#include <vector>\n#include <numeric>\n\nstd::vector<double> computeRollingAverages(const std::vector<int>& temperatures, int windowSize) {\n    std::vector<double> rollingAverages;\n    int n = temperatures.size();\n\n    // Loop through each element in the temperatures array\n    for (int i = 0; i < n; ++i) {\n        // Determine the window's start and end indices\n        int halfWindow = windowSize / 2;\n        int start = std::max(0, i - halfWindow);\n        int end = std::min(n - 1, i + halfWindow);\n        \n        // Calculate the sum using the window indices\n        double sum = std::accumulate(temperatures.begin() + start, temperatures.begin() + end + 1, 0);\n        \n        // Calculate and store the average for the current window\n        int actual_size = end - start + 1;\n        rollingAverages.push_back(sum / actual_size);\n    }\n\n    return rollingAverages;\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Cpp function named `computeRollingAverages` that takes an array of daily temperatures and calculates the rolling average over a specified window size. The function should return a new array containing these averages. Ensure that the computed averages cater for boundaries (beginning and end of the list) where the window does not fully fit. This task requires understanding of array manipulation and boundary condition handling.",
+        "```cpp\n#include <vector>\n#include <algorithm>\n\nstd::vector<double> computeRollingAverages(const std::vector<int>& temperatures, int windowSize) {\n    int n = temperatures.size();\n    std::vector<double> rollingAverages(n, 0.0);\n\n    // Loop through each element in the temperatures array\n    for (int i = 0; i < n; ++i) {\n        // Determine the window's start and end indices\n        int start = std::max(0, i - windowSize / 2);\n        int end = std::min(n - 1, i + windowSize / 2);\n\n        // Accumulate the sum within the window\n        double sum = 0.0;\n        for (int j = start; j <= end; ++j) {\n            sum += temperatures[j];\n        }\n\n        // Calculate and store the average for the current window\n        rollingAverages[i] = sum / (end - start + 1);\n    }\n\n    return rollingAverages;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 47,
+    "response": [
+      [
+        "Create a Java method called `mergeContactLists` that consolidates multiple contact lists into a single sorted list of unique contacts. The method should take a Collection of LinkedLists, each representing an individual contact list, and return a new LinkedList without duplicates, where contacts are sorted alphabetically by their names. Ensure efficient manipulation of list elements for both insertion and retrieval.",
+        "import java.util.*;\n\npublic class ContactMerger {\n    public static LinkedList<String> mergeContactLists(Collection<LinkedList<String>> contactLists) {\n        TreeSet<String> uniqueContacts = new TreeSet<>();\n        for (LinkedList<String> list : contactLists) {\n            uniqueContacts.addAll(list);\n        }\n        return new LinkedList<>(uniqueContacts);\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 48,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: type: Go;buffer.Buffer.\n## previous code\npackage main\n\nimport (\n\t\"bytes\"\n\t\"fmt\"\n\t\"strings\"\n)\n\nfunc processLogFile(logEntries string, errorPatterns []string) map[string]int {\n\tvar buffer bytes.Buffer\n\tbuffer.WriteString(logEntries)\n\n\terrorCounts := make(map[string]int)\n\n\tfor {\n\t\tline, err := buffer.ReadString('\\n')\n\t\tif err != nil {\n\t\t\tbreak\n\t\t}\n\t\tfor _, pattern := range errorPatterns {\n\t\t\tif strings.Contains(line, pattern) {\n\t\t\t\terrorCounts[pattern]++\n\t\t\t}\n\t\t}\n\t}\n\n\treturn errorCounts\n}\n\nfunc main() {\n\tlogEntries := \"ERROR: Network failure\\nINFO: Connection established\\nERROR: Timeout occurred\\nERROR: Network failure\\n\"\n\terrorPatterns := []string{\"Network failure\", \"Timeout occurred\"}\n\n\treport := processLogFile(logEntries, errorPatterns)\n\tfmt.Println(\"Error Report:\", report)\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Go function named `processLogFile` that manages log file entries for a network system. The function should use a buffer.Buffer to read and write logs efficiently. This function should also implement features to search for specific error patterns within the buffer and count their occurrences, returning a detailed report of the found errors and their frequency.",
+        "```go\npackage main\n\nimport (\n\t\"bytes\"\n\t\"fmt\"\n\t\"strings\"\n)\n\nfunc processLogFile(logEntries string, errorPatterns []string) map[string]int {\n\tbuffer := bytes.NewBufferString(logEntries)\n\n\terrorCounts := make(map[string]int)\n\tfor _, pattern := range errorPatterns {\n\t\terrorCounts[pattern] = 0\n\t}\n\n\tfor {\n\t\tline, err := buffer.ReadString('\\n')\n\t\tif err != nil && len(line) == 0 {\n\t\t\tbreak\n\t\t}\n\t\tfor _, pattern := range errorPatterns {\n\t\t\tif strings.Contains(line, pattern) {\n\t\t\t\terrorCounts[pattern]++\n\t\t\t}\n\t\t}\n\t}\n\n\treturn errorCounts\n}\n\nfunc main() {\n\tlogEntries := \"ERROR: Network failure\\nINFO: Connection established\\nERROR: Timeout occurred\\nERROR: Network failure\\n\"\n\terrorPatterns := []string{\"Network failure\", \"Timeout occurred\"}\n\n\treport := processLogFile(logEntries, errorPatterns)\n\tfmt.Println(\"Error Report:\", report)\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 49,
+    "response": [
+      [
+        "Create a Java method called `consolidateInventory` which takes a list of Product objects, each containing a product ID and quantity. The method should aggregate the quantities by product ID using an ArrayList. Return a new ArrayList containing the consolidated Product objects ensuring that each product ID appears only once with its total quantity.",
+        "import java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\n\nclass Product {\n    private String productId;\n    private int quantity;\n\n    public Product(String productId, int quantity) {\n        this.productId = productId;\n        this.quantity = quantity;\n    }\n\n    public String getProductId() {\n        return productId;\n    }\n\n    public int getQuantity() {\n        return quantity;\n    }\n\n    public void setQuantity(int quantity) {\n        this.quantity = quantity;\n    }\n}\n\npublic class InventoryManager {\n    public static ArrayList<Product> consolidateInventory(List<Product> products) {\n        Map<String, Integer> productQuantityMap = new HashMap<>();\n        \n        for (Product product : products) {\n            String id = product.getProductId();\n            int quantity = product.getQuantity();\n            productQuantityMap.put(id, productQuantityMap.getOrDefault(id, 0) + quantity);\n        }\n\n        ArrayList<Product> consolidatedProducts = new ArrayList<>();\n        for (Map.Entry<String, Integer> entry : productQuantityMap.entrySet()) {\n            consolidatedProducts.add(new Product(entry.getKey(), entry.getValue()));\n        }\n\n        return consolidatedProducts;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 50,
+    "response": [
+      [
+        "Develop a Rust function named `detect_cycle_in_graph` that detects and returns whether a cyclic loop exists in a directed graph. This function should utilize a HashSet to keep track of visited nodes during the Depth-First Search (DFS) traversal to efficiently handle node checks for repeated visits.",
+        "use std::collections::{HashSet, HashMap};\n\nfn detect_cycle_in_graph(graph: &HashMap<i32, Vec<i32>>) -> bool {\n    fn dfs(node: i32, visited: &mut HashSet<i32>, rec_stack: &mut HashSet<i32>, graph: &HashMap<i32, Vec<i32>>) -> bool {\n        if rec_stack.contains(&node) {\n            return true;\n        }\n        if visited.contains(&node) {\n            return false;\n        }\n        visited.insert(node);\n        rec_stack.insert(node);\n        \n        if let Some(neighbors) = graph.get(&node) {\n            for &neighbor in neighbors {\n                if dfs(neighbor, visited, rec_stack, graph) {\n                    return true;\n                }\n            }\n        }\n        \n        rec_stack.remove(&node);\n        false\n    }\n\n    let mut visited = HashSet::new();\n    let mut rec_stack = HashSet::new();\n\n    for &node in graph.keys() {\n        if dfs(node, &mut visited, &mut rec_stack, graph) {\n            return true;\n        }\n    }\n\n    false\n}"
+      ]
+    ]
+  },
+  {
+    "id": 51,
+    "response": [
+      [
+        "Create a Java function named `categorizeStudentScores` that processes a list of student exam scores and categories them into performance tiers. The function should utilize a HashMap to store score ranges as keys and the list of student names in those score ranges as values. This will help in quickly retrieving and updating student lists for each performance tier.",
+        "import java.util.*;\n\npublic class StudentCategorizer {\n\n    public static HashMap<String, List<String>> categorizeStudentScores(Map<String, Integer> studentScores) {\n        HashMap<String, List<String>> categorizedScores = new HashMap<>();\n        \n        categorizedScores.put(\"Excellent\", new ArrayList<>());\n        categorizedScores.put(\"Good\", new ArrayList<>());\n        categorizedScores.put(\"Average\", new ArrayList<>());\n        categorizedScores.put(\"Poor\", new ArrayList<>());\n        \n        for (Map.Entry<String, Integer> entry : studentScores.entrySet()) {\n            String studentName = entry.getKey();\n            Integer score = entry.getValue();\n            \n            if (score >= 85) {\n                categorizedScores.get(\"Excellent\").add(studentName);\n            } else if (score >= 70) {\n                categorizedScores.get(\"Good\").add(studentName);\n            } else if (score >= 50) {\n                categorizedScores.get(\"Average\").add(studentName);\n            } else {\n                categorizedScores.get(\"Poor\").add(studentName);\n            }\n        }\n        \n        return categorizedScores;\n    }\n\n    public static void main(String[] args) {\n        Map<String, Integer> studentScores = new HashMap<>();\n        studentScores.put(\"Alice\", 92);\n        studentScores.put(\"Bob\", 76);\n        studentScores.put(\"Charlie\", 60);\n        studentScores.put(\"David\", 45);\n\n        HashMap<String, List<String>> performanceTiers = categorizeStudentScores(studentScores);\n        System.out.println(performanceTiers);\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "response": [
+      [
+        "Create a Java method named `organizeMeetings` that schedules and manages meetings based on their urgency. The method should read a list of meetings where each meeting has an urgency level, and using a PriorityQueue, it should process the meetings in order of their urgency from highest to lowest. This way, the most urgent meetings are handled first. The method should return an ArrayList of processed meetings in the order they were handled.",
+        "import java.util.ArrayList;\nimport java.util.List;\nimport java.util.PriorityQueue;\n\nclass Meeting implements Comparable<Meeting> {\n    String name;\n    int urgency;\n\n    public Meeting(String name, int urgency) {\n        this.name = name;\n        this.urgency = urgency;\n    }\n\n    @Override\n    public int compareTo(Meeting other) {\n        return Integer.compare(other.urgency, this.urgency);\n    }\n}\n\npublic class MeetingScheduler {\n    public static ArrayList<Meeting> organizeMeetings(List<Meeting> meetings) {\n        PriorityQueue<Meeting> queue = new PriorityQueue<>(meetings);\n        ArrayList<Meeting> processedMeetings = new ArrayList<>();\n\n        while (!queue.isEmpty()) {\n            processedMeetings.add(queue.poll());\n        }\n\n        return processedMeetings;\n    }\n}"
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "response": [
+      [
+        "You were asked to generate code according to the prompt to complete the task required in the instruction. However, the code you generated did not meet the constraints: type: Cpp;array.\n## previous code\n#include <iostream>\n#include <string>\n\nconst int MAX_COURSES = 5; // Fixed size array for courses\n\nstruct Student {\n    std::string name;\n    int grades[MAX_COURSES];\n};\n\nvoid analyzeStudentPerformance(Student students[], int numStudents) {\n    double courseAverages[MAX_COURSES] = {0};\n\n    // Compute the total grades for each course\n    for (int i = 0; i < numStudents; ++i) {\n        for (int j = 0; j < MAX_COURSES; ++j) {\n            courseAverages[j] += students[i].grades[j];\n        }\n    }\n\n    // Calculate the average grades for each course\n    for (int j = 0; j < MAX_COURSES; ++j) {\n        courseAverages[j] /= numStudents;\n        std::cout << \"Average for course \" << j + 1 << \": \" << courseAverages[j] << std::endl;\n    }\n}\n\nint main() {\n    Student students[] = {\n        {\"Alice\", {85, 90, 92, 89, 91}},\n        {\"Bob\", {78, 83, 88, 86, 85}},\n        {\"Charlie\", {90, 92, 91, 93, 94}}\n    };\n    int numStudents = sizeof(students) / sizeof(students[0]);\n\n    analyzeStudentPerformance(students, numStudents);\n\n    return 0;\n}\nPlease regenerate a code to meet the constraints.\nOnly respond to the code, no more information. The following is the prompt:\nCreate a Cpp function called `analyzeStudentPerformance` designed to assess academic trends across multiple courses. The function receives an array of structures where each structure represents a student's details including their grades across various subjects. It should compute the overall average grade per course and output the result for quick reference. Ensure to utilize a fixed-size array to manage this computation, due to its straightforward access and performance advantages.",
+        "```cpp\n#include <iostream>\n#include <string>\n\nconst int MAX_COURSES = 5; // Fixed size array for courses\n\nstruct Student {\n    std::string name;\n    int grades[MAX_COURSES];\n};\n\nvoid analyzeStudentPerformance(Student students[], int numStudents) {\n    double courseAverages[MAX_COURSES] = {0};\n\n    // Compute the total grades for each course\n    for (int i = 0; i < numStudents; ++i) {\n        for (int j = 0; j < MAX_COURSES; ++j) {\n            courseAverages[j] += students[i].grades[j];\n        }\n    }\n\n    // Calculate the average grades for each course\n    for (int j = 0; j < MAX_COURSES; ++j) {\n        courseAverages[j] /= numStudents;\n        std::cout << \"Average for course \" << j + 1 << \": \" << courseAverages[j] << std::endl;\n    }\n}\n\nint main() {\n    Student students[] = {\n        {\"Alice\", {85, 90, 92, 89, 91}},\n        {\"Bob\", {78, 83, 88, 86, 85}},\n        {\"Charlie\", {90, 92, 91, 93, 94}}\n    };\n    int numStudents = sizeof(students) / sizeof(students[0]);\n\n    analyzeStudentPerformance(students, numStudents);\n\n    return 0;\n}\n```"
+      ]
+    ]
+  },
+  {
+    "id": 54,
+    "response": [
+      [
+        "Develop a Cpp function named `deduplicateEmailAddresses` that takes a vector of email addresses and returns a final list of unique email addresses, discarding any duplicates. The function should utilize an `unordered_set` to ensure efficient uniqueness checks. Also, display the count of email addresses that were removed due to duplication.",
+        "#include <iostream>\n#include <vector>\n#include <unordered_set>\n\nstd::pair<std::vector<std::string>, int> deduplicateEmailAddresses(const std::vector<std::string>& emailAddresses) {\n    std::unordered_set<std::string> uniqueEmails;\n    std::vector<std::string> finalList;\n    int duplicatesRemoved = 0;\n\n    for (const auto& email : emailAddresses) {\n        if (uniqueEmails.insert(email).second) {\n            finalList.push_back(email);\n        } else {\n            ++duplicatesRemoved;\n        }\n    }\n\n    return {finalList, duplicatesRemoved};\n}\n\nint main() {\n    std::vector<std::string> emails = {\"example1@gmail.com\", \"example2@gmail.com\", \"example1@gmail.com\", \"example3@gmail.com\"};\n    auto result = deduplicateEmailAddresses(emails);\n\n    std::cout << \"Unique email addresses:\\n\";\n    for (const auto& email : result.first) {\n        std::cout << email << \"\\n\";\n    }\n\n    std::cout << \"Duplicates removed: \" << result.second << \"\\n\";\n\n    return 0;\n}"
+      ]
+    ]
+  },
+  {
+    "id": 55,
+    "response": [
+      [
+        "Create a Python function named `track_online_orders` which records and updates order statuses for an e-commerce platform. The function should accept orders in the format of tuples (order_id, status), updating an existing dictionary that serves as the order tracking system. Ensure that the function can handle insertion of new orders and update statuses of existing orders efficiently using dictionary operations.",
+        "def track_online_orders(order_dict, order_list):\n    order_dict.update(dict(order_list))\n    return order_dict"
+      ]
+    ]
+  }
+]
