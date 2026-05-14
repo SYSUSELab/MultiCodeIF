@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "eval_model": "deepseek-v3.2",
+    "confidence_threshold": 0.7,
+    "testcase_provided": false
+  },
+  "results": {
+    "claude-3-7-sonnet": {
+      "algorithm_space_complexity": {
+        "total": 55,
+        "matched": 23,
+        "score": 0.41818181818181815
+      },
+      "algorithm_time_complexity": {
+        "total": 55,
+        "matched": 24,
+        "score": 0.43636363636363634
+      },
+      "algorithm_type": {
+        "total": 55,
+        "matched": 31,
+        "score": 0.5636363636363636
+      },
+      "code_contextual": {
+        "total": 60,
+        "matched": 15,
+        "score": 0.25
+      },
+      "code_convention_brace_block_formatting": {
+        "total": 55,
+        "matched": 1,
+        "score": 0.01818181818181818
+      },
+      "overall": {
+        "total": 280,
+        "matched": 94,
+        "score": 0.3357142857142857
+      }
+    },
+    "deepseek-r1": {
+      "algorithm_space_complexity": {
+        "total": 55,
+        "matched": 32,
+        "score": 0.5818181818181818
+      },
+      "algorithm_time_complexity": {
+        "total": 55,
+        "matched": 22,
+        "score": 0.4
+      },
+      "algorithm_type": {
+        "total": 55,
+        "matched": 32,
+        "score": 0.5818181818181818
+      },
+      "code_contextual": {
+        "total": 60,
+        "matched": 21,
+        "score": 0.35
+      },
+      "code_convention_brace_block_formatting": {
+        "total": 55,
+        "matched": 1,
+        "score": 0.01818181818181818
+      },
+      "overall": {
+        "total": 280,
+        "matched": 108,
+        "score": 0.38571428571428573
+      }
+    },
+    "deepseek-v3": {
+      "algorithm_space_complexity": {
+        "total": 55,
+        "matched": 21,
+        "score": 0.38181818181818183
+      },
+      "algorithm_time_complexity": {
+        "total": 55,
+        "matched": 24,
+        "score": 0.43636363636363634
+      },
+      "algorithm_type": {
+        "total": 55,
+        "matched": 30,
+        "score": 0.5454545454545454
+      },
+      "code_contextual": {
+        "total": 60,
+        "matched": 15,
+        "score": 0.25
+      },
+      "code_convention_brace_block_formatting": {
+        "total": 55,
+        "matched": 2,
+        "score": 0.03636363636363636
+      },
+      "overall": {
+        "total": 280,
+        "matched": 92,
+        "score": 0.32857142857142857
+      }
+    },
+    "gpt-4o": {
+      "algorithm_space_complexity": {
+        "total": 55,
+        "matched": 26,
+        "score": 0.4727272727272727
+      },
+      "algorithm_time_complexity": {
+        "total": 55,
+        "matched": 17,
+        "score": 0.3090909090909091
+      },
+      "algorithm_type": {
+        "total": 55,
+        "matched": 30,
+        "score": 0.5454545454545454
+      },
+      "code_contextual": {
+        "total": 60,
+        "matched": 17,
+        "score": 0.2833333333333333
+      },
+      "code_convention_brace_block_formatting": {
+        "total": 55,
+        "matched": 2,
+        "score": 0.03636363636363636
+      },
+      "overall": {
+        "total": 280,
+        "matched": 92,
+        "score": 0.32857142857142857
+      }
+    },
+    "Llama-3.2-3B": {
+      "algorithm_space_complexity": {
+        "total": 55,
+        "matched": 14,
+        "score": 0.2545454545454545
+      },
+      "algorithm_time_complexity": {
+        "total": 55,
+        "matched": 5,
+        "score": 0.09090909090909091
+      },
+      "algorithm_type": {
+        "total": 55,
+        "matched": 15,
+        "score": 0.2727272727272727
+      },
+      "code_contextual": {
+        "total": 60,
+        "matched": 15,
+        "score": 0.25
+      },
+      "code_convention_brace_block_formatting": {
+        "total": 55,
+        "matched": 0,
+        "score": 0.0
+      },
+      "overall": {
+        "total": 280,
+        "matched": 49,
+        "score": 0.175
+      }
+    },
+    "Qwen3-1.7B": {
+      "algorithm_space_complexity": {
+        "total": 55,
+        "matched": 12,
+        "score": 0.21818181818181817
+      },
+      "algorithm_time_complexity": {
+        "total": 55,
+        "matched": 3,
+        "score": 0.05454545454545454
+      },
+      "algorithm_type": {
+        "total": 55,
+        "matched": 6,
+        "score": 0.10909090909090909
+      },
+      "code_contextual": {
+        "total": 60,
+        "matched": 13,
+        "score": 0.21666666666666667
+      },
+      "code_convention_brace_block_formatting": {
+        "total": 55,
+        "matched": 2,
+        "score": 0.03636363636363636
+      },
+      "overall": {
+        "total": 280,
+        "matched": 36,
+        "score": 0.12857142857142856
+      }
+    }
+  }
+}

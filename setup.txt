@@ -1,0 +1,22 @@
+# Python dependencies
+pip install -r requirements.txt
+pip install guesslang
+
+# Programming language dependency
+apt-get install default-jdk
+apt-get install nodejs npm
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+apt-get install golang
+apt-get install gcc g++
+apt-get install mono-mcs
+npm install -g typescript
+apt-get install zip unzip
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk install kotlin
+apt install swi-prolog -y
+apt install lua5.4 -y
+npm install -g coffeescript
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+curl -fsSL https://install.julialang.org | sh
+source ~/.bashrc

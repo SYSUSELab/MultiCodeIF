@@ -4,3 +4,7 @@ __pycache__/
 *.log
 *.rmeta
 temp_check.long-*
+results/ast_details
+results/compilation_details
+results/functional_details*
+tmp/

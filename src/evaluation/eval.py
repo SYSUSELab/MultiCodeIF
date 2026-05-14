@@ -3,9 +3,12 @@ import os
 import argparse
 from rule_based_eval import rule_based_evaluation
 from llm_based_eval import llm_based_evaluation
+from compile_test import evaluate_compilation
+from func_test import evaluate_functional
 
 RULE_BASED_CATEGORIES = ['syntax', 'input_output', 'data_structure', 'code_convention']
 LLM_BASED_CATEGORIES = ['situation', 'example', 'code_contextual', 'non_functional_requirements', 'algorithm']
+COMPILATION_CATEGORIES = ['compilation']
 
 
 def evaluate_model(model, output_dir, prompt_dir, detail_dir):
@@ -73,6 +76,90 @@ def evaluate_model(model, output_dir, prompt_dir, detail_dir):
     return scores
 
 
+def evaluate_ast_syntax(model, output_dir, prompt_dir, detail_dir):
+    scores = {
+        "overall": {"total": 0, "matched": 0, "score": 0.0},
+    }
+
+    model_output_dir = os.path.join(output_dir, model)
+    output_files = os.listdir(model_output_dir)
+    print(f"[INFO][AST] Evaluating AST syntax for {len(output_files)} files, model: {model}")
+
+    for output_file in output_files:
+        constraint = output_file.split(model)[0].strip('_')
+        output_path = os.path.join(model_output_dir, output_file)
+        prompt_path = os.path.join(prompt_dir, f"{constraint}.json")
+        detail_path = os.path.join(detail_dir, "ast_syntax", model, f"{constraint}.json")
+
+        if not os.path.exists(prompt_path):
+            print(f"[WARN][AST] Skipping (prompt not found): {prompt_path}")
+            continue
+
+        try:
+            with open(output_path, 'r', encoding='utf-8') as f:
+                generation = json.load(f)
+            with open(prompt_path, 'r', encoding='utf-8') as f:
+                prompt = json.load(f)
+        except Exception as e:
+            print(f"[ERROR][AST] Failed to load data for {output_file}: {e}")
+            continue
+
+        total, matched = evaluate_compilation(generation, prompt, detail_path)
+
+        if total == 0:
+            continue
+
+        scores["overall"]["total"] += total
+        scores["overall"]["matched"] += matched
+
+    if scores["overall"]["total"] > 0:
+        scores["overall"]["score"] = scores["overall"]["matched"] / scores["overall"]["total"]
+
+    return scores
+
+
+def evaluate_functional_dimension(model, output_dir, prompt_dir, detail_dir):
+    scores = {
+        "overall": {"total": 0, "matched": 0, "score": 0.0},
+    }
+
+    model_output_dir = os.path.join(output_dir, model)
+    output_files = os.listdir(model_output_dir)
+    print(f"[INFO][FUNC] Evaluating functional tests for {len(output_files)} files, model: {model}")
+
+    for output_file in output_files:
+        constraint = output_file.split(model)[0].strip('_')
+        output_path = os.path.join(model_output_dir, output_file)
+        prompt_path = os.path.join(prompt_dir, f"{constraint}.json")
+        detail_path = os.path.join(detail_dir, "functional", model, f"{constraint}.json")
+
+        if not os.path.exists(prompt_path):
+            print(f"[WARN][FUNC] Skipping (prompt not found or no tests): {prompt_path}")
+            continue
+
+        try:
+            with open(output_path, 'r', encoding='utf-8') as f:
+                generation = json.load(f)
+            with open(prompt_path, 'r', encoding='utf-8') as f:
+                prompt = json.load(f)
+        except Exception as e:
+            print(f"[ERROR][FUNC] Failed to load data for {output_file}: {e}")
+            continue
+
+        total, matched = evaluate_functional(generation, prompt, detail_path)
+
+        if total == 0:
+            continue
+
+        scores["overall"]["total"] += total
+        scores["overall"]["matched"] += matched
+
+    if scores["overall"]["total"] > 0:
+        scores["overall"]["score"] = scores["overall"]["matched"] / scores["overall"]["total"]
+
+    return scores
+
+
 def calculate_scores(output_dir, prompt_dir, detail_dir, save_path="results.json"):
     print(f"[INFO] Starting evaluation")
     print(f"[DIR] Output: {output_dir}")
@@ -84,7 +171,13 @@ def calculate_scores(output_dir, prompt_dir, detail_dir, save_path="results.json
 
     for model in models:
         print(f"\n=== Evaluating model: {model} ===")
-        result[model] = evaluate_model(model, output_dir, prompt_dir, detail_dir)
+        base_scores = evaluate_model(model, output_dir, prompt_dir, detail_dir)
+        ast_syntax_scores = evaluate_ast_syntax(model, output_dir, prompt_dir, detail_dir)
+        functional_scores = evaluate_functional_dimension(model, output_dir, prompt_dir, detail_dir)
+
+        base_scores["ast_syntax"] = ast_syntax_scores
+        base_scores["functional"] = functional_scores
+        result[model] = base_scores
 
     try:
         with open(save_path, 'w', encoding='utf-8') as f:

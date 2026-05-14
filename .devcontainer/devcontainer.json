@@ -1,0 +1,24 @@
+{
+    "name": "MultiCodeIF Python Dev Environment",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "python-dev",
+    "workspaceFolder": "/workspace",
+    // VSCode 设置
+    "customizations": {
+        "vscode": {
+            // 推荐安装的扩展
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance"
+            ],
+            // VSCode 配置
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.linting.enabled": true,
+                "python.formatting.provider": "autopep8"
+            }
+        }
+    },
+    // 容器创建后执行的命令
+    "postCreateCommand": "pip install --upgrade pip"
+}

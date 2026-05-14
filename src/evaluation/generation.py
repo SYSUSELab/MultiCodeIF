@@ -51,3 +51,8 @@ def generation_in_parallel(prompts, model_name):
     
     llm = LLM(api_keys, model_name)
     return llm.generation_in_parallel(prompts)
+
+
+if __name__ == '__main__':
+    res = generation_in_parallel("hello?", 'deepseek-v3.2')
+    print(res[0])

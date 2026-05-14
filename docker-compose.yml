@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  python-dev:
+    image: multi-code-if
+    container_name: multi-code-if
+    volumes:
+      - .:/workspace
+    stdin_open: true
+    tty: true
+    working_dir: /workspace
